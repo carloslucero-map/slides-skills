@@ -367,7 +367,7 @@ def write_index_and_variants(skill, catalogue, do_split=False):
         "",
         "Pick from this table, then open ONLY the file named. `chars` is the",
         "slide's ideal total; the per-slot min-max lives in the `<!-- capacity -->`",
-        "block above each template and in `references/capacity.json`.",
+        "block above each template.",
         "",
         "The files in `assets/snippets/` are canonical. `variants/` holds the same",
         "templates split one-per-file and is regenerated from them.",

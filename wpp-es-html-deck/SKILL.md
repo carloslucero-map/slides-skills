@@ -287,13 +287,14 @@ lists all 51 templates on one line each — archetype, path, ideal char count,
 what it is — so you choose without opening files to find out what is in them.
 It points at `assets/snippets/variants/<name>.html`, which holds a single
 template (~500 tokens) instead of the whole snippet file (up to 5,900).
-The files in `assets/snippets/` stay canonical; `variants/` is generated from
-them by `derive_capacity.py --split`, so edit the original and re-run.
+**Never open `assets/snippets/*.html` at fill time** — those 13 files are the
+authoring source (up to 6,326 tokens each); the deck reads `variants/` only.
+Edit a canonical file and re-run `derive_capacity.py --split` to regenerate.
 
 **Check capacity before you write.** Every template carries a
 `<!-- capacity: -->` block above its `<section>`: per-slot min–max character
 counts and a slide total, derived from the shell's real type sizes and
-container widths (`references/capacity.json` holds the same data). Match the
+container widths. Match the
 content to a template that fits. `max` is a hard stop, not a target — over it,
 pick a lower-density variant or cut copy. **Never shrink type to make copy fit
 (§4.5).** `ideal` carries the editorial truth; a geometric `max` of 122 chars
@@ -315,34 +316,34 @@ slide-to-slide; the divider rule's chosen-once ethos applies to art too.
 
 | Content signal (`**Visual:**` hint) | Archetype | Snippet |
 |---|---|---|
-| Single key message / transition | Big Statement | `statement-quote.html` |
-| A quote | Big Quote | `statement-quote.html` |
-| 1–4 parallel points | Columns (2/3/4, dot headers, pills) | `columns.html` |
-| Numbered agenda / phased approach | Numbered step columns (giant 01-04 headers) | `columns.html` V5 |
-| Steps / sequence | Text boxes with arrows | `boxes.html` |
-| Parallel / related items | Text boxes with dots | `boxes.html` |
-| This vs that | Comparative (Rocks / Ribbon centrepiece) | `comparison.html` |
-| Converging disciplines / overlap | Venn diagram (2-3 sets + intersection) | `comparison.html` V2 |
-| Numbers, stats, KPIs | Stat circles / bubbles / orbits / KPI row | `stats.html` |
-| Multi-KPI dashboard / scorecard | Scorecard grid (2×3 bento, category headers) | `stats.html` V5 |
-| Data series / table | Flat chart / data table | `charts.html` |
-| Process / timeline / roadmap | Process ×5 / timeline | `process-timeline.html` |
-| Capability map / ecosystem | Ecosystem map (zones + centre hub) | `process-timeline.html` V5 |
-| People | Team grid | `team.html` |
-| Screenshot / image | Image + text layouts / motif poster | `image-content.html` |
-| Photo / mood image | **Duotone hero** — `.duo` renders any photo navy-duotone at runtime (§9.2) | `image-content.html` V4 |
-| Hero image, "pixelated" website look | **Dot hero** — convert with `scripts/halftone.py` (§9.1c), or the shipped `dot-lighthouse` / `dot-dancers-orange` motifs | `image-content.html` V5 |
-| Clickable detail | Expandable cards | `cards.html` |
-| Case study / partner showcase | Image-top cards (photo + title + body ×3) | `cards.html` V3 |
-| Hero message + proof / colour-block moment | Split panels (R1 / R13) | `splits.html` |
-| Case study with photo | 50/50 image bleed + text sidebar | `splits.html` V4 |
-| Hub / capabilities around a core | Orbit diagram (rings + nodes) | `orbit.html` |
-| Data ecosystem / radial signals | Radial spokes (centre + 6-8 labelled items) | `orbit.html` V2 |
-| Value props / strategic pillars | Floating bubbles (overlapping text circles) | `orbit.html` V3 |
-| Partner / tech ecosystem | Logo wall (categorised grid or hero count) | `logo-wall.html` |
-| Two engines / overlapping systems + funnel | Cluster diagram + index row (R5) | `stats.html` V6 |
-| Phased plan on one board | Phase board — tint panel + step rule + KPI band (R8) | `process-timeline.html` V6 |
-| Capability tiles / mixed bento | 3×2 tile grid — cells + stats + one motif crop (R12) | `cards.html` V4 |
+| Single key message / transition | Big Statement | `variants/statement-quote-v1.html` |
+| A quote | Big Quote | `variants/statement-quote-v2.html` |
+| 1–4 parallel points | Columns (2/3/4, dot headers, pills) | `variants/columns-v1.html` |
+| Numbered agenda / phased approach | Numbered step columns (giant 01-04 headers) | `variants/columns-v5.html` |
+| Steps / sequence | Text boxes with arrows | `variants/boxes-v3.html` |
+| Parallel / related items | Text boxes with dots | `variants/boxes-v2.html` |
+| This vs that | Comparative (Rocks / Ribbon centrepiece) | `variants/comparison-v1.html` |
+| Converging disciplines / overlap | Venn diagram (2-3 sets + intersection) | `variants/comparison-v2.html` |
+| Numbers, stats, KPIs | Stat circles / bubbles / orbits / KPI row | `variants/stats-v1.html` · `v3` · `v4` |
+| Multi-KPI dashboard / scorecard | Scorecard grid (2×3 bento, category headers) | `variants/stats-v5.html` |
+| Data series / table | Flat chart / data table | `variants/charts-v2.html` · `v3` |
+| Process / timeline / roadmap | Process ×5 / timeline | `variants/process-timeline-v1.html` |
+| Capability map / ecosystem | Ecosystem map (zones + centre hub) | `variants/process-timeline-v5.html` |
+| People | Team grid | `variants/team-v1.html` |
+| Screenshot / image | Image + text layouts / motif poster | `variants/image-content-v1.html` |
+| Photo / mood image | **Duotone hero** — `.duo` renders any photo navy-duotone at runtime (§9.2) | `variants/image-content-v4.html` |
+| Hero image, "pixelated" website look | **Dot hero** — convert with `scripts/halftone.py` (§9.1c), or the shipped `dot-lighthouse` / `dot-dancers-orange` motifs | `variants/image-content-v5.html` |
+| Clickable detail | Expandable cards | `variants/cards-v1.html` |
+| Case study / partner showcase | Image-top cards (photo + title + body ×3) | `variants/cards-v3.html` |
+| Hero message + proof / colour-block moment | Split panels (R1 / R13) | `variants/splits-v1.html` · `v2` |
+| Case study with photo | 50/50 image bleed + text sidebar | `variants/splits-v4.html` |
+| Hub / capabilities around a core | Orbit diagram (rings + nodes) | `variants/orbit-v1.html` |
+| Data ecosystem / radial signals | Radial spokes (centre + 6-8 labelled items) | `variants/orbit-v2.html` |
+| Value props / strategic pillars | Floating bubbles (overlapping text circles) | `variants/orbit-v3.html` |
+| Partner / tech ecosystem | Logo wall (categorised grid or hero count) | `variants/logo-wall-v1.html` |
+| Two engines / overlapping systems + funnel | Cluster diagram + index row (R5) | `variants/stats-v6.html` |
+| Phased plan on one board | Phase board — tint panel + step rule + KPI band (R8) | `variants/process-timeline-v6.html` |
+| Capability tiles / mixed bento | 3×2 tile grid — cells + stats + one motif crop (R12) | `variants/cards-v4.html` |
 
 **Photo slots:** brief supplies a photo → hero moment: convert to brand dot
 art with `python3 scripts/halftone.py photo.jpg --fg navy --bg none` (§9.1c);
@@ -494,8 +495,9 @@ non-English decks: **`references/EDGE-CASES.md`**. Open only when one applies.
   only when its trigger fires (see Step 0).
 - **`references/SNIPPET-INDEX.md`** — all 51 templates, one line each; the
   entry point for step 4.
-- **`references/capacity.json`** — per-slot min/ideal/max character counts for
-  every template, derived from the shell's real type metrics.
+- **`references/capacity.json`** — **SCRIPT INPUT ONLY — never read it**
+  (~11,700 tokens, 30% of a deck's budget). `check_capacity.py` reads it for
+  you; the same numbers sit in each variant's `<!-- capacity -->` block.
 - **`references/HANDOFF-CONTRACT.md`** · **`REVISING.md`** · **`EDGE-CASES.md`**
   — split out of this file; loaded on demand.
 - **`references/WPP-ES-DESIGN-GUIDELINE.md`** — the complete visual identity
@@ -524,11 +526,11 @@ non-English decks: **`references/EDGE-CASES.md`**. Open only when one applies.
   clusters. Authoring-time tool; outputs get inlined like any motif.
 - **`assets/snippets/`** — the archetype kit (13 files; variant 1 of each is
   a full-canvas §12.15 recipe). Paste, fill, then LOOK.
-- **`assets/exemplars/`** — one exemplar slide PNG per design direction: the
+- **`assets/exemplars/`** — **SCRIPT/HUMAN INPUT ONLY — never read these files into context.** one exemplar slide PNG per design direction: the
   visual bar for the step-5 art-direction pass.
 - **`assets/icons/`** — the 32-icon brand suite + sparkle accents (§8.1),
   mono `currentColor` SVGs pasted inline at fill time; one weight family per row.
-- **`assets/photos/`** — 13 pre-duotoned brand photographs (§9.2a), addressed
+- **`assets/photos/`** — **SCRIPT/HUMAN INPUT ONLY — never read these files into context.** 13 pre-duotoned brand photographs (§9.2a), addressed
   by metaphor via `spec.illustrations` keys `photo-*`. Internal-WPP-use-only.
 - **`assets/textures/`** — 2 full-bleed cream dot-field backdrops (§9.1b),
   keys `contours` / `orbs`; max one texture moment per deck.

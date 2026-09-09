@@ -94,13 +94,49 @@ def slides_of(html):
     return out
 
 
+def check_kit_integrity(skill):
+    """Every row of SNIPPET-INDEX.md must resolve to a real file in variants/.
+
+    SKILL.md now forbids opening assets/snippets/*.html at fill time, so a row
+    pointing at a variant that --split never wrote is unrecoverable: the model
+    is told to open a file that does not exist and forbidden from the canonical
+    one it was generated from. Silent before this check; a hard failure now.
+    """
+    idx = os.path.join(skill, "references", "SNIPPET-INDEX.md")
+    vdir = os.path.join(skill, "assets", "snippets", "variants")
+    if not os.path.isfile(idx):
+        print(f"KIT FAIL — no SNIPPET-INDEX.md at {idx}")
+        return False
+    rows = re.findall(r'`(variants/[A-Za-z0-9._-]+\.html)`', open(idx, encoding="utf-8").read())
+    if not rows:
+        print("KIT FAIL — SNIPPET-INDEX.md lists no variants; did --index run?")
+        return False
+    missing = [r for r in rows if not os.path.isfile(os.path.join(skill, "assets", "snippets", r))]
+    orphans = sorted(set(os.listdir(vdir)) - {os.path.basename(r) for r in rows}) \
+        if os.path.isdir(vdir) else []
+    for r in missing:
+        print(f"KIT FAIL — SNIPPET-INDEX.md points at {r}, which does not exist")
+    for o in orphans:
+        print(f"KIT WARN — variants/{o} exists but no index row reaches it")
+    if not missing:
+        print(f"KIT OK — {len(rows)} index rows all resolve"
+              + (f" ({len(orphans)} unreachable)" if orphans else ""))
+    return not missing
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("deck")
+    ap.add_argument("deck", nargs="?",
+                    help="built deck to check; omit to run the kit check only")
     ap.add_argument("--skill", default=".")
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 if any slide is over its limit")
     args = ap.parse_args()
+
+    kit_ok = check_kit_integrity(args.skill)
+    if args.deck is None:
+        sys.exit(0 if kit_ok else 1)
+    print()
 
     limits, slide_max = load_limits(args.skill)
     html = open(args.deck, encoding="utf-8", errors="replace").read()
@@ -180,7 +216,7 @@ def main():
     print("\nThis checks TEXT VOLUME ONLY. Collisions, contrast, composition and "
           "media anchoring are still verify_deck.py's job.")
 
-    sys.exit(1 if (args.strict and (over or untagged)) else 0)
+    sys.exit(1 if (not kit_ok or (args.strict and (over or untagged))) else 0)
 
 
 if __name__ == "__main__":
