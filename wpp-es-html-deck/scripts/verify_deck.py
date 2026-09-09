@@ -517,6 +517,31 @@ def _treatment(s):
             tuple(sorted(re.findall(r'class="panel (panel--[^"]*)"', s["body"]))))
 
 
+def check_docs():
+    """The guideline's three forms must agree. Runs build_docs.py --check.
+
+    CORE.md and the master are generated from references/sections/. When someone
+    edits a generated file directly the change survives locally and vanishes on
+    the next --write, and until then the three forms disagree with nobody the
+    wiser. That happened during the frame-constants work, inside an hour.
+    """
+    script = os.path.join(os.path.dirname(os.path.abspath(__file__)), "build_docs.py")
+    if not os.path.isfile(script):
+        report("WARN", "docs", "build_docs.py missing — guideline drift not checked")
+        return
+    try:
+        p = subprocess.run([sys.executable, script, "--check"],
+                           capture_output=True, text=True, timeout=60)
+    except (subprocess.TimeoutExpired, OSError) as e:
+        report("WARN", "docs", f"build_docs.py --check did not run ({e})")
+        return
+    if p.returncode == 0:
+        report("PASS", "docs", "CORE.md and the master match references/sections/")
+    else:
+        detail = (p.stderr or p.stdout).strip().replace("\n", " ")[:300]
+        report("FAIL", "docs", f"guideline drift — {detail}")
+
+
 def check_photography(slides):
     """§9.2 (WARN-only, coarse): a content slide embedding <img> outside the
     sanctioned wrappers (.duo duotone, .screenshot keyline, data-motif clone
@@ -1439,6 +1464,7 @@ def main():
     check_duplicate_payloads(text)
     check_photography(slides)
     check_rhythm(slides)
+    check_docs()
     if args.screenshots:
         shots = check_screenshots(args.deck, len(slides), args.screenshots,
                                   quick=args.quick, only=only)

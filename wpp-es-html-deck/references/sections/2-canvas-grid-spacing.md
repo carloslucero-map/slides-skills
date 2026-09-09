@@ -1,12 +1,13 @@
 ## 2. Canvas, grid & spacing
 
+
 | Property | Value |
 |---|---|
 | Aspect ratio | 16:9 |
 | Design canvas (HTML) | **1920 × 1080 px** |
-| PowerPoint canvas equivalent | 13.33 × 7.5 in (1280 × 720 pt) — multiply pt × 1.5 to get px at 1920 |
-| Base grid | **40 px square grid** (at 1920 × 1080) — the playbook's verbatim spec: "Our most used format uses 40px square grid using 40px margins and 40px column space." MAP's presentation-safe content edge is **two modules (80 px)**; everything else snaps to the 40 px module |
-| Page margins | **80 px left/right** (two grid units — the content edge is x = 80) |
+| PowerPoint canvas equivalent | 13.33 × 7.5 in (**960 × 540 pt**) — **multiply pt × 2** to get px at 1920. Derivable two ways and not open to argument: 12,192,000 EMU / 1920 px = 6350 EMU/px, and 13.33 in × 72 pt/in = 960 pt, so 1920/960 = 2.0. The old ×1.5 came from treating the canvas as 1280 pt, which is its width in px at 96/in — points are 72/in. Every type and spacing figure derived through it ran 25% short. |
+| Base grid | **40 px square grid** (at 1920 × 1080) — the playbook's verbatim spec: "Our most used format uses 40px square grid using 40px margins and 40px column space." The content edge is **one module (40 px)**, as stated. Everything snaps to the 40 px module |
+| Page margins | **40 px left/right** (`--m-edge`, one grid unit — the content edge is x = 40, the playbook's own number). For text-dense slides the bank's own practice is a deeper text edge: `--m-text: 56px` (the measured mode of real body copy is x=57). Use `--m-edge` for structure and full-bleed furniture, `--m-text` when a column of running copy needs the extra breathing room. The previous 80 px was not in the playbook — it was two modules chosen locally and called presentation-safe |
 | Column gutter | **80 px** (56 px in the 4-column grid) |
 
 Layout maths that the shipped generator actually uses (all values from `scripts/build_shell.py`):

@@ -20,15 +20,8 @@ description: >-
 
 You convert loose text — or an approved `deck-content-builder` content file —
 into a single, self-contained, on-brand HTML slide deck. The user brings the
-thinking, you bring the structure and the brand. v2 added one plan checkpoint,
-named design directions, sanctioned per-deck variety (cover, divider colourway,
-outro), an archetype snippet kit, and an executable verifier. **v4 aligns the
-system to the parent-brand WPP ES Brand Playbook v0.2:** real headline/body
-weight hierarchy (Light titles / Regular body), the playbook divider
-composition, dot scale registers, the dot-halftone image pipeline
-(`scripts/halftone.py`), semantic data colours (`.stat--pos/--neg`), the
-title highlight (`.hl`), media edge-anchoring, minimum font sizes, and
-individually-expanding cards — all measured by the verifier.
+thinking, you bring the structure and the brand. Version history is in
+`CHANGELOG.md`; everything this file states is current.
 
 ## STOP — checkpoint discipline (this rule outranks everything below)
 
@@ -77,7 +70,7 @@ Don't build from memory — open it.
 | `sections/8-iconography.md` | the slide uses icons |
 | `sections/9-illustration-photography.md` | the slide uses a photo, motif, duotone or halftone |
 | `sections/10-data-visualisation.md` | the slide carries a chart, stat circles or bubbles |
-| `sections/12-slide-archetype-library.md` | you need an archetype's detail and the quick-map plus SNIPPET-INDEX did not settle it. **§12.14 / §12.15 / §12.15a are already in CORE** — the composition guardrails, recipes and the C1-C7 checklist load every deck, because the verifier enforces them every deck |
+| `sections/12-archetypes.md` | you need an archetype's detail and the quick-map plus SNIPPET-INDEX did not settle it. **§12.14 / §12.15 / §12.15a are already in CORE** — the composition guardrails, recipes and the C1-C7 checklist load every deck, because the verifier enforces them every deck |
 | `sections/13-4-interaction-patterns-interactive-html-de.md` | the deck needs expandable cards or interaction |
 | `sections/14-motion-system-v3-2-the-deck-feels-alive-.md` | motion is full or subtle (skip when off) |
 | `sections/14-5-revising-a-delivered-deck.md` | you are revising a delivered deck |
@@ -119,25 +112,6 @@ disagrees, the generator wins, then the master.
 8. **Media anchors to edges (§15.9).** A photo/motif block ≥200×200 bleeds to
    a canvas edge or sits in a corner — never floats inside the margins
    (`.screenshot` and mosaic tiles are the declared-inset exceptions).
-
-## Locked vs free — where the design room actually is
-
-| Locked (never varies) | Free (must be deliberately composed, per deck) |
-|---|---|
-| Cream content background | Archetype per slide (§12, `assets/snippets/`) |
-| The locked cover/agenda/divider/thank-you compositions | Big Statement sub-variant & frequency (§12.4) |
-| Navy/White text (+ sanctioned orange moments); flat fills | Content-slide dot lifts — `data-dots="lift-corner"` presets |
-| No gradients/shadows/rounded cards | Navy / Orange 500 moment placement (≤1 in 6) |
-| Footer furniture & lockup | Column density + body size within §4.3 |
-| WPP Sans weights & type scale | Data-viz treatment — stat circles / bubbles / orbits / KPI rows |
-| Motion doctrine (§14): transform/opacity only, colours never animate; reduced-motion/print/headless always static | Motion level — registered choice `motion` full · subtle · off (default per direction) |
-| Type-size floors (§4.5) & media anchoring (§15.9) | Dot register fields — `field-micro` / `field-mid` / `field-macro` (§5) as composed counterweights |
-| Individual card expansion (§13.4) | Semantic data colours where direction is annotated — `.stat--pos` / `.stat--neg` (§10.1) · title highlight `.hl` where the handoff marks it (§4.4) |
-| | Registered spec choices: `cover`, `dividerColourway`, `dividerStyle`, `outro`, `direction`, `motion` |
-
-**Two decks with the same content should still be able to look meaningfully
-different within the locks.** The renderer only fails the brand when it stops
-making these choices deliberately.
 
 ## Design directions (the one design question you ask)
 
@@ -489,52 +463,19 @@ non-English decks: **`references/EDGE-CASES.md`**. Open only when one applies.
 
 ## Bundled resources
 
-- **`references/CORE.md`** — everything needed to lay out ANY slide; read once
-  per deck. Verbatim subset of the master guideline.
-- **`references/sections/`** — the master guideline split by section; open one
-  only when its trigger fires (see Step 0).
-- **`references/SNIPPET-INDEX.md`** — all 51 templates, one line each; the
-  entry point for step 4.
-- **`references/capacity.json`** — **SCRIPT INPUT ONLY — never read it**
-  (~11,700 tokens, 30% of a deck's budget). `check_capacity.py` reads it for
-  you; the same numbers sit in each variant's `<!-- capacity -->` block.
-- **`references/HANDOFF-CONTRACT.md`** · **`REVISING.md`** · **`EDGE-CASES.md`**
-  — split out of this file; loaded on demand.
-- **`references/WPP-ES-DESIGN-GUIDELINE.md`** — the complete visual identity
-  v4.0 and the master (the generator wins any disagreement).
-- **`scripts/build_shell.py`** — spec-validated generator: locked slides,
-  registered choices, runtime page numbers, print CSS, deep links (`#7`),
-  notes, no-JS fallback. Run with no `--spec` for a banner-stamped demo.
-- **`scripts/verify_deck.py`** — executable verification + headless
-  screenshots, including the v4 probes (type-size floor, content edge, media
-  anchoring, card grids). Run it before every delivery and after every
-  revision. `--contact-sheet` tiles every captured slide into ONE image for
-  the step-5 rhythm pass; slides it FAILed or WARNed are outlined and still
-  need a full-resolution look.
-- **`scripts/check_capacity.py`** — capacity pre-flight (step 4b). Compares a
-  filled deck against `capacity.json` from the HTML alone, no browser. Catches
-  text overflow only, and reports what it could NOT check rather than passing
-  it. `--strict` exits 1 on overflow or untagged slides.
-- **`scripts/derive_capacity.py`** — measures every template against the
-  shell's real type metrics and writes `capacity.json`, the
-  `<!-- capacity -->` blocks, `SNIPPET-INDEX.md` and `snippets/variants/`.
-  Re-run after editing any snippet:
-  `python3 scripts/derive_capacity.py --skill . --demo <a-deck>.html --write --index --split`
-- **`scripts/halftone.py`** — the canonical dot-illustration converter
-  (§9.1c): playbook generator settings (square 10px grid, 2–8px dots),
-  navy/orange colourways, subject-only output, `--overlay` halftone-circle
-  clusters. Authoring-time tool; outputs get inlined like any motif.
-- **`assets/snippets/`** — the archetype kit (13 files; variant 1 of each is
-  a full-canvas §12.15 recipe). Paste, fill, then LOOK.
-- **`assets/exemplars/`** — **SCRIPT/HUMAN INPUT ONLY — never read these files into context.** one exemplar slide PNG per design direction: the
-  visual bar for the step-5 art-direction pass.
-- **`assets/icons/`** — the 32-icon brand suite + sparkle accents (§8.1),
-  mono `currentColor` SVGs pasted inline at fill time; one weight family per row.
-- **`assets/photos/`** — **SCRIPT/HUMAN INPUT ONLY — never read these files into context.** 13 pre-duotoned brand photographs (§9.2a), addressed
-  by metaphor via `spec.illustrations` keys `photo-*`. Internal-WPP-use-only.
-- **`assets/textures/`** — 2 full-bleed cream dot-field backdrops (§9.1b),
-  keys `contours` / `orbs`; max one texture moment per deck.
-- **`assets/fonts/`** (WPP Sans Thin/Light/Regular/Medium/Bold),
-  **`assets/logos/`** (Navy + White lockups), **`assets/illustrations/`**
-  (13 pre-optimized dot motifs incl. the v4 square-grid conversions
-  `dot-lighthouse` / `dot-dancers-orange` — see §9.1a).
+Each file is named where it is used. Three rules that live nowhere else:
+
+- **Never read `references/capacity.json`, `assets/exemplars/` or
+  `assets/photos/` into context.** They are script and human inputs;
+  `capacity.json` alone is ~11,700 tokens. `check_capacity.py` reads it for you.
+- **Never open `assets/snippets/*.html` at fill time.** Those 13 files are the
+  authoring source, up to 6,300 tokens each; the deck reads `variants/` only.
+- **`references/sections/` is the only place to edit the guideline.** `CORE.md`
+  and `build/WPP-ES-DESIGN-GUIDELINE.md` are generated by `scripts/build_docs.py`,
+  and `verify_deck.py` fails the deck if either has drifted.
+
+After editing a canonical snippet, regenerate the kit:
+
+```bash
+python3 scripts/derive_capacity.py --skill . --demo <a-deck>.html --write --index --split
+```
