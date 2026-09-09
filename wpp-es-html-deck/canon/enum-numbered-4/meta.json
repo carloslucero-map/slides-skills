@@ -1,0 +1,55 @@
+{
+  "id": "enum-numbered-4",
+  "name": "Numbered method steps across a ground change",
+
+  "useWhen": "A method or approach has three or four named stages, each needing a sentence of substance rather than a label, and the deck has to look like it knows the order matters.",
+  "$useWhenNote": "Written by hand, on purpose. Generating this line from family+form+arity produces the same boilerplate the old SNIPPET-INDEX descriptions already are ('three columns, dot headers') — construction, not the problem it solves. It is the only field here that cannot be derived, and the only one anyone reads when choosing.",
+
+  "family": "B-enumeration",
+  "secondaryFamily": null,
+  "form": "numbered",
+  "arity": "3",
+  "arityRange": [3, 4],
+  "ground": ["cream", "white"],
+  "density": "standard",
+  "densityChars": 505,
+  "mediaRole": "none",
+
+  "focal": {
+    "role": "ordinal",
+    "px": 192,
+    "againstHeadlinePx": 64,
+    "ratio": 3.0,
+    "note": "The reason this is not the same template as a numbered column list with a small ordinal. Bank slides 86 and 103 share family, form and near-arity and are compositionally opposite purely on this ratio: 86 runs 3.0, 103 runs 0.5 and the numeral becomes a label. No skeleton axis separates them."
+  },
+
+  "states": ["ideal", "max"],
+  "source": "bank:86",
+  "sourceRender": "ref.png",
+
+  "replaces": "columns-v5",
+  "replacesNote": "columns-v5 covers the same content signal and loses the device: no ground change, numerals at an inline-overridden 120px in Thin, and the lower third of the canvas unused. Do not retire it until this template has been through a real deck.",
+
+  "deviations": [
+    {
+      "what": "content edge",
+      "source": 61,
+      "here": 80,
+      "why": "The shell's --m-edge is 80px and the bank modes at 57-61. Correcting the frame constant moves all 51 existing variants and belongs in its own commit. This template is 19px narrower each side than its original."
+    },
+    {
+      "what": "headline size",
+      "source": 64,
+      "here": 54,
+      "why": "Uses the shell's .headline. The measured 64px is the 32pt source at the real x2 factor; the shell's 54px descends from the x1.5 factor CORE.md documents. Same root cause as the edge — a frame constant, not a template decision."
+    }
+  ],
+
+  "contractGapsClosed": [
+    ".slide--ground — a partial-height ground change with a --ground-y split. .slide--white repaints the whole slide and could not express this.",
+    ".hero-num--m (192px, the measured tier) and .hero-num--solid (Regular). Added to build_shell.py rather than inlined, which is how columns-v5 got a 120px numeral fighting its own 144px class."
+  ],
+
+  "createdAt": "2026-09-09",
+  "version": 1
+}

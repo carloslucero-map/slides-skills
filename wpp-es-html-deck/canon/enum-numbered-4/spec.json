@@ -1,0 +1,62 @@
+{
+  "id": "enum-numbered-4",
+  "$comment": "Hand-written. The structure of the slide, not its implementation: roles, repetition and arity only. No pixels, no colour, no copy — those live in template.html (geometry, measured) and in the shell (type scale, palette). If this file and template.html disagree about what a region is FOR, this file wins and the template is wrong.",
+
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet reviewed by a human against ref.png. Nothing may generate from this spec until approvedBy is set — a spec nobody read is worse than no spec, because it looks reviewed.",
+
+  "regions": [
+    {
+      "role": "eyebrow",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "label",
+      "note": "The subject, not the argument. Ranked above the second label by colour, not size."
+    },
+    {
+      "role": "headline",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "headline",
+      "note": "Carries the action title. Two to three lines; at one line the gap above the second label opens up and the slide reads unfinished."
+    },
+    {
+      "role": "sectionLabel",
+      "arity": 1,
+      "required": false,
+      "capacityRole": "label",
+      "note": "Quieter second label naming the method. Optional — omit and the numeral row moves up to meet the headline."
+    },
+    {
+      "role": "enumeration",
+      "repeat": true,
+      "arity": [3, 4],
+      "required": true,
+      "children": [
+        { "role": "ordinal", "arity": 1, "required": true, "capacityRole": "display",
+          "note": "Two digits. The focal element: it crosses the ground boundary and must not be shortened to one digit or moved fully into either ground." },
+        { "role": "itemTitle", "arity": 1, "required": true, "capacityRole": "cardTitle" },
+        { "role": "itemBody", "arity": 1, "required": true, "capacityRole": "cardBody" }
+      ]
+    }
+  ],
+
+  "grounds": {
+    "upper": "cream",
+    "lower": "white",
+    "splitRole": "groundBand",
+    "note": "A partial-height ground change, not two slides. The enumeration's ordinal row straddles the split; that crossing is the composition. Removing the split turns this into columns-v5, which is the template this one exists to replace."
+  },
+
+  "invariants": [
+    "The ordinal row crosses the ground boundary. A template where the numerals sit entirely above or entirely below it is a different composition and needs a different id.",
+    "Ordinals are Regular weight, not Thin. The kit's .hero-num defaults to weight 100; the source deck does not.",
+    "Arity 3 or 4. At 5 the columns fall under the measured body width and the titles start wrapping to three lines.",
+    "The two labels are ranked by colour (orange lead, navy follow). Ranking them by size instead collapses the tier."
+  ],
+
+  "source": "bank:86",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

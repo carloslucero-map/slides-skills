@@ -20,6 +20,8 @@ venv/
 # never committed. The skills are the source; the decks they produce are not.
 *.html
 !wpp-es-html-deck/assets/snippets/**/*.html
+# Canon templates are source, not output — they are the whole point of canon/.
+!wpp-es-html-deck/canon/**/*.html
 screenshots/
 shots/
 contact-sheet.png

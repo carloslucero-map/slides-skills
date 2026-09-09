@@ -1,0 +1,332 @@
+{
+ "source": "bank:86",
+ "inventory": "inventory2.json",
+ "canvas": [
+  1920,
+  1080
+ ],
+ "ptToPx": 2.0,
+ "shapeCount": 13,
+ "offstageDropped": 2,
+ "leftEdges": [
+  0,
+  61,
+  645,
+  1109,
+  1251,
+  1264,
+  1841
+ ],
+ "topEdges": [
+  50,
+  121,
+  125,
+  128,
+  375,
+  437,
+  440,
+  580,
+  677,
+  1033
+ ],
+ "typePx": [
+  12,
+  28,
+  34,
+  40,
+  64,
+  192
+ ],
+ "shapes": [
+  {
+   "kind": "sp",
+   "name": "Rectangle 9",
+   "box": [
+    0,
+    580,
+    1920,
+    419
+   ],
+   "right": 1920,
+   "bottom": 999,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 27",
+   "box": [
+    61,
+    375,
+    880,
+    32
+   ],
+   "right": 941,
+   "bottom": 407,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 26,
+   "text": "TRANSFORMATION METHODOLOGY"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 4",
+   "box": [
+    61,
+    50,
+    625,
+    48
+   ],
+   "right": 686,
+   "bottom": 98,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    20
+   ],
+   "px": [
+    40
+   ],
+   "chars": 21,
+   "text": "ORGANIZATIONAL DESIGN"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 21",
+   "box": [
+    61,
+    121,
+    1043,
+    140
+   ],
+   "right": 1104,
+   "bottom": 261,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    32
+   ],
+   "px": [
+    64
+   ],
+   "chars": 75,
+   "text": "Frameworks & methodologies: Training and measuring organizational readiness"
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 7",
+   "box": [
+    1264,
+    128,
+    135,
+    34
+   ],
+   "right": 1399,
+   "bottom": 162,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 8",
+   "box": [
+    1109,
+    125,
+    129,
+    35
+   ],
+   "right": 1238,
+   "bottom": 160,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 4",
+   "box": [
+    61,
+    440,
+    239,
+    233
+   ],
+   "right": 300,
+   "bottom": 673,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    96
+   ],
+   "px": [
+    192
+   ],
+   "chars": 2,
+   "text": "01"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 4",
+   "box": [
+    645,
+    437,
+    256,
+    233
+   ],
+   "right": 901,
+   "bottom": 670,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    96
+   ],
+   "px": [
+    192
+   ],
+   "chars": 2,
+   "text": "02"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 4",
+   "box": [
+    1251,
+    440,
+    256,
+    233
+   ],
+   "right": 1507,
+   "bottom": 673,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    96
+   ],
+   "px": [
+    192
+   ],
+   "chars": 2,
+   "text": "03"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 14",
+   "box": [
+    61,
+    677,
+    395,
+    221
+   ],
+   "right": 456,
+   "bottom": 898,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    14,
+    17
+   ],
+   "px": [
+    28,
+    34
+   ],
+   "chars": 103,
+   "text": "Change Readiness Assessment To define the ‘operational gap’, the ‘anchoring gap’, and the ‘reality gap’"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 15",
+   "box": [
+    645,
+    677,
+    478,
+    221
+   ],
+   "right": 1123,
+   "bottom": 898,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    14,
+    17
+   ],
+   "px": [
+    28,
+    34
+   ],
+   "chars": 116,
+   "text": "Organization Transformation Framework Establishes a deep understanding of the As-Is departure point and To-Be design"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 16",
+   "box": [
+    1251,
+    677,
+    466,
+    215
+   ],
+   "right": 1717,
+   "bottom": 892,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    14,
+    17
+   ],
+   "px": [
+    28,
+    34
+   ],
+   "chars": 137,
+   "text": "Meta streams Utilize ‘Develop once, deploy many’ for complex projects, and prioritize structured speed for day-to-day campaign activation"
+  },
+  {
+   "kind": "sp",
+   "name": "Slide Number Placeholder 5",
+   "box": [
+    1841,
+    1033,
+    44,
+    15
+   ],
+   "right": 1885,
+   "bottom": 1048,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    6
+   ],
+   "px": [
+    12
+   ],
+   "chars": 2,
+   "text": "86"
+  }
+ ],
+ "_note": "Evidence about the source slide. Not CSS, not a spec, never averaged with another slide."
+}

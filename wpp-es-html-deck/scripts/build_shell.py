@@ -630,6 +630,18 @@ body.js .slide.is-active{{display:block;}}
 .slide--tint{{background:var(--bg-tint);}}
 .slide--white{{background:var(--bg-alt);}}   /* rare only — see §3.3a */
 
+/* GROUND BAND — a partial-height ground change, measured off the source deck
+   rather than invented. Slide 86 turns White from y=580 on an otherwise Cream
+   slide and runs its numeral row ACROSS that boundary; the crossing is what
+   makes the composition read as one object instead of two stacked rows.
+   .slide--white could not express this: it repaints the whole slide.
+   --ground-y is the split (default 580px, the measured value). Content sits
+   above the band because the band is a ::before at z-index 0.
+   Not a licence to invent grounds: §3.3a still governs which two may meet. */
+.slide--ground{{--ground-y:580px;}}
+.slide--ground::before{{content:"";position:absolute;left:0;right:0;top:var(--ground-y);bottom:0;background:var(--bg-alt);z-index:0;}}
+.slide--ground > *{{position:relative;z-index:1;}}
+
 /* Standard content furniture (§7). v4 typography contract (§4.2): headlines
    Light 300, running text Regular 400 — weight, not just size, carries the
    hierarchy. Footer furniture is Regular per the playbook ("footers"). */
@@ -804,6 +816,9 @@ body.js .slide.is-active{{display:block;}}
 .hero-num--s{{font-size:144px;}}
 .hero-num--l{{font-size:280px;}}
 .hero-num--xl{{font-size:320px;}}
+.hero-num--m{{font-size:192px;}}      /* MEASURED: bank slide 86 numeral, 96pt x 2 */
+.hero-num--solid{{font-weight:400;}}  /* the bank sets numerals in Regular, not Thin —
+                                         .hero-num's weight 100 is a kit invention */
 .hero-num--orange{{color:var(--orange-700);}}
 .hero-row{{position:absolute;left:80px;right:80px;top:280px;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:64px;}}
 .hero-row .n{{font-weight:100;font-size:144px;line-height:1;}}
