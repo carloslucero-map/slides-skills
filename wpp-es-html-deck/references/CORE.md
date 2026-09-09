@@ -1,0 +1,702 @@
+# WPP ES | MAP — CORE design rules
+
+Everything needed to lay out ANY slide. Read this once per deck, in full.
+This file is a verbatim selection from WPP-ES-DESIGN-GUIDELINE.md — nothing
+was rewritten or summarised, so the numbers here are the numbers the verifier
+enforces.
+
+Content-specific sections are NOT here. Open them from `sections/` only when
+the trigger applies:
+
+| Open this | Only when |
+|---|---|
+| `sections/8-iconography.md` | the slide uses icons (§8.1 suite) |
+| `sections/9-illustration-photography.md` | the slide uses a photo, motif, duotone or halftone |
+| `sections/10-data-visualisation.md` | the slide carries a chart, stat circles or bubbles |
+| `sections/12-slide-archetype-library.md` | the SKILL.md quick-map does not resolve the archetype |
+| `sections/13-4-interaction-patterns-interactive-html-de.md` | the deck needs expandable cards or other interaction |
+| `sections/14-motion-system-v3-2-the-deck-feels-alive-.md` | motion is full or subtle (skip when motion: off) |
+| `sections/14-5-revising-a-delivered-deck.md` | you are revising an already-delivered deck |
+
+The full original guideline remains at `WPP-ES-DESIGN-GUIDELINE.md` and is
+still the master. `sections/` is that same file split; CORE.md is a subset.
+If they ever disagree, the generator wins, then the master.
+
+---
+
+## 1. Brand essence — read this first
+
+1. **The dot is the most important device in the storytelling.** Everything in the system — backgrounds, illustrations, icons, charts, bullets — is built from circles/dots. When in doubt, express it with a dot.
+2. **Navy is the main colour. Avoid making things too orange.** (Verbatim guidance from the template.) Orange is an accent that brings depth; WPP Navy carries the brand. Cream and White must always be used **in excess of** Navy across a deck.
+3. **Quiet, editorial, lots of air.** Thin/Light type, generous whitespace, flat colour, no gradients, no drop shadows, no decorative rules or accent bars. The drama comes from scale contrast (huge thin type, macro dots) — not from ornament.
+4. **Text is Navy or White, with exactly these sanctioned Orange moments:** (a) cover month line — Orange 700; (b) agenda numerals — Orange 700; (c) divider sub-label — Orange 800 (Orange 600 on `navy-full`); (d) the optional content-slide eyebrow subtitle (`.subtitle`) — Medium 24px ALL-CAPS Orange 800; (e) data-viz accents — process step numerals and stat highlights from the orange ramp; (f) **the semantic positive-data highlight `.stat--pos` — Orange 700, only when a number's direction is meaningful AND favourable (§10.1)**. **Never orange body copy, headlines, or bullets.** (Title emphasis is weight, never colour — §4.4.)
+5. **Charts and diagrams are all based on circles** and use flat colours from the primary and secondary palettes.
+6. **One warm background, used consistently.** The default body background is **WPP Cream `#FAFAF0`** (warm) on *every* content slide. Do **not** alternate between Cream and pure White across a deck — mixing a warm and a cold "white" is the single most common consistency error. Pure White is reserved and rarely used (see §3.3a); when in doubt, use Cream. (Navy is for dark-moment slides; Orange 500 tint for the occasional accent moment.)
+7. **The name is "WPP Enterprise Solutions | MAP".** This is the organisation's full name and the only one used in decks — in the footer brand line, on covers, and in body copy. **Never write "VML MAP" or "VMLMAP".** Where body copy needs to name the company, write "WPP Enterprise Solutions | MAP" (or just "MAP" in running prose after first mention). The footer lockup `WPP Enterprise Solutions | MAP`, bottom-right, is standing furniture on every content slide, divider and outro (see §7.3).
+8. **Every deck is one self-contained HTML file.** All assets — fonts, logos, icons, illustrations, PNGs, SVGs, vectors, photos, anything — must be embedded inline so the deck is a single portable file. Decks are shared with colleagues who open them straight in a browser; nothing may depend on an external path, a sibling folder, or a network fetch (see §2a).
+
+---
+
+## 2. Canvas, grid & spacing
+
+| Property | Value |
+|---|---|
+| Aspect ratio | 16:9 |
+| Design canvas (HTML) | **1920 × 1080 px** |
+| PowerPoint canvas equivalent | 13.33 × 7.5 in (1280 × 720 pt) — multiply pt × 1.5 to get px at 1920 |
+| Base grid | **40 px square grid** (at 1920 × 1080) — the playbook's verbatim spec: "Our most used format uses 40px square grid using 40px margins and 40px column space." MAP's presentation-safe content edge is **two modules (80 px)**; everything else snaps to the 40 px module |
+| Page margins | **80 px left/right** (two grid units — the content edge is x = 80) |
+| Column gutter | **80 px** (56 px in the 4-column grid) |
+
+Layout maths that the shipped generator actually uses (all values from `scripts/build_shell.py`):
+
+- Left/right content edge: **80 px**.
+- Headline block: y = **28 px**, max-width 1760 px, one or two lines max.
+- Optional eyebrow subtitle: y = **132 px** (see §7.1).
+- Content band: y = **260 px** to **960 px** (`.content-band`: top 260, bottom inset 120).
+- Source/citation line: bottom-left, left 80 / bottom 60 px.
+- Footer furniture: brand line right 80 / bottom 34; page number right 80 / bottom 14 (see §7.3).
+- Column widths on the 1760 px content band (shipped grid gaps 80/80/56):
+  - 1 column: 1760 px · 2 columns: **840 px** each (gap 80) · 3 columns: **≈533 px** each (gap 80) · 4 columns: **398 px** each (gap 56).
+
+**Whitespace rule:** whitespace must be **shaped** and deliberate — asymmetric, counterweighted by the composition, never leftover. Never fill the canvas with text; fill it with composition (§12.15). Leftover whitespace below y = 700 is the #1 rejected-deck signature (§12.15a C2; v4 tightened the tripwire — WARN ≥ 0.83, FAIL ≥ 0.92 background fraction in the content band). Big Statement and divider slides intentionally leave 40–60 % of the canvas empty (or covered only by background dots) — that air is registered and deliberate.
+
+**Margin-consistency law (v4, enforced §15.9):** the content edge is one line, deck-wide. On every non-bleed content slide the leftmost text block starts at **x = 80** (±6 px measured) and the headline sits exactly at x = 80. The only sanctioned departures are **declared edge-bleed media** (§12.9 v4 — media anchored to canvas edges/corners, marked by the `.media--bleed-*`/`.media--corner` utilities or a panel/canvas composition that owns the full height) and the locked slides. A slide whose text edge wanders (x = 96 here, x = 120 there) reads as a different deck — the verifier WARNs on it.
+
+---
+
+## 2a. Self-contained file rule (non-negotiable)
+
+**Every deck ships as a single, standalone `.html` file that opens correctly by double-clicking it in any browser, with no other files present, no folder structure, and no internet connection.** Decks are shared with colleagues who just open them locally, so a deck that relies on an external path is broken on arrival.
+
+Concretely, this means **all** of the following are embedded inline, never linked out to:
+
+- **Fonts** — the five WPP Sans weights embedded as base64 inside `@font-face { src: url("data:font/woff2;base64,…") }`. The generator does this for you.
+- **Logos** — the MAP lockup pasted in as an **inline `<svg>…</svg>`** element (preferred) or a base64 data URI, never an `<img src>` file path.
+- **Icons** — any dotted icon as inline SVG, never an external reference.
+- **Illustrations & halftone artwork** — the mountain/bee/etc. as a base64 `data:image/…` URI, never a file path.
+- **PNGs, JPEGs, photos, and any other raster or vector asset** — base64 data URI in the `src` / `background-image`, never a file path.
+
+Rules of thumb:
+
+- **No relative or absolute file paths, and no external URLs**, anywhere in the final HTML — not in `<img src>`, `background-image`, `@font-face src`, `<link>`, `<script src>`, `<use href>`, or CSS `url()`. The only sanctioned "external" thing is an inline SVG referencing its own internal `#id`.
+- **No CDN links either** (fonts, CSS resets, JS libraries) — pull the content in and inline it. The file must render fully offline.
+- The `assets/` paths quoted throughout this guideline are **build-time sources**: the generator (and you, during the fill step) read the asset from there, then **inline its contents** into the HTML. They are never left as live references in the shipped file.
+
+**Payload budget.** Base64 makes files ~33 % bigger, so keep sources lean: **every raster asset ≤ 300 KB before base64**, and treat **5 MB total deck size as the warn threshold** (`verify_deck.py` checks both). The shipped motifs are pre-optimized for this budget — the mountain is now ~150 KB against the 2.4 MB original — so preferring the shipped assets keeps you inside the budget automatically.
+
+**Verification before sharing:** move the finished `.html` to an empty folder on its own (or disconnect from the network) and open it in a browser. If any font falls back, any logo/icon/illustration/image fails to appear, or anything 404s, the file is not self-contained — fix it before it goes out. Then run `scripts/verify_deck.py`.
+
+---
+
+## 3. Colour
+
+### 3.1 Primary palette
+
+| Name | HEX | RGB | Pantone | CMYK | Role |
+|---|---|---|---|---|---|
+| **WPP Navy** | `#000050` | 0, 0, 80 | 2758 C | 100/90/0/25 | The brand colour. Text, logo, dots, dark backgrounds |
+| **WPP Cream** | `#FAFAF0` | 250, 250, 240 | 9064 C | 0/0/17/0 | Default slide background |
+| **WPP White** | `#FFFFFF` | 255, 255, 255 | Substrate | — | Text on dark backgrounds; **rare** alternate background only (see §3.3a) |
+
+Proportion: **Cream + White always in excess of Navy.** Navy dominates only on deliberate moments (dividers, outros, statement slides) — never the whole deck.
+
+### 3.2 Secondary palette (the Orange ramp)
+
+Used "for distinction and variation as needed" — accents, dots, data viz. Never the base of an entire deck.
+
+| Name | HEX | RGB | Pantone | CMYK |
+|---|---|---|---|---|
+| **Orange 900** | `#6A290A` | 106, 41, 10 | 175 C | 13/78/77/59 |
+| **Orange 800** | `#D94E0E` | 217, 78, 14 | 7598 C | 0/70/100/17 |
+| **Orange 700** | `#FF7800` | 255, 120, 0 | 158 C | 0/62/97/0 |
+| **Orange 600** | `#F9BD5D` | 249, 189, 93 | 135 C | 0/28/87/0 |
+| **Orange 500** | `#FFF5CD` | 255, 245, 205 | 9140 | 0/4/27/0 |
+
+### 3.3 Colour roles (from the playbook "Colour Combinations" page — the master role mapping)
+
+The playbook's roles, verbatim: **Backgrounds = White, Cream, Orange 500 only. Text = Navy, White only. Accents = Navy + the full orange ramp.** Two consequences the playbook states outright: **Orange 600 never carries text** (never use it as a text-bearing background), and only Navy/White ever set type. MAP decks add Navy as a *punctuation* background (dark moments, dividers, outros — established in the ES PowerPoint template); that is the one sanctioned extension.
+
+| Role | Allowed colours |
+|---|---|
+| **Backgrounds** | **WPP Cream (default, every content slide)** · Orange 500 (`#FFF5CD`) (occasional accent moment) · WPP White (rare — see §3.3a) · WPP Navy (dark **moments** only, never the deck's base) |
+| **Text** | WPP Navy · WPP White — plus **only** the sanctioned Orange moments listed in §1.4 |
+| **Accents** (dots, shapes, chart fills) | WPP Navy · Orange 900 · Orange 800 · Orange 700 · Orange 600 · Orange 500 |
+
+### 3.3a Background consistency (do not mix warm and cold whites)
+
+**WPP Cream `#FAFAF0` is the single default background for the whole deck (a locked default — §12.0).** Every content slide uses it. This keeps the deck's "white" one warm, consistent tone from first slide to last.
+
+- **Do not** switch some content slides to pure White `#FFFFFF` and leave others on Cream — side by side, Cream reads warm and White reads cold, and the deck looks inconsistent. This is the most common error to avoid.
+- Pure **White** is used only as a deliberate, rare device — e.g. a full-bleed photography/halftone slide that needs a clean white field, or a single gallery moment — never as a casual alternate to Cream for ordinary content.
+- The deck's rhythm comes from **Cream (dominant) → Navy (dark punctuation) → Orange 500 (occasional accent moment)**, not from alternating Cream and White.
+- In code: default `.slide` background is Cream; use `.slide--navy` for dark moments and `.slide--tint` (Orange 500) sparingly. Avoid `.slide--white` unless the rare case above genuinely applies.
+
+### 3.4 Sanctioned background + dot combinations
+
+When a background carries decorative dots, only these pairings are used (background × dot colour):
+
+| Background ↓ / Dots → | Cream/White (tone-on-tone) | Orange 700 | Orange 600 | Orange 500 | WPP Navy |
+|---|---|---|---|---|---|
+| **WPP White** | ✓ (cream dots) | ✓ | ✓ | ✓ | ✓ |
+| **WPP Cream** | ✓ (white dots) | ✓ | ✓ | ✓ | ✓ |
+| **Orange 500** | ✓ (white/cream dots) | ✓ | ✓ | — | ✓ |
+
+Text on all of these remains **WPP Navy**. **When using Navy dots, text must never overlap the dots** — keep type entirely on the light ground (with the one exception of divider titles set in WPP White knocked out of a large navy dot, see §12.5).
+
+### 3.5 Accessibility matrix (text on background)
+
+| Background | Text colour | Small text | Large text |
+|---|---|---|---|
+| White `#FFFFFF` | Navy | AAA | AAA |
+| Cream `#FAFAF0` | Navy | AAA | AAA |
+| Orange 500 `#FFF5CD` | Navy | AAA | AAA |
+| Orange 700 `#FF7800` | Navy | AA | AAA |
+| Orange 800 `#D94E0E` | Navy | AA | AAA |
+| Orange 900 `#6A290A` | **White** | AAA | AAA |
+| Navy `#000050` | **White** | AAA | AAA |
+
+Practical rules: body copy only ever sits on White, Cream or Orange 500. Orange 700/800 may carry short, large Navy text (labels inside chart circles). Orange 900 and Navy always take White text.
+
+### 3.6 Tertiary palette (information graphics only)
+
+The template's user guide defines a tertiary set strictly for data visualisation when the primary/secondary ramps run out. Never for backgrounds, body text or decoration.
+
+Light set (accessible for infographics; large text only — never body text):
+`#FFC8DC` pink · `#FFB4B4` red · `#D2BEFF` purple · `#80C0F5` blue · `#15FFCC` turquoise · `#B4FF64` green · `#FFFF78` yellow
+
+Dark set (accessible for large/body text, white type):
+`#8C0050` magenta · `#500000` maroon · `#500050` plum · `#000050` navy · `#00423E` deep teal · `#005000` deep green · `#A0A000` olive · `#0A1E78` indigo
+
+(An indigo-violet ramp `#0A1E78 · #323CAA · #6464D2 · #AA96FF · #D2BEFF` also exists in the wider WPP pillar system and appears in the template's user guide — treat it as reference only; the ES pillar ramp is the Orange one.)
+
+### 3.7 CSS tokens
+
+```css
+:root {
+  /* Primary */
+  --wpp-navy:  #000050;
+  --wpp-cream: #FAFAF0;
+  --wpp-white: #FFFFFF;
+  /* Secondary (orange ramp) */
+  --orange-900: #6A290A;
+  --orange-800: #D94E0E;
+  --orange-700: #FF7800;
+  --orange-600: #F9BD5D;
+  --orange-500: #FFF5CD;
+  /* Roles */
+  --bg:        var(--wpp-cream);
+  --bg-alt:    var(--wpp-white);
+  --bg-tint:   var(--orange-500);
+  --bg-dark:   var(--wpp-navy);
+  --text:      var(--wpp-navy);
+  --text-inv:  var(--wpp-white);
+  --accent:    var(--orange-700);
+  /* Semantic data colours (§3.8) */
+  --data-pos:  var(--orange-700);
+  --data-neg:  var(--wpp-navy);
+}
+```
+
+(The generator also emits per-deck role vars — `--dv-*` for the divider colourway and `--ty-*` for the outro — resolved from the spec keys; see §11.)
+
+### 3.8 Semantic data colours (v4 — the positive/negative cue)
+
+The playbook has **no green/red**: in brand data-viz, colour encodes intensity or sequence, never good/bad, and direction is carried by the `+`/`−` sign. v4 adds one sanctioned semantic layer on top, inside the closed palette:
+
+| Token | Colour | Meaning |
+|---|---|---|
+| `--data-pos` → `.stat--pos` | **Orange 700** `#FF7800` | A number whose direction is meaningful **and favourable** — the win glows |
+| `--data-neg` → `.stat--neg` | **WPP Navy** `#000050` | A number whose direction is meaningful and unfavourable — stays quiet, weight of ink |
+
+Rules:
+
+- Apply **only when direction is meaningful** — a market-size figure or a headcount is neutral and stays in the composition's default colour. Annotate direction at the content stage (HANDOFF-CONTRACT v3 `(dir: good|bad|neutral)`), not by guessing.
+- **Favourable ≠ positive sign.** "−41% cycle time" is a win → `.stat--pos`. "+8% churn" is bad → `.stat--neg`. The semantics follow the meaning, never the arithmetic sign.
+- Never green/red, never other hues, never colour-coding body copy — this is a numeral/stat treatment only (`.kpi .v`, `.hero-num`, `.hero-row .n`, stat callouts).
+- Contrast: Orange 700 thin numerals on Cream measure ~2.5:1 (§15.5) — `.stat--pos` therefore ships at **weight 300 minimum (never Thin 100) below 90 px**, or sits on White; at display sizes (≥ 90 px) Thin is fine as wayfinding-scale type.
+- At most **one `.stat--pos` moment per slide** — if everything glows, nothing does.
+
+---
+
+## 4. Typography
+
+### 4.1 Typeface
+
+**WPP Sans**, in exactly the **five shipped weights**, in the playbook v0.2 roles: **Thin 100** (large-format display ONLY), **Light 300** (titles and headlines), **Regular 400** (sub-headlines, body copy, footers, cover meta), **Medium 500** (eyebrows, labels, pills), and **Bold 700** — a real bold file, used for the footer brand line (no faux-bold). No Black and no italics ship in this package; design within the five weights and never synthesize the missing ones. Geometric sans with a tall x-height; **turn on stylistic alternates for the single-storey "a"** (`font-feature-settings: "salt" 1`).
+
+**The v4 hierarchy contract: headlines are Light, running text is Regular.** Before v4 both were Light and the only contrast was size — the single most-reported hierarchy failure. Now every text tier differs from its neighbour by **weight or case, not just size**: Thin display → Light headline → Regular-caps sub-headline → Regular body → Medium-caps label.
+
+The generator embeds all five weights as base64 data URIs — one `@font-face` per weight, mapped to the standard weight numbers:
+
+```css
+/* Emitted by scripts/build_shell.py — never external font paths (§2a) */
+@font-face { font-family:'WPP'; src:url('data:font/woff2;base64,…') format('woff2'); font-weight:100; font-display:swap; }
+/* …and likewise for 300, 400, 500, 700 */
+
+body { font-family:'WPP','Poppins','Century Gothic',system-ui,sans-serif;
+       font-feature-settings:"salt" 1; }
+```
+
+Fallback stack: a geometric sans (Poppins/Century Gothic) is the closest visual substitute if the embedded fonts somehow fail.
+
+### 4.2 Weight usage rules (playbook v0.2, verbatim roles)
+
+- **Thin** — "used for large format display copy only" (Big Statements, section/divider titles, giant numerals). Never at small sizes, never for running text.
+- **Light** — "used for titles in all caps and in sentence case for headlines": slide headlines (sentence case, default) and the ALL-CAPS title variant for strong emphasis (`.headline--caps`).
+- **Regular** — "used for all other copy": **sub-headlines (set in CAPS — 'use this to support the headline, or lead the body copy')**, **body copy**, and **footers**. Also cover meta lines.
+- **Medium** — eyebrows/labels (ALL CAPS), pill text, and the single-token title highlight (§4.4).
+
+### 4.3 Type scale
+
+Values as shipped in the generator's CSS (1920 × 1080 canvas; legacy PowerPoint pt = px ÷ 1.5).
+
+| Style | Font & weight | Size (px) | Line height | Letter spacing | Case |
+|---|---|---|---|---|---|
+| **Big Statement / display** | WPP Thin (100) | **150 default** (81–180 range) | × 0.82 | −0.02 em | ALL CAPS or sentence |
+| **Divider number & title** | WPP Thin (100) | **104** | × 0.86 (title) | −0.02 em | ALL CAPS |
+| **Big Quote** | WPP Thin (100) | 120 | × 1.04 | −0.01 em | Sentence, "curly quotes" |
+| **Cover title** | WPP Light (300) | 81 | × 0.9 | 0 | ALL CAPS |
+| **Cover subheader** | WPP Light (300) | 31 | × 1.16 | 0 | Sentence |
+| **Outro "Thank you"** | WPP Light (300) | 99 | × 0.9 | 0 | Sentence |
+| **Slide headline** | WPP Light (300) | **54** | × 0.9 | −0.005 em | Sentence case, **max two lines** — may carry ONE `.hl` Medium token (§4.4) |
+| **Slide headline, caps variant** (`.headline--caps`) | WPP Light (300) | **48** | × 0.94 | +0.01 em | ALL CAPS — "strong emphasis" titles (playbook); use on ≤ 1 in 4 content slides |
+| **Sub-headline / lead-in** (`.subhead`) | WPP Regular (400) | **24** | × 1.15 | +0.08 em | ALL CAPS, Navy — "supports the headline, or leads the body copy" (playbook); sits at the top of the content band |
+| **Eyebrow subtitle** (under headline) | WPP Medium (500) | **24** | × 1 | +0.12 em | ALL CAPS, **Orange 800** |
+| **Agenda numeral** | WPP Thin (100) | **88** (72 in 6-chapter dense mode) | × 1 | −0.02 em | `1.` style, Orange 700 |
+| **Agenda chapter title** | WPP Light (300) | 50 (42 dense) | × 1 | 0 | Sentence |
+| **Big subheader** | WPP Medium (500) | 24 | × 1 | +0.12 em | ALL CAPS |
+| **Small subheader / label** | WPP Medium (500) | 15–20 | × 1 | +0.08–0.1 em | ALL CAPS |
+| **Large body copy** | **WPP Regular (400)** | 26 (band) · 24 (columns) · 22 (4-col/boxes) | × 1.3 | normal | Sentence — Regular since v4 (playbook: "Regular is used for body copy"); the weight step below the Light headline is what creates the hierarchy |
+| **Pill label** | WPP Medium (500) | 15 | 1 | +0.08 em | ALL CAPS |
+| **Cover meta** (month/presenter) | WPP Regular (400) | 24 | × 1.3 | −0.01 em (month) | Month ALL CAPS Orange 700 |
+| **Source / citation** | WPP Regular (400) | 12 | × 1.1 | normal | Sentence, bottom-left (Regular since v4 — playbook: "Regular is used for footers") |
+| **Footer brand line** | **WPP Bold (700)** | 16 | 1 | +0.01 em | `WPP Enterprise Solutions | MAP` |
+| **Footer "PRIVATE & CONFIDENTIAL" + page no.** | WPP Regular (400) | **11** | 1 | +0.08 em | ALL CAPS (Regular since v4 — legibility at furniture size) |
+
+Typesetting rules:
+
+- Headlines are **sentence case**; titles that need strong emphasis go **ALL CAPS in Light** (`.headline--caps`) or Thin at display scale.
+- Display type is tightly leaded (0.82–0.9) — big type never floats with loose line height.
+- No bold within body copy for emphasis; create hierarchy with the Regular-caps `.subhead` or the Medium ALL-CAPS label instead. (The shipped Bold 700 exists for the footer brand line, not for body emphasis.)
+- No italics (none ship). No underlines.
+
+### 4.4 Title highlight (v4 — `.hl`)
+
+Inside a **headline, statement or divider title**, the single most important token — the number, the verdict word — may be emphasised by weight: `<span class="hl">…</span>` sets it **Medium 500 at the same size** (e.g. *"Cut onboarding time by <span class="hl">−41%</span> in two quarters"*). Rules:
+
+- **One `.hl` per title, maximum.** Two highlights cancel each other.
+- Weight only — same size, same colour (Navy, or White on dark). Never orange, never underline, never a size bump.
+- **Titles only** (headline / big-statement / big-quote / divider title). Never inside body copy — body emphasis stays banned.
+- The content layer marks the token in the handoff file (`**token**`, HANDOFF-CONTRACT v3); the fill step maps it to `.hl`. Don't invent highlights the content owner didn't mark.
+
+### 4.5 Minimum font sizes (v4 — measured law, §15.10)
+
+| Text class | Floor |
+|---|---|
+| Body copy (paragraphs, bullets, column text) | **20 px** |
+| Any other informational text (labels, captions, chips, chart labels, table cells) | **15 px** |
+| Footer furniture ONLY (`.pageno`, `.confidential`, `.source`, `.footer-brand`) | **11 px** (frozen — never add new text at this size) |
+
+No new text below 15 px, ever — if it doesn't fit at 15 px, the slide has too much content (split it or cut copy). The verifier measures computed sizes in the rendered DOM and FAILs sub-floor text (§15.10).
+
+---
+
+## 5. The Dot system (shapes & backgrounds)
+
+The playbook: *"The dot is the most important device in our storytelling"* — default colour **Orange 700**. *"We scale them from micro to macro for a wide range of expression."* The three registers (playbook p.29, now shipped as `data-dots` presets — `field-micro` / `field-mid` / `field-macro`):
+
+1. **MICRO** — a dense **organic scatter** of tiny dots (Ø ≈ 1–1.5 % of canvas width ≈ 20–30 px), irregular non-grid spacing, densest at the cluster's heart and dissolving outward, a few pairs touching/fusing. Reads as stipple texture / energy. (Also the halftone illustrations of §9 and the dotted "WPP" logo letters.)
+2. **MID** — roughly a dozen circles (Ø ≈ 15–25 % of canvas width ≈ 290–480 px) drifting across a zone, several overlapping or **fused into peanut shapes**, several cropped by the edges.
+3. **MACRO** — 3–4 enormous circles (Ø ≈ 60–110 % of canvas width), **always heavily cropped by the canvas edges** — they read as crops, never as balls.
+
+**Fused metaballs are sanctioned:** two same-colour circles overlapping merge into one flat "peanut" silhouette (free in flat CSS — no filters, no tricks). The playbook uses them in every register; one or two fused pairs per composition is the house accent, ten is noise.
+
+Hard rules:
+
+- **Never use a single circular shape that takes up more visual weight than the canvas** (playbook, verbatim) — dots always appear as a composition (several circles, varied sizes), or bleed off the edge so they read as a crop, never one dominating centred ball. Macro circles must bleed.
+- **One colour per dot field.** A register preset is one hue from the sanctioned combos (§3.4) — multi-colour scatters are the agenda/divider locked compositions' privilege, not a content-slide treatment.
+- Dots of the same colour may overlap and merge (flat fill, no transparency, no strokes).
+- Only the sanctioned background/dot colour combinations of §3.4.
+- **Navy dots never sit behind text** (exception: divider title knockout, §12.5).
+- Dots are decoration anchored to edges/corners; the content zone stays clear.
+- Tone-on-tone dots (white-on-cream / cream-on-white) are the subtlest background treatment and are always safe.
+
+Other shape vocabulary (everything else in the template):
+
+| Shape | Spec | Use |
+|---|---|---|
+| **Pill** | Fully-rounded rectangle (`border-radius: 999px`), padding 10 × 26 px, flat Navy fill with White 15 px Medium ALL-CAPS label (Cream fill / Navy text on dark slides) | Column headers, tags, category chips |
+| **Dot bullet** | Small solid circle Ø **16 px**, Navy or Orange 700 | Bullet marker, step separator between text boxes |
+| **Arrow / chevron** | Small solid Navy triangle ≈ 22 × 30 px (`.sep-arrow`) | Between process text boxes (flow direction) |
+| **Thin rule** | 1 px Navy line | Table row separators, timeline axes only — never decorative underlines |
+| **Left bracket** | Thin Navy `[` | Grouping rows in tables/timelines |
+| **Cards/boxes** | Rectangles, square corners, flat fill in White / Cream / Orange 500 / Navy — **no border, no shadow, no rounded corners** (rounding is reserved for pills) | Content grouping |
+| **Stat circle** | Flat-fill circle with centred number + label (see §10, §12.12) | Data visualisation |
+
+---
+
+## 6. Logo
+
+### 6.1 The lockup
+
+`WPP Enterprise Solutions` — the "WPP" letters are built from halftone dots, "Enterprise Solutions" is solid. For the MAP organisation the extended lockup **`Enterprise Solutions | MAP`** is used.
+
+Three variations exist in the wider brand system: **Primary** (single line — default, use wherever space allows), **Double stacked**, **Triple stacked**. This package ships the primary single-line lockup only, in the two colourways below — the only ones a deck needs.
+
+### 6.2 Rules
+
+- Colour: the logo appears **only in WPP Navy or WPP White**. Navy on light backgrounds, White on Navy.
+- Safe space: **the width of the second "P"** of WPP on all sides.
+- Sub-brand and partner logos: created centrally only (contact alex.cree@vml.com). Partner co-branding: partner logo · **navy dot separator** (two small stacked dots) · WPP ES logo, scaled to equal visual weight.
+
+### 6.3 Files
+
+| Use | Shipped file |
+|---|---|
+| On light backgrounds | `assets/logos/WPP_ES_MAP_logo_NAVY.svg` (fill `#000050`, viewBox ratio ≈ 7.42 : 1) |
+| On navy backgrounds / the cover badge | `assets/logos/WPP_ES_MAP_logo_WHITE.svg` |
+
+These are **build-time sources only** — the generator pastes the SVG in as an inline `<svg>` element. The shipped HTML must never reference them by path (§2a). Print/CMYK/Pantone logo variants do not ship in this package.
+
+In decks the logo appears **small, bottom-right**, either as the text footer line (§7.3) or, on covers, inside the solid Navy badge anchored flush to the bottom-right corner (§12.1a).
+
+---
+
+## 7. Slide furniture (headers & footers)
+
+Every standard content slide carries:
+
+### 7.1 Headline zone (top-left, full width)
+- Headline: WPP Light 54 px, Navy, sentence case, max two lines, at (80, 28) px, max-width 1760 px.
+- Optional **eyebrow subtitle**: WPP Medium 24 px ALL CAPS **Orange 800** at y = 132 (`.subtitle` — one of the sanctioned orange moments, §1.4). *Drop it when the headline runs to two lines.*
+
+### 7.2 Source line (bottom-left)
+- "Source: …" WPP Light 12 px Navy at left 80 / bottom 60 px. Only when citing.
+
+### 7.3 Footer strip
+- Bottom-left: `PRIVATE & CONFIDENTIAL` — 11 px ALL CAPS at left 80 / bottom 14. **Wired to the `confidential: true` spec key** — the generator adds it to every non-cover slide; the Spanish rendering (`PRIVADO Y CONFIDENCIAL`) comes automatically with `lang:"es"`, and any other language via the `strings` spec key.
+- Bottom-right: **`WPP Enterprise Solutions | MAP`** — WPP **Bold 700** 16 px Navy (White on dark slides), at right 80 / bottom 34.
+- Far bottom-right: page number — 11 px, at right 80 / bottom 14. The `.pageno` element ships **empty**: page numbers are computed at runtime from the live slide count (see §14.5) — never hand-number.
+- Covers have no footer strip (the logo badge takes its place). Dividers/outros keep the brand line + page number, with contrast handled automatically by the colourway's `foot`/`edge` roles (§11).
+
+---
+
+## 11. Backgrounds by moment (the deck's rhythm)
+
+| Moment | Background recipe |
+|---|---|
+| **Default content** | Flat **WPP Cream** (the one consistent background for all content — never swap to pure White; see §3.3a). No dots behind content-dense slides. |
+| **Content, gentle lift** | Cream with a tone-on-tone corner cluster — the shell's `data-dots` lift presets (`lift-corner`, `lift-orange-soft`, `lift-navy-corner`). |
+| **Content, composed** | Tone-on-tone dot fields (the `field-*` `data-dots` presets), colour panels, and motif art per the design direction's row in SKILL.md (§12.15–§12.16); Cream stays the base. |
+| **Cover / title** | The locked cover frame with registered art (§12.1a) — `mountain` full-bleed by default; alternates via the `cover` spec key. |
+| **Divider** | The locked v4 playbook composition (§12.3 — one-hue macro scatter + bottom-pinned Thin caps title; `dividerStyle:"classic"` keeps the v3 geometry) in **one of six sanctioned colourways, chosen ONCE per deck** via the `dividerColourway` spec key: **`orange` (default — the house look) · `orange-600` · `orange-500` · `white` (tone-on-tone) · `navy-dots` (Navy macro dots + Orange 700 accent on Cream) · `navy-full` (full Navy slide, Cream/White dots)**. Every divider in a deck is identical — the colourway never rotates between sections. Footer contrast is automatic: each colourway carries `foot`/`edge` roles so the brand line, page number and confidential line flip Navy/White depending on what they sit over. If no colourway is named, the design direction picks it (`statement-led` → `navy-dots`; otherwise `orange`). |
+| **Statement / quote** | Flat Cream, type only; optionally a faint lift cluster on one side. |
+| **Outro** | **Light (default):** Cream + the Orange dot composition. **Dark, via `outro:"dark"`:** Navy with cream/white macro dots + Orange 700 accent — the sanctioned close for statement-led decks. Footer contrast handled by the same `foot`/`edge` mechanism. |
+| **Dark moments** | Flat Navy `#000050`, White text, White/Cream or Orange 700 dots. Use for at most ~1 in 6 slides. |
+
+---
+
+## 13. Building the HTML deck — conventions & checklist
+
+### 13.1 Skeleton
+
+```css
+.slide {
+  position: absolute; top: 0; left: 0;
+  width: 1920px; height: 1080px; overflow: hidden;
+  background: var(--bg);            /* Cream — the one content background */
+  color: var(--text);
+  font-family: 'WPP', 'Poppins', 'Century Gothic', system-ui, sans-serif;
+  font-weight: 300;                 /* Light is the display voice; .body/.tbx set Regular 400 (§4.2) */
+  font-feature-settings: "salt" 1;
+  display: none;                    /* nav script reveals the active slide */
+}
+body:not(.js) #frame .slide:first-of-type { display: block; }  /* no-JS fallback */
+body.js .slide.is-active            { display: block; }         /* script adds .js */
+.slide--navy  { background: var(--bg-dark); color: var(--text-inv); }
+.slide--tint  { background: var(--bg-tint); }
+/* .slide--white — rare only; see §3.3a. Default (.slide) is Cream. */
+.slide--white { background: var(--bg-alt); }
+```
+
+- One `<section class="slide" data-slide-id="…">` per slide; keyboard ←/→ navigation; slide counter. The nav script stamps `body.js` on load (a `<noscript>` banner explains the single-slide fallback) and **fills every empty `.pageno` at runtime from the live slide count** — never bake page numbers into the markup.
+- **Scaling — avoid the flex-shrink trap.** Do **not** put the fixed 1920 × 1080 `#frame` inside a `display:flex` centring container: a flex child with an explicit width still shrinks (default `flex-shrink:1`), which silently squashes the frame and pushes content off the right edge. Instead scale it absolutely and centre by translate:
+
+```css
+#stage { position: fixed; inset: 0; overflow: hidden; background: #0a0a1a; }
+#frame { position: absolute; top: 0; left: 0; width: 1920px; height: 1080px; transform-origin: top left; }
+```
+```js
+function fit(){
+  var vw=innerWidth, vh=innerHeight, s=Math.min(vw/1920, vh/1080);
+  frame.style.transform='translate('+(vw-1920*s)/2+'px,'+(vh-1080*s)/2+'px) scale('+s+')';
+}
+addEventListener('resize', fit); fit();
+```
+  (If you prefer flex centring, you must add `flex-shrink:0` to `#frame`.) Always verify in the browser that `#frame`'s bounding rect fills the viewport with no side gutter before shipping.
+- Decorative dots: absolutely-positioned `div`s with `border-radius: 50%`, flat `background`, no opacity, `z-index` below content, cropped by `overflow: hidden`. The locked compositions are drawn by the shell's `[data-dots]` presets — their geometry is verbatim and their colours resolve through the deck's colourway; never hand-edit them.
+- Halftone illustrations: use the eight shipped motifs (§9.1a). Where no shipped motif fits, approximate with an inline-SVG dot pattern in Navy or Orange 700 — or omit and use dot clusters instead. Do not substitute regular photography for the halftone style unless the outline calls for photography, and never promise assets the package does not contain.
+
+### 13.2 Mapping an outline to slides
+
+1. Generate the shell: `python scripts/build_shell.py --spec spec.json --out deck.html`. The spec's five required keys (title, subtitle, month, presenter, chapters) plus the sanctioned choice keys (`direction`, `dividerColourway`, `cover`, `outro`, `confidential`, `lang`, `contact`, `illustrations`) produce the locked cover, agenda, dividers and Thank-you, and one placeholder per planned content slide. (Single-chapter micro-decks omit the agenda and dividers automatically.)
+2. **When the input is a deck-content-builder Markdown file, follow the input-mode mapping in SKILL.md — approved titles are carried verbatim.**
+3. Fill each placeholder from the archetype snippets: key messages / transitions → **Big Statement**; quotes → **Big Quote** (§12.4–§12.5).
+4. Body content: choose column count by the number of parallel points (1–4); sequences get **Arrows**, parallel relations get **Dots**, categories get **Pills** (§12.6–§12.7).
+5. Numbers → data-viz archetypes (§12.12) — circles first (area-true, never diameter-scaled), bars only when genuinely needed.
+6. Rhythm check: all content slides on the one Cream background (§3.3a), orange as seasoning, navy for punctuation moments (max ~1 in 6); no two adjacent slides carrying the same heavy dot treatment.
+7. Verify: self-containment (§2a), payload budget, then `scripts/verify_deck.py`.
+
+### 13.3 Do / Don't
+
+**Do**
+- Apply the **five locked defaults** via the generator (§12.0) — cover, agenda, divider, Thank-you, Cream background — changing only spec keys and content placeholders.
+- Name the company **"WPP Enterprise Solutions | MAP"** everywhere (§1.7).
+- Use huge Thin type and macro dots for drama; keep content slides quiet and airy; orange as seasoning ("avoid making things too orange").
+- Keep headlines to two lines max; drop the eyebrow subtitle when the headline wraps.
+- Anchor decorative dots to edges/corners, bleeding off-canvas.
+- Keep all body text Navy (or White on dark), left-aligned; use the exact hex values; flat fills everywhere.
+- Assemble content slides from `assets/snippets/`; for interactive decks, use the house expandable-card pattern for anything clickable (§13.4).
+
+**Don't**
+- No gradients, shadows, outlines around cards, rounded-corner cards (pills only), accent bars/underlines.
+- No text over Navy dots (except the divider-title knockout).
+- No single dominant centred circle heavier than the canvas.
+- No orange body copy, headlines or bullets — only the sanctioned moments of §1.4; no colours outside this document; no bold-in-body emphasis.
+- No dense multi-colour charts, and no diameter-scaled bubbles (§12.12) — circles, flat colours, generous labels.
+- Never recolour or restyle the logo; Navy or White only, safe space respected. Never write "VML MAP" / "VMLMAP" (§1.7).
+- Never hand-build, hand-edit or skip any of the four locked slides — the generator emits them; spec keys are the only sanctioned variation (§12.0).
+- Never reference or promise assets that are not in the ships-with inventory.
+
+---
+
+## 15. Layout & UX laws (v3.6) — enforced geometry
+
+Everything above says what the brand looks like; this section says what a slide
+is **mechanically allowed to do**. These are laws, not taste: `verify_deck.py
+--screenshots` measures every one of them from the rendered DOM (glyph-accurate
+rects, headless Chrome) and **FAILs the build** on violations. A slide that
+looks right but breaks a law is broken — fix the geometry, don't argue with
+the ruler.
+
+### 15.1 Safe areas & reserved bands
+
+| Zone | Reserved for | Law |
+|---|---|---|
+| x < 80 · x > 1840 | margins | No text glyph starts left of x 80 or ends past x 1840. Decorative art bleeds freely; text never does. |
+| y 28–132 | headline block | Only `.headline` (+ `.subtitle` at 132). Content never rises above y 240 except panel/canvas compositions that own the full height. |
+| y 985–1080 | footer furniture | Only `.footer-brand`, `.pageno`, `.confidential`, `.source`. No other TEXT enters this band, ever. |
+| Furniture anchor corners — bottom-left (0–420, 1000–1080) and bottom-right (1500–1920, 1000–1080) | furniture legibility | Decorative fills entering these corners must leave the furniture readable: the verifier samples the pixels under each furniture line and fails contrast < 2:1 (warns < 3:1). White/Cream shapes under Navy text pass; same-tone shapes under same-tone text are the classic failure (a cream dot under the cream `PRIVATE & CONFIDENTIAL` line on a navy slide). |
+
+### 15.2 Overlap laws (the collision register)
+
+1. **Text never intersects text.** Two text-bearing elements from different
+   components may not overlap by more than 4px in both axes. This includes
+   display numerals vs their own captions (a 280px `.hero-num--l` line box
+   WILL collide with a `.col-sub` below it inside a 768px panel — size down).
+2. **Decoration never covers more than 30% of a text block.** Dots, motifs,
+   ghost numerals, rules and panels either stay clear of text boxes or the
+   text moves. The sanctioned escape hatch for a deliberate composition is
+   `data-text-safe="true"` on the decor element — the verifier downgrades to
+   a printed WARN and the art pass must confirm legibility by eye.
+3. **Body copy never sits on halftone/texture art.** Statements and headlines
+   may cross *sparse* texture only when the art-direction pass confirms
+   contrast by eye; paragraphs (< 28px) never do. The §12.8 `.compare-art`
+   centrepiece is sized by CSS (`width:100%` on its img — never remove it);
+   its text zones at x 80–500 / 1420–1840 exist because the art stays inside
+   x 478–1442.
+4. **Ghost numerals (`.num-ghost`) live in text-free zones.** Same-colour
+   ghost + statement = both illegible. Differentiate by POSITION (right/below
+   the text box), never by opacity (opacity tricks are off-brand, §12.14).
+5. **Diagram hairlines keep 24px clearance from glyphs.** A vrule crossing a
+   `−` sign turns "−50%" into "+50%" — rules, stems and ticks sit ≥ 24px from
+   any glyph edge (40px for display-size numerals), and identical siblings use
+   identical clearance.
+6. **One art layer per canvas zone.** A dot field and a motif/texture never
+   occupy the same region of a slide — the later one paints over the circles
+   and reads as a rendering error, not a composition. Statement recipes take
+   the accent field (V1) **or** the motif (V1b), never both; when two art
+   devices genuinely coexist on one slide they live in separate zones
+   (e.g. `field-tl` + `motif--bottom`).
+
+### 15.3 Alignment laws (the grid is not a suggestion)
+
+- **Siblings share edges.** Same-component siblings (columns, cards, KPIs,
+  milestones, links inside cards) align their tops within 6px and their gaps
+  within 8px. Auto-sized (`max-content`) grid tracks drift when content
+  lengths differ — the kit's `.hero-row`/`.kpi-row` are `grid-auto-columns:1fr`
+  for exactly this reason; don't override to auto.
+- **Timelines run on two lanes.** Above-axis milestones share ONE top edge,
+  below-axis milestones share ONE top edge; stem length absorbs copy-length
+  differences. One milestone width per slide.
+- **Pinned, not flowed.** Anything that must share a baseline across sibling
+  containers (card CTAs, panel captions) is pinned (`margin-top:auto` /
+  absolute), never flowed after variable-length copy.
+- **Centre-anchored nodes.** Radial/orbit nodes anchor by their centre
+  (`translate(-50%,-50%)`) at exact clock positions — top-left anchoring skews
+  every label by half its own width.
+- **Diagrams centre on the slide midline (x 960)** unless a content column
+  justifies the offset; an unexplained 100px skew reads as an accident.
+- **One geometry per furniture element per deck.** The `.takeaway` bracket
+  band lives at x 160 / y ≈ 877 everywhere; in split layouts adjust `right`,
+  never `left`. Source lines, subtitles and takeaways sit at the same y on
+  every slide that carries them.
+
+### 15.4 Spacing & fit laws
+
+- **Containers fit their content and content fits its container.** Display
+  numerals must fit their panel's inner width (768px navy panel − 2×56 padding
+  = 656px: ≈ 4 thin glyphs at 240px — measure, then size). Text inside
+  circles stays within 70% of the diameter. Cards hug content height
+  (`.proc--cards` is 260→700 + takeaway) — a card whose bottom half is empty
+  white is a composition failure, not whitespace.
+- **Minimum clearances:** 24px text↔hairline, 40px text↔display-rule, 40px
+  text↔unrelated art edge, 36px padding inside white surfaces (`.tbx`,
+  `.card`, `.cell`).
+- **No accidental dead bands.** A full-width empty strip > 280px inside
+  y 240–880 must be either declared (`data-composition="intentional-air"` on
+  statement-class slides) or filled by the recipe's anchor (ruler, takeaway,
+  field). The stats V1 quartet keeps its bottom ruler for exactly this reason.
+
+### 15.5 Contrast floor (measured, not assumed)
+
+- Body copy ≥ 4.5:1, display type ≥ 3:1 against its EFFECTIVE background —
+  the pixels actually behind it, not the slide colour.
+- Footer furniture ≥ 3:1 always (verifier samples it; < 2:1 fails the build).
+- Thin (weight-100) orange numerals: Orange 700 on cream measures ~2.5:1 —
+  sanctioned ONLY as ≥ 64px wayfinding numerals inside locked compositions
+  (agenda). Content-slide numerals default to **Orange 800** (`.proc .n`
+  ships that way) or Navy.
+- The §3.5 matrix governs colour pairs; this law extends it to text-over-art:
+  when text must cross art, the art under the glyphs is what counts.
+
+### 15.6 Vertical balance
+
+Content bands centre between the headline bottom (y ≈ 132) and their anchor
+(takeaway top y ≈ 877, or the footer band). Top-heavy compositions with all
+mass above the fold and 40%+ empty below read as unfinished — anchor the
+bottom (takeaway / ruler / KPI band / field) or centre the mass.
+
+### 15.7 Motion UX laws (why the deck never "teleports")
+
+The §14 doctrine says what may move; these laws say what must NEVER happen —
+each one is wired into the shell, listed here so nobody undoes it:
+
+1. **Choreography ends exactly at static layout.** Every entrance keyframe's
+   end state equals the element's resting geometry; captures with
+   `?motion=off` are the reference the animated deck must settle into.
+2. **No property is contested.** Entrances own `translate`/`scale`/`opacity`;
+   pointer-parallax owns `transform`; hover states own `transform` (buttons)
+   or `scale` where no entrance animates it. A hover transition on a property
+   an entrance keyframe animates completes invisibly under the animation,
+   then SNAPS on release — the #1 teleport cause.
+3. **Count-ups never reflow.** Counting numerals pin their final width
+   (`min-width` for the duration + `tabular-nums` + `1fr` tracks) so ticking
+   digits can't resize columns or re-wrap neighbours. Numerals with word
+   suffixes ('1 Sep', '12 weeks') never count.
+4. **Kinetic type splits before first paint.** Word-span splitting after
+   display re-runs text-wrap balancing and can visibly re-break lines
+   (Safari); the shell splits at load.
+5. **Re-showing the current slide is a no-op.** Boundary keys / same-hash
+   navigation must not replay choreography on a visible slide.
+6. **Parallax variables are seeded** (0,0) so the first pointer event eases
+   from rest instead of lurching from an unset state.
+
+### 15.9 Placement laws (v4): the content edge and media anchoring
+
+1. **Content-edge conformance.** On every non-bleed content slide the leftmost
+   text block starts at x = 80 ± 6 and the `.headline` sits at exactly x = 80.
+   Slides whose text edge wanders are WARNed (§2). Panel/canvas compositions
+   that own the full height, edge-bled media, and the locked slides are exempt.
+2. **Media anchoring.** Any rendered media block ≥ 200 × 200 px (`<img>`, motif
+   host, `.duo`, photo panel) must touch at least one canvas edge (bleed), sit
+   in a canvas corner, or carry `data-inset-ok` (implied by `.screenshot`;
+   granted to mosaic tiles whose gutters are the composition). A rectangle
+   floating inside the margins on all four sides is a FAIL — corner it or
+   bleed it (§12.9). Decorative dots and icons are not media; they are exempt.
+
+### 15.10 Type-size floor (v4)
+
+Measured on the rendered DOM (§4.5): body-class text < 20 px WARNs; any other
+visible text < 15 px FAILs, except the four furniture elements (`.pageno`,
+`.confidential`, `.source`, `.footer-brand`), which are frozen at their shipped
+sizes (≥ 11 px) and may never be joined by new text at that scale.
+
+### 15.8 Enforcement
+
+`python scripts/verify_deck.py deck.html --screenshots shots/` runs, on top of
+the brand checks: glyph-accurate **overlap / margin / footer-band / grid-drift
+geometry** (15.1–15.3), **furniture contrast sampling** (15.1/15.5), and the
+v4 probes — **type-size floor** (15.10), **content-edge conformance** (15.9.1),
+**media anchoring** (15.9.2), and the **card-grid static check** (§12.14).
+FAILs block delivery; WARNs (including every `data-text-safe` and
+`intentional-air` declaration) are re-checked by eye in the §12.15a art pass.
+The art pass judges what the ruler can't (balance, rhythm, legibility over
+art); the ruler catches what eyes skim past (a 4px overlap, a 1.04:1 footer).
+A deck ships only when both agree.
+
+
+## 12.14 / 12.15 / 12.15a — composition (hoisted into CORE)
+
+These three subsections of §12 are **enforced by verify_deck.py on every
+deck** — the composition tripwire and the C1-C7 art-direction checklist.
+They are reproduced here verbatim so they load with CORE; the rest of §12
+stays in `sections/12-slide-archetype-library.md`, on demand.
+
+### 12.14 Composition guardrails (verified in render QA)
+
+Constraints the kit's geometry imposes — respect them instead of rediscovering them:
+
+- **Lead paragraphs vs grid archetypes:** a `.content-band` lead line fits above `.timeline` (top 540; ≤2 lines) and `.kpi-row` (top 340; exactly 1 line). It collides with `.proc` (top 300) — never combine.
+- **Timeline positioning:** nodes are 16 px, so centre with `left:calc(P% − 8px)`; labels take the bare `left:P%` (the class self-centres). Keep nodes within ~5–95% or `nowrap` labels escape the 80 px margins.
+- **Stat circles below Ø ~340 px** need inline font downscales (e.g. 68/16 px at Ø 330, 46/12 px at Ø 220) or the value/label overflow the circle.
+- **`.img-half-media`** puts the footer furniture ON the image and the headline can run under it: cap the headline with an inline `max-width:820px` and keep the image's bottom-right corner visually light — otherwise use the framed `img-right` layout.
+- **`lift-corner` dots** overlap the footer zone by design; their colours are White/Cream so the Navy footer stays readable — do not recolour them darker.
+- **Card grids use the `.canvas-grid--cards` modifier** (`grid-auto-rows:auto; align-items:start; align-content:start`) — never the bento's default `grid-auto-rows:1fr`. With `1fr` rows, one opened `.card-detail` stretches every sibling in the row; with the modifier, **each card expands individually: the opened `.card-detail` renders as a flat white overlay dropping over whatever sits below, and no sibling ever moves or stretches** (§13.4). The verifier fails a `.card` inside a `1fr`-rows grid.
+- **`.col-sub` carries `margin-bottom:18px`** — zero it inline when reusing it as a row label inside a centred grid (e.g. bar-chart rows).
+- **Panel headline cap:** when a right-side `.panel` is ≥ 768 px wide (`--w768`/`--w960`), cap the headline with an inline `max-width:1040px` or it runs under the panel.
+- **Motif text-safe zones:** `.motif--right` keeps text left of x = 1200; `.motif--bottom` keeps text above y = 560; `.motif--backdrop` sits behind stat compositions only; `.motif--panel` lives inside panels; `.motif--bleed` is only for R11 posters (§12.16 (b)).
+- **`field-navy` dots never sit behind text** — place them only where the composition leaves that zone empty (§5, §3.4).
+- **`.takeaway` holds ONE line, ≤ 90 characters** — a second line collides with the footer furniture.
+- **`.num-ghost` uses flat sanctioned tones only:** Orange 500 on Cream, White/Cream on Navy — never opacity tricks, never other colours.
+- **`.canvas-grid` cells need explicit `grid-column`/`grid-row` spans inline** — auto-placement produces even boxes, not the asymmetric bento the recipes call for (R2).
+
+### 12.15 Composition recipes (mined from the template)
+
+These 17 recipes are the template's own full-canvas compositions, translated to the kit (all coordinates re-extracted from the source slides; 1920 × 1080 canvas). **Content slides are ASSEMBLED FROM RECIPES, never from bare text bands** — a headline over a `.content-band` of copy is a draft, not a slide. **The first variant of every snippet file is a full-canvas recipe — pasting it unmodified must pass §12.15a.** Registry format: name · template source · geometry (px) · kit classes · snippet file · direction affinity.
+
+- **R1 · Split rail dashboard** — slide 95 (halves variant: 97). Full-height 440 px rail `.panel .panel--w440 .panel--tint|--nav` carrying 4 stat rows via `.panel-inner` (~y 162/377/589/806; values 60–72 px, labels 20 px); main field: lead paragraph ~(80, 124) 1170 × 170 + KPI row anchored LOW — `.kpi-row .kpi-row--low` (y 747–930). → `splits.html` · data-forward/editorial.
+- **R2 · Stat mosaic bento** — slide 96. `.canvas .canvas-grid` 12-col bento: 5 asymmetric `.cell` zones filling the whole band, one hero stat, 2 × 2 stat quads at 60 px. → `charts.html` · data-forward.
+- **R3 · Hero numeral quartet + ruler** — slide 94. 3–4 `.hero-row` numerals (`.n` 144 px) in ~244 × 164 boxes at y ≈ 234, CAPS labels y ≈ 361, 380 px bodies y ≈ 440; `.vrule` hairlines x ≈ 520/960/1400, h ≈ 120; bottom `.ruler` y ≈ 881 + `.ruler-ticks` (majors every ~360 px) + `.ruler-label` CAPS y ≈ 931. → `stats.html` · data-forward.
+- **R4 · Hub & spokes** — slides 100/103. Centre circle Ø 460–500 at ~(747, 333) — flat navy `.stat-circle` or `.motif--backdrop` — ringed by 6 × 19 px satellite `.dot`s; flanking 475 px columns (`.col-dot` + subhead + body) at x ≈ 81/1399, rows y ≈ 277/516/756. Slide-103 variant: overlapping Ø 501/Ø 423 triptych + bottom index row of 3. → `stats.html` · data-forward.
+- **R5 · Cluster diagram + index row** — slide 102. Two Ø 465 navy circles overlapping at (380, 311)/(767, 308), knockout labels, white-text lists inside; Ø 187 satellites; 1 px orange connector lines; bottom row of 6 × (dot + subhead + body) 278 px wide, y 806–959. 100 % active canvas. → `stats.html` **V6 (paste-ready)** · data-forward.
+- **R6 · Gantt swimlanes** — slides 90/91. `.gantt` band; `.lane-dot`s x ≈ 42, y ≈ 221/394/567; `.bar`s 6 px flat orange-ramp fills y ≈ 281–532, widths 197–750; `.vrule` guides x ≈ 982/1102/1550/1763; bottom `.flag` chips 206 × 46 at y ≈ 834/914. → `process-timeline.html` · data-forward.
+- **R7 · Milestone ruler timeline** — slide 93. Full-width `.ruler` y ≈ 569, alternating year `.ruler-label`s y ≈ 528/600; up to 12 `.stem`s (h 43–183) to `.milestone` blocks ABOVE AND BELOW the line (y range 226–954). → `process-timeline.html` · all directions.
+- **R8 · Phase board** — slide 117. Centre `.cell--tint` panel (480, 200) 960 × 680; step headers on the top rule (14 px dots, STEP CAPS labels, `.pill` time chips); 4 body columns 402 × 399; full-width bottom band (40, 880) 1839 × 120 split by white rules. → `process-timeline.html` **V6 (paste-ready)** · editorial/data-forward.
+- **R9 · Full-height card row + takeaway bracket** — slides 110/115. 4 white cards 360 × 560 at y = 200 via `.tbx-row .tbx-row--fill` (pill chip + 36 px title + rule + body per card); closer variant: `.takeaway` bracketed 48 px Light line (template bracket arms 23 × 120 at x ≈ 160/1737, band ~(201, 805) 1515 × 115). → `boxes.html` · all directions.
+- **R10 · Motif-side statement** — layouts 44/46. `.big-statement` 150–180 px at ~(109, 245), max-width 1500; art side = `.lift` `data-dots="field-right|field-accent"` or `.motif--right` `data-motif`; layout-46 art zone ~(1071, 399) 849 × 681 (text-safe left). → `statement-quote.html` · statement-led.
+- **R11 · Full-bleed motif title** — layout 82. `.motif--bleed` `data-motif` full-canvas + ALL-CAPS Thin 108 px title at ~(45, 25). The "chapter poster" moment. → `image-content.html` · statement-led/high-impact.
+- **R12 · Tile rail grids** — layouts 69/70/73/74. ×5 portrait rail: 320 × 680 tiles at y = 160 + SUBHEAD rows y ≈ 874; 3 × 2 grid: 560 × 319 tiles; 2 × 2 offset: 639 × 359. Tiles are flat `.cell`/`.cell--nav`/`.cell--tint` panels, stat blocks, or `.motif--panel` crops. → `cards.html` **V4 (paste-ready, 3×2 form)**; ×5 portrait rail hand-built from these coordinates · all.
+- **R13 · Split colour-block 40/60** — synthesized from slide 95 + layout 83. `.panel--w768` (40 %) or `.panel--w960` (50 %), `--nav`/`--tint` (`--orange` high-impact only), carrying display type (`.hero-num--l/--xl` or a short statement) or a `.motif--panel`; content columns on the other side; headline capped inline at max-width 1040 px when the right panel is ≥ 768 px (§12.14). → `splits.html` · high-impact/statement-led.
+- **R14 · Orbit hub** — inspired by pptx slide 27. 3 concentric `.orbit` rings (dotted circle borders) centred right of the headline, 4 `.orbit-node` labels on the middle ring, `.orbit-hub` centre with navy fill and label. Headline and body text left of centre. → `orbit.html` · editorial/statement-led.
+- **R15 · Scorecard bento** — inspired by pptx measurement frameworks. `.canvas .canvas-grid` 3 × 2 with `.cell` blocks, each carrying a category header (`.col-sub` 14 px), hero number (Thin 72 px), and label; one `.cell--nav` contrast moment, one `.cell--tint` highlight max. → `stats.html` V5 · data-forward.
+- **R16 · Venn diagram** — inspired by pptx slide 77. `.venn` container with 2–3 `.venn-set` circles (dotted border, translucent fill) overlapping; `.venn-label` inside each set and at the intersection. No motif — the diagram IS the composition. → `comparison.html` V2 · editorial.
+- **R17 · Ecosystem map** — inspired by pptx slides 63-64. Centre `.orbit` ring + navy hub; 4 zones (positioned absolutely, top-left / top-right / bottom-left / bottom-right) with dot + `.col-sub` + `.body`; dotted connecting lines between zones and hub. → `process-timeline.html` V5 · editorial/data-forward.
+
+### 12.15a Composition checklist (the art-direction pass)
+
+Seven criteria, each checkable on a screenshot. Every content slide must pass all seven **by looking at its render** — this pass is visual, not textual:
+
+- **C1 — Focal element.** The slide has one: display type ≥ 100 px, a motif, a dot field, a panel, or a chart/stat composition ≥ 300 px tall. A headline alone never qualifies.
+- **C2 — No dead lower half.** Composed elements extend below y = 700, and the background fraction in the band y 432–990 is < 0.83 (v4 tightened; the verifier WARNs ≥ 0.83 and FAILs ≥ 0.92). Exception: registered statement/quote slides with deliberately asymmetric air.
+- **C3 — Edge anchor.** At least one element touches or bleeds off an edge — or the slide is a deliberate centred statement.
+- **C4 — Type discipline.** ≤ 2 text scales + ≤ 1 display moment; body ≥ 20 px; headline ≤ 2 lines.
+- **C5 — Collisions.** Nothing under the footer zone (bottom-right 500 × 90); headline clear of art; text never over navy dots or dense halftone.
+- **C6 — Deck rhythm.** No two adjacent content slides share archetype + treatment; decks of 8+ content slides use ≥ 2 density variants and ≥ 3 recipes.
+- **C7 — Colour quota.** The slide respects its direction's colour quota per §11.
+
+Note: `verify_deck.py` enforces C2 numerically as a tripwire; the pass itself is done BY LOOKING at each slide's screenshot.
+
+**Declared air:** thin display type is pixel-light, so a template-faithful display slide (an R3 quartet over a hairline ruler) can trip the tripwire while being perfectly composed. When — and only when — the air is shaped (hairlines, rulers or counterweights carry the eye through it), declare `data-composition="intentional-air"` on the section: the verifier downgrades its FAILs to WARNs and always prints the declaration, and the G2 seen-report must name it. Never declare air on an undesigned slide.
+

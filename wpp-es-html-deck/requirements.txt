@@ -1,0 +1,13 @@
+# Python dependencies for the wpp-es-html-deck scripts.
+#   pip install -r requirements.txt
+#
+# Required by:
+#   scripts/halftone.py      — hard dependency (brand dot-halftone generation)
+#   scripts/verify_deck.py   — optional; only for --contact-sheet, which
+#                              degrades to a WARN when Pillow is absent
+Pillow>=10.0
+
+# Not installable via pip — see README.md:
+#   Google Chrome (headless) is required by verify_deck.py for --screenshots
+#   and the geometry probe. Auto-detected on macOS/Linux/Windows; override
+#   with $WPP_DECK_CHROME.

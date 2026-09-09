@@ -1,0 +1,2067 @@
+{
+ "canvas": [
+  1920,
+  1080
+ ],
+ "templates": [
+  {
+   "file": "boxes.html",
+   "archetype": "boxes",
+   "label": "V1 \u00b7 R9 FULL-HEIGHT CARD ROW + TAKEAWAY BRACKET",
+   "slots": {
+    "headline": {
+     "items": 1,
+     "min_chars": 10,
+     "ideal_chars": 24,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "pill": {
+     "items": 4,
+     "min_chars": 4,
+     "ideal_chars": 7,
+     "max_chars": 43,
+     "font_px": 15.0,
+     "basis": "measured"
+    },
+    "takeaway": {
+     "items": 1,
+     "min_chars": 22,
+     "ideal_chars": 49,
+     "max_chars": 56,
+     "font_px": 48.0,
+     "basis": "geometry"
+    },
+    "tbx": {
+     "items": 4,
+     "min_chars": 25,
+     "ideal_chars": 57,
+     "max_chars": 142,
+     "font_px": 22.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 329,
+   "slide_max_chars": 444
+  },
+  {
+   "file": "boxes.html",
+   "archetype": "boxes",
+   "label": "V2 \u00b7 COMPACT \u2014 related items joined by dots (pair with a lift or takeaway on sparse decks)",
+   "slots": {
+    "col-sub": {
+     "items": 3,
+     "min_chars": 4,
+     "ideal_chars": 5,
+     "max_chars": 45,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 13,
+     "ideal_chars": 30,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "takeaway": {
+     "items": 1,
+     "min_chars": 19,
+     "ideal_chars": 43,
+     "max_chars": 49,
+     "font_px": 48.0,
+     "basis": "geometry"
+    },
+    "tbx": {
+     "items": 3,
+     "min_chars": 18,
+     "ideal_chars": 42,
+     "max_chars": 197,
+     "font_px": 22.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 214,
+   "slide_max_chars": 288
+  },
+  {
+   "file": "boxes.html",
+   "archetype": "boxes",
+   "label": "V3 \u00b7 COMPACT \u2014 sequence joined by arrows",
+   "slots": {
+    "col-sub": {
+     "items": 4,
+     "min_chars": 4,
+     "ideal_chars": 6,
+     "max_chars": 32,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 13,
+     "ideal_chars": 30,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "tbx": {
+     "items": 4,
+     "min_chars": 12,
+     "ideal_chars": 27,
+     "max_chars": 142,
+     "font_px": 22.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 162,
+   "slide_max_chars": 218
+  },
+  {
+   "file": "cards.html",
+   "archetype": "cards",
+   "label": "Variant 1 \u2014 2\u00d72 full-height card bento (.canvas-grid--cards: one card expands alone;",
+   "slots": {
+    "body": {
+     "items": 8,
+     "min_chars": 30,
+     "ideal_chars": 68,
+     "max_chars": 78,
+     "font_px": 26.0,
+     "basis": "geometry"
+    },
+    "card-cta": {
+     "items": 4,
+     "min_chars": 4,
+     "ideal_chars": 6,
+     "max_chars": 586,
+     "font_px": 18.0,
+     "basis": "measured"
+    },
+    "col-sub": {
+     "items": 4,
+     "min_chars": 4,
+     "ideal_chars": 11,
+     "max_chars": 32,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 14,
+     "ideal_chars": 33,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 645,
+   "slide_max_chars": 870
+  },
+  {
+   "file": "cards.html",
+   "archetype": "cards",
+   "label": "Variant 2 \u2014 three across (compact). \u00a715.3: cards are flex columns with the CTA",
+   "slots": {
+    "body": {
+     "items": 6,
+     "min_chars": 31,
+     "ideal_chars": 70,
+     "max_chars": 80,
+     "font_px": 26.0,
+     "basis": "geometry"
+    },
+    "card-cta": {
+     "items": 3,
+     "min_chars": 4,
+     "ideal_chars": 6,
+     "max_chars": 586,
+     "font_px": 18.0,
+     "basis": "measured"
+    },
+    "col-sub": {
+     "items": 3,
+     "min_chars": 4,
+     "ideal_chars": 11,
+     "max_chars": 45,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 11,
+     "ideal_chars": 26,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 497,
+   "slide_max_chars": 670
+  },
+  {
+   "file": "cards.html",
+   "archetype": "cards",
+   "label": "Variant 3 \u00b7 IMAGE-TOP CARDS \u2014 3 cards with photo/image above + title + body (case studies,",
+   "slots": {
+    "body": {
+     "items": 3,
+     "min_chars": 42,
+     "ideal_chars": 95,
+     "max_chars": 167,
+     "font_px": 26.0,
+     "basis": "geometry"
+    },
+    "col-sub": {
+     "items": 3,
+     "min_chars": 5,
+     "ideal_chars": 12,
+     "max_chars": 45,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 18,
+     "ideal_chars": 40,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "subtitle": {
+     "items": 1,
+     "min_chars": 8,
+     "ideal_chars": 18,
+     "max_chars": 122,
+     "font_px": 24.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 379,
+   "slide_max_chars": 511
+  },
+  {
+   "file": "cards.html",
+   "archetype": "cards",
+   "label": "V4 \u00b7 R12 TILE GRID 3\u00d72 \u2014 560\u00d7319 flat tiles mixing .cell / .cell--nav stat /",
+   "slots": {
+    "body": {
+     "items": 3,
+     "min_chars": 40,
+     "ideal_chars": 89,
+     "max_chars": 167,
+     "font_px": 26.0,
+     "basis": "measured"
+    },
+    "cell": {
+     "items": 2,
+     "min_chars": 3,
+     "ideal_chars": 3,
+     "max_chars": 4,
+     "font_px": null,
+     "basis": "measured"
+    },
+    "cell--nav": {
+     "items": 1,
+     "min_chars": 3,
+     "ideal_chars": 3,
+     "max_chars": 4,
+     "font_px": null,
+     "basis": "measured"
+    },
+    "cell--tint": {
+     "items": 1,
+     "min_chars": 4,
+     "ideal_chars": 4,
+     "max_chars": 5,
+     "font_px": null,
+     "basis": "measured"
+    },
+    "col-sub": {
+     "items": 7,
+     "min_chars": 7,
+     "ideal_chars": 16,
+     "max_chars": 18,
+     "font_px": 24.0,
+     "basis": "geometry"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 16,
+     "ideal_chars": 37,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 429,
+   "slide_max_chars": 579
+  },
+  {
+   "file": "charts.html",
+   "archetype": "chart",
+   "label": "V1 \u00b7 R2 STAT MOSAIC BENTO (5 cells fill the whole band; one navy hero)",
+   "slots": {
+    "body": {
+     "items": 1,
+     "min_chars": 36,
+     "ideal_chars": 81,
+     "max_chars": 369,
+     "font_px": 26.0,
+     "basis": "measured"
+    },
+    "cell": {
+     "items": 3,
+     "min_chars": 3,
+     "ideal_chars": 3,
+     "max_chars": 4,
+     "font_px": null,
+     "basis": "measured"
+    },
+    "cell--nav": {
+     "items": 1,
+     "min_chars": 3,
+     "ideal_chars": 3,
+     "max_chars": 4,
+     "font_px": null,
+     "basis": "measured"
+    },
+    "cell--tint": {
+     "items": 1,
+     "min_chars": 4,
+     "ideal_chars": 4,
+     "max_chars": 5,
+     "font_px": null,
+     "basis": "measured"
+    },
+    "col-sub": {
+     "items": 4,
+     "min_chars": 4,
+     "ideal_chars": 10,
+     "max_chars": 32,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 6,
+     "ideal_chars": 14,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "hl": {
+     "items": 1,
+     "min_chars": 4,
+     "ideal_chars": 9,
+     "max_chars": 12,
+     "font_px": null,
+     "basis": "measured"
+    },
+    "source": {
+     "items": 1,
+     "min_chars": 10,
+     "ideal_chars": 24,
+     "max_chars": 293,
+     "font_px": 12.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 184,
+   "slide_max_chars": 248
+  },
+  {
+   "file": "charts.html",
+   "archetype": "chart",
+   "label": "V2 \u00b7 COMPACT \u2014 horizontal bars from plain divs (widths \u221d value on one shared scale).",
+   "slots": {
+    "col-sub": {
+     "items": 4,
+     "min_chars": 4,
+     "ideal_chars": 6,
+     "max_chars": 32,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 10,
+     "ideal_chars": 24,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "source": {
+     "items": 1,
+     "min_chars": 4,
+     "ideal_chars": 10,
+     "max_chars": 293,
+     "font_px": 12.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 58,
+   "slide_max_chars": 78
+  },
+  {
+   "file": "charts.html",
+   "archetype": "table",
+   "label": "V3 \u00b7 COMPACT \u2014 .datatable (<=5 cols, <=6 rows; larger data goes to an appendix)",
+   "slots": {
+    "datatable": {
+     "items": 1,
+     "min_chars": 44,
+     "ideal_chars": 99,
+     "max_chars": 480,
+     "font_px": 22.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 9,
+     "ideal_chars": 21,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 120,
+   "slide_max_chars": 162
+  },
+  {
+   "file": "columns.html",
+   "archetype": "cols-3",
+   "label": "Variant 1 \u2014 three spacious columns + dot field + takeaway (full canvas)",
+   "slots": {
+    "body": {
+     "items": 3,
+     "min_chars": 76,
+     "ideal_chars": 169,
+     "max_chars": 194,
+     "font_px": 26.0,
+     "basis": "geometry"
+    },
+    "col-sub": {
+     "items": 3,
+     "min_chars": 4,
+     "ideal_chars": 7,
+     "max_chars": 45,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 11,
+     "ideal_chars": 25,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "hl": {
+     "items": 1,
+     "min_chars": 4,
+     "ideal_chars": 6,
+     "max_chars": 8,
+     "font_px": null,
+     "basis": "measured"
+    },
+    "subtitle": {
+     "items": 1,
+     "min_chars": 9,
+     "ideal_chars": 20,
+     "max_chars": 122,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "takeaway": {
+     "items": 1,
+     "min_chars": 24,
+     "ideal_chars": 54,
+     "max_chars": 62,
+     "font_px": 48.0,
+     "basis": "geometry"
+    }
+   },
+   "slide_ideal_chars": 633,
+   "slide_max_chars": 854
+  },
+  {
+   "file": "columns.html",
+   "archetype": "cols-4",
+   "label": "Variant 2 \u2014 four compact columns, dot headers (pair with a lift on sparse decks)",
+   "slots": {
+    "body": {
+     "items": 4,
+     "min_chars": 15,
+     "ideal_chars": 35,
+     "max_chars": 120,
+     "font_px": 26.0,
+     "basis": "measured"
+    },
+    "col-sub": {
+     "items": 4,
+     "min_chars": 4,
+     "ideal_chars": 6,
+     "max_chars": 32,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 10,
+     "ideal_chars": 24,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 188,
+   "slide_max_chars": 253
+  },
+  {
+   "file": "columns.html",
+   "archetype": "cols-2",
+   "label": "Variant 3 \u2014 two columns + pill row (tags, markets, workstreams\u2026)",
+   "slots": {
+    "body": {
+     "items": 2,
+     "min_chars": 30,
+     "ideal_chars": 67,
+     "max_chars": 260,
+     "font_px": 26.0,
+     "basis": "measured"
+    },
+    "col-sub": {
+     "items": 2,
+     "min_chars": 6,
+     "ideal_chars": 14,
+     "max_chars": 70,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 9,
+     "ideal_chars": 22,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "pill": {
+     "items": 4,
+     "min_chars": 4,
+     "ideal_chars": 6,
+     "max_chars": 43,
+     "font_px": 15.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 208,
+   "slide_max_chars": 280
+  },
+  {
+   "file": "columns.html",
+   "archetype": "cols-3",
+   "label": "Variant 4 \u00b7 ICON-LED TRIO (v3.3) \u2014 suite icons head the columns when the point",
+   "slots": {
+    "body": {
+     "items": 3,
+     "min_chars": 23,
+     "ideal_chars": 52,
+     "max_chars": 167,
+     "font_px": 26.0,
+     "basis": "measured"
+    },
+    "col-sub": {
+     "items": 3,
+     "min_chars": 4,
+     "ideal_chars": 5,
+     "max_chars": 45,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 13,
+     "ideal_chars": 30,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "takeaway": {
+     "items": 1,
+     "min_chars": 23,
+     "ideal_chars": 53,
+     "max_chars": 60,
+     "font_px": 48.0,
+     "basis": "geometry"
+    }
+   },
+   "slide_ideal_chars": 254,
+   "slide_max_chars": 342
+  },
+  {
+   "file": "columns.html",
+   "archetype": "cols-4",
+   "label": "Variant 5 \u00b7 NUMBERED STEPS \u2014 3-4 columns headed by a giant step number (.hero-num--s)",
+   "slots": {
+    "body": {
+     "items": 4,
+     "min_chars": 26,
+     "ideal_chars": 59,
+     "max_chars": 120,
+     "font_px": 26.0,
+     "basis": "measured"
+    },
+    "col-sub": {
+     "items": 4,
+     "min_chars": 4,
+     "ideal_chars": 9,
+     "max_chars": 32,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 18,
+     "ideal_chars": 41,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "subtitle": {
+     "items": 1,
+     "min_chars": 7,
+     "ideal_chars": 17,
+     "max_chars": 122,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "takeaway": {
+     "items": 1,
+     "min_chars": 22,
+     "ideal_chars": 51,
+     "max_chars": 58,
+     "font_px": 48.0,
+     "basis": "geometry"
+    }
+   },
+   "slide_ideal_chars": 381,
+   "slide_max_chars": 514
+  },
+  {
+   "file": "comparison.html",
+   "archetype": "compare",
+   "label": "\u2014",
+   "slots": {
+    "compare-left": {
+     "items": 1,
+     "min_chars": 46,
+     "ideal_chars": 103,
+     "max_chars": 118,
+     "font_px": 24.0,
+     "basis": "geometry"
+    },
+    "compare-right": {
+     "items": 1,
+     "min_chars": 45,
+     "ideal_chars": 101,
+     "max_chars": 116,
+     "font_px": 24.0,
+     "basis": "geometry"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 15,
+     "ideal_chars": 34,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "pill": {
+     "items": 2,
+     "min_chars": 4,
+     "ideal_chars": 8,
+     "max_chars": 94,
+     "font_px": 15.0,
+     "basis": "measured"
+    },
+    "takeaway": {
+     "items": 1,
+     "min_chars": 14,
+     "ideal_chars": 33,
+     "max_chars": 37,
+     "font_px": 48.0,
+     "basis": "geometry"
+    }
+   },
+   "slide_ideal_chars": 287,
+   "slide_max_chars": 387
+  },
+  {
+   "file": "comparison.html",
+   "archetype": "compare",
+   "label": "V2 \u00b7 VENN DIAGRAM \u2014 2-3 overlapping circles with labels inside and at the intersection.",
+   "slots": {
+    "headline": {
+     "items": 1,
+     "min_chars": 21,
+     "ideal_chars": 48,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "takeaway": {
+     "items": 1,
+     "min_chars": 24,
+     "ideal_chars": 55,
+     "max_chars": 63,
+     "font_px": 48.0,
+     "basis": "geometry"
+    },
+    "venn-label": {
+     "items": 2,
+     "min_chars": 27,
+     "ideal_chars": 60,
+     "max_chars": 84,
+     "font_px": null,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 223,
+   "slide_max_chars": 301
+  },
+  {
+   "file": "image-content.html",
+   "archetype": "image-poster",
+   "label": "Variant 0 \u00b7 R11 MOTIF POSTER (full-bleed halftone, chapter-poster moment)",
+   "slots": {
+    "headline": {
+     "items": 1,
+     "min_chars": 7,
+     "ideal_chars": 17,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 17,
+   "slide_max_chars": 22
+  },
+  {
+   "file": "image-content.html",
+   "archetype": "image-right",
+   "label": "Variant 1 \u2014 text left, media right. v4 \u00a715.9: .img-right-media bleeds to the right",
+   "slots": {
+    "body": {
+     "items": 1,
+     "min_chars": 38,
+     "ideal_chars": 86,
+     "max_chars": 369,
+     "font_px": 26.0,
+     "basis": "measured"
+    },
+    "col-sub": {
+     "items": 1,
+     "min_chars": 4,
+     "ideal_chars": 11,
+     "max_chars": 146,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 9,
+     "ideal_chars": 22,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 119,
+   "slide_max_chars": 160
+  },
+  {
+   "file": "image-content.html",
+   "archetype": "image-half",
+   "label": "Variant 2 \u2014 full-bleed-right media (edges top/right/bottom); clamp the headline",
+   "slots": {
+    "body": {
+     "items": 1,
+     "min_chars": 39,
+     "ideal_chars": 88,
+     "max_chars": 369,
+     "font_px": 26.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 10,
+     "ideal_chars": 24,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 112,
+   "slide_max_chars": 151
+  },
+  {
+   "file": "image-content.html",
+   "archetype": "screenshot",
+   "label": "Variant 3 \u2014 user screenshot with the sanctioned .screenshot treatment",
+   "slots": {
+    "body": {
+     "items": 1,
+     "min_chars": 29,
+     "ideal_chars": 66,
+     "max_chars": 369,
+     "font_px": 26.0,
+     "basis": "measured"
+    },
+    "col-sub": {
+     "items": 1,
+     "min_chars": 5,
+     "ideal_chars": 12,
+     "max_chars": 146,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 9,
+     "ideal_chars": 22,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 100,
+   "slide_max_chars": 135
+  },
+  {
+   "file": "image-content.html",
+   "archetype": "image-duo",
+   "label": "Variant 4 \u00b7 DUOTONE HERO SPLIT (v3.3) \u2014 the proven composition: photo one half,",
+   "slots": {
+    "big-statement": {
+     "items": 1,
+     "min_chars": 11,
+     "ideal_chars": 26,
+     "max_chars": 65,
+     "font_px": 150.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 26,
+   "slide_max_chars": 35
+  },
+  {
+   "file": "image-content.html",
+   "archetype": "dot-hero",
+   "label": "V5 \u00b7 DOT HERO (v4, \u00a79.1c) \u2014 the 'pixelated' website look: navy square-grid dot art",
+   "slots": {
+    "body": {
+     "items": 1,
+     "min_chars": 38,
+     "ideal_chars": 85,
+     "max_chars": 369,
+     "font_px": 26.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 15,
+     "ideal_chars": 34,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "subhead": {
+     "items": 1,
+     "min_chars": 10,
+     "ideal_chars": 24,
+     "max_chars": 300,
+     "font_px": 24.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 143,
+   "slide_max_chars": 193
+  },
+  {
+   "file": "logo-wall.html",
+   "archetype": "logo-wall",
+   "label": "V1 \u00b7 CATEGORISED GRID \u2014 rows with category labels + partner logos",
+   "slots": {
+    "col-sub": {
+     "items": 4,
+     "min_chars": 4,
+     "ideal_chars": 8,
+     "max_chars": 32,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 16,
+     "ideal_chars": 36,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "logo-row": {
+     "items": 4,
+     "min_chars": 13,
+     "ideal_chars": 29,
+     "max_chars": 40,
+     "font_px": null,
+     "basis": "measured"
+    },
+    "takeaway": {
+     "items": 1,
+     "min_chars": 26,
+     "ideal_chars": 58,
+     "max_chars": 66,
+     "font_px": 48.0,
+     "basis": "geometry"
+    }
+   },
+   "slide_ideal_chars": 242,
+   "slide_max_chars": 326
+  },
+  {
+   "file": "logo-wall.html",
+   "archetype": "logo-wall",
+   "label": "V2 \u00b7 HERO COUNT MOSAIC \u2014 giant number + full-height logo grid (awards / certifications)",
+   "slots": {
+    "body": {
+     "items": 1,
+     "min_chars": 36,
+     "ideal_chars": 81,
+     "max_chars": 369,
+     "font_px": 26.0,
+     "basis": "measured"
+    },
+    "col-sub": {
+     "items": 1,
+     "min_chars": 5,
+     "ideal_chars": 13,
+     "max_chars": 146,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 16,
+     "ideal_chars": 37,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "hero-num": {
+     "items": 1,
+     "min_chars": 4,
+     "ideal_chars": 5,
+     "max_chars": 14,
+     "font_px": 240.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 136,
+   "slide_max_chars": 183
+  },
+  {
+   "file": "orbit.html",
+   "archetype": "orbit",
+   "label": "V1 \u00b7 HUB CLASSIC \u2014 3 rings, 4 labelled nodes, headline left (full canvas)",
+   "slots": {
+    "col-sub": {
+     "items": 1,
+     "min_chars": 8,
+     "ideal_chars": 19,
+     "max_chars": 146,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 17,
+     "ideal_chars": 38,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "pill": {
+     "items": 4,
+     "min_chars": 4,
+     "ideal_chars": 5,
+     "max_chars": 43,
+     "font_px": 15.0,
+     "basis": "measured"
+    },
+    "subtitle": {
+     "items": 1,
+     "min_chars": 9,
+     "ideal_chars": 20,
+     "max_chars": 122,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "takeaway": {
+     "items": 1,
+     "min_chars": 14,
+     "ideal_chars": 33,
+     "max_chars": 37,
+     "font_px": 48.0,
+     "basis": "geometry"
+    }
+   },
+   "slide_ideal_chars": 130,
+   "slide_max_chars": 175
+  },
+  {
+   "file": "orbit.html",
+   "archetype": "orbit",
+   "label": "V2 \u00b7 RADIAL SPOKES \u2014 context column left, ring right: filled navy hub + 6 pill nodes",
+   "slots": {
+    "body": {
+     "items": 1,
+     "min_chars": 85,
+     "ideal_chars": 189,
+     "max_chars": 369,
+     "font_px": 26.0,
+     "basis": "measured"
+    },
+    "col-sub": {
+     "items": 2,
+     "min_chars": 7,
+     "ideal_chars": 16,
+     "max_chars": 70,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 17,
+     "ideal_chars": 39,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "pill": {
+     "items": 6,
+     "min_chars": 4,
+     "ideal_chars": 6,
+     "max_chars": 26,
+     "font_px": 15.0,
+     "basis": "measured"
+    },
+    "subtitle": {
+     "items": 1,
+     "min_chars": 6,
+     "ideal_chars": 14,
+     "max_chars": 122,
+     "font_px": 24.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 310,
+   "slide_max_chars": 418
+  },
+  {
+   "file": "orbit.html",
+   "archetype": "orbit",
+   "label": "V3 \u00b7 FLOATING BUBBLES \u2014 3-4 overlapping text circles (value props / strategic pillars)",
+   "slots": {
+    "body": {
+     "items": 4,
+     "min_chars": 31,
+     "ideal_chars": 70,
+     "max_chars": 120,
+     "font_px": 26.0,
+     "basis": "geometry"
+    },
+    "col-sub": {
+     "items": 3,
+     "min_chars": 6,
+     "ideal_chars": 14,
+     "max_chars": 45,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 13,
+     "ideal_chars": 29,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "subtitle": {
+     "items": 1,
+     "min_chars": 4,
+     "ideal_chars": 7,
+     "max_chars": 122,
+     "font_px": 24.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 358,
+   "slide_max_chars": 483
+  },
+  {
+   "file": "process-timeline.html",
+   "archetype": "process",
+   "label": "V1 \u00b7 PROCESS CARDS + TAKEAWAY (5 numbered white cards). \u00a715.4: cards hug their",
+   "slots": {
+    "body": {
+     "items": 5,
+     "min_chars": 27,
+     "ideal_chars": 62,
+     "max_chars": 92,
+     "font_px": 26.0,
+     "basis": "geometry"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 15,
+     "ideal_chars": 35,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "step-l": {
+     "items": 5,
+     "min_chars": 4,
+     "ideal_chars": 5,
+     "max_chars": 704,
+     "font_px": 15.0,
+     "basis": "measured"
+    },
+    "takeaway": {
+     "items": 1,
+     "min_chars": 16,
+     "ideal_chars": 37,
+     "max_chars": 42,
+     "font_px": 48.0,
+     "basis": "geometry"
+    }
+   },
+   "slide_ideal_chars": 407,
+   "slide_max_chars": 549
+  },
+  {
+   "file": "process-timeline.html",
+   "archetype": "timeline",
+   "label": "V2 \u00b7 R7 MILESTONE RULER (stems above AND below fill the canvas vertically).",
+   "slots": {
+    "headline": {
+     "items": 1,
+     "min_chars": 9,
+     "ideal_chars": 21,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "mb": {
+     "items": 5,
+     "min_chars": 10,
+     "ideal_chars": 23,
+     "max_chars": 586,
+     "font_px": 18.0,
+     "basis": "measured"
+    },
+    "ml": {
+     "items": 5,
+     "min_chars": 4,
+     "ideal_chars": 9,
+     "max_chars": 704,
+     "font_px": 15.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 181,
+   "slide_max_chars": 244
+  },
+  {
+   "file": "process-timeline.html",
+   "archetype": "timeline",
+   "label": "V3 \u00b7 R6 GANTT SWIMLANES (flat 6px bars in the orange ramp, two segments per lane,",
+   "slots": {
+    "col-sub": {
+     "items": 3,
+     "min_chars": 4,
+     "ideal_chars": 6,
+     "max_chars": 45,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "flag": {
+     "items": 2,
+     "min_chars": 5,
+     "ideal_chars": 13,
+     "max_chars": 82,
+     "font_px": 15.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 14,
+     "ideal_chars": 33,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "ruler-label": {
+     "items": 2,
+     "min_chars": 4,
+     "ideal_chars": 6,
+     "max_chars": 195,
+     "font_px": 15.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 89,
+   "slide_max_chars": 120
+  },
+  {
+   "file": "process-timeline.html",
+   "archetype": "timeline",
+   "label": "V4 \u00b7 COMPACT \u2014 classic node timeline (pair with a field lift so the canvas stays alive)",
+   "slots": {
+    "body": {
+     "items": 1,
+     "min_chars": 28,
+     "ideal_chars": 64,
+     "max_chars": 369,
+     "font_px": 26.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 8,
+     "ideal_chars": 18,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "tl-label": {
+     "items": 4,
+     "min_chars": 4,
+     "ideal_chars": 11,
+     "max_chars": 660,
+     "font_px": 16.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 126,
+   "slide_max_chars": 170
+  },
+  {
+   "file": "process-timeline.html",
+   "archetype": "ecosystem",
+   "label": "V5 \u00b7 ECOSYSTEM MAP \u2014 nodes distributed across zones with connecting lines.",
+   "slots": {
+    "body": {
+     "items": 4,
+     "min_chars": 36,
+     "ideal_chars": 80,
+     "max_chars": 120,
+     "font_px": 26.0,
+     "basis": "geometry"
+    },
+    "col-sub": {
+     "items": 5,
+     "min_chars": 7,
+     "ideal_chars": 17,
+     "max_chars": 25,
+     "font_px": 24.0,
+     "basis": "geometry"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 17,
+     "ideal_chars": 38,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "subtitle": {
+     "items": 1,
+     "min_chars": 6,
+     "ideal_chars": 15,
+     "max_chars": 122,
+     "font_px": 24.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 458,
+   "slide_max_chars": 618
+  },
+  {
+   "file": "process-timeline.html",
+   "archetype": "process",
+   "label": "V6 \u00b7 R8 PHASE BOARD \u2014 centre tint panel as the board, step headers on a top rule",
+   "slots": {
+    "body": {
+     "items": 12,
+     "min_chars": 18,
+     "ideal_chars": 42,
+     "max_chars": 48,
+     "font_px": 26.0,
+     "basis": "geometry"
+    },
+    "col-sub": {
+     "items": 8,
+     "min_chars": 6,
+     "ideal_chars": 15,
+     "max_chars": 17,
+     "font_px": 24.0,
+     "basis": "geometry"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 9,
+     "ideal_chars": 22,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "pill": {
+     "items": 4,
+     "min_chars": 4,
+     "ideal_chars": 6,
+     "max_chars": 43,
+     "font_px": 15.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 670,
+   "slide_max_chars": 904
+  },
+  {
+   "file": "splits.html",
+   "archetype": "split-rail",
+   "label": "V1 \u00b7 R1 SPLIT RAIL DASHBOARD (full canvas): lead + low KPI row, tint rail with 4 stats",
+   "slots": {
+    "body": {
+     "items": 1,
+     "min_chars": 63,
+     "ideal_chars": 140,
+     "max_chars": 369,
+     "font_px": 26.0,
+     "basis": "measured"
+    },
+    "col-sub": {
+     "items": 4,
+     "min_chars": 4,
+     "ideal_chars": 10,
+     "max_chars": 32,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 19,
+     "ideal_chars": 43,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "l": {
+     "items": 3,
+     "min_chars": 7,
+     "ideal_chars": 16,
+     "max_chars": 586,
+     "font_px": 18.0,
+     "basis": "measured"
+    },
+    "panel-inner": {
+     "items": 1,
+     "min_chars": 4,
+     "ideal_chars": 11,
+     "max_chars": 15,
+     "font_px": null,
+     "basis": "measured"
+    },
+    "stat--pos": {
+     "items": 1,
+     "min_chars": 4,
+     "ideal_chars": 4,
+     "max_chars": 5,
+     "font_px": null,
+     "basis": "measured"
+    },
+    "subhead": {
+     "items": 1,
+     "min_chars": 10,
+     "ideal_chars": 23,
+     "max_chars": 300,
+     "font_px": 24.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 309,
+   "slide_max_chars": 417
+  },
+  {
+   "file": "splits.html",
+   "archetype": "split-block",
+   "label": "V2 \u00b7 R13 COLOUR-BLOCK 40% (right navy panel carries the display numeral)",
+   "slots": {
+    "body": {
+     "items": 2,
+     "min_chars": 41,
+     "ideal_chars": 92,
+     "max_chars": 260,
+     "font_px": 26.0,
+     "basis": "measured"
+    },
+    "col-sub": {
+     "items": 1,
+     "min_chars": 7,
+     "ideal_chars": 16,
+     "max_chars": 146,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 26,
+     "ideal_chars": 58,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "takeaway": {
+     "items": 1,
+     "min_chars": 16,
+     "ideal_chars": 37,
+     "max_chars": 42,
+     "font_px": 48.0,
+     "basis": "geometry"
+    }
+   },
+   "slide_ideal_chars": 295,
+   "slide_max_chars": 398
+  },
+  {
+   "file": "splits.html",
+   "archetype": "split-motif",
+   "label": "V3 \u00b7 50/50 MOTIF PANEL (navy panel filled by a halftone crop; statement-led / high-impact)",
+   "slots": {
+    "body": {
+     "items": 1,
+     "min_chars": 46,
+     "ideal_chars": 104,
+     "max_chars": 369,
+     "font_px": 26.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 10,
+     "ideal_chars": 23,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "l": {
+     "items": 1,
+     "min_chars": 9,
+     "ideal_chars": 20,
+     "max_chars": 586,
+     "font_px": 18.0,
+     "basis": "measured"
+    },
+    "v": {
+     "items": 1,
+     "min_chars": 4,
+     "ideal_chars": 6,
+     "max_chars": 117,
+     "font_px": 90.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 153,
+   "slide_max_chars": 206
+  },
+  {
+   "file": "splits.html",
+   "archetype": "split-image",
+   "label": "V4 \u00b7 IMAGE BLEED + SIDEBAR \u2014 full-bleed photo left (50%), structured text right.",
+   "slots": {
+    "body": {
+     "items": 1,
+     "min_chars": 100,
+     "ideal_chars": 223,
+     "max_chars": 369,
+     "font_px": 26.0,
+     "basis": "geometry"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 16,
+     "ideal_chars": 36,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "l": {
+     "items": 2,
+     "min_chars": 5,
+     "ideal_chars": 12,
+     "max_chars": 586,
+     "font_px": 18.0,
+     "basis": "measured"
+    },
+    "subtitle": {
+     "items": 1,
+     "min_chars": 4,
+     "ideal_chars": 10,
+     "max_chars": 122,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "v": {
+     "items": 2,
+     "min_chars": 4,
+     "ideal_chars": 4,
+     "max_chars": 117,
+     "font_px": 90.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 301,
+   "slide_max_chars": 406
+  },
+  {
+   "file": "statement-quote.html",
+   "archetype": "statement",
+   "label": "V1 \u00b7 R10 MOTIF-SIDE STATEMENT (accent dot field as the counterweight)",
+   "slots": {
+    "big-statement": {
+     "items": 1,
+     "min_chars": 14,
+     "ideal_chars": 32,
+     "max_chars": 65,
+     "font_px": 150.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 32,
+   "slide_max_chars": 43
+  },
+  {
+   "file": "statement-quote.html",
+   "archetype": "statement",
+   "label": "V1b \u00b7 R10 with a halftone motif (list the motif in spec.illustrations; text stays left of ",
+   "slots": {
+    "big-statement": {
+     "items": 1,
+     "min_chars": 16,
+     "ideal_chars": 37,
+     "max_chars": 65,
+     "font_px": 150.0,
+     "basis": "geometry"
+    }
+   },
+   "slide_ideal_chars": 37,
+   "slide_max_chars": 49
+  },
+  {
+   "file": "statement-quote.html",
+   "archetype": "quote",
+   "label": "V2 \u00b7 BIG QUOTE",
+   "slots": {
+    "big-quote": {
+     "items": 1,
+     "min_chars": 27,
+     "ideal_chars": 61,
+     "max_chars": 81,
+     "font_px": 120.0,
+     "basis": "geometry"
+    },
+    "quote-attr": {
+     "items": 1,
+     "min_chars": 8,
+     "ideal_chars": 19,
+     "max_chars": 352,
+     "font_px": 30.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 80,
+   "slide_max_chars": 108
+  },
+  {
+   "file": "statement-quote.html",
+   "archetype": "statement",
+   "label": "V3 \u00b7 POSTER STATEMENT \u2014 high-impact direction ONLY (navy moment, ghost numeral low-right,",
+   "slots": {
+    "big-statement": {
+     "items": 1,
+     "min_chars": 5,
+     "ideal_chars": 13,
+     "max_chars": 65,
+     "font_px": 150.0,
+     "basis": "measured"
+    },
+    "big-statement--poster": {
+     "items": 1,
+     "min_chars": 5,
+     "ideal_chars": 13,
+     "max_chars": 48,
+     "font_px": 220.0,
+     "basis": "measured"
+    },
+    "slide--navy": {
+     "items": 1,
+     "min_chars": 13,
+     "ideal_chars": 30,
+     "max_chars": 42,
+     "font_px": null,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 56,
+   "slide_max_chars": 75
+  },
+  {
+   "file": "stats.html",
+   "archetype": "stats",
+   "label": "\u2014",
+   "slots": {
+    "d": {
+     "items": 4,
+     "min_chars": 17,
+     "ideal_chars": 39,
+     "max_chars": 528,
+     "font_px": 20.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 14,
+     "ideal_chars": 33,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "l": {
+     "items": 4,
+     "min_chars": 5,
+     "ideal_chars": 12,
+     "max_chars": 586,
+     "font_px": 18.0,
+     "basis": "measured"
+    },
+    "ruler-label": {
+     "items": 5,
+     "min_chars": 4,
+     "ideal_chars": 6,
+     "max_chars": 195,
+     "font_px": 15.0,
+     "basis": "measured"
+    },
+    "stat--pos": {
+     "items": 1,
+     "min_chars": 3,
+     "ideal_chars": 3,
+     "max_chars": 4,
+     "font_px": null,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 270,
+   "slide_max_chars": 364
+  },
+  {
+   "file": "stats.html",
+   "archetype": "stats",
+   "label": "V2 \u00b7 R4 HUB & SPOKES (motif backdrop behind the hero stat, flanking proof columns)",
+   "slots": {
+    "body": {
+     "items": 4,
+     "min_chars": 21,
+     "ideal_chars": 47,
+     "max_chars": 120,
+     "font_px": 26.0,
+     "basis": "measured"
+    },
+    "col-sub": {
+     "items": 4,
+     "min_chars": 6,
+     "ideal_chars": 15,
+     "max_chars": 32,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 20,
+     "ideal_chars": 45,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "l": {
+     "items": 1,
+     "min_chars": 6,
+     "ideal_chars": 15,
+     "max_chars": 586,
+     "font_px": 18.0,
+     "basis": "measured"
+    },
+    "v": {
+     "items": 1,
+     "min_chars": 3,
+     "ideal_chars": 3,
+     "max_chars": 117,
+     "font_px": 90.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 311,
+   "slide_max_chars": 419
+  },
+  {
+   "file": "stats.html",
+   "archetype": "stats",
+   "label": "V3 \u00b7 \u221a-SCALED BUBBLE ROW (area \u221d value) + bottom dot field. NEVER one dominant centred cir",
+   "slots": {
+    "headline": {
+     "items": 1,
+     "min_chars": 12,
+     "ideal_chars": 28,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "l": {
+     "items": 3,
+     "min_chars": 4,
+     "ideal_chars": 11,
+     "max_chars": 586,
+     "font_px": 18.0,
+     "basis": "measured"
+    },
+    "source": {
+     "items": 1,
+     "min_chars": 13,
+     "ideal_chars": 29,
+     "max_chars": 293,
+     "font_px": 12.0,
+     "basis": "measured"
+    },
+    "v": {
+     "items": 3,
+     "min_chars": 3,
+     "ideal_chars": 3,
+     "max_chars": 117,
+     "font_px": 90.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 99,
+   "slide_max_chars": 133
+  },
+  {
+   "file": "stats.html",
+   "archetype": "stats",
+   "label": "V4 \u00b7 COMPACT \u2014 .kpi-row value/label pairs when the numbers don't need weighting.",
+   "slots": {
+    "body": {
+     "items": 1,
+     "min_chars": 15,
+     "ideal_chars": 34,
+     "max_chars": 369,
+     "font_px": 26.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 13,
+     "ideal_chars": 29,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "l": {
+     "items": 4,
+     "min_chars": 4,
+     "ideal_chars": 8,
+     "max_chars": 586,
+     "font_px": 18.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 95,
+   "slide_max_chars": 128
+  },
+  {
+   "file": "stats.html",
+   "archetype": "stats",
+   "label": "V5 \u00b7 SCORECARD GRID \u2014 KPIs grouped by category in a 2\u00d73 or 3\u00d72 bento. Each cell has",
+   "slots": {
+    "cell": {
+     "items": 6,
+     "min_chars": 3,
+     "ideal_chars": 3,
+     "max_chars": 4,
+     "font_px": null,
+     "basis": "measured"
+    },
+    "cell--nav": {
+     "items": 1,
+     "min_chars": 3,
+     "ideal_chars": 3,
+     "max_chars": 4,
+     "font_px": null,
+     "basis": "measured"
+    },
+    "cell--tint": {
+     "items": 1,
+     "min_chars": 4,
+     "ideal_chars": 4,
+     "max_chars": 5,
+     "font_px": null,
+     "basis": "measured"
+    },
+    "col-sub": {
+     "items": 12,
+     "min_chars": 4,
+     "ideal_chars": 9,
+     "max_chars": 10,
+     "font_px": 24.0,
+     "basis": "geometry"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 15,
+     "ideal_chars": 35,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "source": {
+     "items": 1,
+     "min_chars": 15,
+     "ideal_chars": 35,
+     "max_chars": 293,
+     "font_px": 12.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 203,
+   "slide_max_chars": 274
+  },
+  {
+   "file": "stats.html",
+   "archetype": "stats",
+   "label": "V6 \u00b7 R5 CLUSTER DIAGRAM + INDEX ROW \u2014 two overlapping navy sets (knockout labels,",
+   "slots": {
+    "body": {
+     "items": 8,
+     "min_chars": 21,
+     "ideal_chars": 48,
+     "max_chars": 55,
+     "font_px": 26.0,
+     "basis": "geometry"
+    },
+    "col-sub": {
+     "items": 10,
+     "min_chars": 4,
+     "ideal_chars": 10,
+     "max_chars": 11,
+     "font_px": 24.0,
+     "basis": "geometry"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 13,
+     "ideal_chars": 31,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 515,
+   "slide_max_chars": 695
+  },
+  {
+   "file": "stats.html",
+   "archetype": "stats",
+   "label": "V7 \u00b7 INTENSITY RAMP + LEADER LINES (v4, playbook p.46) \u2014 four flat circles step up",
+   "slots": {
+    "col-sub": {
+     "items": 4,
+     "min_chars": 5,
+     "ideal_chars": 12,
+     "max_chars": 32,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 12,
+     "ideal_chars": 28,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "ramp-co2": {
+     "items": 1,
+     "min_chars": 3,
+     "ideal_chars": 3,
+     "max_chars": 4,
+     "font_px": null,
+     "basis": "measured"
+    },
+    "ramp-co3": {
+     "items": 1,
+     "min_chars": 3,
+     "ideal_chars": 3,
+     "max_chars": 4,
+     "font_px": null,
+     "basis": "measured"
+    },
+    "ramp-co4": {
+     "items": 1,
+     "min_chars": 3,
+     "ideal_chars": 3,
+     "max_chars": 4,
+     "font_px": null,
+     "basis": "measured"
+    },
+    "ramp-l1": {
+     "items": 1,
+     "min_chars": 4,
+     "ideal_chars": 11,
+     "max_chars": 15,
+     "font_px": null,
+     "basis": "measured"
+    },
+    "ramp-l2": {
+     "items": 1,
+     "min_chars": 5,
+     "ideal_chars": 13,
+     "max_chars": 18,
+     "font_px": null,
+     "basis": "measured"
+    },
+    "ramp-l3": {
+     "items": 1,
+     "min_chars": 5,
+     "ideal_chars": 12,
+     "max_chars": 16,
+     "font_px": null,
+     "basis": "measured"
+    },
+    "ramp-l4": {
+     "items": 1,
+     "min_chars": 5,
+     "ideal_chars": 12,
+     "max_chars": 16,
+     "font_px": null,
+     "basis": "measured"
+    },
+    "source": {
+     "items": 1,
+     "min_chars": 12,
+     "ideal_chars": 28,
+     "max_chars": 293,
+     "font_px": 12.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 161,
+   "slide_max_chars": 217
+  },
+  {
+   "file": "team.html",
+   "archetype": "team",
+   "label": "Variant 1 \u2014 three across, wide portraits, full-height bios",
+   "slots": {
+    "bio": {
+     "items": 3,
+     "min_chars": 45,
+     "ideal_chars": 102,
+     "max_chars": 272,
+     "font_px": 16.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 9,
+     "ideal_chars": 22,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "nm": {
+     "items": 3,
+     "min_chars": 4,
+     "ideal_chars": 9,
+     "max_chars": 45,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "rl": {
+     "items": 3,
+     "min_chars": 6,
+     "ideal_chars": 14,
+     "max_chars": 528,
+     "font_px": 20.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 397,
+   "slide_max_chars": 535
+  },
+  {
+   "file": "team.html",
+   "archetype": "team",
+   "label": "Variant 2 \u2014 four across (compact)",
+   "slots": {
+    "bio": {
+     "items": 4,
+     "min_chars": 18,
+     "ideal_chars": 41,
+     "max_chars": 196,
+     "font_px": 16.0,
+     "basis": "measured"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 11,
+     "ideal_chars": 26,
+     "max_chars": 130,
+     "font_px": 54.0,
+     "basis": "measured"
+    },
+    "nm": {
+     "items": 4,
+     "min_chars": 4,
+     "ideal_chars": 9,
+     "max_chars": 32,
+     "font_px": 24.0,
+     "basis": "measured"
+    },
+    "rl": {
+     "items": 4,
+     "min_chars": 6,
+     "ideal_chars": 15,
+     "max_chars": 528,
+     "font_px": 20.0,
+     "basis": "measured"
+    }
+   },
+   "slide_ideal_chars": 286,
+   "slide_max_chars": 386
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+.AppleDouble
+._*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.mypy_cache/
+.pytest_cache/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Skill build output — decks and verification artefacts are per-engagement,
+# never committed. The skills are the source; the decks they produce are not.
+*.html
+!wpp-es-html-deck/assets/snippets/**/*.html
+screenshots/
+shots/
+contact-sheet.png
+*.slide-*.png
