@@ -32,8 +32,26 @@ from html.parser import HTMLParser
 # Canvas + layout constants (guideline §2 / §15.1)
 # ─────────────────────────────────────────────────────────────────────────────
 CANVAS_W, CANVAS_H = 1920, 1080
-CONTENT_X0, CONTENT_X1 = 80, 1840          # §15.1 text glyph bounds
-CONTENT_W = CONTENT_X1 - CONTENT_X0        # 1760
+# §15.1 text glyph bounds. These are READ FROM THE SHELL, not stated here — the
+# content edge lived in four places (build_shell's --m-edge, CORE §2,
+# verify_deck's §15.9 check and this file) and moving it in one silently left
+# the other three behind. Widening the frame from 80 to 40 changed nothing in
+# capacity.json until this stopped being a literal.
+CANVAS_W = 1920
+CONTENT_X0, CONTENT_X1 = 80, 1840          # fallback only; overwritten by read_frame()
+CONTENT_W = CONTENT_X1 - CONTENT_X0
+
+
+def read_frame(demo_html):
+    """--m-edge out of the generated shell -> (x0, x1, width)."""
+    if not os.path.exists(demo_html):
+        return CONTENT_X0, CONTENT_X1, CONTENT_W
+    html = open(demo_html, encoding="utf-8", errors="replace").read()
+    m = re.search(r"--m-edge:\s*(\d+(?:\.\d+)?)px", html)
+    if not m:
+        return CONTENT_X0, CONTENT_X1, CONTENT_W
+    edge = float(m.group(1))
+    return edge, CANVAS_W - edge, CANVAS_W - 2 * edge
 FOOTER_Y = 985                             # §15.1 footer band
 GRID_TOP = 260                             # columns.html: grid sits at y=260
 COL_GAP = 64
@@ -240,6 +258,9 @@ def main():
     args = ap.parse_args()
 
     css = read_css_metrics(args.demo)
+    global CONTENT_X0, CONTENT_X1, CONTENT_W
+    CONTENT_X0, CONTENT_X1, CONTENT_W = read_frame(args.demo)
+    print(f"frame read from shell: content edge x={CONTENT_X0:g}, width {CONTENT_W:g}px")
     print(f"CSS metrics read for {len(css)} classes")
 
     ppt = {}

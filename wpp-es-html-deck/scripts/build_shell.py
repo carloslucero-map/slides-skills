@@ -605,7 +605,7 @@ def base_css(spec):
   --data-pos:var(--orange-700); --data-neg:var(--wpp-navy);
   /* v4 layout tokens (§2): 40px module, 80px content edge — deviating from these
      is what the §15.9 content-edge probe flags */
-  --grid:40px; --m-edge:80px; --band-top:260px; --band-bottom:120px;
+  --grid:40px; --m-edge:40px; --m-text:56px; --band-top:305px; --band-bottom:60px;
   /* Per-deck sanctioned choices (spec keys) — defaults are the v1 look */
   --dv-bg:{cw['bg']}; --dv-text:{cw['text']}; --dv-sub:{cw['sub']};
   --dv-foot:{cw['foot']}; --dv-edge:{cw['edge']};
@@ -645,10 +645,10 @@ body.js .slide.is-active{{display:block;}}
 /* Standard content furniture (§7). v4 typography contract (§4.2): headlines
    Light 300, running text Regular 400 — weight, not just size, carries the
    hierarchy. Footer furniture is Regular per the playbook ("footers"). */
-.slide > .headline{{position:absolute;left:var(--m-edge);top:28px;font-weight:300;font-size:54px;line-height:.9;letter-spacing:-.005em;max-width:1760px;}}
+.slide > .headline{{position:absolute;left:var(--m-edge);top:73px;font-weight:300;font-size:54px;line-height:.9;letter-spacing:-.005em;max-width:calc(1920px - 2*var(--m-edge));}}
 .headline--caps{{font-size:48px;line-height:.94;letter-spacing:.01em;text-transform:uppercase;}} /* Light-caps "strong emphasis" title (§4.3); ≤1 in 4 content slides */
 .hl{{font-weight:500;}} /* v4 title highlight (§4.4): ONE key token per title, weight only */
-.slide > .subtitle{{position:absolute;left:var(--m-edge);top:132px;font-weight:500;font-size:24px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-800);}}
+.slide > .subtitle{{position:absolute;left:var(--m-edge);top:177px;font-weight:500;font-size:24px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-800);}}
 .slide > .content-band{{position:absolute;left:var(--m-edge);top:var(--band-top);right:var(--m-edge);bottom:var(--band-bottom);}}
 .subhead{{font-weight:400;font-size:24px;line-height:1.15;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;max-width:1200px;}} /* v4 Regular-caps sub-headline tier (§4.3): supports the headline / leads the body */
 .body{{font-weight:400;font-size:26px;line-height:1.32;max-width:1200px;}}
@@ -668,7 +668,7 @@ body.js .slide.is-active{{display:block;}}
 .cover-art--full{{position:absolute;inset:0;width:1920px;height:1080px;object-fit:cover;object-position:center;}}
 .cover-art--right{{position:absolute;right:-140px;top:50%;transform:translateY(-50%);width:1440px;height:auto;}}
 .cover-dots{{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none;}}
-.cover-mountain__head{{position:absolute;left:80px;top:88px;z-index:2;max-width:1040px;}}
+.cover-mountain__head{{position:absolute;left:var(--m-edge);top:88px;z-index:2;max-width:1040px;}}
 .cover-mountain__title{{font-weight:300;font-size:81px;line-height:.9;letter-spacing:0;text-transform:uppercase;color:#000050;}}
 .cover-mountain__sub{{margin:26px 0 0;font-weight:300;font-size:31px;line-height:1.16;color:#000050;max-width:900px;}}
 .cover-mountain__meta{{margin:34px 0 0;font-weight:400;font-size:24px;line-height:1.3;color:#000050;}}
@@ -678,9 +678,9 @@ body.js .slide.is-active{{display:block;}}
 .cover-mountain__badge svg{{display:block;width:300px;height:auto;}}
 
 /* ---- LOCKED AGENDA ---- */
-.slide.agenda .headline{{position:absolute;top:112px;left:80px;font-weight:300;font-size:54px;line-height:1.02;letter-spacing:-.005em;}}
+.slide.agenda .headline{{position:absolute;top:112px;left:var(--m-edge);font-weight:300;font-size:54px;line-height:1.02;letter-spacing:-.005em;}}
 .slide.agenda .toc-dots{{position:absolute;right:0;top:0;width:520px;height:520px;overflow:visible;}}
-.slide.agenda .toc-row{{position:absolute;left:80px;display:flex;align-items:baseline;gap:44px;}}
+.slide.agenda .toc-row{{position:absolute;left:var(--m-edge);display:flex;align-items:baseline;gap:44px;}}
 .slide.agenda .toc-row .n{{font-weight:100;font-size:88px;line-height:1;color:#FF7800;width:118px;letter-spacing:-.02em;}}
 .slide.agenda .toc-row .t{{font-weight:300;font-size:50px;line-height:1;color:#000050;}}
 .slide.agenda--dense .toc-row .n{{font-size:72px;width:98px;}}
@@ -692,10 +692,10 @@ body.js .slide.is-active{{display:block;}}
    dividerStyle:"classic" keeps the v3 geometry (absolute dv-sub/dv-title). */
 .slide.divider{{background:var(--dv-bg);color:var(--dv-text);}}
 .slide.divider .dv-dots{{position:absolute;inset:0;overflow:hidden;}}
-.slide.divider .dv-num{{position:absolute;top:56px;left:80px;font-weight:100;font-size:104px;line-height:1;letter-spacing:-.02em;}}
+.slide.divider .dv-num{{position:absolute;top:56px;left:var(--m-edge);font-weight:100;font-size:104px;line-height:1;letter-spacing:-.02em;}}
 .slide.divider .dv-sub{{position:absolute;left:84px;bottom:150px;font-weight:500;font-size:22px;letter-spacing:.14em;text-transform:uppercase;color:var(--dv-sub);}}
-.slide.divider .dv-title{{position:absolute;left:80px;bottom:214px;font-weight:100;font-size:104px;line-height:.86;letter-spacing:-.02em;text-transform:uppercase;max-width:1180px;text-wrap:balance;}}
-.slide.divider .dv-block{{position:absolute;left:80px;bottom:96px;max-width:1560px;z-index:1;}}
+.slide.divider .dv-title{{position:absolute;left:var(--m-edge);bottom:214px;font-weight:100;font-size:104px;line-height:.86;letter-spacing:-.02em;text-transform:uppercase;max-width:1180px;text-wrap:balance;}}
+.slide.divider .dv-block{{position:absolute;left:var(--m-edge);bottom:96px;max-width:1560px;z-index:1;}}
 .slide.divider .dv-block .dv-sub{{position:static;display:block;margin-bottom:26px;}}
 .slide.divider .dv-block .dv-title{{position:static;font-size:136px;line-height:.88;max-width:1560px;}}
 .slide.divider .footer-brand,.slide.divider .pageno{{color:var(--dv-foot);}}
@@ -704,15 +704,15 @@ body.js .slide.is-active{{display:block;}}
 /* ---- LOCKED THANK-YOU (outro via role vars) ---- */
 .slide.thank-you{{background:var(--ty-bg);}}
 .slide.thank-you .ty-dots{{position:absolute;inset:0;overflow:hidden;}}
-.slide.thank-you .ty{{position:absolute;left:80px;top:430px;font-weight:300;font-size:99px;line-height:.9;color:var(--ty-text);}}
-.slide.thank-you .ty-contact{{position:absolute;left:80px;top:580px;font-weight:400;font-size:24px;line-height:1.5;color:var(--ty-text);}}
+.slide.thank-you .ty{{position:absolute;left:var(--m-edge);top:430px;font-weight:300;font-size:99px;line-height:.9;color:var(--ty-text);}}
+.slide.thank-you .ty-contact{{position:absolute;left:var(--m-edge);top:580px;font-weight:400;font-size:24px;line-height:1.5;color:var(--ty-text);}}
 .slide.thank-you .ty-contact span{{display:block;}}
 .slide.thank-you .footer-brand,.slide.thank-you .pageno{{color:var(--ty-foot);}}
 .slide.thank-you .confidential{{color:var(--ty-edge);}}
 
 /* ===== ARCHETYPE KIT (§12.4-§12.13) — assemble content slides from assets/snippets/ ===== */
 .lift{{position:absolute;inset:0;overflow:hidden;pointer-events:none;}}
-.cols{{position:absolute;left:80px;top:260px;right:80px;display:grid;gap:80px;align-items:start;}}
+.cols{{position:absolute;left:var(--m-edge);top:260px;right:80px;display:grid;gap:80px;align-items:start;}}
 .cols-2{{grid-template-columns:repeat(2,1fr);}}
 .cols-3{{grid-template-columns:repeat(3,1fr);}}
 .cols-4{{grid-template-columns:repeat(4,1fr);gap:56px;}}
@@ -722,38 +722,38 @@ body.js .slide.is-active{{display:block;}}
 .col-dot{{width:16px;height:16px;border-radius:50%;background:var(--wpp-navy);margin-bottom:22px;}}
 .pill{{display:inline-block;background:var(--wpp-navy);color:var(--wpp-white);border-radius:999px;padding:10px 26px;font-weight:500;font-size:15px;letter-spacing:.08em;text-transform:uppercase;}}
 .slide--navy .pill{{background:var(--wpp-cream);color:var(--wpp-navy);}}
-.tbx-row{{position:absolute;left:80px;right:80px;top:280px;display:flex;align-items:stretch;gap:28px;}}
+.tbx-row{{position:absolute;left:var(--m-edge);right:80px;top:280px;display:flex;align-items:stretch;gap:28px;}}
 .tbx{{background:var(--wpp-white);padding:32px 36px;flex:1;font-weight:400;font-size:22px;line-height:1.3;}}
 .tbx .col-sub{{font-size:20px;}}
 .sep-dot{{align-self:center;flex:0 0 16px;width:16px;height:16px;border-radius:50%;background:var(--wpp-navy);}}
 .sep-arrow{{align-self:center;flex:0 0 22px;width:0;height:0;border-top:15px solid transparent;border-bottom:15px solid transparent;border-left:22px solid var(--wpp-navy);}}
-.big-statement{{position:absolute;left:80px;top:50%;transform:translateY(-50%);font-weight:100;font-size:150px;line-height:.82;letter-spacing:-.02em;max-width:1640px;}}
+.big-statement{{position:absolute;left:var(--m-edge);top:50%;transform:translateY(-50%);font-weight:100;font-size:150px;line-height:.82;letter-spacing:-.02em;max-width:1640px;}}
 .big-quote{{position:absolute;left:120px;top:170px;max-width:1620px;font-weight:100;font-size:120px;line-height:1.04;letter-spacing:-.01em;}}
 .quote-attr{{position:absolute;left:120px;bottom:190px;font-weight:500;font-size:30px;letter-spacing:.1em;text-transform:uppercase;}}
 .compare-art{{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:964px;pointer-events:none;}}
 .compare-art img{{width:100%;height:auto;display:block;}}  /* §15.2 — an unconstrained clone renders at native size and paints over the headline */
 /* §15.2 — the 964px centrepiece spans x478-1442; 370px text zones keep ≥24px
    clearance from the art's hard crop edges on both sides. */
-.compare-left{{position:absolute;left:80px;top:420px;width:370px;font-weight:400;font-size:24px;line-height:1.35;}}
+.compare-left{{position:absolute;left:var(--m-edge);top:420px;width:370px;font-weight:400;font-size:24px;line-height:1.35;}}
 .compare-right{{position:absolute;right:80px;top:420px;width:370px;font-weight:400;font-size:24px;line-height:1.35;}}
 .stat-circle{{display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:50%;background:var(--wpp-navy);color:var(--wpp-white);text-align:center;}}
 .stat-circle .v{{font-weight:100;font-size:90px;line-height:1;}}
 .stat-circle .l{{font-weight:500;font-size:18px;letter-spacing:.1em;text-transform:uppercase;margin-top:10px;max-width:80%;}}
 .stat-circle--orange{{background:var(--orange-700);color:var(--wpp-navy);}}
-.bubble-row{{position:absolute;left:80px;right:80px;top:260px;bottom:140px;display:flex;align-items:center;justify-content:space-evenly;}}
-.kpi-row{{position:absolute;left:80px;right:80px;top:340px;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:80px;}}
+.bubble-row{{position:absolute;left:var(--m-edge);right:80px;top:260px;bottom:140px;display:flex;align-items:center;justify-content:space-evenly;}}
+.kpi-row{{position:absolute;left:var(--m-edge);right:80px;top:340px;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:80px;}}
 .kpi .v{{font-weight:100;font-size:110px;line-height:1;}}
 .kpi .l{{font-weight:500;font-size:18px;letter-spacing:.1em;text-transform:uppercase;margin-top:12px;}}
 .orbit{{position:absolute;border-radius:50%;border:1px dotted var(--wpp-navy);}}
-.proc{{position:absolute;left:80px;right:80px;top:300px;display:grid;grid-template-columns:repeat(5,1fr);gap:40px;}}
+.proc{{position:absolute;left:var(--m-edge);right:80px;top:300px;display:grid;grid-template-columns:repeat(5,1fr);gap:40px;}}
 .proc .n{{font-weight:100;font-size:64px;line-height:1;color:var(--orange-800);}}  /* orange-800: thin numerals need ≥3:1 on white/cream (§15.5) */
 .proc .step-l{{font-weight:500;font-size:15px;letter-spacing:.1em;text-transform:uppercase;margin:16px 0 12px;}}
 .proc .body{{font-size:20px;}}
-.timeline{{position:absolute;left:80px;right:80px;top:540px;height:1px;background:var(--wpp-navy);}}
+.timeline{{position:absolute;left:var(--m-edge);right:80px;top:540px;height:1px;background:var(--wpp-navy);}}
 .tl-node{{position:absolute;top:-8px;width:16px;height:16px;border-radius:50%;background:var(--wpp-navy);}}
 .tl-node--accent{{background:var(--orange-700);}}
 .tl-label{{position:absolute;top:28px;transform:translateX(-50%);font-weight:500;font-size:16px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;}}
-.team-grid{{position:absolute;left:80px;right:80px;top:280px;display:grid;grid-template-columns:repeat(4,1fr);gap:64px;}}
+.team-grid{{position:absolute;left:var(--m-edge);right:80px;top:280px;display:grid;grid-template-columns:repeat(4,1fr);gap:64px;}}
 .team-grid--3{{grid-template-columns:repeat(3,1fr);}}
 .person .ph{{width:180px;height:180px;border-radius:50%;background:var(--wpp-navy);overflow:hidden;}}
 .person .ph img{{width:100%;height:100%;object-fit:cover;}}
@@ -764,7 +764,7 @@ body.js .slide.is-active{{display:block;}}
 .person .nm{{font-weight:500;font-size:24px;margin-top:20px;}}
 .person .rl{{font-weight:400;font-size:20px;margin-top:4px;}}
 .person .bio{{font-weight:400;font-size:16px;line-height:1.35;margin-top:12px;}}
-.img-right-text{{position:absolute;left:80px;top:260px;width:640px;}}
+.img-right-text{{position:absolute;left:var(--m-edge);top:260px;width:640px;}}
 /* v4 §15.9: media anchors to edges — .img-right-media now bleeds to the right
    canvas edge (x880-1920); the margin opens for the image, the inner edge holds
    the grid. Floating mid-canvas media rectangles are a verifier FAIL. */
@@ -777,8 +777,8 @@ body.js .slide.is-active{{display:block;}}
 .media img{{width:100%;height:100%;object-fit:cover;display:block;}}
 .media--bleed-r{{left:880px;right:0;top:240px;bottom:140px;}}
 .media--bleed-l{{left:0;right:1040px;top:240px;bottom:140px;}}
-.media--bleed-b{{left:80px;right:80px;top:560px;bottom:0;}}
-.media--bleed-t{{left:80px;right:80px;top:0;bottom:640px;}}
+.media--bleed-b{{left:var(--m-edge);right:80px;top:560px;bottom:0;}}
+.media--bleed-t{{left:var(--m-edge);right:80px;top:0;bottom:640px;}}
 .media--corner-br{{right:0;bottom:0;width:840px;height:560px;}}
 .media--corner-tr{{right:0;top:0;width:840px;height:520px;}}
 .screenshot{{display:block;max-width:100%;outline:1px solid var(--wpp-navy);}}
@@ -820,7 +820,7 @@ body.js .slide.is-active{{display:block;}}
 .hero-num--solid{{font-weight:400;}}  /* the bank sets numerals in Regular, not Thin —
                                          .hero-num's weight 100 is a kit invention */
 .hero-num--orange{{color:var(--orange-700);}}
-.hero-row{{position:absolute;left:80px;right:80px;top:280px;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:64px;}}
+.hero-row{{position:absolute;left:var(--m-edge);right:80px;top:280px;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:64px;}}
 .hero-row .n{{font-weight:100;font-size:144px;line-height:1;}}
 /* §15.7 — count-up must not reflow layout: equal 1fr tracks above + tabular
    figures here keep every digit tick the same width. */
@@ -854,7 +854,7 @@ body.js .slide.is-active{{display:block;}}
 .team-grid--wide{{grid-template-columns:repeat(3,1fr);bottom:160px;}}
 .team-grid--wide .ph{{width:260px;height:260px;}}
 /* Full-height scaffolding (kills the dead lower band structurally) */
-.canvas{{position:absolute;left:80px;right:80px;top:240px;bottom:120px;}}
+.canvas{{position:absolute;left:var(--m-edge);right:80px;top:240px;bottom:120px;}}
 .canvas-grid{{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:1fr;gap:24px;height:100%;}}
 /* v4 card-grid modifier (§12.14/§13.4): expandable cards expand INDIVIDUALLY —
    auto rows + start alignment, and the opened detail is an OVERLAY dropping
@@ -874,8 +874,8 @@ body.js .slide.is-active{{display:block;}}
 .takeaway::before{{left:0;border-left:1px solid var(--wpp-navy);}}
 .takeaway::after{{right:0;border-right:1px solid var(--wpp-navy);}}
 .slide--navy .takeaway::before,.slide--navy .takeaway::after{{border-color:var(--wpp-cream);}}
-.ruler{{position:absolute;left:80px;right:80px;height:1px;background:var(--wpp-navy);}}
-.ruler-ticks{{position:absolute;left:80px;right:80px;display:flex;justify-content:space-between;}}
+.ruler{{position:absolute;left:var(--m-edge);right:80px;height:1px;background:var(--wpp-navy);}}
+.ruler-ticks{{position:absolute;left:var(--m-edge);right:80px;display:flex;justify-content:space-between;}}
 .ruler-ticks span{{width:1px;height:17px;background:var(--wpp-navy);}}
 .ruler-ticks span.major{{height:27px;}}
 .ruler-label{{position:absolute;font-weight:500;font-size:15px;letter-spacing:.1em;text-transform:uppercase;}}
@@ -884,7 +884,7 @@ body.js .slide.is-active{{display:block;}}
 .milestone .md{{width:14px;height:14px;border-radius:50%;background:var(--orange-700);}}
 .milestone .ml{{font-weight:500;font-size:15px;letter-spacing:.08em;text-transform:uppercase;margin-top:10px;}}
 .milestone .mb{{font-weight:400;font-size:18px;line-height:1.3;margin-top:8px;}}
-.gantt{{position:absolute;left:80px;right:80px;top:240px;bottom:200px;}}
+.gantt{{position:absolute;left:var(--m-edge);right:80px;top:240px;bottom:200px;}}
 .bar{{position:absolute;height:6px;}}
 .lane-dot{{position:absolute;width:16px;height:16px;border-radius:50%;background:var(--wpp-navy);}}
 .flag{{position:absolute;width:206px;height:46px;background:var(--wpp-navy);color:var(--wpp-white);font-weight:500;font-size:15px;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;}} /* 15px = §4.5 floor */
@@ -921,7 +921,7 @@ body.js .slide.is-active{{display:block;}}
   font:600 12px/1 'WPP',system-ui,sans-serif;color:#fff;opacity:.5;letter-spacing:.1em;
   background:rgba(0,0,0,.35);padding:6px 12px;border-radius:999px;user-select:none;}}
 .notes{{display:none;}}
-body.notes-on .slide.is-active .notes{{display:block;position:absolute;left:80px;right:80px;bottom:70px;
+body.notes-on .slide.is-active .notes{{display:block;position:absolute;left:var(--m-edge);right:80px;bottom:70px;
   font:300 18px/1.4 'WPP',system-ui,sans-serif;color:var(--text);background:rgba(250,250,240,.92);
   padding:16px 20px;max-height:200px;overflow:auto;z-index:40;}}
 body.notes-on .slide--navy.is-active .notes{{color:#FAFAF0;background:rgba(0,0,80,.88);}}

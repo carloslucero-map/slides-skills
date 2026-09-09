@@ -43,7 +43,7 @@ manual — this script re-checks everything that step can break:
      covering >30% of a text rect (FAIL; full-bleed art exempt, and a
      data-text-safe="true" declaration on the decor or an ancestor softens
      to WARN — always printed for the art pass to re-check by eye), text
-     inside the safe area x>=72 / right<=1848 / y>=20 (FAIL), no
+     inside the safe area (the deck's own --m-edge +/- 8px) / y>=20 (FAIL), no
      non-furniture text in the footer band y>985 (FAIL), sibling grids
      aligned within 6px with even gaps within 8px (WARN). Locked slides
      (cover/agenda/divider-*/thankyou) are exempt from the margin and
@@ -884,6 +884,12 @@ def _locked_slide(sid):
     return sid in ("cover", "agenda", "thankyou") or sid.startswith("divider-")
 
 
+def _content_edge(text, default=40.0):
+    """The deck's own --m-edge. One source of truth: the built file."""
+    m = re.search(r"--m-edge:\s*(\d+(?:\.\d+)?)px", text)
+    return float(m.group(1)) if m else default
+
+
 def _geo_capture(deck_path):
     """Run the probe once over the whole deck. -> (records, None) or (None, why)."""
     if not CHROME:
@@ -971,7 +977,31 @@ def _geo_clusters(vals, tol):
     return len(out)
 
 
-MIN_FONT, MIN_BODY_FONT = 15.0, 20.0    # §4.5/§15.10 type-size floors (v4)
+# §15.10 type-size floors (v4.1). Two levels, and the gap between them is a
+# CLOSED LIST, not a judgement call.
+#
+# The bank runs 36% of its text runs under 20px and 15.5% under 15px, so a flat
+# 20px floor would fail the source material it is supposed to model. But the
+# reading that says "the real p10 is 14px, so allow 14px" gets it backwards:
+# those slides were never legible projected. Slide 203 sets 47 of its 54 runs at
+# 16px; the answer is that 16px is the second-level reference size for a named
+# set of label roles, and that free prose can never reach it.
+#
+# So: nothing below MIN_FINE at all, and between MIN_FINE and MIN_TEXT only the
+# roles below. A .body at 17px is a FAIL, not a warning — that is the whole point.
+MIN_FINE = 16.0                          # declared second level, closed list only
+MIN_TEXT = 20.0                          # everything else
+MIN_FONT, MIN_BODY_FONT = MIN_FINE, MIN_TEXT   # back-compat for existing callers
+
+# The closed list. Adding to it is a design decision that belongs in CORE §4.5,
+# not a convenience. Roles measured in the kit today, plus the canon roles the
+# second-level tier exists to serve.
+FINE_PRINT_ROLES = frozenset({
+    "col-sub", "pill", "bio", "l",                    # in the kit today
+    "ramp-l1", "ramp-l2", "ramp-l3", "ramp-l4",       # intensity-ramp leaders
+    "cell-label", "tax-leaf", "band-label",           # canon: matrix, taxonomy, stack
+    "logo-cat", "sub-item",                           # canon: logo wall, second-level
+})
 MEDIA_MIN = 200.0                        # §15.9.2 media-anchoring size gate (v4)
 # Media hosts the anchoring law applies to; ancestors/classes that exempt a
 # rect (tiles/portraits/centrepieces whose inset placement IS the composition).
@@ -989,7 +1019,7 @@ def _geo_anc_classes(by_i, r):
     return seen
 
 
-def _geo_violations(rs, locked):
+def _geo_violations(rs, locked, edge=40.0):
     """(status, detail) §15 findings for one slide's probe records. Locked
     slides skip the margin/footer laws (their geometry deliberately rides the
     canvas edges) but keep the overlap laws."""
@@ -1005,12 +1035,17 @@ def _geo_violations(rs, locked):
         except ValueError:
             continue
         cls = _geo_classes(t["sel"])
-        if 0 < fs < MIN_FONT:
-            out.append(("FAIL", "type floor (§15.10): %s at %.1fpx < %gpx minimum"
-                        % (_geo_fmt(t), fs, MIN_FONT)))
-        elif "body" in cls and fs < MIN_BODY_FONT:
-            out.append(("WARN", "type floor (§15.10): body copy %s at %.1fpx < %gpx"
-                        % (_geo_fmt(t), fs, MIN_BODY_FONT)))
+        if 0 < fs < MIN_FINE:
+            out.append(("FAIL", "type floor (§15.10): %s at %.1fpx — nothing is set "
+                        "below %gpx, whatever role it plays"
+                        % (_geo_fmt(t), fs, MIN_FINE)))
+        elif fs < MIN_TEXT and not (cls & FINE_PRINT_ROLES):
+            out.append(("FAIL", "type floor (§15.10): %s at %.1fpx. Between %gpx and "
+                        "%gpx only the declared second-level roles are allowed (%s); "
+                        "this carries none of them. Raise the size or give it the role "
+                        "it actually plays — do not shrink prose to make it fit (§4.5)."
+                        % (_geo_fmt(t), fs, MIN_FINE, MIN_TEXT,
+                           ", ".join(sorted(FINE_PRINT_ROLES)[:5]) + ", …")))
 
     # ---- §13.4/§12.14 card grid (v4) — cards must expand individually ----
     for r in rs:
@@ -1080,13 +1115,20 @@ def _geo_violations(rs, locked):
 
     if not locked:
         # ---- safe area (glyph rects) -> FAIL ----
+        # The safe area is the content edge with 8px of glyph tolerance, derived
+        # from THIS deck's --m-edge. It was written as a literal 72/1848 pair,
+        # which is edge 80 minus/plus that tolerance — the fifth place the edge
+        # constant lived. Moving the frame to 40 made every correct headline a
+        # FAIL until this followed it.
+        safe_l = edge - 8
+        safe_r = (1920 - edge) + 8
         for t in text_leaves:
             tx, ty, tw, th = _geo_trect(t)
             probs = []
-            if tx < 72:
-                probs.append("x=%g < 72" % tx)
-            if tx + tw > 1848:
-                probs.append("right=%g > 1848" % (tx + tw))
+            if tx < safe_l:
+                probs.append("x=%g < %g" % (tx, safe_l))
+            if tx + tw > safe_r:
+                probs.append("right=%g > %g" % (tx + tw, safe_r))
             if ty < 20:
                 probs.append("y=%g < 20" % ty)
             if probs:
@@ -1112,9 +1154,12 @@ def _geo_violations(rs, locked):
                 if "headline" not in _geo_classes(t["sel"]):
                     continue
                 tx = _geo_trect(t)[0]
-                if abs(tx - 80) > 6:
+                # Read the edge off the deck rather than restating it. This
+                # check hardcoded 80 while the shell moved to 40, which would
+                # have warned on every correctly-built slide.
+                if abs(tx - edge) > 6:
                     out.append(("WARN", "content edge (§15.9): headline starts at "
-                                "x=%g — the deck-wide content edge is x=80" % tx))
+                                "x=%g — this deck's content edge is x=%g" % (tx, edge)))
                 break
 
         # ---- §15.9.2 media anchoring (v4) -> FAIL ----
@@ -1201,6 +1246,10 @@ def check_geometry(deck_path, slides, shots):
     Runs the Chrome probe ONCE for the whole deck; returns
     {slide_number: [probe records]} so check_furniture_contrast can reuse the
     same JSON (None when the probe failed)."""
+    try:
+        edge = _content_edge(open(deck_path, encoding="utf-8", errors="replace").read())
+    except OSError:
+        edge = 40.0
     recs, err = _geo_capture(deck_path)
     if recs is None:
         report("WARN", "geometry", f"probe failed — {err}; §15 laws not checked this run")
@@ -1221,7 +1270,7 @@ def check_geometry(deck_path, slides, shots):
             continue
         checked += 1
         sid = (slide_id(slides[n - 1]) if n <= len(slides) else None) or rs[0]["slide"]
-        vios = _geo_violations(rs, _locked_slide(sid))
+        vios = _geo_violations(rs, _locked_slide(sid), edge)
         for status, detail in vios:
             report(status, f"geometry s{n} ({sid})", detail)
         if not vios:
