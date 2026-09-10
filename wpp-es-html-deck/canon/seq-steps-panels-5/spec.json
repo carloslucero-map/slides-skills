@@ -1,0 +1,101 @@
+{
+  "id": "seq-steps-panels-5",
+  "$comment": "Hand-written. Structure only.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "eyebrow",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "label"
+    },
+    {
+      "role": "headline",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "headline"
+    },
+    {
+      "role": "lede",
+      "arity": 1,
+      "required": false,
+      "capacityRole": "body",
+      "note": "One sentence naming the method as a whole. Optional — without it the step row rises."
+    },
+    {
+      "role": "step",
+      "repeat": true,
+      "arity": [
+        4,
+        5
+      ],
+      "required": true,
+      "children": [
+        {
+          "role": "ordinal",
+          "arity": 1,
+          "required": true
+        },
+        {
+          "role": "stepName",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "label"
+        },
+        {
+          "role": "stepTitle",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "cardTitle",
+          "note": "What the step achieves, not what it is called."
+        },
+        {
+          "role": "activityLabel",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "fineLabel"
+        },
+        {
+          "role": "activity",
+          "repeat": true,
+          "arity": [
+            3,
+            5
+          ],
+          "required": true,
+          "capacityRole": "fineItem"
+        },
+        {
+          "role": "deliverableLabel",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "fineLabel"
+        },
+        {
+          "role": "deliverable",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "fineItem"
+        }
+      ]
+    }
+  ],
+  "invariants": [
+    "Second-level items carry .sub-item and sit at 16px. That is legal ONLY because .sub-item is on the §15.10 closed list; the same copy in a .body would FAIL, and should.",
+    "No chevrons. The source's arrow-tipped headers are ornament the dot system does not sanction, and the sequence is already carried by the ordinal and the reading order.",
+    "Panels are equal height and the row is CENTRED in the band below the lede. Stretching them to the foot makes five hollow panels; letting them sit at the top kills the lower third.",
+    "Five steps is the ceiling. At six the panel width falls below what 16px second-level copy can hold without every line wrapping.",
+    "Panels clip. A step whose activities overflow gets fewer activities, not smaller type (§4.5)."
+  ],
+  "grounds": {
+    "upper": "cream",
+    "lower": "cream",
+    "panels": "navy",
+    "note": "The panels are the dark moment, not the slide. .slide--navy would invert the whole canvas."
+  },
+  "source": "bank:203",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

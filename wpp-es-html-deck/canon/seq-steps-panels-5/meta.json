@@ -1,0 +1,55 @@
+{
+  "id": "seq-steps-panels-5",
+  "name": "Five-stage method with substance under each stage",
+  "useWhen": "A repeatable method has four or five stages and each stage genuinely has activities and deliverables worth naming — the audience needs to see the depth, not just the sequence.",
+  "$useWhenNote": "Written by hand.",
+  "family": "C-sequence",
+  "secondaryFamily": null,
+  "form": "steps",
+  "arity": "5",
+  "arityRange": [
+    4,
+    5
+  ],
+  "ground": [
+    "cream",
+    "navy"
+  ],
+  "density": "dense",
+  "densityChars": 1450,
+  "mediaRole": "none",
+  "focal": {
+    "role": "headline",
+    "px": 64,
+    "againstHeadlinePx": 64,
+    "ratio": 1.0,
+    "note": "Flat by design. Nothing competes with the headline because the panels are doing volume, not display. A giant ordinal here would fight 45 lines of second-level copy."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:203",
+  "sourceRender": "ref.png",
+  "replaces": "process-timeline-v1",
+  "replacesNote": "process-timeline-v1 has no second level at all, so a five-stage method with real substance flattens to five one-line cards. Do not retire it until this has been through a real deck — v1 is still right when the stages genuinely are one-liners.",
+  "deviations": [
+    {
+      "what": "chevron step headers",
+      "source": "arrow-tipped",
+      "here": "flat with a rule",
+      "why": "Unsanctioned ornament, and redundant with the ordinal and reading order."
+    },
+    {
+      "what": "panel heights",
+      "source": "ragged, first panel clipped mid-word",
+      "here": "equal, centred",
+      "why": "The source ran out of room. Reproducing that would be copying a defect."
+    }
+  ],
+  "contractGapsClosed": [
+    "None new. This template is the reason the §15.10 second-level tier and its closed list exist — it was built against the slide that sets 47 of its 54 runs at 16px."
+  ],
+  "createdAt": "2026-09-10",
+  "version": 1
+}

@@ -1,0 +1,565 @@
+{
+ "source": "bank:203",
+ "inventory": "inventory2.json",
+ "canvas": [
+  1920,
+  1080
+ ],
+ "ptToPx": 2.0,
+ "shapeCount": 24,
+ "offstageDropped": 1,
+ "boxlessDropped": 0,
+ "leftEdges": [
+  57,
+  354,
+  356,
+  651,
+  653,
+  896,
+  922,
+  969,
+  972,
+  1109,
+  1140,
+  1264,
+  1271,
+  1288,
+  1291,
+  1310,
+  1347,
+  1463,
+  1729,
+  1858
+ ],
+ "topEdges": [
+  -130,
+  -43,
+  57,
+  119,
+  125,
+  128,
+  225,
+  275,
+  299,
+  409,
+  468,
+  527,
+  530,
+  625,
+  646,
+  719,
+  863
+ ],
+ "typePx": [
+  16,
+  24,
+  64
+ ],
+ "shapes": [
+  {
+   "kind": "sp",
+   "name": "Oval 12",
+   "box": [
+    1347,
+    863,
+    271,
+    271
+   ],
+   "right": 1618,
+   "bottom": 1134,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 13",
+   "box": [
+    1271,
+    625,
+    271,
+    271
+   ],
+   "right": 1542,
+   "bottom": 896,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 5",
+   "box": [
+    1463,
+    225,
+    271,
+    271
+   ],
+   "right": 1734,
+   "bottom": 496,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 6",
+   "box": [
+    1140,
+    409,
+    271,
+    271
+   ],
+   "right": 1411,
+   "bottom": 680,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 7",
+   "box": [
+    896,
+    719,
+    271,
+    271
+   ],
+   "right": 1167,
+   "bottom": 990,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 8",
+   "box": [
+    922,
+    -43,
+    271,
+    271
+   ],
+   "right": 1193,
+   "bottom": 228,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 9",
+   "box": [
+    1729,
+    646,
+    271,
+    271
+   ],
+   "right": 2000,
+   "bottom": 917,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 10",
+   "box": [
+    1858,
+    299,
+    271,
+    271
+   ],
+   "right": 2129,
+   "bottom": 570,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 11",
+   "box": [
+    1310,
+    -130,
+    271,
+    271
+   ],
+   "right": 1581,
+   "bottom": 141,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 70",
+   "box": [
+    57,
+    275,
+    1474,
+    71
+   ],
+   "right": 1531,
+   "bottom": 346,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 147,
+   "text": "From assessment to optimisation, our repeatable 5D approach ensures every stage of migration is purposeful, tested, and built for long-term success"
+  },
+  {
+   "kind": "sp",
+   "name": "Arrow: Pentagon 74",
+   "box": [
+    57,
+    468,
+    310,
+    47
+   ],
+   "right": 367,
+   "bottom": 515,
+   "placeholder": null,
+   "geom": "homePlate",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 11,
+   "text": "1. DISCOVER"
+  },
+  {
+   "kind": "sp",
+   "name": "Arrow: Chevron 76",
+   "box": [
+    354,
+    468,
+    310,
+    47
+   ],
+   "right": 664,
+   "bottom": 515,
+   "placeholder": null,
+   "geom": "chevron",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 9,
+   "text": "2. DEFINE"
+  },
+  {
+   "kind": "sp",
+   "name": "Arrow: Chevron 78",
+   "box": [
+    651,
+    468,
+    332,
+    47
+   ],
+   "right": 983,
+   "bottom": 515,
+   "placeholder": null,
+   "geom": "chevron",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 10,
+   "text": "3. DEVELOP"
+  },
+  {
+   "kind": "sp",
+   "name": "Arrow: Chevron 80",
+   "box": [
+    969,
+    468,
+    332,
+    47
+   ],
+   "right": 1301,
+   "bottom": 515,
+   "placeholder": null,
+   "geom": "chevron",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 10,
+   "text": "4. DELIVER"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 82",
+   "box": [
+    57,
+    527,
+    289,
+    404
+   ],
+   "right": 346,
+   "bottom": 931,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 329,
+   "text": "ALIGN ON VISION & CURRENT STATE Activities Kick-off meeting Scope discovery Platform, campaign and data workshops Platform instance provisioning Technical onboarding and training U"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 84",
+   "box": [
+    356,
+    527,
+    289,
+    386
+   ],
+   "right": 645,
+   "bottom": 913,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 326,
+   "text": "BLUEPRINT FOR SUCCESSS Activities Technical specs and definitions Data & Reporting requirements and specifications Environment and workspace definitions IP warming plan Campaign co"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 86",
+   "box": [
+    653,
+    527,
+    310,
+    368
+   ],
+   "right": 963,
+   "bottom": 895,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 292,
+   "text": "BUILD, CONFIGURE & INTEGRATE Activities Platform configuration Migration of required components from existing to new platform Campaign Development Template creation Testing Documen"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 88",
+   "box": [
+    972,
+    527,
+    310,
+    333
+   ],
+   "right": 1282,
+   "bottom": 860,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 179,
+   "text": "LAUNCH WITH CONFIDENCE Activities Bespoke client training and onboarding sessions IP Warming Go-Live Hypercare DELIVERABLES: IP Warming campaigns, Campaign go-live and monitoring."
+  },
+  {
+   "kind": "sp",
+   "name": "Arrow: Chevron 96",
+   "box": [
+    1288,
+    468,
+    332,
+    47
+   ],
+   "right": 1620,
+   "bottom": 515,
+   "placeholder": null,
+   "geom": "chevron",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 11,
+   "text": "5. DIALOGUE"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 98",
+   "box": [
+    1291,
+    530,
+    310,
+    281
+   ],
+   "right": 1601,
+   "bottom": 811,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 146,
+   "text": "MEASURE, OPTIMIZE & EVOLVE Activities Evaluation Reporting Optimization DELIVERABLES: Assessment, learnings and roadmap for continuous improvement"
+  },
+  {
+   "kind": "sp",
+   "name": "Title 20",
+   "box": [
+    57,
+    57,
+    870,
+    48
+   ],
+   "right": 927,
+   "bottom": 105,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 36,
+   "text": "PLATFORM INDEPENDENT TECH CONSULTING"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 21",
+   "box": [
+    57,
+    119,
+    1763,
+    149
+   ],
+   "right": 1820,
+   "bottom": 268,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    32
+   ],
+   "px": [
+    64
+   ],
+   "chars": 95,
+   "text": "We turn loyalty & MarTech platform migration from complexity into a clear, proven path to value"
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 19",
+   "box": [
+    1264,
+    128,
+    135,
+    34
+   ],
+   "right": 1399,
+   "bottom": 162,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 20",
+   "box": [
+    1109,
+    125,
+    129,
+    35
+   ],
+   "right": 1238,
+   "bottom": 160,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  }
+ ],
+ "_note": "Evidence about the source slide. Not CSS, not a spec, never averaged with another slide."
+}
