@@ -1,0 +1,52 @@
+{
+  "id": "enum-stage-bento-4",
+  "name": "Four stages, each with its receipts",
+  "useWhen": "A transformation happened in four stages and each one needs both a screenshot of what was actually built and the two or three things that changed.",
+  "$useWhenNote": "Written by hand.",
+  "family": "B-enumeration",
+  "secondaryFamily": "G-media",
+  "form": "bento",
+  "arity": "4",
+  "arityRange": [
+    4,
+    4
+  ],
+  "ground": [
+    "cream"
+  ],
+  "density": "standard",
+  "densityChars": 620,
+  "mediaRole": "screenshot",
+  "focal": {
+    "role": "ordinal",
+    "px": 132,
+    "againstHeadlinePx": 48,
+    "ratio": 2.75,
+    "note": "Against the stage LABEL, since this template has no headline — the four ordinals are the top-level structure and there is nothing above them."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:73",
+  "sourceRender": "ref.png",
+  "replaces": "cards-v1",
+  "replacesNote": "cards-v1 is a 2x2 of text cards — four parallel points. This is four sequential stages with evidence. Keep both; they answer different questions.",
+  "deviations": [
+    {
+      "what": "hand-drawn connecting arrows",
+      "source": "present between quadrants",
+      "here": "dropped",
+      "why": "Unsanctioned ornament that crosses the reading path, and redundant with the ordinals."
+    },
+    {
+      "what": "no headline",
+      "source": "none either",
+      "here": "none",
+      "why": "Recorded because it is unusual: this is one of the few templates where the ordinals ARE the top-level structure."
+    }
+  ],
+  "contractGapsClosed": [],
+  "createdAt": "2026-09-10",
+  "version": 1
+}

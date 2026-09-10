@@ -1,0 +1,1406 @@
+{
+ "source": "bank:37",
+ "inventory": "inventory2.json",
+ "canvas": [
+  1920,
+  1080
+ ],
+ "ptToPx": 2.0,
+ "shapeCount": 64,
+ "offstageDropped": 4,
+ "boxlessDropped": 0,
+ "leftEdges": [
+  -592,
+  -57,
+  0,
+  59,
+  85,
+  127,
+  131,
+  259,
+  275,
+  277,
+  308,
+  382,
+  383,
+  468,
+  480,
+  660,
+  724,
+  725,
+  844,
+  851,
+  917,
+  940,
+  971,
+  972,
+  1042,
+  1065,
+  1109,
+  1233,
+  1262,
+  1264,
+  1331,
+  1332,
+  1425,
+  1486,
+  1495,
+  1549,
+  1588,
+  1616,
+  1709,
+  1807,
+  1841,
+  1863
+ ],
+ "topEdges": [
+  -200,
+  -196,
+  -191,
+  -122,
+  -104,
+  -57,
+  0,
+  125,
+  128,
+  141,
+  171,
+  175,
+  188,
+  301,
+  364,
+  402,
+  407,
+  525,
+  579,
+  622,
+  656,
+  809,
+  841,
+  852,
+  857,
+  863,
+  867,
+  868,
+  869,
+  871,
+  1023,
+  1033
+ ],
+ "typePx": [
+  20,
+  32,
+  36
+ ],
+ "shapes": [
+  {
+   "kind": "pic",
+   "name": "Ford.png",
+   "box": [
+    131,
+    863,
+    97,
+    39
+   ],
+   "right": 228,
+   "bottom": 902,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 66",
+   "box": [
+    308,
+    867,
+    105,
+    38
+   ],
+   "right": 413,
+   "bottom": 905,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 2",
+   "box": [
+    480,
+    841,
+    88,
+    89
+   ],
+   "right": 568,
+   "bottom": 930,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 21",
+   "box": [
+    259,
+    141,
+    177,
+    124
+   ],
+   "right": 436,
+   "bottom": 265,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 18",
+   "box": [
+    844,
+    175,
+    231,
+    60
+   ],
+   "right": 1075,
+   "bottom": 235,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Ford.png",
+   "box": [
+    724,
+    868,
+    97,
+    30
+   ],
+   "right": 821,
+   "bottom": 898,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 66",
+   "box": [
+    917,
+    852,
+    72,
+    61
+   ],
+   "right": 989,
+   "bottom": 913,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 2",
+   "box": [
+    1065,
+    863,
+    139,
+    35
+   ],
+   "right": 1204,
+   "bottom": 898,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Image",
+   "box": [
+    1495,
+    171,
+    182,
+    86
+   ],
+   "right": 1677,
+   "bottom": 257,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 41",
+   "box": [
+    1332,
+    869,
+    91,
+    35
+   ],
+   "right": 1423,
+   "bottom": 904,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 42",
+   "box": [
+    1486,
+    871,
+    167,
+    20
+   ],
+   "right": 1653,
+   "bottom": 891,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 43",
+   "box": [
+    1709,
+    857,
+    110,
+    48
+   ],
+   "right": 1819,
+   "bottom": 905,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 4",
+   "box": [
+    940,
+    -200,
+    166,
+    99
+   ],
+   "right": 1106,
+   "bottom": -101,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 49",
+   "box": [
+    1549,
+    -191,
+    161,
+    84
+   ],
+   "right": 1710,
+   "bottom": -107,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 50",
+   "box": [
+    275,
+    -196,
+    123,
+    131
+   ],
+   "right": 398,
+   "bottom": -65,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 51",
+   "box": [
+    -592,
+    402,
+    432,
+    432
+   ],
+   "right": -160,
+   "bottom": 834,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1",
+   "box": [
+    0,
+    809,
+    1920,
+    0
+   ],
+   "right": 1920,
+   "bottom": 809,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 2",
+   "box": [
+    0,
+    301,
+    1920,
+    0
+   ],
+   "right": 1920,
+   "bottom": 301,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 61",
+   "box": [
+    85,
+    -104,
+    192,
+    19
+   ],
+   "right": 277,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 62",
+   "box": [
+    277,
+    -122,
+    192,
+    19
+   ],
+   "right": 469,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 63",
+   "box": [
+    468,
+    -104,
+    192,
+    19
+   ],
+   "right": 660,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 64",
+   "box": [
+    660,
+    -122,
+    192,
+    19
+   ],
+   "right": 852,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 65",
+   "box": [
+    851,
+    -104,
+    192,
+    19
+   ],
+   "right": 1043,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 66",
+   "box": [
+    1042,
+    -122,
+    192,
+    19
+   ],
+   "right": 1234,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 67",
+   "box": [
+    1233,
+    -104,
+    192,
+    19
+   ],
+   "right": 1425,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 68",
+   "box": [
+    1425,
+    -122,
+    192,
+    19
+   ],
+   "right": 1617,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 69",
+   "box": [
+    1616,
+    -104,
+    192,
+    19
+   ],
+   "right": 1808,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 70",
+   "box": [
+    1807,
+    -122,
+    192,
+    19
+   ],
+   "right": 1999,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 53",
+   "box": [
+    0,
+    -57,
+    57,
+    57
+   ],
+   "right": 57,
+   "bottom": 0,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 54",
+   "box": [
+    -57,
+    0,
+    57,
+    57
+   ],
+   "right": 0,
+   "bottom": 57,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 55",
+   "box": [
+    1863,
+    -57,
+    57,
+    57
+   ],
+   "right": 1920,
+   "bottom": 0,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 57",
+   "box": [
+    -57,
+    1023,
+    57,
+    57
+   ],
+   "right": 0,
+   "bottom": 1080,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 3",
+   "box": [
+    660,
+    188,
+    0,
+    813
+   ],
+   "right": 660,
+   "bottom": 1001,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 6",
+   "box": [
+    59,
+    188,
+    0,
+    813
+   ],
+   "right": 59,
+   "bottom": 1001,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 71",
+   "box": [
+    1863,
+    188,
+    0,
+    813
+   ],
+   "right": 1863,
+   "bottom": 1001,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 72",
+   "box": [
+    1262,
+    188,
+    0,
+    813
+   ],
+   "right": 1262,
+   "bottom": 1001,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 74",
+   "box": [
+    0,
+    525,
+    1920,
+    0
+   ],
+   "right": 1920,
+   "bottom": 525,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 214, chunk 1",
+   "box": [
+    382,
+    364,
+    157,
+    44
+   ],
+   "right": 539,
+   "bottom": 408,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    18
+   ],
+   "px": [
+    36
+   ],
+   "chars": 5,
+   "text": "1300+"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 211, chunk 1",
+   "box": [
+    1588,
+    579,
+    233,
+    78
+   ],
+   "right": 1821,
+   "bottom": 657,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 13,
+   "text": "AWARD WINNERS"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 211, chunk 2",
+   "box": [
+    1588,
+    656,
+    232,
+    97
+   ],
+   "right": 1820,
+   "bottom": 753,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 75,
+   "text": "Recognized by Braze and industry for our masterclass and expertise in Braze"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 214, chunk 1",
+   "box": [
+    1588,
+    364,
+    225,
+    44
+   ],
+   "right": 1813,
+   "bottom": 408,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    18
+   ],
+   "px": [
+    36
+   ],
+   "chars": 7,
+   "text": "EXPERTS"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 214, chunk 2",
+   "box": [
+    1588,
+    407,
+    241,
+    73
+   ],
+   "right": 1829,
+   "bottom": 480,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 79,
+   "text": "Using the intelligent suite, advanced script and best in show usage of platform"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 213, chunk 1",
+   "box": [
+    1331,
+    364,
+    204,
+    44
+   ],
+   "right": 1535,
+   "bottom": 408,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    18
+   ],
+   "px": [
+    36
+   ],
+   "chars": 3,
+   "text": "75+"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 213, chunk 2",
+   "box": [
+    1331,
+    407,
+    204,
+    48
+   ],
+   "right": 1535,
+   "bottom": 455,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 34,
+   "text": "Braze Practitioners within VML MAP"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 212, chunk 1",
+   "box": [
+    1331,
+    579,
+    211,
+    78
+   ],
+   "right": 1542,
+   "bottom": 657,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 9,
+   "text": "ALLOYLEAD"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 212, chunk 2",
+   "box": [
+    1331,
+    656,
+    211,
+    97
+   ],
+   "right": 1542,
+   "bottom": 753,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 64,
+   "text": "One of the first partners to complete Braze Alloy certifications"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 211, chunk 1",
+   "box": [
+    971,
+    579,
+    233,
+    44
+   ],
+   "right": 1204,
+   "bottom": 623,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    18
+   ],
+   "px": [
+    36
+   ],
+   "chars": 10,
+   "text": "ENTERPRISE"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 211, chunk 2",
+   "box": [
+    971,
+    622,
+    210,
+    73
+   ],
+   "right": 1181,
+   "bottom": 695,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 57,
+   "text": "VML MAP’s largest client in terms of AEP adoption is TCCC"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 214, chunk 1",
+   "box": [
+    972,
+    364,
+    183,
+    44
+   ],
+   "right": 1155,
+   "bottom": 408,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    18
+   ],
+   "px": [
+    36
+   ],
+   "chars": 4,
+   "text": "800+"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 214, chunk 2",
+   "box": [
+    972,
+    407,
+    202,
+    73
+   ],
+   "right": 1174,
+   "bottom": 480,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 52,
+   "text": "Adobe Experience Cloud accreditations within VML MAP"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 213, chunk 1",
+   "box": [
+    725,
+    364,
+    177,
+    44
+   ],
+   "right": 902,
+   "bottom": 408,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    18
+   ],
+   "px": [
+    36
+   ],
+   "chars": 6,
+   "text": "2,600+"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 213, chunk 2",
+   "box": [
+    725,
+    407,
+    177,
+    73
+   ],
+   "right": 902,
+   "bottom": 480,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 47,
+   "text": "Adobe Experience Cloud Practitioners within VML"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 212, chunk 1",
+   "box": [
+    725,
+    579,
+    185,
+    44
+   ],
+   "right": 910,
+   "bottom": 623,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    18
+   ],
+   "px": [
+    36
+   ],
+   "chars": 6,
+   "text": "100BN+"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 212, chunk 2",
+   "box": [
+    725,
+    622,
+    185,
+    97
+   ],
+   "right": 910,
+   "bottom": 719,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 64,
+   "text": "Personalization permutations daily and 30 BN interactions yearly"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 211, chunk 1",
+   "box": [
+    382,
+    579,
+    235,
+    44
+   ],
+   "right": 617,
+   "bottom": 623,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    18
+   ],
+   "px": [
+    36
+   ],
+   "chars": 10,
+   "text": "ENTERPRISE"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 211, chunk 2",
+   "box": [
+    383,
+    622,
+    180,
+    97
+   ],
+   "right": 563,
+   "bottom": 719,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 68,
+   "text": "VML MAP supports one of the largest Salesforce clients in the world."
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 214, chunk 2, chunk 1",
+   "box": [
+    382,
+    407,
+    157,
+    48
+   ],
+   "right": 539,
+   "bottom": 455,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 19,
+   "text": "Global Team Members"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 213, chunk 1",
+   "box": [
+    127,
+    364,
+    175,
+    44
+   ],
+   "right": 302,
+   "bottom": 408,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    18
+   ],
+   "px": [
+    36
+   ],
+   "chars": 5,
+   "text": "2500+"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 213, chunk 2",
+   "box": [
+    127,
+    407,
+    175,
+    48
+   ],
+   "right": 302,
+   "bottom": 455,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 29,
+   "text": "Salesforce Projects delivered"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 212, chunk 1",
+   "box": [
+    127,
+    579,
+    175,
+    44
+   ],
+   "right": 302,
+   "bottom": 623,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    18
+   ],
+   "px": [
+    36
+   ],
+   "chars": 5,
+   "text": "2400+"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 212, chunk 2",
+   "box": [
+    127,
+    622,
+    175,
+    48
+   ],
+   "right": 302,
+   "bottom": 670,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 25,
+   "text": "Salesforce Certifications"
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 102",
+   "box": [
+    1264,
+    128,
+    135,
+    34
+   ],
+   "right": 1399,
+   "bottom": 162,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 103",
+   "box": [
+    1109,
+    125,
+    129,
+    35
+   ],
+   "right": 1238,
+   "bottom": 160,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Slide Number Placeholder 5",
+   "box": [
+    1841,
+    1033,
+    44,
+    15
+   ],
+   "right": 1885,
+   "bottom": 1048,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 2,
+   "text": "37"
+  }
+ ],
+ "_note": "Evidence about the source slide. Not CSS, not a spec, never averaged with another slide."
+}

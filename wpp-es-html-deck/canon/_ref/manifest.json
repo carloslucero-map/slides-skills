@@ -39,7 +39,7 @@
    "family": "B-enumeration",
    "targetId": "enum-bento-3x2",
    "rag": "green",
-   "canonId": null
+   "canonId": "enum-stage-bento-4"
   },
   {
    "page": 5,
@@ -111,7 +111,7 @@
    "family": "D-quantitative",
    "targetId": "quant-kpi-grid + ent-logo-wall-hero-count",
    "rag": "green",
-   "canonId": null
+   "canonId": "ent-partner-credentials-3"
   },
   {
    "page": 13,

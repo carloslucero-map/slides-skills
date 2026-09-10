@@ -1,0 +1,61 @@
+{
+  "id": "enum-stage-bento-4",
+  "$comment": "Hand-written. Structure only.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "stage",
+      "repeat": true,
+      "arity": [
+        4,
+        4
+      ],
+      "required": true,
+      "children": [
+        {
+          "role": "ordinal",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "display"
+        },
+        {
+          "role": "stageLabel",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "cardTitle"
+        },
+        {
+          "role": "evidence",
+          "arity": 1,
+          "required": true,
+          "note": "A screenshot of the actual artefact, supplied per deck."
+        },
+        {
+          "role": "point",
+          "repeat": true,
+          "arity": [
+            3,
+            4
+          ],
+          "required": true,
+          "capacityRole": "fineItem"
+        }
+      ]
+    }
+  ],
+  "invariants": [
+    "Exactly four stages in a 2x2. This is a journey argument; three or five is a different shape.",
+    "Ordinals sit AT the canvas edge, x=0, with no page margin. That is what makes them chapter marks rather than labels — measured, and not a bleed past the edge.",
+    "Every stage carries evidence. A stage with bullets and no artefact is a claim, and this template exists to show receipts.",
+    "No connecting arrows. A 2x2 already reads 1-2-3-4, and the source's hand-drawn curves cross the reading path."
+  ],
+  "grounds": {
+    "upper": "cream",
+    "lower": "cream"
+  },
+  "source": "bank:73",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

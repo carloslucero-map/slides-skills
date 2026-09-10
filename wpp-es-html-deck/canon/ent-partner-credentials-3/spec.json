@@ -1,0 +1,72 @@
+{
+  "id": "ent-partner-credentials-3",
+  "$comment": "Hand-written. Structure only.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "partner",
+      "repeat": true,
+      "arity": [
+        2,
+        3
+      ],
+      "required": true,
+      "children": [
+        {
+          "role": "partnerMark",
+          "arity": 1,
+          "required": true
+        },
+        {
+          "role": "claim",
+          "repeat": true,
+          "arity": [
+            4,
+            4
+          ],
+          "required": true,
+          "children": [
+            {
+              "role": "value",
+              "arity": 1,
+              "required": true,
+              "capacityRole": "display",
+              "note": "A number OR a word. Half the source's cells lead with a word at the same size."
+            },
+            {
+              "role": "note",
+              "arity": 1,
+              "required": true,
+              "capacityRole": "cardBody"
+            }
+          ]
+        },
+        {
+          "role": "client",
+          "repeat": true,
+          "arity": [
+            2,
+            4
+          ],
+          "required": false,
+          "capacityRole": "label"
+        }
+      ]
+    }
+  ],
+  "invariants": [
+    "Dotted VERTICAL rules between partners. They are what make this a comparison instead of a pile — column two is column one's counterpart, not its continuation.",
+    "Hairlines separate KINDS of claim: numbers, then named strengths, then clients. Not decoration; the bands mean different things.",
+    "A value slot may hold a word. ENTERPRISE and 2,600+ are peers at the same size — the slot is 'the claim in one or two words'.",
+    "Values wrap; they never overrun. The source's ENTERPRISE collides with its own body text twice."
+  ],
+  "grounds": {
+    "upper": "cream",
+    "lower": "cream"
+  },
+  "source": "bank:37",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

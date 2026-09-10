@@ -1,0 +1,46 @@
+{
+  "id": "ent-partner-credentials-3",
+  "name": "Partner credentials compared side by side",
+  "useWhen": "Two or three platform partnerships each need their own proof — depth of certification, scale of delivery, and who it was delivered for — and the point is that all of them are strong.",
+  "$useWhenNote": "Written by hand.",
+  "family": "H-entities",
+  "secondaryFamily": "D-quantitative",
+  "form": "kpi-grid",
+  "arity": "3",
+  "arityRange": [
+    2,
+    3
+  ],
+  "ground": [
+    "cream"
+  ],
+  "density": "dense",
+  "densityChars": 880,
+  "mediaRole": "logo",
+  "focal": {
+    "role": "value",
+    "px": 36,
+    "againstHeadlinePx": 64,
+    "ratio": 0.56,
+    "note": "Low on purpose. Twelve claims sharing a canvas cannot each be a display moment; the column structure carries the emphasis instead of any one figure."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:37",
+  "sourceRender": "ref.png",
+  "replaces": null,
+  "replacesNote": "Neither logo-wall-v2 (breadth, no depth) nor stats-v5 (depth, no owner) does this job. It is a gap, not a replacement.",
+  "deviations": [
+    {
+      "what": "value overrun",
+      "source": "ENTERPRISE collides with its body text, twice",
+      "here": "wraps cleanly",
+      "why": "A defect in the source, not a style."
+    }
+  ],
+  "contractGapsClosed": [],
+  "createdAt": "2026-09-10",
+  "version": 1
+}
