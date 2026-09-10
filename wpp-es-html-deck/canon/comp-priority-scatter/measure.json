@@ -1,0 +1,1511 @@
+{
+ "source": "bank:32",
+ "inventory": "inventory2.json",
+ "canvas": [
+  1920,
+  1080
+ ],
+ "ptToPx": 2.0,
+ "shapeCount": 64,
+ "offstageDropped": 4,
+ "boxlessDropped": 0,
+ "leftEdges": [
+  -57,
+  0,
+  57,
+  85,
+  121,
+  153,
+  155,
+  248,
+  270,
+  277,
+  288,
+  331,
+  339,
+  363,
+  401,
+  446,
+  468,
+  497,
+  501,
+  510,
+  577,
+  618,
+  644,
+  660,
+  667,
+  672,
+  675,
+  722,
+  749,
+  762,
+  851,
+  855,
+  856,
+  890,
+  903,
+  922,
+  923,
+  961,
+  979,
+  1042,
+  1084,
+  1109,
+  1150,
+  1233,
+  1264,
+  1280,
+  1425,
+  1533,
+  1587,
+  1589,
+  1616,
+  1623,
+  1807,
+  1841,
+  1863
+ ],
+ "topEdges": [
+  -122,
+  -104,
+  -57,
+  0,
+  60,
+  118,
+  125,
+  128,
+  298,
+  314,
+  394,
+  404,
+  410,
+  455,
+  461,
+  470,
+  476,
+  513,
+  531,
+  560,
+  577,
+  578,
+  579,
+  582,
+  627,
+  630,
+  645,
+  650,
+  684,
+  722,
+  730,
+  737,
+  761,
+  784,
+  793,
+  807,
+  809,
+  812,
+  836,
+  856,
+  860,
+  863,
+  865,
+  942,
+  964,
+  1023,
+  1033
+ ],
+ "typePx": [
+  16,
+  20,
+  40,
+  64
+ ],
+ "shapes": [
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 44",
+   "box": [
+    1587,
+    812,
+    35,
+    34
+   ],
+   "right": 1622,
+   "bottom": 846,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 45",
+   "box": [
+    1589,
+    863,
+    32,
+    34
+   ],
+   "right": 1621,
+   "bottom": 897,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 44",
+   "box": [
+    1623,
+    807,
+    219,
+    39
+   ],
+   "right": 1842,
+   "bottom": 846,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 17,
+   "text": "Loyalty marketing"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 45",
+   "box": [
+    1623,
+    860,
+    202,
+    39
+   ],
+   "right": 1825,
+   "bottom": 899,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 15,
+   "text": "Loyalty service"
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Arrow Connector 12",
+   "box": [
+    0,
+    942,
+    1585,
+    0
+   ],
+   "right": 1585,
+   "bottom": 942,
+   "placeholder": null,
+   "geom": "straightConnector1",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 13",
+   "box": [
+    121,
+    577,
+    136,
+    39
+   ],
+   "right": 257,
+   "bottom": 616,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 270,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 10,
+   "text": "SIMPLICITY"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 14",
+   "box": [
+    890,
+    964,
+    92,
+    39
+   ],
+   "right": 982,
+   "bottom": 1003,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 5,
+   "text": "VALUE"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 10",
+   "box": [
+    749,
+    476,
+    161,
+    34
+   ],
+   "right": 910,
+   "bottom": 510,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 16,
+   "text": "Product launches"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 14",
+   "box": [
+    922,
+    476,
+    266,
+    34
+   ],
+   "right": 1188,
+   "bottom": 510,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 28,
+   "text": "Personalized recommendations"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 15",
+   "box": [
+    722,
+    645,
+    171,
+    34
+   ],
+   "right": 893,
+   "bottom": 679,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 17,
+   "text": "Loyalty messaging"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 16",
+   "box": [
+    749,
+    531,
+    197,
+    34
+   ],
+   "right": 946,
+   "bottom": 565,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 22,
+   "text": "Personalised upselling"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 17",
+   "box": [
+    667,
+    860,
+    186,
+    34
+   ],
+   "right": 853,
+   "bottom": 894,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 20,
+   "text": "Product/service info"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 18",
+   "box": [
+    331,
+    650,
+    105,
+    34
+   ],
+   "right": 436,
+   "bottom": 684,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 8,
+   "text": "2FA/ OTP"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 20",
+   "box": [
+    401,
+    582,
+    172,
+    34
+   ],
+   "right": 573,
+   "bottom": 616,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 16,
+   "text": "Welcome journeys"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 21",
+   "box": [
+    446,
+    627,
+    248,
+    34
+   ],
+   "right": 694,
+   "bottom": 661,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 28,
+   "text": "Profiling surveys/enrichment"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 22",
+   "box": [
+    855,
+    410,
+    179,
+    34
+   ],
+   "right": 1034,
+   "bottom": 444,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 20,
+   "text": "Partner offer boosts"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 23",
+   "box": [
+    922,
+    836,
+    143,
+    34
+   ],
+   "right": 1065,
+   "bottom": 870,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 14,
+   "text": "FAQ assistance"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 24",
+   "box": [
+    339,
+    793,
+    153,
+    34
+   ],
+   "right": 492,
+   "bottom": 827,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 14,
+   "text": "Member surveys"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 25",
+   "box": [
+    979,
+    579,
+    156,
+    34
+   ],
+   "right": 1135,
+   "bottom": 613,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 14,
+   "text": "Member support"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 26",
+   "box": [
+    644,
+    809,
+    240,
+    34
+   ],
+   "right": 884,
+   "bottom": 843,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 27,
+   "text": "Payment/order notifications"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 27",
+   "box": [
+    363,
+    737,
+    208,
+    34
+   ],
+   "right": 571,
+   "bottom": 771,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 21,
+   "text": "Appointment reminders"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 28",
+   "box": [
+    672,
+    722,
+    218,
+    34
+   ],
+   "right": 890,
+   "bottom": 756,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 21,
+   "text": "Member-only Campaigns"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 29",
+   "box": [
+    288,
+    470,
+    167,
+    34
+   ],
+   "right": 455,
+   "bottom": 504,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 15,
+   "text": "Promo campaigns"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 30",
+   "box": [
+    510,
+    461,
+    133,
+    34
+   ],
+   "right": 643,
+   "bottom": 495,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 12,
+   "text": "Abandon cart"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 32",
+   "box": [
+    762,
+    578,
+    191,
+    34
+   ],
+   "right": 953,
+   "bottom": 612,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 18,
+   "text": "Win-back Campaigns"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 33",
+   "box": [
+    577,
+    560,
+    160,
+    34
+   ],
+   "right": 737,
+   "bottom": 594,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 14,
+   "text": "Abandon browse"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 34",
+   "box": [
+    1084,
+    730,
+    220,
+    34
+   ],
+   "right": 1304,
+   "bottom": 764,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 26,
+   "text": "Transaction identification"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 35",
+   "box": [
+    497,
+    865,
+    140,
+    34
+   ],
+   "right": 637,
+   "bottom": 899,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 13,
+   "text": "Order updates"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 36",
+   "box": [
+    501,
+    809,
+    135,
+    34
+   ],
+   "right": 636,
+   "bottom": 843,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 14,
+   "text": "IVR deflection"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 37",
+   "box": [
+    675,
+    404,
+    170,
+    34
+   ],
+   "right": 845,
+   "bottom": 438,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 17,
+   "text": "Liked item promos"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 38",
+   "box": [
+    618,
+    761,
+    203,
+    34
+   ],
+   "right": 821,
+   "bottom": 795,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 20,
+   "text": "Appointment feedback"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 40",
+   "box": [
+    903,
+    630,
+    172,
+    34
+   ],
+   "right": 1075,
+   "bottom": 664,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 19,
+   "text": "Limited-time offers"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 41",
+   "box": [
+    856,
+    684,
+    241,
+    34
+   ],
+   "right": 1097,
+   "bottom": 718,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 26,
+   "text": "Location-based experiences"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 42",
+   "box": [
+    923,
+    730,
+    132,
+    34
+   ],
+   "right": 1055,
+   "bottom": 764,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 14,
+   "text": "Refer a friend"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 43",
+   "box": [
+    1150,
+    684,
+    253,
+    34
+   ],
+   "right": 1403,
+   "bottom": 718,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 28,
+   "text": "Personalized product support"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 43",
+   "box": [
+    153,
+    298,
+    73,
+    39
+   ],
+   "right": 226,
+   "bottom": 337,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 4,
+   "text": "High"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 44",
+   "box": [
+    1533,
+    964,
+    73,
+    39
+   ],
+   "right": 1606,
+   "bottom": 1003,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 4,
+   "text": "High"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 45",
+   "box": [
+    155,
+    856,
+    69,
+    39
+   ],
+   "right": 224,
+   "bottom": 895,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 3,
+   "text": "Low"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 46",
+   "box": [
+    270,
+    964,
+    69,
+    39
+   ],
+   "right": 339,
+   "bottom": 1003,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 3,
+   "text": "Low"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 52",
+   "box": [
+    510,
+    684,
+    195,
+    34
+   ],
+   "right": 705,
+   "bottom": 718,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 19,
+   "text": "Appointment booking"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 54",
+   "box": [
+    961,
+    784,
+    155,
+    34
+   ],
+   "right": 1116,
+   "bottom": 818,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 15,
+   "text": "Coupon delivery"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 3",
+   "box": [
+    1280,
+    455,
+    214,
+    34
+   ],
+   "right": 1494,
+   "bottom": 489,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 19,
+   "text": "Agentic member care"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 5",
+   "box": [
+    1280,
+    513,
+    214,
+    34
+   ],
+   "right": 1494,
+   "bottom": 547,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 15,
+   "text": "Agentic shopper"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 9",
+   "box": [
+    1280,
+    394,
+    214,
+    34
+   ],
+   "right": 1494,
+   "bottom": 428,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 22,
+   "text": "Agentic loyalty member"
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Arrow Connector 57",
+   "box": [
+    248,
+    314,
+    0,
+    766
+   ],
+   "right": 248,
+   "bottom": 1080,
+   "placeholder": null,
+   "geom": "straightConnector1",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Slide Number Placeholder 5",
+   "box": [
+    1841,
+    1033,
+    44,
+    15
+   ],
+   "right": 1885,
+   "bottom": 1048,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 2,
+   "text": "32"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 75",
+   "box": [
+    85,
+    -104,
+    192,
+    19
+   ],
+   "right": 277,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 92",
+   "box": [
+    277,
+    -122,
+    192,
+    19
+   ],
+   "right": 469,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 119",
+   "box": [
+    468,
+    -104,
+    192,
+    19
+   ],
+   "right": 660,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 120",
+   "box": [
+    660,
+    -122,
+    192,
+    19
+   ],
+   "right": 852,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 121",
+   "box": [
+    851,
+    -104,
+    192,
+    19
+   ],
+   "right": 1043,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 122",
+   "box": [
+    1042,
+    -122,
+    192,
+    19
+   ],
+   "right": 1234,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 123",
+   "box": [
+    1233,
+    -104,
+    192,
+    19
+   ],
+   "right": 1425,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 124",
+   "box": [
+    1425,
+    -122,
+    192,
+    19
+   ],
+   "right": 1617,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 125",
+   "box": [
+    1616,
+    -104,
+    192,
+    19
+   ],
+   "right": 1808,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 126",
+   "box": [
+    1807,
+    -122,
+    192,
+    19
+   ],
+   "right": 1999,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 63",
+   "box": [
+    0,
+    -57,
+    57,
+    57
+   ],
+   "right": 57,
+   "bottom": 0,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 64",
+   "box": [
+    -57,
+    0,
+    57,
+    57
+   ],
+   "right": 0,
+   "bottom": 57,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 65",
+   "box": [
+    1863,
+    -57,
+    57,
+    57
+   ],
+   "right": 1920,
+   "bottom": 0,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 67",
+   "box": [
+    -57,
+    1023,
+    57,
+    57
+   ],
+   "right": 0,
+   "bottom": 1080,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Title 1",
+   "box": [
+    57,
+    118,
+    1356,
+    209
+   ],
+   "right": 1413,
+   "bottom": 327,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    32
+   ],
+   "px": [
+    64
+   ],
+   "chars": 108,
+   "text": "But true AI value rests in selecting the right priority use cases and getting these live, tested, and scaled"
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 130",
+   "box": [
+    1264,
+    128,
+    135,
+    34
+   ],
+   "right": 1399,
+   "bottom": 162,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 131",
+   "box": [
+    1109,
+    125,
+    129,
+    35
+   ],
+   "right": 1238,
+   "bottom": 160,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Title 20",
+   "box": [
+    57,
+    60,
+    797,
+    44
+   ],
+   "right": 854,
+   "bottom": 104,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    20
+   ],
+   "px": [
+    40
+   ],
+   "chars": 25,
+   "text": "FORWARD-LOOKING USE CASES"
+  }
+ ],
+ "_note": "Evidence about the source slide. Not CSS, not a spec, never averaged with another slide."
+}

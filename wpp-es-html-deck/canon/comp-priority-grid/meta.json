@@ -1,0 +1,52 @@
+{
+  "id": "comp-priority-grid",
+  "name": "Sorted into nine bands, not scored on a line",
+  "useWhen": "Fifteen to twenty-five candidates need prioritising and the scoring is a judgement rather than a measurement — the room will argue about which band something belongs in, not about a decimal place.",
+  "$useWhenNote": "Written by hand.",
+  "family": "E-comparison",
+  "secondaryFamily": null,
+  "form": "matrix",
+  "arity": "9",
+  "arityRange": [
+    9,
+    9
+  ],
+  "ground": [
+    "cream"
+  ],
+  "density": "dense",
+  "densityChars": 560,
+  "mediaRole": "none",
+  "focal": {
+    "role": "cell",
+    "px": 18,
+    "againstHeadlinePx": 64,
+    "ratio": 0.28,
+    "note": "The cell is the unit of meaning, not the item. Everything inside one is a peer."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:129",
+  "sourceRender": "ref.png",
+  "replaces": null,
+  "replacesNote": "Pairs with comp-priority-scatter: that one when the spread is real, this one when the bands are what people discuss.",
+  "deviations": [
+    {
+      "what": "left-hand inventory",
+      "source": "twenty items listed in navy boxes on the left half",
+      "here": "dropped",
+      "why": "Every item in it also appears in the grid with the same label — a legend for names the grid already spells out. Dropping it gives the grid the full canvas, which is what makes nine cells legible."
+    },
+    {
+      "what": "headline collision",
+      "source": "headline overruns into its own OFFERS sub-heading",
+      "here": "fixed",
+      "why": "A defect, not a style."
+    }
+  ],
+  "contractGapsClosed": [],
+  "createdAt": "2026-09-10",
+  "version": 1
+}

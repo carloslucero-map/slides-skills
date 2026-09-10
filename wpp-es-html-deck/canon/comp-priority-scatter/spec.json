@@ -1,0 +1,67 @@
+{
+  "id": "comp-priority-scatter",
+  "$comment": "Hand-written. Structure only.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "eyebrow",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "label"
+    },
+    {
+      "role": "headline",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "headline"
+    },
+    {
+      "role": "axisX",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "label"
+    },
+    {
+      "role": "axisY",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "label"
+    },
+    {
+      "role": "item",
+      "repeat": true,
+      "arity": [
+        10,
+        35
+      ],
+      "required": true,
+      "capacityRole": "fineItem",
+      "note": "Each carries --x and --y as percentages of the plot. Moving one is two numbers."
+    },
+    {
+      "role": "category",
+      "repeat": true,
+      "arity": [
+        1,
+        2
+      ],
+      "required": true,
+      "capacityRole": "fineLabel"
+    }
+  ],
+  "invariants": [
+    "TWO categories maximum. A third needs a hue the closed palette does not carry for categorical data, and inventing one is how palettes rot.",
+    "Overlap between items is expected and correct. A cluster means those items scored alike; spacing them out to look tidy is editing the data.",
+    "Both axes are continuous and labelled low-to-high at their ends. If the scoring is really banded, use comp-priority-grid instead.",
+    "Below about ten items the scatter says less than a list; above thirty-five the labels collide past reading."
+  ],
+  "grounds": {
+    "upper": "cream",
+    "lower": "cream"
+  },
+  "source": "bank:32",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

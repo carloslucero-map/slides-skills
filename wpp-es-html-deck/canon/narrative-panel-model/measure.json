@@ -1,0 +1,853 @@
+{
+ "source": "bank:183",
+ "inventory": "inventory2.json",
+ "canvas": [
+  1920,
+  1080
+ ],
+ "ptToPx": 2.0,
+ "shapeCount": 38,
+ "offstageDropped": 4,
+ "boxlessDropped": 0,
+ "leftEdges": [
+  -57,
+  0,
+  40,
+  43,
+  57,
+  85,
+  277,
+  468,
+  660,
+  851,
+  1042,
+  1078,
+  1082,
+  1109,
+  1233,
+  1264,
+  1269,
+  1351,
+  1425,
+  1616,
+  1807,
+  1863
+ ],
+ "topEdges": [
+  -122,
+  -104,
+  -57,
+  -1,
+  0,
+  58,
+  106,
+  125,
+  126,
+  128,
+  158,
+  196,
+  349,
+  650,
+  769,
+  1023
+ ],
+ "typePx": [
+  24,
+  28,
+  40,
+  56
+ ],
+ "shapes": [
+  {
+   "kind": "sp",
+   "name": "Rectangle 38",
+   "box": [
+    0,
+    -1,
+    956,
+    1082
+   ],
+   "right": 956,
+   "bottom": 1081,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 180,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 10",
+   "box": [
+    0,
+    0,
+    956,
+    1080
+   ],
+   "right": 956,
+   "bottom": 1080,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 11",
+   "box": [
+    0,
+    0,
+    956,
+    1080
+   ],
+   "right": 956,
+   "bottom": 1080,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "WPP Enterprise Solutions brings toge",
+   "box": [
+    57,
+    349,
+    873,
+    551
+   ],
+   "right": 930,
+   "bottom": 900,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    14
+   ],
+   "px": [
+    28
+   ],
+   "chars": 372,
+   "text": "Privacy is built into how Open Intelligence works. We share insight without ever sharing ID data. Working across a network of 350+ data partners in 75+ markets, we train AI models "
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 44",
+   "box": [
+    85,
+    -104,
+    192,
+    19
+   ],
+   "right": 277,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 45",
+   "box": [
+    277,
+    -122,
+    192,
+    19
+   ],
+   "right": 469,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 46",
+   "box": [
+    468,
+    -104,
+    192,
+    19
+   ],
+   "right": 660,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 47",
+   "box": [
+    660,
+    -122,
+    192,
+    19
+   ],
+   "right": 852,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 48",
+   "box": [
+    851,
+    -104,
+    192,
+    19
+   ],
+   "right": 1043,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 49",
+   "box": [
+    1042,
+    -122,
+    192,
+    19
+   ],
+   "right": 1234,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 50",
+   "box": [
+    1233,
+    -104,
+    192,
+    19
+   ],
+   "right": 1425,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 51",
+   "box": [
+    1425,
+    -122,
+    192,
+    19
+   ],
+   "right": 1617,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 52",
+   "box": [
+    1616,
+    -104,
+    192,
+    19
+   ],
+   "right": 1808,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 53",
+   "box": [
+    1807,
+    -122,
+    192,
+    19
+   ],
+   "right": 1999,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 36",
+   "box": [
+    0,
+    -57,
+    57,
+    57
+   ],
+   "right": 57,
+   "bottom": 0,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 37",
+   "box": [
+    -57,
+    0,
+    57,
+    57
+   ],
+   "right": 0,
+   "bottom": 57,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 38",
+   "box": [
+    1863,
+    -57,
+    57,
+    57
+   ],
+   "right": 1920,
+   "bottom": 0,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 40",
+   "box": [
+    -57,
+    1023,
+    57,
+    57
+   ],
+   "right": 0,
+   "bottom": 1080,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Title 1",
+   "box": [
+    43,
+    106,
+    851,
+    208
+   ],
+   "right": 894,
+   "bottom": 314,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    28
+   ],
+   "px": [
+    56
+   ],
+   "chars": 90,
+   "text": "Modern AI equips us to build and activate data intelligence whilst preserving data privacy"
+  },
+  {
+   "kind": "sp",
+   "name": "Title 1",
+   "box": [
+    1078,
+    650,
+    748,
+    91
+   ],
+   "right": 1826,
+   "bottom": 741,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    20
+   ],
+   "px": [
+    40
+   ],
+   "chars": 75,
+   "text": "Identity is a single way of looking at the world, and it’s getting narrower"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 58",
+   "box": [
+    1082,
+    769,
+    744,
+    218
+   ],
+   "right": 1826,
+   "bottom": 987,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    14
+   ],
+   "px": [
+    28
+   ],
+   "chars": 225,
+   "text": "c.80% of business data can’t be matched to an individual ID Rising consumer concern about data sharing Growing ease of opt-out Expanding footprint of privacy legislation Growth of "
+  },
+  {
+   "kind": "sp",
+   "name": "Content Placeholder 2",
+   "box": [
+    1351,
+    126,
+    139,
+    26
+   ],
+   "right": 1490,
+   "bottom": 152,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 8,
+   "text": "Identity"
+  },
+  {
+   "kind": "sp",
+   "name": "Content Placeholder 2",
+   "box": [
+    1351,
+    158,
+    139,
+    26
+   ],
+   "right": 1490,
+   "bottom": 184,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 10,
+   "text": "Who we are"
+  },
+  {
+   "kind": "sp",
+   "name": "Content Placeholder 2",
+   "box": [
+    1351,
+    126,
+    159,
+    26
+   ],
+   "right": 1510,
+   "bottom": 152,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 9,
+   "text": "Geography"
+  },
+  {
+   "kind": "sp",
+   "name": "Content Placeholder 2",
+   "box": [
+    1351,
+    158,
+    159,
+    26
+   ],
+   "right": 1510,
+   "bottom": 184,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 12,
+   "text": "Where we are"
+  },
+  {
+   "kind": "sp",
+   "name": "Content Placeholder 2",
+   "box": [
+    1351,
+    126,
+    159,
+    26
+   ],
+   "right": 1510,
+   "bottom": 152,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 8,
+   "text": "Interest"
+  },
+  {
+   "kind": "sp",
+   "name": "Content Placeholder 2",
+   "box": [
+    1351,
+    158,
+    159,
+    26
+   ],
+   "right": 1510,
+   "bottom": 184,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 12,
+   "text": "What we like"
+  },
+  {
+   "kind": "sp",
+   "name": "Content Placeholder 2",
+   "box": [
+    1351,
+    126,
+    211,
+    26
+   ],
+   "right": 1562,
+   "bottom": 152,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 9,
+   "text": "Behaviour"
+  },
+  {
+   "kind": "sp",
+   "name": "Content Placeholder 2",
+   "box": [
+    1351,
+    158,
+    233,
+    26
+   ],
+   "right": 1584,
+   "bottom": 184,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 14,
+   "text": "What we do/buy"
+  },
+  {
+   "kind": "sp",
+   "name": "Content Placeholder 2",
+   "box": [
+    1351,
+    126,
+    159,
+    26
+   ],
+   "right": 1510,
+   "bottom": 152,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 7,
+   "text": "Content"
+  },
+  {
+   "kind": "sp",
+   "name": "Content Placeholder 2",
+   "box": [
+    1351,
+    158,
+    159,
+    52
+   ],
+   "right": 1510,
+   "bottom": 210,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 18,
+   "text": "What we experience"
+  },
+  {
+   "kind": "sp",
+   "name": "Content Placeholder 2",
+   "box": [
+    1351,
+    126,
+    159,
+    26
+   ],
+   "right": 1510,
+   "bottom": 152,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 7,
+   "text": "Context"
+  },
+  {
+   "kind": "sp",
+   "name": "Content Placeholder 2",
+   "box": [
+    1351,
+    158,
+    159,
+    52
+   ],
+   "right": 1510,
+   "bottom": 210,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 19,
+   "text": "When/where we do it"
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 849",
+   "box": [
+    1269,
+    196,
+    318,
+    331
+   ],
+   "right": 1587,
+   "bottom": 527,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 852",
+   "box": [
+    1264,
+    128,
+    135,
+    34
+   ],
+   "right": 1399,
+   "bottom": 162,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 853",
+   "box": [
+    1109,
+    125,
+    129,
+    35
+   ],
+   "right": 1238,
+   "bottom": 160,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Title 20",
+   "box": [
+    57,
+    58,
+    670,
+    48
+   ],
+   "right": 727,
+   "bottom": 106,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 21,
+   "text": "CUSTOMER DATA PRIVACY"
+  },
+  {
+   "kind": "sp",
+   "name": "Footer Placeholder 4",
+   "box": [
+    40,
+    1023,
+    607,
+    36
+   ],
+   "right": 647,
+   "bottom": 1059,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 22,
+   "text": "PRIVATE & CONFIDENTIAL"
+  }
+ ],
+ "_note": "Evidence about the source slide. Not CSS, not a spec, never averaged with another slide."
+}

@@ -1,0 +1,77 @@
+{
+  "id": "comp-priority-grid",
+  "$comment": "Hand-written. Structure only.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "eyebrow",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "label"
+    },
+    {
+      "role": "headline",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "headline"
+    },
+    {
+      "role": "category",
+      "repeat": true,
+      "arity": [
+        2,
+        3
+      ],
+      "required": true,
+      "capacityRole": "fineLabel"
+    },
+    {
+      "role": "axisX",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "label"
+    },
+    {
+      "role": "axisY",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "label"
+    },
+    {
+      "role": "cell",
+      "repeat": true,
+      "arity": [
+        9,
+        9
+      ],
+      "required": true,
+      "children": [
+        {
+          "role": "item",
+          "repeat": true,
+          "arity": [
+            0,
+            5
+          ],
+          "required": false,
+          "capacityRole": "fineItem"
+        }
+      ]
+    }
+  ],
+  "invariants": [
+    "Nine cells, always. An empty cell is information — it says nothing scored there.",
+    "An item's position WITHIN a cell carries no meaning. That is the whole difference from the scatter; ordering items inside a cell to imply rank is a lie the reader will believe.",
+    "Three categories maximum, and they must be ordered shades of ONE hue (orange 800/700/600). Three separate colours would read as unrelated.",
+    "Five items per cell is the ceiling before labels truncate."
+  ],
+  "grounds": {
+    "upper": "cream",
+    "lower": "cream"
+  },
+  "source": "bank:129",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

@@ -129,7 +129,7 @@
    "family": "E-comparison",
    "targetId": "comp-matrix-2x2",
    "rag": "amber",
-   "canonId": null
+   "canonId": "comp-priority-scatter"
   },
   {
    "page": 15,
@@ -138,7 +138,7 @@
    "family": "E-comparison",
    "targetId": "comp-colour-block",
    "rag": "amber",
-   "canonId": null
+   "canonId": "narrative-panel-model"
   },
   {
    "page": 16,
@@ -147,7 +147,7 @@
    "family": "E-comparison",
    "targetId": "comp-matrix-2x2 (priorizacion)",
    "rag": "amber",
-   "canonId": null
+   "canonId": "comp-priority-grid"
   },
   {
    "page": 17,

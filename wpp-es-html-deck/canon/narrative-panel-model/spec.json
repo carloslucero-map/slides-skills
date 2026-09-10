@@ -1,0 +1,78 @@
+{
+  "id": "narrative-panel-model",
+  "$comment": "Hand-written. Structure only.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "eyebrow",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "label"
+    },
+    {
+      "role": "headline",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "headline",
+      "note": "Opens with a Medium-weight clause; the rest is Light. Weight, not size, marks the lead."
+    },
+    {
+      "role": "lead",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "cardTitle"
+    },
+    {
+      "role": "argument",
+      "repeat": true,
+      "arity": [
+        2,
+        3
+      ],
+      "required": true,
+      "capacityRole": "body"
+    },
+    {
+      "role": "modelNode",
+      "repeat": true,
+      "arity": [
+        6,
+        6
+      ],
+      "required": true,
+      "capacityRole": "fineLabel"
+    },
+    {
+      "role": "claim",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "cardTitle"
+    },
+    {
+      "role": "claimPoint",
+      "repeat": true,
+      "arity": [
+        3,
+        5
+      ],
+      "required": true,
+      "capacityRole": "fineItem"
+    }
+  ],
+  "invariants": [
+    "The argument sits on a TINTED ground. Four hundred words on plain cream reads as a wall; the tint is what gives the block an edge and lets it sit still.",
+    "Every chord in the model is drawn. The connections are the claim — a bare ring of six would say they merely coexist.",
+    "Exactly six nodes. Chords grow as n(n-1)/2; at eight the interior is a smudge.",
+    "The second claim and its points are separated. The source runs the heading straight into its first bullet."
+  ],
+  "grounds": {
+    "upper": "tint",
+    "lower": "cream",
+    "note": "The tint is the left panel only, not the slide."
+  },
+  "source": "bank:183",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

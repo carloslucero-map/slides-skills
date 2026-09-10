@@ -1,0 +1,52 @@
+{
+  "id": "comp-priority-scatter",
+  "name": "Everything scored on two axes at once",
+  "useWhen": "Ten to thirty-five candidates have to be prioritised and the conversation is about relative position — what is nearly equal, what is clearly ahead — not about which named box each one falls in.",
+  "$useWhenNote": "Written by hand.",
+  "family": "E-comparison",
+  "secondaryFamily": "D-quantitative",
+  "form": "matrix",
+  "arity": "n",
+  "arityRange": [
+    10,
+    35
+  ],
+  "ground": [
+    "cream"
+  ],
+  "density": "dense",
+  "densityChars": 620,
+  "mediaRole": "none",
+  "focal": {
+    "role": "item",
+    "px": 16,
+    "againstHeadlinePx": 64,
+    "ratio": 0.25,
+    "note": "Deliberately tiny. No single item is the point; the shape of the cloud is. A hero item here would break the claim that these were all scored the same way."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:32",
+  "sourceRender": "ref.png",
+  "replaces": null,
+  "replacesNote": "Nothing in the kit does this. Prioritisation decks currently fall back to a bulleted list, which throws away the only thing the slide exists to show.",
+  "deviations": [
+    {
+      "what": "palette",
+      "source": "blue and purple pills, outside the brand palette",
+      "here": "navy and orange-700",
+      "why": "The source was built outside the system. Reproducing off-brand colour to be faithful would be faithful to a mistake."
+    },
+    {
+      "what": "index family label",
+      "source": "comp-matrix-2x2",
+      "here": "continuous scatter",
+      "why": "A 2x2 sorts into four named boxes; this plots continuously. Building the labelled thing would have left the real gap open."
+    }
+  ],
+  "contractGapsClosed": [],
+  "createdAt": "2026-09-10",
+  "version": 1
+}

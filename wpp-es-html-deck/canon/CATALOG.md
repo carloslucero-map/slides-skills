@@ -3,7 +3,7 @@
 
 # Canon catalogue
 
-10 templates, each traced from a real slide in the MAP bank and
+13 templates, each traced from a real slide in the MAP bank and
 rendered against its original. **Read the `use when` column** — it says what
 problem the template solves. The rest is filtering.
 
@@ -13,6 +13,12 @@ wrong, compare the two before changing the template.
 
 `?` in the approved column means the spec has not been read against its ref by
 a human yet. Usable, but not yet authoritative.
+
+## A-narrative
+
+| id | use when | arity | density | media | ok |
+|---|---|---|---|---|---|
+| `narrative-panel-model` | A position needs three or four hundred words to be made honestly — a methodology, a privacy stance, a point of view — and the model it rests on has to be visible while the case is being read. | 6 | dense | motif | ? |
 
 ## B-enumeration
 
@@ -33,6 +39,13 @@ a human yet. Usable, but not yet authoritative.
 | id | use when | arity | density | media | ok |
 |---|---|---|---|---|---|
 | `quant-stat-grid-5` | A claim about the business needs five pieces of quantitative proof, and the claim itself — not any one number — is what the room should leave with. | 5 | standard | none | ? |
+
+## E-comparison
+
+| id | use when | arity | density | media | ok |
+|---|---|---|---|---|---|
+| `comp-priority-grid` | Fifteen to twenty-five candidates need prioritising and the scoring is a judgement rather than a measurement — the room will argue about which band something belongs in, not about a decimal place. | 9 | dense | none | ? |
+| `comp-priority-scatter` | Ten to thirty-five candidates have to be prioritised and the conversation is about relative position — what is nearly equal, what is clearly ahead — not about which named box each one falls in. | n | dense | none | ? |
 
 ## F-relational
 
@@ -56,4 +69,4 @@ a human yet. Usable, but not yet authoritative.
 
 ---
 
-Families covered: 6/8. **No template yet for: A-narrative, E-comparison** — for those, use the snippet kit (`references/SNIPPET-INDEX.md`) and say so in the plan.
+Families covered: 8/8.

@@ -1,0 +1,53 @@
+{
+  "id": "narrative-panel-model",
+  "name": "A long argument on tinted ground, beside its model",
+  "useWhen": "A position needs three or four hundred words to be made honestly — a methodology, a privacy stance, a point of view — and the model it rests on has to be visible while the case is being read.",
+  "$useWhenNote": "Written by hand.",
+  "family": "A-narrative",
+  "secondaryFamily": "F-relational",
+  "form": "colour-block",
+  "arity": "6",
+  "arityRange": [
+    6,
+    6
+  ],
+  "ground": [
+    "tint",
+    "cream"
+  ],
+  "density": "dense",
+  "densityChars": 1180,
+  "mediaRole": "motif",
+  "focal": {
+    "role": "headline",
+    "px": 56,
+    "againstHeadlinePx": 56,
+    "ratio": 1.0,
+    "note": "Flat. Nothing on this slide out-shouts the argument, because the argument is the slide."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:183",
+  "sourceRender": "ref.png",
+  "replaces": "splits-v2",
+  "replacesNote": "splits-v2 gives a colour block with a headline and a numeral. This carries the case that has to be made before a diagram means anything. Keep both.",
+  "deviations": [
+    {
+      "what": "family classification",
+      "source": "filed as E-comparison / comp-colour-block in the index",
+      "here": "A-narrative",
+      "why": "Nothing is weighed against anything. Two of the three slides tagged E-comparison turned out to be something else, which says the family assignment needs a second pass more than the templates do."
+    },
+    {
+      "what": "claim runs into its own bullets",
+      "source": "present",
+      "here": "fixed",
+      "why": "A defect in the source."
+    }
+  ],
+  "contractGapsClosed": [],
+  "createdAt": "2026-09-10",
+  "version": 1
+}
