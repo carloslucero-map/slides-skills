@@ -156,7 +156,7 @@
    "family": "F-relational",
    "targetId": "rel-orbit-hub-4",
    "rag": "green",
-   "canonId": null
+   "canonId": "rel-hub-rings-4"
   },
   {
    "page": 18,
@@ -192,7 +192,7 @@
    "family": "G-media",
    "targetId": "media-image-right-bleed",
    "rag": "green",
-   "canonId": null
+   "canonId": "media-bleed-steps-4"
   },
   {
    "page": 22,

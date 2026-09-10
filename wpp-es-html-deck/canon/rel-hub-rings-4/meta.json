@@ -1,0 +1,46 @@
+{
+  "id": "rel-hub-rings-4",
+  "name": "Four disciplines contained in one system",
+  "useWhen": "Four capabilities have to be shown as living inside a single system rather than merely sitting next to each other, and the claim needs a paragraph or two to land.",
+  "$useWhenNote": "Written by hand.",
+  "family": "F-relational",
+  "secondaryFamily": null,
+  "form": "orbit",
+  "arity": "4",
+  "arityRange": [
+    4,
+    4
+  ],
+  "ground": [
+    "cream"
+  ],
+  "density": "standard",
+  "densityChars": 560,
+  "mediaRole": "motif",
+  "focal": {
+    "role": "hub",
+    "px": 275,
+    "againstHeadlinePx": 64,
+    "ratio": 4.3,
+    "note": "The hub disc, measured as diameter. It is the only orange fill and the largest single object; that is what makes it read as the centre rather than a fifth node."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:27",
+  "sourceRender": "ref.png",
+  "replaces": "orbit-v1",
+  "replacesNote": "orbit-v1 draws thin outline rings around a navy hub and carries a headline and one line. Keep both: v1 for a light touch, this when the containment claim is the point and there is prose to support it.",
+  "deviations": [
+    {
+      "what": "curved text and halftone wordmark on the outer ring",
+      "source": "present",
+      "here": "dropped",
+      "why": "Bespoke artwork, not system elements. A curved text run is not something the kit can express, and teaching it to would licence per-slide typography."
+    }
+  ],
+  "contractGapsClosed": [],
+  "createdAt": "2026-09-10",
+  "version": 1
+}

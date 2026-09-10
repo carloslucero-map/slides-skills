@@ -1,0 +1,91 @@
+<!-- canon/rel-hub-rings-4 — traced from bank slide 27 (measure.json, ref.png).
+
+     WHAT THE KIT DID NOT HAVE. orbit-v1 draws thin outline rings around a navy
+     hub. The source draws FILLED concentric rings stepping down the orange tint
+     ramp to an orange hub, with the four nodes sitting ON the middle ring as
+     white discs. The difference is not decorative: filled rings say "these live
+     inside one another", outlines say "these are near one another", and the
+     slide's whole claim is that the four disciplines are inside a single system.
+
+     The hub is orange, not navy. It is the only orange fill on the slide and it
+     is the thing being argued for; making it navy like the nodes flattens the
+     hierarchy to a ring of five equal circles.
+
+     Left column runs to y~960. In orbit-v1 the text is a headline and one line;
+     here it is three paragraphs, because a diagram this abstract needs prose to
+     land and the canvas has room for it.
+
+     DROPPED: the source's outer dotted ring carries a halftone "WPP" wordmark
+     riding on it, and "Powered by AI & Data" is set on a curve. Both are
+     bespoke artwork, not system elements — a curved text run is not something
+     the kit can express and should not learn to. The outer dotted ring stays;
+     the text on it does not.
+-->
+<section class="slide" data-slide-id="cX-sY" data-archetype="rel-hub-rings" data-template="rel-hub-rings-4">
+
+  <div class="rhr-eyebrow">Strategic innovation</div>
+  <h2 class="rhr-head">WPP Enterprise Solutions is the <span class="hl">connecting tissue</span></h2>
+
+  <div class="rhr-copy">
+    <p class="body rhr-p">We eliminate the friction hindering growth by connecting all the systems that drive it.</p>
+    <p class="body rhr-p">Loyalty works when customer experience, content, commerce and CRM sit inside one system. No silos, no handoffs — a single operating system, powered by data and AI that keeps learning.</p>
+    <p class="body rhr-p">So instead of your systems holding growth back, they become your edge against competitors.</p>
+  </div>
+
+  <div class="rhr-diagram" aria-hidden="true">
+    <div class="rhr-ring rhr-ring--outer"></div>
+    <div class="rhr-ring rhr-ring--mid"></div>
+    <div class="rhr-ring rhr-ring--inner"></div>
+    <div class="rhr-dotted"></div>
+    <div class="rhr-hub">Enterprise<br>Solutions</div>
+    <div class="rhr-node rhr-node--n">CX</div>
+    <div class="rhr-node rhr-node--e">Content</div>
+    <div class="rhr-node rhr-node--s">Commerce</div>
+    <div class="rhr-node rhr-node--w">CRM</div>
+  </div>
+
+  <div class="footer-brand">WPP Enterprise Solutions | MAP</div>
+  <div class="pageno"></div>
+</section>
+
+<style>
+/* Measured off slide 27. */
+
+.rhr-eyebrow{position:absolute;left:var(--m-text);top:85px;font-weight:400;font-size:40px;
+             line-height:1.1;letter-spacing:.01em;text-transform:uppercase;
+             color:var(--orange-700);}
+.rhr-head{position:absolute;left:var(--m-text);top:143px;width:600px;margin:0;
+          font-weight:300;font-size:64px;line-height:1.06;letter-spacing:-.005em;}
+.rhr-copy{position:absolute;left:var(--m-text);top:530px;width:600px;}
+.rhr-p{font-size:26px;line-height:1.32;max-width:none;margin:0 0 26px;}
+
+/* The diagram. Square box so every circle can be sized as a percentage of it
+   and the whole thing scales as one object. */
+.rhr-diagram{position:absolute;left:1020px;top:50%;transform:translateY(-50%);
+             width:860px;height:860px;}
+.rhr-ring{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;}
+/* Filled, stepping down the tint ramp inward. Outlines would say "adjacent";
+   these say "contained", which is the slide's actual claim. */
+.rhr-ring--outer{width:88%;height:88%;background:var(--orange-600);opacity:.28;}
+.rhr-ring--mid{width:68%;height:68%;background:var(--orange-600);opacity:.55;}
+.rhr-ring--inner{width:46%;height:46%;background:var(--wpp-cream);}
+.rhr-dotted{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+            width:99%;height:99%;border-radius:50%;
+            border:3px dotted var(--wpp-navy);opacity:.55;}
+
+/* The one orange fill, and the thing being argued for. */
+.rhr-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+         width:32%;height:32%;border-radius:50%;background:var(--orange-700);
+         color:var(--text-inv);display:flex;align-items:center;justify-content:center;
+         text-align:center;font-weight:500;font-size:26px;line-height:1.2;}
+
+.rhr-node{position:absolute;width:21%;height:21%;border-radius:50%;
+          background:var(--wpp-white);color:var(--wpp-navy);
+          display:flex;align-items:center;justify-content:center;text-align:center;
+          font-weight:500;font-size:24px;letter-spacing:.06em;text-transform:uppercase;}
+/* On the middle ring, not floating outside it. */
+.rhr-node--n{left:39.5%;top:5.5%;}
+.rhr-node--s{left:39.5%;bottom:5.5%;}
+.rhr-node--w{left:5.5%;top:39.5%;}
+.rhr-node--e{right:5.5%;top:39.5%;}
+</style>

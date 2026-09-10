@@ -1,0 +1,69 @@
+{
+  "id": "media-bleed-steps-4",
+  "$comment": "Hand-written. Structure only.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "media",
+      "arity": 1,
+      "required": true,
+      "note": "Bleeds to three canvas edges. A rect this size floating inside the margins is a §15.9 failure."
+    },
+    {
+      "role": "headline",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "headline"
+    },
+    {
+      "role": "label",
+      "arity": 1,
+      "required": false,
+      "capacityRole": "label"
+    },
+    {
+      "role": "step",
+      "repeat": true,
+      "arity": [
+        3,
+        5
+      ],
+      "required": true,
+      "children": [
+        {
+          "role": "dot",
+          "arity": 1,
+          "required": true
+        },
+        {
+          "role": "stepTitle",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "cardTitle"
+        },
+        {
+          "role": "stepSub",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "cardBody",
+          "note": "One line. Two and the connector rhythm breaks."
+        }
+      ]
+    }
+  ],
+  "invariants": [
+    "The dotted connector between dots is structural, not decoration. Without it these are four unrelated bullets; with it they are one ordered thing, and it is what keeps the text half alive on only eight lines.",
+    "The last step draws no connector.",
+    "Media bleeds. Three edges minimum.",
+    "Three to five steps. At six the vertical rhythm compresses below the connector's legibility."
+  ],
+  "grounds": {
+    "upper": "cream",
+    "lower": "cream"
+  },
+  "source": "bank:151",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

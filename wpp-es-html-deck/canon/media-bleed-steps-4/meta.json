@@ -1,0 +1,39 @@
+{
+  "id": "media-bleed-steps-4",
+  "name": "Half-bleed image beside a connected sequence",
+  "useWhen": "An assessment or approach has three to five named moves that belong in order, and the subject deserves a full-height image rather than a caption-sized one.",
+  "$useWhenNote": "Written by hand.",
+  "family": "G-media",
+  "secondaryFamily": "C-sequence",
+  "form": "image-bleed",
+  "arity": "4",
+  "arityRange": [
+    3,
+    5
+  ],
+  "ground": [
+    "cream"
+  ],
+  "density": "airy",
+  "densityChars": 330,
+  "mediaRole": "photo",
+  "focal": {
+    "role": "media",
+    "px": 848,
+    "againstHeadlinePx": 64,
+    "ratio": 13.3,
+    "note": "Measured as width against headline size because the focal element here is an area, not a glyph. The image owns 44% of the canvas; anything less and the slide becomes a list with a picture."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:151",
+  "sourceRender": "ref.png",
+  "replaces": "image-content-v2",
+  "replacesNote": "image-content-v2 pairs the same half-bleed with a single paragraph. This adds the sequence and the connector. Both are worth keeping — v2 when there is one thing to say, this when there are four in order.",
+  "deviations": [],
+  "contractGapsClosed": [],
+  "createdAt": "2026-09-10",
+  "version": 1
+}

@@ -1,0 +1,63 @@
+{
+  "id": "rel-hub-rings-4",
+  "$comment": "Hand-written. Structure only.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "eyebrow",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "label"
+    },
+    {
+      "role": "headline",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "headline"
+    },
+    {
+      "role": "copy",
+      "repeat": true,
+      "arity": [
+        2,
+        3
+      ],
+      "required": true,
+      "capacityRole": "body",
+      "note": "A diagram this abstract does not land without prose. Two or three paragraphs."
+    },
+    {
+      "role": "hub",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "label",
+      "note": "The one orange fill. The thing being argued for."
+    },
+    {
+      "role": "node",
+      "repeat": true,
+      "arity": [
+        4,
+        4
+      ],
+      "required": true,
+      "capacityRole": "label",
+      "note": "On the middle ring at N/E/S/W. Four exactly — the compass placement is the layout."
+    }
+  ],
+  "invariants": [
+    "Rings are FILLED and step down the tint ramp inward. Outlines say 'adjacent'; fills say 'contained', and containment is the slide's claim.",
+    "The hub is orange and the nodes are white. Making the hub navy like the nodes flattens it to a ring of five equal circles.",
+    "Exactly four nodes. Three or five breaks the compass placement and needs a different template.",
+    "No text on a curve, no wordmark riding the outer ring. Both are bespoke artwork in the source; the kit cannot express them and should not learn to."
+  ],
+  "grounds": {
+    "upper": "cream",
+    "lower": "cream"
+  },
+  "source": "bank:27",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

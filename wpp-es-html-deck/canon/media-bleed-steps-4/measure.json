@@ -1,0 +1,417 @@
+{
+ "source": "bank:151",
+ "inventory": "inventory2.json",
+ "canvas": [
+  1920,
+  1080
+ ],
+ "ptToPx": 2.0,
+ "shapeCount": 18,
+ "offstageDropped": 0,
+ "boxlessDropped": 0,
+ "leftEdges": [
+  0,
+  40,
+  1005,
+  1006,
+  1015,
+  1072,
+  1109,
+  1264,
+  1841
+ ],
+ "topEdges": [
+  0,
+  125,
+  128,
+  146,
+  303,
+  419,
+  432,
+  470,
+  555,
+  563,
+  601,
+  691,
+  694,
+  735,
+  826,
+  835,
+  1023,
+  1033
+ ],
+ "typePx": [
+  28,
+  40,
+  64
+ ],
+ "shapes": [
+  {
+   "kind": "pic",
+   "name": "Picture Placeholder 5",
+   "box": [
+    0,
+    0,
+    848,
+    1080
+   ],
+   "right": 848,
+   "bottom": 1080,
+   "placeholder": "pic",
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 10",
+   "box": [
+    1006,
+    432,
+    19,
+    19
+   ],
+   "right": 1025,
+   "bottom": 451,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 9, chunk 1",
+   "box": [
+    1072,
+    419,
+    638,
+    68
+   ],
+   "right": 1710,
+   "bottom": 487,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    14
+   ],
+   "px": [
+    28
+   ],
+   "chars": 45,
+   "text": "Auditing the assetsMapping existing footprint"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 9, chunk 2",
+   "box": [
+    1072,
+    555,
+    638,
+    68
+   ],
+   "right": 1710,
+   "bottom": 623,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    14
+   ],
+   "px": [
+    28
+   ],
+   "chars": 37,
+   "text": "Aligning the dataLocating disconnects"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 9, chunk 3",
+   "box": [
+    1072,
+    691,
+    638,
+    68
+   ],
+   "right": 1710,
+   "bottom": 759,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    14
+   ],
+   "px": [
+    28
+   ],
+   "chars": 61,
+   "text": "Evaluating the architectureData structure supporting AI tools"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 9, chunk 4",
+   "box": [
+    1072,
+    826,
+    638,
+    68
+   ],
+   "right": 1710,
+   "bottom": 894,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    14
+   ],
+   "px": [
+    28
+   ],
+   "chars": 62,
+   "text": "Quantifying the cultureHow data is treated across the business"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 21",
+   "box": [
+    1005,
+    146,
+    704,
+    140
+   ],
+   "right": 1709,
+   "bottom": 286,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    32
+   ],
+   "px": [
+    64
+   ],
+   "chars": 32,
+   "text": "Assessing intelligence readiness"
+  },
+  {
+   "kind": "sp",
+   "name": "Title 20",
+   "box": [
+    1005,
+    303,
+    588,
+    44
+   ],
+   "right": 1593,
+   "bottom": 347,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    20
+   ],
+   "px": [
+    40
+   ],
+   "chars": 9,
+   "text": "DEEP DIVE"
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 23",
+   "box": [
+    1006,
+    563,
+    19,
+    19
+   ],
+   "right": 1025,
+   "bottom": 582,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 24",
+   "box": [
+    1006,
+    694,
+    19,
+    19
+   ],
+   "right": 1025,
+   "bottom": 713,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 25",
+   "box": [
+    1006,
+    835,
+    19,
+    19
+   ],
+   "right": 1025,
+   "bottom": 854,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 26",
+   "box": [
+    1015,
+    470,
+    0,
+    68
+   ],
+   "right": 1015,
+   "bottom": 538,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 29",
+   "box": [
+    1015,
+    601,
+    0,
+    68
+   ],
+   "right": 1015,
+   "bottom": 669,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 30",
+   "box": [
+    1015,
+    735,
+    0,
+    68
+   ],
+   "right": 1015,
+   "bottom": 803,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 33",
+   "box": [
+    1264,
+    128,
+    135,
+    34
+   ],
+   "right": 1399,
+   "bottom": 162,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 34",
+   "box": [
+    1109,
+    125,
+    129,
+    35
+   ],
+   "right": 1238,
+   "bottom": 160,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Slide Number Placeholder 5",
+   "box": [
+    1841,
+    1033,
+    44,
+    15
+   ],
+   "right": 1885,
+   "bottom": 1048,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 3,
+   "text": "151"
+  },
+  {
+   "kind": "sp",
+   "name": "Footer Placeholder 4",
+   "box": [
+    40,
+    1023,
+    607,
+    36
+   ],
+   "right": 647,
+   "bottom": 1059,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 22,
+   "text": "PRIVATE & CONFIDENTIAL"
+  }
+ ],
+ "_note": "Evidence about the source slide. Not CSS, not a spec, never averaged with another slide."
+}
