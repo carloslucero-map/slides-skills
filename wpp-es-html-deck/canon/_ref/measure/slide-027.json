@@ -1,0 +1,819 @@
+{
+ "source": "bank:27",
+ "inventory": "inventory2.json",
+ "canvas": [
+  1920,
+  1080
+ ],
+ "ptToPx": 2.0,
+ "shapeCount": 37,
+ "offstageDropped": 5,
+ "boxlessDropped": 0,
+ "leftEdges": [
+  -57,
+  0,
+  57,
+  85,
+  277,
+  468,
+  660,
+  676,
+  772,
+  836,
+  851,
+  857,
+  862,
+  931,
+  954,
+  962,
+  1042,
+  1109,
+  1142,
+  1165,
+  1176,
+  1206,
+  1208,
+  1229,
+  1233,
+  1264,
+  1425,
+  1494,
+  1508,
+  1616,
+  1807,
+  1841,
+  1863
+ ],
+ "topEdges": [
+  -122,
+  -104,
+  -57,
+  -43,
+  0,
+  53,
+  85,
+  87,
+  98,
+  117,
+  125,
+  128,
+  136,
+  143,
+  184,
+  228,
+  360,
+  388,
+  441,
+  484,
+  512,
+  540,
+  776,
+  843,
+  1023,
+  1033
+ ],
+ "typePx": [
+  20,
+  28,
+  40,
+  64
+ ],
+ "shapes": [
+  {
+   "kind": "sp",
+   "name": "Circle: Hollow 19",
+   "box": [
+    676,
+    -43,
+    1169,
+    1159
+   ],
+   "right": 1845,
+   "bottom": 1116,
+   "placeholder": null,
+   "geom": "donut",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Circle: Hollow 4",
+   "box": [
+    857,
+    136,
+    808,
+    801
+   ],
+   "right": 1665,
+   "bottom": 937,
+   "placeholder": null,
+   "geom": "donut",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Arc 18",
+   "box": [
+    962,
+    228,
+    599,
+    617
+   ],
+   "right": 1561,
+   "bottom": 845,
+   "placeholder": null,
+   "geom": "arc",
+   "rot": 71,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Title 1",
+   "box": [
+    57,
+    143,
+    560,
+    279
+   ],
+   "right": 617,
+   "bottom": 422,
+   "placeholder": "title",
+   "geom": null,
+   "rot": 0,
+   "pt": [
+    32
+   ],
+   "px": [
+    64
+   ],
+   "chars": 49,
+   "text": "WPP Enterprise Solutions is the connecting tissue"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 15",
+   "box": [
+    57,
+    540,
+    377,
+    373
+   ],
+   "right": 434,
+   "bottom": 913,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 350,
+   "text": "We eliminate the friction hindering growth by connecting all the systems that drive growth. We make loyalty work by connecting customer experience, content, commerce, and CRM insid"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 16",
+   "box": [
+    1142,
+    360,
+    247,
+    147
+   ],
+   "right": 1389,
+   "bottom": 507,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    14
+   ],
+   "px": [
+    28
+   ],
+   "chars": 20,
+   "text": "Powered by AI & Data"
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 6",
+   "box": [
+    1206,
+    388,
+    258,
+    260
+   ],
+   "right": 1464,
+   "bottom": 648,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 27",
+   "box": [
+    1229,
+    484,
+    213,
+    75
+   ],
+   "right": 1442,
+   "bottom": 559,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 32",
+   "box": [
+    772,
+    53,
+    973,
+    974
+   ],
+   "right": 1745,
+   "bottom": 1027,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 71,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 33",
+   "box": [
+    931,
+    87,
+    177,
+    70
+   ],
+   "right": 1108,
+   "bottom": 157,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 29",
+   "box": [
+    954,
+    98,
+    138,
+    41
+   ],
+   "right": 1092,
+   "bottom": 139,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 38",
+   "box": [
+    1176,
+    117,
+    190,
+    182
+   ],
+   "right": 1366,
+   "bottom": 299,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 40",
+   "box": [
+    1176,
+    776,
+    190,
+    182
+   ],
+   "right": 1366,
+   "bottom": 958,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 41",
+   "box": [
+    1494,
+    441,
+    190,
+    190
+   ],
+   "right": 1684,
+   "bottom": 631,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 7",
+   "box": [
+    1208,
+    184,
+    126,
+    48
+   ],
+   "right": 1334,
+   "bottom": 232,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    14
+   ],
+   "px": [
+    28
+   ],
+   "chars": 2,
+   "text": "CX"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 8",
+   "box": [
+    1508,
+    512,
+    161,
+    48
+   ],
+   "right": 1669,
+   "bottom": 560,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    14
+   ],
+   "px": [
+    28
+   ],
+   "chars": 7,
+   "text": "CONTENT"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 9",
+   "box": [
+    1165,
+    843,
+    214,
+    48
+   ],
+   "right": 1379,
+   "bottom": 891,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    14
+   ],
+   "px": [
+    28
+   ],
+   "chars": 8,
+   "text": "COMMERCE"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 35",
+   "box": [
+    85,
+    -104,
+    192,
+    19
+   ],
+   "right": 277,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 36",
+   "box": [
+    277,
+    -122,
+    192,
+    19
+   ],
+   "right": 469,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 37",
+   "box": [
+    468,
+    -104,
+    192,
+    19
+   ],
+   "right": 660,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 42",
+   "box": [
+    660,
+    -122,
+    192,
+    19
+   ],
+   "right": 852,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 43",
+   "box": [
+    851,
+    -104,
+    192,
+    19
+   ],
+   "right": 1043,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 44",
+   "box": [
+    1042,
+    -122,
+    192,
+    19
+   ],
+   "right": 1234,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 45",
+   "box": [
+    1233,
+    -104,
+    192,
+    19
+   ],
+   "right": 1425,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 46",
+   "box": [
+    1425,
+    -122,
+    192,
+    19
+   ],
+   "right": 1617,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 47",
+   "box": [
+    1616,
+    -104,
+    192,
+    19
+   ],
+   "right": 1808,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 48",
+   "box": [
+    1807,
+    -122,
+    192,
+    19
+   ],
+   "right": 1999,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 21",
+   "box": [
+    0,
+    -57,
+    57,
+    57
+   ],
+   "right": 57,
+   "bottom": 0,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 22",
+   "box": [
+    -57,
+    0,
+    57,
+    57
+   ],
+   "right": 0,
+   "bottom": 57,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 23",
+   "box": [
+    1863,
+    -57,
+    57,
+    57
+   ],
+   "right": 1920,
+   "bottom": 0,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 26",
+   "box": [
+    -57,
+    1023,
+    57,
+    57
+   ],
+   "right": 0,
+   "bottom": 1080,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 49",
+   "box": [
+    836,
+    441,
+    190,
+    190
+   ],
+   "right": 1026,
+   "bottom": 631,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 10",
+   "box": [
+    862,
+    512,
+    138,
+    48
+   ],
+   "right": 1000,
+   "bottom": 560,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    14
+   ],
+   "px": [
+    28
+   ],
+   "chars": 3,
+   "text": "CRM"
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 51",
+   "box": [
+    1264,
+    128,
+    135,
+    34
+   ],
+   "right": 1399,
+   "bottom": 162,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 52",
+   "box": [
+    1109,
+    125,
+    129,
+    35
+   ],
+   "right": 1238,
+   "bottom": 160,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Slide Number Placeholder 5",
+   "box": [
+    1841,
+    1033,
+    44,
+    15
+   ],
+   "right": 1885,
+   "bottom": 1048,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 2,
+   "text": "27"
+  },
+  {
+   "kind": "sp",
+   "name": "Title 20",
+   "box": [
+    57,
+    85,
+    488,
+    44
+   ],
+   "right": 545,
+   "bottom": 129,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    20
+   ],
+   "px": [
+    40
+   ],
+   "chars": 20,
+   "text": "STRATEGIC INNOVATION"
+  }
+ ],
+ "_note": "Evidence about the source slide. Not CSS, not a spec, never averaged with another slide."
+}

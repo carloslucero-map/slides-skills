@@ -1,0 +1,48 @@
+{
+  "id": "quant-stat-grid-5",
+  "name": "Claim held up by five numbers across a rule",
+  "useWhen": "A claim about the business needs five pieces of quantitative proof, and the claim itself — not any one number — is what the room should leave with.",
+  "$useWhenNote": "Written by hand.",
+  "family": "D-quantitative",
+  "secondaryFamily": "A-narrative",
+  "form": "kpi-grid",
+  "arity": "5",
+  "arityRange": [
+    5,
+    5
+  ],
+  "ground": [
+    "cream"
+  ],
+  "density": "standard",
+  "densityChars": 720,
+  "mediaRole": "none",
+  "focal": {
+    "role": "value",
+    "px": 132,
+    "againstHeadlinePx": 64,
+    "ratio": 2.06,
+    "note": "The numerals dominate, but the claim at 64px holds its own — which is why the claim is set at display weight rather than as a 40px headline. Drop the claim to headline size and the slide becomes a stat dump."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:74",
+  "sourceRender": "ref.png",
+  "replaces": "stats-v1",
+  "replacesNote": "stats-v1 lines four numerals in one row over a ruler and leaves the middle of the canvas empty. This wraps five numbers around a claim and fills. Do not retire stats-v1 until this has been through a real deck.",
+  "deviations": [
+    {
+      "what": "background texture",
+      "source": "dot field",
+      "here": "none",
+      "why": "The source carries a faint full-bleed dot texture. Reproducing it is a §5 dot-system decision affecting every slide's ground, not a template one."
+    }
+  ],
+  "contractGapsClosed": [
+    ".headline--lg (64px), shared with enum-intro-grid-5."
+  ],
+  "createdAt": "2026-09-10",
+  "version": 1
+}

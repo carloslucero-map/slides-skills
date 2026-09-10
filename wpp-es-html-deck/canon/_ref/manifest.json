@@ -48,7 +48,7 @@
    "family": "B-enumeration",
    "targetId": "enum-columns-3",
    "rag": "green",
-   "canonId": null
+   "canonId": "enum-intro-grid-5"
   },
   {
    "page": 6,
@@ -102,7 +102,7 @@
    "family": "D-quantitative",
    "targetId": "quant-kpi-row",
    "rag": "green",
-   "canonId": null
+   "canonId": "quant-stat-grid-5"
   },
   {
    "page": 12,

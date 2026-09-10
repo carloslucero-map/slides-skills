@@ -1,0 +1,422 @@
+{
+ "source": "bank:74",
+ "inventory": "inventory2.json",
+ "canvas": [
+  1920,
+  1080
+ ],
+ "ptToPx": 2.0,
+ "shapeCount": 18,
+ "offstageDropped": 0,
+ "boxlessDropped": 0,
+ "leftEdges": [
+  57,
+  252,
+  277,
+  321,
+  637,
+  801,
+  828,
+  1205,
+  1250,
+  1260,
+  1295
+ ],
+ "topEdges": [
+  57,
+  169,
+  191,
+  216,
+  336,
+  507,
+  609,
+  610,
+  611,
+  656,
+  657,
+  776,
+  777
+ ],
+ "typePx": [
+  40,
+  64,
+  132
+ ],
+ "shapes": [
+  {
+   "kind": "sp",
+   "name": "TextBox 1",
+   "box": [
+    57,
+    57,
+    507,
+    48
+   ],
+   "right": 564,
+   "bottom": 105,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    20
+   ],
+   "px": [
+    40
+   ],
+   "chars": 24,
+   "text": "Reimagining Ford Rewards"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 21",
+   "box": [
+    57,
+    191,
+    613,
+    279
+   ],
+   "right": 670,
+   "bottom": 470,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    32
+   ],
+   "px": [
+    64
+   ],
+   "chars": 71,
+   "text": "Ford Rewards is seen across the enterprise a profit & engagement engine"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 4",
+   "box": [
+    801,
+    169,
+    354,
+    160
+   ],
+   "right": 1155,
+   "bottom": 329,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    66
+   ],
+   "px": [
+    132
+   ],
+   "chars": 3,
+   "text": "50%"
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 17",
+   "box": [
+    637,
+    507,
+    1283,
+    0
+   ],
+   "right": 1920,
+   "bottom": 507,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Service Retention for Members…",
+   "box": [
+    828,
+    336,
+    377,
+    102
+   ],
+   "right": 1205,
+   "bottom": 438,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 72,
+   "text": "Liability Reduction reducing outstanding balance from $1B down to ~$500M"
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 46",
+   "box": [
+    801,
+    216,
+    80,
+    80
+   ],
+   "right": 881,
+   "bottom": 296,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 180,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 4",
+   "box": [
+    1250,
+    169,
+    354,
+    160
+   ],
+   "right": 1604,
+   "bottom": 329,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    66
+   ],
+   "px": [
+    132
+   ],
+   "chars": 3,
+   "text": "55%"
+  },
+  {
+   "kind": "sp",
+   "name": "Service Retention for Members…",
+   "box": [
+    1295,
+    336,
+    377,
+    138
+   ],
+   "right": 1672,
+   "bottom": 474,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 93,
+   "text": "Redemption growth of members actively redeeming points surging from 29% to 45% from 2023-2025"
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 49",
+   "box": [
+    1260,
+    216,
+    80,
+    80
+   ],
+   "right": 1340,
+   "bottom": 296,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 180,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 4",
+   "box": [
+    277,
+    610,
+    354,
+    160
+   ],
+   "right": 631,
+   "bottom": 770,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    66
+   ],
+   "px": [
+    132
+   ],
+   "chars": 4,
+   "text": "1.84"
+  },
+  {
+   "kind": "sp",
+   "name": "Service Retention for Members…",
+   "box": [
+    321,
+    777,
+    377,
+    102
+   ],
+   "right": 698,
+   "bottom": 879,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 94,
+   "text": "$0.84 returned per each $1 redeemed, quantifying members as a profit generator not a liability"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 4",
+   "box": [
+    252,
+    611,
+    147,
+    160
+   ],
+   "right": 399,
+   "bottom": 771,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    66
+   ],
+   "px": [
+    132
+   ],
+   "chars": 1,
+   "text": "$"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 4",
+   "box": [
+    801,
+    610,
+    354,
+    160
+   ],
+   "right": 1155,
+   "bottom": 770,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    66
+   ],
+   "px": [
+    132
+   ],
+   "chars": 4,
+   "text": "9.5%"
+  },
+  {
+   "kind": "sp",
+   "name": "Service Retention for Members…",
+   "box": [
+    828,
+    777,
+    377,
+    103
+   ],
+   "right": 1205,
+   "bottom": 880,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 80,
+   "text": "Rate of repurchase increase between members vs. non-members over a 6 year period"
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 61",
+   "box": [
+    801,
+    657,
+    80,
+    80
+   ],
+   "right": 881,
+   "bottom": 737,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 180,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 4",
+   "box": [
+    1205,
+    609,
+    602,
+    160
+   ],
+   "right": 1807,
+   "bottom": 769,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    66
+   ],
+   "px": [
+    132
+   ],
+   "chars": 7,
+   "text": "+13-32%"
+  },
+  {
+   "kind": "sp",
+   "name": "Service Retention for Members…",
+   "box": [
+    1295,
+    776,
+    441,
+    196
+   ],
+   "right": 1736,
+   "bottom": 972,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 128,
+   "text": "Increase in member service usage. +13%+ in service retention +32% avg. daily sales of connected services (member vs. non-member)"
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 64",
+   "box": [
+    1260,
+    656,
+    80,
+    80
+   ],
+   "right": 1340,
+   "bottom": 736,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 180,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  }
+ ],
+ "_note": "Evidence about the source slide. Not CSS, not a spec, never averaged with another slide."
+}

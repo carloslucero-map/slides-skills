@@ -1,0 +1,438 @@
+{
+ "source": "bank:73",
+ "inventory": "inventory2.json",
+ "canvas": [
+  1920,
+  1080
+ ],
+ "ptToPx": 2.0,
+ "shapeCount": 18,
+ "offstageDropped": 0,
+ "boxlessDropped": 1,
+ "leftEdges": [
+  0,
+  81,
+  221,
+  438,
+  580,
+  593,
+  647,
+  660,
+  899,
+  948,
+  968,
+  1120,
+  1399
+ ],
+ "topEdges": [
+  51,
+  56,
+  91,
+  216,
+  370,
+  408,
+  536,
+  569,
+  570,
+  604,
+  605,
+  630,
+  730,
+  772,
+  903
+ ],
+ "typePx": [
+  24,
+  48,
+  132
+ ],
+ "shapes": [
+  {
+   "kind": "pic",
+   "name": "Screenshot 2024-08-28 at 10.47.03 PM",
+   "box": [
+    81,
+    216,
+    477,
+    307
+   ],
+   "right": 558,
+   "bottom": 523,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 4",
+   "box": [
+    0,
+    56,
+    199,
+    160
+   ],
+   "right": 199,
+   "bottom": 216,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    66
+   ],
+   "px": [
+    132
+   ],
+   "chars": 2,
+   "text": "01"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 21",
+   "box": [
+    221,
+    91,
+    293,
+    105
+   ],
+   "right": 514,
+   "bottom": 196,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    24
+   ],
+   "px": [
+    48
+   ],
+   "chars": 13,
+   "text": "LEGACY DESIGN"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 21",
+   "box": [
+    580,
+    370,
+    293,
+    141
+   ],
+   "right": 873,
+   "bottom": 511,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 66,
+   "text": "Low awareness High liability Passive engagement See as cost center"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 4",
+   "box": [
+    899,
+    56,
+    199,
+    160
+   ],
+   "right": 1098,
+   "bottom": 216,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    66
+   ],
+   "px": [
+    132
+   ],
+   "chars": 2,
+   "text": "02"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 21",
+   "box": [
+    1120,
+    91,
+    364,
+    117
+   ],
+   "right": 1484,
+   "bottom": 208,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    24
+   ],
+   "px": [
+    48
+   ],
+   "chars": 22,
+   "text": "PROGRAM SIMPLIFICATION"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 21",
+   "box": [
+    1399,
+    408,
+    414,
+    103
+   ],
+   "right": 1813,
+   "bottom": 511,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 73,
+   "text": "Simplified tiering $100M in reward efficiency Launch Earn/Redeem Channels"
+  },
+  {
+   "kind": "sp",
+   "name": "Freeform 8",
+   "box": [
+    593,
+    51,
+    293,
+    62
+   ],
+   "right": 886,
+   "bottom": 113,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Screenshot 2024-01-03 at 5.25.58 PM.",
+   "box": [
+    968,
+    216,
+    364,
+    298
+   ],
+   "right": 1332,
+   "bottom": 514,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 21",
+   "box": [
+    221,
+    604,
+    434,
+    52
+   ],
+   "right": 655,
+   "bottom": 656,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    24
+   ],
+   "px": [
+    48
+   ],
+   "chars": 17,
+   "text": "VALUE REARCHITECT"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 21",
+   "box": [
+    438,
+    903,
+    434,
+    103
+   ],
+   "right": 872,
+   "bottom": 1006,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 89,
+   "text": "Enterprise Value Framework (CLV) Enhanced Segmentation Optimized Personalization Strategy"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 4",
+   "box": [
+    0,
+    569,
+    199,
+    160
+   ],
+   "right": 199,
+   "bottom": 729,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    66
+   ],
+   "px": [
+    132
+   ],
+   "chars": 2,
+   "text": "03"
+  },
+  {
+   "kind": "sp",
+   "name": "Freeform 15",
+   "box": [
+    660,
+    536,
+    280,
+    91
+   ],
+   "right": 940,
+   "bottom": 627,
+   "placeholder": null,
+   "geom": null,
+   "rot": 165,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 16",
+   "box": [
+    81,
+    730,
+    293,
+    293
+   ],
+   "right": 374,
+   "bottom": 1023,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 21",
+   "box": [
+    1120,
+    605,
+    434,
+    117
+   ],
+   "right": 1554,
+   "bottom": 722,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    24
+   ],
+   "px": [
+    48
+   ],
+   "chars": 17,
+   "text": "PROGRAM EXPANSION"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 4",
+   "box": [
+    899,
+    570,
+    199,
+    160
+   ],
+   "right": 1098,
+   "bottom": 730,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    66
+   ],
+   "px": [
+    132
+   ],
+   "chars": 2,
+   "text": "04"
+  },
+  {
+   "kind": "sp",
+   "name": "Freeform 21",
+   "box": [
+    647,
+    630,
+    293,
+    62
+   ],
+   "right": 940,
+   "bottom": 692,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 22",
+   "box": [
+    948,
+    772,
+    865,
+    255
+   ],
+   "right": 1813,
+   "bottom": 1027,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  }
+ ],
+ "_note": "Evidence about the source slide. Not CSS, not a spec, never averaged with another slide."
+}

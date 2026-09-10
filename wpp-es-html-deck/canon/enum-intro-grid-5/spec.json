@@ -1,0 +1,82 @@
+{
+  "id": "enum-intro-grid-5",
+  "$comment": "Hand-written. Structure only: roles, repetition, arity. No pixels, no colour, no copy.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human. Nothing generates from this until approvedBy is set.",
+  "regions": [
+    {
+      "role": "headline",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "headline",
+      "note": "Two lines at the measured size. The subject of the whole grid, not of any one item."
+    },
+    {
+      "role": "intro",
+      "arity": 1,
+      "required": true,
+      "children": [
+        {
+          "role": "introLead",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "label",
+          "note": "The one orange text moment. Names the principle the items are instances of."
+        },
+        {
+          "role": "introBody",
+          "arity": [
+            1,
+            2
+          ],
+          "required": true,
+          "capacityRole": "body",
+          "note": "Ends by handing over to the items — the source uses a literal arrow."
+        }
+      ]
+    },
+    {
+      "role": "item",
+      "repeat": true,
+      "arity": [
+        4,
+        6
+      ],
+      "required": true,
+      "children": [
+        {
+          "role": "dot",
+          "arity": 1,
+          "required": true
+        },
+        {
+          "role": "itemLabel",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "cardTitle"
+        },
+        {
+          "role": "itemBody",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "cardBody"
+        }
+      ]
+    }
+  ],
+  "invariants": [
+    "The intro column is NARROWER than an item column and is not one of the items. Making them equal turns this into a plain column set and loses the argument-then-instances reading.",
+    "Items fill a 3-wide grid across two rows. Five items leaves one cell empty by design; six fills it. Four or fewer should use a single row and a different template.",
+    "Item labels share a baseline row so bodies start level even when a label wraps. Two of the five wrap in the source.",
+    "Exactly one orange text moment: the intro lead. The dots are orange; nothing else is."
+  ],
+  "grounds": {
+    "upper": "cream",
+    "lower": "cream",
+    "note": "One ground. The structure does the separating."
+  },
+  "source": "bank:44",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

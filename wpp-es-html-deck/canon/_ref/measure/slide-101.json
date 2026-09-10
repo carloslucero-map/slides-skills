@@ -1,0 +1,2891 @@
+{
+ "source": "bank:101",
+ "inventory": "inventory2.json",
+ "canvas": [
+  1920,
+  1080
+ ],
+ "ptToPx": 2.0,
+ "shapeCount": 139,
+ "offstageDropped": 1,
+ "boxlessDropped": 0,
+ "leftEdges": [
+  0,
+  10,
+  11,
+  12,
+  13,
+  22,
+  23,
+  26,
+  29,
+  33,
+  35,
+  36,
+  37,
+  39,
+  40,
+  41,
+  42,
+  43,
+  45,
+  46,
+  48,
+  50,
+  51,
+  55,
+  56,
+  57,
+  63,
+  64,
+  65,
+  69,
+  72,
+  75,
+  78,
+  79,
+  80,
+  83,
+  84,
+  88,
+  93,
+  100,
+  102,
+  103,
+  104,
+  105,
+  111,
+  113,
+  114,
+  116,
+  117,
+  120,
+  124,
+  130,
+  131,
+  133,
+  134,
+  139,
+  141,
+  148,
+  149,
+  152,
+  153,
+  155,
+  160,
+  162,
+  166,
+  171,
+  173,
+  180,
+  184,
+  185,
+  186,
+  188,
+  194,
+  197,
+  201,
+  204,
+  208,
+  210,
+  223,
+  318,
+  370,
+  432,
+  623,
+  637,
+  678,
+  757,
+  1206,
+  1297,
+  1329,
+  1448,
+  1469
+ ],
+ "topEdges": [
+  -759,
+  -151,
+  -137,
+  0,
+  1,
+  6,
+  7,
+  8,
+  15,
+  16,
+  19,
+  20,
+  21,
+  23,
+  25,
+  27,
+  29,
+  32,
+  34,
+  35,
+  36,
+  37,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45,
+  49,
+  50,
+  53,
+  54,
+  57,
+  58,
+  61,
+  62,
+  64,
+  68,
+  69,
+  72,
+  74,
+  77,
+  79,
+  80,
+  81,
+  84,
+  87,
+  88,
+  93,
+  97,
+  98,
+  102,
+  108,
+  110,
+  112,
+  113,
+  116,
+  119,
+  127,
+  129,
+  132,
+  136,
+  140,
+  143,
+  147,
+  153,
+  154,
+  156,
+  159,
+  163,
+  168,
+  169,
+  197,
+  208,
+  335,
+  381,
+  542,
+  584,
+  714,
+  752,
+  778,
+  1023
+ ],
+ "typePx": [
+  12,
+  22,
+  24,
+  32,
+  40,
+  80
+ ],
+ "shapes": [
+  {
+   "kind": "sp",
+   "name": "Rectangle 9",
+   "box": [
+    1297,
+    169,
+    515,
+    856
+   ],
+   "right": 1812,
+   "bottom": 1025,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 4",
+   "box": [
+    637,
+    169,
+    652,
+    856
+   ],
+   "right": 1289,
+   "bottom": 1025,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 2",
+   "box": [
+    114,
+    169,
+    515,
+    856
+   ],
+   "right": 629,
+   "bottom": 1025,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle",
+   "box": [
+    623,
+    -759,
+    838,
+    658
+   ],
+   "right": 1461,
+   "bottom": -101,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle",
+   "box": [
+    1469,
+    -759,
+    419,
+    658
+   ],
+   "right": 1888,
+   "bottom": -101,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Run",
+   "box": [
+    1297,
+    208,
+    515,
+    86
+   ],
+   "right": 1812,
+   "bottom": 294,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    40
+   ],
+   "px": [
+    80
+   ],
+   "chars": 3,
+   "text": "Run"
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 161",
+   "box": [
+    50,
+    50,
+    240,
+    240
+   ],
+   "right": 290,
+   "bottom": 290,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 45,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Arc 280",
+   "box": [
+    69,
+    20,
+    101,
+    80
+   ],
+   "right": 170,
+   "bottom": 100,
+   "placeholder": null,
+   "geom": null,
+   "rot": 330,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Arc 281",
+   "box": [
+    102,
+    27,
+    91,
+    182
+   ],
+   "right": 193,
+   "bottom": 209,
+   "placeholder": null,
+   "geom": null,
+   "rot": 330,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Arc 282",
+   "box": [
+    29,
+    62,
+    158,
+    158
+   ],
+   "right": 187,
+   "bottom": 220,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 330,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 283",
+   "box": [
+    45,
+    45,
+    34,
+    34
+   ],
+   "right": 79,
+   "bottom": 79,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 330,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Right Triangle 279",
+   "box": [
+    51,
+    54,
+    15,
+    15
+   ],
+   "right": 66,
+   "bottom": 69,
+   "placeholder": null,
+   "geom": null,
+   "rot": 225,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle: Rounded Corners 26",
+   "box": [
+    1206,
+    335,
+    41,
+    132
+   ],
+   "right": 1247,
+   "bottom": 467,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 180,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 230",
+   "box": [
+    40,
+    40,
+    193,
+    193
+   ],
+   "right": 233,
+   "bottom": 233,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 40,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Arc 234",
+   "box": [
+    55,
+    16,
+    80,
+    63
+   ],
+   "right": 135,
+   "bottom": 79,
+   "placeholder": null,
+   "geom": null,
+   "rot": 330,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Arc 235",
+   "box": [
+    80,
+    21,
+    72,
+    144
+   ],
+   "right": 152,
+   "bottom": 165,
+   "placeholder": null,
+   "geom": null,
+   "rot": 330,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Arc 236",
+   "box": [
+    23,
+    49,
+    125,
+    125
+   ],
+   "right": 148,
+   "bottom": 174,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 330,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 237",
+   "box": [
+    36,
+    35,
+    27,
+    27
+   ],
+   "right": 63,
+   "bottom": 62,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 330,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Right Triangle 233",
+   "box": [
+    40,
+    43,
+    12,
+    12
+   ],
+   "right": 52,
+   "bottom": 55,
+   "placeholder": null,
+   "geom": null,
+   "rot": 225,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 166",
+   "box": [
+    370,
+    61,
+    298,
+    298
+   ],
+   "right": 668,
+   "bottom": 359,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 40,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Arc 170",
+   "box": [
+    88,
+    25,
+    129,
+    101
+   ],
+   "right": 217,
+   "bottom": 126,
+   "placeholder": null,
+   "geom": null,
+   "rot": 330,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Arc 171",
+   "box": [
+    130,
+    34,
+    116,
+    233
+   ],
+   "right": 246,
+   "bottom": 267,
+   "placeholder": null,
+   "geom": null,
+   "rot": 330,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Arc 172",
+   "box": [
+    37,
+    79,
+    201,
+    201
+   ],
+   "right": 238,
+   "bottom": 280,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 330,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 173",
+   "box": [
+    57,
+    57,
+    43,
+    43
+   ],
+   "right": 100,
+   "bottom": 100,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 330,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Right Triangle 169",
+   "box": [
+    65,
+    69,
+    19,
+    19
+   ],
+   "right": 84,
+   "bottom": 88,
+   "placeholder": null,
+   "geom": null,
+   "rot": 225,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 161",
+   "box": [
+    48,
+    69,
+    294,
+    286
+   ],
+   "right": 342,
+   "bottom": 355,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 26,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Arc 280",
+   "box": [
+    56,
+    29,
+    121,
+    98
+   ],
+   "right": 177,
+   "bottom": 127,
+   "placeholder": null,
+   "geom": null,
+   "rot": 311,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Arc 281",
+   "box": [
+    117,
+    23,
+    109,
+    223
+   ],
+   "right": 226,
+   "bottom": 246,
+   "placeholder": null,
+   "geom": null,
+   "rot": 311,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Arc 282",
+   "box": [
+    41,
+    79,
+    188,
+    193
+   ],
+   "right": 229,
+   "bottom": 272,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 311,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 283",
+   "box": [
+    33,
+    80,
+    41,
+    42
+   ],
+   "right": 74,
+   "bottom": 122,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 311,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Right Triangle 279",
+   "box": [
+    39,
+    93,
+    18,
+    18
+   ],
+   "right": 57,
+   "bottom": 111,
+   "placeholder": null,
+   "geom": null,
+   "rot": 206,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 18",
+   "box": [
+    318,
+    147,
+    74,
+    137
+   ],
+   "right": 392,
+   "bottom": 284,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "OUR Process",
+   "box": [
+    113,
+    97,
+    1699,
+    52
+   ],
+   "right": 1812,
+   "bottom": 149,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    20
+   ],
+   "px": [
+    40
+   ],
+   "chars": 11,
+   "text": "OUR Process"
+  },
+  {
+   "kind": "sp",
+   "name": "Aspire",
+   "box": [
+    114,
+    208,
+    515,
+    86
+   ],
+   "right": 629,
+   "bottom": 294,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    40
+   ],
+   "px": [
+    80
+   ],
+   "chars": 6,
+   "text": "Aspire"
+  },
+  {
+   "kind": "sp",
+   "name": "Build a deep and empathetic understa",
+   "box": [
+    757,
+    -151,
+    325,
+    95
+   ],
+   "right": 1082,
+   "bottom": -56,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    6
+   ],
+   "px": [
+    12
+   ],
+   "chars": 160,
+   "text": "Build a deep and empathetic understanding of user needs and behaviors to design solutions for them based on the desired provocation(s). We make ideas tangible a"
+  },
+  {
+   "kind": "sp",
+   "name": "Scales the ambition through flexible",
+   "box": [
+    1448,
+    -137,
+    287,
+    77
+   ],
+   "right": 1735,
+   "bottom": -60,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    6
+   ],
+   "px": [
+    12
+   ],
+   "chars": 160,
+   "text": "Scales the ambition through flexible and integrated delivery teams. We evolve the offering to greater maturity and improve operational pillars to support lastin"
+  },
+  {
+   "kind": "sp",
+   "name": "Create",
+   "box": [
+    637,
+    208,
+    652,
+    86
+   ],
+   "right": 1289,
+   "bottom": 294,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    40
+   ],
+   "px": [
+    80
+   ],
+   "chars": 6,
+   "text": "Create"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 193",
+   "box": [
+    432,
+    381,
+    200,
+    51
+   ],
+   "right": 632,
+   "bottom": 432,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 270,
+   "pt": [
+    6
+   ],
+   "px": [
+    12
+   ],
+   "chars": 13,
+   "text": "CX Priorities"
+  },
+  {
+   "kind": "sp",
+   "name": "object 25",
+   "box": [
+    131,
+    140,
+    11,
+    11
+   ],
+   "right": 142,
+   "bottom": 151,
+   "placeholder": null,
+   "geom": null,
+   "rot": 90,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 28",
+   "box": [
+    75,
+    54,
+    19,
+    19
+   ],
+   "right": 94,
+   "bottom": 73,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 38",
+   "box": [
+    50,
+    64,
+    19,
+    19
+   ],
+   "right": 69,
+   "bottom": 83,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 28",
+   "box": [
+    43,
+    6,
+    19,
+    19
+   ],
+   "right": 62,
+   "bottom": 25,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 38",
+   "box": [
+    12,
+    7,
+    19,
+    19
+   ],
+   "right": 31,
+   "bottom": 26,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 39",
+   "box": [
+    26,
+    29,
+    33,
+    33
+   ],
+   "right": 59,
+   "bottom": 62,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 38",
+   "box": [
+    69,
+    16,
+    19,
+    19
+   ],
+   "right": 88,
+   "bottom": 35,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 17",
+   "box": [
+    10,
+    62,
+    22,
+    22
+   ],
+   "right": 32,
+   "bottom": 84,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 38",
+   "box": [
+    0,
+    32,
+    19,
+    19
+   ],
+   "right": 19,
+   "bottom": 51,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 23",
+   "box": [
+    173,
+    36,
+    19,
+    19
+   ],
+   "right": 192,
+   "bottom": 55,
+   "placeholder": null,
+   "geom": null,
+   "rot": 270,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 24",
+   "box": [
+    197,
+    49,
+    13,
+    13
+   ],
+   "right": 210,
+   "bottom": 62,
+   "placeholder": null,
+   "geom": null,
+   "rot": 270,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 25",
+   "box": [
+    185,
+    19,
+    11,
+    11
+   ],
+   "right": 196,
+   "bottom": 30,
+   "placeholder": null,
+   "geom": null,
+   "rot": 270,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 26",
+   "box": [
+    162,
+    15,
+    13,
+    13
+   ],
+   "right": 175,
+   "bottom": 28,
+   "placeholder": null,
+   "geom": null,
+   "rot": 270,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 27",
+   "box": [
+    223,
+    42,
+    32,
+    32
+   ],
+   "right": 255,
+   "bottom": 74,
+   "placeholder": null,
+   "geom": null,
+   "rot": 270,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 28",
+   "box": [
+    166,
+    64,
+    19,
+    19
+   ],
+   "right": 185,
+   "bottom": 83,
+   "placeholder": null,
+   "geom": null,
+   "rot": 270,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 38",
+   "box": [
+    204,
+    25,
+    19,
+    19
+   ],
+   "right": 223,
+   "bottom": 44,
+   "placeholder": null,
+   "geom": null,
+   "rot": 270,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 39",
+   "box": [
+    194,
+    64,
+    33,
+    33
+   ],
+   "right": 227,
+   "bottom": 97,
+   "placeholder": null,
+   "geom": null,
+   "rot": 270,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 40",
+   "box": [
+    148,
+    41,
+    19,
+    19
+   ],
+   "right": 167,
+   "bottom": 60,
+   "placeholder": null,
+   "geom": null,
+   "rot": 270,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 40",
+   "box": [
+    197,
+    0,
+    19,
+    19
+   ],
+   "right": 216,
+   "bottom": 19,
+   "placeholder": null,
+   "geom": null,
+   "rot": 270,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 23",
+   "box": [
+    134,
+    116,
+    19,
+    19
+   ],
+   "right": 153,
+   "bottom": 135,
+   "placeholder": null,
+   "geom": null,
+   "rot": 90,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 24",
+   "box": [
+    116,
+    108,
+    13,
+    13
+   ],
+   "right": 129,
+   "bottom": 121,
+   "placeholder": null,
+   "geom": null,
+   "rot": 90,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 27",
+   "box": [
+    72,
+    97,
+    32,
+    32
+   ],
+   "right": 104,
+   "bottom": 129,
+   "placeholder": null,
+   "geom": null,
+   "rot": 90,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 28",
+   "box": [
+    141,
+    87,
+    19,
+    19
+   ],
+   "right": 160,
+   "bottom": 106,
+   "placeholder": null,
+   "geom": null,
+   "rot": 90,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 38",
+   "box": [
+    104,
+    127,
+    19,
+    19
+   ],
+   "right": 123,
+   "bottom": 146,
+   "placeholder": null,
+   "geom": null,
+   "rot": 90,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 39",
+   "box": [
+    100,
+    74,
+    33,
+    33
+   ],
+   "right": 133,
+   "bottom": 107,
+   "placeholder": null,
+   "geom": null,
+   "rot": 90,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 25",
+   "box": [
+    35,
+    77,
+    11,
+    11
+   ],
+   "right": 46,
+   "bottom": 88,
+   "placeholder": null,
+   "geom": null,
+   "rot": 270,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 25",
+   "box": [
+    65,
+    44,
+    11,
+    11
+   ],
+   "right": 76,
+   "bottom": 55,
+   "placeholder": null,
+   "geom": null,
+   "rot": 270,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 15",
+   "box": [
+    104,
+    81,
+    12,
+    12
+   ],
+   "right": 116,
+   "bottom": 93,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 16",
+   "box": [
+    139,
+    68,
+    12,
+    12
+   ],
+   "right": 151,
+   "bottom": 80,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 17",
+   "box": [
+    153,
+    77,
+    19,
+    19
+   ],
+   "right": 172,
+   "bottom": 96,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 18",
+   "box": [
+    105,
+    159,
+    12,
+    12
+   ],
+   "right": 117,
+   "bottom": 171,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 19",
+   "box": [
+    88,
+    16,
+    8,
+    8
+   ],
+   "right": 96,
+   "bottom": 24,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 20",
+   "box": [
+    93,
+    143,
+    8,
+    8
+   ],
+   "right": 101,
+   "bottom": 151,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 21",
+   "box": [
+    103,
+    37,
+    12,
+    12
+   ],
+   "right": 115,
+   "bottom": 49,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 22",
+   "box": [
+    84,
+    53,
+    18,
+    18
+   ],
+   "right": 102,
+   "bottom": 71,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 29",
+   "box": [
+    141,
+    119,
+    8,
+    8
+   ],
+   "right": 149,
+   "bottom": 127,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 30",
+   "box": [
+    133,
+    88,
+    12,
+    12
+   ],
+   "right": 145,
+   "bottom": 100,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 31",
+   "box": [
+    120,
+    129,
+    24,
+    24
+   ],
+   "right": 144,
+   "bottom": 153,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 32",
+   "box": [
+    120,
+    113,
+    12,
+    12
+   ],
+   "right": 132,
+   "bottom": 125,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 33",
+   "box": [
+    111,
+    53,
+    25,
+    25
+   ],
+   "right": 136,
+   "bottom": 78,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 34",
+   "box": [
+    149,
+    98,
+    8,
+    8
+   ],
+   "right": 157,
+   "bottom": 106,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 35",
+   "box": [
+    155,
+    116,
+    12,
+    12
+   ],
+   "right": 167,
+   "bottom": 128,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 36",
+   "box": [
+    79,
+    102,
+    29,
+    29
+   ],
+   "right": 108,
+   "bottom": 131,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 37",
+   "box": [
+    180,
+    72,
+    8,
+    8
+   ],
+   "right": 188,
+   "bottom": 80,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 15",
+   "box": [
+    41,
+    98,
+    12,
+    12
+   ],
+   "right": 53,
+   "bottom": 110,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 18",
+   "box": [
+    78,
+    156,
+    12,
+    12
+   ],
+   "right": 90,
+   "bottom": 168,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 19",
+   "box": [
+    64,
+    53,
+    8,
+    8
+   ],
+   "right": 72,
+   "bottom": 61,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 20",
+   "box": [
+    63,
+    153,
+    8,
+    8
+   ],
+   "right": 71,
+   "bottom": 161,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 33",
+   "box": [
+    48,
+    69,
+    25,
+    25
+   ],
+   "right": 73,
+   "bottom": 94,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 36",
+   "box": [
+    42,
+    116,
+    29,
+    29
+   ],
+   "right": 71,
+   "bottom": 145,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 30",
+   "box": [
+    72,
+    29,
+    12,
+    12
+   ],
+   "right": 84,
+   "bottom": 41,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 30",
+   "box": [
+    46,
+    37,
+    12,
+    12
+   ],
+   "right": 58,
+   "bottom": 49,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 17",
+   "box": [
+    160,
+    132,
+    19,
+    19
+   ],
+   "right": 179,
+   "bottom": 151,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 31",
+   "box": [
+    12,
+    136,
+    24,
+    24
+   ],
+   "right": 36,
+   "bottom": 160,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 17",
+   "box": [
+    152,
+    44,
+    19,
+    19
+   ],
+   "right": 171,
+   "bottom": 63,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 33",
+   "box": [
+    46,
+    0,
+    25,
+    25
+   ],
+   "right": 71,
+   "bottom": 25,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 33",
+   "box": [
+    11,
+    50,
+    25,
+    25
+   ],
+   "right": 36,
+   "bottom": 75,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 33",
+   "box": [
+    0,
+    97,
+    25,
+    25
+   ],
+   "right": 25,
+   "bottom": 122,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 22",
+   "box": [
+    13,
+    19,
+    18,
+    18
+   ],
+   "right": 31,
+   "bottom": 37,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 35",
+   "box": [
+    186,
+    93,
+    12,
+    12
+   ],
+   "right": 198,
+   "bottom": 105,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 17",
+   "box": [
+    180,
+    112,
+    19,
+    19
+   ],
+   "right": 199,
+   "bottom": 131,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 35",
+   "box": [
+    188,
+    58,
+    12,
+    12
+   ],
+   "right": 200,
+   "bottom": 70,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 17",
+   "box": [
+    208,
+    57,
+    19,
+    19
+   ],
+   "right": 227,
+   "bottom": 76,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 35",
+   "box": [
+    184,
+    110,
+    12,
+    12
+   ],
+   "right": 196,
+   "bottom": 122,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 17",
+   "box": [
+    201,
+    129,
+    19,
+    19
+   ],
+   "right": 220,
+   "bottom": 148,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 17",
+   "box": [
+    210,
+    84,
+    19,
+    19
+   ],
+   "right": 229,
+   "bottom": 103,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 17",
+   "box": [
+    46,
+    163,
+    19,
+    19
+   ],
+   "right": 65,
+   "bottom": 182,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 17",
+   "box": [
+    124,
+    25,
+    19,
+    19
+   ],
+   "right": 143,
+   "bottom": 44,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 17",
+   "box": [
+    100,
+    154,
+    19,
+    19
+   ],
+   "right": 119,
+   "bottom": 173,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 17",
+   "box": [
+    22,
+    168,
+    10,
+    10
+   ],
+   "right": 32,
+   "bottom": 178,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 39",
+   "box": [
+    35,
+    0,
+    36,
+    36
+   ],
+   "right": 71,
+   "bottom": 36,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 17",
+   "box": [
+    0,
+    6,
+    24,
+    24
+   ],
+   "right": 24,
+   "bottom": 30,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 23",
+   "box": [
+    133,
+    8,
+    21,
+    21
+   ],
+   "right": 154,
+   "bottom": 29,
+   "placeholder": null,
+   "geom": null,
+   "rot": 270,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 39",
+   "box": [
+    171,
+    0,
+    36,
+    36
+   ],
+   "right": 207,
+   "bottom": 36,
+   "placeholder": null,
+   "geom": null,
+   "rot": 270,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "object 27",
+   "box": [
+    80,
+    1,
+    34,
+    34
+   ],
+   "right": 114,
+   "bottom": 35,
+   "placeholder": null,
+   "geom": null,
+   "rot": 90,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 2",
+   "box": [
+    0,
+    0,
+    71,
+    37
+   ],
+   "right": 71,
+   "bottom": 37,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 107",
+   "box": [
+    0,
+    49,
+    71,
+    37
+   ],
+   "right": 71,
+   "bottom": 86,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 114",
+   "box": [
+    0,
+    147,
+    71,
+    37
+   ],
+   "right": 71,
+   "bottom": 184,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 115",
+   "box": [
+    0,
+    197,
+    71,
+    37
+   ],
+   "right": 71,
+   "bottom": 234,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 110",
+   "box": [
+    0,
+    98,
+    71,
+    37
+   ],
+   "right": 71,
+   "bottom": 135,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Setting the ambition, defining succe",
+   "box": [
+    148,
+    584,
+    432,
+    157
+   ],
+   "right": 580,
+   "bottom": 741,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12,
+    16
+   ],
+   "px": [
+    24,
+    32
+   ],
+   "chars": 104,
+   "text": "DISCOVER  DEFINE Defining the future state | Opportunity Detection  CCX Vision and ecosystem strategy."
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 5",
+   "box": [
+    148,
+    752,
+    495,
+    228
+   ],
+   "right": 643,
+   "bottom": 980,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    11
+   ],
+   "px": [
+    22
+   ],
+   "chars": 222,
+   "text": "Primary Research (IDIs, Qual, Quant) Empathy & Value Mapping Jobs-to-Be-Done Analysis Competitive & Trends Analysis Ecosystem & Technology Audit Experience Principles Product Strat"
+  },
+  {
+   "kind": "sp",
+   "name": "Setting the ambition, defining succe",
+   "box": [
+    678,
+    584,
+    545,
+    122
+   ],
+   "right": 1223,
+   "bottom": 706,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12,
+    16
+   ],
+   "px": [
+    24,
+    32
+   ],
+   "chars": 100,
+   "text": "DEFINE  DEVELOP  DEPLOY Translate the vision into real, in-market products, services & experiences"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 14",
+   "box": [
+    678,
+    714,
+    545,
+    281
+   ],
+   "right": 1223,
+   "bottom": 995,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 233,
+   "text": "Storyboarding Concept Testing & Validation Service Blueprinting Feasibility Analysis Business Modeling & Size of Prize Experience Design Content Strategy Measurement & Data Plan St"
+  },
+  {
+   "kind": "sp",
+   "name": "Setting the ambition, defining succe",
+   "box": [
+    1329,
+    584,
+    419,
+    191
+   ],
+   "right": 1748,
+   "bottom": 775,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12,
+    16
+   ],
+   "px": [
+    24,
+    32
+   ],
+   "chars": 108,
+   "text": "OPERATE Operate the products & ecosystem to manage performance, product roadmap, and experience optimization"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 27",
+   "box": [
+    1329,
+    778,
+    439,
+    228
+   ],
+   "right": 1768,
+   "bottom": 1006,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 203,
+   "text": "Experience Orchestration Content Ops Mission Control Experience Management VoC & VoE  + Qual/Quant Research Performance Analytics & Reporting SEO/GEO/AEO Platform Management A/B Te"
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 166",
+   "box": [
+    370,
+    61,
+    298,
+    298
+   ],
+   "right": 668,
+   "bottom": 359,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 40,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Arc 170",
+   "box": [
+    88,
+    25,
+    129,
+    101
+   ],
+   "right": 217,
+   "bottom": 126,
+   "placeholder": null,
+   "geom": null,
+   "rot": 330,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Arc 171",
+   "box": [
+    130,
+    34,
+    116,
+    233
+   ],
+   "right": 246,
+   "bottom": 267,
+   "placeholder": null,
+   "geom": null,
+   "rot": 330,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Arc 172",
+   "box": [
+    37,
+    79,
+    201,
+    201
+   ],
+   "right": 238,
+   "bottom": 280,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 330,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 173",
+   "box": [
+    57,
+    57,
+    43,
+    43
+   ],
+   "right": 100,
+   "bottom": 100,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 330,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Right Triangle 169",
+   "box": [
+    65,
+    69,
+    19,
+    19
+   ],
+   "right": 84,
+   "bottom": 88,
+   "placeholder": null,
+   "geom": null,
+   "rot": 225,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 161",
+   "box": [
+    48,
+    69,
+    294,
+    286
+   ],
+   "right": 342,
+   "bottom": 355,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 26,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Arc 280",
+   "box": [
+    56,
+    29,
+    121,
+    98
+   ],
+   "right": 177,
+   "bottom": 127,
+   "placeholder": null,
+   "geom": null,
+   "rot": 311,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Arc 281",
+   "box": [
+    117,
+    23,
+    109,
+    223
+   ],
+   "right": 226,
+   "bottom": 246,
+   "placeholder": null,
+   "geom": null,
+   "rot": 311,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Arc 282",
+   "box": [
+    41,
+    79,
+    188,
+    193
+   ],
+   "right": 229,
+   "bottom": 272,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 311,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 283",
+   "box": [
+    33,
+    80,
+    41,
+    42
+   ],
+   "right": 74,
+   "bottom": 122,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 311,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Right Triangle 279",
+   "box": [
+    39,
+    93,
+    18,
+    18
+   ],
+   "right": 57,
+   "bottom": 111,
+   "placeholder": null,
+   "geom": null,
+   "rot": 206,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 18",
+   "box": [
+    318,
+    147,
+    74,
+    137
+   ],
+   "right": 392,
+   "bottom": 284,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 37",
+   "box": [
+    83,
+    542,
+    1787,
+    0
+   ],
+   "right": 1870,
+   "bottom": 542,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Footer Placeholder 4",
+   "box": [
+    40,
+    1023,
+    607,
+    36
+   ],
+   "right": 647,
+   "bottom": 1059,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 22,
+   "text": "PRIVATE & CONFIDENTIAL"
+  }
+ ],
+ "_note": "Evidence about the source slide. Not CSS, not a spec, never averaged with another slide."
+}

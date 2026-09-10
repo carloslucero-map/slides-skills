@@ -1,0 +1,98 @@
+{
+  "id": "quant-stat-grid-5",
+  "$comment": "Hand-written. Structure only: roles, repetition, arity. No pixels, no colour, no copy.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "eyebrow",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "label"
+    },
+    {
+      "role": "claim",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "display",
+      "note": "NOT a headline. The argument the numbers are evidence for, set at display size, carrying the single highlight."
+    },
+    {
+      "role": "statUpper",
+      "repeat": true,
+      "arity": [
+        2,
+        2
+      ],
+      "required": true,
+      "children": [
+        {
+          "role": "value",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "display"
+        },
+        {
+          "role": "direction",
+          "arity": 1,
+          "required": false,
+          "note": "Glyph, not colour: arrow or sign."
+        },
+        {
+          "role": "note",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "cardBody"
+        }
+      ]
+    },
+    {
+      "role": "rule",
+      "arity": 1,
+      "required": true,
+      "note": "The dotted divider. Structural, not decorative."
+    },
+    {
+      "role": "statLower",
+      "repeat": true,
+      "arity": [
+        3,
+        3
+      ],
+      "required": true,
+      "children": [
+        {
+          "role": "value",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "display"
+        },
+        {
+          "role": "direction",
+          "arity": 1,
+          "required": false
+        },
+        {
+          "role": "note",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "cardBody"
+        }
+      ]
+    }
+  ],
+  "invariants": [
+    "2 above the rule, 3 below. The asymmetry is what lets the claim hold the left of the upper band; balancing it to 2+2 or 3+3 forces the claim out and the slide becomes a plain stat grid.",
+    "Direction is a GLYPH, not a colour. .stat--pos alone does not read from the back of a room.",
+    "The rule starts to the right of the claim, not at the content edge — it divides the numbers, not the slide.",
+    "One highlight, inside the claim. The numerals are navy; only the direction glyphs are orange."
+  ],
+  "grounds": {
+    "upper": "cream",
+    "lower": "cream"
+  },
+  "source": "bank:74",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

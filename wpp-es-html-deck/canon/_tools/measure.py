@@ -45,8 +45,14 @@ def measure(inv_path, n):
     if slide is None:
         sys.exit(f"slide {n} not in {inv_path}")
 
-    shapes, offstage = [], 0
+    shapes, offstage, boxless = [], 0, 0
     for sh in slide["shapes"]:
+        # ~0.2% of shapes carry no geometry at all (grouped or inherited from a
+        # layout). Counted, not guessed at — a template built on an invented box
+        # would be exactly the error this whole exercise exists to undo.
+        if not sh.get("box") or len(sh["box"]) != 4:
+            boxless += 1
+            continue
         x, y, w, h = sh["box"]
         if x >= CANVAS[0] or y >= CANVAS[1]:
             offstage += 1          # PowerPoint scratch space beside the canvas
@@ -78,6 +84,7 @@ def measure(inv_path, n):
         "ptToPx": PT_TO_PX,
         "shapeCount": len(shapes),
         "offstageDropped": offstage,
+        "boxlessDropped": boxless,
         "leftEdges": xs,
         "topEdges": ys,
         "typePx": sorted({p for s in shapes for p in s["px"]}),
@@ -106,7 +113,8 @@ def main():
         with open(args.out, "w", encoding="utf-8") as f:
             f.write(text + "\n")
         print(f"slide {args.slide}: {rec['shapeCount']} shapes on canvas"
-              + (f", {rec['offstageDropped']} offstage dropped" if rec["offstageDropped"] else "")
+              + (f", {rec['offstageDropped']} offstage" if rec["offstageDropped"] else "")
+              + (f", {rec['boxlessDropped']} without geometry" if rec["boxlessDropped"] else "")
               + f"\nleft edges: {rec['leftEdges']}"
               + f"\ntype (px):  {rec['typePx']}"
               + f"\n-> {args.out}")

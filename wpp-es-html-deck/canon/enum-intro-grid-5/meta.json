@@ -1,0 +1,48 @@
+{
+  "id": "enum-intro-grid-5",
+  "name": "Framing column beside a grid of instances",
+  "useWhen": "One principle has to be stated once and then shown through four to six named instances, and the principle deserves more room than any single instance.",
+  "$useWhenNote": "Written by hand. Generated from family+form it would read 'six columns, dot headers', which is construction, not the problem it solves.",
+  "family": "B-enumeration",
+  "secondaryFamily": null,
+  "form": "index",
+  "arity": "5",
+  "arityRange": [
+    4,
+    6
+  ],
+  "ground": [
+    "cream"
+  ],
+  "density": "dense",
+  "densityChars": 1080,
+  "mediaRole": "none",
+  "focal": {
+    "role": "introLead",
+    "px": 32,
+    "againstHeadlinePx": 64,
+    "ratio": 0.5,
+    "note": "Deliberately low. Nothing on this slide out-shouts the headline; the intro leads by colour and position, not size."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:44",
+  "sourceRender": "ref.png",
+  "replaces": "columns-v1",
+  "replacesNote": "columns-v1 gives three equal spacious columns and leaves the lower half of the canvas empty. This carries nearly twice the content and reaches y~900. Do not retire columns-v1 until this has been through a real deck.",
+  "deviations": [
+    {
+      "what": "text edge",
+      "source": 57,
+      "here": 56,
+      "why": "Uses --m-text (56px), the token added for exactly this: the playbook sets 40px margins for structure, the bank sets running copy at x=57."
+    }
+  ],
+  "contractGapsClosed": [
+    ".headline--lg (64px) — the measured headline tier. The 54px default descends from the old x1.5 factor."
+  ],
+  "createdAt": "2026-09-10",
+  "version": 1
+}

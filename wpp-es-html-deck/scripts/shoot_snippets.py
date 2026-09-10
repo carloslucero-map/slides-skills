@@ -294,13 +294,23 @@ def main():
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 on overflow too, not just on missing/blank shots")
     ap.add_argument("--no-sheets", action="store_true")
+    ap.add_argument("--canon", action="store_true",
+                    help="shoot canon/<id>/template.html instead of the snippet kit; "
+                         "each preview.png lands beside its ref.png")
     args = ap.parse_args()
 
     if not CHROME:
         sys.exit(CHROME_HELP)
 
-    vdir = os.path.join(SKILL, "assets", "snippets", "variants")
-    names = sorted(f[:-5] for f in os.listdir(vdir) if f.endswith(".html"))
+    if args.canon:
+        cdir = os.path.join(SKILL, "canon")
+        names = sorted(d for d in os.listdir(cdir)
+                       if not d.startswith("_")
+                       and os.path.isfile(os.path.join(cdir, d, "template.html")))
+        vdir = None
+    else:
+        vdir = os.path.join(SKILL, "assets", "snippets", "variants")
+        names = sorted(f[:-5] for f in os.listdir(vdir) if f.endswith(".html"))
     if args.only:
         names = [n for n in names if n == args.only or n.rsplit("-v", 1)[0] == args.only]
         if not names:
@@ -313,7 +323,9 @@ def main():
 
     results, overflowed = [], []
     for vid in names:
-        markup = variant_markup(os.path.join(vdir, vid + ".html"))
+        src = (os.path.join(SKILL, "canon", vid, "template.html") if args.canon
+               else os.path.join(vdir, vid + ".html"))
+        markup = variant_markup(src)
         if markup is None:
             report("FAIL", vid, "no <section> in the variant file")
             continue
@@ -321,7 +333,9 @@ def main():
         with open(page, "w", encoding="utf-8") as f:
             f.write(splice(base, markup))
 
-        png = os.path.join(args.out, vid + ".png")
+        png = (os.path.join(SKILL, "canon", vid, "preview.png") if args.canon
+               else os.path.join(args.out, vid + ".png"))
+        os.makedirs(os.path.dirname(png), exist_ok=True)
         err = shoot(page, png)
         if err:
             report("FAIL", vid, err)
@@ -351,7 +365,8 @@ def main():
         print()
         fams = {}
         for vid, png, flag in results:
-            fams.setdefault(vid.rsplit("-v", 1)[0], []).append((vid, png, flag))
+            fam = "canon" if args.canon else vid.rsplit("-v", 1)[0]
+            fams.setdefault(fam, []).append((vid, png, flag))
         for fam, entries in sorted(fams.items()):
             p = contact_sheet(entries, os.path.join(args.out, f"_sheet-{fam}.png"))
             if p:

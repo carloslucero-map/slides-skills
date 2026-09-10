@@ -1,0 +1,4002 @@
+{
+ "source": "bank:175",
+ "inventory": "inventory2.json",
+ "canvas": [
+  1920,
+  1080
+ ],
+ "ptToPx": 2.0,
+ "shapeCount": 184,
+ "offstageDropped": 4,
+ "boxlessDropped": 0,
+ "leftEdges": [
+  -241,
+  -57,
+  0,
+  42,
+  57,
+  60,
+  85,
+  92,
+  277,
+  468,
+  479,
+  523,
+  525,
+  589,
+  625,
+  660,
+  688,
+  760,
+  774,
+  776,
+  787,
+  791,
+  792,
+  802,
+  803,
+  851,
+  957,
+  962,
+  967,
+  982,
+  983,
+  996,
+  1009,
+  1041,
+  1042,
+  1109,
+  1123,
+  1163,
+  1233,
+  1250,
+  1264,
+  1285,
+  1288,
+  1318,
+  1334,
+  1335,
+  1425,
+  1456,
+  1505,
+  1508,
+  1616,
+  1693,
+  1695,
+  1699,
+  1701,
+  1807,
+  1841,
+  1863
+ ],
+ "topEdges": [
+  -936,
+  -122,
+  -104,
+  -57,
+  0,
+  53,
+  125,
+  128,
+  140,
+  201,
+  233,
+  262,
+  297,
+  300,
+  301,
+  302,
+  304,
+  343,
+  357,
+  358,
+  359,
+  360,
+  406,
+  412,
+  422,
+  427,
+  428,
+  454,
+  462,
+  469,
+  486,
+  491,
+  494,
+  496,
+  497,
+  555,
+  561,
+  563,
+  565,
+  569,
+  574,
+  624,
+  625,
+  627,
+  629,
+  631,
+  634,
+  635,
+  688,
+  692,
+  698,
+  699,
+  700,
+  703,
+  750,
+  765,
+  766,
+  768,
+  769,
+  811,
+  819,
+  823,
+  824,
+  876,
+  1023,
+  1033
+ ],
+ "typePx": [
+  14,
+  16,
+  20,
+  28,
+  64
+ ],
+ "shapes": [
+  {
+   "kind": "sp",
+   "name": "We design, build, and operate across",
+   "box": [
+    60,
+    53,
+    1485,
+    140
+   ],
+   "right": 1545,
+   "bottom": 193,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    32
+   ],
+   "px": [
+    64
+   ],
+   "chars": 36,
+   "text": "DESIGN: DATA CONSULTING AND STRATEGY"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 39",
+   "box": [
+    85,
+    -104,
+    192,
+    19
+   ],
+   "right": 277,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 40",
+   "box": [
+    277,
+    -122,
+    192,
+    19
+   ],
+   "right": 469,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 41",
+   "box": [
+    468,
+    -104,
+    192,
+    19
+   ],
+   "right": 660,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 42",
+   "box": [
+    660,
+    -122,
+    192,
+    19
+   ],
+   "right": 852,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 43",
+   "box": [
+    851,
+    -104,
+    192,
+    19
+   ],
+   "right": 1043,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 44",
+   "box": [
+    1042,
+    -122,
+    192,
+    19
+   ],
+   "right": 1234,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 45",
+   "box": [
+    1233,
+    -104,
+    192,
+    19
+   ],
+   "right": 1425,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 46",
+   "box": [
+    1425,
+    -122,
+    192,
+    19
+   ],
+   "right": 1617,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 47",
+   "box": [
+    1616,
+    -104,
+    192,
+    19
+   ],
+   "right": 1808,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 48",
+   "box": [
+    1807,
+    -122,
+    192,
+    19
+   ],
+   "right": 1999,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 31",
+   "box": [
+    0,
+    -57,
+    57,
+    57
+   ],
+   "right": 57,
+   "bottom": 0,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 32",
+   "box": [
+    -57,
+    0,
+    57,
+    57
+   ],
+   "right": 0,
+   "bottom": 57,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 33",
+   "box": [
+    1863,
+    -57,
+    57,
+    57
+   ],
+   "right": 1920,
+   "bottom": 0,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 35",
+   "box": [
+    -57,
+    1023,
+    57,
+    57
+   ],
+   "right": 0,
+   "bottom": 1080,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 2",
+   "box": [
+    42,
+    140,
+    1542,
+    82
+   ],
+   "right": 1584,
+   "bottom": 222,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    14
+   ],
+   "px": [
+    28
+   ],
+   "chars": 160,
+   "text": "WE CREATE A ROADMAP FOR TRANSFORMING COMPLEX CUSTOMER AND LOYALTY DATA AND INFORMATION INTO CLEAR, USABLE STRUCTURES, UNLOCKING ACTIONABLE INSIGHTS THAT DRIVE I"
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 1095",
+   "box": [
+    589,
+    -936,
+    1224,
+    683
+   ],
+   "right": 1813,
+   "bottom": -253,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1274",
+   "box": [
+    1456,
+    454,
+    341,
+    272
+   ],
+   "right": 1797,
+   "bottom": 726,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 270,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1273",
+   "box": [
+    962,
+    233,
+    343,
+    712
+   ],
+   "right": 1305,
+   "bottom": 945,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 270,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1949",
+   "box": [
+    983,
+    494,
+    146,
+    55
+   ],
+   "right": 1129,
+   "bottom": 549,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 27,
+   "text": "REPORTING AND VISUALIZATION"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1950",
+   "box": [
+    1163,
+    494,
+    146,
+    55
+   ],
+   "right": 1309,
+   "bottom": 549,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 22,
+   "text": "INSIGHTS AND ANALYTICS"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1952",
+   "box": [
+    803,
+    494,
+    146,
+    55
+   ],
+   "right": 949,
+   "bottom": 549,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 29,
+   "text": "MEASUREMENT AND EFFECTIVENESS"
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1279",
+   "box": [
+    688,
+    624,
+    1062,
+    0
+   ],
+   "right": 1750,
+   "bottom": 624,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1280",
+   "box": [
+    688,
+    486,
+    1062,
+    0
+   ],
+   "right": 1750,
+   "bottom": 486,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1281",
+   "box": [
+    688,
+    555,
+    1062,
+    0
+   ],
+   "right": 1750,
+   "bottom": 555,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1282",
+   "box": [
+    688,
+    692,
+    1063,
+    0
+   ],
+   "right": 1751,
+   "bottom": 692,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 8",
+   "box": [
+    1505,
+    491,
+    175,
+    60
+   ],
+   "right": 1680,
+   "bottom": 551,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 38,
+   "text": "MEASUREMENT AND MARKETING INTELLIGENCE"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1284",
+   "box": [
+    1508,
+    422,
+    172,
+    60
+   ],
+   "right": 1680,
+   "bottom": 482,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 31,
+   "text": "EXPERIENCE & CONTENT MANAGEMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1285",
+   "box": [
+    1505,
+    561,
+    175,
+    60
+   ],
+   "right": 1680,
+   "bottom": 621,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 26,
+   "text": "DECISIONING AND ACTIVATION"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1286",
+   "box": [
+    1505,
+    629,
+    175,
+    61
+   ],
+   "right": 1680,
+   "bottom": 690,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 30,
+   "text": "AUDIENCE & CUSTOMER MANAGEMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1287",
+   "box": [
+    479,
+    462,
+    343,
+    254
+   ],
+   "right": 822,
+   "bottom": 716,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 270,
+   "pt": [
+    14
+   ],
+   "px": [
+    28
+   ],
+   "chars": 12,
+   "text": "CAPABILITIES"
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 1288",
+   "box": [
+    1701,
+    428,
+    37,
+    45
+   ],
+   "right": 1738,
+   "bottom": 473,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 1289",
+   "box": [
+    1693,
+    497,
+    47,
+    43
+   ],
+   "right": 1740,
+   "bottom": 540,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 1290",
+   "box": [
+    1695,
+    635,
+    45,
+    43
+   ],
+   "right": 1740,
+   "bottom": 678,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 1291",
+   "box": [
+    1695,
+    569,
+    43,
+    45
+   ],
+   "right": 1738,
+   "bottom": 614,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Diamond 44",
+   "box": [
+    774,
+    301,
+    717,
+    53
+   ],
+   "right": 1491,
+   "bottom": 354,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1293",
+   "box": [
+    791,
+    304,
+    161,
+    52
+   ],
+   "right": 952,
+   "bottom": 356,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1294",
+   "box": [
+    625,
+    201,
+    52,
+    255
+   ],
+   "right": 677,
+   "bottom": 456,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 270,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 18,
+   "text": "OBJECTIVES & GOALS"
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1295",
+   "box": [
+    523,
+    302,
+    967,
+    0
+   ],
+   "right": 1490,
+   "bottom": 302,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Diamond 44",
+   "box": [
+    774,
+    357,
+    715,
+    55
+   ],
+   "right": 1489,
+   "bottom": 412,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1297",
+   "box": [
+    1318,
+    302,
+    156,
+    54
+   ],
+   "right": 1474,
+   "bottom": 356,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 21,
+   "text": "HYPER-PERSONALIZATION"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1298",
+   "box": [
+    792,
+    302,
+    161,
+    54
+   ],
+   "right": 953,
+   "bottom": 356,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 6,
+   "text": "GROWTH"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1299",
+   "box": [
+    996,
+    302,
+    253,
+    54
+   ],
+   "right": 1249,
+   "bottom": 356,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 12,
+   "text": "OMNI-CHANNEL"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1300",
+   "box": [
+    1285,
+    300,
+    156,
+    54
+   ],
+   "right": 1441,
+   "bottom": 354,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1301",
+   "box": [
+    523,
+    358,
+    967,
+    0
+   ],
+   "right": 1490,
+   "bottom": 358,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Diamond 44",
+   "box": [
+    523,
+    358,
+    255,
+    54
+   ],
+   "right": 778,
+   "bottom": 412,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 10,
+   "text": "STRATEGIES"
+  },
+  {
+   "kind": "sp",
+   "name": "Diamond 44",
+   "box": [
+    523,
+    823,
+    253,
+    54
+   ],
+   "right": 776,
+   "bottom": 877,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 26,
+   "text": "DATA DRIVEN TRANSFORMATION"
+  },
+  {
+   "kind": "sp",
+   "name": "Diamond 44",
+   "box": [
+    776,
+    824,
+    715,
+    52
+   ],
+   "right": 1491,
+   "bottom": 876,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1305",
+   "box": [
+    1123,
+    824,
+    156,
+    52
+   ],
+   "right": 1279,
+   "bottom": 876,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 22,
+   "text": "SHARING & TRANSPARENCY"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1306",
+   "box": [
+    791,
+    824,
+    161,
+    52
+   ],
+   "right": 952,
+   "bottom": 876,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 20,
+   "text": "AWARENESS & TRAINING"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1307",
+   "box": [
+    957,
+    824,
+    161,
+    52
+   ],
+   "right": 1118,
+   "bottom": 876,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 28,
+   "text": "INNOVATION & EXPERIMENTATION"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1308",
+   "box": [
+    1285,
+    824,
+    156,
+    52
+   ],
+   "right": 1441,
+   "bottom": 876,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 17,
+   "text": "CHANGE MANAGEMENT"
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1309",
+   "box": [
+    523,
+    876,
+    967,
+    0
+   ],
+   "right": 1490,
+   "bottom": 876,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Diamond 44",
+   "box": [
+    776,
+    765,
+    714,
+    54
+   ],
+   "right": 1490,
+   "bottom": 819,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1311",
+   "box": [
+    1009,
+    769,
+    218,
+    48
+   ],
+   "right": 1227,
+   "bottom": 817,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 10,
+   "text": "TECHNOLOGY"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1312",
+   "box": [
+    1250,
+    766,
+    218,
+    48
+   ],
+   "right": 1468,
+   "bottom": 814,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 10,
+   "text": "OPERATIONS"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 6",
+   "box": [
+    760,
+    768,
+    227,
+    48
+   ],
+   "right": 987,
+   "bottom": 816,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 4,
+   "text": "DATA"
+  },
+  {
+   "kind": "sp",
+   "name": "Diamond 44",
+   "box": [
+    523,
+    765,
+    253,
+    54
+   ],
+   "right": 776,
+   "bottom": 819,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 8,
+   "text": "ENABLERS"
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1315",
+   "box": [
+    523,
+    819,
+    967,
+    0
+   ],
+   "right": 1490,
+   "bottom": 819,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1316",
+   "box": [
+    1508,
+    698,
+    175,
+    61
+   ],
+   "right": 1683,
+   "bottom": 759,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 20,
+   "text": "MARKETING MANAGEMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1949",
+   "box": [
+    983,
+    427,
+    146,
+    55
+   ],
+   "right": 1129,
+   "bottom": 482,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 18,
+   "text": "CONTENT MANAGEMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1950",
+   "box": [
+    1163,
+    427,
+    146,
+    55
+   ],
+   "right": 1309,
+   "bottom": 482,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 16,
+   "text": "ASSET MANAGEMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1952",
+   "box": [
+    803,
+    427,
+    146,
+    55
+   ],
+   "right": 949,
+   "bottom": 482,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 23,
+   "text": "RELATIONSHIP MANAGEMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1949",
+   "box": [
+    983,
+    563,
+    146,
+    55
+   ],
+   "right": 1129,
+   "bottom": 618,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 29,
+   "text": "DYNAMIC CREATIVE OPTIMIZATION"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1952",
+   "box": [
+    803,
+    563,
+    146,
+    55
+   ],
+   "right": 949,
+   "bottom": 618,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 24,
+   "text": "EXPERIENCE ORCHESTRATION"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1949",
+   "box": [
+    982,
+    631,
+    146,
+    55
+   ],
+   "right": 1128,
+   "bottom": 686,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 18,
+   "text": "CUSTOMER PROFILING"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1950",
+   "box": [
+    1163,
+    631,
+    146,
+    55
+   ],
+   "right": 1309,
+   "bottom": 686,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 12,
+   "text": "SEGMENTATION"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1952",
+   "box": [
+    802,
+    631,
+    146,
+    55
+   ],
+   "right": 948,
+   "bottom": 686,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 24,
+   "text": "AUDIENCE DATA MANAGEMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1950",
+   "box": [
+    1335,
+    631,
+    146,
+    55
+   ],
+   "right": 1481,
+   "bottom": 686,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 26,
+   "text": "PRIVACY & PREFERENCE MGMT."
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1949",
+   "box": [
+    983,
+    700,
+    146,
+    55
+   ],
+   "right": 1129,
+   "bottom": 755,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 18,
+   "text": "CHANNEL MANAGEMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1952",
+   "box": [
+    803,
+    700,
+    146,
+    55
+   ],
+   "right": 949,
+   "bottom": 755,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 18,
+   "text": "MARKETING PLANNING"
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 1328",
+   "box": [
+    1699,
+    699,
+    41,
+    51
+   ],
+   "right": 1740,
+   "bottom": 750,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1950",
+   "box": [
+    1163,
+    699,
+    146,
+    55
+   ],
+   "right": 1309,
+   "bottom": 754,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 19,
+   "text": "EXPERIENCE PLANNING"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1330",
+   "box": [
+    787,
+    359,
+    161,
+    54
+   ],
+   "right": 948,
+   "bottom": 413,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 8,
+   "text": "BUSINESS"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1331",
+   "box": [
+    1041,
+    360,
+    161,
+    54
+   ],
+   "right": 1202,
+   "bottom": 414,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 25,
+   "text": "MARKETING & COMMUNICATION"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1332",
+   "box": [
+    1288,
+    359,
+    210,
+    54
+   ],
+   "right": 1498,
+   "bottom": 413,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 32,
+   "text": "CUSTOMER RELATIONSHIP MANAGEMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1950",
+   "box": [
+    1334,
+    700,
+    146,
+    55
+   ],
+   "right": 1480,
+   "bottom": 755,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 19,
+   "text": "WORKFLOW MANAGEMENT"
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1347",
+   "box": [
+    967,
+    427,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 478,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1348",
+   "box": [
+    967,
+    496,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 547,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1349",
+   "box": [
+    967,
+    565,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 616,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1350",
+   "box": [
+    967,
+    634,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 685,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1351",
+   "box": [
+    967,
+    703,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 754,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1342",
+   "box": [
+    967,
+    427,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 478,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1343",
+   "box": [
+    967,
+    496,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 547,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1344",
+   "box": [
+    967,
+    565,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 616,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1345",
+   "box": [
+    967,
+    634,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 685,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1346",
+   "box": [
+    967,
+    703,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 754,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1337",
+   "box": [
+    967,
+    427,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 478,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1338",
+   "box": [
+    967,
+    496,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 547,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1339",
+   "box": [
+    967,
+    565,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 616,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1340",
+   "box": [
+    967,
+    634,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 685,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1341",
+   "box": [
+    967,
+    703,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 754,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1353",
+   "box": [
+    523,
+    412,
+    967,
+    0
+   ],
+   "right": 1490,
+   "bottom": 412,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1352",
+   "box": [
+    525,
+    262,
+    1327,
+    715
+   ],
+   "right": 1852,
+   "bottom": 977,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 956",
+   "box": [
+    57,
+    262,
+    436,
+    715
+   ],
+   "right": 493,
+   "bottom": 977,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 950",
+   "box": [
+    92,
+    297,
+    298,
+    52
+   ],
+   "right": 390,
+   "bottom": 349,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    14
+   ],
+   "px": [
+    28
+   ],
+   "chars": 10,
+   "text": "WHAT WE DO"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 951",
+   "box": [
+    92,
+    625,
+    298,
+    50
+   ],
+   "right": 390,
+   "bottom": 675,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    14
+   ],
+   "px": [
+    28
+   ],
+   "chars": 14,
+   "text": "SO CLIENTS CAN"
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1",
+   "box": [
+    92,
+    574,
+    301,
+    0
+   ],
+   "right": 393,
+   "bottom": 574,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Flowchart: Alternate Process 20",
+   "box": [
+    -241,
+    343,
+    399,
+    45
+   ],
+   "right": 158,
+   "bottom": 388,
+   "placeholder": null,
+   "geom": "flowChartAlternateProcess",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 22,
+   "text": "DATA STRATEGY & ETHICS"
+  },
+  {
+   "kind": "sp",
+   "name": "Flowchart: Alternate Process 21",
+   "box": [
+    -241,
+    406,
+    399,
+    45
+   ],
+   "right": 158,
+   "bottom": 451,
+   "placeholder": null,
+   "geom": "flowChartAlternateProcess",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 23,
+   "text": "TRANSFORMATION ROADMAPS"
+  },
+  {
+   "kind": "sp",
+   "name": "Flowchart: Alternate Process 22",
+   "box": [
+    -241,
+    469,
+    399,
+    45
+   ],
+   "right": 158,
+   "bottom": 514,
+   "placeholder": null,
+   "geom": "flowChartAlternateProcess",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 28,
+   "text": "DATA-DRIVEN OPERATING MODELS"
+  },
+  {
+   "kind": "sp",
+   "name": "Flowchart: Alternate Process 23",
+   "box": [
+    -241,
+    627,
+    399,
+    45
+   ],
+   "right": 158,
+   "bottom": 672,
+   "placeholder": null,
+   "geom": "flowChartAlternateProcess",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 27,
+   "text": "TRANSFORM YOUR CAPABILITIES"
+  },
+  {
+   "kind": "sp",
+   "name": "Flowchart: Alternate Process 24",
+   "box": [
+    -241,
+    688,
+    399,
+    45
+   ],
+   "right": 158,
+   "bottom": 733,
+   "placeholder": null,
+   "geom": "flowChartAlternateProcess",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 25,
+   "text": "PRIORITISE VALUE DELIVERY"
+  },
+  {
+   "kind": "sp",
+   "name": "Flowchart: Alternate Process 25",
+   "box": [
+    -241,
+    750,
+    399,
+    45
+   ],
+   "right": 158,
+   "bottom": 795,
+   "placeholder": null,
+   "geom": "flowChartAlternateProcess",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 29,
+   "text": "ENABLE OPERATIONAL EXCELLENCE"
+  },
+  {
+   "kind": "sp",
+   "name": "Flowchart: Alternate Process 26",
+   "box": [
+    -241,
+    811,
+    399,
+    45
+   ],
+   "right": 158,
+   "bottom": 856,
+   "placeholder": null,
+   "geom": "flowChartAlternateProcess",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 28,
+   "text": "EMBED DATA STRATEGY & ETHICS"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1394",
+   "box": [
+    1456,
+    454,
+    341,
+    272
+   ],
+   "right": 1797,
+   "bottom": 726,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 270,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1392",
+   "box": [
+    962,
+    233,
+    343,
+    712
+   ],
+   "right": 1305,
+   "bottom": 945,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 270,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1949",
+   "box": [
+    983,
+    494,
+    146,
+    55
+   ],
+   "right": 1129,
+   "bottom": 549,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 27,
+   "text": "REPORTING AND VISUALIZATION"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1950",
+   "box": [
+    1163,
+    494,
+    146,
+    55
+   ],
+   "right": 1309,
+   "bottom": 549,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 22,
+   "text": "INSIGHTS AND ANALYTICS"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1952",
+   "box": [
+    803,
+    494,
+    146,
+    55
+   ],
+   "right": 949,
+   "bottom": 549,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 29,
+   "text": "MEASUREMENT AND EFFECTIVENESS"
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 10",
+   "box": [
+    688,
+    624,
+    1062,
+    0
+   ],
+   "right": 1750,
+   "bottom": 624,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 12",
+   "box": [
+    688,
+    486,
+    1062,
+    0
+   ],
+   "right": 1750,
+   "bottom": 486,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 14",
+   "box": [
+    688,
+    555,
+    1062,
+    0
+   ],
+   "right": 1750,
+   "bottom": 555,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 15",
+   "box": [
+    688,
+    692,
+    1063,
+    0
+   ],
+   "right": 1751,
+   "bottom": 692,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 8",
+   "box": [
+    1505,
+    491,
+    175,
+    60
+   ],
+   "right": 1680,
+   "bottom": 551,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 38,
+   "text": "MEASUREMENT AND MARKETING INTELLIGENCE"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 19",
+   "box": [
+    1508,
+    422,
+    172,
+    60
+   ],
+   "right": 1680,
+   "bottom": 482,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 31,
+   "text": "EXPERIENCE & CONTENT MANAGEMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 20",
+   "box": [
+    1505,
+    561,
+    175,
+    60
+   ],
+   "right": 1680,
+   "bottom": 621,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 26,
+   "text": "DECISIONING AND ACTIVATION"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 21",
+   "box": [
+    1505,
+    629,
+    175,
+    61
+   ],
+   "right": 1680,
+   "bottom": 690,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 30,
+   "text": "AUDIENCE & CUSTOMER MANAGEMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 22",
+   "box": [
+    479,
+    462,
+    343,
+    254
+   ],
+   "right": 822,
+   "bottom": 716,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 270,
+   "pt": [
+    14
+   ],
+   "px": [
+    28
+   ],
+   "chars": 12,
+   "text": "CAPABILITIES"
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 23",
+   "box": [
+    1701,
+    428,
+    37,
+    45
+   ],
+   "right": 1738,
+   "bottom": 473,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 24",
+   "box": [
+    1693,
+    497,
+    47,
+    43
+   ],
+   "right": 1740,
+   "bottom": 540,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 25",
+   "box": [
+    1695,
+    635,
+    45,
+    43
+   ],
+   "right": 1740,
+   "bottom": 678,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 26",
+   "box": [
+    1695,
+    569,
+    43,
+    45
+   ],
+   "right": 1738,
+   "bottom": 614,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Diamond 44",
+   "box": [
+    774,
+    301,
+    717,
+    53
+   ],
+   "right": 1491,
+   "bottom": 354,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 49",
+   "box": [
+    791,
+    304,
+    161,
+    52
+   ],
+   "right": 952,
+   "bottom": 356,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 50",
+   "box": [
+    625,
+    201,
+    52,
+    255
+   ],
+   "right": 677,
+   "bottom": 456,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 270,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 18,
+   "text": "OBJECTIVES & GOALS"
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 51",
+   "box": [
+    523,
+    302,
+    967,
+    0
+   ],
+   "right": 1490,
+   "bottom": 302,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Diamond 44",
+   "box": [
+    774,
+    357,
+    715,
+    55
+   ],
+   "right": 1489,
+   "bottom": 412,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 53",
+   "box": [
+    1318,
+    302,
+    156,
+    54
+   ],
+   "right": 1474,
+   "bottom": 356,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 21,
+   "text": "HYPER-PERSONALIZATION"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 54",
+   "box": [
+    792,
+    302,
+    161,
+    54
+   ],
+   "right": 953,
+   "bottom": 356,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 6,
+   "text": "GROWTH"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 55",
+   "box": [
+    996,
+    302,
+    253,
+    54
+   ],
+   "right": 1249,
+   "bottom": 356,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 12,
+   "text": "OMNI-CHANNEL"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 56",
+   "box": [
+    1285,
+    300,
+    156,
+    54
+   ],
+   "right": 1441,
+   "bottom": 354,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 57",
+   "box": [
+    523,
+    358,
+    967,
+    0
+   ],
+   "right": 1490,
+   "bottom": 358,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Diamond 44",
+   "box": [
+    523,
+    358,
+    255,
+    54
+   ],
+   "right": 778,
+   "bottom": 412,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 10,
+   "text": "STRATEGIES"
+  },
+  {
+   "kind": "sp",
+   "name": "Diamond 44",
+   "box": [
+    523,
+    823,
+    253,
+    54
+   ],
+   "right": 776,
+   "bottom": 877,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 26,
+   "text": "DATA DRIVEN TRANSFORMATION"
+  },
+  {
+   "kind": "sp",
+   "name": "Diamond 44",
+   "box": [
+    776,
+    824,
+    715,
+    52
+   ],
+   "right": 1491,
+   "bottom": 876,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 61",
+   "box": [
+    1123,
+    824,
+    156,
+    52
+   ],
+   "right": 1279,
+   "bottom": 876,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 22,
+   "text": "SHARING & TRANSPARENCY"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 62",
+   "box": [
+    791,
+    824,
+    161,
+    52
+   ],
+   "right": 952,
+   "bottom": 876,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 20,
+   "text": "AWARENESS & TRAINING"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1354",
+   "box": [
+    957,
+    824,
+    161,
+    52
+   ],
+   "right": 1118,
+   "bottom": 876,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 28,
+   "text": "INNOVATION & EXPERIMENTATION"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1355",
+   "box": [
+    1285,
+    824,
+    156,
+    52
+   ],
+   "right": 1441,
+   "bottom": 876,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 17,
+   "text": "CHANGE MANAGEMENT"
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1356",
+   "box": [
+    523,
+    876,
+    967,
+    0
+   ],
+   "right": 1490,
+   "bottom": 876,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Diamond 44",
+   "box": [
+    776,
+    765,
+    714,
+    54
+   ],
+   "right": 1490,
+   "bottom": 819,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1358",
+   "box": [
+    1009,
+    769,
+    218,
+    48
+   ],
+   "right": 1227,
+   "bottom": 817,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 10,
+   "text": "TECHNOLOGY"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1359",
+   "box": [
+    1250,
+    766,
+    218,
+    48
+   ],
+   "right": 1468,
+   "bottom": 814,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 10,
+   "text": "OPERATIONS"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 6",
+   "box": [
+    760,
+    768,
+    227,
+    48
+   ],
+   "right": 987,
+   "bottom": 816,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 4,
+   "text": "DATA"
+  },
+  {
+   "kind": "sp",
+   "name": "Diamond 44",
+   "box": [
+    523,
+    765,
+    253,
+    54
+   ],
+   "right": 776,
+   "bottom": 819,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 8,
+   "text": "ENABLERS"
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1362",
+   "box": [
+    523,
+    819,
+    967,
+    0
+   ],
+   "right": 1490,
+   "bottom": 819,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1363",
+   "box": [
+    1508,
+    698,
+    175,
+    61
+   ],
+   "right": 1683,
+   "bottom": 759,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 20,
+   "text": "MARKETING MANAGEMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1949",
+   "box": [
+    983,
+    427,
+    146,
+    55
+   ],
+   "right": 1129,
+   "bottom": 482,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 18,
+   "text": "CONTENT MANAGEMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1950",
+   "box": [
+    1163,
+    427,
+    146,
+    55
+   ],
+   "right": 1309,
+   "bottom": 482,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 16,
+   "text": "ASSET MANAGEMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1952",
+   "box": [
+    803,
+    427,
+    146,
+    55
+   ],
+   "right": 949,
+   "bottom": 482,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 23,
+   "text": "RELATIONSHIP MANAGEMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1949",
+   "box": [
+    983,
+    563,
+    146,
+    55
+   ],
+   "right": 1129,
+   "bottom": 618,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 29,
+   "text": "DYNAMIC CREATIVE OPTIMISATION"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1952",
+   "box": [
+    803,
+    563,
+    146,
+    55
+   ],
+   "right": 949,
+   "bottom": 618,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 24,
+   "text": "EXPERIENCE ORCHESTRATION"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1949",
+   "box": [
+    982,
+    631,
+    146,
+    55
+   ],
+   "right": 1128,
+   "bottom": 686,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 18,
+   "text": "CUSTOMER PROFILING"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1950",
+   "box": [
+    1163,
+    631,
+    146,
+    55
+   ],
+   "right": 1309,
+   "bottom": 686,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 12,
+   "text": "SEGMENTATION"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1952",
+   "box": [
+    802,
+    631,
+    146,
+    55
+   ],
+   "right": 948,
+   "bottom": 686,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 24,
+   "text": "AUDIENCE DATA MANAGEMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1950",
+   "box": [
+    1335,
+    631,
+    146,
+    55
+   ],
+   "right": 1481,
+   "bottom": 686,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 26,
+   "text": "PRIVACY & PREFERENCE MGMT."
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1949",
+   "box": [
+    983,
+    700,
+    146,
+    55
+   ],
+   "right": 1129,
+   "bottom": 755,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 18,
+   "text": "CHANNEL MANAGEMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1952",
+   "box": [
+    803,
+    700,
+    146,
+    55
+   ],
+   "right": 949,
+   "bottom": 755,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 18,
+   "text": "MARKETING PLANNING"
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 1375",
+   "box": [
+    1699,
+    699,
+    41,
+    51
+   ],
+   "right": 1740,
+   "bottom": 750,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1950",
+   "box": [
+    1163,
+    699,
+    146,
+    55
+   ],
+   "right": 1309,
+   "bottom": 754,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 19,
+   "text": "EXPERIENCE PLANNING"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1377",
+   "box": [
+    787,
+    359,
+    161,
+    54
+   ],
+   "right": 948,
+   "bottom": 413,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 8,
+   "text": "BUSINESS"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1378",
+   "box": [
+    1041,
+    360,
+    161,
+    54
+   ],
+   "right": 1202,
+   "bottom": 414,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 25,
+   "text": "MARKETING & COMMUNICATION"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 1379",
+   "box": [
+    1288,
+    359,
+    210,
+    54
+   ],
+   "right": 1498,
+   "bottom": 413,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 32,
+   "text": "CUSTOMER RELATIONSHIP MANAGEMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "Rounded Rectangle 1950",
+   "box": [
+    1334,
+    700,
+    146,
+    55
+   ],
+   "right": 1480,
+   "bottom": 755,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    7
+   ],
+   "px": [
+    14
+   ],
+   "chars": 19,
+   "text": "WORKFLOW MANAGEMENT"
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1399",
+   "box": [
+    967,
+    427,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 478,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 6",
+   "box": [
+    967,
+    496,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 547,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 7",
+   "box": [
+    967,
+    565,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 616,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 11",
+   "box": [
+    967,
+    634,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 685,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 13",
+   "box": [
+    967,
+    703,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 754,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1389",
+   "box": [
+    967,
+    427,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 478,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1390",
+   "box": [
+    967,
+    496,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 547,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1393",
+   "box": [
+    967,
+    565,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 616,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1395",
+   "box": [
+    967,
+    634,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 685,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1397",
+   "box": [
+    967,
+    703,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 754,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1384",
+   "box": [
+    967,
+    427,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 478,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1385",
+   "box": [
+    967,
+    496,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 547,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1386",
+   "box": [
+    967,
+    565,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 616,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1387",
+   "box": [
+    967,
+    634,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 685,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 1388",
+   "box": [
+    967,
+    703,
+    0,
+    51
+   ],
+   "right": 967,
+   "bottom": 754,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 17",
+   "box": [
+    523,
+    412,
+    967,
+    0
+   ],
+   "right": 1490,
+   "bottom": 412,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 897",
+   "box": [
+    1264,
+    128,
+    135,
+    34
+   ],
+   "right": 1399,
+   "bottom": 162,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 898",
+   "box": [
+    1109,
+    125,
+    129,
+    35
+   ],
+   "right": 1238,
+   "bottom": 160,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Slide Number Placeholder 5",
+   "box": [
+    1841,
+    1033,
+    44,
+    15
+   ],
+   "right": 1885,
+   "bottom": 1048,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 3,
+   "text": "175"
+  }
+ ],
+ "_note": "Evidence about the source slide. Not CSS, not a spec, never averaged with another slide."
+}

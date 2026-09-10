@@ -1,0 +1,1080 @@
+{
+ "source": "bank:58",
+ "inventory": "inventory2.json",
+ "canvas": [
+  1920,
+  1080
+ ],
+ "ptToPx": 2.0,
+ "shapeCount": 46,
+ "offstageDropped": 0,
+ "boxlessDropped": 0,
+ "leftEdges": [
+  0,
+  108,
+  116,
+  204,
+  263,
+  781,
+  1075,
+  1109,
+  1115,
+  1264,
+  1841
+ ],
+ "topEdges": [
+  0,
+  90,
+  125,
+  128,
+  166,
+  167,
+  349,
+  350,
+  409,
+  430,
+  431,
+  490,
+  511,
+  512,
+  571,
+  592,
+  593,
+  652,
+  673,
+  674,
+  733,
+  754,
+  755,
+  814,
+  835,
+  836,
+  895,
+  916,
+  917,
+  921,
+  1033
+ ],
+ "typePx": [
+  32,
+  64,
+  80
+ ],
+ "shapes": [
+  {
+   "kind": "pic",
+   "name": "Picture 29",
+   "box": [
+    0,
+    0,
+    1920,
+    1080
+   ],
+   "right": 1920,
+   "bottom": 1080,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Title 3",
+   "box": [
+    108,
+    167,
+    923,
+    82
+   ],
+   "right": 1031,
+   "bottom": 249,
+   "placeholder": "title",
+   "geom": null,
+   "rot": 0,
+   "pt": [
+    40
+   ],
+   "px": [
+    80
+   ],
+   "chars": 17,
+   "text": "Current offerings"
+  },
+  {
+   "kind": "sp",
+   "name": "Title 3",
+   "box": [
+    781,
+    166,
+    471,
+    78
+   ],
+   "right": 1252,
+   "bottom": 244,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 39,
+   "text": "What we will cover in the next ~2 hours"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 4",
+   "box": [
+    108,
+    90,
+    397,
+    70
+   ],
+   "right": 505,
+   "bottom": 160,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    32
+   ],
+   "px": [
+    64
+   ],
+   "chars": 7,
+   "text": "PART 02"
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 7",
+   "box": [
+    116,
+    409,
+    1666,
+    0
+   ],
+   "right": 1782,
+   "bottom": 409,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 8",
+   "box": [
+    116,
+    490,
+    1666,
+    0
+   ],
+   "right": 1782,
+   "bottom": 490,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 9",
+   "box": [
+    116,
+    571,
+    1666,
+    0
+   ],
+   "right": 1782,
+   "bottom": 571,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 10",
+   "box": [
+    116,
+    652,
+    1666,
+    0
+   ],
+   "right": 1782,
+   "bottom": 652,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 11",
+   "box": [
+    116,
+    733,
+    1666,
+    0
+   ],
+   "right": 1782,
+   "bottom": 733,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 4",
+   "box": [
+    116,
+    814,
+    1666,
+    0
+   ],
+   "right": 1782,
+   "bottom": 814,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 6",
+   "box": [
+    116,
+    895,
+    1666,
+    0
+   ],
+   "right": 1782,
+   "bottom": 895,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 14",
+   "box": [
+    263,
+    349,
+    587,
+    39
+   ],
+   "right": 850,
+   "bottom": 388,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 27,
+   "text": "ENTERPRISE LOYALTY STRATEGY"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 33",
+   "box": [
+    204,
+    349,
+    42,
+    39
+   ],
+   "right": 246,
+   "bottom": 388,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 2,
+   "text": "01"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 15",
+   "box": [
+    263,
+    430,
+    607,
+    39
+   ],
+   "right": 870,
+   "bottom": 469,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 25,
+   "text": "BUSINESS CASE DEVELOPMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 34",
+   "box": [
+    204,
+    430,
+    42,
+    39
+   ],
+   "right": 246,
+   "bottom": 469,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 2,
+   "text": "02"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 16",
+   "box": [
+    263,
+    511,
+    638,
+    39
+   ],
+   "right": 901,
+   "bottom": 550,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 19,
+   "text": "ORGANIZATION DESIGN"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 35",
+   "box": [
+    204,
+    511,
+    42,
+    39
+   ],
+   "right": 246,
+   "bottom": 550,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 2,
+   "text": "03"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 17",
+   "box": [
+    263,
+    592,
+    713,
+    39
+   ],
+   "right": 976,
+   "bottom": 631,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 31,
+   "text": "EMPLOYEE ENGAGEMENT & ALIGNMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 36",
+   "box": [
+    204,
+    592,
+    42,
+    39
+   ],
+   "right": 246,
+   "bottom": 631,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 2,
+   "text": "04"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 18",
+   "box": [
+    263,
+    673,
+    638,
+    39
+   ],
+   "right": 901,
+   "bottom": 712,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 26,
+   "text": "CUSTOMER EXPERIENCE DESIGN"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 37",
+   "box": [
+    204,
+    673,
+    42,
+    39
+   ],
+   "right": 246,
+   "bottom": 712,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 2,
+   "text": "05"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 19",
+   "box": [
+    263,
+    754,
+    656,
+    39
+   ],
+   "right": 919,
+   "bottom": 793,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 19,
+   "text": "CUSTOMER ENGAGEMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 38",
+   "box": [
+    204,
+    754,
+    42,
+    39
+   ],
+   "right": 246,
+   "bottom": 793,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 2,
+   "text": "06"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 5",
+   "box": [
+    263,
+    836,
+    697,
+    39
+   ],
+   "right": 960,
+   "bottom": 875,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 22,
+   "text": "LOYALTY PROGRAM DESIGN"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 39",
+   "box": [
+    204,
+    835,
+    42,
+    39
+   ],
+   "right": 246,
+   "bottom": 874,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 2,
+   "text": "07"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 12",
+   "box": [
+    263,
+    917,
+    697,
+    39
+   ],
+   "right": 960,
+   "bottom": 956,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 26,
+   "text": "LOYALTY PROGRAM MANAGEMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 40",
+   "box": [
+    204,
+    916,
+    42,
+    39
+   ],
+   "right": 246,
+   "bottom": 955,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 2,
+   "text": "08"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 20",
+   "box": [
+    1115,
+    350,
+    625,
+    39
+   ],
+   "right": 1740,
+   "bottom": 389,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 18,
+   "text": "REWARDS MANAGEMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 21",
+   "box": [
+    1115,
+    431,
+    722,
+    39
+   ],
+   "right": 1837,
+   "bottom": 470,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 37,
+   "text": "CUSTOMER DATA PROCESSING & MANAGEMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 23",
+   "box": [
+    1115,
+    512,
+    713,
+    39
+   ],
+   "right": 1828,
+   "bottom": 551,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 35,
+   "text": "PERSONALIZATION STRATEGY & SERVICES"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 24",
+   "box": [
+    1115,
+    593,
+    713,
+    39
+   ],
+   "right": 1828,
+   "bottom": 632,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 34,
+   "text": "DATA SCIENCE, ANALYTICS & INSIGHTS"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 25",
+   "box": [
+    1115,
+    674,
+    659,
+    39
+   ],
+   "right": 1774,
+   "bottom": 713,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 21,
+   "text": "CUSTOMER DATA PRIVACY"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 28",
+   "box": [
+    1115,
+    755,
+    616,
+    39
+   ],
+   "right": 1731,
+   "bottom": 794,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 29,
+   "text": "EMOTIONAL LOYALTY MEASUREMENT"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 31",
+   "box": [
+    1115,
+    836,
+    758,
+    39
+   ],
+   "right": 1873,
+   "bottom": 875,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 34,
+   "text": "LOYALTY MEASUREMENT & OPTIMIZATION"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 32",
+   "box": [
+    1115,
+    921,
+    697,
+    39
+   ],
+   "right": 1812,
+   "bottom": 960,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 36,
+   "text": "PLATFORM-INDEPENDENT TECH CONSULTING"
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 72",
+   "box": [
+    1264,
+    128,
+    135,
+    34
+   ],
+   "right": 1399,
+   "bottom": 162,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 73",
+   "box": [
+    1109,
+    125,
+    129,
+    35
+   ],
+   "right": 1238,
+   "bottom": 160,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Slide Number Placeholder 5",
+   "box": [
+    1841,
+    1033,
+    44,
+    15
+   ],
+   "right": 1885,
+   "bottom": 1048,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 2,
+   "text": "58"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 2",
+   "box": [
+    1075,
+    350,
+    42,
+    39
+   ],
+   "right": 1117,
+   "bottom": 389,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 2,
+   "text": "09"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 27",
+   "box": [
+    1075,
+    431,
+    42,
+    39
+   ],
+   "right": 1117,
+   "bottom": 470,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 2,
+   "text": "10"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 42",
+   "box": [
+    1075,
+    512,
+    42,
+    39
+   ],
+   "right": 1117,
+   "bottom": 551,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 2,
+   "text": "11"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 44",
+   "box": [
+    1075,
+    593,
+    42,
+    39
+   ],
+   "right": 1117,
+   "bottom": 632,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 2,
+   "text": "12"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 46",
+   "box": [
+    1075,
+    674,
+    42,
+    39
+   ],
+   "right": 1117,
+   "bottom": 713,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 2,
+   "text": "13"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 48",
+   "box": [
+    1075,
+    755,
+    42,
+    39
+   ],
+   "right": 1117,
+   "bottom": 794,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 2,
+   "text": "14"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 53",
+   "box": [
+    1075,
+    836,
+    42,
+    39
+   ],
+   "right": 1117,
+   "bottom": 875,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 2,
+   "text": "15"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 75",
+   "box": [
+    1075,
+    917,
+    42,
+    39
+   ],
+   "right": 1117,
+   "bottom": 956,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    16
+   ],
+   "px": [
+    32
+   ],
+   "chars": 2,
+   "text": "16"
+  }
+ ],
+ "_note": "Evidence about the source slide. Not CSS, not a spec, never averaged with another slide."
+}

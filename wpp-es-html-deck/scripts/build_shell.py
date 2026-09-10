@@ -646,6 +646,10 @@ body.js .slide.is-active{{display:block;}}
    Light 300, running text Regular 400 — weight, not just size, carries the
    hierarchy. Footer furniture is Regular per the playbook ("footers"). */
 .slide > .headline{{position:absolute;left:var(--m-edge);top:73px;font-weight:300;font-size:54px;line-height:.9;letter-spacing:-.005em;max-width:calc(1920px - 2*var(--m-edge));}}
+.headline--lg{{font-size:64px;}}   /* MEASURED: the bank sets slide headlines at 32pt = 64px.
+                                      The kit's 54px descends from the old x1.5 factor. Canon
+                                      templates use this; the 54px default stays until the whole
+                                      scale is re-decided with an eye on it. */
 .headline--caps{{font-size:48px;line-height:.94;letter-spacing:.01em;text-transform:uppercase;}} /* Light-caps "strong emphasis" title (§4.3); ≤1 in 4 content slides */
 .hl{{font-weight:500;}} /* v4 title highlight (§4.4): ONE key token per title, weight only */
 .slide > .subtitle{{position:absolute;left:var(--m-edge);top:177px;font-weight:500;font-size:24px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-800);}}
