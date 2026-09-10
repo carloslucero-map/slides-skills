@@ -44,31 +44,31 @@
 
   <div class="footer-brand">WPP Enterprise Solutions | MAP</div>
   <div class="pageno"></div>
+
+  <style>
+  /* Measured off slide 151. */
+  
+  /* Bleeds top, left and bottom. §15.9: a media rect this size must touch canvas,
+     not float inside the margins. */
+  .mbs-media{position:absolute;left:0;top:0;bottom:0;width:848px;overflow:hidden;}
+  .mbs-media img{width:100%;height:100%;object-fit:cover;display:block;}
+  
+  .mbs-text{position:absolute;left:1005px;right:var(--m-edge);top:146px;bottom:72px;}
+  .mbs-head{font-weight:300;font-size:64px;line-height:1.06;letter-spacing:-.005em;
+            margin:0 0 26px;max-width:720px;}
+  .mbs-label{font-weight:400;font-size:40px;line-height:1.1;letter-spacing:.01em;
+             text-transform:uppercase;color:var(--orange-700);margin-bottom:52px;}
+  
+  .mbs-list{list-style:none;margin:0;padding:0;}
+  /* The connector. Each item draws a dotted rule from its own dot down to the
+     next one; the last item draws none. Without it these are four bullets. */
+  .mbs-item{position:relative;padding-left:68px;padding-bottom:52px;}
+  .mbs-item:last-child{padding-bottom:0;}
+  .mbs-item::before{content:"";position:absolute;left:0;top:.42em;
+                    width:20px;height:20px;border-radius:50%;background:var(--orange-700);}
+  .mbs-item:not(:last-child)::after{content:"";position:absolute;left:9px;top:calc(.42em + 30px);
+                                    bottom:10px;border-left:3px dotted var(--orange-700);}
+  .mbs-title{font-weight:500;font-size:28px;line-height:1.2;}
+  .mbs-sub{font-weight:400;font-size:28px;line-height:1.2;margin-top:4px;}
+  </style>
 </section>
-
-<style>
-/* Measured off slide 151. */
-
-/* Bleeds top, left and bottom. §15.9: a media rect this size must touch canvas,
-   not float inside the margins. */
-.mbs-media{position:absolute;left:0;top:0;bottom:0;width:848px;overflow:hidden;}
-.mbs-media img{width:100%;height:100%;object-fit:cover;display:block;}
-
-.mbs-text{position:absolute;left:1005px;right:var(--m-edge);top:146px;bottom:72px;}
-.mbs-head{font-weight:300;font-size:64px;line-height:1.06;letter-spacing:-.005em;
-          margin:0 0 26px;max-width:720px;}
-.mbs-label{font-weight:400;font-size:40px;line-height:1.1;letter-spacing:.01em;
-           text-transform:uppercase;color:var(--orange-700);margin-bottom:52px;}
-
-.mbs-list{list-style:none;margin:0;padding:0;}
-/* The connector. Each item draws a dotted rule from its own dot down to the
-   next one; the last item draws none. Without it these are four bullets. */
-.mbs-item{position:relative;padding-left:68px;padding-bottom:52px;}
-.mbs-item:last-child{padding-bottom:0;}
-.mbs-item::before{content:"";position:absolute;left:0;top:.42em;
-                  width:20px;height:20px;border-radius:50%;background:var(--orange-700);}
-.mbs-item:not(:last-child)::after{content:"";position:absolute;left:9px;top:calc(.42em + 30px);
-                                  bottom:10px;border-left:3px dotted var(--orange-700);}
-.mbs-title{font-weight:500;font-size:28px;line-height:1.2;}
-.mbs-sub{font-weight:400;font-size:28px;line-height:1.2;margin-top:4px;}
-</style>

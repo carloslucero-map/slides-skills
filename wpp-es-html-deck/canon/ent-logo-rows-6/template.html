@@ -83,27 +83,27 @@
 
   <div class="footer-brand">WPP Enterprise Solutions | MAP</div>
   <div class="pageno"></div>
+
+  <style>
+  /* Measured off slide 36. */
+  
+  .elr{position:absolute;left:var(--m-text);right:var(--m-edge);top:230px;bottom:70px;
+       display:grid;grid-template-rows:repeat(6,1fr);}
+  
+  /* The hairline IS the structure. Without it six rows of logos are one wall. */
+  .elr-row{display:grid;grid-template-columns:340px 1fr;align-items:center;gap:40px;
+           border-top:1px solid rgba(0,0,80,.18);}
+  .elr-row:last-child{border-bottom:1px solid rgba(0,0,80,.18);}
+  
+  .elr-cat{font-weight:400;font-size:18px;line-height:1.25;}
+  
+  /* Flush right. The counts vary per row (3/3/5/5/6/5 in the source) and any
+     other alignment leaves a different ragged gap on every line; this gives one
+     clean edge down the slide and lets the count vary unnoticed. */
+  .elr-logos{display:flex;justify-content:flex-end;align-items:center;gap:56px;
+             flex-wrap:nowrap;min-width:0;}
+  /* Placeholder wordmarks. Real logos are inlined per deck (§2a) — never linked. */
+  .elr-logo{font-weight:500;font-size:26px;line-height:1;white-space:nowrap;
+            color:var(--wpp-navy);opacity:.85;}
+  </style>
 </section>
-
-<style>
-/* Measured off slide 36. */
-
-.elr{position:absolute;left:var(--m-text);right:var(--m-edge);top:230px;bottom:70px;
-     display:grid;grid-template-rows:repeat(6,1fr);}
-
-/* The hairline IS the structure. Without it six rows of logos are one wall. */
-.elr-row{display:grid;grid-template-columns:340px 1fr;align-items:center;gap:40px;
-         border-top:1px solid rgba(0,0,80,.18);}
-.elr-row:last-child{border-bottom:1px solid rgba(0,0,80,.18);}
-
-.elr-cat{font-weight:400;font-size:18px;line-height:1.25;}
-
-/* Flush right. The counts vary per row (3/3/5/5/6/5 in the source) and any
-   other alignment leaves a different ragged gap on every line; this gives one
-   clean edge down the slide and lets the count vary unnoticed. */
-.elr-logos{display:flex;justify-content:flex-end;align-items:center;gap:56px;
-           flex-wrap:nowrap;min-width:0;}
-/* Placeholder wordmarks. Real logos are inlined per deck (§2a) — never linked. */
-.elr-logo{font-weight:500;font-size:26px;line-height:1;white-space:nowrap;
-          color:var(--wpp-navy);opacity:.85;}
-</style>

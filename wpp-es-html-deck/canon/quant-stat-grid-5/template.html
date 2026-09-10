@@ -55,41 +55,41 @@
 
   <div class="footer-brand">WPP Enterprise Solutions | MAP</div>
   <div class="pageno"></div>
+
+  <style>
+  /* Measured off slide 74. */
+  
+  .qsg-eyebrow{position:absolute;left:var(--m-text);top:57px;font-weight:400;font-size:40px;
+               line-height:1.1;max-width:520px;}
+  
+  /* The claim, not a headline: display size, and the numbers are its evidence. */
+  .qsg-claim{position:absolute;left:var(--m-text);top:191px;width:620px;
+             font-weight:300;font-size:64px;line-height:1.06;letter-spacing:-.005em;}
+  .qsg-accent{color:var(--orange-700);font-weight:300;}
+  
+  .qsg-top{position:absolute;left:790px;right:var(--m-edge);top:169px;
+           display:grid;grid-template-columns:repeat(2,1fr);gap:48px;}
+  .qsg-bottom{position:absolute;left:var(--m-text);right:var(--m-edge);top:600px;bottom:96px;
+              display:grid;grid-template-columns:repeat(3,1fr);gap:48px;}
+  
+  /* NOTE on the ramp: --orange-500 is the LIGHTEST step (#FFF5CD), not the base.
+     The brand orange is --orange-700 (#FF7800), which the pptx theme confirms as
+     accent1. Reaching for 500 by analogy with other scales paints cream on cream.
+     One dotted orange rule at the measured split. Not decoration: it is what
+     separates two stats from three and lets the lower row sit this low. */
+  .qsg-rule{position:absolute;left:630px;right:0;top:505px;height:0;
+            border-top:3px dotted var(--orange-700);}
+  
+  .qsg-stat{display:flex;flex-direction:column;}
+  .qsg-v{font-weight:300;font-size:132px;line-height:.92;letter-spacing:-.02em;
+         font-variant-numeric:tabular-nums lining-nums;white-space:nowrap;}
+  /* The direction glyph, at roughly half the numeral. Colour alone does not read
+     from the back of a room; the arrow does. */
+  .qsg-dir{color:var(--orange-700);font-size:.52em;vertical-align:.28em;margin-right:.02em;}
+  .qsg-dir--sym{vertical-align:0;font-size:.72em;}
+  /* Measured against the source: this template rendered 0.92 background in the
+     y432-990 band where slide 74 renders 0.87. The gap was air, not content —
+     the lower row sat too low and its notes too far from their numerals. */
+  .qsg-note{font-size:24px;line-height:1.32;max-width:none;margin-top:18px;}
+  </style>
 </section>
-
-<style>
-/* Measured off slide 74. */
-
-.qsg-eyebrow{position:absolute;left:var(--m-text);top:57px;font-weight:400;font-size:40px;
-             line-height:1.1;max-width:520px;}
-
-/* The claim, not a headline: display size, and the numbers are its evidence. */
-.qsg-claim{position:absolute;left:var(--m-text);top:191px;width:620px;
-           font-weight:300;font-size:64px;line-height:1.06;letter-spacing:-.005em;}
-.qsg-accent{color:var(--orange-700);font-weight:300;}
-
-.qsg-top{position:absolute;left:790px;right:var(--m-edge);top:169px;
-         display:grid;grid-template-columns:repeat(2,1fr);gap:48px;}
-.qsg-bottom{position:absolute;left:var(--m-text);right:var(--m-edge);top:600px;bottom:96px;
-            display:grid;grid-template-columns:repeat(3,1fr);gap:48px;}
-
-/* NOTE on the ramp: --orange-500 is the LIGHTEST step (#FFF5CD), not the base.
-   The brand orange is --orange-700 (#FF7800), which the pptx theme confirms as
-   accent1. Reaching for 500 by analogy with other scales paints cream on cream.
-   One dotted orange rule at the measured split. Not decoration: it is what
-   separates two stats from three and lets the lower row sit this low. */
-.qsg-rule{position:absolute;left:630px;right:0;top:505px;height:0;
-          border-top:3px dotted var(--orange-700);}
-
-.qsg-stat{display:flex;flex-direction:column;}
-.qsg-v{font-weight:300;font-size:132px;line-height:.92;letter-spacing:-.02em;
-       font-variant-numeric:tabular-nums lining-nums;white-space:nowrap;}
-/* The direction glyph, at roughly half the numeral. Colour alone does not read
-   from the back of a room; the arrow does. */
-.qsg-dir{color:var(--orange-700);font-size:.52em;vertical-align:.28em;margin-right:.02em;}
-.qsg-dir--sym{vertical-align:0;font-size:.72em;}
-/* Measured against the source: this template rendered 0.92 background in the
-   y432-990 band where slide 74 renders 0.87. The gap was air, not content —
-   the lower row sat too low and its notes too far from their numerals. */
-.qsg-note{font-size:24px;line-height:1.32;max-width:none;margin-top:18px;}
-</style>

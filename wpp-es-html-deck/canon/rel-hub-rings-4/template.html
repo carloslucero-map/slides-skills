@@ -46,46 +46,46 @@
 
   <div class="footer-brand">WPP Enterprise Solutions | MAP</div>
   <div class="pageno"></div>
+
+  <style>
+  /* Measured off slide 27. */
+  
+  .rhr-eyebrow{position:absolute;left:var(--m-text);top:85px;font-weight:400;font-size:40px;
+               line-height:1.1;letter-spacing:.01em;text-transform:uppercase;
+               color:var(--orange-700);}
+  .rhr-head{position:absolute;left:var(--m-text);top:143px;width:600px;margin:0;
+            font-weight:300;font-size:64px;line-height:1.06;letter-spacing:-.005em;}
+  .rhr-copy{position:absolute;left:var(--m-text);top:530px;width:600px;}
+  .rhr-p{font-size:26px;line-height:1.32;max-width:none;margin:0 0 26px;}
+  
+  /* The diagram. Square box so every circle can be sized as a percentage of it
+     and the whole thing scales as one object. */
+  .rhr-diagram{position:absolute;left:1020px;top:50%;transform:translateY(-50%);
+               width:860px;height:860px;}
+  .rhr-ring{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;}
+  /* Filled, stepping down the tint ramp inward. Outlines would say "adjacent";
+     these say "contained", which is the slide's actual claim. */
+  .rhr-ring--outer{width:88%;height:88%;background:var(--orange-600);opacity:.28;}
+  .rhr-ring--mid{width:68%;height:68%;background:var(--orange-600);opacity:.55;}
+  .rhr-ring--inner{width:46%;height:46%;background:var(--wpp-cream);}
+  .rhr-dotted{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+              width:99%;height:99%;border-radius:50%;
+              border:3px dotted var(--wpp-navy);opacity:.55;}
+  
+  /* The one orange fill, and the thing being argued for. */
+  .rhr-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+           width:32%;height:32%;border-radius:50%;background:var(--orange-700);
+           color:var(--text-inv);display:flex;align-items:center;justify-content:center;
+           text-align:center;font-weight:500;font-size:26px;line-height:1.2;}
+  
+  .rhr-node{position:absolute;width:21%;height:21%;border-radius:50%;
+            background:var(--wpp-white);color:var(--wpp-navy);
+            display:flex;align-items:center;justify-content:center;text-align:center;
+            font-weight:500;font-size:24px;letter-spacing:.06em;text-transform:uppercase;}
+  /* On the middle ring, not floating outside it. */
+  .rhr-node--n{left:39.5%;top:5.5%;}
+  .rhr-node--s{left:39.5%;bottom:5.5%;}
+  .rhr-node--w{left:5.5%;top:39.5%;}
+  .rhr-node--e{right:5.5%;top:39.5%;}
+  </style>
 </section>
-
-<style>
-/* Measured off slide 27. */
-
-.rhr-eyebrow{position:absolute;left:var(--m-text);top:85px;font-weight:400;font-size:40px;
-             line-height:1.1;letter-spacing:.01em;text-transform:uppercase;
-             color:var(--orange-700);}
-.rhr-head{position:absolute;left:var(--m-text);top:143px;width:600px;margin:0;
-          font-weight:300;font-size:64px;line-height:1.06;letter-spacing:-.005em;}
-.rhr-copy{position:absolute;left:var(--m-text);top:530px;width:600px;}
-.rhr-p{font-size:26px;line-height:1.32;max-width:none;margin:0 0 26px;}
-
-/* The diagram. Square box so every circle can be sized as a percentage of it
-   and the whole thing scales as one object. */
-.rhr-diagram{position:absolute;left:1020px;top:50%;transform:translateY(-50%);
-             width:860px;height:860px;}
-.rhr-ring{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;}
-/* Filled, stepping down the tint ramp inward. Outlines would say "adjacent";
-   these say "contained", which is the slide's actual claim. */
-.rhr-ring--outer{width:88%;height:88%;background:var(--orange-600);opacity:.28;}
-.rhr-ring--mid{width:68%;height:68%;background:var(--orange-600);opacity:.55;}
-.rhr-ring--inner{width:46%;height:46%;background:var(--wpp-cream);}
-.rhr-dotted{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-            width:99%;height:99%;border-radius:50%;
-            border:3px dotted var(--wpp-navy);opacity:.55;}
-
-/* The one orange fill, and the thing being argued for. */
-.rhr-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-         width:32%;height:32%;border-radius:50%;background:var(--orange-700);
-         color:var(--text-inv);display:flex;align-items:center;justify-content:center;
-         text-align:center;font-weight:500;font-size:26px;line-height:1.2;}
-
-.rhr-node{position:absolute;width:21%;height:21%;border-radius:50%;
-          background:var(--wpp-white);color:var(--wpp-navy);
-          display:flex;align-items:center;justify-content:center;text-align:center;
-          font-weight:500;font-size:24px;letter-spacing:.06em;text-transform:uppercase;}
-/* On the middle ring, not floating outside it. */
-.rhr-node--n{left:39.5%;top:5.5%;}
-.rhr-node--s{left:39.5%;bottom:5.5%;}
-.rhr-node--w{left:5.5%;top:39.5%;}
-.rhr-node--e{right:5.5%;top:39.5%;}
-</style>

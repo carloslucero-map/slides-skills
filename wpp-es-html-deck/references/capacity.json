@@ -2176,14 +2176,6 @@
      "font_px": 26.0,
      "basis": "placeholder"
     },
-    "etr-practice": {
-     "items": 6,
-     "min_chars": 11,
-     "ideal_chars": 23,
-     "max_chars": 41,
-     "font_px": 20.0,
-     "basis": "placeholder"
-    },
     "etr-role": {
      "items": 6,
      "min_chars": 33,
@@ -2192,17 +2184,17 @@
      "font_px": 20.0,
      "basis": "placeholder"
     },
-    "etr-person": {
-     "items": 1,
-     "min_chars": 30,
-     "ideal_chars": 30,
-     "max_chars": 54,
-     "font_px": null,
+    "etr-practice": {
+     "items": 6,
+     "min_chars": 11,
+     "ideal_chars": 23,
+     "max_chars": 41,
+     "font_px": 20.0,
      "basis": "placeholder"
     }
    },
-   "slide_ideal_chars": 489,
-   "slide_max_chars": 660,
+   "slide_ideal_chars": 459,
+   "slide_max_chars": 619,
    "_source": "canon"
   },
   {
@@ -2572,6 +2564,14 @@
      "font_px": 26.0,
      "basis": "placeholder"
     },
+    "rhr-hub": {
+     "items": 1,
+     "min_chars": 19,
+     "ideal_chars": 19,
+     "max_chars": 34,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    },
     "rhr-node": {
      "items": 4,
      "min_chars": 2,
@@ -2611,26 +2611,10 @@
      "max_chars": 5,
      "font_px": null,
      "basis": "placeholder"
-    },
-    "rhr-hub": {
-     "items": 1,
-     "min_chars": 19,
-     "ideal_chars": 19,
-     "max_chars": 34,
-     "font_px": 26.0,
-     "basis": "placeholder"
-    },
-    "rhr-diagram": {
-     "items": 1,
-     "min_chars": 30,
-     "ideal_chars": 30,
-     "max_chars": 54,
-     "font_px": null,
-     "basis": "placeholder"
     }
    },
-   "slide_ideal_chars": 877,
-   "slide_max_chars": 1183,
+   "slide_ideal_chars": 847,
+   "slide_max_chars": 1143,
    "_source": "canon"
   },
   {

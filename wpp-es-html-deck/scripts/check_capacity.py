@@ -42,8 +42,22 @@ class Slots(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.stack, self.slots, self.depth = [], [], 0
+        self.in_style = False
+
+    # Void elements never produce an end tag, so incrementing depth for them
+    # left the stack permanently deeper than the document. Elements then failed
+    # to pop and swallowed every following sibling's text: a .venn-label
+    # measured 105 chars because it had absorbed the footer brand and the
+    # comment after it. Any slide containing <br> or <img> — most of the kit —
+    # has been mis-measured this whole time.
+    VOID = {"br", "img", "hr", "input", "meta", "link", "source", "col", "area",
+            "base", "embed", "param", "track", "wbr"}
 
     def handle_starttag(self, tag, attrs):
+        if tag in ("style", "script"):
+            self.in_style = True
+        if tag in self.VOID:
+            return
         self.depth += 1
         classes = (dict(attrs).get("class") or "").split()
         keep = [c for c in classes if c not in SKIP]
@@ -51,6 +65,8 @@ class Slots(HTMLParser):
             self.stack.append({"cls": keep, "depth": self.depth, "text": []})
 
     def handle_endtag(self, tag):
+        if tag in ("style", "script"):
+            self.in_style = False
         while self.stack and self.stack[-1]["depth"] >= self.depth:
             e = self.stack.pop()
             t = re.sub(r"\s+", " ", "".join(e["text"])).strip()
@@ -60,7 +76,11 @@ class Slots(HTMLParser):
         self.depth -= 1
 
     def handle_data(self, data):
-        if self.stack:
+        # Canon templates carry their scoped CSS inside the <section> so that
+        # pasting the section carries its styling. That means the parser now
+        # meets <style> bodies, and counting CSS as slide copy would put every
+        # canon slide hundreds of characters over its limit.
+        if self.stack and not self.in_style:
             self.stack[-1]["text"].append(data)
 
 

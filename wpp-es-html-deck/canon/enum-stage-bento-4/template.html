@@ -72,38 +72,41 @@
 
   <div class="footer-brand">WPP Enterprise Solutions | MAP</div>
   <div class="pageno"></div>
+
+  <style>
+  /* Measured off slide 73. */
+  
+  .esb{position:absolute;left:var(--m-edge);right:var(--m-edge);top:44px;bottom:72px;
+       display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);
+       gap:36px 56px;}
+  /* min-height:0 and the clip are load-bearing. Without them the image's
+     min-height propagates up through the flex column and the grid row, and the
+     bottom row pushes 69px off the canvas — which is exactly what happened. */
+  .esb-q{display:flex;flex-direction:column;min-width:0;min-height:0;overflow:hidden;}
+  
+  .esb-head{display:flex;align-items:center;gap:22px;margin-bottom:20px;}
+  /* DEPARTS FROM THE SOURCE, deliberately. Slide 73 sets its ordinal box at
+     [0,56,199,160] — hard against the canvas edge, no page margin. That is what
+     makes these read as chapter marks, and the first version copied it.
+     §15.1's safe area then failed it: x=0 is inside the 32px band a projector
+     can crop. The source took that risk; a 132px numeral with its left edge
+     shaved in a real room is a real failure, so the rule wins over fidelity
+     here and the ordinals sit at --m-edge. They still start further left than
+     anything else on the slide, which is most of what the device was doing. */
+  .esb-n{font-weight:300;font-size:132px;line-height:.82;color:var(--orange-700);
+         font-variant-numeric:tabular-nums lining-nums;}
+  .esb-label{font-weight:300;font-size:48px;line-height:1.05;text-transform:uppercase;}
+  
+  .esb-body{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:32px;
+            align-items:stretch;min-height:0;padding-left:40px;}
+  .esb-shot{height:100%;min-height:0;background:var(--bg-alt);overflow:hidden;}
+  .esb-shot img{width:100%;height:100%;object-fit:cover;display:block;}
+  
+  .esb-list{list-style:none;margin:0;padding:0;}
+  .esb-list .sub-item{position:relative;padding-left:22px;margin-bottom:12px;
+                      font-size:22px;line-height:1.25;}
+  .esb-list .sub-item::before{content:"";position:absolute;left:0;top:.5em;
+                              width:8px;height:8px;border-radius:50%;
+                              background:var(--orange-700);}
+  </style>
 </section>
-
-<style>
-/* Measured off slide 73. */
-
-.esb{position:absolute;left:0;right:var(--m-edge);top:44px;bottom:72px;
-     display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);
-     gap:36px 56px;}
-/* min-height:0 and the clip are load-bearing. Without them the image's
-   min-height propagates up through the flex column and the grid row, and the
-   bottom row pushes 69px off the canvas — which is exactly what happened. */
-.esb-q{display:flex;flex-direction:column;min-width:0;min-height:0;overflow:hidden;}
-
-.esb-head{display:flex;align-items:center;gap:22px;margin-bottom:20px;}
-/* Starts AT the canvas edge, x=0 — no page margin, unlike everything else on
-   the slide. That is what makes these read as chapter marks rather than a tidy
-   grid of labels. Measured: the source's ordinal box is [0,56,199,160]. It sits
-   ON the edge; it does not bleed past it, and an earlier negative margin here
-   was invention, not tracing. */
-.esb-n{font-weight:300;font-size:132px;line-height:.82;color:var(--orange-700);
-       font-variant-numeric:tabular-nums lining-nums;}
-.esb-label{font-weight:300;font-size:48px;line-height:1.05;text-transform:uppercase;}
-
-.esb-body{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:32px;
-          align-items:stretch;min-height:0;padding-left:40px;}
-.esb-shot{height:100%;min-height:0;background:var(--bg-alt);overflow:hidden;}
-.esb-shot img{width:100%;height:100%;object-fit:cover;display:block;}
-
-.esb-list{list-style:none;margin:0;padding:0;}
-.esb-list .sub-item{position:relative;padding-left:22px;margin-bottom:12px;
-                    font-size:22px;line-height:1.25;}
-.esb-list .sub-item::before{content:"";position:absolute;left:0;top:.5em;
-                            width:8px;height:8px;border-radius:50%;
-                            background:var(--orange-700);}
-</style>
