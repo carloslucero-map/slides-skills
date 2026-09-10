@@ -1,0 +1,1261 @@
+{
+ "source": "bank:36",
+ "inventory": "inventory2.json",
+ "canvas": [
+  1920,
+  1080
+ ],
+ "ptToPx": 2.0,
+ "shapeCount": 59,
+ "offstageDropped": 4,
+ "boxlessDropped": 0,
+ "leftEdges": [
+  -57,
+  0,
+  57,
+  85,
+  277,
+  416,
+  468,
+  577,
+  590,
+  600,
+  611,
+  660,
+  818,
+  822,
+  831,
+  840,
+  851,
+  1042,
+  1065,
+  1082,
+  1083,
+  1086,
+  1088,
+  1109,
+  1233,
+  1264,
+  1335,
+  1340,
+  1342,
+  1347,
+  1349,
+  1377,
+  1384,
+  1425,
+  1445,
+  1615,
+  1616,
+  1628,
+  1632,
+  1644,
+  1807,
+  1841,
+  1863
+ ],
+ "topEdges": [
+  -122,
+  -104,
+  -57,
+  0,
+  57,
+  125,
+  128,
+  209,
+  244,
+  257,
+  258,
+  262,
+  358,
+  382,
+  387,
+  411,
+  485,
+  517,
+  521,
+  530,
+  532,
+  538,
+  612,
+  644,
+  650,
+  659,
+  660,
+  664,
+  739,
+  780,
+  785,
+  786,
+  788,
+  789,
+  791,
+  866,
+  905,
+  907,
+  914,
+  915,
+  918,
+  993,
+  994,
+  995,
+  1023,
+  1033
+ ],
+ "typePx": [
+  18,
+  64
+ ],
+ "shapes": [
+  {
+   "kind": "sp",
+   "name": "Title 2",
+   "box": [
+    57,
+    57,
+    1009,
+    140
+   ],
+   "right": 1066,
+   "bottom": 197,
+   "placeholder": "title",
+   "geom": null,
+   "rot": 0,
+   "pt": [
+    32
+   ],
+   "px": [
+    64
+   ],
+   "chars": 44,
+   "text": "We have strong partnerships across the board"
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 5",
+   "box": [
+    0,
+    209,
+    1920,
+    0
+   ],
+   "right": 1920,
+   "bottom": 209,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 6",
+   "box": [
+    0,
+    612,
+    1920,
+    0
+   ],
+   "right": 1920,
+   "bottom": 612,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 7",
+   "box": [
+    0,
+    485,
+    1920,
+    0
+   ],
+   "right": 1920,
+   "bottom": 485,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 9",
+   "box": [
+    0,
+    739,
+    1920,
+    0
+   ],
+   "right": 1920,
+   "bottom": 739,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 10",
+   "box": [
+    0,
+    993,
+    1920,
+    0
+   ],
+   "right": 1920,
+   "bottom": 993,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 13",
+   "box": [
+    1088,
+    258,
+    142,
+    41
+   ],
+   "right": 1230,
+   "bottom": 299,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 14",
+   "box": [
+    1644,
+    257,
+    128,
+    59
+   ],
+   "right": 1772,
+   "bottom": 316,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Freeform 18",
+   "box": [
+    1377,
+    244,
+    114,
+    79
+   ],
+   "right": 1491,
+   "bottom": 323,
+   "placeholder": null,
+   "geom": null,
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 19",
+   "box": [
+    0,
+    358,
+    1920,
+    0
+   ],
+   "right": 1920,
+   "bottom": 358,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "cxnSp",
+   "name": "Straight Connector 20",
+   "box": [
+    0,
+    866,
+    1920,
+    0
+   ],
+   "right": 1920,
+   "bottom": 866,
+   "placeholder": null,
+   "geom": "line",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 24",
+   "box": [
+    57,
+    411,
+    278,
+    22
+   ],
+   "right": 335,
+   "bottom": 433,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    9
+   ],
+   "px": [
+    18
+   ],
+   "chars": 17,
+   "text": "Loyalty/Promotion"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 26",
+   "box": [
+    57,
+    538,
+    278,
+    22
+   ],
+   "right": 335,
+   "bottom": 560,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    9
+   ],
+   "px": [
+    18
+   ],
+   "chars": 27,
+   "text": "Content and Personalization"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 27",
+   "box": [
+    57,
+    664,
+    278,
+    22
+   ],
+   "right": 335,
+   "bottom": 686,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    9
+   ],
+   "px": [
+    18
+   ],
+   "chars": 12,
+   "text": "CDP and Data"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 28",
+   "box": [
+    57,
+    791,
+    278,
+    22
+   ],
+   "right": 335,
+   "bottom": 813,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    9
+   ],
+   "px": [
+    18
+   ],
+   "chars": 23,
+   "text": "Reporting and Analytics"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 29",
+   "box": [
+    57,
+    918,
+    278,
+    22
+   ],
+   "right": 335,
+   "bottom": 940,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    9
+   ],
+   "px": [
+    18
+   ],
+   "chars": 15,
+   "text": "Cloud Platforms"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 30",
+   "box": [
+    57,
+    262,
+    255,
+    44
+   ],
+   "right": 312,
+   "bottom": 306,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    9
+   ],
+   "px": [
+    18
+   ],
+   "chars": 37,
+   "text": "Omnichannel Activation and Experience"
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 31",
+   "box": [
+    1082,
+    382,
+    153,
+    71
+   ],
+   "right": 1235,
+   "bottom": 453,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 8",
+   "box": [
+    1384,
+    995,
+    69,
+    35
+   ],
+   "right": 1453,
+   "bottom": 1030,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 8",
+   "box": [
+    1445,
+    994,
+    112,
+    34
+   ],
+   "right": 1557,
+   "bottom": 1028,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 49",
+   "box": [
+    600,
+    914,
+    125,
+    41
+   ],
+   "right": 725,
+   "bottom": 955,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 2",
+   "box": [
+    822,
+    907,
+    173,
+    50
+   ],
+   "right": 995,
+   "bottom": 957,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 63",
+   "box": [
+    1083,
+    905,
+    154,
+    45
+   ],
+   "right": 1237,
+   "bottom": 950,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 2",
+   "box": [
+    1342,
+    915,
+    184,
+    32
+   ],
+   "right": 1526,
+   "bottom": 947,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 4",
+   "box": [
+    1632,
+    914,
+    153,
+    35
+   ],
+   "right": 1785,
+   "bottom": 949,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 14",
+   "box": [
+    611,
+    788,
+    101,
+    30
+   ],
+   "right": 712,
+   "bottom": 818,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 16",
+   "box": [
+    818,
+    785,
+    180,
+    36
+   ],
+   "right": 998,
+   "bottom": 821,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 85",
+   "box": [
+    1082,
+    786,
+    153,
+    35
+   ],
+   "right": 1235,
+   "bottom": 821,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 18",
+   "box": [
+    1347,
+    780,
+    172,
+    46
+   ],
+   "right": 1519,
+   "bottom": 826,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 22",
+   "box": [
+    1615,
+    780,
+    188,
+    46
+   ],
+   "right": 1803,
+   "bottom": 826,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 88",
+   "box": [
+    416,
+    789,
+    102,
+    28
+   ],
+   "right": 518,
+   "bottom": 817,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 34",
+   "box": [
+    1628,
+    532,
+    160,
+    38
+   ],
+   "right": 1788,
+   "bottom": 570,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 14",
+   "box": [
+    840,
+    517,
+    135,
+    65
+   ],
+   "right": 975,
+   "bottom": 582,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 20",
+   "box": [
+    1340,
+    530,
+    187,
+    36
+   ],
+   "right": 1527,
+   "bottom": 566,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 92",
+   "box": [
+    577,
+    521,
+    170,
+    49
+   ],
+   "right": 747,
+   "bottom": 570,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 26",
+   "box": [
+    590,
+    659,
+    144,
+    33
+   ],
+   "right": 734,
+   "bottom": 692,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 28",
+   "box": [
+    831,
+    644,
+    153,
+    64
+   ],
+   "right": 984,
+   "bottom": 708,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 6",
+   "box": [
+    1086,
+    660,
+    145,
+    30
+   ],
+   "right": 1231,
+   "bottom": 690,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 97",
+   "box": [
+    1349,
+    650,
+    170,
+    50
+   ],
+   "right": 1519,
+   "bottom": 700,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 12",
+   "box": [
+    1632,
+    660,
+    153,
+    30
+   ],
+   "right": 1785,
+   "bottom": 690,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 2",
+   "box": [
+    1335,
+    387,
+    196,
+    60
+   ],
+   "right": 1531,
+   "bottom": 447,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 4",
+   "box": [
+    1065,
+    517,
+    187,
+    59
+   ],
+   "right": 1252,
+   "bottom": 576,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 23",
+   "box": [
+    85,
+    -104,
+    192,
+    19
+   ],
+   "right": 277,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 25",
+   "box": [
+    277,
+    -122,
+    192,
+    19
+   ],
+   "right": 469,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 34",
+   "box": [
+    468,
+    -104,
+    192,
+    19
+   ],
+   "right": 660,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 35",
+   "box": [
+    660,
+    -122,
+    192,
+    19
+   ],
+   "right": 852,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 36",
+   "box": [
+    851,
+    -104,
+    192,
+    19
+   ],
+   "right": 1043,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 37",
+   "box": [
+    1042,
+    -122,
+    192,
+    19
+   ],
+   "right": 1234,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 38",
+   "box": [
+    1233,
+    -104,
+    192,
+    19
+   ],
+   "right": 1425,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 39",
+   "box": [
+    1425,
+    -122,
+    192,
+    19
+   ],
+   "right": 1617,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 40",
+   "box": [
+    1616,
+    -104,
+    192,
+    19
+   ],
+   "right": 1808,
+   "bottom": -85,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 41",
+   "box": [
+    1807,
+    -122,
+    192,
+    19
+   ],
+   "right": 1999,
+   "bottom": -103,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 8",
+   "box": [
+    0,
+    -57,
+    57,
+    57
+   ],
+   "right": 57,
+   "bottom": 0,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 11",
+   "box": [
+    -57,
+    0,
+    57,
+    57
+   ],
+   "right": 0,
+   "bottom": 57,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 12",
+   "box": [
+    1863,
+    -57,
+    57,
+    57
+   ],
+   "right": 1920,
+   "bottom": 0,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 17",
+   "box": [
+    -57,
+    1023,
+    57,
+    57
+   ],
+   "right": 0,
+   "bottom": 1080,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 45",
+   "box": [
+    1264,
+    128,
+    135,
+    34
+   ],
+   "right": 1399,
+   "bottom": 162,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 46",
+   "box": [
+    1109,
+    125,
+    129,
+    35
+   ],
+   "right": 1238,
+   "bottom": 160,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Slide Number Placeholder 5",
+   "box": [
+    1841,
+    1033,
+    44,
+    15
+   ],
+   "right": 1885,
+   "bottom": 1048,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 2,
+   "text": "36"
+  }
+ ],
+ "_note": "Evidence about the source slide. Not CSS, not a spec, never averaged with another slide."
+}

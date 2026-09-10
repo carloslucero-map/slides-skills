@@ -1,0 +1,65 @@
+{
+  "id": "ent-team-row-6",
+  "$comment": "Hand-written. Structure only.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "headline",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "headline",
+      "note": "Centred, orange, ALL CAPS. The one central-axis moment in a deck."
+    },
+    {
+      "role": "person",
+      "repeat": true,
+      "arity": [
+        4,
+        6
+      ],
+      "required": true,
+      "children": [
+        {
+          "role": "portrait",
+          "arity": 1,
+          "required": true,
+          "note": "Round. Square portraits belong to team-v1's wider treatment."
+        },
+        {
+          "role": "name",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "cardTitle",
+          "note": "ONE line."
+        },
+        {
+          "role": "role",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "fineItem"
+        },
+        {
+          "role": "practice",
+          "arity": 1,
+          "required": false,
+          "capacityRole": "fineItem"
+        }
+      ]
+    }
+  ],
+  "invariants": [
+    "Central axis throughout — headline and every person. This is the only archetype that centres; everywhere else the deck is left-aligned at the content edge, and mixing the two in one deck reads as an accident.",
+    "Names take one line. The source wraps them mid-name under portraits wide enough to hold them; the capacity limit is what prevents that here, not care.",
+    "Four to six. At seven the portrait falls below the size at which a face is recognisable at the back of a room.",
+    "Role and practice are fine print, not a bio. Anyone needing a paragraph belongs in team-v1."
+  ],
+  "grounds": {
+    "upper": "cream",
+    "lower": "cream"
+  },
+  "source": "bank:2",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

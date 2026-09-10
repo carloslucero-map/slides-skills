@@ -219,7 +219,7 @@
    "family": "H-entities",
    "targetId": "ent-team-grid-3",
    "rag": "green",
-   "canonId": null
+   "canonId": "ent-team-row-6"
   },
   {
    "page": 25,
@@ -228,7 +228,7 @@
    "family": "H-entities",
    "targetId": "ent-logo-wall-categorised",
    "rag": "green",
-   "canonId": null
+   "canonId": "ent-logo-rows-6"
   }
  ]
 }

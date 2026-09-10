@@ -1,0 +1,55 @@
+{
+  "id": "ent-logo-rows-6",
+  "$comment": "Hand-written. Structure only.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "headline",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "headline"
+    },
+    {
+      "role": "categoryRow",
+      "repeat": true,
+      "arity": [
+        4,
+        6
+      ],
+      "required": true,
+      "children": [
+        {
+          "role": "category",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "fineLabel"
+        },
+        {
+          "role": "logo",
+          "repeat": true,
+          "arity": [
+            2,
+            6
+          ],
+          "required": true,
+          "note": "Count varies per row on purpose. Flush right absorbs the variation."
+        }
+      ]
+    }
+  ],
+  "invariants": [
+    "Logos are flush RIGHT. The rows carry different counts (3/3/5/5/6/5 in the source) and any other alignment leaves a different ragged gap on every line; right-alignment gives one clean edge down the slide.",
+    "Hairlines between every row, and below the last. They are the structure — without them six rows of logos are one undifferentiated wall.",
+    "Rows are equal height regardless of logo count. A row with three logos is not a shorter claim than a row with six.",
+    "Six logos per row is the ceiling before wordmarks collide at this size."
+  ],
+  "grounds": {
+    "upper": "cream",
+    "lower": "cream"
+  },
+  "source": "bank:36",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "ent-logo-rows-6",
+  "name": "Partner wall organised by category",
+  "useWhen": "A partner or technology roster has to show BREADTH across named categories, and which category a logo sits in matters as much as the logo being there.",
+  "$useWhenNote": "Written by hand.",
+  "family": "H-entities",
+  "secondaryFamily": null,
+  "form": "logo-wall",
+  "arity": "6",
+  "arityRange": [
+    4,
+    6
+  ],
+  "ground": [
+    "cream"
+  ],
+  "density": "standard",
+  "densityChars": 420,
+  "mediaRole": "logo",
+  "focal": {
+    "role": "logo",
+    "px": 26,
+    "againstHeadlinePx": 64,
+    "ratio": 0.4,
+    "note": "Deliberately low. No single logo is the point; the grid of them is. A hero logo here would break the claim that these are peers within a category."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:36",
+  "sourceRender": "ref.png",
+  "replaces": "logo-wall-v1",
+  "replacesNote": "logo-wall-v1 puts tiles in a fixed grid on the left half and leaves the right half empty. This is a table, not a grid, and it uses the canvas. Do not retire v1 until this has been through a real deck.",
+  "deviations": [
+    {
+      "what": "logo art",
+      "source": "real partner wordmarks",
+      "here": "text placeholders",
+      "why": "Logos are supplied per deck and inlined at fill time (§2a). Shipping a fixed set in the template would date it and bloat every deck that used it."
+    }
+  ],
+  "contractGapsClosed": [],
+  "createdAt": "2026-09-10",
+  "version": 1
+}

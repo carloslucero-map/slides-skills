@@ -1,0 +1,46 @@
+{
+  "id": "ent-team-row-6",
+  "name": "Who is in the room",
+  "useWhen": "Four to six people are being introduced at the top of a meeting and each needs placing by role and location — not a biography.",
+  "$useWhenNote": "Written by hand.",
+  "family": "H-entities",
+  "secondaryFamily": null,
+  "form": "team-grid",
+  "arity": "6",
+  "arityRange": [
+    4,
+    6
+  ],
+  "ground": [
+    "cream"
+  ],
+  "density": "standard",
+  "densityChars": 540,
+  "mediaRole": "photo",
+  "focal": {
+    "role": "portrait",
+    "px": 220,
+    "againstHeadlinePx": 64,
+    "ratio": 3.4,
+    "note": "Diameter against headline size. The faces are the slide; the headline only frames them, which is why it can be the one thing set in orange caps without competing."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:2",
+  "sourceRender": "ref.png",
+  "replaces": null,
+  "replacesNote": "Does not replace team-v1 — that is three wide portraits with real bios, a different job. Keep both.",
+  "deviations": [
+    {
+      "what": "name wrapping",
+      "source": "wraps mid-name onto two lines",
+      "here": "one line, enforced",
+      "why": "The source's portraits are wide enough to hold the names; the wrap is a defect, not a style."
+    }
+  ],
+  "contractGapsClosed": [],
+  "createdAt": "2026-09-10",
+  "version": 1
+}
