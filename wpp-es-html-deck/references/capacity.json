@@ -2062,6 +2062,690 @@
    },
    "slide_ideal_chars": 286,
    "slide_max_chars": 386
+  },
+  {
+   "file": "canon/ent-logo-rows-6/template.html",
+   "archetype": "ent-logo-rows",
+   "label": "CANON \u00b7 ent-logo-rows-6",
+   "slots": {
+    "headline": {
+     "items": 1,
+     "min_chars": 44,
+     "ideal_chars": 44,
+     "max_chars": 79,
+     "font_px": 54.0,
+     "basis": "placeholder"
+    },
+    "headline--lg": {
+     "items": 1,
+     "min_chars": 44,
+     "ideal_chars": 44,
+     "max_chars": 79,
+     "font_px": 64.0,
+     "basis": "placeholder"
+    },
+    "logo-cat": {
+     "items": 6,
+     "min_chars": 12,
+     "ideal_chars": 37,
+     "max_chars": 67,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "elr-cat": {
+     "items": 6,
+     "min_chars": 12,
+     "ideal_chars": 37,
+     "max_chars": 67,
+     "font_px": 18.0,
+     "basis": "placeholder"
+    },
+    "elr-logo": {
+     "items": 27,
+     "min_chars": 3,
+     "ideal_chars": 13,
+     "max_chars": 23,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    }
+   },
+   "slide_ideal_chars": 578,
+   "slide_max_chars": 780,
+   "_source": "canon"
+  },
+  {
+   "file": "canon/ent-partner-credentials-3/template.html",
+   "archetype": "ent-partner-credentials",
+   "label": "CANON \u00b7 ent-partner-credentials-3",
+   "slots": {
+    "epc-logo": {
+     "items": 3,
+     "min_chars": 5,
+     "ideal_chars": 10,
+     "max_chars": 18,
+     "font_px": 44.0,
+     "basis": "placeholder"
+    },
+    "epc-v": {
+     "items": 12,
+     "min_chars": 3,
+     "ideal_chars": 13,
+     "max_chars": 23,
+     "font_px": 36.0,
+     "basis": "placeholder"
+    },
+    "epc-n": {
+     "items": 12,
+     "min_chars": 19,
+     "ideal_chars": 64,
+     "max_chars": 115,
+     "font_px": 20.0,
+     "basis": "placeholder"
+    },
+    "epc-client": {
+     "items": 9,
+     "min_chars": 4,
+     "ideal_chars": 9,
+     "max_chars": 16,
+     "font_px": 24.0,
+     "basis": "placeholder"
+    }
+   },
+   "slide_ideal_chars": 713,
+   "slide_max_chars": 962,
+   "_source": "canon"
+  },
+  {
+   "file": "canon/ent-team-row-6/template.html",
+   "archetype": "ent-team-row",
+   "label": "CANON \u00b7 ent-team-row-6",
+   "slots": {
+    "etr-head": {
+     "items": 1,
+     "min_chars": 24,
+     "ideal_chars": 24,
+     "max_chars": 43,
+     "font_px": 64.0,
+     "basis": "placeholder"
+    },
+    "etr-name": {
+     "items": 6,
+     "min_chars": 9,
+     "ideal_chars": 19,
+     "max_chars": 34,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    },
+    "etr-practice": {
+     "items": 6,
+     "min_chars": 11,
+     "ideal_chars": 23,
+     "max_chars": 41,
+     "font_px": 20.0,
+     "basis": "placeholder"
+    },
+    "etr-role": {
+     "items": 6,
+     "min_chars": 33,
+     "ideal_chars": 47,
+     "max_chars": 85,
+     "font_px": 20.0,
+     "basis": "placeholder"
+    },
+    "etr-person": {
+     "items": 1,
+     "min_chars": 30,
+     "ideal_chars": 30,
+     "max_chars": 54,
+     "font_px": null,
+     "basis": "placeholder"
+    }
+   },
+   "slide_ideal_chars": 489,
+   "slide_max_chars": 660,
+   "_source": "canon"
+  },
+  {
+   "file": "canon/enum-intro-grid-5/template.html",
+   "archetype": "enum-intro-grid",
+   "label": "CANON \u00b7 enum-intro-grid-5",
+   "slots": {
+    "headline": {
+     "items": 1,
+     "min_chars": 56,
+     "ideal_chars": 56,
+     "max_chars": 101,
+     "font_px": 54.0,
+     "basis": "placeholder"
+    },
+    "headline--lg": {
+     "items": 1,
+     "min_chars": 56,
+     "ideal_chars": 56,
+     "max_chars": 101,
+     "font_px": 64.0,
+     "basis": "placeholder"
+    },
+    "eig-lead": {
+     "items": 1,
+     "min_chars": 18,
+     "ideal_chars": 18,
+     "max_chars": 32,
+     "font_px": 32.0,
+     "basis": "placeholder"
+    },
+    "body": {
+     "items": 7,
+     "min_chars": 51,
+     "ideal_chars": 148,
+     "max_chars": 266,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    },
+    "eig-body": {
+     "items": 7,
+     "min_chars": 51,
+     "ideal_chars": 148,
+     "max_chars": 266,
+     "font_px": 24.0,
+     "basis": "placeholder"
+    },
+    "eig-label": {
+     "items": 5,
+     "min_chars": 9,
+     "ideal_chars": 28,
+     "max_chars": 50,
+     "font_px": 32.0,
+     "basis": "placeholder"
+    }
+   },
+   "slide_ideal_chars": 1789,
+   "slide_max_chars": 2415,
+   "_source": "canon"
+  },
+  {
+   "file": "canon/enum-numbered-4/template.html",
+   "archetype": "enum-numbered",
+   "label": "CANON \u00b7 enum-numbered-4",
+   "slots": {
+    "eyebrow": {
+     "items": 2,
+     "min_chars": 21,
+     "ideal_chars": 26,
+     "max_chars": 47,
+     "font_px": 40.0,
+     "basis": "placeholder"
+    },
+    "hl": {
+     "items": 1,
+     "min_chars": 9,
+     "ideal_chars": 9,
+     "max_chars": 16,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 42,
+     "ideal_chars": 42,
+     "max_chars": 76,
+     "font_px": 54.0,
+     "basis": "placeholder"
+    },
+    "eyebrow--quiet": {
+     "items": 1,
+     "min_chars": 26,
+     "ideal_chars": 26,
+     "max_chars": 47,
+     "font_px": 34.0,
+     "basis": "placeholder"
+    },
+    "hero-num": {
+     "items": 3,
+     "min_chars": 2,
+     "ideal_chars": 2,
+     "max_chars": 4,
+     "font_px": 240.0,
+     "basis": "placeholder"
+    },
+    "hero-num--m": {
+     "items": 3,
+     "min_chars": 2,
+     "ideal_chars": 2,
+     "max_chars": 4,
+     "font_px": 192.0,
+     "basis": "placeholder"
+    },
+    "hero-num--solid": {
+     "items": 3,
+     "min_chars": 2,
+     "ideal_chars": 2,
+     "max_chars": 4,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "hero-num--orange": {
+     "items": 3,
+     "min_chars": 2,
+     "ideal_chars": 2,
+     "max_chars": 4,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "enum-title": {
+     "items": 3,
+     "min_chars": 12,
+     "ideal_chars": 37,
+     "max_chars": 67,
+     "font_px": 34.0,
+     "basis": "placeholder"
+    },
+    "body": {
+     "items": 3,
+     "min_chars": 93,
+     "ideal_chars": 103,
+     "max_chars": 185,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    },
+    "enum-body": {
+     "items": 3,
+     "min_chars": 93,
+     "ideal_chars": 103,
+     "max_chars": 185,
+     "font_px": 28.0,
+     "basis": "placeholder"
+    },
+    "slide--ground": {
+     "items": 1,
+     "min_chars": 30,
+     "ideal_chars": 30,
+     "max_chars": 54,
+     "font_px": null,
+     "basis": "placeholder"
+    }
+   },
+   "slide_ideal_chars": 842,
+   "slide_max_chars": 1136,
+   "_source": "canon"
+  },
+  {
+   "file": "canon/enum-stage-bento-4/template.html",
+   "archetype": "enum-stage-bento",
+   "label": "CANON \u00b7 enum-stage-bento-4",
+   "slots": {
+    "esb-n": {
+     "items": 4,
+     "min_chars": 2,
+     "ideal_chars": 2,
+     "max_chars": 4,
+     "font_px": 132.0,
+     "basis": "placeholder"
+    },
+    "esb-label": {
+     "items": 4,
+     "min_chars": 13,
+     "ideal_chars": 22,
+     "max_chars": 40,
+     "font_px": 48.0,
+     "basis": "placeholder"
+    },
+    "sub-item": {
+     "items": 13,
+     "min_chars": 13,
+     "ideal_chars": 34,
+     "max_chars": 61,
+     "font_px": 22.0,
+     "basis": "placeholder"
+    }
+   },
+   "slide_ideal_chars": 369,
+   "slide_max_chars": 498,
+   "_source": "canon"
+  },
+  {
+   "file": "canon/media-bleed-steps-4/template.html",
+   "archetype": "media-bleed-steps",
+   "label": "CANON \u00b7 media-bleed-steps-4",
+   "slots": {
+    "mbs-head": {
+     "items": 1,
+     "min_chars": 32,
+     "ideal_chars": 32,
+     "max_chars": 58,
+     "font_px": 64.0,
+     "basis": "placeholder"
+    },
+    "mbs-label": {
+     "items": 1,
+     "min_chars": 9,
+     "ideal_chars": 9,
+     "max_chars": 16,
+     "font_px": 40.0,
+     "basis": "placeholder"
+    },
+    "mbs-title": {
+     "items": 4,
+     "min_chars": 17,
+     "ideal_chars": 27,
+     "max_chars": 49,
+     "font_px": 28.0,
+     "basis": "placeholder"
+    },
+    "mbs-sub": {
+     "items": 4,
+     "min_chars": 24,
+     "ideal_chars": 48,
+     "max_chars": 86,
+     "font_px": 28.0,
+     "basis": "placeholder"
+    }
+   },
+   "slide_ideal_chars": 268,
+   "slide_max_chars": 361,
+   "_source": "canon"
+  },
+  {
+   "file": "canon/quant-stat-grid-5/template.html",
+   "archetype": "quant-stat-grid",
+   "label": "CANON \u00b7 quant-stat-grid-5",
+   "slots": {
+    "qsg-eyebrow": {
+     "items": 1,
+     "min_chars": 24,
+     "ideal_chars": 24,
+     "max_chars": 43,
+     "font_px": 40.0,
+     "basis": "placeholder"
+    },
+    "hl": {
+     "items": 1,
+     "min_chars": 26,
+     "ideal_chars": 26,
+     "max_chars": 47,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "qsg-accent": {
+     "items": 1,
+     "min_chars": 26,
+     "ideal_chars": 26,
+     "max_chars": 47,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "qsg-claim": {
+     "items": 1,
+     "min_chars": 47,
+     "ideal_chars": 47,
+     "max_chars": 85,
+     "font_px": 64.0,
+     "basis": "placeholder"
+    },
+    "qsg-dir": {
+     "items": 5,
+     "min_chars": 1,
+     "ideal_chars": 1,
+     "max_chars": 2,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "qsg-v": {
+     "items": 5,
+     "min_chars": 3,
+     "ideal_chars": 6,
+     "max_chars": 11,
+     "font_px": 132.0,
+     "basis": "placeholder"
+    },
+    "body": {
+     "items": 5,
+     "min_chars": 79,
+     "ideal_chars": 108,
+     "max_chars": 194,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    },
+    "qsg-note": {
+     "items": 5,
+     "min_chars": 79,
+     "ideal_chars": 108,
+     "max_chars": 194,
+     "font_px": 24.0,
+     "basis": "placeholder"
+    },
+    "qsg-dir--sym": {
+     "items": 1,
+     "min_chars": 1,
+     "ideal_chars": 1,
+     "max_chars": 2,
+     "font_px": null,
+     "basis": "placeholder"
+    }
+   },
+   "slide_ideal_chars": 1055,
+   "slide_max_chars": 1424,
+   "_source": "canon"
+  },
+  {
+   "file": "canon/rel-hub-rings-4/template.html",
+   "archetype": "rel-hub-rings",
+   "label": "CANON \u00b7 rel-hub-rings-4",
+   "slots": {
+    "rhr-eyebrow": {
+     "items": 1,
+     "min_chars": 20,
+     "ideal_chars": 20,
+     "max_chars": 36,
+     "font_px": 40.0,
+     "basis": "placeholder"
+    },
+    "hl": {
+     "items": 1,
+     "min_chars": 17,
+     "ideal_chars": 17,
+     "max_chars": 31,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "rhr-head": {
+     "items": 1,
+     "min_chars": 31,
+     "ideal_chars": 31,
+     "max_chars": 56,
+     "font_px": 64.0,
+     "basis": "placeholder"
+    },
+    "body": {
+     "items": 3,
+     "min_chars": 87,
+     "ideal_chars": 183,
+     "max_chars": 329,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    },
+    "rhr-p": {
+     "items": 3,
+     "min_chars": 87,
+     "ideal_chars": 183,
+     "max_chars": 329,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    },
+    "rhr-node": {
+     "items": 4,
+     "min_chars": 2,
+     "ideal_chars": 8,
+     "max_chars": 14,
+     "font_px": 24.0,
+     "basis": "placeholder"
+    },
+    "rhr-node--n": {
+     "items": 1,
+     "min_chars": 2,
+     "ideal_chars": 2,
+     "max_chars": 4,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "rhr-node--e": {
+     "items": 1,
+     "min_chars": 7,
+     "ideal_chars": 7,
+     "max_chars": 13,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "rhr-node--s": {
+     "items": 1,
+     "min_chars": 8,
+     "ideal_chars": 8,
+     "max_chars": 14,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "rhr-node--w": {
+     "items": 1,
+     "min_chars": 3,
+     "ideal_chars": 3,
+     "max_chars": 5,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "rhr-hub": {
+     "items": 1,
+     "min_chars": 19,
+     "ideal_chars": 19,
+     "max_chars": 34,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    },
+    "rhr-diagram": {
+     "items": 1,
+     "min_chars": 30,
+     "ideal_chars": 30,
+     "max_chars": 54,
+     "font_px": null,
+     "basis": "placeholder"
+    }
+   },
+   "slide_ideal_chars": 877,
+   "slide_max_chars": 1183,
+   "_source": "canon"
+  },
+  {
+   "file": "canon/seq-steps-panels-5/template.html",
+   "archetype": "seq-steps-panels",
+   "label": "CANON \u00b7 seq-steps-panels-5",
+   "slots": {
+    "ssp-eyebrow": {
+     "items": 1,
+     "min_chars": 36,
+     "ideal_chars": 36,
+     "max_chars": 65,
+     "font_px": 40.0,
+     "basis": "placeholder"
+    },
+    "hl": {
+     "items": 1,
+     "min_chars": 18,
+     "ideal_chars": 18,
+     "max_chars": 32,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 69,
+     "ideal_chars": 69,
+     "max_chars": 124,
+     "font_px": 54.0,
+     "basis": "placeholder"
+    },
+    "headline--lg": {
+     "items": 1,
+     "min_chars": 69,
+     "ideal_chars": 69,
+     "max_chars": 124,
+     "font_px": 64.0,
+     "basis": "placeholder"
+    },
+    "body": {
+     "items": 1,
+     "min_chars": 134,
+     "ideal_chars": 134,
+     "max_chars": 241,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    },
+    "ssp-lede": {
+     "items": 1,
+     "min_chars": 134,
+     "ideal_chars": 134,
+     "max_chars": 241,
+     "font_px": 24.0,
+     "basis": "placeholder"
+    },
+    "ssp-n": {
+     "items": 5,
+     "min_chars": 1,
+     "ideal_chars": 1,
+     "max_chars": 2,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    },
+    "ssp-head": {
+     "items": 5,
+     "min_chars": 6,
+     "ideal_chars": 8,
+     "max_chars": 14,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    },
+    "ssp-title": {
+     "items": 5,
+     "min_chars": 21,
+     "ideal_chars": 33,
+     "max_chars": 59,
+     "font_px": 22.0,
+     "basis": "placeholder"
+    },
+    "fine-label": {
+     "items": 10,
+     "min_chars": 10,
+     "ideal_chars": 12,
+     "max_chars": 22,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "ssp-label": {
+     "items": 10,
+     "min_chars": 10,
+     "ideal_chars": 12,
+     "max_chars": 22,
+     "font_px": 16.0,
+     "basis": "placeholder"
+    },
+    "sub-item": {
+     "items": 24,
+     "min_chars": 7,
+     "ideal_chars": 63,
+     "max_chars": 113,
+     "font_px": 16.0,
+     "basis": "placeholder"
+    },
+    "ssp-deliv": {
+     "items": 5,
+     "min_chars": 48,
+     "ideal_chars": 63,
+     "max_chars": 113,
+     "font_px": 16.0,
+     "basis": "placeholder"
+    }
+   },
+   "slide_ideal_chars": 1897,
+   "slide_max_chars": 2560,
+   "_source": "canon"
   }
  ]
 }

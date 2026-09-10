@@ -540,6 +540,23 @@ def check_catalog():
         report("FAIL", "canon catalogue",
                (p.stderr or p.stdout).strip().replace("\n", " ")[:300])
 
+    # And that every canon template has capacity data. Without it a canon slide
+    # comes back UNCHECKED, which reads like a pass and is not one.
+    cap = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                       "canon", "_tools", "derive_canon_capacity.py")
+    if not os.path.isfile(cap):
+        return
+    try:
+        q = subprocess.run([sys.executable, cap, "--demo", "-", "--check"],
+                           capture_output=True, text=True, timeout=60)
+    except (subprocess.TimeoutExpired, OSError):
+        return
+    if q.returncode == 0:
+        report("PASS", "canon capacity", (q.stdout or "").strip() or "measured")
+    else:
+        report("FAIL", "canon capacity",
+               (q.stderr or q.stdout).strip().replace("\n", " ")[:220])
+
 
 def check_docs():
     """The guideline's three forms must agree. Runs build_docs.py --check.

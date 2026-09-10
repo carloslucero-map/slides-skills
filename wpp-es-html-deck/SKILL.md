@@ -279,9 +279,16 @@ Never open `assets/snippets/*.html` at fill time — those 13 files are the
 authoring source (up to 6,326 tokens each); the deck reads `variants/` only.
 Edit a canonical file and re-run `derive_capacity.py --split` to regenerate.
 
-A canon template carries no `<!-- capacity -->` block. Its limits are in
-`canon/<id>/meta.json` as `densityChars`, and its `spec.json` `invariants` say
-what must not be changed when you fill it — read them before you edit geometry.
+A canon template carries no `<!-- capacity -->` block, but it IS capacity-checked:
+`canon/_tools/derive_canon_capacity.py` merges per-slot limits into the same
+`references/capacity.json`, so `check_capacity.py` covers canon and kit slides
+alike. Its `spec.json` `invariants` say what must not be changed when you fill
+it — read those before you touch geometry.
+
+Those maxima are marked `basis: "placeholder"`: they are derived from the copy
+the template shipped with, which is evidence of what fits rather than proof of
+what the slot holds. Treat a small overage as a question, not a verdict; treat a
+large one as a real overflow.
 
 **Check capacity before you write.** Every template carries a
 `<!-- capacity: -->` block above its `<section>`: per-slot min–max character
