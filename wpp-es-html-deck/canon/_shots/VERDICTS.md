@@ -21,7 +21,7 @@ bottom does not.
 
 ---
 
-## Keep (16) — good as they stand
+## Keep (21) — good as they stand
 
 | id | why |
 |---|---|
@@ -49,7 +49,7 @@ bottom does not.
 
 ---
 
-## Fix (17) — the composition is sound, the canvas is not
+## Fix (21) — the composition is sound, the canvas is not
 
 Mostly one defect: content in the top third, then nothing. Either the content
 tier grows, or something anchors the foot, or the arity drops.
@@ -79,7 +79,7 @@ tier grows, or something anchors the foot, or the arity drops.
 
 ---
 
-## Kill (10)
+## Kill (9)
 
 | id | why |
 |---|---|
@@ -95,7 +95,7 @@ tier grows, or something anchors the foot, or the arity drops.
 
 ---
 
-## Cannot judge from these shots (8)
+## Cannot judge yet (1)
 
 Every one of these is media-led, and the harness splices templates with no
 image, so what the sheet shows is the placeholder, not the template. Condemning
@@ -124,5 +124,5 @@ exercise the `.screenshot` frame honestly). Judge it against a real deck.
   rebuild work, not repair.
 - **The dead lower half is systemic**, not a few bad templates. It is the single
   biggest fidelity gap against the bank, where slides run content to y≈960.
-- **A fixed template is cheaper than a new one.** Of the 17 fixes, most are one
+- **A fixed template is cheaper than a new one.** Of the 21 fixes, most are one
   decision — grow the content tier, add an anchor, or drop the arity by one.
