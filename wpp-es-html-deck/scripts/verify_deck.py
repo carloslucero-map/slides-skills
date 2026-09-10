@@ -517,6 +517,30 @@ def _treatment(s):
             tuple(sorted(re.findall(r'class="panel (panel--[^"]*)"', s["body"]))))
 
 
+def check_catalog():
+    """The canon catalogue must match the meta.json files it is generated from.
+
+    Same failure mode as the guideline: an edited meta.json that never reaches
+    CATALOG.md leaves the model choosing on a description the template no longer
+    matches, and nothing says so.
+    """
+    script = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                          "canon", "_tools", "build_catalog.py")
+    if not os.path.isfile(script):
+        return                        # no canon in this checkout; not an error
+    try:
+        p = subprocess.run([sys.executable, script, "--check"],
+                           capture_output=True, text=True, timeout=60)
+    except (subprocess.TimeoutExpired, OSError) as e:
+        report("WARN", "canon catalogue", f"build_catalog.py --check did not run ({e})")
+        return
+    if p.returncode == 0:
+        report("PASS", "canon catalogue", (p.stdout or "").strip() or "up to date")
+    else:
+        report("FAIL", "canon catalogue",
+               (p.stderr or p.stdout).strip().replace("\n", " ")[:300])
+
+
 def check_docs():
     """The guideline's three forms must agree. Runs build_docs.py --check.
 
@@ -910,9 +934,16 @@ def _locked_slide(sid):
 
 
 def _content_edge(text, default=40.0):
-    """The deck's own --m-edge. One source of truth: the built file."""
+    """The deck's own edges. Returns (structural, text) — BOTH are legal.
+
+    --m-edge is the playbook's 40px margin and governs structure; --m-text is
+    the bank's deeper edge for running copy. A headline at either is correct,
+    and checking only the first flagged every canon template that uses the
+    second."""
     m = re.search(r"--m-edge:\s*(\d+(?:\.\d+)?)px", text)
-    return float(m.group(1)) if m else default
+    t = re.search(r"--m-text:\s*(\d+(?:\.\d+)?)px", text)
+    edge = float(m.group(1)) if m else default
+    return edge, (float(t.group(1)) if t else edge)
 
 
 def _geo_capture(deck_path):
@@ -1026,7 +1057,12 @@ FINE_PRINT_ROLES = frozenset({
     "ramp-l1", "ramp-l2", "ramp-l3", "ramp-l4",       # intensity-ramp leaders
     "cell-label", "tax-leaf", "band-label",           # canon: matrix, taxonomy, stack
     "logo-cat", "sub-item",                           # canon: logo wall, second-level
+    "fine-label",                                     # the label ABOVE a sub-item run
 })
+# These are ROLE names, deliberately generic. A template that wants the tier
+# adds the role class alongside its own — class="fine-label ssp-label" — rather
+# than getting its private class added here. Otherwise the list grows by one
+# entry per template and stops being a closed list at all.
 MEDIA_MIN = 200.0                        # §15.9.2 media-anchoring size gate (v4)
 # Media hosts the anchoring law applies to; ancestors/classes that exempt a
 # rect (tiles/portraits/centrepieces whose inset placement IS the composition).
@@ -1044,7 +1080,8 @@ def _geo_anc_classes(by_i, r):
     return seen
 
 
-def _geo_violations(rs, locked, edge=40.0):
+def _geo_violations(rs, locked, edge=40.0, tedge=None):
+    tedge = edge if tedge is None else tedge
     """(status, detail) §15 findings for one slide's probe records. Locked
     slides skip the margin/footer laws (their geometry deliberately rides the
     canvas edges) but keep the overlap laws."""
@@ -1145,7 +1182,7 @@ def _geo_violations(rs, locked, edge=40.0):
         # which is edge 80 minus/plus that tolerance — the fifth place the edge
         # constant lived. Moving the frame to 40 made every correct headline a
         # FAIL until this followed it.
-        safe_l = edge - 8
+        safe_l = min(edge, tedge) - 8
         safe_r = (1920 - edge) + 8
         for t in text_leaves:
             tx, ty, tw, th = _geo_trect(t)
@@ -1182,12 +1219,23 @@ def _geo_violations(rs, locked, edge=40.0):
                 # Read the edge off the deck rather than restating it. This
                 # check hardcoded 80 while the shell moved to 40, which would
                 # have warned on every correctly-built slide.
-                if abs(tx - edge) > 6:
+                if min(abs(tx - edge), abs(tx - tedge)) > 6:
                     out.append(("WARN", "content edge (§15.9): headline starts at "
-                                "x=%g — this deck's content edge is x=%g" % (tx, edge)))
+                                "x=%g — this deck's edges are x=%g (structure) "
+                                "and x=%g (text)" % (tx, edge, tedge)))
                 break
 
         # ---- §15.9.2 media anchoring (v4) -> FAIL ----
+        # EXCEPTION, added after the canon: the rule is about ONE large image
+        # left floating in the middle of a slide. Three or more media rects of
+        # the same size are a SET — a team row, a card row, a logo grid — and a
+        # set is a pattern, not a stray. The bank's own team slide floats six
+        # equal portraits and is right to; failing it would mean the rule
+        # forbids a composition the brand actually uses.
+        _msizes = {}
+        for _r in rs:
+            _t = _geo_trect(_r)
+            _msizes[(round(_t[2]), round(_t[3]))] = _msizes.get((round(_t[2]), round(_t[3])), 0) + 1
         # A media rect >= 200x200 must bleed to a canvas edge / sit in a corner,
         # unless declared inset (data-inset-ok, .screenshot) or exempt by role.
         for r in rs:
@@ -1201,6 +1249,12 @@ def _geo_violations(rs, locked, edge=40.0):
             if r.get("insetok") or (cls & _MEDIA_EXEMPT) or (anc & _MEDIA_EXEMPT):
                 continue
             if r["w"] < MEDIA_MIN or r["h"] < MEDIA_MIN:
+                continue
+            # A SET is not a stray. Three or more media rects of the same size
+            # are a pattern — a team row, a card row, a logo grid — and the bank
+            # composes exactly that way (slide 2 floats six equal portraits).
+            # The rule is about one large image adrift in the middle of a slide.
+            if _msizes.get((round(r["w"]), round(r["h"])), 0) >= 3:
                 continue
             touches = (r["x"] <= 2 or r["y"] <= 2
                        or r["x"] + r["w"] >= 1918 or r["y"] + r["h"] >= 1078)
@@ -1272,9 +1326,9 @@ def check_geometry(deck_path, slides, shots):
     {slide_number: [probe records]} so check_furniture_contrast can reuse the
     same JSON (None when the probe failed)."""
     try:
-        edge = _content_edge(open(deck_path, encoding="utf-8", errors="replace").read())
+        edge, tedge = _content_edge(open(deck_path, encoding="utf-8", errors="replace").read())
     except OSError:
-        edge = 40.0
+        edge, tedge = 40.0, 40.0
     recs, err = _geo_capture(deck_path)
     if recs is None:
         report("WARN", "geometry", f"probe failed — {err}; §15 laws not checked this run")
@@ -1295,7 +1349,7 @@ def check_geometry(deck_path, slides, shots):
             continue
         checked += 1
         sid = (slide_id(slides[n - 1]) if n <= len(slides) else None) or rs[0]["slide"]
-        vios = _geo_violations(rs, _locked_slide(sid), edge)
+        vios = _geo_violations(rs, _locked_slide(sid), edge, tedge)
         for status, detail in vios:
             report(status, f"geometry s{n} ({sid})", detail)
         if not vios:
@@ -1465,6 +1519,7 @@ def main():
     check_photography(slides)
     check_rhythm(slides)
     check_docs()
+    check_catalog()
     if args.screenshots:
         shots = check_screenshots(args.deck, len(slides), args.screenshots,
                                   quick=args.quick, only=only)

@@ -256,14 +256,32 @@ CONFIDENCIAL are built in; other languages via `"strings"`).
 
 ### 4. Fill in the content slides
 
-**Pick from `references/SNIPPET-INDEX.md`, then open ONE file.** The index
-lists all 51 templates on one line each — archetype, path, ideal char count,
-what it is — so you choose without opening files to find out what is in them.
-It points at `assets/snippets/variants/<name>.html`, which holds a single
-template (~500 tokens) instead of the whole snippet file (up to 5,900).
-**Never open `assets/snippets/*.html` at fill time** — those 13 files are the
+**Read `canon/CATALOG.md` FIRST, then fall back to the snippet kit.**
+
+`canon/` holds templates traced from the real MAP slide bank: each one measured
+off a source slide, rendered against it, and shipped with that original as
+`ref.png`. The 51 snippets in `assets/snippets/` were authored from the brand
+guideline in the abstract, not from the deck bank — which is the reason decks
+built from them have never quite looked like MAP's own slides.
+
+So the order is not a preference, it is a fidelity rule:
+
+1. **`canon/CATALOG.md`** (~950 tokens, loaded once). Choose on the `use when`
+   column — it names the problem the template solves. Then open exactly one
+   `canon/<id>/template.html` and paste its `<section>`.
+2. **`references/SNIPPET-INDEX.md`** only when no canon template fits. The
+   catalogue's last line names the families the canon does not cover yet; for
+   those the kit is the answer and there is nothing wrong with saying so.
+3. When you fall back, **say which slide fell back and why** in the G2 delivery
+   note. That list is what tells the next canon template which slide to trace.
+
+Never open `assets/snippets/*.html` at fill time — those 13 files are the
 authoring source (up to 6,326 tokens each); the deck reads `variants/` only.
 Edit a canonical file and re-run `derive_capacity.py --split` to regenerate.
+
+A canon template carries no `<!-- capacity -->` block. Its limits are in
+`canon/<id>/meta.json` as `densityChars`, and its `spec.json` `invariants` say
+what must not be changed when you fill it — read them before you edit geometry.
 
 **Check capacity before you write.** Every template carries a
 `<!-- capacity: -->` block above its `<section>`: per-slot min–max character
@@ -463,7 +481,12 @@ non-English decks: **`references/EDGE-CASES.md`**. Open only when one applies.
 
 ## Bundled resources
 
-Each file is named where it is used. Three rules that live nowhere else:
+- **`canon/`** — templates traced from the real slide bank, one directory each:
+  `template.html` (paste this), `ref.png` (the source slide), `preview.png`
+  (what it renders), `meta.json` (limits), `spec.json` (what must not change).
+  **`canon/CATALOG.md` is the entry point for step 4.**
+
+Each other file is named where it is used. Three rules that live nowhere else:
 
 - **Never read `references/capacity.json`, `assets/exemplars/` or
   `assets/photos/` into context.** They are script and human inputs;

@@ -94,6 +94,38 @@ def slides_of(html):
     return out
 
 
+def check_canon_integrity(skill):
+    """Every CATALOG row resolves to a template, and every template is listed.
+
+    A catalogue row pointing at nothing sends the model to a file that is not
+    there; a template absent from the catalogue is invisible, which is the state
+    the whole canon was in until it was wired up. Both are silent failures.
+    """
+    cat = os.path.join(skill, "canon", "catalog.json")
+    cdir = os.path.join(skill, "canon")
+    if not os.path.isfile(cat):
+        print("CANON SKIP — no canon/catalog.json (run canon/_tools/build_catalog.py)")
+        return True
+    try:
+        listed = {t["id"] for t in json.load(open(cat, encoding="utf-8"))["templates"]}
+    except (ValueError, KeyError) as e:
+        print(f"CANON FAIL — catalog.json unreadable ({e})")
+        return False
+    on_disk = {d for d in os.listdir(cdir)
+               if not d.startswith("_")
+               and os.path.isfile(os.path.join(cdir, d, "template.html"))}
+    ok = True
+    for missing in sorted(listed - on_disk):
+        print(f"CANON FAIL — catalogue lists {missing!r}, which has no template.html")
+        ok = False
+    for unlisted in sorted(on_disk - listed):
+        print(f"CANON FAIL — canon/{unlisted}/ exists but no catalogue row reaches it")
+        ok = False
+    if ok:
+        print(f"CANON OK — {len(listed)} templates, catalogue and disk agree")
+    return ok
+
+
 def check_kit_integrity(skill):
     """Every row of SNIPPET-INDEX.md must resolve to a real file in variants/.
 
@@ -134,6 +166,7 @@ def main():
     args = ap.parse_args()
 
     kit_ok = check_kit_integrity(args.skill)
+    kit_ok = check_canon_integrity(args.skill) and kit_ok
     if args.deck is None:
         sys.exit(0 if kit_ok else 1)
     print()

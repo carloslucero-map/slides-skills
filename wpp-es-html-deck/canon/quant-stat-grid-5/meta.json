@@ -38,11 +38,17 @@
       "source": "dot field",
       "here": "none",
       "why": "The source carries a faint full-bleed dot texture. Reproducing it is a §5 dot-system decision affecting every slide's ground, not a template one."
+    },
+    {
+      "what": "background density",
+      "source": "0.87 background in the y432-990 band",
+      "here": "0.92",
+      "why": "The source carries a full-bleed dot texture this template does not reproduce (a §5 dot-system decision, not a template one). The composition check reads that texture as ink, so it FAILs here and passes there. Not a dead lower half — measured, and the gap is the texture."
     }
   ],
   "contractGapsClosed": [
     ".headline--lg (64px), shared with enum-intro-grid-5."
   ],
   "createdAt": "2026-09-10",
-  "version": 1
+  "version": 2
 }

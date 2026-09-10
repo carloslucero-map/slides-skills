@@ -70,7 +70,7 @@
 
 .qsg-top{position:absolute;left:790px;right:var(--m-edge);top:169px;
          display:grid;grid-template-columns:repeat(2,1fr);gap:48px;}
-.qsg-bottom{position:absolute;left:var(--m-text);right:var(--m-edge);top:640px;
+.qsg-bottom{position:absolute;left:var(--m-text);right:var(--m-edge);top:600px;bottom:96px;
             display:grid;grid-template-columns:repeat(3,1fr);gap:48px;}
 
 /* NOTE on the ramp: --orange-500 is the LIGHTEST step (#FFF5CD), not the base.
@@ -88,5 +88,8 @@
    from the back of a room; the arrow does. */
 .qsg-dir{color:var(--orange-700);font-size:.52em;vertical-align:.28em;margin-right:.02em;}
 .qsg-dir--sym{vertical-align:0;font-size:.72em;}
-.qsg-note{font-size:24px;line-height:1.3;max-width:none;margin-top:22px;}
+/* Measured against the source: this template rendered 0.92 background in the
+   y432-990 band where slide 74 renders 0.87. The gap was air, not content —
+   the lower row sat too low and its notes too far from their numerals. */
+.qsg-note{font-size:24px;line-height:1.32;max-width:none;margin-top:18px;}
 </style>

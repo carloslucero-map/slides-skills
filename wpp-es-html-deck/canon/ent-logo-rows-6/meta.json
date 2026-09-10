@@ -38,9 +38,15 @@
       "source": "real partner wordmarks",
       "here": "text placeholders",
       "why": "Logos are supplied per deck and inlined at fill time (§2a). Shipping a fixed set in the template would date it and bloat every deck that used it."
+    },
+    {
+      "what": "background density",
+      "source": "0.93",
+      "here": "0.95",
+      "why": "Same cause: 27 real logos are dense art, 27 text wordmarks are not. Re-measure on a filled deck before treating this as a composition defect."
     }
   ],
   "contractGapsClosed": [],
   "createdAt": "2026-09-10",
-  "version": 1
+  "version": 2
 }

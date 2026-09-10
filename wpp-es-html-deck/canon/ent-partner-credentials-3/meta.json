@@ -38,9 +38,15 @@
       "source": "ENTERPRISE collides with its body text, twice",
       "here": "wraps cleanly",
       "why": "A defect in the source, not a style."
+    },
+    {
+      "what": "background density",
+      "source": "0.87",
+      "here": "0.90",
+      "why": "Real partner logos are dense black artwork; this template ships thin text wordmarks because logos are supplied per deck. The composition check counts pixels, so the placeholder reads emptier than the filled slide will."
     }
   ],
   "contractGapsClosed": [],
   "createdAt": "2026-09-10",
-  "version": 1
+  "version": 2
 }

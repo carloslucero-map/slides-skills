@@ -75,7 +75,7 @@
 <style>
 /* Measured off slide 37. */
 
-.epc{position:absolute;left:var(--m-edge);right:var(--m-edge);top:110px;bottom:72px;
+.epc{position:absolute;left:var(--m-edge);right:var(--m-edge);top:100px;bottom:106px;
      display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
 
 /* The dotted verticals are what turn three stacks into a comparison. */
@@ -100,7 +100,9 @@
        font-variant-numeric:tabular-nums lining-nums;}
 .epc-n{font-weight:400;font-size:20px;line-height:1.3;margin:0;max-width:none;}
 
+/* bottom:106px keeps this row clear of the footer band (y>985), which the
+   first version intruded on. */
 .epc-clients{display:flex;align-items:center;justify-content:space-around;gap:24px;
-             padding:26px 0 0;border-top:1px solid rgba(0,0,80,.16);}
+             padding:22px 0 0;border-top:1px solid rgba(0,0,80,.16);}
 .epc-client{font-weight:500;font-size:24px;white-space:nowrap;opacity:.85;}
 </style>
