@@ -92,7 +92,14 @@ def splice(base_html, section_markup):
     end = base_html.find(FRAME_CLOSE, start)
     if end < 0:
         sys.exit("shell #frame never closes — build_shell.py output changed shape")
-    spliced = base_html[:start] + "\n" + section_markup + "\n" + base_html[end:]
+    assets, named = media_assets(section_markup)
+    section_markup = fill_media_hosts(section_markup)
+    # The asset templates must be parsed BEFORE the shell's inline script, which
+    # clones them into [data-motif] hosts on load. Appending them at </body> put
+    # them after that script, so querySelector found nothing and every motif
+    # rendered empty — which is what made these templates look broken.
+    spliced = (base_html[:start] + "\n" + section_markup + "\n"
+               + assets + base_html[end:])
     return (spliced.replace("</body>", SHOT_CHROME_KILL + "\n</body>", 1)
             if "</body>" in spliced else spliced + SHOT_CHROME_KILL)
 
@@ -104,6 +111,43 @@ def variant_markup(path):
     if i < 0:
         return None
     return src[i:]
+
+
+# --------------------------------------------------------------------------
+# media
+
+# A template that declares media renders empty in a bare shell: data-motif hosts
+# are filled at runtime by cloning an inlined <template data-asset>, and the
+# .img-*-media boxes ship a navy stand-in with a "replace me" comment. Shooting
+# without either means photographing the placeholder and calling it the
+# template — which left a sixth of the kit unreviewable on the first pass.
+SAMPLE_PHOTO = "photo-ridge"          # a real brand photo, for stand-in media boxes
+MEDIA_HOSTS = ("img-right-media", "img-half-media", "screenshot")
+
+
+def media_assets(markup):
+    """<template data-asset> blocks for every motif this template names."""
+    import build_shell as BS
+    names = sorted(set(re.findall(r'data-motif="([^"]+)"', markup)))
+    needed = [n for n in names if n in BS.MOTIF_FILES]
+    for n in names:
+        if n not in BS.MOTIF_FILES:
+            report("WARN", "media", f"template names motif {n!r}, which the shell has no file for")
+    if any(h in markup for h in MEDIA_HOSTS) and SAMPLE_PHOTO not in needed:
+        needed.append(SAMPLE_PHOTO)
+    return "".join(f'<template data-asset="{n}"><img src="{BS.motif_uri(n)}" alt=""></template>'
+                   for n in needed), needed
+
+
+def fill_media_hosts(markup):
+    """Swap the shipped navy stand-in for a real photo so the shot shows a
+    filled slide. Cosmetic to the harness, decisive to the review."""
+    if not any(h in markup for h in MEDIA_HOSTS):
+        return markup
+    return re.sub(
+        r'<div style="width:100%;height:100%;background:var\(--wpp-navy\);"></div>',
+        f'<div data-motif="{SAMPLE_PHOTO}" style="width:100%;height:100%;"></div>',
+        markup)
 
 
 # --------------------------------------------------------------------------
