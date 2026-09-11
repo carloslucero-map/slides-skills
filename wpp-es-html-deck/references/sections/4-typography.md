@@ -74,10 +74,12 @@ Inside a **headline, statement or divider title**, the single most important tok
 | Text class | Floor |
 |---|---|
 | Body copy (paragraphs, bullets, column text) | **20 px** |
-| Any other informational text (labels, captions, chips, chart labels, table cells) | **15 px** |
+| Any other informational text (labels, captions, chips, chart labels, table cells) | **16 px** |
 | Footer furniture ONLY (`.pageno`, `.confidential`, `.source`, `.footer-brand`) | **11 px** (frozen — never add new text at this size) |
 
-No new text below 15 px, ever — if it doesn't fit at 15 px, the slide has too much content (split it or cut copy). The verifier measures computed sizes in the rendered DOM and FAILs sub-floor text (§15.10).
+No new text below 16 px, ever — if it doesn't fit at 16 px, the slide has too much content (split it or cut copy). The verifier measures computed sizes in the rendered DOM and FAILs sub-floor text (§15.10).
+
+This row read **15 px** until 2026-09-11, one pixel under the floor §15.10 actually enforces, while `.pill`, `.ruler-label`, `.flag`, `.proc .step-l` and `.milestone .ml` all shipped at 15 px in the generated shell. Any deck using a pill, a gantt ruler or a milestone flag therefore failed the verifier on CSS the package itself supplied. Found by building a real deck, not by reading the rule. The table defers to §15.10, so the table and the shell moved to 16 px rather than the law moving down.
 
 ---
 

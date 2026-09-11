@@ -105,8 +105,9 @@ disagrees, the generator wins, then the master.
    below the Light headline IS the hierarchy)** / Medium (labels, and the
    single-token `.hl` title highlight) / Bold (footer brand line only).
    Sentence-case headlines, max two lines. No bold-in-body, no italics except
-   sparse quotes, no underlines. **No informational text below 15px; body
-   ≥ 20px** (§4.5 — the verifier measures it).
+   sparse quotes, no underlines. **No informational text below 16px; body
+   ≥ 20px** (§4.5 — the verifier measures it, and between 16 and 20 only the
+   declared fine-print roles are allowed).
 6. **No gradients, no shadows, no rounded cards (pills only), no accent bars.**
 7. **The name is "WPP Enterprise Solutions | MAP".** Never "VML MAP".
 8. **Media anchors to edges (§15.9).** A photo/motif block ≥200×200 bleeds to
@@ -277,7 +278,14 @@ So the order is not a preference, it is a fidelity rule:
 
 Never open `assets/snippets/*.html` at fill time — those 13 files are the
 authoring source (up to 6,326 tokens each); the deck reads `variants/` only.
-Edit a canonical file and re-run `derive_capacity.py --split` to regenerate.
+Edit a canonical file and re-run the full regeneration to rebuild them — `--split` alone does not remeasure:
+
+```bash
+python3 scripts/build_shell.py --out build/demo.html
+python3 scripts/derive_capacity.py --skill . --demo build/demo.html --write --index --split
+```
+
+**`--demo` is not optional.** Without a generated shell the tool reads no CSS metrics at all and falls back to a content edge that stopped being true when the frame moved to 40px — every number it writes is then wrong but plausible. It now refuses to run rather than degrade quietly. Note that `--write` also rewrites `references/capacity.json` wholesale, which drops the canon entries: re-run `canon/_tools/derive_canon_capacity.py --demo <canon-deck> --write` afterwards to merge them back, or `check_capacity.py` reports every canon slide UNCHECKED.
 
 A canon template carries no `<!-- capacity -->` block, but it IS capacity-checked:
 `canon/_tools/derive_canon_capacity.py` merges per-slot limits into the same

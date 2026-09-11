@@ -39,9 +39,9 @@ templates split one-per-file and is regenerated from them.
 | orbit | `variants/orbit-v1.html` | 130 | HUB CLASSIC — 3 rings, 4 labelled nodes, headline left |
 | orbit | `variants/orbit-v2.html` | 310 | RADIAL SPOKES — context column left, ring right: filled navy hub |
 | orbit | `variants/orbit-v3.html` | 358 | FLOATING BUBBLES — 3-4 overlapping text circles |
-| process | `variants/process-timeline-v1.html` | 407 | PROCESS CARDS + TAKEAWAY . §15.4: cards hug their |
-| timeline | `variants/process-timeline-v2.html` | 181 | R7 MILESTONE RULER . |
-| timeline | `variants/process-timeline-v3.html` | 89 | R6 GANTT SWIMLANES (flat 6px bars in the orange ramp, two segmen |
+| process | `variants/process-timeline-v1.html` | 432 | PROCESS CARDS + TAKEAWAY . §15.4: cards hug their |
+| timeline | `variants/process-timeline-v2.html` | 226 | R7 MILESTONE RULER . |
+| timeline | `variants/process-timeline-v3.html` | 125 | R6 GANTT SWIMLANES (flat 6px bars in the orange ramp, two segmen |
 | timeline | `variants/process-timeline-v4.html` | 126 | COMPACT — classic node timeline |
 | ecosystem | `variants/process-timeline-v5.html` | 458 | ECOSYSTEM MAP — nodes distributed across zones with connecting l |
 | process | `variants/process-timeline-v6.html` | 670 | R8 PHASE BOARD — centre tint panel as the board, step headers on |
@@ -53,7 +53,7 @@ templates split one-per-file and is regenerated from them.
 | statement | `variants/statement-quote-v2b.html` | 37 | b · R10 with a halftone motif (list the motif in spec.illustrati |
 | quote | `variants/statement-quote-v2.html` | 80 | BIG QUOTE |
 | statement | `variants/statement-quote-v3.html` | 56 | POSTER STATEMENT — high-impact direction ONLY (navy moment, ghos |
-| stats | `variants/stats-v1.html` | 270 | R3 hero numeral quartet + ruler · R4 hub & spokes · √-scaled bub |
+| stats | `variants/stats-v1.html` | 300 | R3 hero numeral quartet + ruler · R4 hub & spokes · √-scaled bub |
 | stats | `variants/stats-v2.html` | 311 | R4 HUB & SPOKES |
 | stats | `variants/stats-v3.html` | 99 | √-SCALED BUBBLE ROW + bottom dot field. NEVER one dominant centr |
 | stats | `variants/stats-v4.html` | 95 | COMPACT — .kpi-row value/label pairs when the numbers don't need |

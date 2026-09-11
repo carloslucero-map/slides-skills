@@ -38,7 +38,7 @@ Reference tokens (matches the pilot use-case cards):
   display: inline-flex; align-items: center; gap: 12px; margin-top: 20px;
   padding: 14px 26px; border: none; border-radius: 999px; cursor: pointer;
   background: var(--wpp-navy); color: var(--wpp-white);
-  font-family: inherit; font-size: 15px; font-weight: 500; /* 15px = the §4.5 floor */
+  font-family: inherit; font-size: 16px; font-weight: 500; /* 16px = the §4.5 floor */
   letter-spacing: .12em; text-transform: uppercase; line-height: 1; white-space: nowrap;
   transition: background .16s ease, color .16s ease;
 }

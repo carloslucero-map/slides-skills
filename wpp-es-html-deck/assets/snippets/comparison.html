@@ -22,30 +22,18 @@
 <!-- capacity: compare — —
      .compare-left        46–118  chars  (ideal 103, 24px)
      .compare-right       45–116  chars  (ideal 101, 24px)
-     .headline            15–130  chars  (ideal 34, 54px)
-     .pill          ×2     4–94   chars  (ideal 8, 15px)
-     .takeaway            14–37   chars  (ideal 33, 48px)
-     SLIDE TOTAL      ideal 287 · max 387 chars
-     Over max: pick a lower-density variant, do not shrink type (§4.5). -->
-<!-- capacity: compare — —
-     .compare-left        46–118  chars  (ideal 103, 24px)
-     .compare-right       45–116  chars  (ideal 101, 24px)
-     .headline            15–130  chars  (ideal 34, 54px)
-     .pill          ×2     4–94   chars  (ideal 8, 15px)
-     .takeaway            14–37   chars  (ideal 33, 48px)
-     SLIDE TOTAL      ideal 287 · max 387 chars
-     Over max: pick a lower-density variant, do not shrink type (§4.5). -->
-<!-- capacity: compare — —
-     .compare-left        46–118  chars  (ideal 103, 24px)
-     .compare-right       45–116  chars  (ideal 101, 24px)
      .headline            15–136  chars  (ideal 34, 54px)
-     .pill          ×2     4–98   chars  (ideal 8, 15px)
+     .pill          ×2     4–92   chars  (ideal 8, 16px)
      .takeaway            14–37   chars  (ideal 33, 48px)
      SLIDE TOTAL      ideal 287 · max 387 chars
      Over max: pick a lower-density variant, do not shrink type (§4.5). -->
 <section class="slide" data-slide-id="cX-sY" data-archetype="compare">
   <h2 class="headline">Two ways of building the same deck</h2>
-  <div class="compare-art" data-motif="rocks"></div>
+  <!-- Deliberately inset: this motif is the BRIDGE between the two columns,
+       so §15.9 anchoring does not apply and the exception is declared rather
+       than assumed. Without it the slide FAILs media anchoring — which went
+       unnoticed only because the art was not rendering at all. -->
+  <div class="compare-art" data-motif="rocks" data-inset-ok="true"></div>
   <div class="compare-left">
     <span class="pill">Today</span>
     <p style="margin-top:26px;">Every deck starts from a blank file. Layouts are re-derived, brand rules re-remembered, errors re-made.</p>
@@ -64,18 +52,6 @@
      Use for converging disciplines, overlapping audiences, or shared-value propositions.
      Max 3 sets; the intersection label carries the slide's key insight.
      Uses .venn, .venn-set, .venn-label (v3.4 CSS). No motif — the diagram IS the composition. -->
-<!-- capacity: compare — V2 · VENN DIAGRAM — 2-3 overlapping circles with labels inside and at the intersection.
-     .headline            21–130  chars  (ideal 48, 54px)
-     .takeaway            24–63   chars  (ideal 55, 48px)
-     .venn-label    ×2    27–84   chars  (ideal 60, —)
-     SLIDE TOTAL      ideal 223 · max 301 chars
-     Over max: pick a lower-density variant, do not shrink type (§4.5). -->
-<!-- capacity: compare — V2 · VENN DIAGRAM — 2-3 overlapping circles with labels inside and at the intersection.
-     .headline            21–130  chars  (ideal 48, 54px)
-     .takeaway            24–63   chars  (ideal 55, 48px)
-     .venn-label    ×2    27–84   chars  (ideal 60, —)
-     SLIDE TOTAL      ideal 223 · max 301 chars
-     Over max: pick a lower-density variant, do not shrink type (§4.5). -->
 <!-- capacity: compare — V2 · VENN DIAGRAM — 2-3 overlapping circles with labels inside and at the intersection.
      .headline            21–136  chars  (ideal 48, 54px)
      .takeaway            24–63   chars  (ideal 55, 48px)

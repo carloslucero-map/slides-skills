@@ -294,10 +294,12 @@ Inside a **headline, statement or divider title**, the single most important tok
 | Text class | Floor |
 |---|---|
 | Body copy (paragraphs, bullets, column text) | **20 px** |
-| Any other informational text (labels, captions, chips, chart labels, table cells) | **15 px** |
+| Any other informational text (labels, captions, chips, chart labels, table cells) | **16 px** |
 | Footer furniture ONLY (`.pageno`, `.confidential`, `.source`, `.footer-brand`) | **11 px** (frozen — never add new text at this size) |
 
-No new text below 15 px, ever — if it doesn't fit at 15 px, the slide has too much content (split it or cut copy). The verifier measures computed sizes in the rendered DOM and FAILs sub-floor text (§15.10).
+No new text below 16 px, ever — if it doesn't fit at 16 px, the slide has too much content (split it or cut copy). The verifier measures computed sizes in the rendered DOM and FAILs sub-floor text (§15.10).
+
+This row read **15 px** until 2026-09-11, one pixel under the floor §15.10 actually enforces, while `.pill`, `.ruler-label`, `.flag`, `.proc .step-l` and `.milestone .ml` all shipped at 15 px in the generated shell. Any deck using a pill, a gantt ruler or a milestone flag therefore failed the verifier on CSS the package itself supplied. Found by building a real deck, not by reading the rule. The table defers to §15.10, so the table and the shell moved to 16 px rather than the law moving down.
 
 ---
 
@@ -641,6 +643,21 @@ FAILs block delivery; WARNs (including every `data-text-safe` and
 The art pass judges what the ruler can't (balance, rhythm, legibility over
 art); the ruler catches what eyes skim past (a 4px overlap, a 1.04:1 footer).
 A deck ships only when both agree.
+
+**Write `class` first on every `<section>`, and never trust a green run that did
+not say how many slides it parsed.** Both `verify_deck.parse_slides` and
+`check_capacity.slides_of` used to require `class` to be the FIRST attribute in
+the tag. A perfectly valid `<section data-x="…" class="slide">` was therefore not
+a slide to them — while the browser still rendered it and the screenshot pass
+still shot it. The two lists then drifted out of step, and every geometry and
+composition finding after the first such section was reported against the WRONG
+slide id, with the skipped slides never checked at all. The run stays green
+throughout, which is the worst way for a checker to be wrong.
+
+Found 2026-09-11 by building a real client deck; both parsers now accept `class`
+anywhere in the tag, and `check_slide_parse` FAILs when any section carrying a
+`data-slide-id` did not parse as a slide. If you add a third consumer of the
+slide list, give it the same gate — the failure is silent by construction.
 
 ## 12.14 / 12.15 / 12.15a — composition (hoisted into CORE)
 

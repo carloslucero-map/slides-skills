@@ -102,10 +102,20 @@ def load_limits(skill):
 
 
 def slides_of(html):
+    """`class` may sit anywhere in the <section> tag.
+
+    This used to require it FIRST, so a slide written
+    <section data-x="…" class="slide"> was silently not a slide and its text was
+    never measured — a false all-clear, which is the one thing this tool must
+    never produce. Found 2026-09-11 by a real deck whose fallback slides carried
+    an attribute ahead of the class."""
     out = []
-    for m in re.finditer(r'<section class="slide[^"]*"[^>]*>', html):
-        arch = re.search(r'data-archetype="([^"]+)"', m.group(0))
-        sid = re.search(r'data-slide-id="([^"]+)"', m.group(0))
+    for m in re.finditer(r'<section\b[^>]*>', html):
+        tag = m.group(0)
+        if not re.search(r'\bclass="slide[^"]*"', tag):
+            continue
+        arch = re.search(r'data-archetype="([^"]+)"', tag)
+        sid = re.search(r'data-slide-id="([^"]+)"', tag)
         end = html.find("</section>", m.start())
         end = end + 10 if end != -1 else len(html)
         out.append((sid.group(1) if sid else "?",
@@ -203,7 +213,7 @@ def main():
     print(f"{len(slides)} slides · limits from {len(limits)} archetypes\n")
 
     for i, (sid, arch, body) in enumerate(slides, 1):
-        secls = re.search(r'<section class="([^"]*)"', body)
+        secls = re.search(r'<section\b[^>]*?\bclass="([^"]*)"', body)
         secls = secls.group(1) if secls else ""
         if not arch:
             if any(k in secls or k in sid for k in LOCKED):

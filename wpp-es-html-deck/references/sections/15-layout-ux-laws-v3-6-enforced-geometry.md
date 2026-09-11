@@ -162,3 +162,18 @@ FAILs block delivery; WARNs (including every `data-text-safe` and
 The art pass judges what the ruler can't (balance, rhythm, legibility over
 art); the ruler catches what eyes skim past (a 4px overlap, a 1.04:1 footer).
 A deck ships only when both agree.
+
+**Write `class` first on every `<section>`, and never trust a green run that did
+not say how many slides it parsed.** Both `verify_deck.parse_slides` and
+`check_capacity.slides_of` used to require `class` to be the FIRST attribute in
+the tag. A perfectly valid `<section data-x="…" class="slide">` was therefore not
+a slide to them — while the browser still rendered it and the screenshot pass
+still shot it. The two lists then drifted out of step, and every geometry and
+composition finding after the first such section was reported against the WRONG
+slide id, with the skipped slides never checked at all. The run stays green
+throughout, which is the worst way for a checker to be wrong.
+
+Found 2026-09-11 by building a real client deck; both parsers now accept `class`
+anywhere in the tag, and `check_slide_parse` FAILs when any section carrying a
+`data-slide-id` did not parse as a slide. If you add a third consumer of the
+slide list, give it the same gate — the failure is silent by construction.

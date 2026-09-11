@@ -190,16 +190,46 @@ def strip_xmlns(text):
 
 def parse_slides(text):
     """-> [{"cls": [tokens], "attrs": str, "body": str}] for each
-    <section class="slide...">. Slides never nest, so a flat scan is safe."""
+    <section class="slide...">. Slides never nest, so a flat scan is safe.
+
+    `class` may sit anywhere in the tag. It used to have to come FIRST, and a
+    section written <section data-x="…" class="slide"> was silently not a slide:
+    the static checks skipped it while the browser still rendered and shot it, so
+    screenshot N stopped meaning parsed-slide N and every geometry and
+    composition finding after the first such section was reported against the
+    wrong slide. check_slide_parse below now refuses to let that happen quietly."""
     slides = []
-    for m in re.finditer(r'<section\s+class="(slide[^"]*)"([^>]*)>', text):
+    for m in re.finditer(r'<section\b([^>]*)>', text):
+        attrs = m.group(1)
+        cm = re.search(r'\bclass="(slide[^"]*)"', attrs)
+        if not cm:
+            continue
         end = text.find("</section>", m.end())
         slides.append({
-            "cls": m.group(1).split(),
-            "attrs": m.group(2),
+            "cls": cm.group(1).split(),
+            "attrs": attrs,
             "body": text[m.end():end if end != -1 else len(text)],
         })
     return slides
+
+
+def check_slide_parse(text, slides):
+    """Every section carrying a data-slide-id must have parsed as a slide.
+    A mismatch means the checks and the screenshots are indexing different
+    lists, which silently misattributes every downstream finding."""
+    ids_in_doc = re.findall(r'<section\b[^>]*data-slide-id="([^"]*)"', text)
+    parsed = [slide_id(s) for s in slides]
+    missed = [i for i in ids_in_doc if i not in parsed]
+    if missed:
+        report("FAIL", "slide parse",
+               f"{len(missed)} section(s) carry a data-slide-id but did not parse "
+               f"as slides ({', '.join(missed[:6])}) — the static checks and the "
+               f"screenshots would index different lists and misreport every "
+               f"finding after the first one. Check the <section> tag's class.")
+    else:
+        report("PASS", "slide parse",
+               f"{len(parsed)} slide(s), and every data-slide-id in the document "
+               f"is one of them")
 
 
 def slide_id(s):
@@ -534,9 +564,13 @@ def check_motif_ground():
         report("SKIP", "motif ground",
                "no motif hosts probed (no motifs, or the probe did not run)")
         return
-    bad = []
+    bad, empty = [], []
     for r in _MOTIF_RECS:
         name, rgb = r.get("name"), _rgb(r.get("ground"))
+        if not r.get("filled"):
+            empty.append(f"{name} at {r['slide']} {r.get('sel','')}".strip())
+            continue
+
         if rgb is None:
             continue                      # nothing opaque behind it — cannot judge
         dark = _luma(rgb) < 0.35
@@ -550,11 +584,20 @@ def check_motif_ground():
         elif MOTIF_INK.get(name) == "navy" and dark:
             bad.append(f"{name} (navy ink) on a dark ground at {where} — it renders "
                        f"nothing; use the _Orange colourway")
+    if empty:
+        report("FAIL", "motif ground",
+               f"{len(empty)} motif host(s) resolved NO image and rendered empty: "
+               + "; ".join(sorted(set(empty))[:5])
+               + ". The <template data-asset> blocks must be parsed BEFORE the "
+                 "shell's inline script that clones them into the hosts — placing "
+                 "them at </body> puts them after it and every motif comes out "
+                 "blank, which looks like a composition problem and is not.")
     if bad:
         report("FAIL", "motif ground", "; ".join(sorted(set(bad))))
-    else:
+    if not bad and not empty:
         report("PASS", "motif ground",
-               f"{len(_MOTIF_RECS)} motif host(s), every one readable on its ground")
+               f"{len(_MOTIF_RECS)} motif host(s), every one filled and readable "
+               f"on its ground")
 
 
 def check_duplicate_payloads(text):
@@ -1013,7 +1056,15 @@ GEO_PROBE_JS = r"""
             if(b&&b!=='rgba(0, 0, 0, 0)'&&b!=='transparent'&&!/,\s*0\)$/.test(b)){g=b;break;}
             p=p.parentElement;
           }
-          mout.push({slide:id,name:el.getAttribute('data-motif'),ground:g,
+          // Did the host actually RESOLVE an image? The templates are cloned
+          // into these hosts on load; if the <template data-asset> was parsed
+          // after that script, querySelector finds nothing and the host stays
+          // empty — a dead half of a slide with no other symptom.
+          var img=el.querySelector('img'), filled=false;
+          if(img){var ir=img.getBoundingClientRect();
+                  filled=ir.width>1&&ir.height>1&&(img.naturalWidth>0||img.complete);}
+          else {filled=!!(el.querySelector('svg')||(el.textContent||'').trim());}
+          mout.push({slide:id,name:el.getAttribute('data-motif'),ground:g,filled:filled,
                      sel:el.tagName.toLowerCase()+'.'+(el.getAttribute('class')||'').trim().split(/\s+/).join('.')});
         });
       });
@@ -1643,6 +1694,7 @@ def main():
 
     slides = parse_slides(text)
 
+    check_slide_parse(text, slides)
     check_self_contained(text)
     check_banned(text, args.demo)
     check_structure(text, slides)

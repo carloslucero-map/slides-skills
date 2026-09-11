@@ -17,14 +17,6 @@
      .big-statement       14–65   chars  (ideal 32, 150px)
      SLIDE TOTAL      ideal 32 · max 43 chars
      Over max: pick a lower-density variant, do not shrink type (§4.5). -->
-<!-- capacity: statement — V1 · R10 MOTIF-SIDE STATEMENT (accent dot field as the counterweight)
-     .big-statement       14–65   chars  (ideal 32, 150px)
-     SLIDE TOTAL      ideal 32 · max 43 chars
-     Over max: pick a lower-density variant, do not shrink type (§4.5). -->
-<!-- capacity: statement — V1 · R10 MOTIF-SIDE STATEMENT (accent dot field as the counterweight)
-     .big-statement       14–65   chars  (ideal 32, 150px)
-     SLIDE TOTAL      ideal 32 · max 43 chars
-     Over max: pick a lower-density variant, do not shrink type (§4.5). -->
 <section class="slide" data-slide-id="cX-sY" data-archetype="statement">
   <div class="lift" data-dots="field-accent" aria-hidden="true"></div>
   <div class="big-statement" style="font-size:150px;max-width:1500px;">One sentence carries this slide.</div>
@@ -37,14 +29,6 @@
      .big-statement       16–65   chars  (ideal 37, 150px)
      SLIDE TOTAL      ideal 37 · max 49 chars
      Over max: pick a lower-density variant, do not shrink type (§4.5). -->
-<!-- capacity: statement — V1b · R10 with a halftone motif (list the motif in spec.illustrations; text stays left of 
-     .big-statement       16–65   chars  (ideal 37, 150px)
-     SLIDE TOTAL      ideal 37 · max 49 chars
-     Over max: pick a lower-density variant, do not shrink type (§4.5). -->
-<!-- capacity: statement — V1b · R10 with a halftone motif (list the motif in spec.illustrations; text stays left of 
-     .big-statement       16–65   chars  (ideal 37, 150px)
-     SLIDE TOTAL      ideal 37 · max 49 chars
-     Over max: pick a lower-density variant, do not shrink type (§4.5). -->
 <section class="slide" data-slide-id="cX-sY" data-archetype="statement">
   <div class="motif motif--right" data-motif="coral"></div>
   <div class="big-statement" style="font-size:150px;max-width:1100px;">Art on the right, weight on the left.</div>
@@ -53,16 +37,6 @@
 </section>
 
 <!-- V2 · BIG QUOTE -->
-<!-- capacity: quote — V2 · BIG QUOTE
-     .big-quote           27–81   chars  (ideal 61, 120px)
-     .quote-attr           8–352  chars  (ideal 19, 30px)
-     SLIDE TOTAL      ideal 80 · max 108 chars
-     Over max: pick a lower-density variant, do not shrink type (§4.5). -->
-<!-- capacity: quote — V2 · BIG QUOTE
-     .big-quote           27–81   chars  (ideal 61, 120px)
-     .quote-attr           8–352  chars  (ideal 19, 30px)
-     SLIDE TOTAL      ideal 80 · max 108 chars
-     Over max: pick a lower-density variant, do not shrink type (§4.5). -->
 <!-- capacity: quote — V2 · BIG QUOTE
      .big-quote           27–81   chars  (ideal 61, 120px)
      .quote-attr           8–368  chars  (ideal 19, 30px)
@@ -82,23 +56,18 @@
      - Poster statement is ≤3 words / ≤2 lines at 220px. A full sentence at poster scale
        overflows the canvas top (translateY(-50%) centring) — longer copy drops to the
        default 150px .big-statement instead.
+     - THE CHARACTER LIMIT IS NOT THE BINDING CONSTRAINT HERE. capacity.json allows 50
+       chars for this slot and cannot count words, so it green-lights copy this recipe
+       forbids: "Loyalty is an enterprise decision." is 33 chars and passes the capacity
+       gate, but it is 5 words and sets FOUR lines, which grows down into the cream
+       corner dot — white type on a cream fill measures 1.05:1, i.e. invisible, and no
+       gate reports it because .dot is decor-exempt from the overlap laws. Count the
+       WORDS before trusting the char count.
      - The .num-ghost NEVER intersects the statement's text box: keep the ghost's left
        edge right of the statement's max-width, or below its last line. Ghost tones are
        flat sanctioned colours — differentiate from the statement by POSITION, not opacity.
      - The corner dot stays clear of the footer furniture zone: on confidential decks the
        bottom-left line sits at (80,1048) — dots in that corner must end above y≈1000. -->
-<!-- capacity: statement — V3 · POSTER STATEMENT — high-impact direction ONLY (navy moment, ghost numeral low-right,
-     .big-statement        5–65   chars  (ideal 13, 150px)
-     .big-statement--poster       5–48   chars  (ideal 13, 220px)
-     .slide--navy         13–42   chars  (ideal 30, —)
-     SLIDE TOTAL      ideal 56 · max 75 chars
-     Over max: pick a lower-density variant, do not shrink type (§4.5). -->
-<!-- capacity: statement — V3 · POSTER STATEMENT — high-impact direction ONLY (navy moment, ghost numeral low-right,
-     .big-statement        5–65   chars  (ideal 13, 150px)
-     .big-statement--poster       5–48   chars  (ideal 13, 220px)
-     .slide--navy         13–42   chars  (ideal 30, —)
-     SLIDE TOTAL      ideal 56 · max 75 chars
-     Over max: pick a lower-density variant, do not shrink type (§4.5). -->
 <!-- capacity: statement — V3 · POSTER STATEMENT — high-impact direction ONLY (navy moment, ghost numeral low-right,
      .big-statement        5–65   chars  (ideal 13, 150px)
      .big-statement--poster       5–50   chars  (ideal 13, 220px)

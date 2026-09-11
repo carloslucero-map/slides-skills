@@ -243,7 +243,7 @@ def derive(measured, geo, ppt_p90=None):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--skill", required=True)
-    ap.add_argument("--demo", default="/home/claude/demo.html",
+    ap.add_argument("--demo", default="build/demo.html",
                     help="a generated deck, used to read the shell CSS metrics")
     ap.add_argument("--ppt-stats", default=None,
                     help="optional JSON of empirical p90 char counts per slot")
@@ -257,6 +257,19 @@ def main():
                          "Implies --index. Requires --write first.")
     args = ap.parse_args()
 
+    # A missing --demo used to degrade in SILENCE: read_css_metrics returned {}
+    # and read_frame fell back to the 80px literal, so every limit in
+    # capacity.json was derived from constants that had not been true since the
+    # frame moved to 40px. The default even pointed at /home/claude/demo.html, a
+    # path from another machine. Silence is the wrong failure mode for a tool
+    # whose whole job is to be the measurement.
+    if not os.path.exists(args.demo):
+        sys.exit(f"--demo {args.demo!r} does not exist.\n"
+                 f"Without a generated shell this reads NO CSS metrics and falls "
+                 f"back to a stale content edge, and every number it writes is "
+                 f"wrong but plausible. Build one first:\n"
+                 f"  python3 scripts/build_shell.py --out /tmp/demo.html\n"
+                 f"  python3 scripts/derive_capacity.py --skill . --demo /tmp/demo.html --write")
     css = read_css_metrics(args.demo)
     global CONTENT_X0, CONTENT_X1, CONTENT_W
     CONTENT_X0, CONTENT_X1, CONTENT_W = read_frame(args.demo)
@@ -337,6 +350,12 @@ def main():
             out = src
             for off, block in sorted(inserts, reverse=True):
                 out = out[:off] + block + out[off:]
+            # Insertion alone only ever ADDED. Every --write run stacked one more
+            # block on each section and none of the stale ones were removed, so
+            # the snippets carried several contradictory measurements at once and
+            # a reader had no way to tell which was current. Collapse each run to
+            # the block just written — it sits closest to its <section>.
+            out = _collapse_capacity(out)
             open(path, "w", encoding="utf-8").write(out)
 
     refs = os.path.join(args.skill, "references")
@@ -351,6 +370,13 @@ def main():
     if args.index or args.split:
         write_index_and_variants(args.skill, catalogue, do_split=args.split)
     return catalogue
+
+
+def _collapse_capacity(text):
+    """Keep only the LAST capacity block in any run sitting above a <section>."""
+    run = re.compile(r'(?:<!--\s*capacity:.*?-->\n)+(?=<section\b)', re.S)
+    one = re.compile(r'<!--\s*capacity:.*?-->\n', re.S)
+    return run.sub(lambda m: one.findall(m.group(0))[-1], text)
 
 
 def _short(label):
@@ -405,7 +431,7 @@ def write_index_and_variants(skill, catalogue, do_split=False):
         hdr = re.search(r"<!--\s*\n?\s*\S+\s*—\s*(.*?)\n", src)
         fallback = hdr.group(1).strip()[:64] if hdr else ""
         blocks = re.findall(
-            r'(<!-- capacity:.*?-->\n<section class="slide[^"]*".*?</section>)',
+            r'(<!-- capacity:.*?-->\n<section\b[^>]*?class="slide[^"]*".*?</section>)',
             src, re.S)
         for i, e in enumerate(by_file[fn]):
             vtag, desc = _short(e["label"])

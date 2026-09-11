@@ -724,7 +724,7 @@ body.js .slide.is-active{{display:block;}}
 .cols-4 .body{{font-size:22px;}}
 .col-sub{{font-weight:500;font-size:24px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px;}}
 .col-dot{{width:16px;height:16px;border-radius:50%;background:var(--wpp-navy);margin-bottom:22px;}}
-.pill{{display:inline-block;background:var(--wpp-navy);color:var(--wpp-white);border-radius:999px;padding:10px 26px;font-weight:500;font-size:15px;letter-spacing:.08em;text-transform:uppercase;}}
+.pill{{display:inline-block;background:var(--wpp-navy);color:var(--wpp-white);border-radius:999px;padding:10px 26px;font-weight:500;font-size:16px;letter-spacing:.08em;text-transform:uppercase;}}
 .slide--navy .pill{{background:var(--wpp-cream);color:var(--wpp-navy);}}
 .tbx-row{{position:absolute;left:var(--m-edge);right:80px;top:280px;display:flex;align-items:stretch;gap:28px;}}
 .tbx{{background:var(--wpp-white);padding:32px 36px;flex:1;font-weight:400;font-size:22px;line-height:1.3;}}
@@ -751,7 +751,7 @@ body.js .slide.is-active{{display:block;}}
 .orbit{{position:absolute;border-radius:50%;border:1px dotted var(--wpp-navy);}}
 .proc{{position:absolute;left:var(--m-edge);right:80px;top:300px;display:grid;grid-template-columns:repeat(5,1fr);gap:40px;}}
 .proc .n{{font-weight:100;font-size:64px;line-height:1;color:var(--orange-800);}}  /* orange-800: thin numerals need ≥3:1 on white/cream (§15.5) */
-.proc .step-l{{font-weight:500;font-size:15px;letter-spacing:.1em;text-transform:uppercase;margin:16px 0 12px;}}
+.proc .step-l{{font-weight:500;font-size:16px;letter-spacing:.1em;text-transform:uppercase;margin:16px 0 12px;}}
 .proc .body{{font-size:20px;}}
 .timeline{{position:absolute;left:var(--m-edge);right:80px;top:540px;height:1px;background:var(--wpp-navy);}}
 .tl-node{{position:absolute;top:-8px;width:16px;height:16px;border-radius:50%;background:var(--wpp-navy);}}
@@ -882,16 +882,16 @@ body.js .slide.is-active{{display:block;}}
 .ruler-ticks{{position:absolute;left:var(--m-edge);right:80px;display:flex;justify-content:space-between;}}
 .ruler-ticks span{{width:1px;height:17px;background:var(--wpp-navy);}}
 .ruler-ticks span.major{{height:27px;}}
-.ruler-label{{position:absolute;font-weight:500;font-size:15px;letter-spacing:.1em;text-transform:uppercase;}}
+.ruler-label{{position:absolute;font-weight:500;font-size:16px;letter-spacing:.1em;text-transform:uppercase;}}
 .stem{{position:absolute;width:1px;background:var(--orange-700);}}
 .milestone{{position:absolute;width:250px;}}
 .milestone .md{{width:14px;height:14px;border-radius:50%;background:var(--orange-700);}}
-.milestone .ml{{font-weight:500;font-size:15px;letter-spacing:.08em;text-transform:uppercase;margin-top:10px;}}
+.milestone .ml{{font-weight:500;font-size:16px;letter-spacing:.08em;text-transform:uppercase;margin-top:10px;}}
 .milestone .mb{{font-weight:400;font-size:18px;line-height:1.3;margin-top:8px;}}
 .gantt{{position:absolute;left:var(--m-edge);right:80px;top:240px;bottom:200px;}}
 .bar{{position:absolute;height:6px;}}
 .lane-dot{{position:absolute;width:16px;height:16px;border-radius:50%;background:var(--wpp-navy);}}
-.flag{{position:absolute;width:206px;height:46px;background:var(--wpp-navy);color:var(--wpp-white);font-weight:500;font-size:15px;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;}} /* 15px = §4.5 floor */
+.flag{{position:absolute;width:206px;height:46px;background:var(--wpp-navy);color:var(--wpp-white);font-weight:500;font-size:16px;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;}} /* 16px = the §4.5/§15.10 fine-print floor */
 /* High-impact extras */
 .big-statement--poster{{font-size:220px;line-height:.8;}}
 .layer-1{{z-index:1;}}

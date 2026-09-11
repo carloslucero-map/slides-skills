@@ -21,8 +21,8 @@
      "items": 4,
      "min_chars": 4,
      "ideal_chars": 7,
-     "max_chars": 45,
-     "font_px": 15.0,
+     "max_chars": 42,
+     "font_px": 16.0,
      "basis": "measured"
     },
     "takeaway": {
@@ -553,8 +553,8 @@
      "items": 4,
      "min_chars": 4,
      "ideal_chars": 6,
-     "max_chars": 45,
-     "font_px": 15.0,
+     "max_chars": 42,
+     "font_px": 16.0,
      "basis": "measured"
     }
    },
@@ -684,8 +684,8 @@
      "items": 2,
      "min_chars": 4,
      "ideal_chars": 8,
-     "max_chars": 98,
-     "font_px": 15.0,
+     "max_chars": 92,
+     "font_px": 16.0,
      "basis": "measured"
     },
     "takeaway": {
@@ -998,8 +998,8 @@
      "items": 4,
      "min_chars": 4,
      "ideal_chars": 5,
-     "max_chars": 45,
-     "font_px": 15.0,
+     "max_chars": 42,
+     "font_px": 16.0,
      "basis": "measured"
     },
     "subtitle": {
@@ -1055,8 +1055,8 @@
      "items": 6,
      "min_chars": 4,
      "ideal_chars": 6,
-     "max_chars": 28,
-     "font_px": 15.0,
+     "max_chars": 26,
+     "font_px": 16.0,
      "basis": "measured"
     },
     "subtitle": {
@@ -1125,6 +1125,14 @@
      "font_px": 26.0,
      "basis": "geometry"
     },
+    "fine-label": {
+     "items": 5,
+     "min_chars": 4,
+     "ideal_chars": 5,
+     "max_chars": 7,
+     "font_px": null,
+     "basis": "measured"
+    },
     "headline": {
      "items": 1,
      "min_chars": 15,
@@ -1137,8 +1145,8 @@
      "items": 5,
      "min_chars": 4,
      "ideal_chars": 5,
-     "max_chars": 736,
-     "font_px": 15.0,
+     "max_chars": 690,
+     "font_px": 16.0,
      "basis": "measured"
     },
     "takeaway": {
@@ -1150,14 +1158,22 @@
      "basis": "geometry"
     }
    },
-   "slide_ideal_chars": 407,
-   "slide_max_chars": 549
+   "slide_ideal_chars": 432,
+   "slide_max_chars": 583
   },
   {
    "file": "process-timeline.html",
    "archetype": "timeline",
    "label": "V2 \u00b7 R7 MILESTONE RULER (stems above AND below fill the canvas vertically).",
    "slots": {
+    "fine-label": {
+     "items": 9,
+     "min_chars": 4,
+     "ideal_chars": 5,
+     "max_chars": 7,
+     "font_px": null,
+     "basis": "measured"
+    },
     "headline": {
      "items": 1,
      "min_chars": 9,
@@ -1178,13 +1194,13 @@
      "items": 5,
      "min_chars": 4,
      "ideal_chars": 9,
-     "max_chars": 736,
-     "font_px": 15.0,
+     "max_chars": 690,
+     "font_px": 16.0,
      "basis": "measured"
     }
    },
-   "slide_ideal_chars": 181,
-   "slide_max_chars": 244
+   "slide_ideal_chars": 226,
+   "slide_max_chars": 305
   },
   {
    "file": "process-timeline.html",
@@ -1199,12 +1215,20 @@
      "font_px": 24.0,
      "basis": "measured"
     },
+    "fine-label": {
+     "items": 4,
+     "min_chars": 4,
+     "ideal_chars": 9,
+     "max_chars": 12,
+     "font_px": null,
+     "basis": "measured"
+    },
     "flag": {
      "items": 2,
      "min_chars": 5,
      "ideal_chars": 13,
-     "max_chars": 82,
-     "font_px": 15.0,
+     "max_chars": 77,
+     "font_px": 16.0,
      "basis": "measured"
     },
     "headline": {
@@ -1219,13 +1243,13 @@
      "items": 2,
      "min_chars": 4,
      "ideal_chars": 6,
-     "max_chars": 204,
-     "font_px": 15.0,
+     "max_chars": 191,
+     "font_px": 16.0,
      "basis": "measured"
     }
    },
-   "slide_ideal_chars": 89,
-   "slide_max_chars": 120
+   "slide_ideal_chars": 125,
+   "slide_max_chars": 168
   },
   {
    "file": "process-timeline.html",
@@ -1334,8 +1358,8 @@
      "items": 4,
      "min_chars": 4,
      "ideal_chars": 6,
-     "max_chars": 45,
-     "font_px": 15.0,
+     "max_chars": 42,
+     "font_px": 16.0,
      "basis": "measured"
     }
    },
@@ -1643,6 +1667,14 @@
      "font_px": 20.0,
      "basis": "measured"
     },
+    "fine-label": {
+     "items": 5,
+     "min_chars": 4,
+     "ideal_chars": 6,
+     "max_chars": 8,
+     "font_px": null,
+     "basis": "measured"
+    },
     "headline": {
      "items": 1,
      "min_chars": 14,
@@ -1663,8 +1695,8 @@
      "items": 5,
      "min_chars": 4,
      "ideal_chars": 6,
-     "max_chars": 204,
-     "font_px": 15.0,
+     "max_chars": 191,
+     "font_px": 16.0,
      "basis": "measured"
     },
     "stat--pos": {
@@ -1676,8 +1708,8 @@
      "basis": "measured"
     }
    },
-   "slide_ideal_chars": 270,
-   "slide_max_chars": 364
+   "slide_ideal_chars": 300,
+   "slide_max_chars": 405
   },
   {
    "file": "stats.html",
