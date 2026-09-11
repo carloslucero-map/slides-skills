@@ -1,0 +1,53 @@
+{
+  "id": "narrative-tension-spectrum",
+  "name": "Five tensions, each placed on its line",
+  "useWhen": "An argument turns on tensions rather than choices — where something sits between two poles — and the deck has the evidence to say where, not just that the tension exists.",
+  "$useWhenNote": "Written by hand.",
+  "family": "A-narrative",
+  "secondaryFamily": "E-comparison",
+  "form": "index",
+  "arity": "5",
+  "arityRange": [
+    4,
+    5
+  ],
+  "ground": [
+    "cream",
+    "navy"
+  ],
+  "density": "dense",
+  "densityChars": 1180,
+  "mediaRole": "photo",
+  "focal": {
+    "role": "quote",
+    "px": 44,
+    "againstHeadlinePx": 52,
+    "ratio": 0.85,
+    "note": "The quote and the headline are near-peers on purpose: one is the research, the other is what it feels like, and neither outranks the other."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:22",
+  "sourceRender": "ref.png",
+  "replaces": "comparison-v1",
+  "replacesNote": "comparison-v1 offers two boxes, which forces a binary a tension does not have. Nothing in the kit can say 'somewhere along here'.",
+  "deviations": [
+    {
+      "what": "headline printing through its own intro",
+      "source": "present",
+      "here": "fixed",
+      "why": "A defect in the source."
+    },
+    {
+      "what": "skewed pull quote",
+      "source": "set on a rotation",
+      "here": "flat",
+      "why": "Unsanctioned by the type system and it costs legibility for nothing."
+    }
+  ],
+  "contractGapsClosed": [],
+  "createdAt": "2026-09-11",
+  "version": 1
+}

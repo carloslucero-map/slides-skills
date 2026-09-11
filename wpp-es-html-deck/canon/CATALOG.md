@@ -3,7 +3,7 @@
 
 # Canon catalogue
 
-16 templates, each traced from a real slide in the MAP bank and
+18 templates, each traced from a real slide in the MAP bank and
 rendered against its original. **Read the `use when` column** — it says what
 problem the template solves. The rest is filtering.
 
@@ -19,6 +19,8 @@ a human yet. Usable, but not yet authoritative.
 | id | use when | arity | density | media | ok |
 |---|---|---|---|---|---|
 | `narrative-panel-model` | A position needs three or four hundred words to be made honestly — a methodology, a privacy stance, a point of view — and the model it rests on has to be visible while the case is being read. | 6 | dense | motif | ? |
+| `narrative-statement-field` | The deck needs to mark a turn between two arguments and the sentence itself is the whole content — a breath, not a point. | 1 | airy | motif | ? |
+| `narrative-tension-spectrum` | An argument turns on tensions rather than choices — where something sits between two poles — and the deck has the evidence to say where, not just that the tension exists. | 5 | dense | photo | ? |
 
 ## B-enumeration
 

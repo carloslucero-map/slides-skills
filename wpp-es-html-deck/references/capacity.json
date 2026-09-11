@@ -2908,6 +2908,138 @@
    "_source": "canon"
   },
   {
+   "file": "canon/narrative-statement-field/template.html",
+   "archetype": "narrative-statement-field",
+   "label": "CANON \u00b7 narrative-statement-field",
+   "slots": {
+    "hl": {
+     "items": 1,
+     "min_chars": 19,
+     "ideal_chars": 19,
+     "max_chars": 34,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "nsf-line": {
+     "items": 1,
+     "min_chars": 36,
+     "ideal_chars": 36,
+     "max_chars": 65,
+     "font_px": 104.0,
+     "basis": "placeholder"
+    }
+   },
+   "slide_ideal_chars": 55,
+   "slide_max_chars": 74,
+   "_source": "canon"
+  },
+  {
+   "file": "canon/narrative-tension-spectrum/template.html",
+   "archetype": "narrative-tension-spectrum",
+   "label": "CANON \u00b7 narrative-tension-spectrum",
+   "slots": {
+    "nts-eyebrow": {
+     "items": 1,
+     "min_chars": 21,
+     "ideal_chars": 21,
+     "max_chars": 38,
+     "font_px": 32.0,
+     "basis": "placeholder"
+    },
+    "hl": {
+     "items": 1,
+     "min_chars": 21,
+     "ideal_chars": 21,
+     "max_chars": 38,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "nts-head": {
+     "items": 1,
+     "min_chars": 35,
+     "ideal_chars": 35,
+     "max_chars": 63,
+     "font_px": 52.0,
+     "basis": "placeholder"
+    },
+    "body": {
+     "items": 1,
+     "min_chars": 138,
+     "ideal_chars": 138,
+     "max_chars": 248,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    },
+    "nts-intro": {
+     "items": 1,
+     "min_chars": 138,
+     "ideal_chars": 138,
+     "max_chars": 248,
+     "font_px": 21.0,
+     "basis": "placeholder"
+    },
+    "nts-t": {
+     "items": 5,
+     "min_chars": 31,
+     "ideal_chars": 50,
+     "max_chars": 90,
+     "font_px": 21.0,
+     "basis": "placeholder"
+    },
+    "sub-item": {
+     "items": 6,
+     "min_chars": 68,
+     "ideal_chars": 109,
+     "max_chars": 196,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "nts-d": {
+     "items": 5,
+     "min_chars": 68,
+     "ideal_chars": 109,
+     "max_chars": 196,
+     "font_px": 18.0,
+     "basis": "placeholder"
+    },
+    "nts-src": {
+     "items": 1,
+     "min_chars": 93,
+     "ideal_chars": 93,
+     "max_chars": 167,
+     "font_px": 16.0,
+     "basis": "placeholder"
+    },
+    "nts-quote": {
+     "items": 1,
+     "min_chars": 59,
+     "ideal_chars": 59,
+     "max_chars": 106,
+     "font_px": 44.0,
+     "basis": "placeholder"
+    },
+    "nts-pole": {
+     "items": 10,
+     "min_chars": 12,
+     "ideal_chars": 23,
+     "max_chars": 41,
+     "font_px": 21.0,
+     "basis": "placeholder"
+    },
+    "nts-pole--r": {
+     "items": 5,
+     "min_chars": 12,
+     "ideal_chars": 23,
+     "max_chars": 41,
+     "font_px": null,
+     "basis": "placeholder"
+    }
+   },
+   "slide_ideal_chars": 1927,
+   "slide_max_chars": 2601,
+   "_source": "canon"
+  },
+  {
    "file": "canon/quant-stat-grid-5/template.html",
    "archetype": "quant-stat-grid",
    "label": "CANON \u00b7 quant-stat-grid-5",

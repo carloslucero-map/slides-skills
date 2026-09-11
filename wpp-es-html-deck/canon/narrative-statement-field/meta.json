@@ -1,0 +1,39 @@
+{
+  "id": "narrative-statement-field",
+  "name": "One sentence, centred, over a dot field",
+  "useWhen": "The deck needs to mark a turn between two arguments and the sentence itself is the whole content — a breath, not a point.",
+  "$useWhenNote": "Written by hand.",
+  "family": "A-narrative",
+  "secondaryFamily": null,
+  "form": "statement",
+  "arity": "1",
+  "arityRange": [
+    1,
+    1
+  ],
+  "ground": [
+    "cream"
+  ],
+  "density": "airy",
+  "densityChars": 60,
+  "mediaRole": "motif",
+  "focal": {
+    "role": "statement",
+    "px": 104,
+    "againstHeadlinePx": 64,
+    "ratio": 1.63,
+    "note": "Against the deck's normal headline, since this slide has none of its own. The statement IS the headline, at poster scale."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:14",
+  "sourceRender": "ref.png",
+  "replaces": null,
+  "replacesNote": "statement-quote-v3 is the navy poster for a hard full stop; this is the cream one for a breath. Keep both.",
+  "deviations": [],
+  "contractGapsClosed": [],
+  "createdAt": "2026-09-11",
+  "version": 1
+}

@@ -1,0 +1,34 @@
+{
+  "id": "narrative-statement-field",
+  "$comment": "Hand-written. Structure only.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "statement",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "display"
+    },
+    {
+      "role": "field",
+      "arity": 1,
+      "required": true,
+      "note": "A §5 dot motif, full bleed, low opacity."
+    }
+  ],
+  "invariants": [
+    "The statement is the ONLY element. Adding a subtitle is the commonest way to ruin this slide: two things to read stops it being a pause.",
+    "Central axis. The kit's statement slides are all left-aligned with art beside them; here the type sits IN the field.",
+    "The field never narrows the contrast. Navy on cream with a texture between is a §3.5 question, not a taste one.",
+    "One or two lines. At three it stops reading as a breath and starts being a paragraph set large."
+  ],
+  "grounds": {
+    "upper": "cream",
+    "lower": "cream"
+  },
+  "source": "bank:14",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

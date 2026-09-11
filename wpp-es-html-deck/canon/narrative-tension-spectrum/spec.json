@@ -1,0 +1,104 @@
+{
+  "id": "narrative-tension-spectrum",
+  "$comment": "Hand-written. Structure only.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "eyebrow",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "label"
+    },
+    {
+      "role": "headline",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "headline"
+    },
+    {
+      "role": "intro",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "body"
+    },
+    {
+      "role": "finding",
+      "repeat": true,
+      "arity": [
+        3,
+        5
+      ],
+      "required": true,
+      "children": [
+        {
+          "role": "findingTitle",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "cardTitle"
+        },
+        {
+          "role": "findingDetail",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "fineItem"
+        }
+      ]
+    },
+    {
+      "role": "sources",
+      "arity": 1,
+      "required": false,
+      "capacityRole": "fineItem"
+    },
+    {
+      "role": "quote",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "display"
+    },
+    {
+      "role": "spectrum",
+      "repeat": true,
+      "arity": [
+        4,
+        5
+      ],
+      "required": true,
+      "children": [
+        {
+          "role": "poleLeft",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "fineLabel"
+        },
+        {
+          "role": "poleRight",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "fineLabel"
+        },
+        {
+          "role": "position",
+          "arity": 1,
+          "required": true,
+          "note": "--at, a percentage. An editorial claim, not a layout value."
+        }
+      ]
+    }
+  ],
+  "invariants": [
+    "The dot position IS content. 45% and 70% on the same pair say different things, and the number should be argued about like any other claim.",
+    "The media half carries a scrim. White type over a photograph whose brightness the deck cannot predict is a §3.5 failure waiting to happen.",
+    "The quote is set flat. The source skews it, which the type system does not sanction and which costs legibility for nothing.",
+    "Furniture over the dark half inverts. It is a sibling of the right column, not a child — a descendant selector silently matches nothing."
+  ],
+  "grounds": {
+    "left": "cream",
+    "right": "navy over photo"
+  },
+  "source": "bank:22",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

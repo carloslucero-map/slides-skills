@@ -12,7 +12,7 @@
    "family": "A-narrative",
    "targetId": "narrative-statement-motif",
    "rag": "amber",
-   "canonId": null
+   "canonId": "narrative-statement-field"
   },
   {
    "page": 2,
@@ -21,7 +21,7 @@
    "family": "A-narrative",
    "targetId": "narrative-quote-attributed (panel oscuro)",
    "rag": "amber",
-   "canonId": null
+   "canonId": "narrative-tension-spectrum"
   },
   {
    "page": 3,
