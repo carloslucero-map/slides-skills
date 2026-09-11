@@ -1,0 +1,663 @@
+{
+ "source": "bank:149",
+ "inventory": "inventory2.json",
+ "canvas": [
+  1920,
+  1080
+ ],
+ "ptToPx": 2.0,
+ "shapeCount": 29,
+ "offstageDropped": 0,
+ "boxlessDropped": 0,
+ "leftEdges": [
+  57,
+  63,
+  72,
+  74,
+  85,
+  97,
+  121,
+  635,
+  658,
+  670,
+  678,
+  682,
+  683,
+  708,
+  1109,
+  1216,
+  1240,
+  1264,
+  1274,
+  1283,
+  1298,
+  1304
+ ],
+ "topEdges": [
+  57,
+  125,
+  128,
+  253,
+  256,
+  258,
+  270,
+  274,
+  332,
+  392,
+  467,
+  494,
+  503,
+  508,
+  580,
+  1007
+ ],
+ "typePx": [
+  18,
+  22,
+  24,
+  40,
+  64
+ ],
+ "shapes": [
+  {
+   "kind": "sp",
+   "name": "Rectangle 7",
+   "box": [
+    57,
+    467,
+    499,
+    443
+   ],
+   "right": 556,
+   "bottom": 910,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 8",
+   "box": [
+    670,
+    467,
+    499,
+    443
+   ],
+   "right": 1169,
+   "bottom": 910,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 9",
+   "box": [
+    1274,
+    467,
+    499,
+    443
+   ],
+   "right": 1773,
+   "bottom": 910,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 19",
+   "box": [
+    1298,
+    1007,
+    501,
+    31
+   ],
+   "right": 1799,
+   "bottom": 1038,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    11
+   ],
+   "px": [
+    22
+   ],
+   "chars": 30,
+   "text": "WPP Enterprise Solutions | MAP"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 23",
+   "box": [
+    72,
+    332,
+    559,
+    58
+   ],
+   "right": 631,
+   "bottom": 390,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 17,
+   "text": "LOW DATA MATURITY"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 25",
+   "box": [
+    678,
+    332,
+    605,
+    58
+   ],
+   "right": 1283,
+   "bottom": 390,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 20,
+   "text": "MEDIUM DATA MATURITY"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 26",
+   "box": [
+    1283,
+    332,
+    559,
+    58
+   ],
+   "right": 1842,
+   "bottom": 390,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 18,
+   "text": "HIGH DATA MATURITY"
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 27",
+   "box": [
+    74,
+    256,
+    21,
+    33
+   ],
+   "right": 95,
+   "bottom": 289,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 28",
+   "box": [
+    97,
+    274,
+    21,
+    15
+   ],
+   "right": 118,
+   "bottom": 289,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 29",
+   "box": [
+    121,
+    274,
+    21,
+    15
+   ],
+   "right": 142,
+   "bottom": 289,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 30",
+   "box": [
+    635,
+    253,
+    21,
+    33
+   ],
+   "right": 656,
+   "bottom": 286,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 31",
+   "box": [
+    658,
+    253,
+    21,
+    33
+   ],
+   "right": 679,
+   "bottom": 286,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 32",
+   "box": [
+    682,
+    270,
+    21,
+    15
+   ],
+   "right": 703,
+   "bottom": 285,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 33",
+   "box": [
+    1216,
+    258,
+    21,
+    33
+   ],
+   "right": 1237,
+   "bottom": 291,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 34",
+   "box": [
+    1240,
+    258,
+    21,
+    33
+   ],
+   "right": 1261,
+   "bottom": 291,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Rectangle 35",
+   "box": [
+    1264,
+    258,
+    21,
+    33
+   ],
+   "right": 1285,
+   "bottom": 291,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 36",
+   "box": [
+    63,
+    392,
+    499,
+    24
+   ],
+   "right": 562,
+   "bottom": 416,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    9
+   ],
+   "px": [
+    18
+   ],
+   "chars": 23,
+   "text": "(FMCG, OTC Pharma etc.)"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 38",
+   "box": [
+    683,
+    392,
+    499,
+    24
+   ],
+   "right": 1182,
+   "bottom": 416,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    9
+   ],
+   "px": [
+    18
+   ],
+   "chars": 38,
+   "text": "(Automotive, QSR, Retail, Travel etc.)"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 43",
+   "box": [
+    1274,
+    392,
+    535,
+    24
+   ],
+   "right": 1809,
+   "bottom": 416,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    9
+   ],
+   "px": [
+    18
+   ],
+   "chars": 44,
+   "text": "(Telecom, Banking Services, E-commerce etc.)"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 44",
+   "box": [
+    85,
+    580,
+    451,
+    190
+   ],
+   "right": 536,
+   "bottom": 770,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 160,
+   "text": "\"We want to start experimenting with generative AI for marketing, but our customer data is so messy and scattered across different legacy systems that the AI to"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 45",
+   "box": [
+    708,
+    580,
+    467,
+    257
+   ],
+   "right": 1175,
+   "bottom": 837,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 160,
+   "text": "“Our performance marketing team keeps targeting the same core demographic over and over on social media because it’s safe, but we know our next wave of growth i"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 46",
+   "box": [
+    1304,
+    580,
+    454,
+    224
+   ],
+   "right": 1758,
+   "bottom": 804,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 160,
+   "text": "“We have incredibly rich CRM profiles of our active subscribers, yet we are still wasting ad spend serving them acquisition ads on social media because our inte"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 59",
+   "box": [
+    85,
+    508,
+    462,
+    45
+   ],
+   "right": 547,
+   "bottom": 553,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 26,
+   "text": "NEED FOR AI DATA READINESS"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 60",
+   "box": [
+    708,
+    503,
+    462,
+    45
+   ],
+   "right": 1170,
+   "bottom": 548,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 31,
+   "text": "SAFE TARGETING = UNTAPPED GROWH"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 61",
+   "box": [
+    1304,
+    494,
+    462,
+    75
+   ],
+   "right": 1766,
+   "bottom": 569,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 38,
+   "text": "RICH DATA, BUT DISCONNECTED ACTIVATION"
+  },
+  {
+   "kind": "sp",
+   "name": "Title 20",
+   "box": [
+    57,
+    57,
+    1684,
+    62
+   ],
+   "right": 1741,
+   "bottom": 119,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    20
+   ],
+   "px": [
+    40
+   ],
+   "chars": 22,
+   "text": "DATA SOURCE EVALUATION"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 21",
+   "box": [
+    57,
+    125,
+    1863,
+    112
+   ],
+   "right": 1920,
+   "bottom": 237,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    32
+   ],
+   "px": [
+    64
+   ],
+   "chars": 43,
+   "text": "We see common issues across our client base"
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 4",
+   "box": [
+    1264,
+    128,
+    135,
+    34
+   ],
+   "right": 1399,
+   "bottom": 162,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 6",
+   "box": [
+    1109,
+    125,
+    129,
+    35
+   ],
+   "right": 1238,
+   "bottom": 160,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  }
+ ],
+ "_note": "Evidence about the source slide. Not CSS, not a spec, never averaged with another slide."
+}

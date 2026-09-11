@@ -3,7 +3,7 @@
 
 # Canon catalogue
 
-20 templates, each traced from a real slide in the MAP bank and
+25 templates, each traced from a real slide in the MAP bank and
 rendered against its original. **Read the `use when` column** — it says what
 problem the template solves. The rest is filtering.
 
@@ -26,15 +26,18 @@ a human yet. Usable, but not yet authoritative.
 
 | id | use when | arity | density | media | ok |
 |---|---|---|---|---|---|
+| `enum-index-2col` | Ten to sixteen offerings have to be seen as a whole, where the breadth is the point rather than any one item. | 16 | standard | none | ? |
 | `enum-intro-grid-5` | One principle, then four to six named instances of it — and the principle needs more room than any instance. | 5 | dense | none | ? |
 | `enum-numbered-4` | Three or four named stages, each needing a sentence of substance rather than a label. | 3 | standard | none | ? |
 | `enum-stage-bento-4` | Four stages of a transformation, each with a screenshot of what was built and what changed. | 4 | standard | screenshot | ? |
+| `enum-tier-columns-3` | The same problem appears at three levels of maturity, and each level has a client quote that proves it. | 3 | dense | none | ? |
 
 ## C-sequence
 
 | id | use when | arity | density | media | ok |
 |---|---|---|---|---|---|
 | `seq-phase-columns-4` | Three or four phases with long activity lists, and it matters which phase the client is in now. | 4 | dense | none | ? |
+| `seq-phase-panels-3` | Work runs in three named phases with different characters, and each deserves the weight of a full-height panel. | 3 | dense | motif | ? |
 | `seq-steps-panels-5` | A method of four or five stages where each stage has real activities and deliverables to name. | 5 | dense | none | ? |
 
 ## D-quantitative
@@ -64,7 +67,9 @@ a human yet. Usable, but not yet authoritative.
 
 | id | use when | arity | density | media | ok |
 |---|---|---|---|---|---|
+| `media-annotated-callouts-4` | A screenshot, diagram or dashboard has to be EXPLAINED — the audience needs telling what to look at and in what order. | 4 | standard | screenshot | ? |
 | `media-bleed-steps-4` | Three to five named moves in order, where the subject deserves a full-height image. | 4 | airy | photo | ? |
+| `media-rail-cases-3` | A repeatable process produced three concrete examples with a measurable outcome, and the point is that the cases came from the process. | 3 | dense | screenshot | ? |
 
 ## H-entities
 

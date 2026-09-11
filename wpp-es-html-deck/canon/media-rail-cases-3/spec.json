@@ -1,0 +1,97 @@
+{
+  "id": "media-rail-cases-3",
+  "$comment": "Hand-written. Structure only.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "eyebrow",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "label"
+    },
+    {
+      "role": "headline",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "headline"
+    },
+    {
+      "role": "subtitle",
+      "arity": 1,
+      "required": false,
+      "capacityRole": "body"
+    },
+    {
+      "role": "railStep",
+      "repeat": true,
+      "arity": [
+        4,
+        5
+      ],
+      "required": true,
+      "capacityRole": "fineLabel"
+    },
+    {
+      "role": "case",
+      "repeat": true,
+      "arity": [
+        3,
+        3
+      ],
+      "required": true,
+      "children": [
+        {
+          "role": "shot",
+          "arity": 1,
+          "required": true
+        },
+        {
+          "role": "caseName",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "cardTitle"
+        },
+        {
+          "role": "caseCopy",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "fineItem"
+        }
+      ]
+    },
+    {
+      "role": "outcome",
+      "arity": 1,
+      "required": true,
+      "children": [
+        {
+          "role": "outcomeHead",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "cardTitle"
+        },
+        {
+          "role": "outcomeCopy",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "fineItem"
+        }
+      ]
+    }
+  ],
+  "invariants": [
+    "Three claims in reading order: method (rail), evidence (cases), result (band). Dropping any one leaves the other two unsupported.",
+    "The rail is VERTICAL and dotted. Horizontal would compete with the cases for the same left-to-right axis.",
+    "The outcome band spans the full width. It is true of all three cases, not of any one.",
+    "Exactly three cases. Two is thin evidence; four starves the images."
+  ],
+  "grounds": {
+    "upper": "cream",
+    "band": "alt"
+  },
+  "source": "bank:143",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

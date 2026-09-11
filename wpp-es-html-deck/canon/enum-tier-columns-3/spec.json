@@ -1,0 +1,76 @@
+{
+  "id": "enum-tier-columns-3",
+  "$comment": "Hand-written. Structure only.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "eyebrow",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "label"
+    },
+    {
+      "role": "headline",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "headline"
+    },
+    {
+      "role": "tier",
+      "repeat": true,
+      "arity": [
+        3,
+        3
+      ],
+      "required": true,
+      "children": [
+        {
+          "role": "indicator",
+          "arity": 1,
+          "required": true,
+          "note": "n of 3 squares filled."
+        },
+        {
+          "role": "levelName",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "cardTitle"
+        },
+        {
+          "role": "sector",
+          "arity": 1,
+          "required": false,
+          "capacityRole": "fineItem"
+        },
+        {
+          "role": "problemTitle",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "cardTitle"
+        },
+        {
+          "role": "verbatim",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "cardBody"
+        }
+      ]
+    }
+  ],
+  "invariants": [
+    "The indicator squares are what make these rungs rather than alternatives. columns-v1 gives three equal columns and says the opposite.",
+    "Exactly three tiers, with 1, 2 and 3 squares filled. Four needs a different indicator and a different template.",
+    "Each tier pairs a named level with a VERBATIM. The tier is the diagnosis, the quote is the evidence, and splitting them across slides loses both.",
+    "Italic quotes with the operative clause in Medium — the one sanctioned bend in the weight rules, and only inside a quotation."
+  ],
+  "grounds": {
+    "upper": "cream",
+    "lower": "cream",
+    "cards": "white"
+  },
+  "source": "bank:149",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

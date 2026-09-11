@@ -57,7 +57,7 @@
    "family": "B-enumeration",
    "targetId": "enum-columns-3 (con tiers)",
    "rag": "amber",
-   "canonId": null
+   "canonId": "enum-tier-columns-3"
   },
   {
    "page": 7,
@@ -66,7 +66,7 @@
    "family": "B-enumeration",
    "targetId": "enum-index-2col",
    "rag": "amber",
-   "canonId": null
+   "canonId": "enum-index-2col"
   },
   {
    "page": 8,
@@ -84,7 +84,7 @@
    "family": "C-sequence",
    "targetId": "seq-process-3-phases",
    "rag": "amber",
-   "canonId": null
+   "canonId": "seq-phase-panels-3"
   },
   {
    "page": 10,
@@ -201,7 +201,7 @@
    "family": "G-media",
    "targetId": "media-screenshot-annotated",
    "rag": "green",
-   "canonId": null
+   "canonId": "media-annotated-callouts-4"
   },
   {
    "page": 23,
@@ -210,7 +210,7 @@
    "family": "G-media",
    "targetId": "enum-cards (imagen arriba)",
    "rag": "amber",
-   "canonId": null
+   "canonId": "media-rail-cases-3"
   },
   {
    "page": 24,

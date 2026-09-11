@@ -1,0 +1,46 @@
+{
+  "id": "media-annotated-callouts-4",
+  "name": "A visual, and what to notice in it",
+  "useWhen": "A screenshot, diagram or dashboard has to be EXPLAINED — the audience needs telling what to look at and in what order.",
+  "$useWhenNote": "Written by hand.",
+  "family": "G-media",
+  "secondaryFamily": null,
+  "form": "annotated",
+  "arity": "4",
+  "arityRange": [
+    3,
+    5
+  ],
+  "ground": [
+    "cream"
+  ],
+  "density": "standard",
+  "densityChars": 460,
+  "mediaRole": "screenshot",
+  "focal": {
+    "role": "media",
+    "px": 520,
+    "againstHeadlinePx": 64,
+    "ratio": 8.1,
+    "note": "The visual dominates by area because the callouts exist to serve it. Shrink it and the annotations become the subject, which inverts the slide."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:148",
+  "sourceRender": "ref.png",
+  "replaces": "image-content-v3",
+  "replacesNote": "image-content-v3 frames a screenshot; this explains one. The distinct job among the media templates: bleed-steps puts an image beside a list, rel-hub-rings argues FOR a diagram, this one explains a visual the audience is looking at.",
+  "deviations": [
+    {
+      "what": "the source's central infographic",
+      "source": "a Venn inside a radial dial inside an activation loop",
+      "here": "a media slot",
+      "why": "Bespoke artwork drawn once for one argument. Only the annotation pattern generalises, and that is what this template is."
+    }
+  ],
+  "contractGapsClosed": [],
+  "createdAt": "2026-09-11",
+  "version": 1
+}

@@ -1,0 +1,82 @@
+<!-- canon/media-annotated-callouts-4 — traced from bank slide 148 (measure.json, ref.png).
+
+     THE SOURCE IS MOSTLY ARTWORK. Slide 148 is a bespoke infographic — a Venn
+     inside a radial dial inside an activation loop — with four numbered orange
+     callouts placed around it. The infographic does not generalise and this
+     template does not pretend to carry it.
+
+     WHAT DOES GENERALISE IS THE ANNOTATION. Four numbered callouts pointing at
+     a central visual is a distinct job from every other media template here:
+
+       media-bleed-steps-4    image beside an ordered list
+       rel-hub-rings-4        diagram the slide is arguing FOR
+       narrative-panel-model  model supporting a written argument
+       this                   a visual the slide is EXPLAINING
+
+     That last one is the common case nothing covered — a product screenshot, an
+     architecture drawing, a dashboard — where the audience needs to be told what
+     to notice and in what order.
+
+     CALLOUTS ARE PLACED, NOT LISTED. Each carries --x and --y as percentages of
+     the stage, because a callout that does not sit near the thing it describes
+     is a caption, and a caption is what this template exists to avoid. The
+     numbers give the reading order the positions cannot.
+
+     The media slot takes a screenshot, a diagram or a motif. Whatever it holds
+     is inlined at fill time (§2a) — never linked.
+-->
+<section class="slide" data-slide-id="cX-sY" data-archetype="media-annotated-callouts" data-template="media-annotated-callouts-4">
+
+  <div class="mac-eyebrow">Customer data processing and management</div>
+  <h2 class="headline headline--lg" style="left:var(--m-text);top:110px;max-width:1200px;">Owned <span class="hl">intelligence</span>, and where it comes from</h2>
+
+  <div class="mac-stage">
+    <div class="mac-media" data-motif="crystal-orange" aria-hidden="true"></div>
+
+    <div class="mac-note" style="--x:2;--y:6">
+      <span class="mac-n">1</span>
+      <p class="mac-txt">Owned intelligence and AI readiness both need a data foundation before anything else.</p>
+    </div>
+    <div class="mac-note" style="--x:2;--y:52">
+      <span class="mac-n">2</span>
+      <p class="mac-txt">Intelligence travels and is shared. Raw data does not.</p>
+    </div>
+    <div class="mac-note" style="--x:66;--y:6">
+      <span class="mac-n">3</span>
+      <p class="mac-txt">Owned data is ingested with as much intent as second and third-party partner data.</p>
+    </div>
+    <div class="mac-note" style="--x:66;--y:52">
+      <span class="mac-n">4</span>
+      <p class="mac-txt">Every impression compounds the intelligence, so the system improves by being used.</p>
+    </div>
+  </div>
+
+  <div class="footer-brand">WPP Enterprise Solutions | MAP</div>
+  <div class="pageno"></div>
+
+  <style>
+  /* Measured off slide 148. */
+
+  .mac-eyebrow{position:absolute;left:var(--m-text);top:52px;font-weight:400;font-size:40px;
+               line-height:1.05;letter-spacing:.01em;text-transform:uppercase;
+               color:var(--orange-700);}
+
+  .mac-stage{position:absolute;left:var(--m-edge);right:var(--m-edge);top:270px;bottom:80px;}
+  .mac-media{position:absolute;left:26%;right:26%;top:0;bottom:0;
+             display:flex;align-items:center;justify-content:center;overflow:hidden;}
+  .mac-media img{max-width:100%;max-height:100%;object-fit:contain;display:block;}
+
+  /* PLACED, not listed. A callout that does not sit near what it describes is a
+     caption, and a caption is the thing this template exists to avoid. The
+     numbers carry the reading order the positions cannot. */
+  .mac-note{position:absolute;left:calc(var(--x) * 1%);top:calc(var(--y) * 1%);
+            width:32%;display:flex;gap:16px;align-items:flex-start;}
+  .mac-n{flex:none;width:46px;height:46px;border-radius:50%;
+         background:var(--orange-700);color:var(--text-inv);
+         display:flex;align-items:center;justify-content:center;
+         font-weight:500;font-size:24px;line-height:1;
+         font-variant-numeric:tabular-nums lining-nums;}
+  .mac-txt{margin:0;font-size:21px;line-height:1.32;
+           border-left:2px solid rgba(0,0,80,.2);padding-left:16px;}
+  </style>
+</section>

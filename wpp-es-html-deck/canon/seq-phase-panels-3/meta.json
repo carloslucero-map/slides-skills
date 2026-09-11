@@ -1,0 +1,47 @@
+{
+  "id": "seq-phase-panels-3",
+  "name": "Three eras of work, each owning a panel",
+  "useWhen": "Work runs in three named phases with different characters, and each deserves the weight of a full-height panel.",
+  "$useWhenNote": "Written by hand.",
+  "family": "C-sequence",
+  "secondaryFamily": null,
+  "form": "phases",
+  "arity": "3",
+  "arityRange": [
+    3,
+    3
+  ],
+  "ground": [
+    "cream",
+    "navy"
+  ],
+  "density": "dense",
+  "densityChars": 1280,
+  "mediaRole": "motif",
+  "focal": {
+    "role": "phaseName",
+    "px": 72,
+    "againstHeadlinePx": 40,
+    "ratio": 1.8,
+    "note": "Measured against the eyebrow, since this template has no headline of its own — the three phase names ARE the top level."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:101",
+  "sourceRender": "ref.png",
+  "replaces": null,
+  "replacesNote": "Third of three sequence shapes and none substitutes for the others: seq-steps-panels-5 for stages with substance, seq-phase-columns-4 for long lists with one marked NOW, this for eras that need weight.",
+  "deviations": [
+    {
+      "what": "first list item printing through the description",
+      "source": "present in the Create panel",
+      "here": "fixed",
+      "why": "A defect in the source."
+    }
+  ],
+  "contractGapsClosed": [],
+  "createdAt": "2026-09-11",
+  "version": 1
+}

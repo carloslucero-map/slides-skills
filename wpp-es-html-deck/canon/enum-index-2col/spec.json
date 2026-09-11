@@ -1,0 +1,62 @@
+{
+  "id": "enum-index-2col",
+  "$comment": "Hand-written. Structure only.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "partLabel",
+      "arity": 1,
+      "required": false,
+      "capacityRole": "label"
+    },
+    {
+      "role": "title",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "headline"
+    },
+    {
+      "role": "note",
+      "arity": 1,
+      "required": false,
+      "capacityRole": "fineItem"
+    },
+    {
+      "role": "entry",
+      "repeat": true,
+      "arity": [
+        10,
+        16
+      ],
+      "required": true,
+      "children": [
+        {
+          "role": "ordinal",
+          "arity": 1,
+          "required": true
+        },
+        {
+          "role": "entryName",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "fineLabel"
+        }
+      ]
+    }
+  ],
+  "invariants": [
+    "Numbers run DOWN the first column then down the second, never across. That is how a contents page reads and how anyone hunting for item 11 will look for it.",
+    "Dotted rules, not table borders. Sixteen rows with hard rules read as a spreadsheet; the dot system's soft break gives the eye a baseline to jump along.",
+    "Part label, title and note sit on three separate baselines. The source sets the last two on one and they print through each other.",
+    "Ten to sixteen entries. Below ten a plain column set is better; above sixteen the rows fall under the type floor."
+  ],
+  "grounds": {
+    "upper": "cream",
+    "lower": "cream"
+  },
+  "source": "bank:58",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

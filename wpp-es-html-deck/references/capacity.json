@@ -2522,6 +2522,64 @@
    "_source": "canon"
   },
   {
+   "file": "canon/enum-index-2col/template.html",
+   "archetype": "enum-index-2col",
+   "label": "CANON \u00b7 enum-index-2col",
+   "slots": {
+    "eix-part": {
+     "items": 1,
+     "min_chars": 7,
+     "ideal_chars": 7,
+     "max_chars": 13,
+     "font_px": 56.0,
+     "basis": "placeholder"
+    },
+    "eix-title": {
+     "items": 1,
+     "min_chars": 17,
+     "ideal_chars": 17,
+     "max_chars": 31,
+     "font_px": 64.0,
+     "basis": "placeholder"
+    },
+    "sub-item": {
+     "items": 1,
+     "min_chars": 40,
+     "ideal_chars": 40,
+     "max_chars": 72,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "eix-note": {
+     "items": 1,
+     "min_chars": 40,
+     "ideal_chars": 40,
+     "max_chars": 72,
+     "font_px": 20.0,
+     "basis": "placeholder"
+    },
+    "eix-n": {
+     "items": 16,
+     "min_chars": 2,
+     "ideal_chars": 2,
+     "max_chars": 4,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    },
+    "eix-t": {
+     "items": 16,
+     "min_chars": 18,
+     "ideal_chars": 39,
+     "max_chars": 70,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    }
+   },
+   "slide_ideal_chars": 589,
+   "slide_max_chars": 795,
+   "_source": "canon"
+  },
+  {
    "file": "canon/enum-intro-grid-5/template.html",
    "archetype": "enum-intro-grid",
    "label": "CANON \u00b7 enum-intro-grid-5",
@@ -2720,6 +2778,146 @@
    "_source": "canon"
   },
   {
+   "file": "canon/enum-tier-columns-3/template.html",
+   "archetype": "enum-tier-columns",
+   "label": "CANON \u00b7 enum-tier-columns-3",
+   "slots": {
+    "etc-eyebrow": {
+     "items": 1,
+     "min_chars": 22,
+     "ideal_chars": 22,
+     "max_chars": 40,
+     "font_px": 40.0,
+     "basis": "placeholder"
+    },
+    "hl": {
+     "items": 1,
+     "min_chars": 19,
+     "ideal_chars": 19,
+     "max_chars": 34,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 33,
+     "ideal_chars": 33,
+     "max_chars": 59,
+     "font_px": 54.0,
+     "basis": "placeholder"
+    },
+    "headline--lg": {
+     "items": 1,
+     "min_chars": 33,
+     "ideal_chars": 33,
+     "max_chars": 59,
+     "font_px": 64.0,
+     "basis": "placeholder"
+    },
+    "etc-level": {
+     "items": 3,
+     "min_chars": 17,
+     "ideal_chars": 20,
+     "max_chars": 36,
+     "font_px": 34.0,
+     "basis": "placeholder"
+    },
+    "fine-label": {
+     "items": 3,
+     "min_chars": 16,
+     "ideal_chars": 31,
+     "max_chars": 56,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "etc-sector": {
+     "items": 3,
+     "min_chars": 16,
+     "ideal_chars": 31,
+     "max_chars": 56,
+     "font_px": 18.0,
+     "basis": "placeholder"
+    },
+    "etc-title": {
+     "items": 3,
+     "min_chars": 26,
+     "ideal_chars": 34,
+     "max_chars": 61,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    },
+    "etc-quote": {
+     "items": 3,
+     "min_chars": 169,
+     "ideal_chars": 182,
+     "max_chars": 328,
+     "font_px": 22.0,
+     "basis": "placeholder"
+    }
+   },
+   "slide_ideal_chars": 925,
+   "slide_max_chars": 1248,
+   "_source": "canon"
+  },
+  {
+   "file": "canon/media-annotated-callouts-4/template.html",
+   "archetype": "media-annotated-callouts",
+   "label": "CANON \u00b7 media-annotated-callouts-4",
+   "slots": {
+    "mac-eyebrow": {
+     "items": 1,
+     "min_chars": 39,
+     "ideal_chars": 39,
+     "max_chars": 70,
+     "font_px": 40.0,
+     "basis": "placeholder"
+    },
+    "hl": {
+     "items": 1,
+     "min_chars": 12,
+     "ideal_chars": 12,
+     "max_chars": 22,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 31,
+     "ideal_chars": 31,
+     "max_chars": 56,
+     "font_px": 54.0,
+     "basis": "placeholder"
+    },
+    "headline--lg": {
+     "items": 1,
+     "min_chars": 31,
+     "ideal_chars": 31,
+     "max_chars": 56,
+     "font_px": 64.0,
+     "basis": "placeholder"
+    },
+    "mac-n": {
+     "items": 4,
+     "min_chars": 1,
+     "ideal_chars": 1,
+     "max_chars": 2,
+     "font_px": 24.0,
+     "basis": "placeholder"
+    },
+    "mac-txt": {
+     "items": 4,
+     "min_chars": 54,
+     "ideal_chars": 85,
+     "max_chars": 153,
+     "font_px": 21.0,
+     "basis": "placeholder"
+    }
+   },
+   "slide_ideal_chars": 420,
+   "slide_max_chars": 567,
+   "_source": "canon"
+  },
+  {
    "file": "canon/media-bleed-steps-4/template.html",
    "archetype": "media-bleed-steps",
    "label": "CANON \u00b7 media-bleed-steps-4",
@@ -2759,6 +2957,112 @@
    },
    "slide_ideal_chars": 268,
    "slide_max_chars": 361,
+   "_source": "canon"
+  },
+  {
+   "file": "canon/media-rail-cases-3/template.html",
+   "archetype": "media-rail-cases",
+   "label": "CANON \u00b7 media-rail-cases-3",
+   "slots": {
+    "mrc-eyebrow": {
+     "items": 1,
+     "min_chars": 18,
+     "ideal_chars": 18,
+     "max_chars": 32,
+     "font_px": 40.0,
+     "basis": "placeholder"
+    },
+    "hl": {
+     "items": 1,
+     "min_chars": 7,
+     "ideal_chars": 7,
+     "max_chars": 13,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 28,
+     "ideal_chars": 28,
+     "max_chars": 50,
+     "font_px": 54.0,
+     "basis": "placeholder"
+    },
+    "headline--lg": {
+     "items": 1,
+     "min_chars": 28,
+     "ideal_chars": 28,
+     "max_chars": 50,
+     "font_px": 64.0,
+     "basis": "placeholder"
+    },
+    "body": {
+     "items": 1,
+     "min_chars": 93,
+     "ideal_chars": 93,
+     "max_chars": 167,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    },
+    "mrc-sub": {
+     "items": 1,
+     "min_chars": 93,
+     "ideal_chars": 93,
+     "max_chars": 167,
+     "font_px": 22.0,
+     "basis": "placeholder"
+    },
+    "mrc-step": {
+     "items": 5,
+     "min_chars": 14,
+     "ideal_chars": 25,
+     "max_chars": 45,
+     "font_px": 21.0,
+     "basis": "placeholder"
+    },
+    "mrc-name": {
+     "items": 3,
+     "min_chars": 13,
+     "ideal_chars": 16,
+     "max_chars": 29,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    },
+    "sub-item": {
+     "items": 4,
+     "min_chars": 80,
+     "ideal_chars": 196,
+     "max_chars": 353,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "mrc-copy": {
+     "items": 3,
+     "min_chars": 80,
+     "ideal_chars": 90,
+     "max_chars": 162,
+     "font_px": 19.0,
+     "basis": "placeholder"
+    },
+    "mrc-bandhead": {
+     "items": 1,
+     "min_chars": 57,
+     "ideal_chars": 57,
+     "max_chars": 103,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    },
+    "mrc-bandcopy": {
+     "items": 1,
+     "min_chars": 196,
+     "ideal_chars": 196,
+     "max_chars": 353,
+     "font_px": 19.0,
+     "basis": "placeholder"
+    }
+   },
+   "slide_ideal_chars": 1361,
+   "slide_max_chars": 1837,
    "_source": "canon"
   },
   {
@@ -3803,6 +4107,56 @@
    },
    "slide_ideal_chars": 1007,
    "slide_max_chars": 1359,
+   "_source": "canon"
+  },
+  {
+   "file": "canon/seq-phase-panels-3/template.html",
+   "archetype": "seq-phase-panels",
+   "label": "CANON \u00b7 seq-phase-panels-3",
+   "slots": {
+    "spp-eyebrow": {
+     "items": 1,
+     "min_chars": 11,
+     "ideal_chars": 11,
+     "max_chars": 20,
+     "font_px": 40.0,
+     "basis": "placeholder"
+    },
+    "spp-name": {
+     "items": 3,
+     "min_chars": 3,
+     "ideal_chars": 6,
+     "max_chars": 11,
+     "font_px": 72.0,
+     "basis": "placeholder"
+    },
+    "spp-arc": {
+     "items": 3,
+     "min_chars": 7,
+     "ideal_chars": 25,
+     "max_chars": 45,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    },
+    "spp-lede": {
+     "items": 3,
+     "min_chars": 79,
+     "ideal_chars": 85,
+     "max_chars": 153,
+     "font_px": 20.0,
+     "basis": "placeholder"
+    },
+    "sub-item": {
+     "items": 21,
+     "min_chars": 13,
+     "ideal_chars": 46,
+     "max_chars": 83,
+     "font_px": 18.0,
+     "basis": "placeholder"
+    }
+   },
+   "slide_ideal_chars": 900,
+   "slide_max_chars": 1215,
    "_source": "canon"
   },
   {

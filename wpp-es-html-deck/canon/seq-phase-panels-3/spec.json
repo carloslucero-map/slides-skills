@@ -1,0 +1,73 @@
+{
+  "id": "seq-phase-panels-3",
+  "$comment": "Hand-written. Structure only.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "eyebrow",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "label"
+    },
+    {
+      "role": "phase",
+      "repeat": true,
+      "arity": [
+        3,
+        3
+      ],
+      "required": true,
+      "children": [
+        {
+          "role": "phaseName",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "display"
+        },
+        {
+          "role": "art",
+          "arity": 1,
+          "required": false,
+          "note": "A motif. The source's bespoke illustrations do not generalise."
+        },
+        {
+          "role": "arc",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "fineLabel"
+        },
+        {
+          "role": "lede",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "fineItem"
+        },
+        {
+          "role": "activity",
+          "repeat": true,
+          "arity": [
+            5,
+            8
+          ],
+          "required": true,
+          "capacityRole": "fineItem"
+        }
+      ]
+    }
+  ],
+  "invariants": [
+    "Three full-height NAVY panels. The dark panel owning a third of the canvas is what says these are periods of work with different characters, not steps in a process.",
+    "The phase name is large and Light, ABOVE the work. In the other two sequence templates the stage name labels a list; here it titles a chapter.",
+    "Exactly three. At four the panels fall below the width their activity lists need.",
+    "The art slot takes a motif, never a required custom illustration — a template demanding three bespoke drawings is unusable outside the deck it came from."
+  ],
+  "grounds": {
+    "upper": "cream",
+    "panels": "navy"
+  },
+  "source": "bank:101",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

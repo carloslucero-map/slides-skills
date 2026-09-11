@@ -1,0 +1,46 @@
+{
+  "id": "enum-index-2col",
+  "name": "A long list shown as a complete set",
+  "useWhen": "Ten to sixteen offerings have to be seen as a whole, where the breadth is the point rather than any one item.",
+  "$useWhenNote": "Written by hand.",
+  "family": "B-enumeration",
+  "secondaryFamily": "structural",
+  "form": "index",
+  "arity": "16",
+  "arityRange": [
+    10,
+    16
+  ],
+  "ground": [
+    "cream"
+  ],
+  "density": "standard",
+  "densityChars": 620,
+  "mediaRole": "none",
+  "focal": {
+    "role": "title",
+    "px": 64,
+    "againstHeadlinePx": 64,
+    "ratio": 1.0,
+    "note": "Flat throughout. Sixteen peers on one slide cannot have a hero without lying about the set."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:58",
+  "sourceRender": "ref.png",
+  "replaces": "columns-v2",
+  "replacesNote": "columns-v2 tops out at four items. At sixteen a bulleted list reads as a wall.",
+  "deviations": [
+    {
+      "what": "title and timing note collide",
+      "source": "set on the same baseline and print through each other",
+      "here": "three tiers",
+      "why": "A defect in the source."
+    }
+  ],
+  "contractGapsClosed": [],
+  "createdAt": "2026-09-11",
+  "version": 1
+}

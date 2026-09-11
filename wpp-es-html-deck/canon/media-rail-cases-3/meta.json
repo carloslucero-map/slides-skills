@@ -1,0 +1,53 @@
+{
+  "id": "media-rail-cases-3",
+  "name": "Method, three cases, and what it was worth",
+  "useWhen": "A repeatable process produced three concrete examples with a measurable outcome, and the point is that the cases came from the process.",
+  "$useWhenNote": "Written by hand.",
+  "family": "G-media",
+  "secondaryFamily": "C-sequence",
+  "form": "card-grid",
+  "arity": "3",
+  "arityRange": [
+    3,
+    3
+  ],
+  "ground": [
+    "cream",
+    "alt"
+  ],
+  "density": "dense",
+  "densityChars": 960,
+  "mediaRole": "screenshot",
+  "focal": {
+    "role": "shot",
+    "px": 250,
+    "againstHeadlinePx": 64,
+    "ratio": 3.9,
+    "note": "Height against headline size. The images carry the evidence; the rail and the band are navy and orange text and never compete with them."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:143",
+  "sourceRender": "ref.png",
+  "replaces": "cards-v3",
+  "replacesNote": "cards-v3 is the middle third of this only. The rail is what turns three nice case studies into an argument that they came out of a process rather than luck.",
+  "deviations": [
+    {
+      "what": "outcome band colour",
+      "source": "grey, which is not in the closed palette",
+      "here": "--bg-alt",
+      "why": "Reproducing an off-palette fill for fidelity's sake would reproduce a mistake."
+    },
+    {
+      "what": "headline printing through its own subtitle",
+      "source": "present",
+      "here": "fixed",
+      "why": "A defect in the source."
+    }
+  ],
+  "contractGapsClosed": [],
+  "createdAt": "2026-09-11",
+  "version": 1
+}

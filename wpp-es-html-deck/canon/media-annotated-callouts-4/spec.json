@@ -1,0 +1,68 @@
+{
+  "id": "media-annotated-callouts-4",
+  "$comment": "Hand-written. Structure only.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "eyebrow",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "label"
+    },
+    {
+      "role": "headline",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "headline"
+    },
+    {
+      "role": "media",
+      "arity": 1,
+      "required": true,
+      "note": "Screenshot, diagram or motif. Inlined at fill time (§2a)."
+    },
+    {
+      "role": "callout",
+      "repeat": true,
+      "arity": [
+        3,
+        5
+      ],
+      "required": true,
+      "children": [
+        {
+          "role": "ordinal",
+          "arity": 1,
+          "required": true
+        },
+        {
+          "role": "text",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "fineItem"
+        },
+        {
+          "role": "position",
+          "arity": 1,
+          "required": true,
+          "note": "--x and --y, percentages of the stage."
+        }
+      ]
+    }
+  ],
+  "invariants": [
+    "Callouts are PLACED near what they describe, not listed down a side. A callout that is not near its subject is a caption, and a caption is what this template exists to avoid.",
+    "The ordinals carry reading order, because position cannot.",
+    "Three to five callouts. Two does not need this template; six turns the slide into a diagram of its own annotations.",
+    "The media slot never carries bespoke artwork as a requirement. The source's infographic does not generalise and the template does not pretend to hold it."
+  ],
+  "grounds": {
+    "upper": "cream",
+    "lower": "cream"
+  },
+  "source": "bank:148",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

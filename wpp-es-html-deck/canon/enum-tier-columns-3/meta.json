@@ -1,0 +1,47 @@
+{
+  "id": "enum-tier-columns-3",
+  "name": "Three levels of a problem, in clients' own words",
+  "useWhen": "The same problem appears at three levels of maturity, and each level has a client quote that proves it.",
+  "$useWhenNote": "Written by hand.",
+  "family": "B-enumeration",
+  "secondaryFamily": "E-comparison",
+  "form": "columns",
+  "arity": "3",
+  "arityRange": [
+    3,
+    3
+  ],
+  "ground": [
+    "cream",
+    "white"
+  ],
+  "density": "dense",
+  "densityChars": 840,
+  "mediaRole": "none",
+  "focal": {
+    "role": "levelName",
+    "px": 34,
+    "againstHeadlinePx": 64,
+    "ratio": 0.53,
+    "note": "The indicator carries the ordering, not size — which is why the level names can stay quiet and let the quotes do the work."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:149",
+  "sourceRender": "ref.png",
+  "replaces": null,
+  "replacesNote": "columns-v1 is three parallel columns. This is three rungs, and the squares are the difference.",
+  "deviations": [
+    {
+      "what": "vertical placement",
+      "source": "cards run to about y=880",
+      "here": "block centred",
+      "why": "At top-anchored the cards ended near y=630 and left the lower 40% dead — the failure seq-steps-panels-5 worked through. Centring turns the leftover into balanced margin."
+    }
+  ],
+  "contractGapsClosed": [],
+  "createdAt": "2026-09-11",
+  "version": 1
+}
