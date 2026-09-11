@@ -1,0 +1,47 @@
+{
+  "id": "quant-score-circles",
+  "name": "Several inputs converging on a few scores",
+  "useWhen": "Three or four scores on a common scale, shown as derived from named inputs rather than asserted.",
+  "$useWhenNote": "Written by hand.",
+  "family": "D-quantitative",
+  "secondaryFamily": null,
+  "form": "score-circles",
+  "arity": "4",
+  "arityRange": [
+    3,
+    4
+  ],
+  "ground": [
+    "cream",
+    "navy"
+  ],
+  "density": "dense",
+  "densityChars": 760,
+  "mediaRole": "none",
+  "focal": {
+    "role": "value",
+    "px": 104,
+    "againstHeadlinePx": 64,
+    "ratio": 1.63,
+    "note": "The scores dominate, as they should — but all four equally, because none of them is the answer on its own."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:189",
+  "sourceRender": "ref.png",
+  "replaces": null,
+  "replacesNote": "stats-v3 does proportional bubbles for wide ranges; this does equal discs for narrow ones. They are not substitutes.",
+  "deviations": [
+    {
+      "what": "my own index note",
+      "source": "SELECCION-25-indice.md says to size diameters by the square root of the value",
+      "here": "equal diameters",
+      "why": "Right instinct, wrong slide. Square-root sizing makes AREA read as magnitude across orders of magnitude; across 85-99 it produces a 7.6% difference that is invisible as data and visible as sloppiness, and it implies the discs are a chart when they are four printed scores. Recorded rather than silently ignored."
+    }
+  ],
+  "contractGapsClosed": [],
+  "createdAt": "2026-09-11",
+  "version": 1
+}

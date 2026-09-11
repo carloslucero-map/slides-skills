@@ -1,0 +1,124 @@
+<!-- canon/quant-score-circles — traced from bank slide 189 (measure.json, ref.png).
+
+     A NOTE I WROTE ABOUT THIS SLIDE WAS WRONG, AND THE TEMPLATE FOLLOWS THE
+     MEASUREMENT RATHER THAN THE NOTE. SELECCION-25-indice.md says of slide 189:
+     "the four circles have the same diameter with different values (88/99/85/86)
+     — apply a diameter proportional to the square root of the value." That is
+     the right instinct and the wrong slide.
+
+     Square-root sizing exists so that AREA reads as magnitude when values span
+     orders of magnitude. These span 85 to 99. At √-scale the largest circle
+     would be 7.6% wider than the smallest — a difference no eye reads as data,
+     but which every eye reads as sloppiness. Worse, it would imply the circles
+     are a chart when they are a set of scores, each already printed at display
+     size inside its own disc.
+
+     So the circles stay equal, and the rule is stated as a condition rather
+     than a preference: EQUAL discs when the range is narrow and the number is
+     shown; proportional area only when the range spans an order of magnitude and
+     the number is not the point. stats-v3 in the kit is the template for that
+     second case and already √-scales correctly.
+
+     THE BRACE IS STRUCTURAL. Six inputs converge into four scores, and the brace
+     is what says the scores are derived rather than merely nearby. Drop it and
+     the slide becomes two unrelated rows.
+-->
+<section class="slide" data-slide-id="cX-sY" data-archetype="quant-score-circles" data-template="quant-score-circles">
+
+  <div class="qsc-eyebrow">Emotional loyalty measurement</div>
+  <h2 class="headline headline--lg" style="left:var(--m-text);top:110px;max-width:1700px;">A brand devotion score, from <span class="hl">six independent reads</span></h2>
+
+  <div class="qsc-inputs">
+    <span class="qsc-chip">Competitor brand perception</span>
+    <span class="qsc-chip">Brand operational effectiveness</span>
+    <span class="qsc-chip">Generational appeal</span>
+    <span class="qsc-chip">Loyalty proposition</span>
+    <span class="qsc-chip">Customer sentiment</span>
+    <span class="qsc-chip">Social and brand interaction</span>
+  </div>
+
+  <!-- Six inputs converge into four scores. Without this the slide is two
+       unrelated rows that happen to be stacked. -->
+  <svg class="qsc-brace" viewBox="0 0 1600 70" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M6 4 V34 Q6 50 26 50 H772 Q792 50 792 64 Q792 50 812 50 H1574 Q1594 50 1594 34 V4"
+          fill="none" stroke="currentColor" stroke-width="2.5"/>
+  </svg>
+
+  <div class="qsc-summary">
+    <div class="qsc-slabel">Sample retailer brand devotion score</div>
+    <div class="sub-item qsc-scomp">Composite 87.5 / 100</div>
+  </div>
+
+  <div class="qsc-row">
+    <div class="qsc-score">
+      <div class="qsc-disc"><span class="qsc-rate">Strong</span><span class="qsc-v">88</span></div>
+      <div class="qsc-cat">Community</div>
+      <p class="sub-item qsc-note"><strong>Strength</strong> organic hobby tribes and local embedding. <strong>Opportunity</strong> build an owned digital community.</p>
+    </div>
+    <div class="qsc-score">
+      <div class="qsc-disc"><span class="qsc-rate">Excellent</span><span class="qsc-v">99</span></div>
+      <div class="qsc-cat">Principle</div>
+      <p class="sub-item qsc-note"><strong>Strength</strong> the employee ownership story. <strong>Opportunity</strong> tell it louder.</p>
+    </div>
+    <div class="qsc-score">
+      <div class="qsc-disc"><span class="qsc-rate">Strong</span><span class="qsc-v">85</span></div>
+      <div class="qsc-cat">Cultural</div>
+      <p class="sub-item qsc-note"><strong>Strength</strong> generational and regional identity. <strong>Opportunity</strong> extend cultural relevance to new markets.</p>
+    </div>
+    <div class="qsc-score">
+      <div class="qsc-disc"><span class="qsc-rate">Strong</span><span class="qsc-v">86</span></div>
+      <div class="qsc-cat">Potential</div>
+      <p class="sub-item qsc-note"><strong>Strength</strong> room to build a stronger master brand. <strong>Opportunity</strong> scale without losing the soul.</p>
+    </div>
+  </div>
+
+  <p class="body qsc-foot">The output delivers the core score alongside trend forecasts, industry benchmarks and competitor rankings.</p>
+
+  <div class="footer-brand">WPP Enterprise Solutions | MAP</div>
+  <div class="pageno"></div>
+
+  <style>
+  /* Measured off slide 189. */
+
+  .qsc-eyebrow{position:absolute;left:var(--m-text);top:52px;font-weight:400;font-size:40px;
+               line-height:1.05;letter-spacing:.01em;text-transform:uppercase;
+               color:var(--orange-700);}
+
+  .qsc-inputs{position:absolute;left:var(--m-edge);right:var(--m-edge);top:290px;
+              display:grid;grid-template-columns:repeat(6,1fr);gap:14px;}
+  .qsc-chip{background:var(--bg-dark);color:var(--text-inv);padding:14px 16px;
+            text-align:center;font-size:17px;line-height:1.2;}
+
+  .qsc-brace{position:absolute;left:var(--m-edge);right:var(--m-edge);top:372px;
+             height:70px;color:var(--wpp-navy);}
+
+  .qsc-summary{position:absolute;left:var(--m-text);top:520px;width:250px;}
+  .qsc-slabel{font-weight:500;font-size:20px;line-height:1.2;letter-spacing:.04em;
+              text-transform:uppercase;color:var(--orange-700);margin-bottom:10px;}
+  .qsc-scomp{font-size:19px;line-height:1.3;}
+
+  .qsc-row{position:absolute;left:340px;right:var(--m-edge);top:470px;bottom:120px;
+           display:grid;grid-template-columns:repeat(4,1fr);gap:36px;align-content:start;}
+  .qsc-score{display:flex;flex-direction:column;align-items:center;text-align:center;min-width:0;}
+
+  /* EQUAL discs. The scores run 85-99; at square-root sizing the widest would be
+     7.6% wider than the narrowest — unreadable as data, and legible as a
+     mistake. Proportional area belongs to stats-v3, for ranges that span an
+     order of magnitude and where the number is not printed. */
+  .qsc-disc{width:230px;height:230px;border-radius:50%;background:var(--wpp-white);
+            display:flex;flex-direction:column;align-items:center;justify-content:center;
+            margin-bottom:22px;}
+  .qsc-rate{font-weight:400;font-size:26px;line-height:1;letter-spacing:.03em;
+            text-transform:uppercase;color:var(--orange-700);margin-bottom:2px;}
+  .qsc-v{font-weight:300;font-size:104px;line-height:.95;color:var(--orange-700);
+         font-variant-numeric:tabular-nums lining-nums;}
+
+  .qsc-cat{font-weight:500;font-size:21px;letter-spacing:.06em;text-transform:uppercase;
+           color:var(--orange-700);margin-bottom:10px;}
+  .qsc-note{font-size:18px;line-height:1.32;margin:0;}
+  .qsc-note strong{font-weight:500;}
+
+  .qsc-foot{position:absolute;left:340px;right:var(--m-edge);bottom:64px;
+            font-size:21px;line-height:1.3;max-width:none;}
+  </style>
+</section>

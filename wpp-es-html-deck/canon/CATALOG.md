@@ -3,7 +3,7 @@
 
 # Canon catalogue
 
-18 templates, each traced from a real slide in the MAP bank and
+20 templates, each traced from a real slide in the MAP bank and
 rendered against its original. **Read the `use when` column** — it says what
 problem the template solves. The rest is filtering.
 
@@ -18,59 +18,61 @@ a human yet. Usable, but not yet authoritative.
 
 | id | use when | arity | density | media | ok |
 |---|---|---|---|---|---|
-| `narrative-panel-model` | A position needs three or four hundred words to be made honestly — a methodology, a privacy stance, a point of view — and the model it rests on has to be visible while the case is being read. | 6 | dense | motif | ? |
-| `narrative-statement-field` | The deck needs to mark a turn between two arguments and the sentence itself is the whole content — a breath, not a point. | 1 | airy | motif | ? |
-| `narrative-tension-spectrum` | An argument turns on tensions rather than choices — where something sits between two poles — and the deck has the evidence to say where, not just that the tension exists. | 5 | dense | photo | ? |
+| `narrative-panel-model` | A position needing three or four hundred words, with the model it rests on visible alongside. | 6 | dense | motif | ? |
+| `narrative-statement-field` | One sentence marking the turn between two arguments. A breath, not a point. | 1 | airy | motif | ? |
+| `narrative-tension-spectrum` | Tensions rather than choices — and the evidence to say WHERE something sits between two poles. | 5 | dense | photo | ? |
 
 ## B-enumeration
 
 | id | use when | arity | density | media | ok |
 |---|---|---|---|---|---|
-| `enum-intro-grid-5` | One principle has to be stated once and then shown through four to six named instances, and the principle deserves more room than any single instance. | 5 | dense | none | ? |
-| `enum-numbered-4` | A method or approach has three or four named stages, each needing a sentence of substance rather than a label, and the deck has to look like it knows the order matters. | 3 | standard | none | ? |
-| `enum-stage-bento-4` | A transformation happened in four stages and each one needs both a screenshot of what was actually built and the two or three things that changed. | 4 | standard | screenshot | ? |
+| `enum-intro-grid-5` | One principle, then four to six named instances of it — and the principle needs more room than any instance. | 5 | dense | none | ? |
+| `enum-numbered-4` | Three or four named stages, each needing a sentence of substance rather than a label. | 3 | standard | none | ? |
+| `enum-stage-bento-4` | Four stages of a transformation, each with a screenshot of what was built and what changed. | 4 | standard | screenshot | ? |
 
 ## C-sequence
 
 | id | use when | arity | density | media | ok |
 |---|---|---|---|---|---|
-| `seq-steps-panels-5` | A repeatable method has four or five stages and each stage genuinely has activities and deliverables worth naming — the audience needs to see the depth, not just the sequence. | 5 | dense | none | ? |
+| `seq-phase-columns-4` | Three or four phases with long activity lists, and it matters which phase the client is in now. | 4 | dense | none | ? |
+| `seq-steps-panels-5` | A method of four or five stages where each stage has real activities and deliverables to name. | 5 | dense | none | ? |
 
 ## D-quantitative
 
 | id | use when | arity | density | media | ok |
 |---|---|---|---|---|---|
-| `quant-stat-grid-5` | A claim about the business needs five pieces of quantitative proof, and the claim itself — not any one number — is what the room should leave with. | 5 | standard | none | ? |
+| `quant-score-circles` | Three or four scores on a common scale, shown as derived from named inputs rather than asserted. | 4 | dense | none | ? |
+| `quant-stat-grid-5` | A claim needing five pieces of quantitative proof, where the claim is what the room should leave with. | 5 | standard | none | ? |
 
 ## E-comparison
 
 | id | use when | arity | density | media | ok |
 |---|---|---|---|---|---|
-| `comp-priority-grid` | Fifteen to twenty-five candidates need prioritising and the scoring is a judgement rather than a measurement — the room will argue about which band something belongs in, not about a decimal place. | 9 | dense | none | ? |
-| `comp-priority-scatter` | Ten to thirty-five candidates have to be prioritised and the conversation is about relative position — what is nearly equal, what is clearly ahead — not about which named box each one falls in. | n | dense | none | ? |
+| `comp-priority-grid` | Fifteen to twenty-five candidates where the scoring is a judgement and the bands are what gets argued about. | 9 | dense | none | ? |
+| `comp-priority-scatter` | Ten to thirty-five candidates to prioritise, where relative position matters more than which box they fall in. | n | dense | none | ? |
 
 ## F-relational
 
 | id | use when | arity | density | media | ok |
 |---|---|---|---|---|---|
-| `rel-hub-rings-4` | Four capabilities have to be shown as living inside a single system rather than merely sitting next to each other, and the claim needs a paragraph or two to land. | 4 | standard | motif | ? |
-| `rel-layered-stack` | An offer has layers — goals, strategies, capabilities, enablers — and the point is both that they stack in that order and that one layer is where all the substance lives. | 5 | dense | none | ? |
-| `rel-stage-split` | Two halves of an operation — what the client sees and what runs underneath — have to read as ONE system rather than two, and the deck can afford a slide that commits the whole canvas to saying so. | 10 | standard | none | ? |
-| `rel-taxonomy-bands` | Three to five named classes between them exhaust a space — channel types, data types, engagement modes — and the members of each matter less than the fact that the classes cover everything. | 4 | standard | motif | ? |
+| `rel-hub-rings-4` | Four capabilities that live INSIDE one system rather than beside each other, with prose to land the claim. | 4 | standard | motif | ? |
+| `rel-layered-stack` | An offer with stacked layers, where one layer is plainly where all the substance lives. | 5 | dense | none | ? |
+| `rel-stage-split` | What the client sees and what runs underneath, shown as one system rather than two. | 10 | standard | none | ? |
+| `rel-taxonomy-bands` | Three to five named classes that between them exhaust a space. | 4 | standard | motif | ? |
 
 ## G-media
 
 | id | use when | arity | density | media | ok |
 |---|---|---|---|---|---|
-| `media-bleed-steps-4` | An assessment or approach has three to five named moves that belong in order, and the subject deserves a full-height image rather than a caption-sized one. | 4 | airy | photo | ? |
+| `media-bleed-steps-4` | Three to five named moves in order, where the subject deserves a full-height image. | 4 | airy | photo | ? |
 
 ## H-entities
 
 | id | use when | arity | density | media | ok |
 |---|---|---|---|---|---|
-| `ent-logo-rows-6` | A partner or technology roster has to show BREADTH across named categories, and which category a logo sits in matters as much as the logo being there. | 6 | standard | logo | ? |
-| `ent-partner-credentials-3` | Two or three platform partnerships each need their own proof — depth of certification, scale of delivery, and who it was delivered for — and the point is that all of them are strong. | 3 | dense | logo | ? |
-| `ent-team-row-6` | Four to six people are being introduced at the top of a meeting and each needs placing by role and location — not a biography. | 6 | standard | photo | ? |
+| `ent-logo-rows-6` | A partner roster where which category a logo sits in matters as much as its being there. | 6 | standard | logo | ? |
+| `ent-partner-credentials-3` | Two or three partnerships, each with its own proof and client roster, all of them strong. | 3 | dense | logo | ? |
+| `ent-team-row-6` | Four to six people placed by role and location at the top of a meeting. Not biographies. | 6 | standard | photo | ? |
 
 ---
 

@@ -1,0 +1,852 @@
+{
+ "source": "bank:189",
+ "inventory": "inventory2.json",
+ "canvas": [
+  1920,
+  1080
+ ],
+ "ptToPx": 2.0,
+ "shapeCount": 36,
+ "offstageDropped": 0,
+ "boxlessDropped": 0,
+ "leftEdges": [
+  57,
+  109,
+  181,
+  326,
+  357,
+  358,
+  379,
+  390,
+  408,
+  604,
+  612,
+  677,
+  683,
+  700,
+  858,
+  867,
+  917,
+  976,
+  994,
+  1109,
+  1115,
+  1116,
+  1264,
+  1269,
+  1295,
+  1376,
+  1385
+ ],
+ "topEdges": [
+  -26,
+  57,
+  125,
+  128,
+  528,
+  529,
+  533,
+  579,
+  580,
+  584,
+  585,
+  588,
+  706,
+  754,
+  756,
+  758,
+  760,
+  761,
+  762,
+  763,
+  764,
+  803,
+  805,
+  806,
+  1004
+ ],
+ "typePx": [
+  16,
+  18,
+  20,
+  24,
+  40,
+  64,
+  108
+ ],
+ "shapes": [
+  {
+   "kind": "sp",
+   "name": "Oval 11",
+   "box": [
+    390,
+    533,
+    238,
+    238
+   ],
+   "right": 628,
+   "bottom": 771,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Left Brace 2",
+   "box": [
+    917,
+    -26,
+    86,
+    1517
+   ],
+   "right": 1003,
+   "bottom": 1491,
+   "placeholder": null,
+   "geom": "leftBrace",
+   "rot": 270,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Shape 1",
+   "box": [
+    858,
+    761,
+    229,
+    58
+   ],
+   "right": 1087,
+   "bottom": 819,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 14",
+   "box": [
+    867,
+    764,
+    211,
+    53
+   ],
+   "right": 1078,
+   "bottom": 817,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 41,
+   "text": "Loyalty Proposition Effectiveness Analyst"
+  },
+  {
+   "kind": "sp",
+   "name": "Shape 1",
+   "box": [
+    1115,
+    760,
+    229,
+    58
+   ],
+   "right": 1344,
+   "bottom": 818,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 15",
+   "box": [
+    1116,
+    763,
+    220,
+    53
+   ],
+   "right": 1336,
+   "bottom": 816,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 26,
+   "text": "Customer Sentiment Analyst"
+  },
+  {
+   "kind": "sp",
+   "name": "Shape 1",
+   "box": [
+    604,
+    758,
+    229,
+    58
+   ],
+   "right": 833,
+   "bottom": 816,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 17",
+   "box": [
+    612,
+    762,
+    211,
+    53
+   ],
+   "right": 823,
+   "bottom": 815,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 25,
+   "text": "Generational Appeal Agent"
+  },
+  {
+   "kind": "sp",
+   "name": "Shape 1",
+   "box": [
+    358,
+    754,
+    229,
+    58
+   ],
+   "right": 587,
+   "bottom": 812,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 18",
+   "box": [
+    357,
+    758,
+    226,
+    53
+   ],
+   "right": 583,
+   "bottom": 811,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 37,
+   "text": "Brand Operational Effectiveness Agent"
+  },
+  {
+   "kind": "sp",
+   "name": "Shape 1",
+   "box": [
+    1376,
+    761,
+    229,
+    58
+   ],
+   "right": 1605,
+   "bottom": 819,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 16",
+   "box": [
+    1385,
+    762,
+    211,
+    53
+   ],
+   "right": 1596,
+   "bottom": 815,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 40,
+   "text": "Social Media & Brand Interaction Analyst"
+  },
+  {
+   "kind": "sp",
+   "name": "Shape 1",
+   "box": [
+    109,
+    756,
+    229,
+    58
+   ],
+   "right": 338,
+   "bottom": 814,
+   "placeholder": null,
+   "geom": "roundRect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 19",
+   "box": [
+    109,
+    758,
+    229,
+    53
+   ],
+   "right": 338,
+   "bottom": 811,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    8
+   ],
+   "px": [
+    16
+   ],
+   "chars": 35,
+   "text": "Competitor Brand Perception Analyst"
+  },
+  {
+   "kind": "sp",
+   "name": "TextBox 74",
+   "box": [
+    326,
+    1004,
+    1250,
+    39
+   ],
+   "right": 1576,
+   "bottom": 1043,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    10
+   ],
+   "px": [
+    20
+   ],
+   "chars": 113,
+   "text": "The final output delivers the core score alongside trend forecasts, industry benchmarks, and competitor rankings."
+  },
+  {
+   "kind": "sp",
+   "name": "Text 25",
+   "box": [
+    181,
+    585,
+    208,
+    66
+   ],
+   "right": 389,
+   "bottom": 651,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    9
+   ],
+   "px": [
+    18
+   ],
+   "chars": 62,
+   "text": "SAMPLE RETAILER BRAND DEVOTION SCORE Composite score  87.5/100"
+  },
+  {
+   "kind": "sp",
+   "name": "Text 34",
+   "box": [
+    379,
+    803,
+    258,
+    113
+   ],
+   "right": 637,
+   "bottom": 916,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    9
+   ],
+   "px": [
+    18
+   ],
+   "chars": 102,
+   "text": "COMMUNITY Strength  Organic hobby tribes and local embedding Opportunity Build owned digital community"
+  },
+  {
+   "kind": "sp",
+   "name": "Text 52",
+   "box": [
+    677,
+    806,
+    249,
+    72
+   ],
+   "right": 926,
+   "bottom": 878,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    9
+   ],
+   "px": [
+    18
+   ],
+   "chars": 69,
+   "text": "PRINCIPLE Strength  Company’s ESOP Opportunity  Tell the story louder"
+  },
+  {
+   "kind": "sp",
+   "name": "Text 43",
+   "box": [
+    976,
+    805,
+    238,
+    134
+   ],
+   "right": 1214,
+   "bottom": 939,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    9
+   ],
+   "px": [
+    18
+   ],
+   "chars": 107,
+   "text": "CULTURAL Strength  Generational and regional identity Opportunity  Expand cultural relevance to new markets"
+  },
+  {
+   "kind": "sp",
+   "name": "Text 61",
+   "box": [
+    1269,
+    806,
+    230,
+    72
+   ],
+   "right": 1499,
+   "bottom": 878,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    9
+   ],
+   "px": [
+    18
+   ],
+   "chars": 95,
+   "text": "POTENTIAL Strength  Build stronger master brand identity Opportunity  Scale without losing soul"
+  },
+  {
+   "kind": "sp",
+   "name": "Title 20",
+   "box": [
+    57,
+    57,
+    1684,
+    62
+   ],
+   "right": 1741,
+   "bottom": 119,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    20
+   ],
+   "px": [
+    40
+   ],
+   "chars": 44,
+   "text": "EMOTIONAL LOYALTY MEASUREMENT & OPTIMIZATION"
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 21",
+   "box": [
+    57,
+    125,
+    1754,
+    215
+   ],
+   "right": 1811,
+   "bottom": 340,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    32
+   ],
+   "px": [
+    64
+   ],
+   "chars": 105,
+   "text": "We calculate a brand devotion score using a multi-agent quantitative, qualitative and temporal smoothing."
+  },
+  {
+   "kind": "pic",
+   "name": "Graphic 5",
+   "box": [
+    1264,
+    128,
+    135,
+    34
+   ],
+   "right": 1399,
+   "bottom": 162,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "pic",
+   "name": "Picture 7",
+   "box": [
+    1109,
+    125,
+    129,
+    35
+   ],
+   "right": 1238,
+   "bottom": 160,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 21",
+   "box": [
+    408,
+    588,
+    204,
+    113
+   ],
+   "right": 612,
+   "bottom": 701,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    54
+   ],
+   "px": [
+    108
+   ],
+   "chars": 2,
+   "text": "88"
+  },
+  {
+   "kind": "sp",
+   "name": "Title 20",
+   "box": [
+    390,
+    584,
+    238,
+    62
+   ],
+   "right": 628,
+   "bottom": 646,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 6,
+   "text": "STRONG"
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 12",
+   "box": [
+    683,
+    533,
+    238,
+    238
+   ],
+   "right": 921,
+   "bottom": 771,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 21",
+   "box": [
+    700,
+    588,
+    203,
+    114
+   ],
+   "right": 903,
+   "bottom": 702,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    54
+   ],
+   "px": [
+    108
+   ],
+   "chars": 2,
+   "text": "99"
+  },
+  {
+   "kind": "sp",
+   "name": "Title 20",
+   "box": [
+    683,
+    584,
+    238,
+    62
+   ],
+   "right": 921,
+   "bottom": 646,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 9,
+   "text": "EXCELLENT"
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 33",
+   "box": [
+    976,
+    529,
+    238,
+    238
+   ],
+   "right": 1214,
+   "bottom": 767,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 21",
+   "box": [
+    994,
+    585,
+    205,
+    115
+   ],
+   "right": 1199,
+   "bottom": 700,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    54
+   ],
+   "px": [
+    108
+   ],
+   "chars": 2,
+   "text": "85"
+  },
+  {
+   "kind": "sp",
+   "name": "Title 20",
+   "box": [
+    976,
+    580,
+    238,
+    30
+   ],
+   "right": 1214,
+   "bottom": 610,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 6,
+   "text": "STRONG"
+  },
+  {
+   "kind": "sp",
+   "name": "Title 20",
+   "box": [
+    976,
+    706,
+    238,
+    41
+   ],
+   "right": 1214,
+   "bottom": 747,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Oval 38",
+   "box": [
+    1269,
+    528,
+    238,
+    238
+   ],
+   "right": 1507,
+   "bottom": 766,
+   "placeholder": null,
+   "geom": "ellipse",
+   "rot": 0,
+   "pt": [],
+   "px": [],
+   "chars": 0,
+   "text": ""
+  },
+  {
+   "kind": "sp",
+   "name": "Text Placeholder 21",
+   "box": [
+    1295,
+    584,
+    200,
+    115
+   ],
+   "right": 1495,
+   "bottom": 699,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    54
+   ],
+   "px": [
+    108
+   ],
+   "chars": 2,
+   "text": "86"
+  },
+  {
+   "kind": "sp",
+   "name": "Title 20",
+   "box": [
+    1269,
+    579,
+    238,
+    30
+   ],
+   "right": 1507,
+   "bottom": 609,
+   "placeholder": null,
+   "geom": "rect",
+   "rot": 0,
+   "pt": [
+    12
+   ],
+   "px": [
+    24
+   ],
+   "chars": 6,
+   "text": "STRONG"
+  }
+ ],
+ "_note": "Evidence about the source slide. Not CSS, not a spec, never averaged with another slide."
+}

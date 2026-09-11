@@ -1,7 +1,7 @@
 {
   "id": "quant-stat-grid-5",
   "name": "Claim held up by five numbers across a rule",
-  "useWhen": "A claim about the business needs five pieces of quantitative proof, and the claim itself — not any one number — is what the room should leave with.",
+  "useWhen": "A claim needing five pieces of quantitative proof, where the claim is what the room should leave with.",
   "$useWhenNote": "Written by hand.",
   "family": "D-quantitative",
   "secondaryFamily": "A-narrative",

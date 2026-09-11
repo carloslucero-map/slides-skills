@@ -93,7 +93,7 @@
    "family": "C-sequence",
    "targetId": "seq-timeline-horizontal-4",
    "rag": "amber",
-   "canonId": null
+   "canonId": "seq-phase-columns-4"
   },
   {
    "page": 11,
@@ -120,7 +120,7 @@
    "family": "D-quantitative",
    "targetId": "quant-stat-circles",
    "rag": "amber",
-   "canonId": null
+   "canonId": "quant-score-circles"
   },
   {
    "page": 14,

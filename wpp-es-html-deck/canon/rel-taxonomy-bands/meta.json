@@ -1,7 +1,7 @@
 {
   "id": "rel-taxonomy-bands",
   "name": "A taxonomy that divides the whole space",
-  "useWhen": "Three to five named classes between them exhaust a space — channel types, data types, engagement modes — and the members of each matter less than the fact that the classes cover everything.",
+  "useWhen": "Three to five named classes that between them exhaust a space.",
   "$useWhenNote": "Written by hand.",
   "family": "F-relational",
   "secondaryFamily": null,

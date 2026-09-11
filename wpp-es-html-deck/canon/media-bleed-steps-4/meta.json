@@ -1,7 +1,7 @@
 {
   "id": "media-bleed-steps-4",
   "name": "Half-bleed image beside a connected sequence",
-  "useWhen": "An assessment or approach has three to five named moves that belong in order, and the subject deserves a full-height image rather than a caption-sized one.",
+  "useWhen": "Three to five named moves in order, where the subject deserves a full-height image.",
   "$useWhenNote": "Written by hand.",
   "family": "G-media",
   "secondaryFamily": "C-sequence",

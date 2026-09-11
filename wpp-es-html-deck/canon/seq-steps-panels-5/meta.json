@@ -1,7 +1,7 @@
 {
   "id": "seq-steps-panels-5",
   "name": "Five-stage method with substance under each stage",
-  "useWhen": "A repeatable method has four or five stages and each stage genuinely has activities and deliverables worth naming — the audience needs to see the depth, not just the sequence.",
+  "useWhen": "A method of four or five stages where each stage has real activities and deliverables to name.",
   "$useWhenNote": "Written by hand.",
   "family": "C-sequence",
   "secondaryFamily": null,

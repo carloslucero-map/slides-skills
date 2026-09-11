@@ -1,7 +1,7 @@
 {
   "id": "enum-stage-bento-4",
   "name": "Four stages, each with its receipts",
-  "useWhen": "A transformation happened in four stages and each one needs both a screenshot of what was actually built and the two or three things that changed.",
+  "useWhen": "Four stages of a transformation, each with a screenshot of what was built and what changed.",
   "$useWhenNote": "Written by hand.",
   "family": "B-enumeration",
   "secondaryFamily": "G-media",

@@ -1,7 +1,7 @@
 {
   "id": "rel-stage-split",
   "name": "Front stage and backstage, cut by one line",
-  "useWhen": "Two halves of an operation — what the client sees and what runs underneath — have to read as ONE system rather than two, and the deck can afford a slide that commits the whole canvas to saying so.",
+  "useWhen": "What the client sees and what runs underneath, shown as one system rather than two.",
   "$useWhenNote": "Written by hand.",
   "family": "F-relational",
   "secondaryFamily": "A-narrative",

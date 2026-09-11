@@ -1,7 +1,7 @@
 {
   "id": "narrative-panel-model",
   "name": "A long argument on tinted ground, beside its model",
-  "useWhen": "A position needs three or four hundred words to be made honestly — a methodology, a privacy stance, a point of view — and the model it rests on has to be visible while the case is being read.",
+  "useWhen": "A position needing three or four hundred words, with the model it rests on visible alongside.",
   "$useWhenNote": "Written by hand.",
   "family": "A-narrative",
   "secondaryFamily": "F-relational",

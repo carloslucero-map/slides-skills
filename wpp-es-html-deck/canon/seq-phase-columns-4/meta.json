@@ -1,0 +1,47 @@
+{
+  "id": "seq-phase-columns-4",
+  "name": "Phases side by side, with today's one marked",
+  "useWhen": "Three or four phases with long activity lists, and it matters which phase the client is in now.",
+  "$useWhenNote": "Written by hand.",
+  "family": "C-sequence",
+  "secondaryFamily": "B-enumeration",
+  "form": "phases",
+  "arity": "4",
+  "arityRange": [
+    3,
+    4
+  ],
+  "ground": [
+    "cream",
+    "alt"
+  ],
+  "density": "dense",
+  "densityChars": 1420,
+  "mediaRole": "none",
+  "focal": {
+    "role": "phaseName",
+    "px": 30,
+    "againstHeadlinePx": 64,
+    "ratio": 0.47,
+    "note": "Low, and the real emphasis is the tint on the current column — ground, not size."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:65",
+  "sourceRender": "ref.png",
+  "replaces": null,
+  "replacesNote": "seq-steps-panels-5 is for stages with real substance under each; this is for long lists of named activity per phase. Different jobs.",
+  "deviations": [
+    {
+      "what": "my own index note",
+      "source": "says the slide has no time axis and one must be added",
+      "here": "ordinals, not a drawn axis",
+      "why": "Half right. A ruled axis implies durations the source does not carry and nobody has measured; numbering gives the sequence without inventing data."
+    }
+  ],
+  "contractGapsClosed": [],
+  "createdAt": "2026-09-11",
+  "version": 1
+}

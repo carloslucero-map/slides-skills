@@ -1,7 +1,7 @@
 {
   "id": "narrative-statement-field",
   "name": "One sentence, centred, over a dot field",
-  "useWhen": "The deck needs to mark a turn between two arguments and the sentence itself is the whole content — a breath, not a point.",
+  "useWhen": "One sentence marking the turn between two arguments. A breath, not a point.",
   "$useWhenNote": "Written by hand.",
   "family": "A-narrative",
   "secondaryFamily": null,

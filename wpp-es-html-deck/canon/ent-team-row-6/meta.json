@@ -1,7 +1,7 @@
 {
   "id": "ent-team-row-6",
   "name": "Who is in the room",
-  "useWhen": "Four to six people are being introduced at the top of a meeting and each needs placing by role and location — not a biography.",
+  "useWhen": "Four to six people placed by role and location at the top of a meeting. Not biographies.",
   "$useWhenNote": "Written by hand.",
   "family": "H-entities",
   "secondaryFamily": null,

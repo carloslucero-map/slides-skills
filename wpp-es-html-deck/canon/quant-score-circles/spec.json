@@ -1,0 +1,99 @@
+{
+  "id": "quant-score-circles",
+  "$comment": "Hand-written. Structure only.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "eyebrow",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "label"
+    },
+    {
+      "role": "headline",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "headline"
+    },
+    {
+      "role": "input",
+      "repeat": true,
+      "arity": [
+        4,
+        6
+      ],
+      "required": true,
+      "capacityRole": "fineItem"
+    },
+    {
+      "role": "brace",
+      "arity": 1,
+      "required": true,
+      "note": "Structural: says the scores are DERIVED from the inputs."
+    },
+    {
+      "role": "composite",
+      "arity": 1,
+      "required": false,
+      "capacityRole": "fineLabel"
+    },
+    {
+      "role": "score",
+      "repeat": true,
+      "arity": [
+        3,
+        4
+      ],
+      "required": true,
+      "children": [
+        {
+          "role": "rating",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "fineLabel"
+        },
+        {
+          "role": "value",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "display"
+        },
+        {
+          "role": "category",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "fineLabel"
+        },
+        {
+          "role": "note",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "fineItem"
+        }
+      ]
+    },
+    {
+      "role": "footnote",
+      "arity": 1,
+      "required": false,
+      "capacityRole": "body"
+    }
+  ],
+  "invariants": [
+    "Discs are EQUAL. This template is for a narrow range with the number printed; at 85-99 square-root sizing would make the widest disc 7.6% wider than the narrowest, which no eye reads as data and every eye reads as a mistake.",
+    "Proportional area belongs to stats-v3, which already square-root scales. Use that when the range spans an order of magnitude AND the number is not printed.",
+    "The brace is not decoration. Remove it and the slide is two unrelated stacked rows.",
+    "Three or four scores. At five the discs fall below the size at which a two-digit number reads from the back of a room."
+  ],
+  "grounds": {
+    "upper": "cream",
+    "lower": "cream",
+    "chips": "navy",
+    "discs": "white"
+  },
+  "source": "bank:189",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

@@ -1,7 +1,7 @@
 {
   "id": "enum-numbered-4",
   "name": "Numbered method steps across a ground change",
-  "useWhen": "A method or approach has three or four named stages, each needing a sentence of substance rather than a label, and the deck has to look like it knows the order matters.",
+  "useWhen": "Three or four named stages, each needing a sentence of substance rather than a label.",
   "$useWhenNote": "Written by hand, on purpose. Generating this line from family+form+arity produces the same boilerplate the old SNIPPET-INDEX descriptions already are ('three columns, dot headers') — construction, not the problem it solves. It is the only field here that cannot be derived, and the only one anyone reads when choosing.",
   "family": "B-enumeration",
   "secondaryFamily": null,

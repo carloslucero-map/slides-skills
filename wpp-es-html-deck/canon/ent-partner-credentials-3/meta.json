@@ -1,7 +1,7 @@
 {
   "id": "ent-partner-credentials-3",
   "name": "Partner credentials compared side by side",
-  "useWhen": "Two or three platform partnerships each need their own proof — depth of certification, scale of delivery, and who it was delivered for — and the point is that all of them are strong.",
+  "useWhen": "Two or three partnerships, each with its own proof and client roster, all of them strong.",
   "$useWhenNote": "Written by hand.",
   "family": "H-entities",
   "secondaryFamily": "D-quantitative",

@@ -1,0 +1,80 @@
+{
+  "id": "seq-phase-columns-4",
+  "$comment": "Hand-written. Structure only.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "eyebrow",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "label"
+    },
+    {
+      "role": "headline",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "headline"
+    },
+    {
+      "role": "phase",
+      "repeat": true,
+      "arity": [
+        3,
+        4
+      ],
+      "required": true,
+      "children": [
+        {
+          "role": "ordinal",
+          "arity": 1,
+          "required": true
+        },
+        {
+          "role": "phaseName",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "cardTitle"
+        },
+        {
+          "role": "phaseLede",
+          "arity": 1,
+          "required": false,
+          "capacityRole": "fineItem"
+        },
+        {
+          "role": "activity",
+          "repeat": true,
+          "arity": [
+            3,
+            7
+          ],
+          "required": true,
+          "capacityRole": "fineItem"
+        }
+      ]
+    },
+    {
+      "role": "band",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "cardTitle",
+      "note": "Spans all phases because it is true of all of them."
+    }
+  ],
+  "invariants": [
+    "Exactly one phase is tinted, and it is the CURRENT one. Without it this is a four-column table rather than a sequence — the tint is the only thing saying 'you are here'.",
+    "Ordinals carry the sequence. A drawn time axis implies durations nobody has measured; numbering does the job honestly.",
+    "Activities are separated by hairlines, never bulleted. A rule says peers in a list; a bullet says subordinate to something above, and nothing is above them.",
+    "The footer band spans the full width. It names what underpins every phase, which is a different kind of claim from anything inside a column."
+  ],
+  "grounds": {
+    "upper": "cream",
+    "lower": "cream",
+    "currentPhase": "alt"
+  },
+  "source": "bank:65",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

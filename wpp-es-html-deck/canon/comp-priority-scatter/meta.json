@@ -1,7 +1,7 @@
 {
   "id": "comp-priority-scatter",
   "name": "Everything scored on two axes at once",
-  "useWhen": "Ten to thirty-five candidates have to be prioritised and the conversation is about relative position — what is nearly equal, what is clearly ahead — not about which named box each one falls in.",
+  "useWhen": "Ten to thirty-five candidates to prioritise, where relative position matters more than which box they fall in.",
   "$useWhenNote": "Written by hand.",
   "family": "E-comparison",
   "secondaryFamily": "D-quantitative",

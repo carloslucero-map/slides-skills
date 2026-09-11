@@ -1,7 +1,7 @@
 {
   "id": "enum-intro-grid-5",
   "name": "Framing column beside a grid of instances",
-  "useWhen": "One principle has to be stated once and then shown through four to six named instances, and the principle deserves more room than any single instance.",
+  "useWhen": "One principle, then four to six named instances of it — and the principle needs more room than any instance.",
   "$useWhenNote": "Written by hand. Generated from family+form it would read 'six columns, dot headers', which is construction, not the problem it solves.",
   "family": "B-enumeration",
   "secondaryFamily": null,

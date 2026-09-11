@@ -1,7 +1,7 @@
 {
   "id": "rel-layered-stack",
   "name": "A capability architecture, read top to bottom",
-  "useWhen": "An offer has layers — goals, strategies, capabilities, enablers — and the point is both that they stack in that order and that one layer is where all the substance lives.",
+  "useWhen": "An offer with stacked layers, where one layer is plainly where all the substance lives.",
   "$useWhenNote": "Written by hand.",
   "family": "F-relational",
   "secondaryFamily": "B-enumeration",

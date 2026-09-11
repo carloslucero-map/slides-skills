@@ -1,7 +1,7 @@
 {
   "id": "comp-priority-grid",
   "name": "Sorted into nine bands, not scored on a line",
-  "useWhen": "Fifteen to twenty-five candidates need prioritising and the scoring is a judgement rather than a measurement — the room will argue about which band something belongs in, not about a decimal place.",
+  "useWhen": "Fifteen to twenty-five candidates where the scoring is a judgement and the bands are what gets argued about.",
   "$useWhenNote": "Written by hand.",
   "family": "E-comparison",
   "secondaryFamily": null,

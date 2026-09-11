@@ -1,7 +1,7 @@
 {
   "id": "ent-logo-rows-6",
   "name": "Partner wall organised by category",
-  "useWhen": "A partner or technology roster has to show BREADTH across named categories, and which category a logo sits in matters as much as the logo being there.",
+  "useWhen": "A partner roster where which category a logo sits in matters as much as its being there.",
   "$useWhenNote": "Written by hand.",
   "family": "H-entities",
   "secondaryFamily": null,
