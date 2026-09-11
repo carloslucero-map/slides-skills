@@ -489,6 +489,74 @@ def check_motif_routing(text):
                "every routed motif is at or above its host's render width")
 
 
+# Motif hosts, probed separately (see GEO_PROBE_JS). Populated by _geo_capture.
+_MOTIF_RECS = []
+
+# The ink each shipped motif is drawn in. The halftone illustrations are
+# SINGLE-COLOUR on transparency (§9.1), so ink that matches its ground renders
+# an empty slide rather than a broken one.
+MOTIF_INK = {
+    "mountain": "navy", "crystal": "navy", "coral": "navy", "rocks": "navy",
+    "ribbon-navy": "navy", "dot-lighthouse": "navy",
+    "mountain-orange": "orange", "peaks-orange": "orange",
+    "crystal-orange": "orange", "coral-orange": "orange",
+    "rocks-orange": "orange", "ribbon-orange": "orange",
+    "dot-dancers-orange": "orange",
+}
+
+# The four 964x540 EMF-sourced files carry a BAKED OPAQUE CREAM FIELD instead of
+# clean transparency (§9.1a). Off cream they print their own background as pale
+# wedges — the one failure that looks populated, so it ships.
+MOTIF_CREAM_BAKED = {"rocks", "rocks-orange", "ribbon-orange", "ribbon-navy"}
+
+
+def _rgb(css):
+    m = re.match(r"rgba?\(([^)]*)\)", css or "")
+    if not m:
+        return None
+    parts = [p.strip() for p in m.group(1).replace("/", " ").split(",")]
+    try:
+        return tuple(float(p) for p in parts[:3])
+    except ValueError:
+        return None
+
+
+def _luma(rgb):
+    r, g, b = (c / 255.0 for c in rgb)
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+
+def check_motif_ground():
+    """FAIL a motif whose ink vanishes into its ground, or whose baked cream
+    field prints over one. Neither is visible to any other gate: a motif host
+    carries no text and no position, so the geometry probe skips it."""
+    if not _MOTIF_RECS:
+        report("SKIP", "motif ground",
+               "no motif hosts probed (no motifs, or the probe did not run)")
+        return
+    bad = []
+    for r in _MOTIF_RECS:
+        name, rgb = r.get("name"), _rgb(r.get("ground"))
+        if rgb is None:
+            continue                      # nothing opaque behind it — cannot judge
+        dark = _luma(rgb) < 0.35
+        cream = _luma(rgb) > 0.85
+        where = f"{r['slide']} {r.get('sel','')}".strip()
+        # Cream-baked first: no colourway fixes it, so the advice differs.
+        if name in MOTIF_CREAM_BAKED and not cream:
+            bad.append(f"{name} on a non-cream ground at {where} — it bakes in its "
+                       f"own cream field and will print pale wedges; this motif is "
+                       f"cream-ground-only in BOTH colourways, pick another")
+        elif MOTIF_INK.get(name) == "navy" and dark:
+            bad.append(f"{name} (navy ink) on a dark ground at {where} — it renders "
+                       f"nothing; use the _Orange colourway")
+    if bad:
+        report("FAIL", "motif ground", "; ".join(sorted(set(bad))))
+    else:
+        report("PASS", "motif ground",
+               f"{len(_MOTIF_RECS)} motif host(s), every one readable on its ground")
+
+
 def check_duplicate_payloads(text):
     counts = {}
     for m in re.finditer(r";base64,([A-Za-z0-9+/=]+)", text):
@@ -928,8 +996,30 @@ GEO_PROBE_JS = r"""
           recOf.set(el,rec.i); out.push(rec);
         });
       });
-      document.body.innerHTML='<pre id="geo"></pre>';
+      // Motif hosts are invisible to the loop above: they carry no text and are
+      // not positioned, so they never enter `out`. An illustration that renders
+      // nothing produces a slide that looks fine and empty, which is the failure
+      // that ships — so they are probed separately, with the ground they
+      // inherit rather than the one they declare.
+      var mout=[];
+      slides.forEach(function(s,si){
+        slides.forEach(function(o){o.style.display=(o===s)?'block':'none';});
+        var id=s.id||s.getAttribute('data-slide-id')||('slide-'+(si+1));
+        [].slice.call(s.querySelectorAll('[data-motif]')).forEach(function(el){
+          if(el.closest('template'))return;
+          var g='',p=el;
+          while(p&&p!==document.documentElement){
+            var b=getComputedStyle(p).backgroundColor;
+            if(b&&b!=='rgba(0, 0, 0, 0)'&&b!=='transparent'&&!/,\s*0\)$/.test(b)){g=b;break;}
+            p=p.parentElement;
+          }
+          mout.push({slide:id,name:el.getAttribute('data-motif'),ground:g,
+                     sel:el.tagName.toLowerCase()+'.'+(el.getAttribute('class')||'').trim().split(/\s+/).join('.')});
+        });
+      });
+      document.body.innerHTML='<pre id="geo"></pre><pre id="geo-motif"></pre>';
       document.getElementById('geo').textContent=JSON.stringify(out);
+      document.getElementById('geo-motif').textContent=JSON.stringify(mout);
     }catch(e){
       document.body.innerHTML='<pre id="geo-err"></pre>';
       document.getElementById('geo-err').textContent=String(e&&e.stack||e);
@@ -996,6 +1086,12 @@ def _geo_capture(deck_path):
             return None, "probe JS error: " + html.unescape(err.group(1))[:300]
         return None, (f"no probe output in dumped DOM ({len(dom)} bytes); "
                       f"Chrome stderr tail: {proc.stderr[-300:]!r}")
+    mm = re.search(r'<pre id="geo-motif">(.*?)</pre>', dom, re.S)
+    if mm:
+        try:
+            globals()["_MOTIF_RECS"] = json.loads(html.unescape(mm.group(1)))
+        except ValueError:
+            pass
     try:
         return json.loads(html.unescape(m.group(1))), None
     except ValueError as e:
@@ -1568,6 +1664,7 @@ def main():
         check_composition(slides, shots)
         geo = check_geometry(args.deck, slides, shots)
         check_furniture_contrast(slides, shots, geo)
+        check_motif_ground()
         # built last, so it can outline whatever the checks above flagged
         if args.contact_sheet is not None:
             out = args.contact_sheet or os.path.join(args.screenshots, "contact-sheet.png")

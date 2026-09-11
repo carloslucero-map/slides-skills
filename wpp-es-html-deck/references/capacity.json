@@ -2193,7 +2193,7 @@
      "min_chars": 9,
      "ideal_chars": 18,
      "max_chars": 32,
-     "font_px": null,
+     "font_px": 22.0,
      "basis": "placeholder"
     },
     "cpg-item": {
@@ -2363,7 +2363,7 @@
      "min_chars": 11,
      "ideal_chars": 28,
      "max_chars": 50,
-     "font_px": null,
+     "font_px": 22.0,
      "basis": "placeholder"
     },
     "cps-item": {
@@ -2547,7 +2547,7 @@
      "min_chars": 7,
      "ideal_chars": 7,
      "max_chars": 13,
-     "font_px": 56.0,
+     "font_px": 64.0,
      "basis": "placeholder"
     },
     "eix-title": {
@@ -2555,7 +2555,7 @@
      "min_chars": 17,
      "ideal_chars": 17,
      "max_chars": 31,
-     "font_px": 64.0,
+     "font_px": 80.0,
      "basis": "placeholder"
     },
     "sub-item": {
@@ -2563,7 +2563,7 @@
      "min_chars": 40,
      "ideal_chars": 40,
      "max_chars": 72,
-     "font_px": null,
+     "font_px": 22.0,
      "basis": "placeholder"
     },
     "eix-note": {
@@ -2571,7 +2571,7 @@
      "min_chars": 40,
      "ideal_chars": 40,
      "max_chars": 72,
-     "font_px": 20.0,
+     "font_px": 32.0,
      "basis": "placeholder"
     },
     "eix-n": {
@@ -2579,7 +2579,7 @@
      "min_chars": 2,
      "ideal_chars": 2,
      "max_chars": 4,
-     "font_px": 26.0,
+     "font_px": 32.0,
      "basis": "placeholder"
     },
     "eix-t": {
@@ -2587,7 +2587,7 @@
      "min_chars": 18,
      "ideal_chars": 39,
      "max_chars": 70,
-     "font_px": 26.0,
+     "font_px": 32.0,
      "basis": "placeholder"
     }
    },
@@ -3049,7 +3049,7 @@
      "min_chars": 80,
      "ideal_chars": 196,
      "max_chars": 353,
-     "font_px": null,
+     "font_px": 22.0,
      "basis": "placeholder"
     },
     "mrc-copy": {
@@ -3311,7 +3311,7 @@
      "min_chars": 68,
      "ideal_chars": 109,
      "max_chars": 196,
-     "font_px": null,
+     "font_px": 22.0,
      "basis": "placeholder"
     },
     "nts-d": {
@@ -3401,7 +3401,7 @@
      "min_chars": 18,
      "ideal_chars": 98,
      "max_chars": 176,
-     "font_px": null,
+     "font_px": 22.0,
      "basis": "placeholder"
     },
     "qsc-chip": {

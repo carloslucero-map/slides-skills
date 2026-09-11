@@ -3,20 +3,14 @@
 
 # Canon catalogue
 
-25 templates, each traced from a real slide in the MAP bank and
-rendered against its original. **Read the `use when` column** — it says what
-problem the template solves. The rest is filtering.
+25 templates, each traced from a real slide in the MAP bank.
+Choose on `use when` — the rest is filtering. If a fill looks wrong, compare
+the template's `ref.png` (the source slide) with its `preview.png` before
+changing anything.
 
-Open `canon/<id>/template.html` and paste the `<section>`. Its `ref.png` is the
-source slide and `preview.png` is what this template renders; if a fill looks
-wrong, compare the two before changing the template.
-
-`yes` in the ok column means the template was reviewed side by side against
-its ref.png and passed the gates — a MACHINE approval, recorded in the spec's
-`approvedBy`. No human has signed these off against the bank. Read each spec's
-`approvalNote` before a client deck: eleven carry caveats, mostly placeholder
-art standing in for logos, headshots and client screenshots. `?` means not even
-that much.
+`ok` = reviewed against its ref.png and passed the gates, BY MACHINE — no human
+has signed these off. Eleven specs carry an `approvalNote` caveat (placeholder
+logos, headshots, client screenshots). Read it before a client deck.
 
 ## A-narrative
 
@@ -86,3 +80,14 @@ that much.
 ---
 
 Families covered: 8/8.
+
+**Family coverage is not job coverage.** E-comparison holds two
+PRIORITISATION tools and no comparison. Do not stretch a template — fall back to
+`variants/` and say which slide fell back:
+
+- **Two states weighed against each other** (current vs future, us vs them) — the
+  comp-* pair scores MANY candidates, it does not compare two → `comparison-v1`
+- **Dated timeline / roadmap / Gantt** — `seq-phase-columns-4` refuses a drawn
+  time axis on purpose → `process-timeline-v3` (swimlanes), `-v2`, `-v4`
+- **One hero number** → `stats-*` · **attributed quote at poster size** →
+  `statement-quote-v2` · **fee structure or any real table** → `charts-v3`

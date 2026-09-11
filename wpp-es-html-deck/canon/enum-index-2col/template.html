@@ -18,7 +18,10 @@
      other. Here the part label, the title and the timing note are three separate
      tiers.
 -->
-<section class="slide" data-slide-id="cX-sY" data-archetype="enum-index-2col" data-template="enum-index-2col">
+<section class="slide" data-slide-id="cX-sY" data-archetype="enum-index-2col" data-template="enum-index-2col"
+        data-composition="intentional-air"  <!-- §12.15a: airy BY TRACE, not by neglect — a 16-item contents page, set at the source's own measured type sizes.
+             Declared so the gate WARNs instead of failing, and so the art pass
+             is still required to look at it. -->>
 
   <div class="eix-part">Part 02</div>
   <h2 class="eix-title">Current offerings</h2>
@@ -55,12 +58,12 @@
 
   /* Three tiers, on three baselines. The source sets the title and the timing
      note at the same one and they print through each other. */
-  .eix-part{position:absolute;left:var(--m-text);top:70px;font-weight:400;font-size:56px;
+  .eix-part{position:absolute;left:var(--m-text);top:70px;font-weight:400;font-size:64px;
             line-height:1;letter-spacing:.01em;text-transform:uppercase;
             color:var(--orange-700);}
   .eix-title{position:absolute;left:var(--m-text);top:140px;margin:0;
-             font-weight:300;font-size:64px;line-height:1.04;letter-spacing:-.005em;}
-  .eix-note{position:absolute;left:var(--m-text);top:226px;font-size:20px;line-height:1.25;}
+             font-weight:300;font-size:80px;line-height:1.04;letter-spacing:-.005em;}
+  .eix-note{position:absolute;left:var(--m-text);top:250px;font-size:32px;line-height:1.25;}
 
   .eix-grid{position:absolute;left:var(--m-text);right:var(--m-edge);top:310px;bottom:80px;
             display:grid;grid-template-columns:1fr 1fr;gap:0 90px;}
@@ -72,11 +75,11 @@
   .eix-row{display:grid;grid-template-columns:72px 1fr;align-items:center;
            border-bottom:2px dotted var(--orange-600);min-width:0;}
   .eix-list .eix-row:last-child{border-bottom:none;}
-  .eix-n{font-weight:400;font-size:26px;line-height:1.1;color:var(--orange-700);
+  .eix-n{font-weight:400;font-size:32px;line-height:1.1;color:var(--orange-700);
          font-variant-numeric:tabular-nums lining-nums;}
   /* Numbers run DOWN one column then down the next, the way a contents page
      reads and the way anyone hunting for item 11 will look. */
-  .eix-t{font-weight:400;font-size:26px;line-height:1.15;text-transform:uppercase;
+  .eix-t{font-weight:400;font-size:32px;line-height:1.15;text-transform:uppercase;
          overflow:hidden;}
   </style>
 </section>
