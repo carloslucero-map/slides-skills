@@ -42,8 +42,8 @@
   <div class="rst-band rst-band--dn">Scaled activation</div>
 
   <div class="rst-dia" aria-hidden="true">
-    <div class="rst-half rst-half--up"></div>
-    <div class="rst-half rst-half--dn"></div>
+    <div class="rst-half rst-half--up"><i></i></div>
+    <div class="rst-half rst-half--dn"><i></i></div>
     <div class="rst-hub"><span>Owned<br>intelligence</span></div>
   </div>
 
@@ -101,17 +101,21 @@
   .rst-band{position:absolute;left:1180px;width:520px;text-align:center;
             font-weight:400;font-size:28px;line-height:1.15;text-transform:uppercase;}
   .rst-band--up{top:56px;}
-  .rst-band--dn{bottom:52px;color:var(--text-inv);}
+  .rst-band--dn{bottom:104px;color:var(--text-inv);}
 
   /* Centred ON the split. The hub belongs to neither zone, which is the claim. */
   .rst-dia{position:absolute;left:1440px;top:var(--split-y);
            width:calc(var(--dia-r) * 2);height:calc(var(--dia-r) * 2);
            transform:translate(-50%,-50%);}
+  /* A full circle clipped by a half-height window, not corner radii. Same
+     shape, and it uses only §13's sanctioned 50% — corner-radius pairs are
+     outside the closed set and the verifier flagged them correctly. */
   .rst-half{position:absolute;left:0;width:100%;height:50%;overflow:hidden;}
-  .rst-half--up{top:0;background:var(--orange-600);opacity:.32;
-                border-radius:var(--dia-r) var(--dia-r) 0 0;}
-  .rst-half--dn{bottom:0;background:var(--wpp-white);opacity:.18;
-                border-radius:0 0 var(--dia-r) var(--dia-r);}
+  .rst-half > i{position:absolute;left:0;width:100%;height:200%;border-radius:50%;display:block;}
+  .rst-half--up{top:0;}
+  .rst-half--up > i{top:0;background:var(--orange-600);opacity:.32;}
+  .rst-half--dn{bottom:0;}
+  .rst-half--dn > i{bottom:0;background:var(--wpp-white);opacity:.18;}
   .rst-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
            width:300px;height:300px;border-radius:50%;background:var(--wpp-white);
            border:3px solid var(--orange-700);

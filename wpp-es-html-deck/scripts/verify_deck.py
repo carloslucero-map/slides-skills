@@ -1097,6 +1097,26 @@ def _geo_anc_classes(by_i, r):
     return seen
 
 
+def _role_classes(t, rs, depth=4):
+    """Classes on the element PLUS those on its ancestors.
+
+    An inline <strong> or <em> inside a declared second-level element is still
+    second-level, but the probe reports it as its own leaf with no classes of
+    its own. Reading only the leaf made emphasising three words inside fine
+    print fail the type floor while the sentence around them passed. The record
+    carries a parent index, so the role resolves up the chain.
+    """
+    by_i = {r.get("i"): r for r in rs if r.get("i") is not None}
+    out, cur, n = _geo_classes(t["sel"]), t, 0
+    while n < depth:
+        cur = by_i.get(cur.get("parent"))
+        if cur is None:
+            break
+        out |= _geo_classes(cur["sel"])
+        n += 1
+    return out
+
+
 def _geo_violations(rs, locked, edge=40.0, tedge=None):
     tedge = edge if tedge is None else tedge
     """(status, detail) §15 findings for one slide's probe records. Locked
@@ -1113,7 +1133,12 @@ def _geo_violations(rs, locked, edge=40.0, tedge=None):
             fs = float(str(t.get("fs", "")).replace("px", "") or 0)
         except ValueError:
             continue
-        cls = _geo_classes(t["sel"])
+        # An inline <strong> or <em> inside a declared second-level element is
+        # still second-level. The probe reports it as its own leaf with no
+        # classes of its own, so the role has to be read from the selector's
+        # ancestry — otherwise emphasising three words inside fine print fails
+        # the floor while the sentence around them passes.
+        cls = _role_classes(t, rs)
         if 0 < fs < MIN_FINE:
             out.append(("FAIL", "type floor (§15.10): %s at %.1fpx — nothing is set "
                         "below %gpx, whatever role it plays"

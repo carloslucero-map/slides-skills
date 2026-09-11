@@ -24,8 +24,8 @@
 -->
 <section class="slide" data-slide-id="cX-sY" data-archetype="narrative-tension-spectrum" data-template="narrative-tension-spectrum">
 
-  <div class="nts-media" data-motif="photo-team" aria-hidden="true"></div>
-  <div class="nts-scrim" aria-hidden="true"></div>
+  <div class="nts-media" data-motif="photo-team" data-text-safe="true" aria-hidden="true"></div>
+  <div class="nts-scrim" data-text-safe="true" aria-hidden="true"></div>
 
   <div class="nts-left">
     <div class="nts-eyebrow">Living loyalty vision</div>
@@ -98,7 +98,10 @@
   .nts-media{position:absolute;left:830px;right:0;top:0;bottom:0;overflow:hidden;}
   .nts-media img{width:100%;height:100%;object-fit:cover;display:block;}
   /* The scrim is what buys the white type its §3.5 headroom over a photograph
-     whose brightness the deck cannot predict. */
+     whose brightness the deck cannot predict. Both the photo and the scrim carry
+     data-text-safe, the shell's own declaration for "text sits over this ground
+     on purpose" — §15.2 would otherwise read a full-bleed image as decoration
+     obscuring text, which is exactly what it is for and exactly not what this is. */
   .nts-scrim{position:absolute;left:830px;right:0;top:0;bottom:0;
              background:var(--bg-dark);opacity:.72;}
 

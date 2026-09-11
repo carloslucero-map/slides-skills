@@ -35,7 +35,7 @@
   </div>
 
   <div class="npm-model" aria-hidden="true">
-    <svg viewBox="0 0 400 400" class="npm-svg">
+    <svg viewBox="0 0 400 400" class="npm-svg" preserveAspectRatio="xMidYMid meet">
       <circle cx="200" cy="200" r="150" class="npm-ring"/>
       <!-- Every chord drawn. The connections ARE the claim; a bare ring would
            say the six dimensions merely coexist. -->
@@ -92,7 +92,10 @@
   .npm-lead{font-weight:500;font-size:26px;line-height:1.25;margin:0 0 26px;}
   .npm-p{font-size:24px;line-height:1.36;max-width:none;margin:0 0 22px;}
 
-  .npm-model{position:absolute;left:1080px;top:60px;width:400px;height:400px;}
+    /* The SVG box was 400x400 with the node labels positioned inside it, so §15.2
+     read a decorative element as covering text — correctly, by its own rule. The
+     box now holds only the ring and the labels sit outside it. */
+  .npm-model{position:absolute;left:1160px;top:110px;width:300px;height:300px;}
   .npm-svg{width:100%;height:100%;overflow:visible;}
   .npm-ring{fill:none;stroke:var(--wpp-navy);stroke-opacity:.18;stroke-width:2;}
   .npm-chord line{stroke:var(--wpp-navy);stroke-opacity:.22;stroke-width:1.5;}
@@ -101,12 +104,12 @@
   .npm-lab{position:absolute;font-weight:500;font-size:20px;line-height:1.15;
            text-align:center;width:180px;}
   .npm-sub{display:block;font-weight:400;font-size:16px;opacity:.75;margin-top:2px;}
-  .npm-lab--n {left:110px;top:-56px;}
-  .npm-lab--ne{left:300px;top:78px;}
-  .npm-lab--se{left:300px;top:228px;}
-  .npm-lab--s {left:110px;top:362px;}
-  .npm-lab--sw{left:-80px;top:228px;}
-  .npm-lab--nw{left:-80px;top:78px;}
+  .npm-lab--n {left:60px;top:-72px;}
+  .npm-lab--ne{left:250px;top:30px;}
+  .npm-lab--se{left:250px;top:210px;}
+  .npm-lab--s {left:60px;top:312px;}
+  .npm-lab--sw{left:-130px;top:210px;}
+  .npm-lab--nw{left:-130px;top:30px;}
 
   /* The source runs this heading into its own first bullet. The gap below is
      the fix, and the list starts on its own line whatever the heading wraps to. */
