@@ -11,73 +11,77 @@ Open `canon/<id>/template.html` and paste the `<section>`. Its `ref.png` is the
 source slide and `preview.png` is what this template renders; if a fill looks
 wrong, compare the two before changing the template.
 
-`?` in the approved column means the spec has not been read against its ref by
-a human yet. Usable, but not yet authoritative.
+`yes` in the ok column means the template was reviewed side by side against
+its ref.png and passed the gates — a MACHINE approval, recorded in the spec's
+`approvedBy`. No human has signed these off against the bank. Read each spec's
+`approvalNote` before a client deck: eleven carry caveats, mostly placeholder
+art standing in for logos, headshots and client screenshots. `?` means not even
+that much.
 
 ## A-narrative
 
 | id | use when | arity | density | media | ok |
 |---|---|---|---|---|---|
-| `narrative-panel-model` | A position needing three or four hundred words, with the model it rests on visible alongside. | 6 | dense | motif | ? |
-| `narrative-statement-field` | One sentence marking the turn between two arguments. A breath, not a point. | 1 | airy | motif | ? |
-| `narrative-tension-spectrum` | Tensions rather than choices — and the evidence to say WHERE something sits between two poles. | 5 | dense | photo | ? |
+| `narrative-panel-model` | A position needing three or four hundred words, with the model it rests on visible alongside. | 6 | dense | motif | yes |
+| `narrative-statement-field` | One sentence marking the turn between two arguments. A breath, not a point. | 1 | airy | motif | yes |
+| `narrative-tension-spectrum` | Tensions rather than choices — and the evidence to say WHERE something sits between two poles. | 5 | dense | photo | yes |
 
 ## B-enumeration
 
 | id | use when | arity | density | media | ok |
 |---|---|---|---|---|---|
-| `enum-index-2col` | Ten to sixteen offerings have to be seen as a whole, where the breadth is the point rather than any one item. | 16 | standard | none | ? |
-| `enum-intro-grid-5` | One principle, then four to six named instances of it — and the principle needs more room than any instance. | 5 | dense | none | ? |
-| `enum-numbered-4` | Three or four named stages, each needing a sentence of substance rather than a label. | 3 | standard | none | ? |
-| `enum-stage-bento-4` | Four stages of a transformation, each with a screenshot of what was built and what changed. | 4 | standard | screenshot | ? |
-| `enum-tier-columns-3` | The same problem appears at three levels of maturity, and each level has a client quote that proves it. | 3 | dense | none | ? |
+| `enum-index-2col` | Ten to sixteen offerings have to be seen as a whole, where the breadth is the point rather than any one item. | 16 | standard | none | yes |
+| `enum-intro-grid-5` | One principle, then four to six named instances of it — and the principle needs more room than any instance. | 5 | dense | none | yes |
+| `enum-numbered-4` | Three or four named stages, each needing a sentence of substance rather than a label. | 3 | standard | none | yes |
+| `enum-stage-bento-4` | Four stages of a transformation, each with a screenshot of what was built and what changed. | 4 | standard | screenshot | yes |
+| `enum-tier-columns-3` | The same problem appears at three levels of maturity, and each level has a client quote that proves it. | 3 | dense | none | yes |
 
 ## C-sequence
 
 | id | use when | arity | density | media | ok |
 |---|---|---|---|---|---|
-| `seq-phase-columns-4` | Three or four phases with long activity lists, and it matters which phase the client is in now. | 4 | dense | none | ? |
-| `seq-phase-panels-3` | Work runs in three named phases with different characters, and each deserves the weight of a full-height panel. | 3 | dense | motif | ? |
-| `seq-steps-panels-5` | A method of four or five stages where each stage has real activities and deliverables to name. | 5 | dense | none | ? |
+| `seq-phase-columns-4` | Three or four phases with long activity lists, and it matters which phase the client is in now. | 4 | dense | none | yes |
+| `seq-phase-panels-3` | Work runs in three named phases with different characters, and each deserves the weight of a full-height panel. | 3 | dense | motif | yes |
+| `seq-steps-panels-5` | A method of four or five stages where each stage has real activities and deliverables to name. | 5 | dense | none | yes |
 
 ## D-quantitative
 
 | id | use when | arity | density | media | ok |
 |---|---|---|---|---|---|
-| `quant-score-circles` | Three or four scores on a common scale, shown as derived from named inputs rather than asserted. | 4 | dense | none | ? |
-| `quant-stat-grid-5` | A claim needing five pieces of quantitative proof, where the claim is what the room should leave with. | 5 | standard | none | ? |
+| `quant-score-circles` | Three or four scores on a common scale, shown as derived from named inputs rather than asserted. | 4 | dense | none | yes |
+| `quant-stat-grid-5` | A claim needing five pieces of quantitative proof, where the claim is what the room should leave with. | 5 | standard | none | yes |
 
 ## E-comparison
 
 | id | use when | arity | density | media | ok |
 |---|---|---|---|---|---|
-| `comp-priority-grid` | Fifteen to twenty-five candidates where the scoring is a judgement and the bands are what gets argued about. | 9 | dense | none | ? |
-| `comp-priority-scatter` | Ten to thirty-five candidates to prioritise, where relative position matters more than which box they fall in. | n | dense | none | ? |
+| `comp-priority-grid` | Fifteen to twenty-five candidates where the scoring is a judgement and the bands are what gets argued about. | 9 | dense | none | yes |
+| `comp-priority-scatter` | Ten to thirty-five candidates to prioritise, where relative position matters more than which box they fall in. | n | dense | none | yes |
 
 ## F-relational
 
 | id | use when | arity | density | media | ok |
 |---|---|---|---|---|---|
-| `rel-hub-rings-4` | Four capabilities that live INSIDE one system rather than beside each other, with prose to land the claim. | 4 | standard | motif | ? |
-| `rel-layered-stack` | An offer with stacked layers, where one layer is plainly where all the substance lives. | 5 | dense | none | ? |
-| `rel-stage-split` | What the client sees and what runs underneath, shown as one system rather than two. | 10 | standard | none | ? |
-| `rel-taxonomy-bands` | Three to five named classes that between them exhaust a space. | 4 | standard | motif | ? |
+| `rel-hub-rings-4` | Four capabilities that live INSIDE one system rather than beside each other, with prose to land the claim. | 4 | standard | motif | yes |
+| `rel-layered-stack` | An offer with stacked layers, where one layer is plainly where all the substance lives. | 5 | dense | none | yes |
+| `rel-stage-split` | What the client sees and what runs underneath, shown as one system rather than two. | 10 | standard | none | yes |
+| `rel-taxonomy-bands` | Three to five named classes that between them exhaust a space. | 4 | standard | motif | yes |
 
 ## G-media
 
 | id | use when | arity | density | media | ok |
 |---|---|---|---|---|---|
-| `media-annotated-callouts-4` | A screenshot, diagram or dashboard has to be EXPLAINED — the audience needs telling what to look at and in what order. | 4 | standard | screenshot | ? |
-| `media-bleed-steps-4` | Three to five named moves in order, where the subject deserves a full-height image. | 4 | airy | photo | ? |
-| `media-rail-cases-3` | A repeatable process produced three concrete examples with a measurable outcome, and the point is that the cases came from the process. | 3 | dense | screenshot | ? |
+| `media-annotated-callouts-4` | A screenshot, diagram or dashboard has to be EXPLAINED — the audience needs telling what to look at and in what order. | 4 | standard | screenshot | yes |
+| `media-bleed-steps-4` | Three to five named moves in order, where the subject deserves a full-height image. | 4 | airy | photo | yes |
+| `media-rail-cases-3` | A repeatable process produced three concrete examples with a measurable outcome, and the point is that the cases came from the process. | 3 | dense | screenshot | yes |
 
 ## H-entities
 
 | id | use when | arity | density | media | ok |
 |---|---|---|---|---|---|
-| `ent-logo-rows-6` | A partner roster where which category a logo sits in matters as much as its being there. | 6 | standard | logo | ? |
-| `ent-partner-credentials-3` | Two or three partnerships, each with its own proof and client roster, all of them strong. | 3 | dense | logo | ? |
-| `ent-team-row-6` | Four to six people placed by role and location at the top of a meeting. Not biographies. | 6 | standard | photo | ? |
+| `ent-logo-rows-6` | A partner roster where which category a logo sits in matters as much as its being there. | 6 | standard | logo | yes |
+| `ent-partner-credentials-3` | Two or three partnerships, each with its own proof and client roster, all of them strong. | 3 | dense | logo | yes |
+| `ent-team-row-6` | Four to six people placed by role and location at the top of a meeting. Not biographies. | 6 | standard | photo | yes |
 
 ---
 

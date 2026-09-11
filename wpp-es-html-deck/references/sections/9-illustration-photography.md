@@ -10,7 +10,7 @@
 
 ### 9.1a Illustration inventory (as shipped — `assets/illustrations/`)
 
-Exactly **thirteen** files ship (eleven WPP Open motifs + two v4 square-grid conversions). All have transparent grounds so the Cream field shows through.
+Exactly **thirteen** files ship (eleven WPP Open motifs + two v4 square-grid conversions). The nine 1920px-class and v4 files have **fully transparent grounds** so the Cream field shows through. The four 964×540 EMF-sourced files — **Rocks and Ribbon, both colourways** — do not: they carry a **baked opaque cream field** around the ink. That is what the "+ cream" in their Colourway column means. They are therefore **cream-ground-only**: on Navy, on a tinted panel or over a photo they print their own background as pale wedges. Navy ink disappearing on Navy is the failure everyone expects; this is the one that gets shipped, because the slide looks populated.
 
 | File | Pixels | Colourway | Display rules |
 |---|---|---|---|

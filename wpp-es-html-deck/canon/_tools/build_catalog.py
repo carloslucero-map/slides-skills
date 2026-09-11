@@ -66,8 +66,12 @@ def render_md(metas):
         "source slide and `preview.png` is what this template renders; if a fill looks",
         "wrong, compare the two before changing the template.",
         "",
-        "`?` in the approved column means the spec has not been read against its ref by",
-        "a human yet. Usable, but not yet authoritative.",
+        "`yes` in the ok column means the template was reviewed side by side against",
+        "its ref.png and passed the gates — a MACHINE approval, recorded in the spec's",
+        "`approvedBy`. No human has signed these off against the bank. Read each spec's",
+        "`approvalNote` before a client deck: eleven carry caveats, mostly placeholder",
+        "art standing in for logos, headshots and client screenshots. `?` means not even",
+        "that much.",
         "",
     ]
     by_fam = {}

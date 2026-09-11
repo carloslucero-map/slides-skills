@@ -37,7 +37,7 @@
    "focalRatio": 1.0,
    "source": "bank:183",
    "replaces": "splits-v2",
-   "approved": false
+   "approved": true
   },
   {
    "id": "narrative-statement-field",
@@ -60,7 +60,7 @@
    "focalRatio": 1.63,
    "source": "bank:14",
    "replaces": null,
-   "approved": false
+   "approved": true
   },
   {
    "id": "narrative-tension-spectrum",
@@ -84,7 +84,7 @@
    "focalRatio": 0.85,
    "source": "bank:22",
    "replaces": "comparison-v1",
-   "approved": false
+   "approved": true
   },
   {
    "id": "enum-index-2col",
@@ -107,7 +107,7 @@
    "focalRatio": 1.0,
    "source": "bank:58",
    "replaces": "columns-v2",
-   "approved": false
+   "approved": true
   },
   {
    "id": "enum-intro-grid-5",
@@ -130,7 +130,7 @@
    "focalRatio": 0.5,
    "source": "bank:44",
    "replaces": "columns-v1",
-   "approved": false
+   "approved": true
   },
   {
    "id": "enum-numbered-4",
@@ -154,7 +154,7 @@
    "focalRatio": 3.0,
    "source": "bank:86",
    "replaces": "columns-v5",
-   "approved": false
+   "approved": true
   },
   {
    "id": "enum-stage-bento-4",
@@ -177,7 +177,7 @@
    "focalRatio": 2.75,
    "source": "bank:73",
    "replaces": "cards-v1",
-   "approved": false
+   "approved": true
   },
   {
    "id": "enum-tier-columns-3",
@@ -201,7 +201,7 @@
    "focalRatio": 0.53,
    "source": "bank:149",
    "replaces": null,
-   "approved": false
+   "approved": true
   },
   {
    "id": "seq-phase-columns-4",
@@ -225,7 +225,7 @@
    "focalRatio": 0.47,
    "source": "bank:65",
    "replaces": null,
-   "approved": false
+   "approved": true
   },
   {
    "id": "seq-phase-panels-3",
@@ -249,7 +249,7 @@
    "focalRatio": 1.8,
    "source": "bank:101",
    "replaces": null,
-   "approved": false
+   "approved": true
   },
   {
    "id": "seq-steps-panels-5",
@@ -273,7 +273,7 @@
    "focalRatio": 1.0,
    "source": "bank:203",
    "replaces": "process-timeline-v1",
-   "approved": false
+   "approved": true
   },
   {
    "id": "quant-score-circles",
@@ -297,7 +297,7 @@
    "focalRatio": 1.63,
    "source": "bank:189",
    "replaces": null,
-   "approved": false
+   "approved": true
   },
   {
    "id": "quant-stat-grid-5",
@@ -320,7 +320,7 @@
    "focalRatio": 2.06,
    "source": "bank:74",
    "replaces": "stats-v1",
-   "approved": false
+   "approved": true
   },
   {
    "id": "comp-priority-grid",
@@ -343,7 +343,7 @@
    "focalRatio": 0.28,
    "source": "bank:129",
    "replaces": null,
-   "approved": false
+   "approved": true
   },
   {
    "id": "comp-priority-scatter",
@@ -366,7 +366,7 @@
    "focalRatio": 0.25,
    "source": "bank:32",
    "replaces": null,
-   "approved": false
+   "approved": true
   },
   {
    "id": "rel-hub-rings-4",
@@ -389,7 +389,7 @@
    "focalRatio": 4.3,
    "source": "bank:27",
    "replaces": "orbit-v1",
-   "approved": false
+   "approved": true
   },
   {
    "id": "rel-layered-stack",
@@ -414,7 +414,7 @@
    "focalRatio": 0.47,
    "source": "bank:175",
    "replaces": null,
-   "approved": false
+   "approved": true
   },
   {
    "id": "rel-stage-split",
@@ -438,7 +438,7 @@
    "focalRatio": 5.0,
    "source": "bank:13",
    "replaces": null,
-   "approved": false
+   "approved": true
   },
   {
    "id": "rel-taxonomy-bands",
@@ -461,7 +461,7 @@
    "focalRatio": 0.72,
    "source": "bank:157",
    "replaces": null,
-   "approved": false
+   "approved": true
   },
   {
    "id": "media-annotated-callouts-4",
@@ -484,7 +484,7 @@
    "focalRatio": 8.1,
    "source": "bank:148",
    "replaces": "image-content-v3",
-   "approved": false
+   "approved": true
   },
   {
    "id": "media-bleed-steps-4",
@@ -507,7 +507,7 @@
    "focalRatio": 13.3,
    "source": "bank:151",
    "replaces": "image-content-v2",
-   "approved": false
+   "approved": true
   },
   {
    "id": "media-rail-cases-3",
@@ -531,7 +531,7 @@
    "focalRatio": 3.9,
    "source": "bank:143",
    "replaces": "cards-v3",
-   "approved": false
+   "approved": true
   },
   {
    "id": "ent-logo-rows-6",
@@ -554,7 +554,7 @@
    "focalRatio": 0.4,
    "source": "bank:36",
    "replaces": "logo-wall-v1",
-   "approved": false
+   "approved": true
   },
   {
    "id": "ent-partner-credentials-3",
@@ -577,7 +577,7 @@
    "focalRatio": 0.56,
    "source": "bank:37",
    "replaces": null,
-   "approved": false
+   "approved": true
   },
   {
    "id": "ent-team-row-6",
@@ -600,7 +600,7 @@
    "focalRatio": 3.4,
    "source": "bank:2",
    "replaces": null,
-   "approved": false
+   "approved": true
   }
  ]
 }

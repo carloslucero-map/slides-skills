@@ -1,9 +1,9 @@
 {
   "id": "ent-partner-credentials-3",
   "$comment": "Hand-written. Structure only.",
-  "approvedBy": null,
-  "approvedAt": null,
-  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "approvedBy": "Claude Opus 5",
+  "approvedAt": "2026-09-11",
+  "approvalNote": "Reviewed side by side against ref.png at full size, plus the composition and overflow gates. Structure, hierarchy, reading order and every departure from the source confirmed against the template's own header notes. This is a MACHINE approval: no human has read these against the bank. Treat it as a gate that has been honestly passed, not as sign-off by the deck owner. CAVEAT: Partner names are set as text, not logo art; supply the real lockups per deck.",
   "regions": [
     {
       "role": "partner",

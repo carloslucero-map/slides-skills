@@ -19,8 +19,28 @@
      illustration in each panel. The slot takes a motif; a template that demanded
      three custom illustrations would be unusable in any deck but this one.
 
-     FIXED FROM THE SOURCE: in the Create panel, "Storyboarding" prints straight
-     through the description above it.
+     THE MOTIF IS ONE FAMILY, REPEATED, AND THE PACKAGE LEAVES NO CHOICE.
+     Two constraints meet here. First, the halftone illustrations are
+     single-colour ink on transparency (§9.1), so the navy colourway is 0,0,64
+     and on a navy panel renders nothing at all. Second, the four 964x540
+     EMF-sourced files — Rocks and Ribbon, both colourways — carry a BAKED
+     OPAQUE CREAM FIELD rather than clean transparency, so on anything but cream
+     they print their own background as pale wedges. The first cut of this
+     template asked for crystal / coral / rocks and produced two empty panels
+     and one wrong one.
+
+     What survives both constraints AND a 190px centred host is a short list:
+     mountain-orange and peaks-orange are full-bleed LANDSCAPE compositions that
+     crop to floating fragments at this size, and dot-dancers-orange is a
+     square-grid conversion (§9.1c) whose texture does not sit beside the
+     hexagonal WPP Open motifs. That leaves crystal-orange and coral-orange —
+     two, for three panels.
+
+     So all three panels carry the same motif, which is what §12 asks for anyway:
+     one motif family per deck, repeated. Three panels running one emblem is a
+     rhythm; the 72px phase name is the differentiator and does not need help.
+     The source's three bespoke illustrations are not reproducible by any deck
+     but its own, and this template never promised them.
 -->
 <section class="slide" data-slide-id="cX-sY" data-archetype="seq-phase-panels" data-template="seq-phase-panels-3">
 
@@ -29,7 +49,7 @@
   <div class="spp-row">
     <div class="spp-panel">
       <div class="spp-name">Aspire</div>
-      <div class="spp-art" data-motif="crystal" aria-hidden="true"></div>
+      <div class="spp-art" data-motif="crystal-orange" aria-hidden="true"></div>
       <div class="spp-arc">Discover &rarr; define</div>
       <p class="spp-lede">Defining the future state. Opportunity detection, vision and ecosystem strategy.</p>
       <ul class="spp-list">
@@ -45,7 +65,7 @@
 
     <div class="spp-panel">
       <div class="spp-name">Create</div>
-      <div class="spp-art" data-motif="coral" aria-hidden="true"></div>
+      <div class="spp-art" data-motif="crystal-orange" aria-hidden="true"></div>
       <div class="spp-arc">Define &rarr; develop &rarr; deploy</div>
       <p class="spp-lede">Translating the vision into real, in-market products, services and experiences.</p>
       <ul class="spp-list">
@@ -61,7 +81,7 @@
 
     <div class="spp-panel">
       <div class="spp-name">Run</div>
-      <div class="spp-art" data-motif="rocks" aria-hidden="true"></div>
+      <div class="spp-art" data-motif="crystal-orange" aria-hidden="true"></div>
       <div class="spp-arc">Operate</div>
       <p class="spp-lede">Operating the products and ecosystem to manage performance, roadmap and optimisation.</p>
       <ul class="spp-list">
@@ -100,6 +120,9 @@
      chapter and the list is what happens inside. */
   .spp-name{font-weight:300;font-size:72px;line-height:1;text-align:center;
             margin-bottom:16px;}
+  /* Orange colourway only, and one family across all three — see the header.
+     Navy ink on a navy panel renders nothing, and the 964x540 motifs bake in
+     their own cream field. */
   .spp-art{height:190px;display:flex;align-items:center;justify-content:center;
            margin-bottom:24px;overflow:hidden;}
   .spp-art img{max-height:100%;max-width:70%;object-fit:contain;display:block;}
