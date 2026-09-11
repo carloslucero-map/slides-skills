@@ -1,0 +1,47 @@
+{
+  "id": "rel-stage-split",
+  "name": "Front stage and backstage, cut by one line",
+  "useWhen": "Two halves of an operation — what the client sees and what runs underneath — have to read as ONE system rather than two, and the deck can afford a slide that commits the whole canvas to saying so.",
+  "$useWhenNote": "Written by hand.",
+  "family": "F-relational",
+  "secondaryFamily": "A-narrative",
+  "form": "zones",
+  "arity": "10",
+  "arityRange": [
+    8,
+    12
+  ],
+  "ground": [
+    "cream",
+    "navy"
+  ],
+  "density": "standard",
+  "densityChars": 720,
+  "mediaRole": "none",
+  "focal": {
+    "role": "hub",
+    "px": 300,
+    "againstHeadlinePx": 60,
+    "ratio": 5.0,
+    "note": "Diameter against headline size. The hub is the largest object and the only one belonging to neither zone — which is what makes it read as the join rather than a third thing."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:13",
+  "sourceRender": "ref.png",
+  "replaces": null,
+  "replacesNote": "The strongest compositional device in the selection and the kit has nothing near it. enum-numbered-4 uses .slide--ground for a partial change under a numeral row; this is the same idea at full canvas scale.",
+  "deviations": [
+    {
+      "what": "headline overrun",
+      "source": "headline prints through its own paragraph",
+      "here": "fixed",
+      "why": "A defect in the source."
+    }
+  ],
+  "contractGapsClosed": [],
+  "createdAt": "2026-09-11",
+  "version": 1
+}

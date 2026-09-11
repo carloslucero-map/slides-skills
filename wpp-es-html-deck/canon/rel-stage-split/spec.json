@@ -1,0 +1,90 @@
+{
+  "id": "rel-stage-split",
+  "$comment": "Hand-written. Structure only.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "eyebrow",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "label"
+    },
+    {
+      "role": "upperHead",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "headline"
+    },
+    {
+      "role": "upperBody",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "body"
+    },
+    {
+      "role": "lowerHead",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "cardTitle"
+    },
+    {
+      "role": "lowerBody",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "body"
+    },
+    {
+      "role": "zoneName",
+      "repeat": true,
+      "arity": [
+        2,
+        2
+      ],
+      "required": true,
+      "capacityRole": "label"
+    },
+    {
+      "role": "bandName",
+      "repeat": true,
+      "arity": [
+        2,
+        2
+      ],
+      "required": true,
+      "capacityRole": "label"
+    },
+    {
+      "role": "hub",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "label"
+    },
+    {
+      "role": "node",
+      "repeat": true,
+      "arity": [
+        8,
+        12
+      ],
+      "required": true,
+      "capacityRole": "fineLabel",
+      "note": "Split between the two zones, roughly evenly."
+    }
+  ],
+  "invariants": [
+    "The diagram STRADDLES the split and the hub sits on it. One object cut by the same line that cuts the slide is the entire claim: two stacked half-slides say the opposite.",
+    "--split-y drives the ground, the diagram's centre and both text columns. Hard-coding the line in three places guarantees they drift on the first edit.",
+    "Contrast inverts across the line: navy on cream above, white on navy below. Furniture inverts too — left navy-on-navy it fails §15.5 outright.",
+    "Two zones, never three. A third band has nowhere to put its half of the diagram."
+  ],
+  "grounds": {
+    "upper": "cream",
+    "lower": "navy",
+    "note": "A full-canvas split, not a band."
+  },
+  "source": "bank:13",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

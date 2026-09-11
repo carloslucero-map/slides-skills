@@ -165,7 +165,7 @@
    "family": "F-relational",
    "targetId": "rel-layered-stack",
    "rag": "amber",
-   "canonId": null
+   "canonId": "rel-layered-stack"
   },
   {
    "page": 19,
@@ -174,7 +174,7 @@
    "family": "F-relational",
    "targetId": "rel-ecosystem-zones",
    "rag": "amber",
-   "canonId": null
+   "canonId": "rel-stage-split"
   },
   {
    "page": 20,
@@ -183,7 +183,7 @@
    "family": "F-relational",
    "targetId": "rel-taxonomy-columns",
    "rag": "amber",
-   "canonId": null
+   "canonId": "rel-taxonomy-bands"
   },
   {
    "page": 21,

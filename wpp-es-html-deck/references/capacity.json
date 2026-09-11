@@ -3088,6 +3088,388 @@
    "_source": "canon"
   },
   {
+   "file": "canon/rel-layered-stack/template.html",
+   "archetype": "rel-layered-stack",
+   "label": "CANON \u00b7 rel-layered-stack",
+   "slots": {
+    "hl": {
+     "items": 1,
+     "min_chars": 10,
+     "ideal_chars": 10,
+     "max_chars": 18,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 25,
+     "ideal_chars": 25,
+     "max_chars": 45,
+     "font_px": 54.0,
+     "basis": "placeholder"
+    },
+    "headline--lg": {
+     "items": 1,
+     "min_chars": 25,
+     "ideal_chars": 25,
+     "max_chars": 45,
+     "font_px": 64.0,
+     "basis": "placeholder"
+    },
+    "body": {
+     "items": 1,
+     "min_chars": 123,
+     "ideal_chars": 123,
+     "max_chars": 221,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    },
+    "rls-lede": {
+     "items": 1,
+     "min_chars": 123,
+     "ideal_chars": 123,
+     "max_chars": 221,
+     "font_px": 24.0,
+     "basis": "placeholder"
+    },
+    "rls-flabel": {
+     "items": 2,
+     "min_chars": 10,
+     "ideal_chars": 14,
+     "max_chars": 25,
+     "font_px": 28.0,
+     "basis": "placeholder"
+    },
+    "sub-item": {
+     "items": 7,
+     "min_chars": 23,
+     "ideal_chars": 30,
+     "max_chars": 54,
+     "font_px": 19.0,
+     "basis": "placeholder"
+    },
+    "rls-rail": {
+     "items": 5,
+     "min_chars": 8,
+     "ideal_chars": 26,
+     "max_chars": 47,
+     "font_px": 19.0,
+     "basis": "placeholder"
+    },
+    "rls-cell": {
+     "items": 13,
+     "min_chars": 4,
+     "ideal_chars": 32,
+     "max_chars": 58,
+     "font_px": 19.0,
+     "basis": "placeholder"
+    },
+    "rls-rail--hero": {
+     "items": 1,
+     "min_chars": 12,
+     "ideal_chars": 12,
+     "max_chars": 22,
+     "font_px": 30.0,
+     "basis": "placeholder"
+    },
+    "rls-capcell": {
+     "items": 16,
+     "min_chars": 12,
+     "ideal_chars": 29,
+     "max_chars": 52,
+     "font_px": 17.0,
+     "basis": "placeholder"
+    },
+    "rls-capgroup": {
+     "items": 5,
+     "min_chars": 20,
+     "ideal_chars": 38,
+     "max_chars": 68,
+     "font_px": 17.0,
+     "basis": "placeholder"
+    }
+   },
+   "slide_ideal_chars": 1295,
+   "slide_max_chars": 1748,
+   "_source": "canon"
+  },
+  {
+   "file": "canon/rel-stage-split/template.html",
+   "archetype": "rel-stage-split",
+   "label": "CANON \u00b7 rel-stage-split",
+   "slots": {
+    "rst-eyebrow": {
+     "items": 1,
+     "min_chars": 7,
+     "ideal_chars": 7,
+     "max_chars": 13,
+     "font_px": 32.0,
+     "basis": "placeholder"
+    },
+    "hl": {
+     "items": 1,
+     "min_chars": 5,
+     "ideal_chars": 5,
+     "max_chars": 9,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "rst-head": {
+     "items": 1,
+     "min_chars": 33,
+     "ideal_chars": 33,
+     "max_chars": 59,
+     "font_px": 60.0,
+     "basis": "placeholder"
+    },
+    "body": {
+     "items": 2,
+     "min_chars": 106,
+     "ideal_chars": 177,
+     "max_chars": 319,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    },
+    "rst-p": {
+     "items": 1,
+     "min_chars": 177,
+     "ideal_chars": 177,
+     "max_chars": 319,
+     "font_px": 23.0,
+     "basis": "placeholder"
+    },
+    "rst-head2": {
+     "items": 1,
+     "min_chars": 30,
+     "ideal_chars": 30,
+     "max_chars": 54,
+     "font_px": 46.0,
+     "basis": "placeholder"
+    },
+    "rst-p2": {
+     "items": 1,
+     "min_chars": 106,
+     "ideal_chars": 106,
+     "max_chars": 191,
+     "font_px": 23.0,
+     "basis": "placeholder"
+    },
+    "rst-zone": {
+     "items": 2,
+     "min_chars": 9,
+     "ideal_chars": 11,
+     "max_chars": 20,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    },
+    "rst-zone--up": {
+     "items": 1,
+     "min_chars": 11,
+     "ideal_chars": 11,
+     "max_chars": 20,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "rst-zone--dn": {
+     "items": 1,
+     "min_chars": 9,
+     "ideal_chars": 9,
+     "max_chars": 16,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "rst-band": {
+     "items": 2,
+     "min_chars": 17,
+     "ideal_chars": 23,
+     "max_chars": 41,
+     "font_px": 28.0,
+     "basis": "placeholder"
+    },
+    "rst-band--up": {
+     "items": 1,
+     "min_chars": 23,
+     "ideal_chars": 23,
+     "max_chars": 41,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "rst-band--dn": {
+     "items": 1,
+     "min_chars": 17,
+     "ideal_chars": 17,
+     "max_chars": 31,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "rst-hub": {
+     "items": 1,
+     "min_chars": 17,
+     "ideal_chars": 17,
+     "max_chars": 31,
+     "font_px": 26.0,
+     "basis": "placeholder"
+    },
+    "rst-node": {
+     "items": 10,
+     "min_chars": 3,
+     "ideal_chars": 21,
+     "max_chars": 38,
+     "font_px": 22.0,
+     "basis": "placeholder"
+    },
+    "rst-node--u1": {
+     "items": 1,
+     "min_chars": 7,
+     "ideal_chars": 7,
+     "max_chars": 13,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "rst-node--u2": {
+     "items": 1,
+     "min_chars": 3,
+     "ideal_chars": 3,
+     "max_chars": 5,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "rst-node--u3": {
+     "items": 1,
+     "min_chars": 3,
+     "ideal_chars": 3,
+     "max_chars": 5,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "rst-node--u4": {
+     "items": 1,
+     "min_chars": 3,
+     "ideal_chars": 3,
+     "max_chars": 5,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "rst-node--u5": {
+     "items": 1,
+     "min_chars": 18,
+     "ideal_chars": 18,
+     "max_chars": 32,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "rst-node--d1": {
+     "items": 1,
+     "min_chars": 20,
+     "ideal_chars": 20,
+     "max_chars": 36,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "rst-node--d2": {
+     "items": 1,
+     "min_chars": 21,
+     "ideal_chars": 21,
+     "max_chars": 38,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "rst-node--d3": {
+     "items": 1,
+     "min_chars": 18,
+     "ideal_chars": 18,
+     "max_chars": 32,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "rst-node--d4": {
+     "items": 1,
+     "min_chars": 19,
+     "ideal_chars": 19,
+     "max_chars": 34,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "rst-node--d5": {
+     "items": 1,
+     "min_chars": 18,
+     "ideal_chars": 18,
+     "max_chars": 32,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "rel-stage": {
+     "items": 1,
+     "min_chars": 30,
+     "ideal_chars": 30,
+     "max_chars": 54,
+     "font_px": null,
+     "basis": "placeholder"
+    }
+   },
+   "slide_ideal_chars": 1068,
+   "slide_max_chars": 1441,
+   "_source": "canon"
+  },
+  {
+   "file": "canon/rel-taxonomy-bands/template.html",
+   "archetype": "rel-taxonomy-bands",
+   "label": "CANON \u00b7 rel-taxonomy-bands",
+   "slots": {
+    "rtb-eyebrow": {
+     "items": 1,
+     "min_chars": 56,
+     "ideal_chars": 56,
+     "max_chars": 101,
+     "font_px": 40.0,
+     "basis": "placeholder"
+    },
+    "hl": {
+     "items": 1,
+     "min_chars": 20,
+     "ideal_chars": 20,
+     "max_chars": 36,
+     "font_px": null,
+     "basis": "placeholder"
+    },
+    "headline": {
+     "items": 1,
+     "min_chars": 19,
+     "ideal_chars": 19,
+     "max_chars": 34,
+     "font_px": 54.0,
+     "basis": "placeholder"
+    },
+    "headline--lg": {
+     "items": 1,
+     "min_chars": 19,
+     "ideal_chars": 19,
+     "max_chars": 34,
+     "font_px": 64.0,
+     "basis": "placeholder"
+    },
+    "rtb-class": {
+     "items": 4,
+     "min_chars": 4,
+     "ideal_chars": 6,
+     "max_chars": 11,
+     "font_px": 46.0,
+     "basis": "placeholder"
+    },
+    "rtb-members": {
+     "items": 4,
+     "min_chars": 61,
+     "ideal_chars": 84,
+     "max_chars": 151,
+     "font_px": 24.0,
+     "basis": "placeholder"
+    }
+   },
+   "slide_ideal_chars": 428,
+   "slide_max_chars": 577,
+   "_source": "canon"
+  },
+  {
    "file": "canon/seq-steps-panels-5/template.html",
    "archetype": "seq-steps-panels",
    "label": "CANON \u00b7 seq-steps-panels-5",

@@ -3,7 +3,7 @@
 
 # Canon catalogue
 
-13 templates, each traced from a real slide in the MAP bank and
+16 templates, each traced from a real slide in the MAP bank and
 rendered against its original. **Read the `use when` column** — it says what
 problem the template solves. The rest is filtering.
 
@@ -52,6 +52,9 @@ a human yet. Usable, but not yet authoritative.
 | id | use when | arity | density | media | ok |
 |---|---|---|---|---|---|
 | `rel-hub-rings-4` | Four capabilities have to be shown as living inside a single system rather than merely sitting next to each other, and the claim needs a paragraph or two to land. | 4 | standard | motif | ? |
+| `rel-layered-stack` | An offer has layers — goals, strategies, capabilities, enablers — and the point is both that they stack in that order and that one layer is where all the substance lives. | 5 | dense | none | ? |
+| `rel-stage-split` | Two halves of an operation — what the client sees and what runs underneath — have to read as ONE system rather than two, and the deck can afford a slide that commits the whole canvas to saying so. | 10 | standard | none | ? |
+| `rel-taxonomy-bands` | Three to five named classes between them exhaust a space — channel types, data types, engagement modes — and the members of each matter less than the fact that the classes cover everything. | 4 | standard | motif | ? |
 
 ## G-media
 

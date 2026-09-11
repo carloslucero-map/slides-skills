@@ -1,0 +1,52 @@
+{
+  "id": "rel-taxonomy-bands",
+  "name": "A taxonomy that divides the whole space",
+  "useWhen": "Three to five named classes between them exhaust a space — channel types, data types, engagement modes — and the members of each matter less than the fact that the classes cover everything.",
+  "$useWhenNote": "Written by hand.",
+  "family": "F-relational",
+  "secondaryFamily": null,
+  "form": "taxonomy",
+  "arity": "4",
+  "arityRange": [
+    3,
+    5
+  ],
+  "ground": [
+    "cream"
+  ],
+  "density": "standard",
+  "densityChars": 560,
+  "mediaRole": "motif",
+  "focal": {
+    "role": "className",
+    "px": 46,
+    "againstHeadlinePx": 64,
+    "ratio": 0.72,
+    "note": "The class names carry the slide; the members are supporting detail set at body size. Inverting that ratio turns a taxonomy into four lists."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:157",
+  "sourceRender": "ref.png",
+  "replaces": null,
+  "replacesNote": "Close to ent-logo-rows-6 in shape but not in job: that one pairs categories with logo ART and lives on those images; here the members are words and the class name carries the weight.",
+  "deviations": [
+    {
+      "what": "the source's central infographic",
+      "source": "three-circle Venn inside a radial dial with an arrow loop",
+      "here": "a motif slot",
+      "why": "One-off artwork drawn for one argument. Nothing about it generalises, and a template that claimed to carry it would be lying about what it is."
+    },
+    {
+      "what": "class names printing through their members",
+      "source": "SHARED and EARNED both do it",
+      "here": "fixed",
+      "why": "A defect in the source. Its left-hand legend also overlaps itself so badly that two of four labels are unreadable."
+    }
+  ],
+  "contractGapsClosed": [],
+  "createdAt": "2026-09-11",
+  "version": 1
+}

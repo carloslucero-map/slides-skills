@@ -1,0 +1,63 @@
+{
+  "id": "rel-taxonomy-bands",
+  "$comment": "Hand-written. Structure only.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "eyebrow",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "label"
+    },
+    {
+      "role": "headline",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "headline"
+    },
+    {
+      "role": "art",
+      "arity": 1,
+      "required": false,
+      "note": "A motif, not a reproduction of the source's bespoke diagram."
+    },
+    {
+      "role": "class",
+      "repeat": true,
+      "arity": [
+        3,
+        5
+      ],
+      "required": true,
+      "children": [
+        {
+          "role": "className",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "cardTitle"
+        },
+        {
+          "role": "members",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "cardBody"
+        }
+      ]
+    }
+  ],
+  "invariants": [
+    "Rules BETWEEN bands, never around them. Four bordered cards read as four separate things; shared rules say these classes divide one whole, which is what a taxonomy claims.",
+    "The class name never shares a line with its members. The source runs two of its four classes straight through their own text.",
+    "Three to five classes. Two is a comparison; six stops exhausting anything a reader can hold.",
+    "The art slot takes a motif only. A template cannot carry someone else's one-off infographic, and pretending it can is how a kit fills with diagrams nobody reuses."
+  ],
+  "grounds": {
+    "upper": "cream",
+    "lower": "cream"
+  },
+  "source": "bank:157",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}

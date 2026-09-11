@@ -1,0 +1,48 @@
+{
+  "id": "rel-layered-stack",
+  "name": "A capability architecture, read top to bottom",
+  "useWhen": "An offer has layers — goals, strategies, capabilities, enablers — and the point is both that they stack in that order and that one layer is where all the substance lives.",
+  "$useWhenNote": "Written by hand.",
+  "family": "F-relational",
+  "secondaryFamily": "B-enumeration",
+  "form": "stack",
+  "arity": "5",
+  "arityRange": [
+    4,
+    6
+  ],
+  "ground": [
+    "cream",
+    "navy",
+    "orange"
+  ],
+  "density": "dense",
+  "densityChars": 1320,
+  "mediaRole": "none",
+  "focal": {
+    "role": "heroLayer",
+    "px": 30,
+    "againstHeadlinePx": 64,
+    "ratio": 0.47,
+    "note": "Measured on the hero rail's label, but the real focal device is AREA — the dominant band takes about half the stack. Proportion is doing what size usually does."
+  },
+  "states": [
+    "ideal",
+    "max"
+  ],
+  "source": "bank:175",
+  "sourceRender": "ref.png",
+  "replaces": null,
+  "replacesNote": "Nothing in the kit draws a layered architecture. process-timeline-v6 is a phase board read left to right; this reads top to bottom and the order is the argument.",
+  "deviations": [
+    {
+      "what": "capability group icons",
+      "source": "line icons from outside the §8 suite",
+      "here": "dropped",
+      "why": "Icons are a per-deck choice and the groups read without them."
+    }
+  ],
+  "contractGapsClosed": [],
+  "createdAt": "2026-09-11",
+  "version": 1
+}

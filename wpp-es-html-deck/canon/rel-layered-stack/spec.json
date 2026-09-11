@@ -1,0 +1,96 @@
+{
+  "id": "rel-layered-stack",
+  "$comment": "Hand-written. Structure only.",
+  "approvedBy": null,
+  "approvedAt": null,
+  "approvalNote": "UNAPPROVED. Traced and rendered, not yet read against ref.png by a human.",
+  "regions": [
+    {
+      "role": "headline",
+      "arity": 1,
+      "required": true,
+      "capacityRole": "headline"
+    },
+    {
+      "role": "lede",
+      "arity": 1,
+      "required": false,
+      "capacityRole": "body"
+    },
+    {
+      "role": "frame",
+      "arity": 1,
+      "required": false,
+      "children": [
+        {
+          "role": "frameLabel",
+          "repeat": true,
+          "arity": [
+            2,
+            2
+          ],
+          "required": true,
+          "capacityRole": "cardTitle"
+        },
+        {
+          "role": "framePoint",
+          "repeat": true,
+          "arity": [
+            3,
+            5
+          ],
+          "required": true,
+          "capacityRole": "fineItem"
+        }
+      ]
+    },
+    {
+      "role": "layer",
+      "repeat": true,
+      "arity": [
+        4,
+        6
+      ],
+      "required": true,
+      "children": [
+        {
+          "role": "layerName",
+          "arity": 1,
+          "required": true,
+          "capacityRole": "fineLabel"
+        },
+        {
+          "role": "layerCell",
+          "repeat": true,
+          "arity": [
+            2,
+            4
+          ],
+          "required": true,
+          "capacityRole": "fineItem"
+        }
+      ]
+    },
+    {
+      "role": "heroLayer",
+      "arity": 1,
+      "required": true,
+      "note": "Exactly one layer is dominant, subdivided into a grid, and solid orange."
+    }
+  ],
+  "invariants": [
+    "The vertical order IS the argument — goals above strategies above capabilities above enablers. Reordering the bands changes the claim.",
+    "Exactly one dominant band, taking roughly half the height. Equal bands turn this into a table: true, and silent about where the work is.",
+    "The framing column is not a band. Keeping it outside the stack's grid is what stops a reader scanning it as one.",
+    "Icons are a per-deck choice and are not part of the template. The source's are from outside the §8 suite."
+  ],
+  "grounds": {
+    "upper": "cream",
+    "lower": "cream",
+    "rails": "navy",
+    "hero": "orange"
+  },
+  "source": "bank:175",
+  "measuredIn": "measure.json",
+  "referenceRender": "ref.png"
+}
