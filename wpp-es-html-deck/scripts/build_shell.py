@@ -1136,8 +1136,16 @@ def nav_js(spec):
     document.body.setAttribute('data-motion','off');
   function mLevel(){return document.body.getAttribute('data-motion')||'off';}
 
+  // GENERIC ROLE HOOKS for the canon (§14). The 25 canon templates each invent
+  // their own class names — 432 of them — and none were in this list, so twelve
+  // of them animated NOTHING but the slide fade while kit slides moved. The fix
+  // is not 432 entries: templates declare the generic role alongside their own
+  // class (class="m-unit spc-col"), exactly as they do for the fine-print type
+  // tier. These sit first so the canon's stagger reads lead -> art -> units.
   var M_ROLES=[
     ['.mw','m-rise'],
+    ['.m-lead','m-rise'],['.m-art','m-float-in'],['.m-unit','m-rise'],
+    ['.m-mark','m-pop'],['.m-bar','m-draw'],
     ['.panel','m-wipe'],['.compare-art','m-float-in'],['.motif','m-float-in'],
     ['.duo','m-fade'],['.icon','m-pop'],['.spark','m-pop'],
     ['.num-ghost','m-drift'],['.headline','m-rise'],['.subtitle','m-rise'],

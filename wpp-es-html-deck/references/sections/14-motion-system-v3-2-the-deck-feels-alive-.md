@@ -18,6 +18,30 @@ shadows in motion. Restraint carries the brand; choreography carries the energy.
   (`cubic-bezier(.34,1.56,.4,1)` — the ONE sanctioned overshoot), rulers and
   bars draw themselves (`scaleX`), stems grow, motifs float in, ghost numerals
   drift in from the right. Stagger 75ms, cap ~1s; durations .5–.95s.
+- **A canon template must DECLARE its motion roles, or it will not move.** The
+  choreography is driven by `M_ROLES`, a closed list of selectors in
+  `build_shell.py`, and every entry in it is a KIT class. The 25 canon templates
+  invent 432 class names of their own; when they shipped, none were in that list,
+  so twelve of them animated nothing at all but the slide fade while kit slides
+  moved — decks built mostly from the canon looked dead by comparison, with no
+  error anywhere. Found 2026-09-11 by opening a real deck and noticing.
+
+  The fix is not 432 more entries. Five generic hooks sit at the top of `M_ROLES`
+  and a template opts in by declaring one alongside its own class, exactly as it
+  declares `fine-label` for the type tier:
+
+  | hook | motion | what it goes on |
+  |---|---|---|
+  | `m-lead` | rise | the statement, lede or panel the slide opens with |
+  | `m-art` | float-in | a motif or media host |
+  | `m-unit` | rise, staggered | THE repeated block — column, band, card, step, person |
+  | `m-mark` | pop | plotted dots, ring nodes, numerals, rail chips |
+  | `m-bar` | draw | rules, bands and bars that read as drawn lines |
+
+  Put the hook on the OUTERMOST repeated element, never on its children: the
+  stagger index counts matched elements, so hooking the leaves gives forty beats
+  where the design wants five. Order in `M_ROLES` sets the reading order, which
+  is why the hooks lead the list.
 - **Data counts up** (both levels): `.hero-num`, `.hero-row .n`, `.kpi .v`,
   `.stat-circle .v`, `.proc .n` animate 0 → value (~950ms) on first reveal,
   preserving comma decimals, dot thousands, prefixes/suffixes and zero-padding.

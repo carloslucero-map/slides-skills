@@ -2220,6 +2220,14 @@
      "font_px": null,
      "basis": "placeholder"
     },
+    "m-mark": {
+     "items": 20,
+     "min_chars": 9,
+     "ideal_chars": 18,
+     "max_chars": 32,
+     "font_px": null,
+     "basis": "placeholder"
+    },
     "sub-item": {
      "items": 20,
      "min_chars": 9,
@@ -2301,8 +2309,8 @@
      "basis": "placeholder"
     }
    },
-   "slide_ideal_chars": 1172,
-   "slide_max_chars": 1582,
+   "slide_ideal_chars": 1457,
+   "slide_max_chars": 1966,
    "_source": "canon"
   },
   {
@@ -2390,6 +2398,14 @@
      "font_px": 20.0,
      "basis": "placeholder"
     },
+    "m-mark": {
+     "items": 33,
+     "min_chars": 11,
+     "ideal_chars": 28,
+     "max_chars": 50,
+     "font_px": null,
+     "basis": "placeholder"
+    },
     "sub-item": {
      "items": 33,
      "min_chars": 11,
@@ -2431,8 +2447,8 @@
      "basis": "placeholder"
     }
    },
-   "slide_ideal_chars": 1641,
-   "slide_max_chars": 2215,
+   "slide_ideal_chars": 2247,
+   "slide_max_chars": 3033,
    "_source": "canon"
   },
   {
@@ -3060,6 +3076,14 @@
      "font_px": 22.0,
      "basis": "placeholder"
     },
+    "m-mark": {
+     "items": 5,
+     "min_chars": 14,
+     "ideal_chars": 25,
+     "max_chars": 45,
+     "font_px": null,
+     "basis": "placeholder"
+    },
     "mrc-step": {
      "items": 5,
      "min_chars": 14,
@@ -3109,8 +3133,8 @@
      "basis": "placeholder"
     }
    },
-   "slide_ideal_chars": 1361,
-   "slide_max_chars": 1837,
+   "slide_ideal_chars": 1454,
+   "slide_max_chars": 1962,
    "_source": "canon"
   },
   {
@@ -3172,6 +3196,14 @@
      "ideal_chars": 18,
      "max_chars": 32,
      "font_px": 16.0,
+     "basis": "placeholder"
+    },
+    "m-unit": {
+     "items": 6,
+     "min_chars": 7,
+     "ideal_chars": 9,
+     "max_chars": 16,
+     "font_px": null,
      "basis": "placeholder"
     },
     "npm-lab": {
@@ -3255,8 +3287,8 @@
      "basis": "placeholder"
     }
    },
-   "slide_ideal_chars": 1677,
-   "slide_max_chars": 2263,
+   "slide_ideal_chars": 1725,
+   "slide_max_chars": 2328,
    "_source": "canon"
   },
   {
@@ -3272,6 +3304,14 @@
      "font_px": null,
      "basis": "placeholder"
     },
+    "m-lead": {
+     "items": 1,
+     "min_chars": 36,
+     "ideal_chars": 36,
+     "max_chars": 65,
+     "font_px": null,
+     "basis": "placeholder"
+    },
     "nsf-line": {
      "items": 1,
      "min_chars": 36,
@@ -3281,8 +3321,8 @@
      "basis": "placeholder"
     }
    },
-   "slide_ideal_chars": 55,
-   "slide_max_chars": 74,
+   "slide_ideal_chars": 91,
+   "slide_max_chars": 122,
    "_source": "canon"
   },
   {
@@ -3428,6 +3468,14 @@
      "font_px": 64.0,
      "basis": "placeholder"
     },
+    "m-mark": {
+     "items": 6,
+     "min_chars": 18,
+     "ideal_chars": 31,
+     "max_chars": 56,
+     "font_px": null,
+     "basis": "placeholder"
+    },
     "sub-item": {
      "items": 11,
      "min_chars": 18,
@@ -3509,8 +3557,8 @@
      "basis": "placeholder"
     }
    },
-   "slide_ideal_chars": 1448,
-   "slide_max_chars": 1954,
+   "slide_ideal_chars": 1590,
+   "slide_max_chars": 2146,
    "_source": "canon"
   },
   {
@@ -3648,6 +3696,14 @@
      "font_px": 26.0,
      "basis": "placeholder"
     },
+    "m-mark": {
+     "items": 4,
+     "min_chars": 2,
+     "ideal_chars": 8,
+     "max_chars": 14,
+     "font_px": null,
+     "basis": "placeholder"
+    },
     "rhr-node": {
      "items": 4,
      "min_chars": 2,
@@ -3689,8 +3745,8 @@
      "basis": "placeholder"
     }
    },
-   "slide_ideal_chars": 847,
-   "slide_max_chars": 1143,
+   "slide_ideal_chars": 867,
+   "slide_max_chars": 1170,
    "_source": "canon"
   },
   {
@@ -3924,6 +3980,14 @@
      "font_px": 26.0,
      "basis": "placeholder"
     },
+    "m-mark": {
+     "items": 10,
+     "min_chars": 3,
+     "ideal_chars": 21,
+     "max_chars": 38,
+     "font_px": null,
+     "basis": "placeholder"
+    },
     "rst-node": {
      "items": 10,
      "min_chars": 3,
@@ -4021,8 +4085,8 @@
      "basis": "placeholder"
     }
    },
-   "slide_ideal_chars": 1068,
-   "slide_max_chars": 1441,
+   "slide_ideal_chars": 1198,
+   "slide_max_chars": 1617,
    "_source": "canon"
   },
   {
@@ -4152,6 +4216,14 @@
      "font_px": 19.0,
      "basis": "placeholder"
     },
+    "m-bar": {
+     "items": 1,
+     "min_chars": 58,
+     "ideal_chars": 58,
+     "max_chars": 104,
+     "font_px": null,
+     "basis": "placeholder"
+    },
     "spc-band": {
      "items": 1,
      "min_chars": 58,
@@ -4161,8 +4233,8 @@
      "basis": "placeholder"
     }
    },
-   "slide_ideal_chars": 1067,
-   "slide_max_chars": 1440,
+   "slide_ideal_chars": 1125,
+   "slide_max_chars": 1518,
    "_source": "canon"
   },
   {
