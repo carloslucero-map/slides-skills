@@ -94,37 +94,44 @@ python wpp-es-html-deck/scripts/derive_capacity.py
 `verify_deck.py` exits 0 when every check passes (warnings allowed) and 1 on
 any failure, so it drops into CI as-is.
 
-## Uploading to claude.ai
+## Size, and uploading to claude.ai
 
-claude.ai caps an uploaded skill at **30 MB**. The checkout is ~55 MB, so build
-the bundle rather than zipping the directory:
+claude.ai takes a skill at **30 MB**. Two numbers have to stay under that, and
+they are not the same number:
+
+| | | |
+|---|---|---|
+| the skill directory | 26.95 MB | what you get zipping `wpp-es-html-deck/` by hand |
+| the bundle | 14.83 MB | what `package_skill.py` writes to `dist/` |
+
+The directory is the one that bites — it is the obvious thing to zip, and it was
+55 MB until the authoring material moved to [`authoring/`](authoring/README.md)
+at the repo root. Nothing under `authoring/` is read while a deck is being
+built; it is what the canon is re-derived from and what design work reads, so it
+stays in the repo, just not inside the skill.
+
+Build the bundle for upload:
 
 ```bash
 python wpp-es-html-deck/scripts/package_skill.py
-# -> wpp-es-html-deck/dist/wpp-es-html-deck.zip  (~15 MB)
+# -> dist/wpp-es-html-deck.zip   (one top-level folder, SKILL.md at its root)
 ```
 
-The repo is not modified. The script stages a second tree that drops the two
-authoring-only directories and re-encodes the canon reference imagery, then
-refuses to write a bundle over the limit (`--limit`, `--check`, `--no-zip`).
+It reports **both** sizes against the cap on every run and exits non-zero if
+either is over, so a regression surfaces at packaging time rather than at upload
+time. It refuses `--out` anywhere inside the skill directory, for the obvious
+reason. `--check` reports without writing, `--limit` tightens the budget,
+`--no-zip` leaves the staged tree.
 
-| Left out of the bundle | Why |
-|---|---|
-| `canon/_shots/` (14 MB) | Contact sheets `shoot_snippets.py` writes. Never read while building a deck. |
-| `canon/_ref/` (14 MB) | Renders and measurements of the source deck the canon was traced from. Authoring input. |
-| `__pycache__/`, `.DS_Store` | Junk. |
-
-`canon/<id>/ref.png` and `preview.png` are re-encoded at 1568 px wide with a
-256-colour palette — 21 MB down to 11 MB, **same filenames**, so `CATALOG.md`,
-`meta.json` and `spec.json` keep pointing at files that exist. 1568 px is the
-width an image is downsampled to before a model sees it, and the palette is
-generous for a deck drawn in three brand colours plus duotone photography, so
-the one job these images have — being compared against a fill that came out
-wrong — is unaffected. `assets/` is copied byte-for-byte: those pixels ship
-inside delivered decks.
-
-Keep the full checkout for anything that re-derives the canon or feeds design
-work. The bundle is for upload only.
+The extra 12 MB of headroom comes from re-encoding `canon/<id>/ref.png` and
+`preview.png` at 1568 px wide with a 256-colour palette, **keeping the
+filename** — `CATALOG.md`, `meta.json` and `spec.json` all name `ref.png`, and
+renaming to `.jpg` would point 25 templates' provenance at a file that does not
+exist. 1568 px is the width an image is downsampled to before a model sees it,
+and the palette is generous for a deck drawn in three brand colours plus duotone
+photography, so the one job those images have — being compared against a fill
+that came out wrong — is unaffected. `assets/` is copied byte-for-byte: those
+pixels ship inside delivered decks.
 
 ## Maintenance notes
 

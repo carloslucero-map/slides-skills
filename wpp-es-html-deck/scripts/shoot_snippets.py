@@ -21,7 +21,7 @@ Usage
   python3 scripts/shoot_snippets.py                       # all 51, sheets per archetype
   python3 scripts/shoot_snippets.py --only stats          # one archetype family
   python3 scripts/shoot_snippets.py --only stats-v6       # one variant
-  python3 scripts/shoot_snippets.py --out canon/_shots    # somewhere else
+  python3 scripts/shoot_snippets.py --out /tmp/shots      # somewhere else
   python3 scripts/shoot_snippets.py --strict              # overflow FAILs instead of WARNs
 
 Exit codes: 0 clean (warnings allowed), 1 a shot was missing/blank, or --strict
@@ -289,7 +289,10 @@ def contact_sheet(entries, outpath, cols=3, tw=560, th=315):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out", default=os.path.join(SKILL, "canon", "_shots"))
+    # Outside the skill on purpose: contact sheets are authoring output and the
+    # skill directory has a 30 MB upload cap. See authoring/README.md.
+    ap.add_argument("--out", default=os.path.normpath(
+        os.path.join(SKILL, os.pardir, "authoring", "canon-shots")))
     ap.add_argument("--only", help="archetype family (stats) or one variant (stats-v6)")
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 on overflow too, not just on missing/blank shots")

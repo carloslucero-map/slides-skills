@@ -18,7 +18,7 @@ PowerPoint does not reorder the parts when you reorder the deck.
   python3 canon/_tools/build_ref_manifest.py \
       --pptx ~/Desktop/slides_map/MAP_slides_SELECCION_25.pptx \
       --index ~/Desktop/slides_map/SELECCION-25-indice.md \
-      --out canon/_ref/manifest.json
+      --out ../authoring/canon-ref/manifest.json
 """
 import argparse, json, os, re, sys, zipfile
 
