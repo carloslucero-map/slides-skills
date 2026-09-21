@@ -94,6 +94,38 @@ python wpp-es-html-deck/scripts/derive_capacity.py
 `verify_deck.py` exits 0 when every check passes (warnings allowed) and 1 on
 any failure, so it drops into CI as-is.
 
+## Uploading to claude.ai
+
+claude.ai caps an uploaded skill at **30 MB**. The checkout is ~55 MB, so build
+the bundle rather than zipping the directory:
+
+```bash
+python wpp-es-html-deck/scripts/package_skill.py
+# -> wpp-es-html-deck/dist/wpp-es-html-deck.zip  (~15 MB)
+```
+
+The repo is not modified. The script stages a second tree that drops the two
+authoring-only directories and re-encodes the canon reference imagery, then
+refuses to write a bundle over the limit (`--limit`, `--check`, `--no-zip`).
+
+| Left out of the bundle | Why |
+|---|---|
+| `canon/_shots/` (14 MB) | Contact sheets `shoot_snippets.py` writes. Never read while building a deck. |
+| `canon/_ref/` (14 MB) | Renders and measurements of the source deck the canon was traced from. Authoring input. |
+| `__pycache__/`, `.DS_Store` | Junk. |
+
+`canon/<id>/ref.png` and `preview.png` are re-encoded at 1568 px wide with a
+256-colour palette — 21 MB down to 11 MB, **same filenames**, so `CATALOG.md`,
+`meta.json` and `spec.json` keep pointing at files that exist. 1568 px is the
+width an image is downsampled to before a model sees it, and the palette is
+generous for a deck drawn in three brand colours plus duotone photography, so
+the one job these images have — being compared against a fill that came out
+wrong — is unaffected. `assets/` is copied byte-for-byte: those pixels ship
+inside delivered decks.
+
+Keep the full checkout for anything that re-derives the canon or feeds design
+work. The bundle is for upload only.
+
 ## Maintenance notes
 
 **The design guideline exists in three forms.**
