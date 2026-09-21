@@ -111,9 +111,33 @@ python wpp-es-html-deck/scripts/package_skill.py
 # -> dist/wpp-es-html-deck.zip
 ```
 
-The checkout is 329 files in 41 directories, so **the folder cannot be zipped by
-hand**. The packager reports files, directories and the entry total on every run
-and exits non-zero above either cap.
+Upload **that file, as it is**. Do not unzip it, do not re-compress it, do not
+rename the folder inside it. The packager reports files, directories and the
+entry total on every run and exits non-zero above either cap.
+
+### Two ways to produce a zip that will be rejected
+
+Both of these have happened, and neither is obvious from the error message.
+
+**1. Zipping the skill folder by hand.** `wpp-es-html-deck/` is 329 files in 41
+directories — 370 entries, nearly twice the cap. There is no version of the
+checkout that uploads; the bundle only exists after `package_skill.py` runs.
+This includes the folder inside a GitHub source download: `dist/` is gitignored,
+so **a repo download never contains the bundle**, only the source it is built
+from.
+
+**2. Finder's right-click → Compress.** macOS writes a `__MACOSX/._name` shadow
+entry for every file that carries extended attributes, and every entry counts.
+Compressing this skill that way added **369** of them on top of the real files —
+780 entries from a folder of 328. Nothing in the archive looks wrong and nothing
+warns you; the count simply doubles.
+
+`package_skill.py` writes the archive itself with `zipfile`, which is why its
+output has neither problem. Verify any zip before uploading:
+
+```bash
+python3 -c "import zipfile,sys; z=zipfile.ZipFile(sys.argv[1]); f=[n for n in z.namelist() if not n.endswith('/')]; d={'/'.join(n.split('/')[:i+1]) for n in f for i in range(len(n.split('/'))-1)}; c=[n for n in z.namelist() if '__MACOSX' in n or n.rsplit('/',1)[-1].startswith('._')]; print(f'{len(f)} files + {len(d)} dirs = {len(f)+len(d)} entries (cap 200), {len(c)} mac cruft')" dist/wpp-es-html-deck.zip
+```
 
 ### What it drops
 
