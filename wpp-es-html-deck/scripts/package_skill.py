@@ -4,10 +4,26 @@
 claude.ai enforces TWO limits on an uploaded skill and the tight one is not the
 obvious one:
 
-    max 200 files          <- this is what rejects the upload
+    max 200 ENTRIES        <- files AND directories. This is what rejects it.
     max 30 MB
 
-The checkout is 329 files and 26.95 MB. Size was never the problem.
+The error reads "Zip contains too many files (maximum 200)", but a bundle of 199
+files is still refused: it carries 41 directories, so an extractor sees 240
+entries. Every directory costs the same as a file, which makes a directory
+holding one file the most expensive thing in the tree.
+
+Two layout changes follow from that, and they are why this is not just a filter:
+
+  canon/<id>/template.html   -> canon/templates/<id>.html
+      25 directories holding one file each cost 50 entries. Flat: 26.
+      check_capacity.py accepts either layout; SKILL.md is patched to match.
+
+  assets/icons/<name>.svg    -> assets/icons/<family>.md
+      32 files + 1 directory -> 4 + 1. The families are §8.1\'s own, parsed
+      from the guideline rather than hardcoded, and §8.1\'s hard rule is one
+      weight family per slide — so the agent reads exactly the family it is
+      already required to pick. One merged file would have cost ~18k tokens
+      a read; the largest family costs ~8k.
 
 So the bundle is cut to what a deck build actually reads. Everything dropped
 here is authoring or provenance material, and the repo keeps all of it:
@@ -45,6 +61,7 @@ Usage:
 
 import argparse
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -72,6 +89,7 @@ EXCLUDE_NAMES = {"__pycache__", ".git", ".venv", "venv", "node_modules",
                  ".mypy_cache", ".pytest_cache", ".DS_Store"}
 EXCLUDE_SUFFIXES = (".pyc", ".pyo", ".swp")
 
+ICON_SECTION = "references/sections/8-iconography.md"
 SHEET = "canon/PREVIEWS.png"
 SHEET_COLS = 5
 SHEET_CELL_W = 480
@@ -105,6 +123,60 @@ def walk_kept():
                 yield rel
 
 
+def icon_families():
+    """{family: [icon, ...]} parsed from §8.1, first family wins.
+
+    Parsed, not hardcoded: the suite has changed twice (v3.3, v3.5) and a
+    hardcoded list would ship icons under the wrong weight, which §8.1 calls
+    "the most visible amateur tell". Returns {} if the section stops matching,
+    and the caller then ships the icons unchanged and fails on the entry count
+    rather than silently mis-grouping them.
+    """
+    path = os.path.join(SKILL, ICON_SECTION)
+    if not os.path.isfile(path):
+        return {}
+    txt = open(path, encoding="utf-8").read()
+    if "by weight family" not in txt:
+        return {}
+    body = txt[txt.index("by weight family"):]
+    have = {f[:-len(".svg")] for f in os.listdir(os.path.join(SKILL, "assets", "icons"))
+            if f.endswith(".svg")}
+    fams, claimed = {}, set()
+    for m in re.finditer(r"^- \*\*([a-z]+)\*\*[^:]*:(.*?)(?=^- \*\*|\Z)", body, re.M | re.S):
+        # Dedup WITHIN a family as well as across them: the last bullet has no
+        # bullet after it, so its capture runs to end-of-section and re-matches
+        # the names in the pairing-rule prose below. That shipped `spark` twice.
+        picked = []
+        for i in re.findall(r"`([a-z0-9-]+)`", m.group(2)):
+            if i in have and i not in claimed and i not in picked:
+                picked.append(i)
+        if picked:
+            fams[m.group(1)] = picked
+            claimed |= set(picked)
+    # Every icon placed exactly once, or ship them ungrouped and fail on count.
+    if claimed != have or sum(len(v) for v in fams.values()) != len(have):
+        return {}
+    return fams
+
+
+def write_icon_families(stage, fams):
+    """One Markdown file per weight family, each icon under its own heading."""
+    total = 0
+    for fam, icons in fams.items():
+        dst = os.path.join(stage, "assets", "icons", fam + ".md")
+        os.makedirs(os.path.dirname(dst), exist_ok=True)
+        with open(dst, "w", encoding="utf-8") as fh:
+            fh.write(f"# Icon suite — {fam} family ({len(icons)})\n\n"
+                     "§8.1: ONE weight family per icon row / per slide. Paste the `<svg>`\n"
+                     "inline into `<div class=\"icon\">…</div>` — do not link to it.\n")
+            for i in icons:
+                svg = open(os.path.join(SKILL, "assets", "icons", i + ".svg"),
+                           encoding="utf-8").read().strip()
+                fh.write(f"\n## {i}\n\n{svg}\n")
+        total += os.path.getsize(dst)
+    return total
+
+
 def build_sheet(stage):
     """One labelled contact sheet in place of 25 preview.png. Returns bytes.
 
@@ -133,6 +205,50 @@ def build_sheet(stage):
     os.makedirs(os.path.dirname(dst), exist_ok=True)
     sheet.quantize(colors=256, method=Image.MEDIANCUT).save(dst, optimize=True)
     return os.path.getsize(dst), len(ids)
+
+
+def patch_skill_md(stage, fams):
+    """SKILL.md names both layouts it is about to stop matching. It is
+    hand-written (not generated from references/sections/), so patching it here
+    does not put build_docs.py --check into drift."""
+    p = os.path.join(stage, "SKILL.md")
+    s = open(p, encoding="utf-8").read()
+    before = s
+    s = s.replace("`canon/<id>/template.html` and paste its `<section>`.",
+                  "`canon/templates/<id>.html` and paste its `<section>`.")
+    if fams:
+        roster = " · ".join(f"`{f}.md` ({len(i)})" for f, i in fams.items())
+        s = s.replace(
+            "Icons come from `assets/icons/` (32 suite SVGs, §8.1 — ONE weight family per",
+            f"Icons come from `assets/icons/`, one Markdown file per weight family —\n"
+            f"{roster} — each icon under its own `##` heading (§8.1 — ONE weight family per")
+    if s != before:
+        open(p, "w", encoding="utf-8").write(s)
+
+
+def patch_icon_refs(stage, fams):
+    """Snippets tell the agent to paste `assets/icons/<name>.svg`. Once icons
+    ship grouped by family that file does not exist, and the instruction is in
+    columns-v4.html — a variant the deck actually reads, not just an authoring
+    source. Repoint it at the family file and the heading inside it."""
+    home = {i: f for f, icons in fams.items() for i in icons}
+    if not home:
+        return 0
+    pat = re.compile(r"assets/icons/([a-z0-9-]+)\.svg")
+    n = 0
+    for root, dirs, files in os.walk(stage):
+        dirs[:] = [d for d in dirs if d != "__pycache__"]
+        for f in files:
+            if not f.endswith((".html", ".md")):
+                continue
+            fp = os.path.join(root, f)
+            txt = open(fp, encoding="utf-8").read()
+            new = pat.sub(lambda m: (f"assets/icons/{home[m.group(1)]}.md (## {m.group(1)})"
+                                     if m.group(1) in home else m.group(0)), txt)
+            if new != txt:
+                open(fp, "w", encoding="utf-8").write(new)
+                n += len(pat.findall(txt))
+    return n
 
 
 def patch_catalog(stage):
@@ -191,7 +307,8 @@ def area(rel):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=os.path.join(REPO, "dist"))
-    ap.add_argument("--max-files", type=int, default=FILE_LIMIT)
+    ap.add_argument("--max-files", type=int, default=FILE_LIMIT,
+                    help="entry cap: files PLUS directories")
     ap.add_argument("--limit", type=float, default=SIZE_LIMIT_MB, help="MB")
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--no-zip", action="store_true")
@@ -205,8 +322,22 @@ def main():
         return 2
 
     ensure_generated()
-    # preview.png is staged as the contact sheet, not as itself.
+    fams = icon_families()
+    if not fams:
+        print("  §8.1 did not parse — shipping icons unchanged (entry count will "
+              "say so rather than mis-grouping them)", file=sys.stderr)
+
+    def dest_for(rel):
+        """Where a source file lands in the bundle. See the module docstring:
+        directories cost an entry each, so canon loses 24 of them here."""
+        parts = rel.split("/")
+        if len(parts) == 3 and parts[0] == "canon" and parts[2] == "template.html":
+            return f"canon/templates/{parts[1]}.html"
+        return rel
+
     files = [f for f in walk_kept() if os.path.basename(f) != "preview.png"]
+    if fams:                      # emitted as <family>.md instead
+        files = [f for f in files if not f.startswith("assets/icons/")]
 
     stage = os.path.join(out, NAME)
     if not args.check:
@@ -214,56 +345,75 @@ def main():
             shutil.rmtree(stage)
         os.makedirs(stage)
 
-    counts, sizes = {}, {}
+    counts, sizes, staged = {}, {}, []
     for rel in files:
         src = os.path.join(SKILL, rel)
-        a = area(rel)
+        dest = dest_for(rel)
+        staged.append(dest)
+        a = area(dest)
         counts[a] = counts.get(a, 0) + 1
         if args.check:
             sizes[a] = sizes.get(a, 0) + os.path.getsize(src)
             continue
-        dst = os.path.join(stage, rel)
+        dst = os.path.join(stage, dest)
         os.makedirs(os.path.dirname(dst), exist_ok=True)
         n = (shrink_to(src, dst) if os.path.basename(rel) == "ref.png"
              else (shutil.copy2(src, dst), os.path.getsize(dst))[1])
         sizes[a] = sizes.get(a, 0) + n
 
-    n_files = len(files)
+    for fam in fams:
+        staged.append(f"assets/icons/{fam}.md")
+        counts["assets/icons"] = counts.get("assets/icons", 0) + 1
+    staged.append(SHEET)
+    counts["canon"] = counts.get("canon", 0) + 1
+
     if not args.check:
+        if fams:
+            sizes["assets/icons"] = write_icon_families(stage, fams)
         sheet_bytes, n_prev = build_sheet(stage)
         patch_catalog(stage)
-        counts["canon"] = counts.get("canon", 0) + 1
+        patch_skill_md(stage, fams)
+        n_ref = patch_icon_refs(stage, fams)
+        if n_ref:
+            print(f"  icon refs — {n_ref} `<name>.svg` pointers repointed at family files")
         sizes["canon"] = sizes.get("canon", 0) + sheet_bytes
-        n_files += 1
-        print(f"\n  PREVIEWS.png — {n_prev} previews on one sheet, "
-              f"{sheet_bytes/MB:.2f} MB")
-    else:
-        # --check must count the sheet too, or it reports one file fewer than
-        # a real run and a bundle at the limit reads as having room.
-        counts["canon"] = counts.get("canon", 0) + 1
-        n_files += 1
+        print(f"\n  PREVIEWS.png — {n_prev} previews on one sheet, {sheet_bytes/MB:.2f} MB")
+        if fams:
+            print("  icons — " + ", ".join(f"{f}.md ({len(i)})" for f, i in fams.items()))
 
+    # What the platform counts: every file AND every directory an extractor makes.
+    dirs = set()
+    for rel in staged:
+        parts = rel.split("/")[:-1]
+        for i in range(1, len(parts) + 1):
+            dirs.add("/".join(parts[:i]))
+    dirs.add("")                                  # the top-level folder itself
+    n_files, n_dirs = len(staged), len(dirs)
+    n_entries = n_files + n_dirs
     total = sum(sizes.values())
+
     print(f"\n  {NAME} bundle\n")
     print(f"  {'area':<22}{'files':>8}{'size':>12}")
     print("  " + "-" * 42)
     for a in sorted(counts, key=lambda k: -counts[k]):
         print(f"  {a:<22}{counts[a]:>8}{sizes.get(a,0)/MB:>9.2f} MB")
     print("  " + "-" * 42)
-    print(f"  {'TOTAL':<22}{n_files:>8}{total/MB:>9.2f} MB")
-    print(f"\n  limits: {n_files}/{args.max_files} files · "
+    print(f"  {'':<22}{n_files:>8}{total/MB:>9.2f} MB")
+    print(f"  {'+ directories':<22}{n_dirs:>8}")
+    print(f"  {'= ENTRIES':<22}{n_entries:>8}")
+    print(f"\n  limits: {n_entries}/{args.max_files} entries · "
           f"{total/MB:.2f}/{args.limit:.0f} MB "
-          f"(spare: {args.max_files - n_files} files, "
+          f"(spare: {args.max_files - n_entries} entries, "
           f"{(args.limit*MB - total)/MB:.2f} MB)")
 
     over = []
-    if n_files > args.max_files:
-        over.append(f"{n_files - args.max_files} files too many")
+    if n_entries > args.max_files:
+        over.append(f"{n_entries - args.max_files} entries too many")
     if total > args.limit * MB:
         over.append(f"{(total - args.limit*MB)/MB:.2f} MB too big")
     if over:
         print(f"\n  OVER: {'; '.join(over)}\n", file=sys.stderr)
-        if n_files > args.max_files:
+        if n_entries > args.max_files:
             print("  Nothing else is safe to drop — what is left is cited by SKILL.md\n"
                   "  or the guideline. To make room, consolidate rather than delete:\n"
                   "    assets/icons/       32 files, 71 KB. One file costs ~18k tokens\n"

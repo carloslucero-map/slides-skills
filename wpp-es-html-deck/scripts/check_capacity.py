@@ -144,6 +144,14 @@ def check_canon_integrity(skill):
     on_disk = {d for d in os.listdir(cdir)
                if not d.startswith("_")
                and os.path.isfile(os.path.join(cdir, d, "template.html"))}
+    # The upload bundle flattens canon/<id>/template.html to
+    # canon/templates/<id>.html: claude.ai counts DIRECTORIES toward its 200
+    # entry cap, and 25 directories holding one file each cost 50 of them.
+    # Both layouts are valid; the checker accepts either.
+    tdir = os.path.join(cdir, "templates")
+    if os.path.isdir(tdir):
+        on_disk |= {f[:-len(".html")] for f in os.listdir(tdir)
+                    if f.endswith(".html")}
     ok = True
     for missing in sorted(listed - on_disk):
         print(f"CANON FAIL — catalogue lists {missing!r}, which has no template.html")

@@ -96,48 +96,69 @@ any failure, so it drops into CI as-is.
 
 ## Uploading to claude.ai
 
-claude.ai enforces two limits on an uploaded skill, and **the binding one is
-file count, not size**:
+claude.ai caps an uploaded skill at **200 entries and 30 MB**. The error reads
+*"Zip contains too many files (maximum 200)"*, but it counts **files AND
+directories** — a bundle of 199 files carrying 41 directories is 240 entries and
+is refused. Size is not the constraint and never was.
 
-| | limit | bundle |
+| | cap | bundle |
 |---|---|---|
-| files | 200 | **199** |
-| size | 30 MB | **4.77 MB** |
+| entries (files + directories) | 200 | **188** — 171 files + 17 directories |
+| size | 30 MB | **4.76 MB** |
 
 ```bash
 python wpp-es-html-deck/scripts/package_skill.py
-# -> dist/wpp-es-html-deck.zip   (one top-level folder, SKILL.md at its root)
+# -> dist/wpp-es-html-deck.zip
 ```
 
-The checkout is 329 files, so the folder cannot be zipped by hand — it is
-rejected on count long before size matters. The packager drops only what a deck
-build never reads, and the repo keeps all of it:
+The checkout is 329 files in 41 directories, so **the folder cannot be zipped by
+hand**. The packager reports files, directories and the entry total on every run
+and exits non-zero above either cap.
 
-| dropped | files | why it is safe |
+### What it drops
+
+Authoring and provenance only; the repo keeps all of it.
+
+| dropped | entries | why it is safe |
 |---|---|---|
-| `canon/<id>/{meta,spec,measure}.json` + `canon/_tools/` | 104 | Sources for the generated `CATALOG.md` / `catalog.json`, which is what the agent actually reads. `verify_deck.py` skips its canon checks by design when `_tools` is absent. |
-| `canon/<id>/ref.png` | 25 | The source slide each template was traced from. Provenance, not instruction. |
-| `canon/<id>/preview.png` → `canon/PREVIEWS.png` | 25 → 1 | One labelled contact sheet of all 25. Choosing happens on the catalogue's `use when` column; the sheet is the second opinion. |
-| `scripts/{shoot_snippets,package_skill}.py` | 2 | Repo-side tooling; nothing in the bundle invokes either. |
+| `canon/<id>/{meta,spec,measure}.json` + `canon/_tools/` | 104 | Sources for the generated `CATALOG.md` / `catalog.json`, which is what the agent reads. `verify_deck.py` skips its canon checks by design when `_tools` is absent. |
+| `canon/<id>/ref.png` | 25 | The source slide each template was traced from. |
+| `canon/<id>/preview.png` → `canon/PREVIEWS.png` | 24 | One labelled contact sheet of all 25. |
+| `scripts/{shoot_snippets,package_skill}.py` | 2 | Repo-side tooling. |
 
-**What is deliberately kept**, having been cut once and put back:
-`assets/exemplars/` (SKILL.md attaches those four PNGs for the design-direction
-checkpoint and re-reads one as the review bar — "never read into context" means
-do not parse them as text, not that they are optional) and the 13
-`assets/snippets/*.html` authoring sources (`references/sections/12-archetypes.md`
-says *"assemble from"* them, which contradicts SKILL.md's ban on opening them at
-fill time — a contradiction to resolve in the source, not by deletion).
+### What it restructures
+
+Because a directory costs an entry, a directory holding one file is the most
+expensive thing in the tree.
+
+- **`canon/<id>/template.html` → `canon/templates/<id>.html`** — 25 directories
+  holding one file each cost 50 entries; flat costs 26. `check_capacity.py`
+  accepts both layouts, and the bundle's `SKILL.md` is patched to match.
+- **`assets/icons/<name>.svg` → `assets/icons/<family>.md`** — 33 entries to 5.
+  The families are §8.1's own, **parsed from the guideline rather than
+  hardcoded** (the suite changed in v3.3 and v3.5, and shipping an icon under
+  the wrong weight is what §8.1 calls "the most visible amateur tell"). §8.1's
+  hard rule is one weight family per slide, so the agent reads exactly the
+  family it already has to pick: ~8k tokens for the largest, against ~18k for
+  one merged file. If the section stops parsing, icons ship ungrouped and the
+  entry count fails loudly rather than mis-grouping them.
+
+Snippets that said *"paste `assets/icons/rocket.svg`"* are repointed at
+`assets/icons/solid.md (## rocket)` — one of those is `columns-v4.html`, a
+variant the deck actually reads.
+
+### Kept, having been cut once and put back
+
+`assets/exemplars/` — SKILL.md attaches those four PNGs for the design-direction
+checkpoint and re-reads one as the review bar; "never read into context" means
+do not parse them as text. And the 13 `assets/snippets/*.html` —
+`references/sections/12-archetypes.md` says *"assemble from"* them in nine
+places, contradicting SKILL.md's ban on opening them at fill time. That is a
+contradiction to resolve in the source, not by deletion.
 
 Verified on every build: `check_capacity.py` canon and kit integrity,
-`build_docs.py --check`, and a sweep for paths cited by a bundled file but not
-present.
-
-**One file of headroom.** The 26th canon template breaks the upload, and the
-catalogue already names families the canon does not cover. `package_skill.py`
-exits non-zero above the cap and prints the consolidation levers — the useful
-one is `assets/icons/`, 32 files, but note that merging all 32 into one costs
-~18k tokens to read against ~2k for the icons a deck uses, so split by weight
-family rather than into a single file.
+`build_docs.py --check`, zip integrity, and a sweep for paths cited by a bundled
+file but not present in it.
 
 ## Maintenance notes
 
