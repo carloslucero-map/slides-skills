@@ -94,44 +94,50 @@ python wpp-es-html-deck/scripts/derive_capacity.py
 `verify_deck.py` exits 0 when every check passes (warnings allowed) and 1 on
 any failure, so it drops into CI as-is.
 
-## Size, and uploading to claude.ai
+## Uploading to claude.ai
 
-claude.ai takes a skill at **30 MB**. Two numbers have to stay under that, and
-they are not the same number:
+claude.ai enforces two limits on an uploaded skill, and **the binding one is
+file count, not size**:
 
-| | | |
+| | limit | bundle |
 |---|---|---|
-| the skill directory | 26.95 MB | what you get zipping `wpp-es-html-deck/` by hand |
-| the bundle | 14.83 MB | what `package_skill.py` writes to `dist/` |
-
-The directory is the one that bites — it is the obvious thing to zip, and it was
-55 MB until the authoring material moved to [`authoring/`](authoring/README.md)
-at the repo root. Nothing under `authoring/` is read while a deck is being
-built; it is what the canon is re-derived from and what design work reads, so it
-stays in the repo, just not inside the skill.
-
-Build the bundle for upload:
+| files | 200 | **199** |
+| size | 30 MB | **4.77 MB** |
 
 ```bash
 python wpp-es-html-deck/scripts/package_skill.py
 # -> dist/wpp-es-html-deck.zip   (one top-level folder, SKILL.md at its root)
 ```
 
-It reports **both** sizes against the cap on every run and exits non-zero if
-either is over, so a regression surfaces at packaging time rather than at upload
-time. It refuses `--out` anywhere inside the skill directory, for the obvious
-reason. `--check` reports without writing, `--limit` tightens the budget,
-`--no-zip` leaves the staged tree.
+The checkout is 329 files, so the folder cannot be zipped by hand — it is
+rejected on count long before size matters. The packager drops only what a deck
+build never reads, and the repo keeps all of it:
 
-The extra 12 MB of headroom comes from re-encoding `canon/<id>/ref.png` and
-`preview.png` at 1568 px wide with a 256-colour palette, **keeping the
-filename** — `CATALOG.md`, `meta.json` and `spec.json` all name `ref.png`, and
-renaming to `.jpg` would point 25 templates' provenance at a file that does not
-exist. 1568 px is the width an image is downsampled to before a model sees it,
-and the palette is generous for a deck drawn in three brand colours plus duotone
-photography, so the one job those images have — being compared against a fill
-that came out wrong — is unaffected. `assets/` is copied byte-for-byte: those
-pixels ship inside delivered decks.
+| dropped | files | why it is safe |
+|---|---|---|
+| `canon/<id>/{meta,spec,measure}.json` + `canon/_tools/` | 104 | Sources for the generated `CATALOG.md` / `catalog.json`, which is what the agent actually reads. `verify_deck.py` skips its canon checks by design when `_tools` is absent. |
+| `canon/<id>/ref.png` | 25 | The source slide each template was traced from. Provenance, not instruction. |
+| `canon/<id>/preview.png` → `canon/PREVIEWS.png` | 25 → 1 | One labelled contact sheet of all 25. Choosing happens on the catalogue's `use when` column; the sheet is the second opinion. |
+| `scripts/{shoot_snippets,package_skill}.py` | 2 | Repo-side tooling; nothing in the bundle invokes either. |
+
+**What is deliberately kept**, having been cut once and put back:
+`assets/exemplars/` (SKILL.md attaches those four PNGs for the design-direction
+checkpoint and re-reads one as the review bar — "never read into context" means
+do not parse them as text, not that they are optional) and the 13
+`assets/snippets/*.html` authoring sources (`references/sections/12-archetypes.md`
+says *"assemble from"* them, which contradicts SKILL.md's ban on opening them at
+fill time — a contradiction to resolve in the source, not by deletion).
+
+Verified on every build: `check_capacity.py` canon and kit integrity,
+`build_docs.py --check`, and a sweep for paths cited by a bundled file but not
+present.
+
+**One file of headroom.** The 26th canon template breaks the upload, and the
+catalogue already names families the canon does not cover. `package_skill.py`
+exits non-zero above the cap and prints the consolidation levers — the useful
+one is `assets/icons/`, 32 files, but note that merging all 32 into one costs
+~18k tokens to read against ~2k for the icons a deck uses, so split by weight
+family rather than into a single file.
 
 ## Maintenance notes
 
