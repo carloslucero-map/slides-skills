@@ -1,0 +1,125 @@
+<!-- canon/templates/narrative-panel-model.html — traced from bank slide 183 (measure.json, ref.png).
+
+     RECLASSIFIED. SELECCION-25-indice.md files this under E-comparison as
+     comp-colour-block. It is not a comparison — nothing is being weighed against
+     anything. It is a long argument on a tinted ground, with the model that
+     argument depends on set beside it. Filed under A-narrative, which was the
+     other family sitting at zero, and the mislabel is recorded rather than
+     quietly corrected: two of the three slides tagged E-comparison turned out to
+     be something else, which says the family assignment needs a second pass more
+     than the templates do.
+
+     WHAT THE KIT DID NOT HAVE. splits-v2 gives a colour block with a headline
+     and a numeral. This carries four hundred words — the case that has to be
+     made before a diagram means anything — and still leaves room for the
+     diagram. The tinted ground is what makes that much text sit still: on plain
+     cream a block this long reads as a wall, and the tint gives it an edge.
+
+     THE MODEL is six labelled nodes on a ring with every chord drawn. The chords
+     are the claim: each dimension connects to every other, and a ring without
+     them would say the six merely coexist. Six is fixed — the chord count grows
+     as n(n-1)/2 and at eight the interior is a smudge.
+
+     FIXED FROM THE SOURCE: its second claim runs straight into the first bullet
+     beneath it ("getting narrower" printed through the bullet), and the bullets
+     sit at 20px against a 32px heading with no space between the two.
+-->
+<section class="slide" data-slide-id="cX-sY" data-archetype="narrative-panel-model" data-template="narrative-panel-model">
+
+  <div class="m-lead npm-panel">
+    <div class="npm-eyebrow">Customer data privacy</div>
+    <h2 class="npm-head"><strong>Modern AI equips us</strong> to build and activate data intelligence while preserving privacy</h2>
+    <p class="npm-lead">Privacy is built into how open intelligence works.</p>
+    <p class="body npm-p">We share insight without ever sharing identity data. Across a network of 350+ data partners in 75+ markets we train models and collaborate without moving or copying identity between systems — which is what lets us activate in any channel, including walled gardens, using whichever approach performs best.</p>
+    <p class="body npm-p">It works because there is a common language for marketing data: a standard cohort definition that finds patterns across diverse data sets without exposing or centralising anything personal.</p>
+  </div>
+
+  <div class="npm-model" aria-hidden="true">
+    <svg viewBox="0 0 400 400" class="npm-svg" preserveAspectRatio="xMidYMid meet">
+      <circle cx="200" cy="200" r="150" class="npm-ring"/>
+      <!-- Every chord drawn. The connections ARE the claim; a bare ring would
+           say the six dimensions merely coexist. -->
+      <g class="npm-chord">
+        <line x1="200" y1="50"  x2="330" y2="125"/><line x1="200" y1="50"  x2="330" y2="275"/>
+        <line x1="200" y1="50"  x2="200" y2="350"/><line x1="200" y1="50"  x2="70"  y2="275"/>
+        <line x1="200" y1="50"  x2="70"  y2="125"/>
+        <line x1="330" y1="125" x2="330" y2="275"/><line x1="330" y1="125" x2="200" y2="350"/>
+        <line x1="330" y1="125" x2="70"  y2="275"/><line x1="330" y1="125" x2="70"  y2="125"/>
+        <line x1="330" y1="275" x2="200" y2="350"/><line x1="330" y1="275" x2="70"  y2="275"/>
+        <line x1="330" y1="275" x2="70"  y2="125"/>
+        <line x1="200" y1="350" x2="70"  y2="275"/><line x1="200" y1="350" x2="70"  y2="125"/>
+        <line x1="70"  y1="275" x2="70"  y2="125"/>
+      </g>
+      <g class="npm-node">
+        <circle cx="200" cy="50"  r="9"/><circle cx="330" cy="125" r="9"/>
+        <circle cx="330" cy="275" r="9"/><circle cx="200" cy="350" r="9"/>
+        <circle cx="70"  cy="275" r="9"/><circle cx="70"  cy="125" r="9"/>
+      </g>
+    </svg>
+    <span class="m-unit npm-lab npm-lab--n">Identity<span class="fine-label npm-sub">who we are</span></span>
+    <span class="m-unit npm-lab npm-lab--ne">Geography<span class="fine-label npm-sub">where we are</span></span>
+    <span class="m-unit npm-lab npm-lab--se">Interest<span class="fine-label npm-sub">what we like</span></span>
+    <span class="m-unit npm-lab npm-lab--s">Behaviour<span class="fine-label npm-sub">what we do</span></span>
+    <span class="m-unit npm-lab npm-lab--sw">Context<span class="fine-label npm-sub">when and where</span></span>
+    <span class="m-unit npm-lab npm-lab--nw">Content<span class="fine-label npm-sub">what we experience</span></span>
+  </div>
+
+  <div class="npm-claim">
+    <h3 class="npm-claimhead">Identity is one way of seeing the world, and it is <span class="hl">getting narrower</span></h3>
+    <ul class="npm-list">
+      <li class="sub-item">About 80% of business data cannot be matched to an individual ID</li>
+      <li class="sub-item">Rising consumer concern about data sharing, and easier opt-out</li>
+      <li class="sub-item">An expanding footprint of privacy legislation</li>
+      <li class="sub-item">Growth of walled gardens, and declining match rates</li>
+    </ul>
+  </div>
+
+  <div class="footer-brand">WPP Enterprise Solutions | MAP</div>
+  <div class="pageno"></div>
+
+  <style>
+  /* Measured off slide 183. */
+
+  /* The tinted ground is load-bearing. Four hundred words on plain cream reads
+     as a wall; the tint gives the block an edge and lets it sit still. */
+  .npm-panel{position:absolute;left:0;top:0;bottom:0;width:960px;
+             background:var(--bg-tint);padding:64px 72px 64px 56px;}
+  .npm-eyebrow{font-weight:400;font-size:32px;line-height:1.05;letter-spacing:.01em;
+               text-transform:uppercase;color:var(--orange-700);margin-bottom:22px;}
+  .npm-head{margin:0 0 26px;font-weight:300;font-size:56px;line-height:1.06;
+            letter-spacing:-.005em;}
+  .npm-head strong{font-weight:500;}
+  .npm-lead{font-weight:500;font-size:26px;line-height:1.25;margin:0 0 26px;}
+  .npm-p{font-size:24px;line-height:1.36;max-width:none;margin:0 0 22px;}
+
+    /* The SVG box was 400x400 with the node labels positioned inside it, so §15.2
+     read a decorative element as covering text — correctly, by its own rule. The
+     box now holds only the ring and the labels sit outside it. */
+  .npm-model{position:absolute;left:1160px;top:110px;width:300px;height:300px;}
+  .npm-svg{width:100%;height:100%;overflow:visible;}
+  .npm-ring{fill:none;stroke:var(--wpp-navy);stroke-opacity:.18;stroke-width:2;}
+  .npm-chord line{stroke:var(--wpp-navy);stroke-opacity:.22;stroke-width:1.5;}
+  .npm-node circle{fill:var(--orange-700);}
+
+  .npm-lab{position:absolute;font-weight:500;font-size:20px;line-height:1.15;
+           text-align:center;width:180px;}
+  .npm-sub{display:block;font-weight:400;font-size:16px;opacity:.75;margin-top:2px;}
+  .npm-lab--n {left:60px;top:-72px;}
+  .npm-lab--ne{left:250px;top:30px;}
+  .npm-lab--se{left:250px;top:210px;}
+  .npm-lab--s {left:60px;top:312px;}
+  .npm-lab--sw{left:-130px;top:210px;}
+  .npm-lab--nw{left:-130px;top:30px;}
+
+  /* The source runs this heading into its own first bullet. The gap below is
+     the fix, and the list starts on its own line whatever the heading wraps to. */
+  .npm-claim{position:absolute;left:1030px;right:var(--m-edge);top:600px;bottom:80px;}
+  .npm-claimhead{margin:0 0 30px;font-weight:500;font-size:34px;line-height:1.18;}
+  .npm-list{list-style:none;margin:0;padding:0;}
+  .npm-list .sub-item{position:relative;padding-left:26px;margin-bottom:16px;
+                      font-size:22px;line-height:1.3;}
+  .npm-list .sub-item::before{content:"";position:absolute;left:0;top:.5em;
+                              width:9px;height:9px;border-radius:50%;
+                              background:var(--orange-700);}
+  </style>
+</section>

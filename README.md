@@ -98,91 +98,65 @@ any failure, so it drops into CI as-is.
 
 claude.ai caps an uploaded skill at **200 entries and 30 MB**. The error reads
 *"Zip contains too many files (maximum 200)"*, but it counts **files AND
-directories** — a bundle of 199 files carrying 41 directories is 240 entries and
-is refused. Size is not the constraint and never was.
+directories** — 199 files in 41 directories is 240 entries and is refused.
 
-| | cap | bundle |
+**`wpp-es-html-deck/` is the skill.** It is kept under the cap by where things
+live, not by a build step, so zipping the folder is a valid upload:
+
+| | cap | now |
 |---|---|---|
-| entries (files + directories) | 200 | **188** — 171 files + 17 directories |
-| size | 30 MB | **4.76 MB** |
+| entries (files + directories) | 200 | **190** — 173 files + 17 directories |
+| size | 30 MB | **5.54 MB** |
 
 ```bash
 python wpp-es-html-deck/scripts/package_skill.py
-# -> dist/wpp-es-html-deck.zip
+# checks both caps, then writes dist/wpp-es-html-deck.zip
 ```
 
-Upload **that file, as it is**. Do not unzip it, do not re-compress it, do not
-rename the folder inside it. The packager reports files, directories and the
-entry total on every run and exits non-zero above either cap.
-
-### Two ways to produce a zip that will be rejected
-
-Both of these have happened, and neither is obvious from the error message.
-
-**1. Zipping the skill folder by hand.** `wpp-es-html-deck/` is 329 files in 41
-directories — 370 entries, nearly twice the cap. There is no version of the
-checkout that uploads; the bundle only exists after `package_skill.py` runs.
-This includes the folder inside a GitHub source download: `dist/` is gitignored,
-so **a repo download never contains the bundle**, only the source it is built
-from.
-
-**2. Finder's right-click → Compress.** macOS writes a `__MACOSX/._name` shadow
-entry for every file that carries extended attributes, and every entry counts.
-Compressing this skill that way added **369** of them on top of the real files —
-780 entries from a folder of 328. Nothing in the archive looks wrong and nothing
-warns you; the count simply doubles.
-
-`package_skill.py` writes the archive itself with `zipfile`, which is why its
-output has neither problem. Verify any zip before uploading:
+Or zip it yourself — **from a terminal, not from Finder**:
 
 ```bash
-python3 -c "import zipfile,sys; z=zipfile.ZipFile(sys.argv[1]); f=[n for n in z.namelist() if not n.endswith('/')]; d={'/'.join(n.split('/')[:i+1]) for n in f for i in range(len(n.split('/'))-1)}; c=[n for n in z.namelist() if '__MACOSX' in n or n.rsplit('/',1)[-1].startswith('._')]; print(f'{len(f)} files + {len(d)} dirs = {len(f)+len(d)} entries (cap 200), {len(c)} mac cruft')" dist/wpp-es-html-deck.zip
+zip -rX wpp-es-html-deck.zip wpp-es-html-deck -x '*.DS_Store'
 ```
 
-### What it drops
+### Do not use Finder's right-click → Compress
 
-Authoring and provenance only; the repo keeps all of it.
+macOS writes a `__MACOSX/._name` shadow entry for every file carrying an
+extended attribute, and **every file in a folder extracted from an internet
+download carries `com.apple.quarantine`** — so a GitHub source download,
+unzipped and re-compressed in Finder, is the worst case. Measured on this skill:
+**410 extra entries**, and running `xattr -cr` first does not prevent it. Only
+`zip -X` (or `package_skill.py`, which writes the archive with Python's
+`zipfile`) avoids it.
 
-| dropped | entries | why it is safe |
-|---|---|---|
-| `canon/<id>/{meta,spec,measure}.json` + `canon/_tools/` | 104 | Sources for the generated `CATALOG.md` / `catalog.json`, which is what the agent reads. `verify_deck.py` skips its canon checks by design when `_tools` is absent. |
-| `canon/<id>/ref.png` | 25 | The source slide each template was traced from. |
-| `canon/<id>/preview.png` → `canon/PREVIEWS.png` | 24 | One labelled contact sheet of all 25. |
-| `scripts/{shoot_snippets,package_skill}.py` | 2 | Repo-side tooling. |
+Check any zip before uploading:
 
-### What it restructures
+```bash
+python3 -c "import zipfile,sys; z=zipfile.ZipFile(sys.argv[1]); f=[n for n in z.namelist() if not n.endswith('/')]; d={'/'.join(n.split('/')[:i+1]) for n in f for i in range(len(n.split('/'))-1)}; c=[n for n in z.namelist() if '__MACOSX' in n or n.rsplit('/',1)[-1].startswith('._')]; print(f'{len(f)} files + {len(d)} dirs = {len(f)+len(d)} entries (cap 200), {len(c)} mac cruft')" wpp-es-html-deck.zip
+```
 
-Because a directory costs an entry, a directory holding one file is the most
-expensive thing in the tree.
+### What keeps it under the cap
 
-- **`canon/<id>/template.html` → `canon/templates/<id>.html`** — 25 directories
-  holding one file each cost 50 entries; flat costs 26. `check_capacity.py`
-  accepts both layouts, and the bundle's `SKILL.md` is patched to match.
-- **`assets/icons/<name>.svg` → `assets/icons/<family>.md`** — 33 entries to 5.
-  The families are §8.1's own, **parsed from the guideline rather than
-  hardcoded** (the suite changed in v3.3 and v3.5, and shipping an icon under
-  the wrong weight is what §8.1 calls "the most visible amateur tell"). §8.1's
-  hard rule is one weight family per slide, so the agent reads exactly the
-  family it already has to pick: ~8k tokens for the largest, against ~18k for
-  one merged file. If the section stops parsing, icons ship ungrouped and the
-  entry count fails loudly rather than mis-grouping them.
+A directory costs an entry, same as a file, which makes a directory holding one
+file the most expensive thing in a tree. Two layouts follow from that:
 
-Snippets that said *"paste `assets/icons/rocket.svg`"* are repointed at
-`assets/icons/solid.md (## rocket)` — one of those is `columns-v4.html`, a
-variant the deck actually reads.
+- **`canon/templates/<id>.html`** — one directory for 25 templates, not 25
+  directories holding one file each. 50 entries down to 26.
+- **`assets/icons/<family>.md`** — the 32 icons grouped into four files by
+  §8.1's own weight families, each icon under its own `##` heading. 33 entries
+  down to 5. §8.1's hard rule is one weight family per slide, so the agent reads
+  exactly the family it already has to pick: ~8k tokens for the largest, against
+  ~18k if all 32 were merged into a single file.
 
-### Kept, having been cut once and put back
+Everything the skill was *made from* lives in [`authoring/`](authoring/README.md)
+at the repo root — the canon sources, the tools that generate `CATALOG.md`, the
+individual icon SVGs, the contact sheets. Nothing there is read while a deck is
+being built, and `verify_deck.py` skips its canon checks when it is absent,
+which is the normal state of an installed skill.
 
-`assets/exemplars/` — SKILL.md attaches those four PNGs for the design-direction
-checkpoint and re-reads one as the review bar; "never read into context" means
-do not parse them as text. And the 13 `assets/snippets/*.html` —
-`references/sections/12-archetypes.md` says *"assemble from"* them in nine
-places, contradicting SKILL.md's ban on opening them at fill time. That is a
-contradiction to resolve in the source, not by deletion.
-
-Verified on every build: `check_capacity.py` canon and kit integrity,
-`build_docs.py --check`, zip integrity, and a sweep for paths cited by a bundled
-file but not present in it.
+`package_skill.py` reports files, directories and the entry total on every run
+and exits non-zero above either cap, so a regression surfaces here rather than
+at upload time.
 
 ## Maintenance notes
 

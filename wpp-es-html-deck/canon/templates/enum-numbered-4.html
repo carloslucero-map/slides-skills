@@ -1,0 +1,84 @@
+<!-- canon/templates/enum-numbered-4.html — traced from bank slide 86 (measure.json).
+     NOT generated. Built against authoring/canon-src/<id>/ref.png,
+     geometry from that directory's measure.json.
+
+     WHAT MAKES THIS COMPOSITION WORK, and what the kit's columns-v5 lost:
+     the ground turns White at y=580 and the numeral row CROSSES that edge.
+     The crossing is the whole device — it binds the label tier above to the
+     body tier below so the slide reads as one object, not two stacked rows.
+     columns-v5 has no ground change, so its numerals float in dead cream and
+     the lower third of the canvas goes unused.
+
+     POSITIONS are in measured px and that is deliberate: this template exists
+     to be faithful to a real slide, and measure.json is the evidence for every
+     number here. TYPE and COLOUR are not — they come from shell classes and
+     tokens, never inline. That is the line: geometry may be measured, the type
+     scale and palette may not be re-litigated per template.
+
+     KNOWN DEVIATION — the source sets its content edge at x=61; the shell's
+     --m-edge is 80px. This template uses --m-edge, so it is 19px narrower each
+     side than the original. Fixing the frame constant moves all 51 existing
+     variants and belongs in its own commit, not here. Recorded in meta.json.
+-->
+<section class="slide slide--ground" data-slide-id="cX-sY" data-archetype="enum-numbered" data-template="enum-numbered-4">
+
+  <!-- Label tier. The source runs the orange eyebrow ABOVE the headline at
+       40px — the shell's .subtitle is 24px and sits below it. Using the
+       measured size via the type scale; the ordering is the template's. -->
+  <div class="eyebrow" style="position:absolute;left:var(--m-edge);top:50px;">Organizational design</div>
+
+  <h2 class="headline" style="top:110px;max-width:1100px;">Frameworks and methodologies for <span class="hl">measuring</span> readiness</h2>
+
+  <!-- Second, quieter label. Navy, not orange: the source uses colour to rank
+       the two labels rather than size alone. -->
+  <div class="eyebrow eyebrow--quiet" style="position:absolute;left:var(--m-edge);top:375px;">Transformation methodology</div>
+
+  <!-- The numeral row straddles the ground edge at y=580. Do not "tidy" this
+       by moving the row below the boundary: that is the composition. -->
+  <div class="enum-row">
+    <div class="m-unit enum-col">
+      <div class="hero-num hero-num--m hero-num--solid hero-num--orange">01</div>
+      <h3 class="enum-title">Change readiness assessment</h3>
+      <p class="body enum-body">Names the operational gap, the anchoring gap and the reality gap before any target state is drawn.</p>
+    </div>
+    <div class="m-unit enum-col">
+      <div class="hero-num hero-num--m hero-num--solid hero-num--orange">02</div>
+      <h3 class="enum-title">Organisation transformation framework</h3>
+      <p class="body enum-body">Establishes the As-Is departure point in enough detail that the To-Be design is arguable, not asserted.</p>
+    </div>
+    <div class="m-unit enum-col">
+      <div class="hero-num hero-num--m hero-num--solid hero-num--orange">03</div>
+      <h3 class="enum-title">Meta streams</h3>
+      <p class="body enum-body">Develop once, deploy many for complex programmes; structured speed for day-to-day activation.</p>
+    </div>
+  </div>
+
+  <div class="footer-brand">WPP Enterprise Solutions | MAP</div>
+  <div class="pageno"></div>
+
+  <style>
+  /* SCOPED TO THIS TEMPLATE — candidates for promotion into build_shell.py once a
+     second canon template needs them. Kept here rather than in the shell so one
+     traced slide cannot quietly rewrite the frame for all 51 existing variants.
+     Every value below is from measure.json, not chosen. */
+  
+  /* The source's two label tiers: orange 40px lead, navy 40px follow. The shell
+     has .subtitle (24px, orange, fixed at top:132) which can express neither. */
+  .eyebrow{font-weight:500;font-size:40px;line-height:1.1;letter-spacing:.02em;
+           text-transform:uppercase;color:var(--orange-700);}
+  .eyebrow--quiet{color:var(--nav);font-size:34px;}
+  
+  /* Three columns on the measured grid: left edges 61 / 645 / 1251 in the source,
+     a step of ~592. Expressed as a grid so the arity can change without the
+     template re-deriving positions by hand. */
+  .enum-row{position:absolute;left:var(--m-edge);right:var(--m-edge);top:440px;
+            display:grid;grid-template-columns:repeat(3,1fr);gap:56px;}
+  .enum-col{display:flex;flex-direction:column;}
+  
+  /* 34px title, 28px body — measured (17pt and 14pt at x2). The shell's .body is
+     26px, which is the kit's number, not the deck's. */
+  .enum-title{font-weight:500;font-size:34px;line-height:1.15;
+              margin:24px 0 12px;max-width:460px;}
+  .enum-body{font-size:28px;line-height:1.3;max-width:460px;}
+  </style>
+</section>

@@ -1,0 +1,104 @@
+<!-- canon/templates/enum-tier-columns-3.html — traced from bank slide 149 (measure.json, ref.png).
+
+     THE TIER INDICATOR IS THE DEVICE. Three small squares per column, filled
+     left to right — one, two, three — so a reader sees the columns are ORDERED
+     before reading a word of them. columns-v1 gives three equal columns, which
+     says these are parallel alternatives. Here they are rungs, and the squares
+     are what say so without a word of explanation or an axis.
+
+     It is the cheapest ordinal mark the dot system allows: no numerals
+     competing with the labels, no arrow implying a process, no axis implying
+     measurement. Just how many squares are filled.
+
+     Each column pairs a NAMED LEVEL with a VERBATIM — the client's own words
+     for the problem at that level. That pairing is the argument: the tier is the
+     diagnosis and the quote is the evidence, and separating them into two slides
+     loses both.
+
+     The quotes are set italic with the operative clause in Medium. That is the
+     one place the kit's weight rules bend, and deliberately: inside a quotation
+     the emphasis marks what the client actually said, not what the deck wants
+     to shout.
+-->
+<section class="slide" data-slide-id="cX-sY" data-archetype="enum-tier-columns" data-template="enum-tier-columns-3">
+
+  <div class="etc-eyebrow">Data source evaluation</div>
+  <h2 class="headline headline--lg" style="left:var(--m-text);top:110px;max-width:1500px;">We see the <span class="hl">same three problems</span> across our client base</h2>
+
+  <div class="etc-cols">
+    <div class="m-unit etc-col">
+      <div class="etc-head">
+        <span class="etc-tier" aria-label="Level 1 of 3"><i class="on"></i><i></i><i></i></span>
+        <span class="etc-level">Low data maturity</span>
+      </div>
+      <div class="fine-label etc-sector">FMCG, OTC pharma</div>
+      <div class="etc-card">
+        <div class="etc-title">Need for AI data readiness</div>
+        <p class="etc-quote">&ldquo;We want to start experimenting with generative AI for marketing, but <strong>our customer data is so messy and scattered across legacy systems</strong> that the tools cannot ingest it.&rdquo;</p>
+      </div>
+    </div>
+
+    <div class="m-unit etc-col">
+      <div class="etc-head">
+        <span class="etc-tier" aria-label="Level 2 of 3"><i class="on"></i><i class="on"></i><i></i></span>
+        <span class="etc-level">Medium data maturity</span>
+      </div>
+      <div class="fine-label etc-sector">Automotive, QSR, retail, travel</div>
+      <div class="etc-card">
+        <div class="etc-title">Safe targeting, untapped growth</div>
+        <p class="etc-quote">&ldquo;Performance keeps targeting the same core demographic because it is safe, but <strong>the next wave of growth is hidden somewhere else in our market data</strong> and we cannot find those segments.&rdquo;</p>
+      </div>
+    </div>
+
+    <div class="m-unit etc-col">
+      <div class="etc-head">
+        <span class="etc-tier" aria-label="Level 3 of 3"><i class="on"></i><i class="on"></i><i class="on"></i></span>
+        <span class="etc-level">High data maturity</span>
+      </div>
+      <div class="fine-label etc-sector">Telecom, banking, e-commerce</div>
+      <div class="etc-card">
+        <div class="etc-title">Rich data, disconnected activation</div>
+        <p class="etc-quote">&ldquo;We have rich CRM profiles of active subscribers, yet we still waste spend serving them acquisition ads, because <strong>our database does not sync with our paid media platforms</strong>.&rdquo;</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-brand">WPP Enterprise Solutions | MAP</div>
+  <div class="pageno"></div>
+
+  <style>
+  /* Measured off slide 149. */
+
+  .etc-eyebrow{position:absolute;left:var(--m-text);top:52px;font-weight:400;font-size:40px;
+               line-height:1.05;letter-spacing:.01em;text-transform:uppercase;
+               color:var(--orange-700);}
+
+  /* Centred, not top-anchored. At top the cards ended around y=630 and left the
+   lower 40% dead — the same failure seq-steps-panels-5 worked through. When the
+   content does not fill the canvas the honest move is to centre it. */
+.etc-cols{position:absolute;left:var(--m-text);right:var(--m-edge);top:290px;bottom:90px;
+            display:grid;grid-template-columns:repeat(3,1fr);
+            grid-template-rows:min-content;gap:56px;align-content:center;}
+  .etc-col{display:flex;flex-direction:column;min-width:0;}
+
+  .etc-head{display:flex;align-items:center;gap:18px;margin-bottom:10px;}
+  /* The cheapest ordinal mark the dot system allows: no numerals competing with
+     the label, no arrow implying process, no axis implying measurement. Just how
+     many squares are filled. */
+  .etc-tier{display:inline-flex;gap:5px;}
+  .etc-tier i{width:22px;height:22px;background:var(--orange-600);opacity:.45;}
+  .etc-tier i.on{background:var(--orange-700);opacity:1;}
+  .etc-level{font-weight:400;font-size:34px;line-height:1.1;text-transform:uppercase;
+             color:var(--orange-700);}
+  .etc-sector{font-size:18px;line-height:1.25;margin-bottom:28px;}
+
+  .etc-card{flex:1;background:var(--wpp-white);padding:40px 34px;}
+  .etc-title{font-weight:400;font-size:26px;line-height:1.15;text-transform:uppercase;
+             margin-bottom:20px;}
+  /* Italic with the operative clause in Medium. The one place the weight rules
+     bend, and only inside a quotation: the emphasis marks what the client said,
+     not what the deck wants to shout. */
+  .etc-quote{font-style:italic;font-size:22px;line-height:1.44;margin:0;}
+  .etc-quote strong{font-weight:500;font-style:italic;}
+  </style>
+</section>

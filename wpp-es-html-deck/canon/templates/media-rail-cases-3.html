@@ -1,0 +1,104 @@
+<!-- canon/templates/media-rail-cases-3.html — traced from bank slide 143 (measure.json, ref.png).
+
+     THREE CLAIMS ON ONE SLIDE, and the composition is what keeps them apart:
+     a vertical PROCESS RAIL on the left says how the work runs, image-topped
+     CASE CARDS in the middle say what it produced, and an OUTCOME BAND across
+     the foot says what it was worth. Method, evidence, result — in that reading
+     order, left to bottom.
+
+     cards-v3 in the kit gives the middle third only. Pairing it with the rail
+     is what turns three nice case studies into an argument that the cases came
+     out of a repeatable process rather than luck.
+
+     THE RAIL IS VERTICAL AND DOTTED, not an arrow chain. The dot system's soft
+     connector carries the sequence, and vertical keeps it out of the way of the
+     cards' own left-to-right reading. A horizontal rail here would compete with
+     them for the same axis.
+
+     PALETTE FIX: the source sets its outcome band in grey, which is not in the
+     closed palette at all. It uses --bg-alt here. Reproducing an off-palette
+     fill for fidelity's sake would be reproducing a mistake.
+
+     ALSO FIXED: the headline overruns and prints through its own subtitle.
+-->
+<section class="slide" data-slide-id="cX-sY" data-archetype="media-rail-cases" data-template="media-rail-cases-3">
+
+  <div class="mrc-eyebrow">Rewards management</div>
+  <h2 class="headline headline--lg" style="left:var(--m-text);top:110px;max-width:1500px;">A new rewards experience for <span class="hl">members</span></h2>
+  <p class="body mrc-sub">A five-step partnership process delivered meaningful rewards for the client's best customers.</p>
+
+  <div class="mrc-rail">
+    <div class="m-mark mrc-step">Strategy development</div>
+    <div class="m-mark mrc-step">Partner sourcing</div>
+    <div class="m-mark mrc-step">Negotiation and selection</div>
+    <div class="m-mark mrc-step">Partner set-up</div>
+    <div class="m-mark mrc-step">Partner management</div>
+  </div>
+
+  <div class="mrc-cases">
+    <div class="m-unit mrc-case">
+      <div class="mrc-shot" data-motif="photo-fjord" aria-hidden="true"></div>
+      <div class="mrc-name">Wellbeing app</div>
+      <p class="sub-item mrc-copy">Owners were gifted a twelve-month subscription and could spend rewards points to renew it.</p>
+    </div>
+    <div class="m-unit mrc-case">
+      <div class="mrc-shot" data-motif="photo-ridge" aria-hidden="true"></div>
+      <div class="mrc-name">Audio touring</div>
+      <p class="sub-item mrc-copy">Members received exclusive tiered pricing and could buy regional bundles with points.</p>
+    </div>
+    <div class="m-unit mrc-case">
+      <div class="mrc-shot" data-motif="photo-dancers" aria-hidden="true"></div>
+      <div class="mrc-name">Fitness platform</div>
+      <p class="sub-item mrc-copy">Members were offered tiered trials and could renew or buy equipment with points.</p>
+    </div>
+  </div>
+
+  <div class="mrc-band">
+    <div class="mrc-bandhead">Members engage with new partners, and the outcomes follow</div>
+    <p class="sub-item mrc-bandcopy">Emails show a <strong>25% higher click rate</strong> when partner offers are highlighted, members overwhelmingly choose wellness rewards, and the twelve-month subscriptions are the most redeemed in the collection.</p>
+  </div>
+
+  <div class="footer-brand">WPP Enterprise Solutions | MAP</div>
+  <div class="pageno"></div>
+
+  <style>
+  /* Measured off slide 143. */
+
+  .mrc-eyebrow{position:absolute;left:var(--m-text);top:52px;font-weight:400;font-size:40px;
+               line-height:1.05;letter-spacing:.01em;text-transform:uppercase;
+               color:var(--orange-700);}
+  /* The source prints the headline through this line. The separate baseline is
+     the fix. */
+  .mrc-sub{position:absolute;left:var(--m-text);top:208px;right:var(--m-edge);
+           font-size:22px;line-height:1.3;max-width:1500px;}
+
+  /* Vertical and dotted. The dot system's soft connector carries the sequence,
+     and vertical keeps it off the cards' own left-to-right axis — a horizontal
+     rail would compete with them for the same reading direction. */
+  .mrc-rail{position:absolute;left:var(--m-text);top:300px;width:420px;
+            display:grid;grid-template-rows:repeat(5,1fr);gap:26px;height:440px;}
+  .mrc-step{position:relative;background:var(--orange-700);color:var(--text-inv);
+            display:flex;align-items:center;justify-content:center;text-align:center;
+            padding:10px 18px;font-size:21px;line-height:1.2;}
+  .mrc-step:not(:last-child)::after{content:"";position:absolute;left:50%;
+            top:100%;height:26px;border-left:3px dotted var(--orange-700);}
+
+  .mrc-cases{position:absolute;left:560px;right:var(--m-edge);top:300px;
+             display:grid;grid-template-columns:repeat(3,1fr);gap:34px;height:440px;}
+  .mrc-case{display:flex;flex-direction:column;min-width:0;}
+  .mrc-shot{height:250px;background:var(--bg-alt);overflow:hidden;margin-bottom:20px;}
+  .mrc-shot img{width:100%;height:100%;object-fit:cover;display:block;}
+  .mrc-name{font-weight:500;font-size:26px;line-height:1.15;text-transform:uppercase;
+            margin-bottom:12px;}
+  .mrc-copy{font-size:19px;line-height:1.32;margin:0;}
+
+  /* --bg-alt, not grey. The source's band is a colour outside the closed
+     palette; reproducing it for fidelity would reproduce a mistake. */
+  .mrc-band{position:absolute;left:var(--m-text);right:var(--m-edge);bottom:76px;
+            background:var(--bg-alt);padding:26px 34px;}
+  .mrc-bandhead{font-weight:400;font-size:26px;line-height:1.2;text-transform:uppercase;
+                margin-bottom:10px;}
+  .mrc-bandcopy{font-size:19px;line-height:1.32;margin:0;}
+  .mrc-bandcopy strong{font-weight:500;}
+  </style>
+</section>

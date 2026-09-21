@@ -299,17 +299,17 @@ def main():
     ap.add_argument("--no-sheets", action="store_true")
     ap.add_argument("--canon", action="store_true",
                     help="shoot canon/<id>/template.html instead of the snippet kit; "
-                         "each preview.png lands beside its ref.png")
+                         "each preview.png lands beside its ref.png in "
+                         "authoring/canon-src/<id>/")
     args = ap.parse_args()
 
     if not CHROME:
         sys.exit(CHROME_HELP)
 
     if args.canon:
-        cdir = os.path.join(SKILL, "canon")
-        names = sorted(d for d in os.listdir(cdir)
-                       if not d.startswith("_")
-                       and os.path.isfile(os.path.join(cdir, d, "template.html")))
+        cdir = os.path.join(SKILL, "canon", "templates")
+        names = sorted(f[:-len(".html")] for f in os.listdir(cdir)
+                       if f.endswith(".html"))
         vdir = None
     else:
         vdir = os.path.join(SKILL, "assets", "snippets", "variants")
@@ -326,7 +326,7 @@ def main():
 
     results, overflowed = [], []
     for vid in names:
-        src = (os.path.join(SKILL, "canon", vid, "template.html") if args.canon
+        src = (os.path.join(SKILL, "canon", "templates", vid + ".html") if args.canon
                else os.path.join(vdir, vid + ".html"))
         markup = variant_markup(src)
         if markup is None:
@@ -336,7 +336,11 @@ def main():
         with open(page, "w", encoding="utf-8") as f:
             f.write(splice(base, markup))
 
-        png = (os.path.join(SKILL, "canon", vid, "preview.png") if args.canon
+        # Canon previews are authoring output: they live beside the ref.png they
+        # are judged against, outside the skill. canon/PREVIEWS.png — the one
+        # contact sheet the skill ships — is built from them by package_skill.py.
+        png = (os.path.join(SKILL, os.pardir, "authoring", "canon-src", vid,
+                            "preview.png") if args.canon
                else os.path.join(args.out, vid + ".png"))
         os.makedirs(os.path.dirname(png), exist_ok=True)
         err = shoot(page, png)

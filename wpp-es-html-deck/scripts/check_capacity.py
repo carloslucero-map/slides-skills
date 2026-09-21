@@ -134,7 +134,7 @@ def check_canon_integrity(skill):
     cat = os.path.join(skill, "canon", "catalog.json")
     cdir = os.path.join(skill, "canon")
     if not os.path.isfile(cat):
-        print("CANON SKIP — no canon/catalog.json (run canon/_tools/build_catalog.py)")
+        print("CANON SKIP — no canon/catalog.json (run authoring/canon-tools/build_catalog.py)")
         return True
     try:
         listed = {t["id"] for t in json.load(open(cat, encoding="utf-8"))["templates"]}

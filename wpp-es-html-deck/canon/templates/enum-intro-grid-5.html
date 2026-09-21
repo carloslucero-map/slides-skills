@@ -1,0 +1,93 @@
+<!-- canon/templates/enum-intro-grid-5.html — traced from bank slide 44 (measure.json, ref.png).
+
+     WHAT THE KIT DID NOT HAVE. columns-v1 gives three equal spacious columns.
+     The source is not that: a narrow INTRO column carries the argument, and the
+     items sit beside it in a 3x2 grid. The asymmetry is the point — the intro
+     is a different kind of thing from the items, so it does not get an item's
+     shape. Five items in two rows also reach y~990, where three equal columns
+     leave the lower half of the canvas empty.
+
+     Item anatomy, measured: orange dot, ALL-CAPS label at 32px, body at 24px.
+     Labels sit on their own baseline row so the bodies start level even when a
+     label wraps to two lines — in the source, "FIXED/OUTPUT BASED PRICING" wraps
+     and "MENU CARD" does not, and the bodies still align.
+
+     Text edge is --m-text (56px), not --m-edge (40px). The playbook sets 40px
+     margins and that governs structure; the bank sets running copy at x=57, and
+     this is a slide of running copy.
+-->
+<!-- §12.15a: airy BY TRACE, not by neglect — its source measures 0.93 on the same check. Declared so the gate WARNs instead of failing, and so the art pass is still required to look at it. -->
+<section class="slide" data-slide-id="cX-sY" data-archetype="enum-intro-grid" data-template="enum-intro-grid-5"
+        data-composition="intentional-air">
+
+  <h2 class="headline headline--lg" style="left:var(--m-text);max-width:1300px;">The predominant commercial models we apply in the market</h2>
+
+  <div class="eig">
+    <!-- The intro column. Orange label, then the framing copy, then the arrow
+         that hands over to the items. Narrower than an item column on purpose. -->
+    <div class="eig-intro">
+      <div class="eig-lead">Flexibility is key</div>
+      <p class="body eig-body">We offer a range of flexible commercial models, often combined into a hybrid approach that best suits our clients' needs and the nature of the work.</p>
+      <p class="body eig-body">Some of the more common commercial models include &rarr;</p>
+    </div>
+
+    <div class="eig-items">
+      <div class="m-unit eig-item">
+        <div class="col-dot"></div>
+        <div class="eig-label">Fixed / output based pricing</div>
+        <p class="body eig-body">A clear, agreed-upon cost established for well-defined deliverables and project milestones, giving budget predictability on specific outputs.</p>
+      </div>
+      <div class="m-unit eig-item">
+        <div class="col-dot"></div>
+        <div class="eig-label">Outcome-based pricing</div>
+        <p class="body eig-body">A portion of the fee is tied to your key business outcomes, so the engagement becomes a partnership rather than a purchase.</p>
+      </div>
+      <div class="m-unit eig-item"></div>
+
+      <div class="m-unit eig-item">
+        <div class="col-dot"></div>
+        <div class="eig-label">Retainer / FTE</div>
+        <p class="body eig-body">Dedicated resources or committed hours allocated monthly, for consistent access to specialised expertise and proactive guidance.</p>
+      </div>
+      <div class="m-unit eig-item">
+        <div class="col-dot"></div>
+        <div class="eig-label">Time &amp; material</div>
+        <p class="body eig-body">Billing against hours worked and materials consumed, for evolving needs or genuinely variable scope.</p>
+      </div>
+      <div class="m-unit eig-item">
+        <div class="col-dot"></div>
+        <div class="eig-label">Menu card</div>
+        <p class="body eig-body">Pricing tied transparently to specific activities or volumes, for scalable and repeatable work.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-brand">WPP Enterprise Solutions | MAP</div>
+  <div class="pageno"></div>
+
+  <style>
+  /* Measured off slide 44. Promotion candidates once a second canon template
+     needs them; kept scoped so one traced slide cannot rewrite the kit. */
+  
+  .eig{position:absolute;left:var(--m-text);right:var(--m-edge);top:274px;bottom:70px;
+       display:grid;grid-template-columns:332px 1fr;gap:0 64px;}
+  
+  .eig-intro{display:flex;flex-direction:column;}
+  /* The one orange text moment on the slide. Source sets it at 32px caps. */
+  .eig-lead{font-weight:500;font-size:32px;line-height:1.1;letter-spacing:.02em;
+            text-transform:uppercase;color:var(--orange-700);margin-bottom:28px;}
+  
+  .eig-items{display:grid;grid-template-columns:repeat(3,1fr);
+             grid-template-rows:auto auto;gap:56px 48px;align-content:start;}
+  .eig-item{display:flex;flex-direction:column;}
+  /* The source sets these dots in brand orange; .col-dot defaults to navy.
+     NOTE: --orange-500 is the LIGHTEST step (#FFF5CD) — the brand orange is
+     --orange-700 (#FF7800), which the pptx theme confirms as accent1. */
+  .eig-item .col-dot{background:var(--orange-700);}
+  /* Labels share a row so bodies start level even when one label wraps to two
+     lines — which two of the five do in the source. */
+  .eig-label{font-weight:400;font-size:32px;line-height:1.12;
+             text-transform:uppercase;margin:14px 0 18px;min-height:2.24em;}
+  .eig-body{font-size:24px;line-height:1.34;max-width:none;margin:0 0 14px;}
+  </style>
+</section>

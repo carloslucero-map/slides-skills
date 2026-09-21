@@ -1,0 +1,142 @@
+<!-- canon/templates/rel-stage-split.html — traced from bank slide 13 (measure.json, ref.png).
+
+     THE STRONGEST COMPOSITIONAL DEVICE IN THE SELECTION. The whole canvas
+     splits horizontally — cream above, navy below — and a single circular
+     diagram straddles the line, its upper half in the cream zone and its lower
+     half in the navy one. The hub sits exactly on the boundary and belongs to
+     neither.
+
+     It is doing real work, not decoration. The claim is that what the client
+     sees (front stage) and what runs underneath it (backstage) are one system,
+     and the diagram is literally one object cut by the same line that cuts the
+     slide. Two stacked half-slides would say the opposite.
+
+     enum-numbered-4 uses .slide--ground for a partial ground change under a
+     numeral row. This is the same idea at full scale: --split-y drives the
+     slide's ground, the diagram's centre and the two text columns at once, so
+     moving the line moves everything together and nothing drifts.
+
+     Colour carries the zones, and it inverts across the line: navy text on
+     cream above, white text on navy below. That is the §3.5 contrast matrix
+     doing the zoning, not a border.
+
+     FIXED FROM THE SOURCE: the headline overruns its box and prints straight
+     through the paragraph beneath it.
+-->
+<section class="slide rel-stage" data-slide-id="cX-sY" data-archetype="rel-stage-split" data-template="rel-stage-split">
+
+  <div class="rst-up">
+    <div class="rst-eyebrow">WPP fit</div>
+    <h2 class="rst-head">A living system, shaped by client <span class="hl">needs</span></h2>
+    <p class="body rst-p">An ecosystem of transformational capabilities. We start with the client's business problems and growth opportunities, activate what is needed, and build purposefully from there.</p>
+  </div>
+
+  <div class="rst-dn">
+    <h3 class="rst-head2">The result compounds over time</h3>
+    <p class="body rst-p2">A connected growth system that gets smarter, more efficient and more valuable the longer we work together.</p>
+  </div>
+
+  <div class="rst-zone rst-zone--up">Front stage</div>
+  <div class="rst-zone rst-zone--dn">Backstage</div>
+  <div class="rst-band rst-band--up">Connected relationships</div>
+  <div class="rst-band rst-band--dn">Scaled activation</div>
+
+  <div class="rst-dia" aria-hidden="true">
+    <div class="rst-half rst-half--up"><i></i></div>
+    <div class="rst-half rst-half--dn"><i></i></div>
+    <div class="rst-hub"><span>Owned<br>intelligence</span></div>
+  </div>
+
+  <span class="m-mark rst-node rst-node--u1">Loyalty</span>
+  <span class="m-mark rst-node rst-node--u2">CXM</span>
+  <span class="m-mark rst-node rst-node--u3">CRM</span>
+  <span class="m-mark rst-node rst-node--u4">ABM</span>
+  <span class="m-mark rst-node rst-node--u5">Agentic experience</span>
+  <span class="m-mark rst-node rst-node--d1">Marketing automation</span>
+  <span class="m-mark rst-node rst-node--d2">Business architecture</span>
+  <span class="m-mark rst-node rst-node--d3">Agentic operations</span>
+  <span class="m-mark rst-node rst-node--d4">Campaign operations</span>
+  <span class="m-mark rst-node rst-node--d5">1PD and paid media</span>
+
+  <div class="footer-brand">WPP Enterprise Solutions | MAP</div>
+  <div class="pageno"></div>
+
+  <style>
+  /* Measured off slide 13. */
+
+  /* ONE variable drives the slide's ground, the diagram's centre and both text
+     columns. Move it and everything moves together; hard-code the line in three
+     places and they drift apart the first time anyone edits it. */
+  .rel-stage{--split-y:510px;--dia-r:390px;}
+
+  /* The lower ground is a ::before on the section, not a child div. The first
+     version used a child and then lifted every child with
+     `.rel-stage > *{position:relative}` — which overrode that div's own
+     position:absolute, collapsed it to zero height, and left white text sitting
+     on cream. A pseudo-element needs no such blanket rule. */
+  .rel-stage::before{content:"";position:absolute;left:0;right:0;
+                     top:var(--split-y);bottom:0;background:var(--bg-dark);}
+  .rel-stage > *{position:absolute;}
+
+  .rst-up{position:absolute;left:var(--m-text);top:60px;width:720px;}
+  .rst-eyebrow{font-weight:400;font-size:32px;line-height:1.05;letter-spacing:.01em;
+               text-transform:uppercase;color:var(--orange-700);margin-bottom:14px;}
+  /* The source's headline overruns and prints through its own paragraph. The
+     width and the margin below are the fix. */
+  .rst-head{margin:0 0 28px;font-weight:300;font-size:60px;line-height:1.04;
+            letter-spacing:-.005em;text-transform:uppercase;}
+  .rst-p{font-size:23px;line-height:1.34;max-width:none;}
+
+  /* Below the line the contrast inverts — §3.5 doing the zoning, not a border. */
+  .rst-dn{position:absolute;left:var(--m-text);top:calc(var(--split-y) + 90px);width:660px;
+          color:var(--text-inv);}
+  .rst-head2{margin:0 0 26px;font-weight:300;font-size:46px;line-height:1.08;
+             text-transform:uppercase;}
+  .rst-p2{font-size:23px;line-height:1.34;max-width:none;color:var(--text-inv);}
+
+  .rst-zone{position:absolute;right:var(--m-edge);font-weight:500;font-size:26px;
+            letter-spacing:.04em;text-transform:uppercase;}
+  .rst-zone--up{top:calc(var(--split-y) - 56px);}
+  .rst-zone--dn{top:calc(var(--split-y) + 22px);color:var(--text-inv);}
+  .rst-band{position:absolute;left:1180px;width:520px;text-align:center;
+            font-weight:400;font-size:28px;line-height:1.15;text-transform:uppercase;}
+  .rst-band--up{top:56px;}
+  .rst-band--dn{bottom:104px;color:var(--text-inv);}
+
+  /* Centred ON the split. The hub belongs to neither zone, which is the claim. */
+  .rst-dia{position:absolute;left:1440px;top:var(--split-y);
+           width:calc(var(--dia-r) * 2);height:calc(var(--dia-r) * 2);
+           transform:translate(-50%,-50%);}
+  /* A full circle clipped by a half-height window, not corner radii. Same
+     shape, and it uses only §13's sanctioned 50% — corner-radius pairs are
+     outside the closed set and the verifier flagged them correctly. */
+  .rst-half{position:absolute;left:0;width:100%;height:50%;overflow:hidden;}
+  .rst-half > i{position:absolute;left:0;width:100%;height:200%;border-radius:50%;display:block;}
+  .rst-half--up{top:0;}
+  .rst-half--up > i{top:0;background:var(--orange-600);opacity:.32;}
+  .rst-half--dn{bottom:0;}
+  .rst-half--dn > i{bottom:0;background:var(--wpp-white);opacity:.18;}
+  .rst-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+           width:300px;height:300px;border-radius:50%;background:var(--wpp-white);
+           border:3px solid var(--orange-700);
+           display:flex;align-items:center;justify-content:center;text-align:center;
+           font-weight:500;font-size:26px;line-height:1.2;color:var(--wpp-navy);}
+
+  .rst-node{position:absolute;width:220px;text-align:center;
+            font-weight:400;font-size:22px;line-height:1.2;}
+  .rst-node--u1{left:1110px;top:300px;}
+  .rst-node--u2{left:1330px;top:212px;}
+  .rst-node--u3{left:1550px;top:252px;}
+  .rst-node--u4{left:1640px;top:352px;}
+  .rst-node--u5{left:1060px;top:414px;}
+  .rst-node--d1{left:1078px;top:600px;color:var(--text-inv);}
+  .rst-node--d2{left:1160px;top:726px;color:var(--text-inv);}
+  .rst-node--d3{left:1330px;top:798px;color:var(--text-inv);}
+  .rst-node--d4{left:1520px;top:726px;color:var(--text-inv);}
+  .rst-node--d5{left:1620px;top:592px;color:var(--text-inv);}
+
+  /* Furniture falls in the navy zone, so it inverts with everything else there.
+     Left as navy-on-navy it fails the §15.5 contrast floor outright. */
+  .rel-stage .footer-brand,.rel-stage .pageno{color:var(--text-inv);}
+  </style>
+</section>

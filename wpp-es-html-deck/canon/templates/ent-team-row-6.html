@@ -1,0 +1,88 @@
+<!-- canon/templates/ent-team-row-6.html — traced from bank slide 2 (measure.json, ref.png).
+
+     WHAT THE KIT DID NOT HAVE. team-v1 runs three wide portraits with full bios,
+     left-aligned. The source is a different job: SIX people, round portraits, and
+     everything centred — including the headline, which is orange ALL-CAPS. It is
+     the "who is in the room" slide, and it is deliberately the one moment in a
+     deck where the axis goes central.
+
+     Six is the ceiling and the reason the bio drops to three short lines. What
+     team-v1 gives each person in a paragraph, this gives in role, location and
+     practice — enough to place someone, not enough to introduce them.
+
+     FIXED FROM THE SOURCE: the names wrap mid-name there ("Oliver / Haywood" on
+     two lines under a portrait wide enough for one). Each name gets one line
+     here, and the capacity limit is what enforces it rather than hope.
+-->
+<section class="slide" data-slide-id="cX-sY" data-archetype="ent-team-row" data-template="ent-team-row-6">
+
+  <h2 class="etr-head">Who is in the room today</h2>
+
+  <div class="etr-row">
+    <div class="m-unit etr-person">
+      <div class="etr-photo" data-motif="photo-team" aria-hidden="true"></div>
+      <div class="etr-name">Oliver Haywood</div>
+      <div class="etr-role">Global Head of Strategy<br>London, UK</div>
+      <div class="etr-practice">Living Loyalty Strategy</div>
+    </div>
+    <div class="m-unit etr-person">
+      <div class="etr-photo" data-motif="photo-team" aria-hidden="true"></div>
+      <div class="etr-name">Michelle Wildenauer</div>
+      <div class="etr-role">EVP, Client Services<br>Minneapolis, MN</div>
+      <div class="etr-practice">Living Loyalty Strategy</div>
+    </div>
+    <div class="m-unit etr-person">
+      <div class="etr-photo" data-motif="photo-team" aria-hidden="true"></div>
+      <div class="etr-name">Ben Geheb</div>
+      <div class="etr-role">Global Chief Experience Officer<br>Kansas City, MO</div>
+      <div class="etr-practice">CX Strategy</div>
+    </div>
+    <div class="m-unit etr-person">
+      <div class="etr-photo" data-motif="photo-team" aria-hidden="true"></div>
+      <div class="etr-name">Julie Bustos</div>
+      <div class="etr-role">SVP, Marketing Innovation<br>Minneapolis, MN</div>
+      <div class="etr-practice">Loyalty Tech &amp; Data</div>
+    </div>
+    <div class="m-unit etr-person">
+      <div class="etr-photo" data-motif="photo-team" aria-hidden="true"></div>
+      <div class="etr-name">Cathy Staples</div>
+      <div class="etr-role">Global Head of Analyst Relations<br>Kalamazoo, MI</div>
+      <div class="etr-practice">Analyst Relations</div>
+    </div>
+    <div class="m-unit etr-person">
+      <div class="etr-photo" data-motif="photo-team" aria-hidden="true"></div>
+      <div class="etr-name">Andrea Bates</div>
+      <div class="etr-role">Analyst Relations Client Partner<br>Kansas City, MO</div>
+      <div class="etr-practice">Analyst Relations</div>
+    </div>
+  </div>
+
+  <div class="footer-brand">WPP Enterprise Solutions | MAP</div>
+  <div class="pageno"></div>
+
+  <style>
+  /* Measured off slide 2. */
+  
+  /* The one central-axis moment in a deck. Orange, caps, centred — everywhere
+     else the headline is navy, sentence case and left at the content edge. */
+  .etr-head{position:absolute;left:var(--m-edge);right:var(--m-edge);top:200px;margin:0;
+            text-align:center;font-weight:300;font-size:64px;line-height:1.05;
+            letter-spacing:.01em;text-transform:uppercase;color:var(--orange-700);}
+  
+  .etr-row{position:absolute;left:var(--m-edge);right:var(--m-edge);top:340px;bottom:90px;
+           display:grid;grid-template-columns:repeat(6,1fr);gap:28px;align-content:start;}
+  .etr-person{display:flex;flex-direction:column;align-items:center;text-align:center;min-width:0;}
+  
+  /* Round, and sized off the column so six of them stay on one row. */
+  .etr-photo{width:220px;height:220px;border-radius:50%;overflow:hidden;
+             background:var(--bg-alt);margin-bottom:30px;}
+  .etr-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  
+  /* One line. The source wraps names mid-name under portraits wide enough to
+     hold them; the capacity limit is what stops that here. */
+  .etr-name{font-weight:400;font-size:26px;line-height:1.2;white-space:nowrap;
+            overflow:hidden;text-overflow:ellipsis;max-width:100%;margin-bottom:12px;}
+  .etr-role{font-weight:400;font-size:20px;line-height:1.25;margin-bottom:22px;}
+  .etr-practice{font-weight:400;font-size:20px;line-height:1.25;color:var(--nav);}
+  </style>
+</section>

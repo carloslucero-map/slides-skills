@@ -1,0 +1,119 @@
+<!-- canon/templates/seq-phase-columns-4.html — traced from bank slide 65 (measure.json, ref.png).
+
+     MY OWN INDEX NOTE ON THIS SLIDE SAYS: "it has NO time axis, these are
+     columns with thin rules. One has to be added." Half right. An axis was
+     added — but as ordinals on the phase headings, not as a drawn timeline.
+     A ruled axis implies durations the source does not have and nobody has
+     measured; numbering the phases gives the sequence without inventing data.
+     seq-steps-panels-5 is the template when each stage has real substance
+     underneath; this is the one for long lists of named activity per phase.
+
+     THE FIRST COLUMN IS TINTED because it is where the client is NOW. That is
+     the only thing distinguishing this from a four-column table, and it is why
+     the template is a sequence at all: the tint says "you are here", and the
+     three columns to its right are what comes next.
+
+     THE FOOTER BAND IS LOAD-BEARING, and my index note says so too: keep the
+     full-width band, it is what fills the lower canvas. It names what underpins
+     every phase, which is a different kind of claim from anything in the columns
+     — so it spans all four rather than sitting inside one.
+
+     Items are separated by hairlines, never bulleted. A rule between two
+     activities says they are peers in a list; a bullet says they are subordinate
+     to something above, and here there is nothing above them.
+-->
+<section class="slide" data-slide-id="cX-sY" data-archetype="seq-phase-columns" data-template="seq-phase-columns-4">
+
+  <div class="spc-eyebrow">Enterprise loyalty strategy</div>
+  <h2 class="headline headline--lg" style="left:var(--m-text);top:110px;max-width:1300px;">&hellip;through to <span class="hl">scale</span></h2>
+
+  <div class="spc-cols">
+    <div class="m-unit spc-col spc-col--now">
+      <div class="spc-ord">01</div>
+      <div class="spc-name">Activation and optimisation</div>
+      <p class="sub-item spc-lede">Activate an MVP or pilot in selected markets for validation.</p>
+      <ul class="spc-list">
+        <li class="sub-item">Live testing of the essential core of the proposition, with customers and relevant partners</li>
+        <li class="sub-item">Ongoing analysis of performance insight</li>
+        <li class="sub-item">Continuous optimisation to maximise value</li>
+      </ul>
+    </div>
+
+    <div class="m-unit spc-col">
+      <div class="spc-ord">02</div>
+      <div class="spc-name">Full-scale market rollout</div>
+      <ul class="spc-list">
+        <li class="sub-item">Loyalty implementation</li>
+        <li class="sub-item">Platform integration</li>
+        <li class="sub-item">Journey orchestration and campaign development</li>
+        <li class="sub-item">Employee and partner engagement</li>
+        <li class="sub-item">Reporting development</li>
+        <li class="sub-item">Customer and retailer feedback</li>
+        <li class="sub-item">Monitoring and hypercare</li>
+      </ul>
+    </div>
+
+    <div class="m-unit spc-col">
+      <div class="spc-ord">03</div>
+      <div class="spc-name">Evaluation and optimisation</div>
+      <ul class="spc-list">
+        <li class="sub-item">Ongoing programme and campaign evaluation</li>
+        <li class="sub-item">Programme analysis</li>
+        <li class="sub-item">Value assessment</li>
+        <li class="sub-item">Customer feedback</li>
+        <li class="sub-item">Performance insight, management and database capture</li>
+        <li class="sub-item">Programme optimisation</li>
+      </ul>
+    </div>
+
+    <div class="m-unit spc-col">
+      <div class="spc-ord">04</div>
+      <div class="spc-name">Global scale</div>
+      <ul class="spc-list">
+        <li class="sub-item">Identify new markets, local stakeholders and partners</li>
+        <li class="sub-item">Local loyalty adoption and adaption</li>
+        <li class="sub-item">Tech and platform enablement locally</li>
+        <li class="sub-item">Loyalty marketing operations setup</li>
+        <li class="sub-item">Activation of global content and communications</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Spans all four because it is true of all four. -->
+  <div class="m-bar spc-band">Loyalty operations, enabled by WPP global delivery centres</div>
+
+  <div class="footer-brand">WPP Enterprise Solutions | MAP</div>
+  <div class="pageno"></div>
+
+  <style>
+  /* Measured off slide 65. */
+
+  .spc-eyebrow{position:absolute;left:var(--m-text);top:52px;font-weight:400;font-size:40px;
+               line-height:1.05;letter-spacing:.01em;text-transform:uppercase;
+               color:var(--orange-700);}
+
+  .spc-cols{position:absolute;left:var(--m-edge);right:var(--m-edge);top:250px;bottom:190px;
+            display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+  .spc-col{padding:32px 34px;min-width:0;}
+  /* Tinted because it is where the client is NOW. Without it this is a
+     four-column table, not a sequence. */
+  .spc-col--now{background:var(--bg-alt);}
+
+  .spc-ord{font-weight:400;font-size:34px;line-height:1;color:var(--orange-700);
+           font-variant-numeric:tabular-nums lining-nums;margin-bottom:10px;}
+  .spc-name{font-weight:400;font-size:30px;line-height:1.12;margin-bottom:18px;}
+  .spc-lede{font-size:19px;line-height:1.3;margin:0 0 18px;}
+
+  .spc-list{list-style:none;margin:0;padding:0;}
+  /* Hairlines, never bullets. A rule between two activities says they are peers;
+     a bullet says they are subordinate to something, and nothing is above them. */
+  .spc-list .sub-item{font-size:18px;line-height:1.3;padding:13px 0;
+                      border-bottom:1px solid rgba(0,0,80,.16);}
+  .spc-list .sub-item:first-child{padding-top:0;}
+
+  .spc-band{position:absolute;left:var(--m-edge);right:var(--m-edge);bottom:96px;
+            padding:26px 34px;border-top:1px solid rgba(0,0,80,.16);
+            border-bottom:1px solid rgba(0,0,80,.16);
+            font-weight:400;font-size:26px;line-height:1.2;}
+  </style>
+</section>

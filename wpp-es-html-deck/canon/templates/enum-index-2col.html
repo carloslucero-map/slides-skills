@@ -1,0 +1,84 @@
+<!-- canon/templates/enum-index-2col.html — traced from bank slide 58 (measure.json, ref.png).
+
+     THE LONG-LIST SLIDE, and the kit has nothing for it. Sixteen offerings have
+     to be shown as a complete set — the point is the breadth, not any one item.
+     columns-v2 tops out at four. A bulleted list at this length reads as a wall.
+
+     The dotted rules between rows are what make it scannable: they give the eye
+     a baseline to jump along, and they are the dot system's own soft break
+     rather than a table's hard border. Sixteen rows with hard rules would read
+     as a spreadsheet.
+
+     Numbers run DOWN the first column then down the second, not across. That is
+     how a contents page reads and how anyone scanning for item 11 will look for
+     it. Numbering across turns the two columns into one zig-zag.
+
+     FIXED FROM THE SOURCE: "Current offerings" and "What we will cover in the
+     next ~2 hours" are set at the same baseline and print straight through each
+     other. Here the part label, the title and the timing note are three separate
+     tiers.
+-->
+<!-- §12.15a: airy BY TRACE, not by neglect — a 16-item contents page, set at the source's own measured type sizes. Declared so the gate WARNs instead of failing, and so the art pass is still required to look at it. -->
+<section class="slide" data-slide-id="cX-sY" data-archetype="enum-index-2col" data-template="enum-index-2col"
+        data-composition="intentional-air">
+
+  <div class="eix-part">Part 02</div>
+  <h2 class="eix-title">Current offerings</h2>
+  <p class="sub-item eix-note">What we will cover in the next two hours</p>
+
+  <div class="eix-grid">
+    <ol class="eix-list">
+      <li class="m-unit eix-row"><span class="eix-n">01</span><span class="eix-t">Enterprise loyalty strategy</span></li>
+      <li class="m-unit eix-row"><span class="eix-n">02</span><span class="eix-t">Business case development</span></li>
+      <li class="m-unit eix-row"><span class="eix-n">03</span><span class="eix-t">Organisation design</span></li>
+      <li class="m-unit eix-row"><span class="eix-n">04</span><span class="eix-t">Employee engagement and alignment</span></li>
+      <li class="m-unit eix-row"><span class="eix-n">05</span><span class="eix-t">Customer experience design</span></li>
+      <li class="m-unit eix-row"><span class="eix-n">06</span><span class="eix-t">Customer engagement</span></li>
+      <li class="m-unit eix-row"><span class="eix-n">07</span><span class="eix-t">Loyalty programme design</span></li>
+      <li class="m-unit eix-row"><span class="eix-n">08</span><span class="eix-t">Loyalty programme management</span></li>
+    </ol>
+    <ol class="eix-list">
+      <li class="m-unit eix-row"><span class="eix-n">09</span><span class="eix-t">Rewards management</span></li>
+      <li class="m-unit eix-row"><span class="eix-n">10</span><span class="eix-t">Customer data processing and management</span></li>
+      <li class="m-unit eix-row"><span class="eix-n">11</span><span class="eix-t">Personalisation strategy and services</span></li>
+      <li class="m-unit eix-row"><span class="eix-n">12</span><span class="eix-t">Data science, analytics and insights</span></li>
+      <li class="m-unit eix-row"><span class="eix-n">13</span><span class="eix-t">Customer data privacy</span></li>
+      <li class="m-unit eix-row"><span class="eix-n">14</span><span class="eix-t">Emotional loyalty measurement</span></li>
+      <li class="m-unit eix-row"><span class="eix-n">15</span><span class="eix-t">Loyalty measurement and optimisation</span></li>
+      <li class="m-unit eix-row"><span class="eix-n">16</span><span class="eix-t">Platform-independent tech consulting</span></li>
+    </ol>
+  </div>
+
+  <div class="footer-brand">WPP Enterprise Solutions | MAP</div>
+  <div class="pageno"></div>
+
+  <style>
+  /* Measured off slide 58. */
+
+  /* Three tiers, on three baselines. The source sets the title and the timing
+     note at the same one and they print through each other. */
+  .eix-part{position:absolute;left:var(--m-text);top:70px;font-weight:400;font-size:64px;
+            line-height:1;letter-spacing:.01em;text-transform:uppercase;
+            color:var(--orange-700);}
+  .eix-title{position:absolute;left:var(--m-text);top:140px;margin:0;
+             font-weight:300;font-size:80px;line-height:1.04;letter-spacing:-.005em;}
+  .eix-note{position:absolute;left:var(--m-text);top:250px;font-size:32px;line-height:1.25;}
+
+  .eix-grid{position:absolute;left:var(--m-text);right:var(--m-edge);top:310px;bottom:80px;
+            display:grid;grid-template-columns:1fr 1fr;gap:0 90px;}
+  .eix-list{list-style:none;margin:0;padding:0;
+            display:grid;grid-template-rows:repeat(8,1fr);}
+
+  /* Dotted rules, not table borders. The dot system's own soft break — sixteen
+     rows with hard rules read as a spreadsheet. */
+  .eix-row{display:grid;grid-template-columns:72px 1fr;align-items:center;
+           border-bottom:2px dotted var(--orange-600);min-width:0;}
+  .eix-list .eix-row:last-child{border-bottom:none;}
+  .eix-n{font-weight:400;font-size:32px;line-height:1.1;color:var(--orange-700);
+         font-variant-numeric:tabular-nums lining-nums;}
+  /* Numbers run DOWN one column then down the next, the way a contents page
+     reads and the way anyone hunting for item 11 will look. */
+  .eix-t{font-weight:400;font-size:32px;line-height:1.15;text-transform:uppercase;
+         overflow:hidden;}
+  </style>
+</section>

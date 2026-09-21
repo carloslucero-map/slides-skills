@@ -269,7 +269,7 @@ So the order is not a preference, it is a fidelity rule:
 
 1. **`canon/CATALOG.md`** (~950 tokens, loaded once). Choose on the `use when`
    column — it names the problem the template solves. Then open exactly one
-   `canon/<id>/template.html` and paste its `<section>`.
+   `canon/templates/<id>.html` and paste its `<section>`.
 2. **`references/SNIPPET-INDEX.md`** only when no canon template fits. The
    catalogue's last line names the families the canon does not cover yet; for
    those the kit is the answer and there is nothing wrong with saying so.
@@ -285,10 +285,10 @@ python3 scripts/build_shell.py --out build/demo.html
 python3 scripts/derive_capacity.py --skill . --demo build/demo.html --write --index --split
 ```
 
-**`--demo` is not optional.** Without a generated shell the tool reads no CSS metrics at all and falls back to a content edge that stopped being true when the frame moved to 40px — every number it writes is then wrong but plausible. It now refuses to run rather than degrade quietly. Note that `--write` also rewrites `references/capacity.json` wholesale, which drops the canon entries: re-run `canon/_tools/derive_canon_capacity.py --demo <canon-deck> --write` afterwards to merge them back, or `check_capacity.py` reports every canon slide UNCHECKED.
+**`--demo` is not optional.** Without a generated shell the tool reads no CSS metrics at all and falls back to a content edge that stopped being true when the frame moved to 40px — every number it writes is then wrong but plausible. It now refuses to run rather than degrade quietly. Note that `--write` also rewrites `references/capacity.json` wholesale, which drops the canon entries: re-run `authoring/canon-tools/derive_canon_capacity.py --demo <canon-deck> --write` afterwards to merge them back, or `check_capacity.py` reports every canon slide UNCHECKED.
 
 A canon template carries no `<!-- capacity -->` block, but it IS capacity-checked:
-`canon/_tools/derive_canon_capacity.py` merges per-slot limits into the same
+`authoring/canon-tools/derive_canon_capacity.py` merges per-slot limits into the same
 `references/capacity.json`, so `check_capacity.py` covers canon and kit slides
 alike. Its `spec.json` `invariants` say what must not be changed when you fill
 it — read those before you touch geometry.
@@ -383,7 +383,9 @@ the build.** The ones hand-filling most often breaks:
 - Body copy never sits on halftone/texture art; furniture contrast is pixel-
   sampled — keep decorative fills out of the furniture corners (§15.5/15.1).
 
-Icons come from `assets/icons/` (32 suite SVGs, §8.1 — ONE weight family per
+Icons come from `assets/icons/`, one Markdown file per weight family —
+`line.md` (9) · `solid.md` (16) · `bold.md` (5) · `accents.md` (2) — each
+icon under its own `##` heading (§8.1 — ONE weight family per
 icon row/slide; deck default is the solid family) pasted **inline** in an
 `.icon` host — verbs/capabilities get icons, parallel nouns keep dot headers;
 `spark`/`spark-bold` are air accents, max 2 per deck. Mark parallel blocks

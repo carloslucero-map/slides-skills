@@ -1,0 +1,149 @@
+<!-- canon/templates/narrative-tension-spectrum.html — traced from bank slide 22 (measure.json, ref.png).
+
+     THE SPECTRUM IS THE FIND. Five rows, each a pair of opposed poles with a dot
+     placed between them, over a dark media half. Nothing in the kit can express
+     "not this, not that, but somewhere along here" — comparison-v1 offers two
+     boxes, which forces a binary the argument does not have. A tension is a
+     position on a line, and this is the only way to draw one.
+
+     The dot placement is the content. "Brand in control / Customer in control"
+     with the dot at 45% says something a bulleted list cannot, and moving it to
+     70% says something different. Each row carries --at as a percentage; that
+     number is an editorial claim and should be argued about.
+
+     THE DARK HALF IS NOT DECORATION. Poles on cream would read as a table of
+     opposites. On a photographed ground they read as observed — which is the
+     rhetorical job, since the left column is citing research and the right is
+     saying what it feels like.
+
+     FIXED FROM THE SOURCE, and it needed it: the headline runs straight through
+     its own intro paragraph ("deeper cultural shift" printing over "This is not
+     a brand-by-brand problem"), and the pull quote is set on a skew over the
+     photo, which the type system does not sanction and which costs it legibility
+     for nothing.
+-->
+<section class="slide" data-slide-id="cX-sY" data-archetype="narrative-tension-spectrum" data-template="narrative-tension-spectrum">
+
+  <div class="m-art nts-media" data-motif="photo-team" data-text-safe="true" aria-hidden="true"></div>
+  <div class="nts-scrim" data-text-safe="true" aria-hidden="true"></div>
+
+  <div class="nts-left">
+    <div class="nts-eyebrow">Living loyalty vision</div>
+    <h2 class="nts-head">What customers tell us is part of a <span class="hl">deeper cultural shift</span></h2>
+    <p class="body nts-intro">Not a brand-by-brand problem. Five tensions, observable across markets, generations and categories, are reshaping what loyalty even means.</p>
+
+    <ul class="nts-list">
+      <li class="nts-item">
+        <div class="nts-t">The personalisation paradox is sharpening</div>
+        <div class="sub-item nts-d">82.6% of marketers believe they make customers feel valued. 56.2% of customers agree.</div>
+      </li>
+      <li class="nts-item">
+        <div class="nts-t">True loyalty is becoming fragile</div>
+        <div class="sub-item nts-d">Deep emotional bonds fell 5% in 2025 — the first drop in five years. Viral spikes replace durable preference.</div>
+      </li>
+      <li class="nts-item">
+        <div class="nts-t">AI is shifting power to the consumer</div>
+        <div class="sub-item nts-d">Agents give customers more leverage to extract value, and less tolerance for friction.</div>
+      </li>
+      <li class="nts-item">
+        <div class="nts-t">Algorithmic fatigue is producing a counter-current</div>
+        <div class="sub-item nts-d">Consumers increasingly want to be surprised. Empowerment is becoming the new personalisation.</div>
+      </li>
+      <li class="nts-item">
+        <div class="nts-t">Convenience is the new currency</div>
+        <div class="sub-item nts-d">The brand that shows up easiest is increasingly the brand that wins.</div>
+      </li>
+    </ul>
+    <p class="sub-item nts-src">Sources: Antavo Global Customer Loyalty Report 2026; SAP Emarsys Customer Loyalty Index 2025.</p>
+  </div>
+
+  <div class="nts-right">
+    <p class="nts-quote">&ldquo;The customer of 2026 wants to be known, not predicted at.&rdquo;</p>
+
+    <div class="nts-spectra">
+      <div class="m-unit nts-row" style="--at:30">
+        <span class="nts-pole">Personalised for me</span>
+        <span class="nts-line" aria-hidden="true"><i></i></span>
+        <span class="nts-pole nts-pole--r">Watched by them</span>
+      </div>
+      <div class="m-unit nts-row" style="--at:52">
+        <span class="nts-pole">Deep attachment</span>
+        <span class="nts-line" aria-hidden="true"><i></i></span>
+        <span class="nts-pole nts-pole--r">Fleeting attention</span>
+      </div>
+      <div class="m-unit nts-row" style="--at:45">
+        <span class="nts-pole">Brand in control</span>
+        <span class="nts-line" aria-hidden="true"><i></i></span>
+        <span class="nts-pole nts-pole--r">Customer in control</span>
+      </div>
+      <div class="m-unit nts-row" style="--at:68">
+        <span class="nts-pole">Predicted at</span>
+        <span class="nts-line" aria-hidden="true"><i></i></span>
+        <span class="nts-pole nts-pole--r">Surprised by</span>
+      </div>
+      <div class="m-unit nts-row" style="--at:74">
+        <span class="nts-pole">Rewarded for spending</span>
+        <span class="nts-line" aria-hidden="true"><i></i></span>
+        <span class="nts-pole nts-pole--r">Rewarded for showing up</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-brand">WPP Enterprise Solutions | MAP</div>
+  <div class="pageno"></div>
+
+  <style>
+  /* Measured off slide 22. */
+
+  .nts-media{position:absolute;left:830px;right:0;top:0;bottom:0;overflow:hidden;}
+  .nts-media img{width:100%;height:100%;object-fit:cover;display:block;}
+  /* The scrim is what buys the white type its §3.5 headroom over a photograph
+     whose brightness the deck cannot predict. Both the photo and the scrim carry
+     data-text-safe, the shell's own declaration for "text sits over this ground
+     on purpose" — §15.2 would otherwise read a full-bleed image as decoration
+     obscuring text, which is exactly what it is for and exactly not what this is. */
+  .nts-scrim{position:absolute;left:830px;right:0;top:0;bottom:0;
+             background:var(--bg-dark);opacity:.72;}
+
+  .nts-left{position:absolute;left:var(--m-text);top:52px;width:720px;bottom:60px;}
+  .nts-eyebrow{font-weight:400;font-size:32px;line-height:1.05;letter-spacing:.01em;
+               text-transform:uppercase;color:var(--orange-700);margin-bottom:16px;}
+  /* The source prints this straight through the paragraph below it. The margin
+     is the fix; the width keeps it to three lines. */
+  .nts-head{margin:0 0 20px;font-weight:300;font-size:52px;line-height:1.05;
+            letter-spacing:-.005em;}
+  .nts-intro{font-size:21px;line-height:1.34;max-width:none;margin:0 0 26px;}
+  .nts-list{list-style:none;margin:0;padding:0;}
+  .nts-item{position:relative;padding-left:26px;margin-bottom:18px;}
+  .nts-item::before{content:"";position:absolute;left:0;top:.5em;width:9px;height:9px;
+                    border-radius:50%;background:var(--orange-700);}
+  .nts-t{font-weight:500;font-size:21px;line-height:1.25;margin-bottom:3px;}
+  .nts-d{font-size:18px;line-height:1.3;}
+  .nts-src{font-size:16px;line-height:1.3;margin:20px 0 0;opacity:.7;}
+
+  .nts-right{position:absolute;left:900px;right:var(--m-edge);top:70px;bottom:70px;
+             color:var(--text-inv);display:flex;flex-direction:column;}
+  /* Flat, not skewed. The source sets this on a rotation the type system does
+     not sanction and which costs legibility for nothing. */
+  .nts-quote{margin:0 0 60px;font-weight:300;font-size:44px;line-height:1.12;
+             letter-spacing:-.005em;max-width:820px;}
+
+  .nts-spectra{flex:1;display:grid;grid-template-rows:repeat(5,1fr);align-content:center;}
+  .nts-row{display:grid;grid-template-columns:250px 1fr 250px;align-items:center;gap:24px;}
+  .nts-pole{font-weight:400;font-size:21px;line-height:1.2;}
+  .nts-pole--r{text-align:right;}
+  /* --at is an editorial claim, not a layout value. 45% and 70% say different
+     things, and the number is the thing to argue about. */
+  .nts-line{position:relative;height:2px;background:rgba(255,255,255,.28);}
+  .nts-line i{position:absolute;top:50%;left:calc(var(--at) * 1%);
+              transform:translate(-50%,-50%);
+              width:15px;height:15px;border-radius:50%;background:var(--wpp-white);}
+
+  /* The furniture sits over the dark half, so it inverts. The first selector
+     here was `.nts-right .footer-brand`, which matches nothing — the footer is
+     a SIBLING of .nts-right, not a child, so it stayed navy on a photograph and
+     failed §15.5 in the corner where nobody looks. */
+  [data-template="narrative-tension-spectrum"] .footer-brand,
+  [data-template="narrative-tension-spectrum"] .pageno{color:var(--text-inv);}
+  </style>
+</section>

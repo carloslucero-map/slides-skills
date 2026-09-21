@@ -635,8 +635,12 @@ def check_catalog():
     CATALOG.md leaves the model choosing on a description the template no longer
     matches, and nothing says so.
     """
-    script = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                          "canon", "_tools", "build_catalog.py")
+    # authoring/canon-tools/, not canon/_tools/ — the tools moved out of the
+    # skill when it had to fit the 200-entry upload cap. Absent is still fine:
+    # an installed skill has no authoring/ beside it and skips these checks.
+    script = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(
+                          os.path.abspath(__file__)))),
+                          "authoring", "canon-tools", "build_catalog.py")
     if not os.path.isfile(script):
         return                        # no canon in this checkout; not an error
     try:
@@ -653,8 +657,9 @@ def check_catalog():
 
     # And that every canon template has capacity data. Without it a canon slide
     # comes back UNCHECKED, which reads like a pass and is not one.
-    cap = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                       "canon", "_tools", "derive_canon_capacity.py")
+    cap = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(
+                       os.path.abspath(__file__)))),
+                       "authoring", "canon-tools", "derive_canon_capacity.py")
     if not os.path.isfile(cap):
         return
     try:

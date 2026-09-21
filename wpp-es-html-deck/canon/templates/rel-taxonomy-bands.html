@@ -1,0 +1,82 @@
+<!-- canon/templates/rel-taxonomy-bands.html — traced from bank slide 157 (measure.json, ref.png).
+
+     ONLY PART OF THE SOURCE IS A TEMPLATE. Slide 157 is a bespoke infographic —
+     a three-circle Venn inside a radial dial, with an arrow loop drawn around
+     the whole thing — beside a column of four channel categories. The
+     infographic is artwork: it was drawn once, for one argument, and nothing
+     generalises. The column does: a TAXONOMY, four named classes each with its
+     members, which the kit has no way to set.
+
+     Not the same as ent-logo-rows-6, which pairs categories with logo art and
+     lives or dies on those images. Here the members are words, the class name
+     carries the weight, and the reading is "these four exhaust the space" — so
+     the rules between bands have to feel like a division of one whole rather
+     than four separate cards.
+
+     THE MOTIF SLOT IS OPTIONAL AND DELIBERATELY VAGUE. Where the source puts
+     its bespoke diagram, this leaves a single motif. A template cannot carry
+     someone else's one-off artwork, and pretending otherwise is how a kit ends
+     up with eleven diagrams nobody can reuse.
+
+     FIXED FROM THE SOURCE: SHARED and EARNED both print through their own body
+     text, and the left-hand legend's four labels overlap each other so badly
+     that two are unreadable.
+-->
+<section class="slide" data-slide-id="cX-sY" data-archetype="rel-taxonomy-bands" data-template="rel-taxonomy-bands">
+
+  <div class="rtb-eyebrow">Bringing customer data into the rest of the organisation</div>
+  <h2 class="headline headline--lg" style="left:var(--m-text);top:110px;max-width:1100px;">Owned intelligence, <span class="hl">across every channel</span></h2>
+
+  <div class="m-art rtb-art" data-motif="crystal-orange" data-inset-ok="true" aria-hidden="true"></div>
+
+  <div class="rtb-bands">
+    <div class="m-unit rtb-band">
+      <div class="rtb-class">Paid</div>
+      <p class="rtb-members">Social, programmatic, GSO, CTV, DOOH, digital audio, affiliate, influencer, commerce</p>
+    </div>
+    <div class="m-unit rtb-band">
+      <div class="rtb-class">Owned</div>
+      <p class="rtb-members">Email, app, web, push, SMS, conversational, EPOS, direct mail, packaging</p>
+    </div>
+    <div class="m-unit rtb-band">
+      <div class="rtb-class">Shared</div>
+      <p class="rtb-members">Organic social, user-generated content, partnerships, forums and communities</p>
+    </div>
+    <div class="m-unit rtb-band">
+      <div class="rtb-class">Earned</div>
+      <p class="rtb-members">PR, word of mouth, editorial features, awards and recognition</p>
+    </div>
+  </div>
+
+  <div class="footer-brand">WPP Enterprise Solutions | MAP</div>
+  <div class="pageno"></div>
+
+  <style>
+  /* Measured off slide 157. */
+
+  .rtb-eyebrow{position:absolute;left:var(--m-text);top:52px;font-weight:400;font-size:40px;
+               line-height:1.05;letter-spacing:.01em;text-transform:uppercase;
+               color:var(--orange-700);max-width:1400px;}
+
+  /* A motif, not a reproduction. The source's diagram is one-off artwork and a
+     template that pretended to carry it would be lying about what it is. */
+  .rtb-art{position:absolute;left:var(--m-edge);top:320px;width:760px;bottom:96px;
+           display:flex;align-items:center;justify-content:center;overflow:hidden;}
+  .rtb-art img{max-width:100%;max-height:100%;object-fit:contain;display:block;}
+
+  .rtb-bands{position:absolute;left:940px;right:var(--m-edge);top:300px;bottom:96px;
+             display:grid;grid-template-rows:repeat(4,1fr);}
+  /* Rules BETWEEN, never around. Four bordered cards would read as four separate
+     things; the shared rules say these four divide one whole. */
+  .rtb-band{display:flex;flex-direction:column;justify-content:center;
+            padding:22px 0;border-top:1px solid rgba(0,0,80,.18);}
+  .rtb-band:first-child{border-top:none;}
+
+  .rtb-class{font-weight:400;font-size:46px;line-height:1.05;
+             text-transform:uppercase;color:var(--orange-700);margin-bottom:12px;}
+  /* The source runs two of these classes straight through their own members.
+     The margin above is the fix, and the members never share a line with the
+     class name. */
+  .rtb-members{font-weight:400;font-size:24px;line-height:1.34;margin:0;max-width:none;}
+  </style>
+</section>
