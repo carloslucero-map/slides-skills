@@ -116,9 +116,17 @@ pills, stat circles and footer furniture. The G1 plan gate is unchanged on both
 surfaces. `deck-content-builder` keeps its approved content in the conversation
 there rather than saving a stray `.md`.
 
-Two things it cannot carry, by design of the subset: the one-word Medium title
-highlight (a `<span>` takes only a colour and `<b>` renders Bold) and the
-stylistic-alternate "a".
+**Fonts are the subtle part.** The Slides format loads one file per face, at
+most four, and renders a one-weight file at that weight whatever `font-weight`
+asks for. WPP is five static files under one name, so installed naively every
+tier — Thin display, Light headline, Regular body, Medium label — comes out the
+same. The guide registers four faces instead (`WPP` for Regular, `WPP Thin`,
+`WPP Light`, `WPP Medium`) and sets `font-weight:400` everywhere, since headings
+default to 600 and would get a fake bold.
+
+Three things it cannot carry, by design of the format: **Bold 700** (it would be
+a fifth face; the footer brand line moves to Medium), the one-word Medium title
+highlight (a `<span>` takes only a colour), and the stylistic-alternate "a".
 
 ## Uploading to claude.ai
 

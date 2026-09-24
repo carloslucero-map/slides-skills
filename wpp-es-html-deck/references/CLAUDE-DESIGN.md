@@ -37,12 +37,18 @@ first, and offer to revise any slide by number.
    Slides type, titled with the plan's cover title.
 3. **Design system: "WPP Enterprise Solutions | MAP".** Do not ask which
    one. This skill *is* that system. Find it with `list` (type "Design
-   System") by that exact title, read its `project/README.md` and
-   `project/tokens.json`, and install it with its fonts, as the type's step 3
-   says. Its README was written for the HTML pipeline: where it says every
-   deck is one self-contained HTML file, or to load `components/bundle.css`,
-   that describes the other surface. Ignore both here. Not found: say so and
-   use the values on this page.
+   System") by that exact title, then read its `project/README.md` and
+   `project/tokens.json`. Install it in the same call that sends the slides:
+   `files` entries copy it server-side, `project/ds/wpp-es-map/tokens.json`
+   from its `project/tokens.json`, and one `project/ds/wpp-es-map/fonts/<File>`
+   from its `project/fonts/<File>` for each of the four faces under Type;
+   `project/deck.json` `designSystems` gains `{"title": "WPP Enterprise
+   Solutions | MAP", "namespace": "wpp-es-map", "artifact": "<its address
+   from list>", "version": "<its version id>", "copiedAt": "<now>"}`.
+   Its README describes the HTML pipeline too: where it says every deck is
+   one self-contained HTML file, or to load `components/bundle.css`, that is
+   the other surface. Ignore both here. Not found: say so and use the values
+   on this page.
 4. **Upload every asset you place**, logo, photo, illustration, motif,
    texture, from `assets/`. Use the returned `url` verbatim. Never a `data:`
    URI.
@@ -75,31 +81,48 @@ Text is Navy or White, except the sanctioned orange moments in CORE §1.4.
 
 ## Type
 
-One family in `project/deck.json` `faces`: **`WPP`**, from the design
-system's `fonts/`: `WPP-Thin` 100 · `WPP-Light` 300 · `WPP-Regular` 400 ·
-`WPP-Medium` 500 · `WPP-Bold` 700. Every section sets
-`font-family:'WPP', sans-serif`. Never synthesize a missing weight.
+**Four faces, one per weight.** The Slides format loads one font file per
+face, at most four per deck, and its own rule is that a static font file with
+one weight renders every weight at that weight. WPP ships as five static
+files, so a single `WPP` face would set Thin display, Light headlines and
+Medium labels all alike, and the hierarchy is gone. Register each weight as
+its own face in `project/deck.json` `faces`, each `src` the font installed
+with the design system (`project/ds/wpp-es-map/fonts/<File>`):
 
-| role | weight | size · line-height · tracking |
+| `family` | key | file | carries |
+|---|---|---|---|
+| `WPP` | `wpp` | `WPP-Regular.woff2` | body, subhead, source, page number; the design system's own family name, so its Text styles still find a WPP face |
+| `WPP Thin` | `wpp-thin` | `WPP-Thin.woff2` | statements, stat numerals, divider titles |
+| `WPP Light` | `wpp-light` | `WPP-Light.woff2` | headlines, cover title, cover subheader |
+| `WPP Medium` | `wpp-medium` | `WPP-Medium.woff2` | eyebrow, labels, pills, footer brand line |
+
+**The face carries the weight, never `font-weight`.** Set `font-weight:400`
+on every text element. `<h1>`–`<h3>` default to 600 here, and 600 on a
+one-weight face is a synthesized fake bold.
+
+**Bold 700 does not load.** It would be a fifth face. The footer brand line,
+the only place the brand uses Bold, is set in `WPP Medium`. Never fake Bold
+with `-webkit-text-stroke`.
+
+| role | face | size · line-height · tracking |
 |---|---|---|
-| headline | Light 300 | 54px · 0.9 · −0.005em, sentence case, ≤2 lines |
-| eyebrow | Medium 500 | 24px · 1 · 0.12em, caps, Orange 800 |
-| subhead | Regular 400 | 24px · 1.15 · 0.08em, caps |
-| body | Regular 400 | 26px · 1.32 (24px in columns, 22px in 4-up and boxes) |
-| label | Medium 500 | 18px · 1 · 0.1em, caps |
-| pill | Medium 500 | 16px · 1 · 0.08em, caps |
-| statement, stat numerals | Thin 100 | 90px and up; `tokens.json` has the scale |
-| footer brand | Bold 700 | 16px · 1 · 0.01em |
+| headline | `WPP Light` | 54px · 0.9 · −0.005em, sentence case, ≤2 lines |
+| eyebrow | `WPP Medium` | 24px · 1 · 0.12em, caps, Orange 800 |
+| subhead | `WPP` | 24px · 1.15 · 0.08em, caps |
+| body | `WPP` | 26px · 1.32 (24px in columns, 22px in 4-up and boxes) |
+| label | `WPP Medium` | 18px · 1 · 0.1em, caps |
+| pill | `WPP Medium` | 16px · 1 · 0.08em, caps |
+| statement, stat numerals | `WPP Thin` | 90px and up; `tokens.json` has the scale |
+| footer brand | `WPP Medium` | 16px · 1 · 0.01em |
 
 **The floors are the brand's, not the type's:** body 20px, other
 informational text 16px, footer furniture 11px. The type recommends 24px
 everywhere; footer furniture is frozen brand furniture and stays as
 specified.
 
-**No one-word title highlight here.** The brand's `.hl` is Medium 500 on one
-token. In this format a `<span>` carries only a colour, and `<b>` renders
-Bold, which the brand reserves for the footer. Leave the highlight out rather
-than fake it in bold.
+**No one-word title highlight here.** The brand's `.hl` is Medium on one
+token. A `<span>` in this format takes only a colour, not a face, and `<b>`
+is a fake bold on these faces. Leave the highlight out.
 
 ## The frame, on every content slide
 
@@ -144,12 +167,12 @@ width) always bleed. Flat fills only, Navy dots never behind text, each svg
 
 **Stat circle.** A sized `<div style="width:220px; height:220px;
 border-radius:50%; background:#FF7800; display:flex; align-items:center;
-justify-content:center">` holding a Thin `<p>`. Area is proportional to
+justify-content:center">` holding a `<p>` in `WPP Thin`. Area is proportional to
 value, so diameter goes with √value. Below 90px, an orange stat steps up to
-Light 300: Thin orange on Cream measures about 2.5:1.
+`WPP Light`: Thin orange on Cream measures about 2.5:1.
 
 **Pill.** `<p style="background:#000050; color:#FFFFFF; border-radius:999px;
-padding:10px 26px">` in Medium 16px caps. It is the only rounded element: no
+padding:10px 26px">` in `WPP Medium` 16px caps. It is the only rounded element: no
 rounded cards, no shadows, no gradients. The subset allows all three and the
 brand forbids them.
 
