@@ -2,26 +2,26 @@
 name: wpp-es-html-deck
 description: >-
   Turn any raw input — narrative, outline, brief, bullet dump, or an approved
-  deck-content-builder Markdown file — into a polished, self-contained HTML
-  slide deck in the WPP Enterprise Solutions | MAP visual language (Navy +
-  Cream + Orange, WPP Sans, dot system, 16:9, keyboard-navigable). Trigger:
-  "build a deck", "turn this into slides", "make an HTML presentation",
-  "WPP deck", "MAP deck", "put this in the WPP template", "make this
-  on-brand", or pasting a narrative/outline/notes to be rendered as a deck.
-  Also trigger when the user clearly wants a presentation as one openable
-  file, even if messy — structuring is the job. House standard for internal
-  and client-facing WPP ES | MAP decks. Do NOT use to edit .pptx files or
-  for the older VML MAP espresso/gold style. Two-turn by design: first reply
-  is a slide plan + design-direction question (blocking checkpoint); the
-  deck is built only after approval or an explicit review waiver.
+  deck-content-builder Markdown file — into a polished slide deck in the WPP
+  Enterprise Solutions | MAP visual language (Navy + Cream + Orange, WPP
+  Sans, dot system, 16:9). In Claude Design the deck is built inside the
+  Slides artifact, never as a separate file; elsewhere it is one
+  self-contained HTML file. Trigger: "build a deck", "turn this into
+  slides", "make a presentation", "WPP deck", "MAP deck", "put this in the
+  WPP template", "make this on-brand", or pasting notes to be rendered as a
+  deck — even if messy, structuring is the job. House standard for WPP ES |
+  MAP decks. Do NOT use to edit .pptx files or for the older VML MAP
+  espresso/gold style. Two-turn by design: first reply is a slide plan +
+  design-direction question (blocking checkpoint); the deck is built only
+  after approval or an explicit review waiver.
 ---
 
 # WPP Enterprise Solutions | MAP — HTML Deck Builder v4
 
 You convert loose text — or an approved `deck-content-builder` content file —
-into a single, self-contained, on-brand HTML slide deck. The user brings the
-thinking, you bring the structure and the brand. Version history is in
-`CHANGELOG.md`; everything this file states is current.
+into one on-brand slide deck. The user brings the thinking, you bring the
+structure and the brand. Version history is in `CHANGELOG.md`; everything
+this file states is current.
 
 ## STOP — checkpoint discipline (this rule outranks everything below)
 
@@ -55,6 +55,22 @@ silently produces the all-defaults deck (the old v1 look), asks the user
 nothing, and offers no variants. About to generate with no approved plan for
 THIS deck? Stop and present G1 instead.
 
+## Where the deck goes — decide once, before building
+
+The gates above hold on every surface. What differs is the deliverable, and
+getting it wrong puts the deck in a separate file the user cannot present
+from.
+
+- **Claude Design, or any session whose Artifact tool offers a Slides type**
+  (a deck is open, or `quickstart` with intent `slides` returns one): **the
+  deck is an Artifact made from that type.** Read
+  **`references/CLAUDE-DESIGN.md`** and follow it for steps 3–6. Never write
+  a standalone `.html` file, never run `build_shell.py`, `check_capacity.py`
+  or `verify_deck.py`, never screenshot. The artifact exports HTML, PDF and
+  PPTX itself, so a request for "an HTML file" there means its export.
+- **Everywhere else** (Claude Code, a chat with no Slides type): **one
+  self-contained `.html` file**, built by steps 3–6 below.
+
 ## Step 0 — read the brand system first (once per deck)
 
 Before building, read **`references/CORE.md`** — everything needed to lay out
@@ -82,10 +98,13 @@ disagrees, the generator wins, then the master.
 
 ## The non-negotiables (every deck, no exceptions)
 
-1. **One self-contained `.html` file.** Every asset is embedded inline
-   (base64 / inline SVG) — never an external path or CDN link. A colleague
-   double-clicks the file offline and it renders fully. The generator handles
-   this; if you add assets, inline them too (raster ≤300KB before base64).
+1. **One deliverable, in the surface's own form** (see "Where the deck
+   goes"). In Claude Design: the Slides artifact, with assets uploaded, never
+   inlined. Everywhere else: **one self-contained `.html` file** — every
+   asset embedded inline (base64 / inline SVG), never an external path or CDN
+   link, so a colleague double-clicks it offline and it renders fully. The
+   generator handles this; if you add assets, inline them too (raster ≤300KB
+   before base64).
 2. **Five locked defaults — never redesigned per deck:** Cream `#FAFAF0`
    content background (never pure White, never alternating); the locked cover
    frame (2–4 word ALL-CAPS title + sentence subheader + month + presenter +
@@ -179,7 +198,8 @@ chapters: X / Y / Z") **plus the design-direction question**, and wait for
 that one answer — or when the user said "just build it" (default direction,
 assumptions noted at delivery, no questions at all).
 
-**G2 — Delivery (never blocking).** The file + a 2–4-line summary + *which two
+**G2 — Delivery (never blocking).** The file — in Claude Design, the Slides
+artifact's link, with no seen-report (`CLAUDE-DESIGN.md`) — + a 2–4-line summary + *which two
 slides to eyeball first* (cover badge legibility, the main data-viz slide) +
 the revision invitation, always including the variant offer: *"Name any slide
 by number to change it — I patch in place; numbering and self-containment are
@@ -211,6 +231,9 @@ Present the G1 artifact and **end your turn**. Do not continue to step 3 in
 the same turn unless one of the three waivers in the STOP section applies.
 
 ### 3. Write the spec and generate the shell
+
+**In Claude Design, stop here:** steps 3–6 are replaced by
+`references/CLAUDE-DESIGN.md`. Everything below builds the standalone file.
 
 ```bash
 python scripts/build_shell.py --spec spec.json --out deck.html
@@ -498,10 +521,13 @@ non-English decks: **`references/EDGE-CASES.md`**. Open only when one applies.
 
 ## Bundled resources
 
-- **`canon/`** — templates traced from the real slide bank, one directory each:
-  `template.html` (paste this), `ref.png` (the source slide), `preview.png`
-  (what it renders), `meta.json` (limits), `spec.json` (what must not change).
+- **`canon/`** — 25 templates traced from the real slide bank:
+  `templates/<id>.html` (paste this — in Claude Design, rewrite it inline),
+  `PREVIEWS.png` (all 25 on one labelled sheet), and `CATALOG.md` +
+  `catalog.json`, generated from sources kept outside the skill.
   **`canon/CATALOG.md` is the entry point for step 4.**
+- **`references/CLAUDE-DESIGN.md`** — the whole deck in Claude Design: the
+  Slides artifact, the design-system install, and the brand as inline styles.
 
 Each other file is named where it is used. Three rules that live nowhere else:
 

@@ -56,6 +56,12 @@ user never gets to steer the storyline while steering is still cheap.
 - Do **NOT** design layouts, themes, colours, or visuals. You write words —
   the optional `**Visual:**` line is an intent hint for the renderer, not a
   design.
+- **In Claude Design** (a Slides deck is open, or the Artifact tool offers a
+  Slides type), a saved `.md` is a stray file beside the deck. Keep the
+  approved content in the conversation, in the handoff format, and save the
+  file only if the user asks for it. When they want the deck, invoke
+  `wpp-es-html-deck` with that approved content; it builds it into the
+  Slides artifact. Never create the Slides artifact yourself.
 - **Do not render slides yourself. If the user wants the rendered WPP deck,
   save the approved Markdown, then invoke `wpp-es-html-deck` with the file.**
   For a `.pptx`: never build it yourself; only after the gate passes and the
@@ -154,7 +160,8 @@ v3) — direction follows meaning, not sign.
 ### 8. Final review, then save
 Vertical-logic check: does every bullet prove its title? Fix before
 presenting. Save ONE `.md` file (e.g. `deck-content.md`) in the handoff
-format below and report the path. Do not produce any other file type. If the
+format below and report the path — in Claude Design, only if the user asks
+(see the output contract). Do not produce any other file type. If the
 user wants the rendered deck, invoke `wpp-es-html-deck` with the saved file —
 the renderer keeps your approved titles verbatim.
 

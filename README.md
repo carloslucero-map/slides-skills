@@ -32,10 +32,11 @@ Output is a single Markdown file. It does not design or render anything.
 Single file, no dependencies: [`deck-content-builder/SKILL.md`](deck-content-builder/SKILL.md).
 
 ### `wpp-es-html-deck`
-Renders a **self-contained HTML deck** in the WPP ES | MAP visual language —
-Navy + Cream + Orange, WPP Sans, the dot system, 16:9, keyboard-navigable.
-Ships the brand assets, a 51-template snippet library, a per-slot capacity
-model, and a verifier that enforces the design guideline.
+Renders a deck in the WPP ES | MAP visual language — Navy + Cream + Orange,
+WPP Sans, the dot system, 16:9. **In Claude Design it builds straight into the
+Slides artifact; everywhere else it writes one self-contained HTML file.**
+Ships the brand assets, 25 canon templates, a 51-template snippet library, a
+per-slot capacity model, and a verifier that enforces the design guideline.
 
 | Path | What it holds |
 |---|---|
@@ -93,6 +94,31 @@ python wpp-es-html-deck/scripts/derive_capacity.py
 
 `verify_deck.py` exits 0 when every check passes (warnings allowed) and 1 on
 any failure, so it drops into CI as-is.
+
+## In Claude Design
+
+Claude Design's slides are an Artifact **type**: a deck is created from it and
+written as `project/deck.json` plus one `project/slides/<id>.html` per slide, in
+a closed inline-style subset — no classes, no `<style>`, no `var()`, images
+uploaded rather than embedded. A self-contained HTML file is the opposite of
+that, which is why decks used to land beside the Slides artifact instead of in
+it.
+
+The skill now decides the surface before it builds. Where a Slides type is
+available it skips `build_shell.py`, `check_capacity.py` and `verify_deck.py`,
+installs the **WPP Enterprise Solutions | MAP** design system, and writes the
+brand as inline styles —
+[`references/CLAUDE-DESIGN.md`](wpp-es-html-deck/references/CLAUDE-DESIGN.md) has
+the frame, the colour and type tables, and recipes checked in a browser against
+the subset: dots that bleed off the canvas (a full-canvas `<svg>`, because the
+type clamps negative offsets to 0), the `.duo` duotone property for property,
+pills, stat circles and footer furniture. The G1 plan gate is unchanged on both
+surfaces. `deck-content-builder` keeps its approved content in the conversation
+there rather than saving a stray `.md`.
+
+Two things it cannot carry, by design of the subset: the one-word Medium title
+highlight (a `<span>` takes only a colour and `<b>` renders Bold) and the
+stylistic-alternate "a".
 
 ## Uploading to claude.ai
 
