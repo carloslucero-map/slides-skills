@@ -12,8 +12,8 @@ decides *how* a slide is written and this page decides *what it looks like*.
 
 ## What carries over, what does not
 
-**Unchanged:** the G0/G1 gates (plan first, end your turn, build only after
-approval), the four design directions, archetype choice, canon-first
+**Unchanged:** a gate before anything is built (here it is the question
+card, below), the four design directions, archetype choice, canon-first
 selection, the anti-sameness review, the house copy rules, and
 non-negotiables 2–8.
 
@@ -24,15 +24,66 @@ classes, `<style>`, `var()`, base64 or `data:` images, the JS motion layer.
 
 **G2 changes.** The type does not render-check slides and asks you not to,
 so there is no seen-report. Deliver the link, name the two slides to look at
-first, and offer to revise any slide by number.
+first, and offer to revise any slide by number or add an alternative beside
+it.
+
+## Asking: the question card, never text
+
+Claude Design shows questions as a card in the chat box, and that card is the
+**`AskUserQuestion` tool**. A question typed as prose — a slide table ending
+in "reply 1/2/3/4" — arrives as an ordinary message nobody can click. So here
+G0 and G1 are **one `AskUserQuestion` call**, before anything is written:
+
+- **At most four questions**, the call tagged
+  `"metadata": {"source": "artifact-questions"}`.
+- **The design direction, always** (unless the user already named one), with
+  `multiSelect: false` and your content-signal pick first, marked
+  "(Recommended)":
+
+  | label | description |
+  |---|---|
+  | Editorial quiet | Spacious, cream, no dark slides |
+  | Statement-led | A big statement opens each chapter |
+  | Data-forward | Numbers lead: stat circles, charts |
+  | High-impact | Poster scale, up to 1 in 3 dark |
+
+- **Then what their material leaves open**, most decisive first and in its
+  own terms: which thread leads, what the room should do afterwards, whose
+  voice the slides carry. Two to four concrete options each, a few words per
+  label and description, `multiSelect: true` unless the options exclude each
+  other.
+- **Never ask** what the brief already answers, a question only free text can
+  answer (a presenter's name, a figure: use the default or a placeholder,
+  `[Presenter]`, `[€__]`), or with an "Other" or "you choose" option. The card
+  adds "Other" itself.
+
+Before the call, at most two lines of prose: what you read and the length
+you plan ("Your notes cover four workstreams; I plan 12 slides in three
+chapters"). **No slide table here.** The deck in the editor is the plan.
+Restate the answers as a one-line assumption, then build. Ask a second round
+only if the user asks for more or an answer opens a question you could not
+have asked before, and never re-ask.
+
+**The waivers still hold.** An explicit "just build it", or nobody there to
+answer: no card, the recommended direction, assumptions in one line. An
+approved `deck-content-builder` file: the card holds only the direction.
+
+## No slide images in the chat
+
+**The draft is the deck in the editor.** Never post a slide, an exemplar, a
+preview, a screenshot, a contact sheet or an A/B sheet as an image in the
+chat: not to choose a direction, not to show progress, not to offer an
+alternative. The four exemplar PNGs stay unopened on this surface; each
+direction's description in the card carries the difference instead. An
+alternative for a slide is a second slide right after it, id `<id>-alt`,
+which the user keeps or deletes in the editor.
 
 ## Steps
 
-1. **G0 and G1 exactly as SKILL.md says, then end your turn and wait.** The
-   Slides type's own instructions say to decide once and write every slide in
-   one pass, with assumptions stated in a line. That pass is step 5 and comes
-   **after** the user approves the plan and picks a direction, never instead
-   of it. Show the four direction exemplars as images, not names.
+1. **Ask with the card** (above), then wait for the answers. The Slides
+   type's own instructions say to decide once and write every slide in one
+   pass. That pass is step 5 and comes **after** the answers, never instead
+   of them.
 2. **The deck.** One is open: work on that one. None: create it from the
    Slides type, titled with the plan's cover title.
 3. **Design system: "WPP Enterprise Solutions | MAP".** Do not ask which
@@ -58,7 +109,7 @@ first, and offer to revise any slide by number.
 ## Choosing a layout
 
 Choose exactly as SKILL.md step 4 says: `canon/CATALOG.md` first, then
-`references/SNIPPET-INDEX.md`. See each composition on `canon/PREVIEWS.png`,
+`references/SNIPPET-INDEX.md`. See each composition on `canon/PREVIEWS.png` (read it yourself, never post it),
 then read the chosen `canon/templates/<id>.html` for its hierarchy, reading
 order and geometry. **Rewrite it in inline styles. Never paste it.** Its
 `<style>` block and classes are dropped here, and a pasted template renders

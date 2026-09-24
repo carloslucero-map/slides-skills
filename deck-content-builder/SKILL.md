@@ -29,7 +29,8 @@ gate (step 6), never written slide content.** The only things allowed to
 precede it are the single batched intake question or the massive-context SCR
 extract — never bullets, callouts, or notes ("a taste of slide 1" counts as
 content). Show the titles table with confidence scores, ask the enumerated
-question, then **end your turn and wait**. This applies at every size (a
+question (in Claude Design, as the question card: step 6), then **end your
+turn and wait**. This applies at every size (a
 1–2-slide request gets a short ghost deck) and even when the user supplies
 their own titles or outline: their titles go into the table verbatim, any
 change you propose marked with its reason — supplied titles are input to the
@@ -136,7 +137,18 @@ Show:
 
 Then ask, with enumerated replies: *"Ready to write the slide content?
 (1) 'write' to proceed as-is, (2) slide numbers + changes ('3: sharpen the
-number'), (3) 'alt storyline', (4) 'shorter'/'longer'."* Content writing is
+number'), (3) 'alt storyline', (4) 'shorter'/'longer'."*
+
+**In Claude Design, ask with the question card, not text.** A question typed
+as prose there is an ordinary message nobody can click. Keep the ghost deck
+table in the chat — it is the content under review — and put the gate in ONE
+`AskUserQuestion` call tagged `"metadata": {"source": "artifact-questions"}`:
+first *"Write the slide content from this ghost deck?"* with the options
+Write it as planned (Recommended) · Shorter · Longer · Another storyline
+(`multiSelect: false`); then at most three questions your ▲ rows or the
+source leave open, two to four concrete options each. Slide-level changes
+("3: sharpen the number") arrive through the card's own "Other". Any intake
+question joins the same card. Content writing is
 blocked until the user answers THIS gate question with one of the enumerated
 replies or an equally explicit go-ahead — a counter-question or "interesting"
 does not unlock it (answer it, re-present any changed rows, re-ask). Unless

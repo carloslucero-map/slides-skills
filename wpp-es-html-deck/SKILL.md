@@ -11,9 +11,9 @@ description: >-
   WPP template", "make this on-brand", or pasting notes to be rendered as a
   deck — even if messy, structuring is the job. House standard for WPP ES |
   MAP decks. Do NOT use to edit .pptx files or for the older VML MAP
-  espresso/gold style. Two-turn by design: first reply is a slide plan +
-  design-direction question (blocking checkpoint); the deck is built only
-  after approval or an explicit review waiver.
+  espresso/gold style. Two-turn by design: the first reply asks the plan and
+  design-direction questions (in Claude Design, as one question card); the
+  deck is built only after the answers or an explicit review waiver.
 ---
 
 # WPP Enterprise Solutions | MAP — HTML Deck Builder v4
@@ -33,6 +33,11 @@ the design-direction question), then **end your turn and wait**. Do not run
 every size (a micro-deck or single slide still gets a short plan and the
 direction question), in every language (run the gates in the user's
 language), and separately to EACH new deck in a conversation.
+
+**In Claude Design the gate is the question card, not text:** one
+`AskUserQuestion` call, whose answers are the approval, and no slide image
+ever posted to the chat (`references/CLAUDE-DESIGN.md`, "Asking"). The rule
+is unchanged: nothing is built before it is answered.
 
 Only three inputs waive the full gate:
 1. **An explicit review waiver in the user's own message** — "just build it,
@@ -172,7 +177,9 @@ questions; never let demo metadata reach a real cover (the generator errors on
 it anyway). A reply to G0 — including "defaults" — answers intake only; G1
 still follows as its own turn.
 
-**G1 — Plan gate (the single blocking gate).** Present one compact artifact:
+**G1 — Plan gate (the single blocking gate).** In Claude Design, G0 and G1
+are one question card instead — `references/CLAUDE-DESIGN.md`, "Asking".
+Everywhere else, present one compact artifact:
 - table: *slide # · chapter · action title · archetype · confidence*, with
   **▲ marking titles under 70%**;
 - a 3-sentence narrative read-through;
@@ -205,6 +212,8 @@ the revision invitation, always including the variant offer: *"Name any slide
 by number to change it — I patch in place; numbering and self-containment are
 preserved automatically. I can also render an A/B alternative of any slide
 (or an A/B thumbnail sheet of the 2–3 highest-stakes slides) so you can pick."*
+In Claude Design an alternative is an extra slide beside the original, never
+an image in the chat.
 
 ## Workflow
 
