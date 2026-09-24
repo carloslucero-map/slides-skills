@@ -28,7 +28,7 @@ trigger applies:
 5. **Charts and diagrams are all based on circles** and use flat colours from the primary and secondary palettes.
 6. **One warm background, used consistently.** The default body background is **WPP Cream `#FAFAF0`** (warm) on *every* content slide. Do **not** alternate between Cream and pure White across a deck — mixing a warm and a cold "white" is the single most common consistency error. Pure White is reserved and rarely used (see §3.3a); when in doubt, use Cream. (Navy is for dark-moment slides; Orange 500 tint for the occasional accent moment.)
 7. **The name is "WPP Enterprise Solutions | MAP".** This is the organisation's full name and the only one used in decks — in the footer brand line, on covers, and in body copy. **Never write "VML MAP" or "VMLMAP".** Where body copy needs to name the company, write "WPP Enterprise Solutions | MAP" (or just "MAP" in running prose after first mention). The footer lockup `WPP Enterprise Solutions | MAP`, bottom-right, is standing furniture on every content slide, divider and outro (see §7.3).
-8. **Every deck is one self-contained HTML file.** All assets — fonts, logos, icons, illustrations, PNGs, SVGs, vectors, photos, anything — must be embedded inline so the deck is a single portable file. Decks are shared with colleagues who open them straight in a browser; nothing may depend on an external path, a sibling folder, or a network fetch (see §2a).
+8. **One deck, in the form of the surface it is presented on.** In Claude Design the deck is built inside the Slides artifact — assets uploaded, styles inline, never a separate HTML file (`references/CLAUDE-DESIGN.md`). Everywhere else every deck is one self-contained HTML file: all assets — fonts, logos, icons, illustrations, PNGs, SVGs, vectors, photos, anything — embedded inline so it is a single portable file. Decks are shared with colleagues who open them straight in a browser; nothing may depend on an external path, a sibling folder, or a network fetch (see §2a).
 
 ---
 
@@ -61,6 +61,8 @@ Layout maths that the shipped generator actually uses (all values from `scripts/
 ---
 
 ## 2a. Self-contained file rule (non-negotiable)
+
+**Scope: the standalone HTML file.** In Claude Design the deck is an Artifact made from the Slides type, and the opposite holds there: images and fonts are *uploaded* and referenced by the URL the upload returns — a `data:` URI is refused — so this section does not apply. `references/CLAUDE-DESIGN.md` governs that surface.
 
 **Every deck ships as a single, standalone `.html` file that opens correctly by double-clicking it in any browser, with no other files present, no folder structure, and no internet connection.** Decks are shared with colleagues who just open them locally, so a deck that relies on an external path is broken on arrival.
 

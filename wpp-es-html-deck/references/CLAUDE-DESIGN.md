@@ -28,7 +28,11 @@ first, and offer to revise any slide by number.
 
 ## Steps
 
-1. **G0 and G1 exactly as SKILL.md says.** Wait for approval.
+1. **G0 and G1 exactly as SKILL.md says, then end your turn and wait.** The
+   Slides type's own instructions say to decide once and write every slide in
+   one pass, with assumptions stated in a line. That pass is step 5 and comes
+   **after** the user approves the plan and picks a direction, never instead
+   of it. Show the four direction exemplars as images, not names.
 2. **The deck.** One is open: work on that one. None: create it from the
    Slides type, titled with the plan's cover title.
 3. **Design system: "WPP Enterprise Solutions | MAP".** Do not ask which
@@ -114,9 +118,9 @@ sans-serif`. Pin the furniture and flow the content band.
 
 The type's 128px margins are its default. The brand's 40px edge governs.
 
-**A 54px headline fits two lines above the eyebrow** (73 + 2 × 48.6 ≈ 170,
-under 177). At 64px, the canon's measured bank size, two lines run into it,
-so 64px is for a one-line headline only.
+**Drop the eyebrow when the headline runs to two lines** (§7). At 64px, the
+canon's measured bank size, a two-line headline reaches y 188 and would run
+straight through the eyebrow at 177.
 
 `margin` is a no-op in this format: space with the parent's `gap`.
 `max-width` works on a `<div>` only, so give a `<p>` a `width`.

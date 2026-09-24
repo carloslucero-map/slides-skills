@@ -1,5 +1,7 @@
 ## 2a. Self-contained file rule (non-negotiable)
 
+**Scope: the standalone HTML file.** In Claude Design the deck is an Artifact made from the Slides type, and the opposite holds there: images and fonts are *uploaded* and referenced by the URL the upload returns — a `data:` URI is refused — so this section does not apply. `references/CLAUDE-DESIGN.md` governs that surface.
+
 **Every deck ships as a single, standalone `.html` file that opens correctly by double-clicking it in any browser, with no other files present, no folder structure, and no internet connection.** Decks are shared with colleagues who just open them locally, so a deck that relies on an external path is broken on arrival.
 
 Concretely, this means **all** of the following are embedded inline, never linked out to:
