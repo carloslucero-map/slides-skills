@@ -387,7 +387,7 @@ slide-to-slide; the divider rule's chosen-once ethos applies to art too.
 | Converging disciplines / overlap | Venn diagram (2-3 sets + intersection) | `variants/comparison-v2.html` |
 | Numbers, stats, KPIs | Stat circles / bubbles / orbits / KPI row | `variants/stats-v1.html` · `v3` · `v4` |
 | Multi-KPI dashboard / scorecard | Scorecard grid (2×3 bento, category headers) | `variants/stats-v5.html` |
-| Data series / table | Flat chart / data table | `variants/charts-v2.html` · `v3` |
+| Data series (`chart`) / table | Flat chart / data table | `variants/charts-v2.html` · `v3` |
 | Process / timeline / roadmap | Process ×5 / timeline | `variants/process-timeline-v1.html` |
 | Capability map / ecosystem | Ecosystem map (zones + centre hub) | `variants/process-timeline-v5.html` |
 | People | Team grid | `variants/team-v1.html` |
@@ -396,12 +396,12 @@ slide-to-slide; the divider rule's chosen-once ethos applies to art too.
 | Hero image, "pixelated" website look | **Dot hero** — convert with `scripts/halftone.py` (§9.1c), or the shipped `dot-lighthouse` / `dot-dancers-orange` motifs | `variants/image-content-v5.html` |
 | Clickable detail | Expandable cards | `variants/cards-v1.html` |
 | Case study / partner showcase | Image-top cards (photo + title + body ×3) | `variants/cards-v3.html` |
-| Hero message + proof / colour-block moment | Split panels (R1 / R13) | `variants/splits-v1.html` · `v2` |
+| Hero message + proof / colour-block moment (`split`) | Split panels (R1 / R13) | `variants/splits-v1.html` · `v2` |
 | Case study with photo | 50/50 image bleed + text sidebar | `variants/splits-v4.html` |
-| Hub / capabilities around a core | Orbit diagram (rings + nodes) | `variants/orbit-v1.html` |
+| Hub / capabilities around a core (`relational`) | Orbit diagram (rings + nodes) | `variants/orbit-v1.html` |
 | Data ecosystem / radial signals | Radial spokes (centre + 6-8 labelled items) | `variants/orbit-v2.html` |
 | Value props / strategic pillars | Floating bubbles (overlapping text circles) | `variants/orbit-v3.html` |
-| Partner / tech ecosystem | Logo wall (categorised grid or hero count) | `variants/logo-wall-v1.html` |
+| Partner / tech ecosystem (`logos`) | Logo wall (categorised grid or hero count) | `variants/logo-wall-v1.html` |
 | Two engines / overlapping systems + funnel | Cluster diagram + index row (R5) | `variants/stats-v6.html` |
 | Phased plan on one board | Phase board — tint panel + step rule + KPI band (R8) | `variants/process-timeline-v6.html` |
 | Capability tiles / mixed bento | 3×2 tile grid — cells + stats + one motif crop (R12) | `variants/cards-v4.html` |

@@ -199,7 +199,7 @@ _Deck type: <MT | sales | discovery | other> · Audience: <who + the decision th
 ## Section 1 — <Chapter title, ≤4 words>
 
 ### Slide 1 — <Action title (the renderer keeps this verbatim; **bold** on AT MOST ONE key token marks it as the title highlight)>
-**Visual:** columns | statement | quote | comparison | process | timeline | stats | boxes | table | team | image | cards | dot-hero
+**Visual:** columns | statement | quote | comparison | process | timeline | stats | boxes | table | team | image | cards | dot-hero | relational | logos | chart | split
 - Bullet that proves the title
 - Bullet that proves the title
 **Callout:** <the single most important insight>
@@ -228,8 +228,9 @@ renderer's spec.
   a title, and never in bullets/callouts (body emphasis stays banned).
 - **Stat direction** — the third `Direction?` column in a ```` ```data ````
   block (`good | bad | neutral`, blank = neutral) tells the renderer which
-  numbers carry meaningful direction: `good` renders as the Orange 700
-  positive cue, `bad` stays quiet Navy. Direction follows MEANING, not sign —
+  numbers carry meaningful direction: `good` gets the renderer's favourable
+  cue and `bad` its unfavourable one (the design system decides how each
+  looks). Direction follows MEANING, not sign —
   "-41% cycle time" is `good`, "+8% churn" is `bad`. Annotate only when the
   direction genuinely matters; never guess.
 
