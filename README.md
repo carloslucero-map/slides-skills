@@ -14,13 +14,28 @@ raw notes / brief
 └─────────────────────┘                   └─────────────────────┘
       │                                             │
       ▼                                             ▼
- slide-by-slide Markdown                   self-contained .html
- (also pastes into PowerPoint               (16:9, keyboard-navigable,
-  or Google Slides)                          no external assets)
+ slide-by-slide Markdown            in Claude Design: the Slides artifact
+ (also pastes into PowerPoint       elsewhere: one self-contained .html
+  or Google Slides)                 (16:9, keyboard-navigable, no external assets)
 ```
 
 Either skill can be used on its own. The handoff format between them is
 specified in [`wpp-es-html-deck/references/HANDOFF-CONTRACT.md`](wpp-es-html-deck/references/HANDOFF-CONTRACT.md).
+
+## Who owns what
+
+**The design system owns what a deck looks like. The skills own how a deck gets
+made.** The design system is "WPP Enterprise Solutions | MAP", a Design System
+artifact in Claude Design (namespace `WppEsMap`): colour, type, the dot system,
+the elements, the four fixed slides and the 76 layouts. It is edited there, and
+only there.
+
+The skills hold the process: the gates, the plan, the content method, the copy
+rules, the generator and the verifier. `wpp-es-html-deck` carries a **generated
+copy** of the design system in `design-system/`, because its scripts cannot
+reach Claude Design (see [The design system's copy](#the-design-systems-copy)).
+The copy runs one way. Nothing in this repository writes to the design system,
+and it is never re-synced from here.
 
 ## The skills
 
@@ -34,21 +49,25 @@ Single file, no dependencies: [`deck-content-builder/SKILL.md`](deck-content-bui
 ### `wpp-es-html-deck`
 Renders a deck in the WPP ES | MAP visual language — Navy + Cream + Orange,
 WPP Sans, the dot system, 16:9. **In Claude Design it builds straight into the
-Slides artifact; everywhere else it writes one self-contained HTML file.**
-Ships the brand assets, 25 canon templates, a 51-template snippet library, a
-per-slot capacity model, and a verifier that enforces the design guideline.
+Slides artifact, from the design system itself; everywhere else it writes one
+self-contained HTML file from its copy of the design system.** Ships 25 canon
+templates, a 51-template snippet library, a per-slot capacity model, and a
+verifier that enforces the design guideline.
 
 | Path | What it holds |
 |---|---|
 | `SKILL.md` | The skill itself — the operating instructions |
-| `references/CORE.md` | The always-loaded subset of the design guideline |
-| `references/WPP-ES-DESIGN-GUIDELINE.md` | The master guideline (source of truth) |
-| `references/sections/` | The master guideline split by section, loaded on demand |
-| `references/SNIPPET-INDEX.md` | All 51 layout templates, one line each |
+| `design-system/` | The generated copy of the design system: `tokens.json`, `bundle.css`, `fixed-slides.json`, fonts, logos, icons, illustrations, photos, textures, exemplars, and `SOURCE.json` (version and a sha256 per file) |
+| `references/CLAUDE-DESIGN.md` | How to build in Claude Design: the question card, the reading order, the install |
+| `references/CORE.md` | The always-loaded subset of the design guideline, the skill's downstream copy of the brand rules |
+| `references/sections/` | That guideline split by section, loaded on demand; the one place to edit it |
+| `build/WPP-ES-DESIGN-GUIDELINE.md` | The whole guideline in one file, generated like `CORE.md` |
+| `references/SNIPPET-INDEX.md` | All 51 kit layouts, one line each |
 | `references/capacity.json` | Per-slot min/ideal/max character counts |
 | `references/HANDOFF-CONTRACT.md` | The content → render contract |
-| `assets/` | Fonts, logos, icons, illustrations, photos, textures, snippets |
-| `scripts/` | Shell generator, capacity tooling, halftone generator, verifier |
+| `canon/` | The 25 traced templates and their catalogue |
+| `assets/snippets/` | The 51 kit layouts, one per file in `variants/`, and their 13 authoring sources |
+| `scripts/` | Shell generator, capacity tooling, halftone generator, guideline builder, verifier, packager |
 
 ## Installation
 
@@ -85,11 +104,16 @@ python wpp-es-html-deck/scripts/build_shell.py --out deck.html
 python wpp-es-html-deck/scripts/verify_deck.py deck.html
 python wpp-es-html-deck/scripts/verify_deck.py deck.html --screenshots shots/
 
-# Check content against the per-slot capacity model
-python wpp-es-html-deck/scripts/check_capacity.py
+# Check content against the per-slot capacity model (run from the skill folder)
+cd wpp-es-html-deck && python3 scripts/check_capacity.py deck.html --skill .
 
-# Regenerate capacity.json and the snippet index from the snippet library
-python wpp-es-html-deck/scripts/derive_capacity.py
+# Regenerate capacity.json, the snippet index and the variants (needs a built shell)
+python3 scripts/build_shell.py --out /tmp/demo.html
+python3 scripts/derive_capacity.py --skill . --demo /tmp/demo.html --write --index --split
+python3 ../authoring/canon-tools/derive_canon_capacity.py --demo /tmp/demo.html --write
+
+# Regenerate CORE.md and the whole guideline from references/sections/
+python3 scripts/build_docs.py --write
 ```
 
 `verify_deck.py` exits 0 when every check passes (warnings allowed) and 1 on
@@ -104,29 +128,57 @@ uploaded rather than embedded. A self-contained HTML file is the opposite of
 that, which is why decks used to land beside the Slides artifact instead of in
 it.
 
-The skill now decides the surface before it builds. Where a Slides type is
-available it skips `build_shell.py`, `check_capacity.py` and `verify_deck.py`,
-installs the **WPP Enterprise Solutions | MAP** design system, and writes the
-brand as inline styles —
-[`references/CLAUDE-DESIGN.md`](wpp-es-html-deck/references/CLAUDE-DESIGN.md) has
-the frame, the colour and type tables, and recipes checked in a browser against
-the subset: dots that bleed off the canvas (a full-canvas `<svg>`, because the
-type clamps negative offsets to 0), the `.duo` duotone property for property,
-pills, stat circles and footer furniture. The G1 plan gate is unchanged on both
-surfaces. `deck-content-builder` keeps its approved content in the conversation
-there rather than saving a stray `.md`.
+The skill decides the surface before it builds. Where a Slides type is
+available it skips `build_shell.py`, `check_capacity.py` and `verify_deck.py`
+and builds from the design system itself:
+[`references/CLAUDE-DESIGN.md`](wpp-es-html-deck/references/CLAUDE-DESIGN.md)
+gives the order to read it in (the README, then the Elements cards, each with
+its inline-style recipe for Slides, then the Fixed slides cards, then the layout
+catalogue and the chosen layout's card), how to install it in the deck, and the
+few Slides rules the design system does not carry yet. It holds no brand values
+of its own.
+
+Two things are specific to this surface. **The plan gate is a question card**
+(`AskUserQuestion`), because a question typed as prose cannot be clicked there.
+**No slide is ever posted as an image**: the draft is the deck in the editor.
+`deck-content-builder` keeps its approved content in the conversation rather
+than saving a stray `.md`.
 
 **Fonts are the subtle part.** The Slides format loads one file per face, at
 most four, and renders a one-weight file at that weight whatever `font-weight`
 asks for. WPP is five static files under one name, so installed naively every
 tier — Thin display, Light headline, Regular body, Medium label — comes out the
-same. The guide registers four faces instead (`WPP` for Regular, `WPP Thin`,
-`WPP Light`, `WPP Medium`) and sets `font-weight:400` everywhere, since headings
-default to 600 and would get a fake bold.
+same. The design system registers four faces instead (`WPP` for Regular,
+`WPP Thin`, `WPP Light`, `WPP Medium`) with `font-weight:400` everywhere; Bold,
+a fifth face, does not load, and the footer brand line moves to Medium.
 
-Three things it cannot carry, by design of the format: **Bold 700** (it would be
-a fifth face; the footer brand line moves to Medium), the one-word Medium title
-highlight (a `<span>` takes only a colour), and the stylistic-alternate "a".
+## The design system's copy
+
+The HTML path's scripts run in Claude Code, in a claude.ai sandbox or from an
+uploaded zip, and none of them can reach Claude Design. So `wpp-es-html-deck`
+ships a copy of the design system in `design-system/`, and the rule for it is
+strict: **generated by a script, stamped with the version, never edited by
+hand, and checked.**
+
+- [`authoring/refresh_design_system.py`](authoring/refresh_design_system.py)
+  is the only writer. An agent that can read the design system saves its files
+  and assets with the Artifact tool, then runs the script with `--write`. It
+  writes the tokens, the stylesheet, the fonts and asset groups, the icon family
+  files, `fixed-slides.json` (colourways, the light outro, cover art and dot
+  presets, read from the Fixed slides cards and previews), every layout's
+  `<section>`, and the canon catalogue's text, and records the version and a
+  sha256 per file in `SOURCE.json`. `--check` exits 1 when the copy has drifted.
+- `build_shell.py` builds every deck from the copy: `:root` from the tokens, the
+  whole stylesheet from `bundle.css`, the fixed slides from `fixed-slides.json`.
+- `verify_deck.py` fails the deck when any file in `design-system/`, or any
+  layout's `<section>`, no longer matches `SOURCE.json`.
+
+What the design system does not hold yet stays in the skill, each marked where
+it lives: the logos (its uploads render black, so the repo's attribute-coloured
+lockups are kept and listed in `SOURCE.json`), and in `build_shell.py` the dark
+outro, the classic divider's second and third dot colours, the dots and
+playbook covers, how crystal and coral are anchored, three dot presets, and the
+agenda's row placement (the design system's AgendaSlide card has it wrong).
 
 ## Uploading to claude.ai
 
@@ -139,8 +191,8 @@ live, not by a build step, so zipping the folder is a valid upload:
 
 | | cap | now |
 |---|---|---|
-| entries (files + directories) | 200 | **190** — 173 files + 17 directories |
-| size | 30 MB | **5.54 MB** |
+| entries (files + directories) | 200 | **195** — 177 files + 18 directories |
+| size | 30 MB | **4.98 MB** |
 
 ```bash
 python wpp-es-html-deck/scripts/package_skill.py
@@ -177,14 +229,14 @@ file the most expensive thing in a tree. Two layouts follow from that:
 - **`canon/templates/<id>.html`** — one directory for 25 templates, not 25
   directories holding one file each. 50 entries down to 26.
 - **`design-system/icons/<family>.md`** — the 32 icons grouped into four files by
-  §8.1's own weight families, each icon under its own `##` heading. 33 entries
-  down to 5. §8.1's hard rule is one weight family per slide, so the agent reads
+  the design system's own weight families, each icon under its own `##` heading.
+  33 entries down to 5. The hard rule is one weight family per slide, so the agent reads
   exactly the family it already has to pick: ~8k tokens for the largest, against
   ~18k if all 32 were merged into a single file.
 
 Everything the skill was *made from* lives in [`authoring/`](authoring/README.md)
-at the repo root — the canon sources, the tools that generate `CATALOG.md`, the
-individual icon SVGs, the contact sheets. Nothing there is read while a deck is
+at the repo root — the canon sources, the tools that generate `CATALOG.md` and
+the design-system copy, the individual icon SVGs, the contact sheets. Nothing there is read while a deck is
 being built, and `verify_deck.py` skips its canon checks when it is absent,
 which is the normal state of an installed skill.
 
@@ -194,13 +246,22 @@ at upload time.
 
 ## Maintenance notes
 
-**The design guideline exists in three forms.**
-`WPP-ES-DESIGN-GUIDELINE.md` is the master; `references/sections/` is that same
-file split by section for on-demand loading; `CORE.md` is the always-loaded
-subset. This is deliberate — it keeps the token cost of a routine deck low —
-but it means **an edit to the guideline must be applied to all three**. Always
-edit the master first, then propagate. They are in sync as of the initial
-commit.
+**A brand change starts in the design system.** Edit it in Claude Design, then
+refresh the copy (`authoring/refresh_design_system.py --write`) and commit. Never
+edit `design-system/` or a layout's `<section>` in the repo: `verify_deck.py`
+fails the deck, and the next refresh would undo it.
+
+**The design guideline is the skill's downstream copy, in three forms.**
+`references/sections/` is the one place to edit it; `references/CORE.md` (the
+always-loaded subset) and `build/WPP-ES-DESIGN-GUIDELINE.md` (the whole of it)
+are generated from it by `scripts/build_docs.py --write`, and `--check` fails
+when either has drifted. When the design system changes a rule, change
+`sections/` to match. Retiring this copy in favour of one generated from the
+design system is planned separately.
+
+**Two blocks are shared between the skills**, the house copy rules and the
+handoff contract, each written once per skill. `build_docs.py --check` fails
+when the two copies of either differ.
 
 **Assets are proprietary.** See [`NOTICE.md`](NOTICE.md). This repository is
 private and must stay private.
