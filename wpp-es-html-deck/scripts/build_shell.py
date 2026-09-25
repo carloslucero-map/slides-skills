@@ -57,7 +57,28 @@ FONTS = os.path.join(DS, "fonts")
 LOGOS = os.path.join(DS, "logos")
 ILLOS = os.path.join(DS, "illustrations")
 
-FONT_WEIGHTS = [("Thin", 100), ("Light", 300), ("Regular", 400), ("Medium", 500), ("Bold", 700)]
+
+
+def _ds_json(name):
+    with open(os.path.join(DS, name), encoding="utf-8") as f:
+        return json.load(f)
+
+
+# The design system's own values, from its copy in design-system/: tokens.json
+# for :root and the fonts, fixed-slides.json for the divider colourways, the
+# light outro, the cover art and the dot presets. A value the design system
+# does not hold yet is written in this file and marked "not in the design
+# system yet"; the refresh (authoring/refresh_design_system.py) never writes one.
+TOKENS = _ds_json("tokens.json")
+FIXED = _ds_json("fixed-slides.json")
+_COLOURS = {t["name"]: t["value"]["light"] for t in TOKENS["color"]["tokens"]}
+_SPACING = {t["name"]: t["value"] for t in TOKENS["spacing"]["tokens"]}
+
+
+def tok(name):
+    """A colour token as CSS: hex upper-case, an alias ({wpp-cream}) as var()."""
+    v = _COLOURS[name]
+    return f"var(--{v[1:-1]})" if v.startswith("{") else v.upper()
 
 BRAND = "WPP Enterprise Solutions | MAP"
 
@@ -74,29 +95,25 @@ DIRECTIONS = ("editorial-quiet", "statement-led", "data-forward", "high-impact")
 
 # Sanctioned per-deck divider colourways (§11 / §12.3). Geometry NEVER varies —
 # only the colour keys a/b/c resolved by the emitted DOTCOLORS map, plus the
-# divider background/text role vars. "orange" is byte-for-byte the v1 look.
+# divider background/text role vars. The design system's DividerSlide card holds
+# every colour the playbook divider uses: ground, type, sub-label, its one dot
+# hue ("a"), the footer on its big bottom-right dot, the confidential line.
+# Not in the design system yet: the classic divider's second and third dot
+# colours ("b", "c"), which only dividerStyle "classic" draws.
+CLASSIC_DOTS = {
+    "orange":     ("#F9BD5D", "#D94E0E"),
+    "orange-600": ("#FF7800", "#D94E0E"),
+    "orange-500": ("#F9BD5D", "#FF7800"),
+    "white":      ("#FFFFFF", "#FFF5CD"),
+    "navy-dots":  ("#000050", "#FF7800"),
+    "navy-full":  ("#FFFFFF", "#FF7800"),
+}
 COLOURWAYS = {
-    "orange":     {"bg": "#FAFAF0", "text": "#000050", "sub": "#D94E0E", "navy_section": False,
-                   "foot": "#000050", "edge": "#000050",
-                   "a": "#FF7800", "b": "#F9BD5D", "c": "#D94E0E"},
-    "orange-600": {"bg": "#FAFAF0", "text": "#000050", "sub": "#D94E0E", "navy_section": False,
-                   "foot": "#000050", "edge": "#000050",
-                   "a": "#F9BD5D", "b": "#FF7800", "c": "#D94E0E"},
-    "orange-500": {"bg": "#FAFAF0", "text": "#000050", "sub": "#D94E0E", "navy_section": False,
-                   "foot": "#000050", "edge": "#000050",
-                   "a": "#FFF5CD", "b": "#F9BD5D", "c": "#FF7800"},
-    "white":      {"bg": "#FAFAF0", "text": "#000050", "sub": "#D94E0E", "navy_section": False,
-                   "foot": "#000050", "edge": "#000050",
-                   "a": "#FFFFFF", "b": "#FFFFFF", "c": "#FFF5CD"},
-    # navy-dots: the bottom-right locked dot is navy, so the footer/pageno that
-    # sit on it flip to white (the sliver left of the dot is negligible).
-    "navy-dots":  {"bg": "#FAFAF0", "text": "#000050", "sub": "#D94E0E", "navy_section": False,
-                   "foot": "#FFFFFF", "edge": "#000050",
-                   "a": "#000050", "b": "#000050", "c": "#FF7800"},
-    # navy-full: cream dot bottom-right -> navy footer on it; edge text on navy bg -> white.
-    "navy-full":  {"bg": "#000050", "text": "#FFFFFF", "sub": "#F9BD5D", "navy_section": True,
-                   "foot": "#000050", "edge": "#FFFFFF",
-                   "a": "#FAFAF0", "b": "#FFFFFF", "c": "#FF7800"},
+    name: {"bg": c["ground"], "text": c["type"], "sub": c["subLabel"],
+           "navy_section": c["ground"] == tok("wpp-navy"),
+           "foot": c["footer"], "edge": c["confidential"],
+           "a": c["dots"], "b": CLASSIC_DOTS[name][0], "c": CLASSIC_DOTS[name][1]}
+    for name, c in FIXED["colourways"].items()
 }
 # Default colourway per direction (explicit dividerColourway always wins).
 DIRECTION_COLOURWAY = {"editorial-quiet": "orange", "statement-led": "navy-dots",
@@ -110,11 +127,14 @@ MOTIONS = ("full", "subtle", "off")
 DIRECTION_MOTION = {"editorial-quiet": "subtle", "statement-led": "full",
                     "data-forward": "subtle", "high-impact": "full"}
 
+_LIGHT = FIXED["outros"]["light"]
 OUTROS = {
-    "light": {"bg": "#FAFAF0", "text": "#000050", "navy_section": False,
-              "foot": "#000050", "edge": "#000050",
-              "a": "#FF7800", "b": "#F9BD5D", "c": "#D94E0E"},
-    # dark: the big bottom-right dot is cream -> footer/pageno on it stay navy;
+    # the design system's ThankYouSlide: Cream ground, Navy type, its three
+    # dot colours; the footer furniture takes the type colour
+    "light": {"bg": _LIGHT["ground"], "text": _LIGHT["type"], "navy_section": False,
+              "foot": _LIGHT["type"], "edge": _LIGHT["type"], **_LIGHT["dots"]},
+    # Not in the design system yet (its card shows the light outro only).
+    # The big bottom-right dot is cream -> footer/pageno on it stay navy;
     # the bottom-left confidential line sits on the navy bg -> white.
     "dark":  {"bg": "#000050", "text": "#FFFFFF", "navy_section": True,
               "foot": "#000050", "edge": "#FFFFFF",
@@ -122,11 +142,16 @@ OUTROS = {
 }
 
 # Registered cover alternates (§12.1a): same locked frame (type block + navy
-# badge untouched) — only the art layer swaps.
+# badge untouched) — only the art layer swaps. The art files are the design
+# system's (CoverSlide: the default and its registered alternates). Not in the
+# design system yet: how crystal and coral sit (right-anchored, 1440 px wide),
+# and the dots and playbook covers.
+_ART = {f.split("_")[1].split("-")[0].lower(): f
+        for f in [FIXED["covers"]["default"]] + FIXED["covers"]["alternates"]}
 COVERS = {
-    "mountain": {"art": "img-full",  "file": "WPPOpen_Mountain-01.png"},
-    "crystal":  {"art": "img-right", "file": "WPPOpen_Crystal-01.png"},
-    "coral":    {"art": "img-right", "file": "WPPOpen_Coral-01.png"},
+    "mountain": {"art": "img-full",  "file": _ART["mountain"]},
+    "crystal":  {"art": "img-right", "file": _ART["crystal"]},
+    "coral":    {"art": "img-right", "file": _ART["coral"]},
     "dots":     {"art": "css",       "preset": "cover-dots"},
     # v4: the playbook's own cover language (p.1) — pure type on Cream with a
     # sparse Orange 600 mid-dot drift off the top-right. Zero raster payload.
@@ -189,14 +214,18 @@ def b64(path):
 
 
 def font_face_css():
-    """One @font-face block per weight, base64 data-URI src — fully self-contained."""
+    """One @font-face block per weight, base64 data-URI src — fully self-contained.
+    The faces are the design system's WPP family (tokens.json type.fonts); its
+    single-weight families (WPP Thin, Light, Medium) are for Claude Design Slides."""
     out = []
-    for name, weight in FONT_WEIGHTS:
-        data = b64(os.path.join(FONTS, f"WPP-{name}.woff2"))
+    for face in TOKENS["type"]["fonts"]:
+        if face["family"] != "WPP":
+            continue
+        data = b64(os.path.join(DS, face["file"]))
         out.append(
-            "@font-face{font-family:'WPP';"
+            f"@font-face{{font-family:'{face['family']}';"
             f"src:url('data:font/woff2;base64,{data}') format('woff2');"
-            f"font-weight:{weight};font-display:swap;}}"
+            f"font-weight:{face['weight']};font-display:swap;}}"
         )
     return "\n".join(out)
 
@@ -446,506 +475,43 @@ def thankyou_slide(spec):
 
 # --- CSS ---------------------------------------------------------------------------
 
-# Kit v3.3 — icon suite, sparkle accents, duotone photography (mined from the
-# real MAP deck). Icons/sparks are inline SVG normalized to currentColor
-# (design-system/icons/<family>.md — paste at fill time, CSS recolours). .duo is the ONE
-# sanctioned photo treatment outside .screenshot: navy shadows / cream
-# highlights via grayscale+screen+multiply — works on ANY user image at
-# runtime, no preprocessing, flat by construction.
-KIT_V33_CSS = """
-/* --- Kit v3.3: icons, sparkles, duotone photography --- */
-.icon{width:44px;height:44px;color:var(--wpp-navy);margin-bottom:18px;}
-.icon svg{width:100%;height:100%;display:block;}
-.icon--orange{color:var(--orange-700);}
-.icon--lg{width:64px;height:64px;}
-.slide--navy .icon,.panel--nav .icon{color:var(--wpp-cream);}
-.spark{position:absolute;width:34px;height:34px;color:var(--orange-700);z-index:1;}
-.spark svg{width:100%;height:100%;display:block;}
-.spark--navy{color:var(--wpp-navy);}
-.spark--lg{width:56px;height:56px;}
-.duo{position:absolute;overflow:hidden;background:var(--wpp-navy);isolation:isolate;}
-.duo img{width:100%;height:100%;object-fit:cover;display:block;
-  filter:grayscale(1) contrast(1.08) brightness(1.04);mix-blend-mode:screen;
-  print-color-adjust:exact;-webkit-print-color-adjust:exact;}
-"""
-
-
-# Motion system v3.2 — choreography classes the runtime assigns (zero markup).
-# Doctrine (guideline §14): elements move, colours never do — flat fills stay
-# flat. Keyframes animate the INDIVIDUAL `translate`/`scale` properties, never
-# the `transform` shorthand: several kit elements are POSITIONED with base
-# transforms (.big-statement/.motif/.compare-art translateY(-50%) centring,
-# .tl-label translateX(-50%)) and shorthand keyframes would clobber them
-# mid-flight and snap ("teleport") on release. Individual properties compose
-# with the base transform — and with the pointer-parallax, which owns
-# `transform` exclusively. The global prefers-reduced-motion block above
-# kills all of this wholesale.
-MOTION_CSS = """
-/* --- Motion v3.2 (scoped by body[data-motion]) --- */
-body:not([data-motion=off]) .slide.is-active{animation:m-slide .38s ease-out both;}
-body[data-motion=off] .m-in{animation:none!important;}
-.m-in{--mi:0;animation-duration:.62s;animation-timing-function:cubic-bezier(.2,.75,.15,1);
-  animation-fill-mode:backwards;animation-delay:calc(90ms + var(--mi)*75ms);}
-.m-rise{animation-name:m-rise;}
-.m-fade{animation-name:m-fade;animation-duration:.5s;}
-.m-wipe{animation-name:m-wipe;animation-duration:.72s;}
-.m-pop{animation-name:m-pop;animation-timing-function:cubic-bezier(.34,1.56,.4,1);
-  animation-fill-mode:both;}
-.m-grow{animation-name:m-grow;transform-origin:top center;animation-fill-mode:both;}
-.m-draw{animation-name:m-draw;transform-origin:left center;animation-duration:.95s;
-  animation-fill-mode:both;}
-.m-float-in{animation-name:m-float-in;animation-duration:.9s;}
-.m-drift{animation-name:m-drift;animation-duration:1.05s;}
-@keyframes m-slide{from{opacity:0;}to{opacity:1;}}
-@keyframes m-rise{from{opacity:0;translate:0 34px;}to{opacity:1;translate:0 0;}}
-@keyframes m-fade{from{opacity:0;}to{opacity:1;}}
-@keyframes m-wipe{from{opacity:0;translate:70px 0;}to{opacity:1;translate:0 0;}}
-@keyframes m-pop{from{opacity:0;scale:.25;}to{opacity:1;scale:1;}}
-@keyframes m-grow{from{scale:1 0;}to{scale:1 1;}}
-@keyframes m-draw{from{scale:0 1;}to{scale:1 1;}}
-@keyframes m-float-in{from{opacity:0;translate:0 48px;}to{opacity:1;translate:0 0;}}
-@keyframes m-drift{from{opacity:0;translate:80px 0;}to{opacity:1;translate:0 0;}}
-/* Ambient life (full only): dots breathe after their pop; motif art floats. */
-.m-live .dot.m-in{animation-name:m-pop,m-breathe;
-  animation-duration:.62s,7.5s;
-  animation-timing-function:cubic-bezier(.34,1.56,.4,1),ease-in-out;
-  animation-delay:calc(90ms + var(--mi)*75ms),calc(1.4s + var(--mi)*.43s);
-  animation-iteration-count:1,infinite;animation-direction:normal,alternate;
-  animation-fill-mode:both,none;}
-.m-live .motif img,.m-live .compare-art img{animation:m-float 9s ease-in-out 1.2s infinite alternate;}
-@keyframes m-breathe{from{scale:1;}to{scale:1.055;}}
-@keyframes m-float{from{translate:0 0;}to{translate:0 -14px;}}
-/* Alive layer v2: deck progress hairline · kinetic word-stagger · fragments
-   · ambient Ken Burns on duotones · sparkle twinkle. */
-#prog{position:fixed;left:0;bottom:0;height:3px;width:0;background:var(--orange-700);
-  z-index:55;transition:width .5s cubic-bezier(.2,.75,.15,1);}
-body[data-motion=off] #prog{display:none;}
-.mw{display:inline-block;}
-body:not([data-motion=off]) .frag-off{opacity:0;translate:0 18px;}
-body:not([data-motion=off]) [data-build]{transition:opacity .5s ease,
-  translate .5s cubic-bezier(.2,.75,.15,1);}
-.m-live .duo img{animation:m-kenburns 16s ease-in-out infinite alternate;}
-.m-live .spark.m-in{animation-name:m-pop,m-twinkle;
-  animation-duration:.62s,3.4s;
-  animation-timing-function:cubic-bezier(.34,1.56,.4,1),ease-in-out;
-  animation-delay:calc(90ms + var(--mi)*75ms),calc(1.1s + var(--mi)*.7s);
-  animation-iteration-count:1,infinite;animation-direction:normal,alternate;
-  animation-fill-mode:both,none;}
-@keyframes m-kenburns{from{scale:1;translate:0 0;}to{scale:1.07;translate:-14px -8px;}}
-@keyframes m-twinkle{from{rotate:-10deg;scale:.94;}to{rotate:10deg;scale:1.06;}}
-/* Hover life — the deck answers the mouse like a web page. Movement only,
-   never colour (§14); real pointers only; off = off.
-   Hover offsets live on `transform`, NEVER on `translate`: the entrance
-   keyframes animate `translate`, and a hover transition contesting the same
-   property completes invisibly under the running animation, then snaps
-   ("teleports") the moment the animation releases the property (§15.7).
-   None of these hover targets carries a base transform, so transform is free. */
-@media (hover:hover){
-  body:not([data-motion=off]) .tbx,
-  body:not([data-motion=off]) .proc>div,
-  body:not([data-motion=off]) .cols>div,
-  body:not([data-motion=off]) .kpi,
-  body:not([data-motion=off]) .milestone,
-  body:not([data-motion=off]) .hero-row>div,
-  body:not([data-motion=off]) .compare-left,
-  body:not([data-motion=off]) .compare-right,
-  body:not([data-motion=off]) .toc-row{transition:transform .28s cubic-bezier(.2,.75,.15,1);}
-  body:not([data-motion=off]) .tbx:hover,
-  body:not([data-motion=off]) .proc>div:hover{transform:translateY(-8px);}
-  body:not([data-motion=off]) .cols>div:hover,
-  body:not([data-motion=off]) .kpi:hover,
-  body:not([data-motion=off]) .milestone:hover,
-  body:not([data-motion=off]) .hero-row>div:hover,
-  body:not([data-motion=off]) .compare-left:hover,
-  body:not([data-motion=off]) .compare-right:hover{transform:translateY(-6px);}
-  body:not([data-motion=off]) .toc-row:hover{transform:translateX(14px);}
-  body:not([data-motion=off]) .stat-circle{transition:scale .3s cubic-bezier(.34,1.56,.4,1);}
-  body:not([data-motion=off]) .stat-circle:hover{scale:1.05;}
-  body:not([data-motion=off]) .hero-num{display:inline-block;transform-origin:left bottom;
-    transition:scale .3s cubic-bezier(.34,1.56,.4,1);}
-  body:not([data-motion=off]) .hero-num:hover{scale:1.06;}
-  body:not([data-motion=off]) .takeaway::before,
-  body:not([data-motion=off]) .takeaway::after{transition:width .3s ease;}
-  body:not([data-motion=off]) .takeaway:hover::before,
-  body:not([data-motion=off]) .takeaway:hover::after{width:44px;}
-}
-/* Pointer parallax (full only) — art layers only, text never moves. */
-body[data-motion=full] .lift,body[data-motion=full] .cover-dots,
-body[data-motion=full] .toc-dots,body[data-motion=full] .dv-dots,
-body[data-motion=full] .ty-dots{
-  transform:translate(calc(var(--parx,0)*14px),calc(var(--pary,0)*10px));
-  transition:transform .7s cubic-bezier(.2,.75,.15,1);}
-body[data-motion=full] .motif{
-  transform:translate(calc(var(--parx,0)*24px),calc(var(--pary,0)*16px));
-  transition:transform .7s cubic-bezier(.2,.75,.15,1);}
-/* Variants whose base transform centres them must keep that offset in the
-   parallax calc, or the parallax rule statically drops them (doctrine bug). */
-body[data-motion=full] .motif--right{
-  transform:translate(calc(var(--parx,0)*24px),calc(-50% + var(--pary,0)*16px));}
-body[data-motion=full] .motif--backdrop{
-  transform:translate(calc(-50% + var(--parx,0)*24px),calc(-50% + var(--pary,0)*16px));}
-body[data-motion=full] .num-ghost{
-  transform:translate(calc(var(--parx,0)*34px),calc(var(--pary,0)*22px));
-  transition:transform .7s cubic-bezier(.2,.75,.15,1);}
-@media print{.m-in,.slide.is-active{animation:none!important;opacity:1!important;transform:none!important;}
-  #prog{display:none!important;}
-  .frag-off{opacity:1!important;translate:0 0!important;}}
-"""
+# The stylesheet is the design system's components/bundle.css, copied into
+# design-system/bundle.css: the base slide, furniture, the fixed slides, the
+# kit, icons and duotone, the motion classes and the print rules. Only :root is
+# written here, because its last nine properties are per deck (the colourway
+# and outro role vars); every other :root value is read from tokens.json.
+def _bundle():
+    with open(os.path.join(DS, "bundle.css"), encoding="utf-8") as f:
+        css = f.read()
+    start = css.index(":root{")
+    end = css.index("\n}\n", start) + len("\n}\n")
+    return css[:start], css[end:]
 
 
 def base_css(spec):
     cw = COLOURWAYS[spec["dividerColourway"]]
     ot = OUTROS[spec["outro"]]
-    return f"""
-:root{{
-  --wpp-navy:#000050; --wpp-cream:#FAFAF0; --wpp-white:#FFFFFF;
-  --orange-900:#6A290A; --orange-800:#D94E0E; --orange-700:#FF7800;
-  --orange-600:#F9BD5D; --orange-500:#FFF5CD;
-  --bg:var(--wpp-cream); --bg-alt:var(--wpp-white); --bg-tint:var(--orange-500);
-  --bg-dark:var(--wpp-navy); --text:var(--wpp-navy); --text-inv:var(--wpp-white);
-  --accent:var(--orange-700);
+    head, rules = _bundle()
+    s = _SPACING
+    return head + f""":root{{
+  --wpp-navy:{tok('wpp-navy')}; --wpp-cream:{tok('wpp-cream')}; --wpp-white:{tok('wpp-white')};
+  --orange-900:{tok('orange-900')}; --orange-800:{tok('orange-800')}; --orange-700:{tok('orange-700')};
+  --orange-600:{tok('orange-600')}; --orange-500:{tok('orange-500')};
+  --bg:{tok('bg')}; --bg-alt:{tok('bg-alt')}; --bg-tint:{tok('bg-tint')};
+  --bg-dark:{tok('bg-dark')}; --text:{tok('text')}; --text-inv:{tok('text-inv')};
+  --accent:{tok('accent')};
   /* v4 semantic data colours (§3.8): favourable numbers glow, unfavourable stay ink */
-  --data-pos:var(--orange-700); --data-neg:var(--wpp-navy);
-  /* v4 layout tokens (§2): 40px module, 40px content edge (56px for running
+  --data-pos:{tok('data-pos')}; --data-neg:{tok('data-neg')};
+  /* v4 layout tokens (§2): {s['grid']} module, {s['m-edge']} content edge ({s['m-text']} for running
      copy) — deviating from these is what the §15.9 content-edge probe flags */
-  --grid:40px; --m-edge:40px; --m-text:56px; --band-top:305px; --band-bottom:60px;
+  --grid:{s['grid']}; --m-edge:{s['m-edge']}; --m-text:{s['m-text']}; --band-top:{s['band-top']}; --band-bottom:{s['band-bottom']};
   /* Per-deck sanctioned choices (spec keys) — defaults are the v1 look */
   --dv-bg:{cw['bg']}; --dv-text:{cw['text']}; --dv-sub:{cw['sub']};
   --dv-foot:{cw['foot']}; --dv-edge:{cw['edge']};
   --ty-bg:{ot['bg']}; --ty-text:{ot['text']};
   --ty-foot:{ot['foot']}; --ty-edge:{ot['edge']};
 }}
-*{{margin:0;padding:0;box-sizing:border-box;}}
-html,body{{height:100%;background:#0a0a1a;}}
-#stage{{position:fixed;inset:0;overflow:hidden;background:#0a0a1a;}}
-#frame{{position:absolute;top:0;left:0;width:1920px;height:1080px;transform-origin:top left;}}
-
-/* Base slide — Cream is the one consistent content background (§3.3a) */
-.slide{{
-  position:absolute;top:0;left:0;width:1920px;height:1080px;overflow:hidden;
-  background:var(--bg);color:var(--text);
-  font-family:'WPP','Poppins','Century Gothic',system-ui,sans-serif;
-  font-weight:300;font-feature-settings:"salt" 1;display:none;
-}}
-body:not(.js) #frame .slide:first-of-type{{display:block;}}
-body.js .slide.is-active{{display:block;}}
-.slide--navy{{background:var(--bg-dark);color:var(--text-inv);}}
-.slide--tint{{background:var(--bg-tint);}}
-.slide--white{{background:var(--bg-alt);}}   /* rare only — see §3.3a */
-
-/* GROUND BAND — a partial-height ground change, measured off the source deck
-   rather than invented. Slide 86 turns White from y=580 on an otherwise Cream
-   slide and runs its numeral row ACROSS that boundary; the crossing is what
-   makes the composition read as one object instead of two stacked rows.
-   .slide--white could not express this: it repaints the whole slide.
-   --ground-y is the split (default 580px, the measured value). Content sits
-   above the band because the band is a ::before at z-index 0.
-   Not a licence to invent grounds: §3.3a still governs which two may meet. */
-.slide--ground{{--ground-y:580px;}}
-.slide--ground::before{{content:"";position:absolute;left:0;right:0;top:var(--ground-y);bottom:0;background:var(--bg-alt);z-index:0;}}
-.slide--ground > *{{position:relative;z-index:1;}}
-
-/* Standard content furniture (§7). v4 typography contract (§4.2): headlines
-   Light 300, running text Regular 400 — weight, not just size, carries the
-   hierarchy. Footer furniture is Regular per the playbook ("footers"). */
-.slide > .headline{{position:absolute;left:var(--m-edge);top:73px;font-weight:300;font-size:54px;line-height:.9;letter-spacing:-.005em;max-width:calc(1920px - 2*var(--m-edge));}}
-.headline--lg{{font-size:64px;}}   /* MEASURED: the bank sets slide headlines at 32pt = 64px.
-                                      The kit's 54px descends from the old x1.5 factor. Canon
-                                      templates use this; the 54px default stays until the whole
-                                      scale is re-decided with an eye on it. */
-.headline--caps{{font-size:48px;line-height:.94;letter-spacing:.01em;text-transform:uppercase;}} /* Light-caps "strong emphasis" title (§4.3); ≤1 in 4 content slides */
-.hl{{font-weight:500;}} /* v4 title highlight (§4.4): ONE key token per title, weight only */
-.slide > .subtitle{{position:absolute;left:var(--m-edge);top:177px;font-weight:500;font-size:24px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-800);}}
-.slide > .content-band{{position:absolute;left:var(--m-edge);top:var(--band-top);right:var(--m-edge);bottom:var(--band-bottom);}}
-.subhead{{font-weight:400;font-size:24px;line-height:1.15;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;max-width:1200px;}} /* v4 Regular-caps sub-headline tier (§4.3): supports the headline / leads the body */
-.body{{font-weight:400;font-size:26px;line-height:1.32;max-width:1200px;}}
-.stat--pos{{color:var(--data-pos);}} /* §3.8/§10.1 — favourable direction; ≥300 weight below 90px */
-.stat--neg{{color:var(--data-neg);}} /* §3.8/§10.1 — unfavourable direction, declared in markup */
-.footer-brand{{position:absolute;right:var(--m-edge);bottom:34px;font-weight:700;font-size:16px;letter-spacing:.01em;color:var(--text);}}
-.slide--navy .footer-brand{{color:var(--text-inv);}}
-.pageno{{position:absolute;right:var(--m-edge);bottom:14px;font-weight:400;font-size:11px;opacity:.7;letter-spacing:.08em;text-transform:uppercase;}}
-.slide--navy .pageno{{color:var(--text-inv);}}
-.confidential{{position:absolute;left:var(--m-edge);bottom:14px;font-weight:400;font-size:11px;opacity:.7;letter-spacing:.08em;text-transform:uppercase;}}
-.source{{position:absolute;left:var(--m-edge);bottom:60px;font-weight:400;font-size:12px;opacity:.75;}}
-.dot{{position:absolute;border-radius:50%;}}
-
-/* ---- LOCKED TITLE SLIDE (art layer swaps by registered cover; frame never changes) ---- */
-.slide.cover-mountain{{background:#FAFAF0;color:#000050;}}
-.cover-art{{z-index:0;pointer-events:none;}}
-.cover-art--full{{position:absolute;inset:0;width:1920px;height:1080px;object-fit:cover;object-position:center;}}
-.cover-art--right{{position:absolute;right:-140px;top:50%;transform:translateY(-50%);width:1440px;height:auto;}}
-.cover-dots{{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none;}}
-.cover-mountain__head{{position:absolute;left:var(--m-edge);top:88px;z-index:2;max-width:1040px;}}
-.cover-mountain__title{{font-weight:300;font-size:81px;line-height:.9;letter-spacing:0;text-transform:uppercase;color:#000050;}}
-.cover-mountain__sub{{margin:26px 0 0;font-weight:300;font-size:31px;line-height:1.16;color:#000050;max-width:900px;}}
-.cover-mountain__meta{{margin:34px 0 0;font-weight:400;font-size:24px;line-height:1.3;color:#000050;}}
-.cover-mountain__meta .month{{display:block;text-transform:uppercase;letter-spacing:-.01em;color:#FF7800;}}
-.cover-mountain__meta .presenter{{display:block;}}
-.cover-mountain__badge{{position:absolute;right:0;bottom:0;z-index:2;background:#000050;padding:46px 80px 60px 64px;display:flex;align-items:center;}}
-.cover-mountain__badge svg{{display:block;width:300px;height:auto;}}
-
-/* ---- LOCKED AGENDA ---- */
-.slide.agenda .headline{{position:absolute;top:112px;left:var(--m-edge);font-weight:300;font-size:54px;line-height:1.02;letter-spacing:-.005em;}}
-.slide.agenda .toc-dots{{position:absolute;right:0;top:0;width:520px;height:520px;overflow:visible;}}
-.slide.agenda .toc-row{{position:absolute;left:var(--m-edge);display:flex;align-items:baseline;gap:44px;}}
-.slide.agenda .toc-row .n{{font-weight:100;font-size:88px;line-height:1;color:#FF7800;width:118px;letter-spacing:-.02em;}}
-.slide.agenda .toc-row .t{{font-weight:300;font-size:50px;line-height:1;color:#000050;}}
-.slide.agenda--dense .toc-row .n{{font-size:72px;width:98px;}}
-.slide.agenda--dense .toc-row .t{{font-size:42px;}}
-
-/* ---- LOCKED DIVIDER (colourway via role vars; geometry immutable) ----
-   v4 default = the playbook composition (§12.3): one-hue macro scatter +
-   bottom-pinned Thin caps title (sub-label stacked above it in .dv-block).
-   dividerStyle:"classic" keeps the v3 geometry (absolute dv-sub/dv-title). */
-.slide.divider{{background:var(--dv-bg);color:var(--dv-text);}}
-.slide.divider .dv-dots{{position:absolute;inset:0;overflow:hidden;}}
-.slide.divider .dv-num{{position:absolute;top:56px;left:var(--m-edge);font-weight:100;font-size:104px;line-height:1;letter-spacing:-.02em;}}
-.slide.divider .dv-sub{{position:absolute;left:84px;bottom:150px;font-weight:500;font-size:22px;letter-spacing:.14em;text-transform:uppercase;color:var(--dv-sub);}}
-.slide.divider .dv-title{{position:absolute;left:var(--m-edge);bottom:214px;font-weight:100;font-size:104px;line-height:.86;letter-spacing:-.02em;text-transform:uppercase;max-width:1180px;text-wrap:balance;}}
-.slide.divider .dv-block{{position:absolute;left:var(--m-edge);bottom:96px;max-width:1560px;z-index:1;}}
-.slide.divider .dv-block .dv-sub{{position:static;display:block;margin-bottom:26px;}}
-.slide.divider .dv-block .dv-title{{position:static;font-size:136px;line-height:.88;max-width:1560px;}}
-.slide.divider .footer-brand,.slide.divider .pageno{{color:var(--dv-foot);}}
-.slide.divider .confidential{{color:var(--dv-edge);}}
-
-/* ---- LOCKED THANK-YOU (outro via role vars) ---- */
-.slide.thank-you{{background:var(--ty-bg);}}
-.slide.thank-you .ty-dots{{position:absolute;inset:0;overflow:hidden;}}
-.slide.thank-you .ty{{position:absolute;left:var(--m-edge);top:430px;font-weight:300;font-size:99px;line-height:.9;color:var(--ty-text);}}
-.slide.thank-you .ty-contact{{position:absolute;left:var(--m-edge);top:580px;font-weight:400;font-size:24px;line-height:1.5;color:var(--ty-text);}}
-.slide.thank-you .ty-contact span{{display:block;}}
-.slide.thank-you .footer-brand,.slide.thank-you .pageno{{color:var(--ty-foot);}}
-.slide.thank-you .confidential{{color:var(--ty-edge);}}
-
-/* ===== ARCHETYPE KIT (§12.4-§12.13) — assemble content slides from assets/snippets/ ===== */
-.lift{{position:absolute;inset:0;overflow:hidden;pointer-events:none;}}
-.cols{{position:absolute;left:var(--m-edge);top:260px;right:80px;display:grid;gap:80px;align-items:start;}}
-.cols-2{{grid-template-columns:repeat(2,1fr);}}
-.cols-3{{grid-template-columns:repeat(3,1fr);}}
-.cols-4{{grid-template-columns:repeat(4,1fr);gap:56px;}}
-.cols .body{{font-size:24px;}}
-.cols-4 .body{{font-size:22px;}}
-.col-sub{{font-weight:500;font-size:24px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px;}}
-.col-dot{{width:16px;height:16px;border-radius:50%;background:var(--wpp-navy);margin-bottom:22px;}}
-.pill{{display:inline-block;background:var(--wpp-navy);color:var(--wpp-white);border-radius:999px;padding:10px 26px;font-weight:500;font-size:16px;letter-spacing:.08em;text-transform:uppercase;}}
-.slide--navy .pill{{background:var(--wpp-cream);color:var(--wpp-navy);}}
-.tbx-row{{position:absolute;left:var(--m-edge);right:80px;top:280px;display:flex;align-items:stretch;gap:28px;}}
-.tbx{{background:var(--wpp-white);padding:32px 36px;flex:1;font-weight:400;font-size:22px;line-height:1.3;}}
-.tbx .col-sub{{font-size:20px;}}
-.sep-dot{{align-self:center;flex:0 0 16px;width:16px;height:16px;border-radius:50%;background:var(--wpp-navy);}}
-.sep-arrow{{align-self:center;flex:0 0 22px;width:0;height:0;border-top:15px solid transparent;border-bottom:15px solid transparent;border-left:22px solid var(--wpp-navy);}}
-.big-statement{{position:absolute;left:var(--m-edge);top:50%;transform:translateY(-50%);font-weight:100;font-size:150px;line-height:.82;letter-spacing:-.02em;max-width:1640px;}}
-.big-quote{{position:absolute;left:120px;top:170px;max-width:1620px;font-weight:100;font-size:120px;line-height:1.04;letter-spacing:-.01em;}}
-.quote-attr{{position:absolute;left:120px;bottom:190px;font-weight:500;font-size:30px;letter-spacing:.1em;text-transform:uppercase;}}
-.compare-art{{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:964px;pointer-events:none;}}
-.compare-art img{{width:100%;height:auto;display:block;}}  /* §15.2 — an unconstrained clone renders at native size and paints over the headline */
-/* §15.2 — the 964px centrepiece spans x478-1442; 370px text zones keep ≥24px
-   clearance from the art's hard crop edges on both sides. */
-.compare-left{{position:absolute;left:var(--m-edge);top:420px;width:370px;font-weight:400;font-size:24px;line-height:1.35;}}
-.compare-right{{position:absolute;right:80px;top:420px;width:370px;font-weight:400;font-size:24px;line-height:1.35;}}
-.stat-circle{{display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:50%;background:var(--wpp-navy);color:var(--wpp-white);text-align:center;}}
-.stat-circle .v{{font-weight:100;font-size:90px;line-height:1;}}
-.stat-circle .l{{font-weight:500;font-size:18px;letter-spacing:.1em;text-transform:uppercase;margin-top:10px;max-width:80%;}}
-.stat-circle--orange{{background:var(--orange-700);color:var(--wpp-navy);}}
-.bubble-row{{position:absolute;left:var(--m-edge);right:80px;top:260px;bottom:140px;display:flex;align-items:center;justify-content:space-evenly;}}
-.kpi-row{{position:absolute;left:var(--m-edge);right:80px;top:340px;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:80px;}}
-.kpi .v{{font-weight:100;font-size:110px;line-height:1;}}
-.kpi .l{{font-weight:500;font-size:18px;letter-spacing:.1em;text-transform:uppercase;margin-top:12px;}}
-.orbit{{position:absolute;border-radius:50%;border:1px dotted var(--wpp-navy);}}
-.proc{{position:absolute;left:var(--m-edge);right:80px;top:300px;display:grid;grid-template-columns:repeat(5,1fr);gap:40px;}}
-.proc .n{{font-weight:100;font-size:64px;line-height:1;color:var(--orange-800);}}  /* orange-800: thin numerals need ≥3:1 on white/cream (§15.5) */
-.proc .step-l{{font-weight:500;font-size:16px;letter-spacing:.1em;text-transform:uppercase;margin:16px 0 12px;}}
-.proc .body{{font-size:20px;}}
-.timeline{{position:absolute;left:var(--m-edge);right:80px;top:540px;height:1px;background:var(--wpp-navy);}}
-.tl-node{{position:absolute;top:-8px;width:16px;height:16px;border-radius:50%;background:var(--wpp-navy);}}
-.tl-node--accent{{background:var(--orange-700);}}
-.tl-label{{position:absolute;top:28px;transform:translateX(-50%);font-weight:500;font-size:16px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;}}
-.team-grid{{position:absolute;left:var(--m-edge);right:80px;top:280px;display:grid;grid-template-columns:repeat(4,1fr);gap:64px;}}
-.team-grid--3{{grid-template-columns:repeat(3,1fr);}}
-.person .ph{{width:180px;height:180px;border-radius:50%;background:var(--wpp-navy);overflow:hidden;}}
-.person .ph img{{width:100%;height:100%;object-fit:cover;}}
-/* No-photo default: WPP Thin initials monogram (never a grey placeholder). */
-.person .ph-init{{display:flex;align-items:center;justify-content:center;width:100%;height:100%;
-  font-weight:100;font-size:64px;color:var(--wpp-cream);letter-spacing:.05em;}}
-.team-grid--wide .ph-init{{font-size:92px;}}
-.person .nm{{font-weight:500;font-size:24px;margin-top:20px;}}
-.person .rl{{font-weight:400;font-size:20px;margin-top:4px;}}
-.person .bio{{font-weight:400;font-size:16px;line-height:1.35;margin-top:12px;}}
-.img-right-text{{position:absolute;left:var(--m-edge);top:260px;width:640px;}}
-/* v4 §15.9: media anchors to edges — .img-right-media now bleeds to the right
-   canvas edge (x880-1920); the margin opens for the image, the inner edge holds
-   the grid. Floating mid-canvas media rectangles are a verifier FAIL. */
-.img-right-media{{position:absolute;right:0;top:240px;bottom:140px;width:1040px;overflow:hidden;}}
-.img-right-media img{{width:100%;height:100%;object-fit:cover;}}
-.img-half-media{{position:absolute;right:0;top:0;bottom:0;width:960px;}}
-.img-half-media img{{width:100%;height:100%;object-fit:cover;}}
-/* v4 media anchoring utilities (§12.9/§15.9): every media block bleeds or corners. */
-.media{{position:absolute;overflow:hidden;z-index:0;}}
-.media img{{width:100%;height:100%;object-fit:cover;display:block;}}
-.media--bleed-r{{left:880px;right:0;top:240px;bottom:140px;}}
-.media--bleed-l{{left:0;right:1040px;top:240px;bottom:140px;}}
-.media--bleed-b{{left:var(--m-edge);right:80px;top:560px;bottom:0;}}
-.media--bleed-t{{left:var(--m-edge);right:80px;top:0;bottom:640px;}}
-.media--corner-br{{right:0;bottom:0;width:840px;height:560px;}}
-.media--corner-tr{{right:0;top:0;width:840px;height:520px;}}
-.screenshot{{display:block;max-width:100%;outline:1px solid var(--wpp-navy);}}
-.datatable{{border-collapse:collapse;font-weight:400;font-size:22px;}}
-.datatable th{{font-weight:500;font-size:16px;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:0 48px 14px 0;border-bottom:1px solid var(--wpp-navy);}}
-.datatable td{{padding:14px 48px 14px 0;border-bottom:1px solid var(--wpp-navy);}}
-/* House expandable card (§13.4): flat at rest, Orange 600 outline on hover,
-   CTA flips Navy->Orange 700 and the arrow nudges 4px right. */
-.card{{background:var(--wpp-white);padding:36px;cursor:pointer;}}
-.card:hover{{outline:2px solid var(--orange-600);}}
-.card:focus-visible{{outline:2px solid var(--wpp-navy);}}
-.card-cta{{display:inline-block;margin-top:22px;font-weight:500;font-size:18px;color:var(--wpp-navy);}}
-.card-cta .arrow{{display:inline-block;transition:transform .15s ease;}}
-.card:hover .card-cta{{color:var(--orange-700);}}
-.card:hover .card-cta .arrow{{transform:translateX(4px);}}
-.card-detail{{display:none;margin-top:18px;}}
-.card.is-open .card-detail{{display:block;}}
-
-
-/* ===== KIT v3 — COMPOSITION SYSTEM (guideline §12.15) — append-only ===== */
-/* Panels / splits (R1, R13). Headline caps: right panel >=768px -> headline max-width 1040px inline. */
-.panel{{position:absolute;top:0;bottom:0;right:0;z-index:0;}}
-.panel--left{{left:0;right:auto;}}
-.panel--w440{{width:440px;}}
-.panel--w768{{width:768px;}}
-.panel--w960{{width:960px;}}
-.panel--nav{{background:var(--wpp-navy);color:var(--text-inv);}}
-.panel--tint{{background:var(--bg-tint);}}
-.panel--white{{background:var(--bg-alt);}}
-.panel--orange{{background:var(--orange-700);color:var(--wpp-navy);}} /* high-impact direction only */
-.panel-inner{{position:absolute;inset:64px 56px;display:flex;flex-direction:column;gap:36px;}}
-.panel--nav:not(.panel--left)~.footer-brand,.panel--nav:not(.panel--left)~.pageno{{color:var(--wpp-white);}}
-/* Hero numerals (R3) */
-.hero-num{{font-weight:100;font-size:240px;line-height:.8;letter-spacing:-.02em;}}
-.hero-num--s{{font-size:144px;}}
-.hero-num--l{{font-size:280px;}}
-.hero-num--xl{{font-size:320px;}}
-.hero-num--m{{font-size:192px;}}      /* MEASURED: bank slide 86 numeral, 96pt x 2 */
-.hero-num--solid{{font-weight:400;}}  /* the bank sets numerals in Regular, not Thin —
-                                         .hero-num's weight 100 is a kit invention */
-.hero-num--orange{{color:var(--orange-700);}}
-.hero-row{{position:absolute;left:var(--m-edge);right:80px;top:280px;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:64px;}}
-.hero-row .n{{font-weight:100;font-size:144px;line-height:1;}}
-/* §15.7 — count-up must not reflow layout: equal 1fr tracks above + tabular
-   figures here keep every digit tick the same width. */
-.hero-num,.hero-row .n,.kpi .v,.stat-circle .v,.proc .n,[data-count]{{font-variant-numeric:tabular-nums lining-nums;}}
-.hero-row .l{{font-weight:500;font-size:18px;letter-spacing:.1em;text-transform:uppercase;margin-top:16px;}}
-.hero-row .d{{font-weight:400;font-size:20px;line-height:1.35;margin-top:14px;}}
-.vrule{{position:absolute;width:1px;background:var(--wpp-navy);}}
-.num-ghost{{position:absolute;font-weight:100;font-size:560px;line-height:.75;z-index:0;color:var(--orange-500);pointer-events:none;}}
-.num-ghost--white{{color:var(--wpp-white);}}
-.num-ghost--cream{{color:var(--wpp-cream);}}
-/* Motif art utilities. Payload dedup: slides carry a .motif host whose data-motif names a
-   shipped asset; NAV_JS clones the img from the matching template at load — one payload, N uses. */
-.motif{{position:absolute;z-index:0;pointer-events:none;}}
-.motif img{{width:100%;height:auto;display:block;}}
-.motif--right{{right:-160px;top:50%;transform:translateY(-50%);width:1100px;}}   /* text-safe: x < 1200 */
-.motif--bottom{{right:-120px;bottom:-160px;width:1400px;}}                        /* text-safe: y < 560 */
-.motif--backdrop{{left:50%;top:54%;transform:translate(-50%,-50%);width:900px;}}
-.motif--panel{{inset:0;overflow:hidden;}}
-.motif--panel img{{width:100%;height:100%;object-fit:cover;}}
-.motif--bleed{{inset:0;}}
-.motif--bleed img{{width:1920px;height:1080px;object-fit:cover;}}
-/* Density variants */
-.cols--spacious{{top:340px;gap:120px;}}
-.cols--compact{{top:240px;gap:56px;}}
-.cols--compact .body{{font-size:22px;}}
-.tbx-row--fill{{top:260px;bottom:200px;}}
-.tbx-row--fill .tbx{{display:flex;flex-direction:column;gap:18px;}}
-.proc--cards{{top:260px;bottom:380px;gap:32px;}}  /* §15.4 — cards hug content; pair with a .takeaway to anchor the freed bottom band */
-.proc--cards>div{{background:var(--bg-alt);padding:36px 32px;}}
-.kpi-row--low{{top:auto;bottom:150px;}}
-.team-grid--wide{{grid-template-columns:repeat(3,1fr);bottom:160px;}}
-.team-grid--wide .ph{{width:260px;height:260px;}}
-/* Full-height scaffolding (kills the dead lower band structurally) */
-.canvas{{position:absolute;left:var(--m-edge);right:80px;top:240px;bottom:120px;}}
-.canvas-grid{{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:1fr;gap:24px;height:100%;}}
-/* v4 card-grid modifier (§12.14/§13.4): expandable cards expand INDIVIDUALLY —
-   auto rows + start alignment, and the opened detail is an OVERLAY dropping
-   over whatever sits below (flat white panel, no reflow): no sibling ever
-   moves or stretches. The bento's default 1fr rows would stretch the whole
-   row — verifier FAIL. */
-.canvas-grid--cards{{grid-auto-rows:auto;align-items:start;align-content:start;}}
-.canvas-grid--cards .card{{position:relative;}}
-.canvas-grid--cards .card.is-open{{z-index:6;}}
-.canvas-grid--cards .card.is-open .card-detail{{position:absolute;left:0;right:0;top:100%;
-  margin-top:0;background:var(--wpp-white);padding:0 36px 30px;z-index:6;}}
-.cell{{padding:40px;background:var(--bg-alt);}}
-.cell--nav{{background:var(--wpp-navy);color:var(--text-inv);}}
-.cell--tint{{background:var(--bg-tint);}}
-.takeaway{{position:absolute;left:160px;right:160px;bottom:120px;font-weight:300;font-size:48px;line-height:1.15;padding:14px 44px;}}
-.takeaway::before,.takeaway::after{{content:"";position:absolute;top:0;bottom:0;width:23px;border-top:1px solid var(--wpp-navy);border-bottom:1px solid var(--wpp-navy);}}
-.takeaway::before{{left:0;border-left:1px solid var(--wpp-navy);}}
-.takeaway::after{{right:0;border-right:1px solid var(--wpp-navy);}}
-.slide--navy .takeaway::before,.slide--navy .takeaway::after{{border-color:var(--wpp-cream);}}
-.ruler{{position:absolute;left:var(--m-edge);right:80px;height:1px;background:var(--wpp-navy);}}
-.ruler-ticks{{position:absolute;left:var(--m-edge);right:80px;display:flex;justify-content:space-between;}}
-.ruler-ticks span{{width:1px;height:17px;background:var(--wpp-navy);}}
-.ruler-ticks span.major{{height:27px;}}
-.ruler-label{{position:absolute;font-weight:500;font-size:16px;letter-spacing:.1em;text-transform:uppercase;}}
-.stem{{position:absolute;width:1px;background:var(--orange-700);}}
-.milestone{{position:absolute;width:250px;}}
-.milestone .md{{width:14px;height:14px;border-radius:50%;background:var(--orange-700);}}
-.milestone .ml{{font-weight:500;font-size:16px;letter-spacing:.08em;text-transform:uppercase;margin-top:10px;}}
-.milestone .mb{{font-weight:400;font-size:18px;line-height:1.3;margin-top:8px;}}
-.gantt{{position:absolute;left:var(--m-edge);right:80px;top:240px;bottom:200px;}}
-.bar{{position:absolute;height:6px;}}
-.lane-dot{{position:absolute;width:16px;height:16px;border-radius:50%;background:var(--wpp-navy);}}
-.flag{{position:absolute;width:206px;height:46px;background:var(--wpp-navy);color:var(--wpp-white);font-weight:500;font-size:16px;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;}} /* 16px = the §4.5/§15.10 fine-print floor */
-/* High-impact extras */
-.big-statement--poster{{font-size:220px;line-height:.8;}}
-.layer-1{{z-index:1;}}
-.layer-2{{z-index:2;}}
-
-/* Orbit / hub diagrams */
-.orbit-hub{{position:absolute;display:flex;align-items:center;justify-content:center;border-radius:50%;}}
-.orbit-node{{position:absolute;text-align:center;font:500 18px/1.2 'WPP',system-ui,sans-serif;
-  color:var(--wpp-navy);letter-spacing:.04em;text-transform:uppercase;}}
-.orbit-node .pill{{margin:0 auto 6px;}}
-
-/* Logo wall */
-.logo-row{{display:flex;align-items:center;gap:40px;padding:16px 0;border-bottom:1px solid rgba(0,0,80,.1);}}
-.logo-row:last-child{{border-bottom:none;}}
-.logo-row img,.logo-row svg{{max-height:44px;max-width:110px;display:block;}}
-.logo-row .col-sub{{min-width:200px;flex-shrink:0;margin:0;}}
-
-/* Venn */
-.venn{{position:relative;margin:0 auto;}}
-.venn-set{{position:absolute;border-radius:50%;display:flex;align-items:center;justify-content:center;
-  border:2px solid var(--wpp-navy);background:rgba(0,0,80,.06);}}
-.venn-set--orange{{border-color:var(--orange-700);background:rgba(249,189,93,.1);}}
-.venn-label{{position:absolute;font:500 20px/1.2 'WPP',system-ui,sans-serif;text-align:center;
-  color:var(--wpp-navy);max-width:180px;}}
-
-/* Image-top cards */
-.card-img{{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;}}
-
-/* HUD */
-#hud{{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:50;
-  font:600 12px/1 'WPP',system-ui,sans-serif;color:#fff;opacity:.5;letter-spacing:.1em;
-  background:rgba(0,0,0,.35);padding:6px 12px;border-radius:999px;user-select:none;}}
-.notes{{display:none;}}
-body.notes-on .slide.is-active .notes{{display:block;position:absolute;left:var(--m-edge);right:80px;bottom:70px;
-  font:300 18px/1.4 'WPP',system-ui,sans-serif;color:var(--text);background:rgba(250,250,240,.92);
-  padding:16px 20px;max-height:200px;overflow:auto;z-index:40;}}
-body.notes-on .slide--navy.is-active .notes{{color:#FAFAF0;background:rgba(0,0,80,.88);}}
-.noscript-banner{{position:fixed;left:0;right:0;top:0;z-index:60;background:#000050;color:#FAFAF0;
-  font:300 15px/1.4 system-ui,sans-serif;padding:10px 16px;text-align:center;}}
-@media (prefers-reduced-motion:reduce){{*{{transition:none!important;animation:none!important;}}}}
-
-/* Print / PDF: every slide its own 1920x1080 page (Ctrl+P -> save as PDF) */
-@media print{{
-  html,body{{background:#fff;height:auto;}}
-  #stage{{position:static;overflow:visible;}}
-  #frame{{position:static;transform:none!important;width:1920px;height:auto;}}
-  .slide{{display:block!important;position:relative;page-break-after:always;break-after:page;}}
-  #hud,.noscript-banner{{display:none!important;}}
-}}
-@page{{size:1920px 1080px;margin:0;}}
-""" + KIT_V33_CSS + MOTION_CSS
+""" + rules
 
 
 # --- JS ------------------------------------------------------------------------------
@@ -967,56 +533,57 @@ def field_micro_defs(seed=407, n=110):
     return defs
 
 
+# The order the presets and their colours are emitted in; any preset the design
+# system adds follows these, sorted.
+DOT_ORDER = ("agenda", "divider", "divider-playbook", "thankyou", "cover-dots",
+             "cover-playbook", "lift-corner", "lift-orange-soft", "lift-navy-corner",
+             "field-right", "field-bottom", "field-tl", "field-accent", "field-navy",
+             "field-micro", "field-mid", "field-macro")
+
+# Not in the design system yet: the playbook cover's drift (CoverSlide has no
+# dots or playbook cover) and the v4 register fields MID and MACRO. MICRO is
+# generated (seeded, byte-stable) by field_micro_defs().
+REPO_DOTS = {
+    "cover-playbook": [
+        [300, 1500, -140, "b"], [170, 1690, 150, "b"], [130, 1600, 240, "b"],
+        [90, 1350, 90, "b"], [200, 1810, 340, "b"],
+    ],
+    "field-mid": [
+        [420, 1700, -160, "a"], [340, 1330, -120, "a"], [480, 1760, 300, "a"],
+        [300, 1420, 260, "a"], [360, 1520, 560, "a"], [260, 1720, 700, "a"],
+        [300, 1060, 720, "a"], [200, 1160, 140, "a"], [420, 1620, 860, "a"],
+        [140, 1260, 480, "a"],
+    ],
+    "field-macro": [
+        [1400, -500, -780, "a"], [1750, 1050, -300, "a"], [1150, 650, 860, "a"],
+    ],
+}
+
+
+def _ordered(d):
+    return {k: d[k] for k in sorted(d, key=lambda k: (DOT_ORDER.index(k) if k in DOT_ORDER
+                                                      else len(DOT_ORDER), k))}
+
+
 def nav_js(spec):
     cw = COLOURWAYS[spec["dividerColourway"]]
     ot = OUTROS[spec["outro"]]
-    dotcolors = json.dumps({
-        "agenda":   {"a": "#FF7800", "b": "#F9BD5D", "c": "#D94E0E"},
-        "divider":  {"a": cw["a"], "b": cw["b"], "c": cw["c"]},
-        "divider-playbook": {"a": cw["a"], "b": cw["b"], "c": cw["c"]},
-        "thankyou": {"a": ot["a"], "b": ot["b"], "c": ot["c"]},
-        "cover-dots":  {"a": "#FFFFFF", "b": "#FFF5CD", "c": "#F9BD5D"},
-        "cover-playbook": {"b": "#F9BD5D"},
-        "lift-corner": {"a": "#FFFFFF", "b": "#FFFFFF", "c": "#FFF5CD"},
-        "lift-orange-soft": {"a": "#FFF5CD", "b": "#F9BD5D", "c": "#FFF5CD"},
-        "lift-navy-corner": {"a": "#FAFAF0", "b": "#FFF5CD", "c": "#FAFAF0"},
-        # v3 content-slide dot fields: tone-on-tone default; accent for statement
-        # moments; navy variant is text-safe by guideline rule (never behind text).
-        "field-right": {"a": "#FFFFFF", "b": "#FFF5CD", "c": "#F9BD5D"},
-        "field-bottom": {"a": "#FFFFFF", "b": "#FFF5CD", "c": "#F9BD5D"},
-        "field-tl": {"a": "#FFFFFF", "b": "#FFF5CD", "c": "#F9BD5D"},
-        "field-accent": {"a": "#FF7800", "b": "#F9BD5D", "c": "#D94E0E"},
-        "field-navy": {"a": "#000050", "b": "#FF7800", "c": "#F9BD5D"},
-        # v4 register fields (§5): one hue per field — micro accent orange,
-        # mid soft O600, macro quietest O500 (huge shapes must whisper).
-        "field-micro": {"a": "#FF7800"},
-        "field-mid": {"a": "#F9BD5D"},
-        "field-macro": {"a": "#FFF5CD"},
-    })
-    # v4 presets (§5/§12.3): playbook divider scatter (one hue, ≥2 edges bled,
-    # one fused pair, top-left number zone and bottom-left title zone kept clear;
-    # the 560px bottom-right dot preserves every colourway's footer-contrast
-    # contract from the classic preset), the playbook cover drift, and the
-    # MID/MACRO register fields. MICRO is generated (seeded — byte-stable).
+    # Dot colours: the per-deck ones follow the spec's colourway and outro; the
+    # rest are the design system's (fixed-slides.json dotColours), tone-on-tone
+    # fields, the accent field for statement moments, the text-safe navy field,
+    # one hue per v4 register field.
+    dotcolors = json.dumps(_ordered(dict(
+        FIXED["dotColours"],
+        **{"divider": {"a": cw["a"], "b": cw["b"], "c": cw["c"]},
+           "divider-playbook": {"a": cw["a"], "b": cw["b"], "c": cw["c"]},
+           "thankyou": {"a": ot["a"], "b": ot["b"], "c": ot["c"]}})))
+    # Presets: the design system's, then (as build-time data merged over them)
+    # the playbook divider scatter and the presets it does not hold yet.
+    v4_keys = ("divider-playbook", "cover-playbook", "field-mid", "field-macro", "field-micro")
+    dots = json.dumps(_ordered({k: v for k, v in FIXED["dots"].items() if k not in v4_keys}))
     dots_v4 = json.dumps({
-        "divider-playbook": [
-            [300, 700, -120, "a"], [200, 930, -60, "a"],
-            [680, 1360, -240, "a"], [420, 1660, 240, "a"],
-            [180, 1240, 180, "a"], [560, 1500, 740, "a"], [90, 1150, 430, "a"],
-        ],
-        "cover-playbook": [
-            [300, 1500, -140, "b"], [170, 1690, 150, "b"], [130, 1600, 240, "b"],
-            [90, 1350, 90, "b"], [200, 1810, 340, "b"],
-        ],
-        "field-mid": [
-            [420, 1700, -160, "a"], [340, 1330, -120, "a"], [480, 1760, 300, "a"],
-            [300, 1420, 260, "a"], [360, 1520, 560, "a"], [260, 1720, 700, "a"],
-            [300, 1060, 720, "a"], [200, 1160, 140, "a"], [420, 1620, 860, "a"],
-            [140, 1260, 480, "a"],
-        ],
-        "field-macro": [
-            [1400, -500, -780, "a"], [1750, 1050, -300, "a"], [1150, 650, 860, "a"],
-        ],
+        "divider-playbook": FIXED["dots"]["divider-playbook"],
+        **REPO_DOTS,
         "field-micro": field_micro_defs(),
     })
     return r"""
@@ -1103,23 +670,7 @@ def nav_js(spec):
       e.style.width=e.style.height=d[0]+'px';e.style.left=d[1]+'px';e.style.top=d[2]+'px';
       e.style.background=(palette&&palette[d[3]])||d[3];host.appendChild(e);});
   }
-  var DOTS={
-    agenda:[[360,300,-130,'a'],[150,170,300,'b'],[80,120,170,'c']],
-    divider:[[760,1500,-200,'a'],[560,1500,740,'a'],[180,1360,560,'b'],[90,1300,300,'c']],
-    thankyou:[[760,1500,620,'a'],[300,1640,-120,'b'],[150,1360,760,'c']],
-    'cover-dots':[[900,1240,-280,'a'],[560,1500,430,'a'],[360,1060,300,'b'],[300,1330,840,'a'],[150,1170,720,'c']],
-    'lift-corner':[[420,1700,880,'a'],[180,1560,780,'b'],[90,1500,1000,'c']],
-    'lift-orange-soft':[[420,1700,880,'a'],[180,1560,780,'b'],[90,1500,1000,'c']],
-    'lift-navy-corner':[[420,1700,880,'a'],[180,1560,780,'b'],[90,1500,1000,'c']],
-    // field-right hugs the right EDGE (≤100px intrusion past x1740, solid 'c'
-    // dot fully off-canvas): the old cluster put a solid mid-orange dot at
-    // x1520 — inside the third column's text zone on cols-3 layouts (§15.2).
-    'field-right':[[560,1640,-200,'a'],[300,1740,440,'b'],[150,1848,310,'c'],[90,1780,790,'a']],
-    'field-bottom':[[520,1640,820,'a'],[260,320,940,'b'],[120,240,800,'c'],[80,620,1000,'b']],
-    'field-tl':[[300,-110,-110,'a'],[130,230,90,'b'],[70,140,300,'c']],
-    'field-accent':[[560,1640,-200,'a'],[300,1740,440,'b'],[150,1848,310,'c'],[90,1780,790,'a']],
-    'field-navy':[[520,1640,820,'a'],[260,320,940,'b'],[120,240,800,'c']]
-  };
+  var DOTS=__DOTS__;
   // v4 presets (playbook divider/cover + register fields) — build-time data.
   var DOTS_V4=__DOTSV4__;
   for(var dk in DOTS_V4) DOTS[dk]=DOTS_V4[dk];
@@ -1273,7 +824,7 @@ def nav_js(spec):
   var h=parseInt(location.hash.slice(1),10);
   show(!isNaN(h)?h-1:0);
 })();
-""".replace("__DOTCOLORS__", dotcolors).replace("__DOTSV4__", dots_v4)
+""".replace("__DOTCOLORS__", dotcolors).replace("__DOTSV4__", dots_v4).replace("__DOTS__", dots)
 
 
 # --- document ------------------------------------------------------------------------
