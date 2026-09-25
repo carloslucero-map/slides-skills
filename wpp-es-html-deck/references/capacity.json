@@ -5,7 +5,7 @@
  ],
  "templates": [
   {
-   "file": "boxes.html",
+   "file": "variants/boxes-v1.html",
    "archetype": "boxes",
    "label": "V1 \u00b7 R9 FULL-HEIGHT CARD ROW + TAKEAWAY BRACKET",
    "slots": {
@@ -46,7 +46,7 @@
    "slide_max_chars": 444
   },
   {
-   "file": "boxes.html",
+   "file": "variants/boxes-v2.html",
    "archetype": "boxes",
    "label": "V2 \u00b7 COMPACT \u2014 related items joined by dots (pair with a lift or takeaway on sparse decks)",
    "slots": {
@@ -87,7 +87,7 @@
    "slide_max_chars": 288
   },
   {
-   "file": "boxes.html",
+   "file": "variants/boxes-v3.html",
    "archetype": "boxes",
    "label": "V3 \u00b7 COMPACT \u2014 sequence joined by arrows",
    "slots": {
@@ -120,7 +120,7 @@
    "slide_max_chars": 218
   },
   {
-   "file": "cards.html",
+   "file": "variants/cards-v1.html",
    "archetype": "cards",
    "label": "Variant 1 \u2014 2\u00d72 full-height card bento (.canvas-grid--cards: one card expands alone;",
    "slots": {
@@ -161,7 +161,7 @@
    "slide_max_chars": 870
   },
   {
-   "file": "cards.html",
+   "file": "variants/cards-v2.html",
    "archetype": "cards",
    "label": "Variant 2 \u2014 three across (compact). \u00a715.3: cards are flex columns with the CTA",
    "slots": {
@@ -202,7 +202,7 @@
    "slide_max_chars": 670
   },
   {
-   "file": "cards.html",
+   "file": "variants/cards-v3.html",
    "archetype": "cards",
    "label": "Variant 3 \u00b7 IMAGE-TOP CARDS \u2014 3 cards with photo/image above + title + body (case studies,",
    "slots": {
@@ -243,7 +243,7 @@
    "slide_max_chars": 511
   },
   {
-   "file": "cards.html",
+   "file": "variants/cards-v4.html",
    "archetype": "cards",
    "label": "V4 \u00b7 R12 TILE GRID 3\u00d72 \u2014 560\u00d7319 flat tiles mixing .cell / .cell--nav stat /",
    "slots": {
@@ -300,7 +300,7 @@
    "slide_max_chars": 579
   },
   {
-   "file": "charts.html",
+   "file": "variants/charts-v1.html",
    "archetype": "chart",
    "label": "V1 \u00b7 R2 STAT MOSAIC BENTO (5 cells fill the whole band; one navy hero)",
    "slots": {
@@ -373,7 +373,7 @@
    "slide_max_chars": 248
   },
   {
-   "file": "charts.html",
+   "file": "variants/charts-v2.html",
    "archetype": "chart",
    "label": "V2 \u00b7 COMPACT \u2014 horizontal bars from plain divs (widths \u221d value on one shared scale).",
    "slots": {
@@ -406,7 +406,7 @@
    "slide_max_chars": 78
   },
   {
-   "file": "charts.html",
+   "file": "variants/charts-v3.html",
    "archetype": "table",
    "label": "V3 \u00b7 COMPACT \u2014 .datatable (<=5 cols, <=6 rows; larger data goes to an appendix)",
    "slots": {
@@ -431,7 +431,7 @@
    "slide_max_chars": 162
   },
   {
-   "file": "columns.html",
+   "file": "variants/columns-v1.html",
    "archetype": "cols-3",
    "label": "Variant 1 \u2014 three spacious columns + dot field + takeaway (full canvas)",
    "slots": {
@@ -488,7 +488,7 @@
    "slide_max_chars": 854
   },
   {
-   "file": "columns.html",
+   "file": "variants/columns-v2.html",
    "archetype": "cols-4",
    "label": "Variant 2 \u2014 four compact columns, dot headers (pair with a lift on sparse decks)",
    "slots": {
@@ -521,7 +521,7 @@
    "slide_max_chars": 253
   },
   {
-   "file": "columns.html",
+   "file": "variants/columns-v3.html",
    "archetype": "cols-2",
    "label": "Variant 3 \u2014 two columns + pill row (tags, markets, workstreams\u2026)",
    "slots": {
@@ -562,7 +562,7 @@
    "slide_max_chars": 280
   },
   {
-   "file": "columns.html",
+   "file": "variants/columns-v4.html",
    "archetype": "cols-3",
    "label": "Variant 4 \u00b7 ICON-LED TRIO (v3.3) \u2014 suite icons head the columns when the point",
    "slots": {
@@ -603,7 +603,7 @@
    "slide_max_chars": 342
   },
   {
-   "file": "columns.html",
+   "file": "variants/columns-v5.html",
    "archetype": "cols-4",
    "label": "Variant 5 \u00b7 NUMBERED STEPS \u2014 3-4 columns headed by a giant step number (.hero-num--s)",
    "slots": {
@@ -652,7 +652,7 @@
    "slide_max_chars": 514
   },
   {
-   "file": "comparison.html",
+   "file": "variants/comparison-v1.html",
    "archetype": "compare",
    "label": "\u2014",
    "slots": {
@@ -701,7 +701,7 @@
    "slide_max_chars": 387
   },
   {
-   "file": "comparison.html",
+   "file": "variants/comparison-v2.html",
    "archetype": "compare",
    "label": "V2 \u00b7 VENN DIAGRAM \u2014 2-3 overlapping circles with labels inside and at the intersection.",
    "slots": {
@@ -734,7 +734,7 @@
    "slide_max_chars": 301
   },
   {
-   "file": "image-content.html",
+   "file": "variants/image-content-v0.html",
    "archetype": "image-poster",
    "label": "Variant 0 \u00b7 R11 MOTIF POSTER (full-bleed halftone, chapter-poster moment)",
    "slots": {
@@ -751,7 +751,7 @@
    "slide_max_chars": 22
   },
   {
-   "file": "image-content.html",
+   "file": "variants/image-content-v1.html",
    "archetype": "image-right",
    "label": "Variant 1 \u2014 text left, media right. v4 \u00a715.9: .img-right-media bleeds to the right",
    "slots": {
@@ -784,7 +784,7 @@
    "slide_max_chars": 160
   },
   {
-   "file": "image-content.html",
+   "file": "variants/image-content-v2.html",
    "archetype": "image-half",
    "label": "Variant 2 \u2014 full-bleed-right media (edges top/right/bottom); clamp the headline",
    "slots": {
@@ -809,7 +809,7 @@
    "slide_max_chars": 151
   },
   {
-   "file": "image-content.html",
+   "file": "variants/image-content-v3.html",
    "archetype": "screenshot",
    "label": "Variant 3 \u2014 user screenshot with the sanctioned .screenshot treatment",
    "slots": {
@@ -842,7 +842,7 @@
    "slide_max_chars": 135
   },
   {
-   "file": "image-content.html",
+   "file": "variants/image-content-v4.html",
    "archetype": "image-duo",
    "label": "Variant 4 \u00b7 DUOTONE HERO SPLIT (v3.3) \u2014 the proven composition: photo one half,",
    "slots": {
@@ -859,7 +859,7 @@
    "slide_max_chars": 35
   },
   {
-   "file": "image-content.html",
+   "file": "variants/image-content-v5.html",
    "archetype": "dot-hero",
    "label": "V5 \u00b7 DOT HERO (v4, \u00a79.1c) \u2014 the 'pixelated' website look: navy square-grid dot art",
    "slots": {
@@ -892,7 +892,7 @@
    "slide_max_chars": 193
   },
   {
-   "file": "logo-wall.html",
+   "file": "variants/logo-wall-v1.html",
    "archetype": "logo-wall",
    "label": "V1 \u00b7 CATEGORISED GRID \u2014 rows with category labels + partner logos",
    "slots": {
@@ -933,7 +933,7 @@
    "slide_max_chars": 326
   },
   {
-   "file": "logo-wall.html",
+   "file": "variants/logo-wall-v2.html",
    "archetype": "logo-wall",
    "label": "V2 \u00b7 HERO COUNT MOSAIC \u2014 giant number + full-height logo grid (awards / certifications)",
    "slots": {
@@ -974,7 +974,7 @@
    "slide_max_chars": 183
   },
   {
-   "file": "orbit.html",
+   "file": "variants/orbit-v1.html",
    "archetype": "orbit",
    "label": "V1 \u00b7 HUB CLASSIC \u2014 3 rings, 4 labelled nodes, headline left (full canvas)",
    "slots": {
@@ -1023,7 +1023,7 @@
    "slide_max_chars": 175
   },
   {
-   "file": "orbit.html",
+   "file": "variants/orbit-v2.html",
    "archetype": "orbit",
    "label": "V2 \u00b7 RADIAL SPOKES \u2014 context column left, ring right: filled navy hub + 6 pill nodes",
    "slots": {
@@ -1072,7 +1072,7 @@
    "slide_max_chars": 418
   },
   {
-   "file": "orbit.html",
+   "file": "variants/orbit-v3.html",
    "archetype": "orbit",
    "label": "V3 \u00b7 FLOATING BUBBLES \u2014 3-4 overlapping text circles (value props / strategic pillars)",
    "slots": {
@@ -1113,7 +1113,7 @@
    "slide_max_chars": 483
   },
   {
-   "file": "process-timeline.html",
+   "file": "variants/process-timeline-v1.html",
    "archetype": "process",
    "label": "V1 \u00b7 PROCESS CARDS + TAKEAWAY (5 numbered white cards). \u00a715.4: cards hug their",
    "slots": {
@@ -1162,7 +1162,7 @@
    "slide_max_chars": 583
   },
   {
-   "file": "process-timeline.html",
+   "file": "variants/process-timeline-v2.html",
    "archetype": "timeline",
    "label": "V2 \u00b7 R7 MILESTONE RULER (stems above AND below fill the canvas vertically).",
    "slots": {
@@ -1203,7 +1203,7 @@
    "slide_max_chars": 305
   },
   {
-   "file": "process-timeline.html",
+   "file": "variants/process-timeline-v3.html",
    "archetype": "timeline",
    "label": "V3 \u00b7 R6 GANTT SWIMLANES (flat 6px bars in the orange ramp, two segments per lane,",
    "slots": {
@@ -1252,7 +1252,7 @@
    "slide_max_chars": 168
   },
   {
-   "file": "process-timeline.html",
+   "file": "variants/process-timeline-v4.html",
    "archetype": "timeline",
    "label": "V4 \u00b7 COMPACT \u2014 classic node timeline (pair with a field lift so the canvas stays alive)",
    "slots": {
@@ -1285,7 +1285,7 @@
    "slide_max_chars": 170
   },
   {
-   "file": "process-timeline.html",
+   "file": "variants/process-timeline-v5.html",
    "archetype": "ecosystem",
    "label": "V5 \u00b7 ECOSYSTEM MAP \u2014 nodes distributed across zones with connecting lines.",
    "slots": {
@@ -1326,7 +1326,7 @@
    "slide_max_chars": 618
   },
   {
-   "file": "process-timeline.html",
+   "file": "variants/process-timeline-v6.html",
    "archetype": "process",
    "label": "V6 \u00b7 R8 PHASE BOARD \u2014 centre tint panel as the board, step headers on a top rule",
    "slots": {
@@ -1367,7 +1367,7 @@
    "slide_max_chars": 904
   },
   {
-   "file": "splits.html",
+   "file": "variants/splits-v1.html",
    "archetype": "split-rail",
    "label": "V1 \u00b7 R1 SPLIT RAIL DASHBOARD (full canvas): lead + low KPI row, tint rail with 4 stats",
    "slots": {
@@ -1432,7 +1432,7 @@
    "slide_max_chars": 417
   },
   {
-   "file": "splits.html",
+   "file": "variants/splits-v2.html",
    "archetype": "split-block",
    "label": "V2 \u00b7 R13 COLOUR-BLOCK 40% (right navy panel carries the display numeral)",
    "slots": {
@@ -1473,7 +1473,7 @@
    "slide_max_chars": 398
   },
   {
-   "file": "splits.html",
+   "file": "variants/splits-v3.html",
    "archetype": "split-motif",
    "label": "V3 \u00b7 50/50 MOTIF PANEL (navy panel filled by a halftone crop; statement-led / high-impact)",
    "slots": {
@@ -1514,7 +1514,7 @@
    "slide_max_chars": 206
   },
   {
-   "file": "splits.html",
+   "file": "variants/splits-v4.html",
    "archetype": "split-image",
    "label": "V4 \u00b7 IMAGE BLEED + SIDEBAR \u2014 full-bleed photo left (50%), structured text right.",
    "slots": {
@@ -1563,7 +1563,7 @@
    "slide_max_chars": 406
   },
   {
-   "file": "statement-quote.html",
+   "file": "variants/statement-quote-v1.html",
    "archetype": "statement",
    "label": "V1 \u00b7 R10 MOTIF-SIDE STATEMENT (accent dot field as the counterweight)",
    "slots": {
@@ -1580,24 +1580,7 @@
    "slide_max_chars": 43
   },
   {
-   "file": "statement-quote.html",
-   "archetype": "statement",
-   "label": "V1b \u00b7 R10 with a halftone motif (list the motif in spec.illustrations; text stays left of ",
-   "slots": {
-    "big-statement": {
-     "items": 1,
-     "min_chars": 16,
-     "ideal_chars": 37,
-     "max_chars": 65,
-     "font_px": 150.0,
-     "basis": "geometry"
-    }
-   },
-   "slide_ideal_chars": 37,
-   "slide_max_chars": 49
-  },
-  {
-   "file": "statement-quote.html",
+   "file": "variants/statement-quote-v2.html",
    "archetype": "quote",
    "label": "V2 \u00b7 BIG QUOTE",
    "slots": {
@@ -1622,7 +1605,24 @@
    "slide_max_chars": 108
   },
   {
-   "file": "statement-quote.html",
+   "file": "variants/statement-quote-v2b.html",
+   "archetype": "statement",
+   "label": "V1b \u00b7 R10 with a halftone motif (list the motif in spec.illustrations; text stays left of ",
+   "slots": {
+    "big-statement": {
+     "items": 1,
+     "min_chars": 16,
+     "ideal_chars": 37,
+     "max_chars": 65,
+     "font_px": 150.0,
+     "basis": "geometry"
+    }
+   },
+   "slide_ideal_chars": 37,
+   "slide_max_chars": 49
+  },
+  {
+   "file": "variants/statement-quote-v3.html",
    "archetype": "statement",
    "label": "V3 \u00b7 POSTER STATEMENT \u2014 high-impact direction ONLY (navy moment, ghost numeral low-right,",
    "slots": {
@@ -1655,7 +1655,7 @@
    "slide_max_chars": 75
   },
   {
-   "file": "stats.html",
+   "file": "variants/stats-v1.html",
    "archetype": "stats",
    "label": "\u2014",
    "slots": {
@@ -1712,7 +1712,7 @@
    "slide_max_chars": 405
   },
   {
-   "file": "stats.html",
+   "file": "variants/stats-v2.html",
    "archetype": "stats",
    "label": "V2 \u00b7 R4 HUB & SPOKES (motif backdrop behind the hero stat, flanking proof columns)",
    "slots": {
@@ -1761,7 +1761,7 @@
    "slide_max_chars": 419
   },
   {
-   "file": "stats.html",
+   "file": "variants/stats-v3.html",
    "archetype": "stats",
    "label": "V3 \u00b7 \u221a-SCALED BUBBLE ROW (area \u221d value) + bottom dot field. NEVER one dominant centred cir",
    "slots": {
@@ -1802,7 +1802,7 @@
    "slide_max_chars": 133
   },
   {
-   "file": "stats.html",
+   "file": "variants/stats-v4.html",
    "archetype": "stats",
    "label": "V4 \u00b7 COMPACT \u2014 .kpi-row value/label pairs when the numbers don't need weighting.",
    "slots": {
@@ -1835,7 +1835,7 @@
    "slide_max_chars": 128
   },
   {
-   "file": "stats.html",
+   "file": "variants/stats-v5.html",
    "archetype": "stats",
    "label": "V5 \u00b7 SCORECARD GRID \u2014 KPIs grouped by category in a 2\u00d73 or 3\u00d72 bento. Each cell has",
    "slots": {
@@ -1892,7 +1892,7 @@
    "slide_max_chars": 274
   },
   {
-   "file": "stats.html",
+   "file": "variants/stats-v6.html",
    "archetype": "stats",
    "label": "V6 \u00b7 R5 CLUSTER DIAGRAM + INDEX ROW \u2014 two overlapping navy sets (knockout labels,",
    "slots": {
@@ -1925,7 +1925,7 @@
    "slide_max_chars": 695
   },
   {
-   "file": "stats.html",
+   "file": "variants/stats-v7.html",
    "archetype": "stats",
    "label": "V7 \u00b7 INTENSITY RAMP + LEADER LINES (v4, playbook p.46) \u2014 four flat circles step up",
    "slots": {
@@ -2014,7 +2014,7 @@
    "slide_max_chars": 217
   },
   {
-   "file": "team.html",
+   "file": "variants/team-v1.html",
    "archetype": "team",
    "label": "Variant 1 \u2014 three across, wide portraits, full-height bios",
    "slots": {
@@ -2055,7 +2055,7 @@
    "slide_max_chars": 535
   },
   {
-   "file": "team.html",
+   "file": "variants/team-v2.html",
    "archetype": "team",
    "label": "Variant 2 \u2014 four across (compact)",
    "slots": {

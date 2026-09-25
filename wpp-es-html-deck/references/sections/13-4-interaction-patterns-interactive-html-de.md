@@ -60,7 +60,7 @@ Reference tokens (matches the pilot use-case cards):
 
 This pattern stays within the brand rules: pills (never rounded cards), flat colour, no shadows or gradients, orange as an interaction accent only, and all text Navy or White. It applies to interactive HTML decks; static/print decks show no hover affordance.
 
-Assemble from `assets/snippets/cards.html` — don't re-derive.
+Assemble from the `cards-v*` variants in `assets/snippets/variants/` — don't re-derive.
 
 ---
 

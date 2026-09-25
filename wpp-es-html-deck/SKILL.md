@@ -312,7 +312,7 @@ CONFIDENCIAL are built in; other languages via `"strings"`).
 
 `canon/` holds templates traced from the real MAP slide bank: each one measured
 off a source slide and rendered against it (the original, `ref.png`, stays
-with the authoring sources). The 51 snippets in `assets/snippets/` were authored from the brand
+with the authoring sources). The 51 kit layouts in `assets/snippets/variants/` were authored from the brand
 guideline in the abstract, not from the deck bank — which is the reason decks
 built from them have never quite looked like MAP's own slides.
 
@@ -328,13 +328,13 @@ So the order is not a preference, it is a fidelity rule:
 3. When you fall back, **say which slide fell back and why** in the G2 delivery
    note. That list is what tells the next canon template which slide to trace.
 
-Never open `assets/snippets/*.html` at fill time — those 13 files are the
-authoring source (up to 6,326 tokens each); the deck reads `variants/` only.
-Edit a canonical file and re-run the full regeneration to rebuild them — `--split` alone does not remeasure:
+The kit's layouts are the design system's: each variant's slide is copied from
+it, so a layout changes there, never here. After a refresh changes one,
+remeasure the kit:
 
 ```bash
 python3 scripts/build_shell.py --out build/demo.html
-python3 scripts/derive_capacity.py --skill . --demo build/demo.html --write --index --split
+python3 scripts/derive_capacity.py --skill . --demo build/demo.html --write --index
 ```
 
 **`--demo` is not optional.** Without a generated shell the tool reads no CSS metrics at all and falls back to a content edge that stopped being true when the frame moved to 40px — every number it writes is then wrong but plausible. It now refuses to run rather than degrade quietly. Note that `--write` also rewrites `references/capacity.json` wholesale, which drops the canon entries: re-run `authoring/canon-tools/derive_canon_capacity.py --demo <canon-deck> --write` afterwards to merge them back, or `check_capacity.py` reports every canon slide UNCHECKED.
@@ -563,13 +563,11 @@ non-English decks: **`references/EDGE-CASES.md`**. Open only when one applies.
   Slides artifact, the question card, and the order in which to read and
   install the design system.
 
-Each other file is named where it is used. Three rules that live nowhere else:
+Each other file is named where it is used. Two rules that live nowhere else:
 
 - **Never read `references/capacity.json`, `design-system/exemplars/` or
   `design-system/photos/` into context.** They are script and human inputs;
   `capacity.json` alone is ~11,700 tokens. `check_capacity.py` reads it for you.
-- **Never open `assets/snippets/*.html` at fill time.** Those 13 files are the
-  authoring source, up to 6,300 tokens each; the deck reads `variants/` only.
 - **Brand changes are made in the design system, never in this skill.** The
   guideline here follows it: when a rule changes there, change
   `references/sections/` to match (the one place to edit the skill's copy),
@@ -579,8 +577,8 @@ Each other file is named where it is used. Three rules that live nowhere else:
   `deck-content-builder` (the house copy rules, the handoff contract) no
   longer matches its twin.
 
-After editing a canonical snippet, regenerate the kit:
+After a refresh changes a kit layout, remeasure the kit:
 
 ```bash
-python3 scripts/derive_capacity.py --skill . --demo <a-deck>.html --write --index --split
+python3 scripts/derive_capacity.py --skill . --demo <a-deck>.html --write --index
 ```

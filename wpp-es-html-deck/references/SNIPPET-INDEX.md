@@ -6,8 +6,9 @@ Pick from this table, then open ONLY the file named. `chars` is the
 slide's ideal total; the per-slot min-max lives in the `<!-- capacity -->`
 block above each template.
 
-The files in `assets/snippets/` are canonical. `variants/` holds the same
-templates split one-per-file and is regenerated from them.
+Each file in `variants/` is one layout from the design system: its slide is
+copied by `authoring/refresh_design_system.py`, its capacity block written
+by `scripts/derive_capacity.py`.
 
 | archetype | open | chars | what it is |
 |---|---|---|---|
@@ -50,8 +51,8 @@ templates split one-per-file and is regenerated from them.
 | split-motif | `variants/splits-v3.html` | 153 | 50/50 MOTIF PANEL |
 | split-image | `variants/splits-v4.html` | 301 | IMAGE BLEED + SIDEBAR — full-bleed photo left , structured text  |
 | statement | `variants/statement-quote-v1.html` | 32 | R10 MOTIF-SIDE STATEMENT |
-| statement | `variants/statement-quote-v2b.html` | 37 | b · R10 with a halftone motif (list the motif in spec.illustrati |
 | quote | `variants/statement-quote-v2.html` | 80 | BIG QUOTE |
+| statement | `variants/statement-quote-v2b.html` | 37 | b · R10 with a halftone motif (list the motif in spec.illustrati |
 | statement | `variants/statement-quote-v3.html` | 56 | POSTER STATEMENT — high-impact direction ONLY (navy moment, ghos |
 | stats | `variants/stats-v1.html` | 300 | R3 hero numeral quartet + ruler · R4 hub & spokes · √-scaled bub |
 | stats | `variants/stats-v2.html` | 311 | R4 HUB & SPOKES |

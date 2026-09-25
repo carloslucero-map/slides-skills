@@ -77,29 +77,29 @@ The playbook's own section dividers (pp. 14, 19, 27, 30, 42, 44) are the model: 
 ### 12.4 Big Statement
 - One sentence, WPP Thin **150 px default** (81–180 range for shorter/longer statements), Navy, left-aligned at x = 40 and vertically centred, line-height 0.82, max-width 1640 px, on an otherwise empty cream canvas.
 - Variants: with supporting paragraph (24–26 px Light below), with halftone motif side, with a lift dot cluster, vertical composition.
-- Assemble from `assets/snippets/statement-quote.html` — don't re-derive.
+- Assemble from the `statement-quote-v*` variants in `assets/snippets/variants/` — don't re-derive.
 
 ### 12.5 Big Quote
 - Quote in WPP Thin 120 px with typographic quotation marks at (120, 170), max-width 1620 px, line-height 1.04, max ~4 lines.
 - Attribution in Medium ALL CAPS 30 px at left 120 / bottom 190.
-- Assemble from `assets/snippets/statement-quote.html` — don't re-derive.
+- Assemble from the `statement-quote-v*` variants in `assets/snippets/variants/` — don't re-derive.
 
 ### 12.6 Title + Content (1/2/3/4 columns)
 - Furniture per §7. Column grid starts at (40, 260), right inset 80; gaps 80 px (56 px for 4-col); widths per §2 (860 / ≈547 / 408).
 - Each column: optional **Medium ALL-CAPS subheader** (24 px) or a 16 px dot bullet, then Light body (24 px; 22 px in 4-col).
 - **4-col with Dot Header**: each column headed by a dotted icon (§8.1 fallback) + subheader.
 - **4-col with Pills**: navy pill labels (§5) beneath columns.
-- Assemble from `assets/snippets/columns.html` — don't re-derive.
+- Assemble from the `columns-v*` variants in `assets/snippets/variants/` — don't re-derive.
 
 ### 12.7 Text boxes ×3–×8 (with Dots or Arrows)
 - Title as usual; a row of equal flat White boxes starting at (40, 280), gap 28, padding 32 × 36, body 22 px (or two rows of 3/4 for ×6/×8).
 - Between boxes: a **16 px navy dot** (relationship) or the **navy triangle arrow** (sequence/flow) vertically centred in the gutter.
-- Assemble from `assets/snippets/boxes.html` — don't re-derive.
+- Assemble from the `boxes-v*` variants in `assets/snippets/variants/` — don't re-derive.
 
 ### 12.8 Comparative (rocks / ribbon)
 - Two-sided comparison: a shipped accent motif (rocks or ribbon, §9.1a — pick the colourway that matches the deck's family: `rocks`/`ribbon-navy` for navy decks, `rocks-orange`/`ribbon-orange` for orange) centred at 964 px wide; 420 px label columns left and right at top 420, 24 px Light.
 - **Family exemption:** the `.compare-art` centrepiece is furniture of this archetype — it does NOT count against the deck's one-motif-family rule (SKILL.md). Prefer the colourway variant closest to the deck's family.
-- Assemble from `assets/snippets/comparison.html` — don't re-derive.
+- Assemble from the `comparison-v*` variants in `assets/snippets/variants/` — don't re-derive.
 
 ### 12.9 Image layouts — v4: media anchors to edges (the anchoring law, §15.9)
 
@@ -116,17 +116,17 @@ The layouts:
 - **Image with Title**: full-bleed halftone/photo + big ALL-CAPS Thin title.
 - **Dot hero (v4)**: a `halftone.py` conversion as the art half of a split — the "pixelated" website look (§9.1c).
 - **Screenshots**: 1 px Navy outline (`.screenshot`), never a drop shadow, never full-bleed — the one sanctioned inset (`data-inset-ok` is implied by the class).
-- Assemble from `assets/snippets/image-content.html` — don't re-derive.
+- Assemble from the `image-content-v*` variants in `assets/snippets/variants/` — don't re-derive.
 
 ### 12.10 Team slides
 - Grid of 3 or 4 per row at (40, 280), right inset 80, gap 64: circular portrait (Ø 180 px, navy placeholder) + `Firstname Lastname` (Medium 24), role/department/city (Light 20), short bio (Light 16).
-- Assemble from `assets/snippets/team.html` — don't re-derive.
+- Assemble from the `team-v*` variants in `assets/snippets/variants/` — don't re-derive.
 
 ### 12.11 Process (×5) & Timelines
 - **Process boxes ×5**: five numbered columns at (40, 300), gap 40 — Thin **Orange 700** numeral (64 px), Medium ALL-CAPS step label (16 px), Light body (20 px).
 - **Timeline**: a 1 px navy axis at y = 540, 16 px dot nodes (Orange 700 for accents), Medium ALL-CAPS 16 px labels below.
 - **Roadmap / horizontal steps**: `START → …` with stat blocks; phases labelled `PHASE 1…` with dot markers on the thin line.
-- Assemble from `assets/snippets/process-timeline.html` — don't re-derive.
+- Assemble from the `process-timeline-v*` variants in `assets/snippets/variants/` — don't re-derive.
 
 ### 12.12 Data-viz slides
 - **Bubble pipeline**: big Thin ALL-CAPS title left, composition of flat circles right (§10) — `.stat-circle` (Navy fill, White Thin 90 px value, Medium 18 px label; `--orange` variant flips to Orange 700 / Navy).
@@ -134,7 +134,7 @@ The layouts:
 - **Dashboard**: KPI row (Thin 110 px values) + description + percentage circles.
 - **Charts**: bar/line charts flat navy/orange, Light labels; headline + eyebrow furniture unchanged.
 - **Data honesty (hard rule): bubble/circle AREA is proportional to value — diameter ∝ √value.** Diameter-proportional bubbles exaggerate ratios quadratically and are a distortion; they are **banned**. When two circles represent 4× the value, the bigger one is 2× the diameter, never 4×.
-- Assemble from `assets/snippets/stats.html` + `assets/snippets/charts.html` — don't re-derive.
+- Assemble from the `stats-v*` and `charts-v*` variants in `assets/snippets/variants/` — don't re-derive.
 
 ### 12.13 Outro / Thank-you — the locked, mandatory close
 

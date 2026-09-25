@@ -66,7 +66,7 @@ verifier that enforces the design guideline.
 | `references/capacity.json` | Per-slot min/ideal/max character counts |
 | `references/HANDOFF-CONTRACT.md` | The content → render contract |
 | `canon/` | The 25 traced templates and their catalogue |
-| `assets/snippets/` | The 51 kit layouts, one per file in `variants/`, and their 13 authoring sources |
+| `assets/snippets/variants/` | The 51 kit layouts, one per file: the design system's slide under a measured capacity block |
 | `scripts/` | Shell generator, capacity tooling, halftone generator, guideline builder, verifier, packager |
 
 ## Installation
@@ -107,9 +107,9 @@ python wpp-es-html-deck/scripts/verify_deck.py deck.html --screenshots shots/
 # Check content against the per-slot capacity model (run from the skill folder)
 cd wpp-es-html-deck && python3 scripts/check_capacity.py deck.html --skill .
 
-# Regenerate capacity.json, the snippet index and the variants (needs a built shell)
+# Remeasure capacity.json, the variants' capacity blocks and the snippet index (needs a built shell)
 python3 scripts/build_shell.py --out /tmp/demo.html
-python3 scripts/derive_capacity.py --skill . --demo /tmp/demo.html --write --index --split
+python3 scripts/derive_capacity.py --skill . --demo /tmp/demo.html --write --index
 python3 ../authoring/canon-tools/derive_canon_capacity.py --demo /tmp/demo.html --write
 
 # Regenerate CORE.md and the whole guideline from references/sections/

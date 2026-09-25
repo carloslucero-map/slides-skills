@@ -167,10 +167,10 @@ def check_canon_integrity(skill):
 def check_kit_integrity(skill):
     """Every row of SNIPPET-INDEX.md must resolve to a real file in variants/.
 
-    SKILL.md now forbids opening assets/snippets/*.html at fill time, so a row
-    pointing at a variant that --split never wrote is unrecoverable: the model
-    is told to open a file that does not exist and forbidden from the canonical
-    one it was generated from. Silent before this check; a hard failure now.
+    The variants are the kit's only files, so a row pointing at a variant that
+    does not exist is unrecoverable: the model is told to open a file that is
+    not there, with nothing to fall back on. Silent before this check; a hard
+    failure now.
     """
     idx = os.path.join(skill, "references", "SNIPPET-INDEX.md")
     vdir = os.path.join(skill, "assets", "snippets", "variants")

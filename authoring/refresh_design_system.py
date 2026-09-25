@@ -43,11 +43,9 @@ What it writes, under wpp-es-html-deck/:
   design-system/SOURCE.json                       address, version, sha256 per file
   canon/templates/<id>.html                       the layout's <section>, from its
   assets/snippets/variants/<id>.html              preview; the header above it is the
-                                                  skill's own and is kept
-  assets/snippets/<file>.html                     the same <section> in the kit's
-                                                  authoring source, so
-                                                  derive_capacity.py --split still
-                                                  reproduces the variant
+                                                  skill's own and is kept (a kit
+                                                  variant's capacity block is
+                                                  derive_capacity.py's)
 
 and, outside the skill, the catalogue fields of authoring/canon-src/<id>/meta.json
 (name, use-when, family, form, arity, ground, density, media, focal ratio) from
@@ -501,15 +499,6 @@ def plan(src, artifact, version):
 
 # ── apply, or compare ─────────────────────────────────────────────────────────
 
-def kit_source_for(variant_now, target):
-    """The authoring source that holds this variant's current <section>, verbatim."""
-    hits = [p for p in glob.glob(os.path.join(SKILL, "assets", "snippets", "*.html"))
-            if variant_now in open(p, encoding="utf-8").read()]
-    if len(hits) != 1:
-        raise Fail(f"{target}: its <section> is in {len(hits)} kit sources, expected exactly 1")
-    return hits[0]
-
-
 def run(files, sections, write):
     drift = []
     for rel, (data, _) in files.items():
@@ -520,28 +509,16 @@ def run(files, sections, write):
             if write:
                 os.makedirs(os.path.dirname(p), exist_ok=True)
                 open(p, "wb").write(data)
-    for rel, (section, _, kind) in sections.items():
+    for rel, (section, _, _) in sections.items():
         p = os.path.join(SKILL, rel)
         if not os.path.isfile(p):
             raise Fail(f"{rel} does not exist: a new layout needs its header written first")
         text = open(p, encoding="utf-8").read()
         now = one_section(text, rel)
         if now == section:
-            if kind == "kit":
-                # the variant is current; its authoring source must be too, or the
-                # next derive_capacity.py --split quietly undoes this refresh
-                held = [q for q in glob.glob(os.path.join(SKILL, "assets", "snippets", "*.html"))
-                        if section in open(q, encoding="utf-8").read()]
-                if len(held) != 1:
-                    drift.append(("kit source out of step", rel))
             continue
         drift.append(("section", rel))
         if write:
-            if kind == "kit":
-                srcp = kit_source_for(now, rel)
-                s = open(srcp, encoding="utf-8").read()
-                open(srcp, "w", encoding="utf-8").write(s.replace(now, section, 1))
-                drift.append(("section", os.path.relpath(srcp, SKILL)))
             open(p, "w", encoding="utf-8").write(text.replace(now, section, 1))
     cached = {os.path.relpath(p, SKILL) for p in glob.glob(os.path.join(SKILL, CACHE, "**", "*"), recursive=True)
               if os.path.isfile(p)}

@@ -2,27 +2,30 @@
 """
 derive_capacity.py — WPP ES | MAP HTML Deck Builder
 
-Derives per-template text capacity (min / ideal / max) for every slide template
-in assets/snippets/, and writes:
+Derives per-template text capacity (min / ideal / max) for every kit layout in
+assets/snippets/variants/, one file per layout, and writes:
 
   1. references/capacity.json     — machine-readable catalogue
-  2. an inline <!-- capacity: --> block above each <section class="slide">
+  2. an inline <!-- capacity: --> block above each variant's <section class="slide">
+  3. references/SNIPPET-INDEX.md  — one line per layout (--index)
+
+The <section> itself is the design system's: authoring/refresh_design_system.py
+copies it into the variant, and this script never touches it.
 
 Capacity is MEASURED, never invented. Three independent sources:
 
-  A. The snippet's own example copy. Variant 1 of every file is a calibrated
-     §12.15 recipe that already passes the composition laws, so its measured
-     length IS the ideal.
+  A. The layout's own example copy. Each is a calibrated §12.15 recipe that
+     already passes the composition laws, so its measured length IS the ideal.
   B. Geometry. chars-per-line = container_width / (font_size * char_width_em),
      read from the shell CSS; lines capped per class by the guideline.
   C. The master-PPT empirical distribution (optional --ppt-stats), used to
      sanity-check the ceiling against slides that shipped.
 
 The tightest of the three wins for `max`. Nothing here touches build_shell.py
-or verify_deck.py — this script only reads snippets and writes comments.
+or verify_deck.py — this script only reads the variants and writes comments.
 
 Usage:
-  python3 derive_capacity.py --skill /path/to/wpp-es-html-deck [--write] [--ppt-stats stats.json]
+  python3 derive_capacity.py --skill /path/to/wpp-es-html-deck --demo <deck>.html [--write] [--index] [--ppt-stats stats.json]
 """
 
 import argparse, json, os, re, sys
@@ -53,7 +56,7 @@ def read_frame(demo_html):
     edge = float(m.group(1))
     return edge, CANVAS_W - edge, CANVAS_W - 2 * edge
 FOOTER_Y = 985                             # §15.1 footer band
-GRID_TOP = 260                             # columns.html: grid sits at y=260
+GRID_TOP = 260                             # the columns variants: grid sits at y=260
 COL_GAP = 64
 
 # Average glyph advance as a fraction of font-size, for a grotesque like
@@ -65,7 +68,7 @@ LINE_CAP = {
     "headline":    2,    # §4.5 "sentence-case headlines, max two lines"
     "subtitle":    1,    # locked eyebrow at y=132
     "col-sub":     1,
-    "body":        4,    # columns.html: "2-4 short lines per column"
+    "body":        4,    # the columns family notes: "2-4 short lines per column"
     "takeaway":    2,
     "tbx":         4,
     "bio":         4,
@@ -248,13 +251,9 @@ def main():
     ap.add_argument("--ppt-stats", default=None,
                     help="optional JSON of empirical p90 char counts per slot")
     ap.add_argument("--write", action="store_true",
-                    help="inject <!-- capacity --> blocks into the snippets")
+                    help="write each variant's <!-- capacity --> block")
     ap.add_argument("--index", action="store_true",
                     help="write references/SNIPPET-INDEX.md")
-    ap.add_argument("--split", action="store_true",
-                    help="also emit assets/snippets/variants/ (one template per "
-                         "file, generated; the originals stay canonical). "
-                         "Implies --index. Requires --write first.")
     args = ap.parse_args()
 
     # A missing --demo used to degrade in SILENCE: read_css_metrics returned {}
@@ -280,17 +279,21 @@ def main():
     if args.ppt_stats and os.path.exists(args.ppt_stats):
         ppt = json.load(open(args.ppt_stats))
 
-    sdir = os.path.join(args.skill, "assets", "snippets")
+    vdir = os.path.join(args.skill, "assets", "snippets", "variants")
     catalogue, total = [], 0
 
-    for fn in sorted(os.listdir(sdir)):
+    for fn in sorted(os.listdir(vdir)):
         if not fn.endswith(".html"):
             continue
-        path = os.path.join(sdir, fn)
+        path = os.path.join(vdir, fn)
         src, tpls = split_templates(path)
+        if len(tpls) != 1:
+            sys.exit(f"variants/{fn}: expected one <section class=\"slide\">, found {len(tpls)}")
         inserts = []
 
         for t in tpls:
+            if t["label"] == "—":
+                t["label"] = block_label(src)
             p = SlotExtractor()
             p.feed(t["html"])
             try:
@@ -323,7 +326,7 @@ def main():
 
             slide_total = sum(s["ideal_chars"] * s["items"] for s in slots.values())
             entry = {
-                "file": fn,
+                "file": f"variants/{fn}",
                 "archetype": t["archetype"],
                 "label": t["label"],
                 "slots": slots,
@@ -365,11 +368,22 @@ def main():
 
     print(f"{total} templates measured -> references/capacity.json")
     if args.write:
-        print("capacity blocks injected into snippets")
+        print("capacity blocks written into the variants")
 
-    if args.index or args.split:
-        write_index_and_variants(args.skill, catalogue, do_split=args.split)
+    if args.index:
+        write_index(args.skill, catalogue)
     return catalogue
+
+
+def block_label(src):
+    """The label the last run wrote into the variant's capacity block.
+
+    A variant holds no label comment of its own: the kit's authoring sources did,
+    and they are gone (their notes are in authoring/kit-notes.md). The label
+    survives on the first line of the capacity block, `capacity: <arch> — <label>`,
+    and this script writes it back unchanged."""
+    m = re.search(r"<!--\s*capacity:\s*\S+ — (.*)", src)
+    return m.group(1) if m else "—"          # verbatim: a label cut at 90 can end in a space
 
 
 def _collapse_capacity(text):
@@ -388,27 +402,12 @@ def _short(label):
     return f"V{m.group(1)}", desc[:64]
 
 
-def write_index_and_variants(skill, catalogue, do_split=False):
-    """SNIPPET-INDEX.md — one line per template, so the model picks a variant
-    without opening files to find out what is in them.
-
-    With --split, also emit assets/snippets/variants/<file>-v<N>.html holding a
-    single template each. The originals stay CANONICAL; the variant files are
-    generated, so editing a snippet then re-running this script keeps them in
-    sync. Opening one 1.5 KB variant beats opening a 20 KB snippet to use a
-    tenth of it.
-    """
-    sdir = os.path.join(skill, "assets", "snippets")
-    vdir = os.path.join(sdir, "variants")
-    if do_split:
-        os.makedirs(vdir, exist_ok=True)
-
-    by_file = {}
-    for e in catalogue:
-        by_file.setdefault(e["file"], []).append(e)
-
+def write_index(skill, catalogue):
+    """SNIPPET-INDEX.md — one line per layout, so the model picks a variant
+    without opening files to find out what is in them. Opening one 1.5 KB
+    variant beats opening every file to use a tenth of it."""
     lines = [
-        "# Snippet index — 51 templates, one line each",
+        f"# Snippet index — {len(catalogue)} templates, one line each",
         "",
         "Generated by `scripts/derive_capacity.py --index`. Do not hand-edit.",
         "",
@@ -416,49 +415,27 @@ def write_index_and_variants(skill, catalogue, do_split=False):
         "slide's ideal total; the per-slot min-max lives in the `<!-- capacity -->`",
         "block above each template.",
         "",
-        "The files in `assets/snippets/` are canonical. `variants/` holds the same",
-        "templates split one-per-file and is regenerated from them.",
+        "Each file in `variants/` is one layout from the design system: its slide is",
+        "copied by `authoring/refresh_design_system.py`, its capacity block written",
+        "by `scripts/derive_capacity.py`.",
         "",
         "| archetype | open | chars | what it is |",
         "|---|---|---|---|",
     ]
-
-    written = 0
-    seen = set()
-    for fn in sorted(by_file):
-        src = open(os.path.join(sdir, fn), encoding="utf-8").read()
-        # file-header comment, used when a template carries no variant label
-        hdr = re.search(r"<!--\s*\n?\s*\S+\s*—\s*(.*?)\n", src)
-        fallback = hdr.group(1).strip()[:64] if hdr else ""
-        blocks = re.findall(
-            r'(<!-- capacity:.*?-->\n<section\b[^>]*?class="slide[^"]*".*?</section>)',
-            src, re.S)
-        for i, e in enumerate(by_file[fn]):
-            vtag, desc = _short(e["label"])
-            if not desc or desc == "—":
-                desc = fallback or e["archetype"]
-            stem = fn[:-5]
-            target = f"`{fn}`" + (f" {vtag}" if vtag else "")
-            if do_split and i < len(blocks):
-                vname = f"{stem}-{(vtag or 'v' + str(i + 1)).lower()}.html"
-                if vname in seen:                       # two templates, same tag
-                    vname = f"{stem}-v{i + 1}b.html"
-                seen.add(vname)
-                with open(os.path.join(vdir, vname), "w", encoding="utf-8") as f:
-                    f.write(f"<!-- GENERATED from {fn} by derive_capacity.py "
-                            f"--split. Edit {fn}, not this file. -->\n")
-                    f.write(blocks[i] + "\n")
-                target = f"`variants/{vname}`"
-                written += 1
-            lines.append(
-                f'| {e["archetype"]} | {target} | {e["slide_ideal_chars"]} | {desc} |')
+    for e in catalogue:
+        vtag, desc = _short(e["label"])
+        if not desc or desc == "—":
+            # an unlabelled layout keeps a one-line description in its header
+            src = open(os.path.join(skill, "assets", "snippets", e["file"]), encoding="utf-8").read()
+            hdr = re.search(r"<!--\s*\n?\s*\S+\s*—\s*(.*?)\n", src)
+            desc = hdr.group(1).strip()[:64] if hdr else e["archetype"]
+        lines.append(
+            f'| {e["archetype"]} | `{e["file"]}` | {e["slide_ideal_chars"]} | {desc} |')
 
     out = os.path.join(skill, "references", "SNIPPET-INDEX.md")
     open(out, "w", encoding="utf-8").write("\n".join(lines) + "\n")
     print(f"references/SNIPPET-INDEX.md written ({os.path.getsize(out):,} B, "
           f"~{os.path.getsize(out)//4:,} tokens)")
-    if do_split:
-        print(f"{written} per-variant files -> assets/snippets/variants/")
 
 
 if __name__ == "__main__":
