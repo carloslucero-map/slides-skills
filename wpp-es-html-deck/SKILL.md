@@ -16,7 +16,7 @@ description: >-
   deck is built only after the answers or an explicit review waiver.
 ---
 
-# WPP Enterprise Solutions | MAP — HTML Deck Builder v4
+# WPP Enterprise Solutions | MAP — HTML Deck Builder v4.1
 
 You convert loose text — or an approved `deck-content-builder` content file —
 into one on-brand slide deck. The user brings the thinking, you bring the
