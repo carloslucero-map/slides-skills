@@ -5,6 +5,90 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [4.2.0] — 2026-09-25
+
+The skill stops keeping a copy of the brand of its own. It reads the design
+system's README, guidelines and cards from its copy of the design system, and
+the guideline it used to keep in step by hand is gone.
+
+### Added, in the design system (now version `1790341061-1a78`)
+- The 56 rules the skill's old guideline held and the design system did not,
+  approved as listed on the coverage review: print values for the palette;
+  dark slides and ghost numerals on Navy; contrast measured against what is
+  behind the text; a section of layout laws in guideline 03 (the content
+  edge, the headline and footer bands, overlaps, clearances, alignment,
+  balance, deck rhythm); when a slide may carry dots or a motif, and which
+  one; the motion details (defaults by direction, ambient motion, word by word,
+  step-by-step reveals, no invented animation); the fixed slides' limits (six
+  chapters of about 45 characters, a cover title of two to four words, the
+  optional contact, "Gracias."); the classic divider's second and third dot
+  colours; and the `field-mid` and `field-macro` dot fields.
+- Eleven decisions, as recommended. Dark slides by direction, stated once. A
+  full-bleed motif on posters and stat backdrops, and on any slide of a
+  high-impact deck. No dots over photos. The stricter rule for body copy over
+  halftones. The composition checklist stays the HTML deck's art pass. The
+  progress line as the one exception to "no accent bars". EntTeamRow6's
+  headline in Navy, QuantStatGrid5's highlight by weight only, and the traced
+  layouts' measured orange labels listed as an exception. The Venn redrawn
+  flat. The four identical icon pairs noted. Orange 700 for the halftones.
+  Two layout forms that never shipped dropped.
+- Eleven corrections where the design system contradicted itself or the
+  stylesheet: the divider title is 136 px, Big Statements run to 220 px, one
+  hue per register field (the corner presets mix up to three), the agenda's
+  scatter, Cream icons on Navy, the KPI label, the pinned card link, circles
+  first and bars when needed, hover and the motion durations, the takeaway's
+  brackets, and the token notes.
+
+### Changed, in the skill
+- **The model reads the design system's own words.** The refresh copies the
+  README, the eleven guidelines, every card (one file per group in
+  `design-system/cards/`) and the asset groups' notes
+  (`design-system/asset-notes.md`), verbatim and hash-checked like the rest of
+  the copy. `SKILL.md` has the model read the README, guidelines 01 to 04 and
+  06 and the new `references/HTML-BUILD.md` before building, and another
+  guideline or a card only when its trigger fires. A layout's card, with what
+  it deviates from on purpose, is now at hand on the HTML path too.
+- **`references/HTML-BUILD.md`** is the skill's own file: how the HTML deck is
+  built, filled, run and checked. It keeps the old guideline's section numbers
+  for those parts (§2a, §12.14 to §12.15a, §13, §13.4, §14, §15), which the
+  verifier and the layouts cite, and says where every other number went. Lines
+  the design system or the code had overtaken are corrected on the way: the
+  type floor as the verifier measures it, the card link as the kit ships it (a
+  text link, not a pill), the flat Venn, the motion durations and hover, the
+  recipes' files in `variants/`.
+- `build_shell.py` takes the classic divider's dot colours and the mid and
+  macro fields from the copy, so no brand value is written in the generator.
+- `build_docs.py` is now `check_shared_blocks.py`. It only checks that the
+  house copy rules and the handoff contract still match `deck-content-builder`,
+  and every verify still runs it.
+- The verifier's messages, the generator's comments, the capacity scripts and
+  the templates' own headers cite the design system (guideline 02, the
+  Headline card) instead of retired section numbers. The design system's own
+  previews still cite some; `HTML-BUILD.md` resolves them.
+- `CLAUDE-DESIGN.md` adds the guidelines to the reading order in Claude Design,
+  and falls back on `design-system/` when the design system cannot be found.
+- QuantStatGrid5's capacity loses the orange accent slot the design system
+  removed.
+
+### Removed
+- The skill's downstream guideline: `references/sections/` (20 files),
+  `references/CORE.md`, `build/WPP-ES-DESIGN-GUIDELINE.md` and the stub at
+  `references/WPP-ES-DESIGN-GUIDELINE.md`. With the copy's new files the skill
+  is 184 entries and 4.84 MB (183 and 4.85 MB before).
+
+### Known issues, all in the design system
+- Two traced layouts set labels in Orange 600, which the design system says
+  never carries text: SeqPhasePanels3's phase arcs and SeqStepsPanels5's step
+  labels. The measured-orange exception covers Orange 700 only.
+- ProcessTimelineV4 still fails two verifier checks as it is (see 4.1.3).
+- EntTeamRow6's preview still calls its headline orange in a CSS comment.
+- The chart-label rule for Slides is still only in `CLAUDE-DESIGN.md`.
+
+Decks build as before: across the 1,449 spec combinations the output differs
+only in the flat Venn's two rules and in comments and the placeholder slide's
+hint that named retired sections. The demo deck's verifier transcript is
+unchanged apart from the same wording.
+
 ## [4.1.3] — 2026-09-25
 
 The remaining design-system items from the alignment audit, and the kit's

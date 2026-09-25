@@ -34,15 +34,15 @@ The design system in Claude Design owns what a deck looks like, and the skill's
 copy of it is written by `refresh_design_system.py` alone. A refresh needs an
 agent that can read the design system (Claude Code or claude.ai):
 
-1. Read it with the Artifact tool into one folder: `project/design-system.json`,
-   `project/tokens.json`, `project/components/bundle.css`,
-   `project/guidelines/07-iconography.md`, the fonts `tokens.json` names, the four
-   Fixed slides cards and previews, and every layout card and preview (one
-   `paths` call). Then every asset in `design-system.json`'s asset groups except
-   Logos, one `path` call per blob id.
+1. Read it with the Artifact tool into one folder: every text file its file
+   listing shows (one `paths` call: the README, `design-system.json`,
+   `tokens.json`, `components/bundle.css`, the guidelines, each asset group's
+   `README.md`, and every card's `README.md` and `preview.html`), and the fonts
+   `tokens.json` names. Then every asset in `design-system.json`'s asset groups,
+   one `path` call per blob id.
 2. `python3 authoring/refresh_design_system.py --from <that folder> --artifact
    <design system url> --version <version id> --write`
-3. Prove what changed: `build_docs.py --check`, `check_capacity.py`, and a demo
+3. Prove what changed: `check_shared_blocks.py`, `check_capacity.py`, and a demo
    build and verify, diffed against the build before the refresh.
 4. Commit, naming the version.
 

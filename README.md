@@ -52,22 +52,20 @@ WPP Sans, the dot system, 16:9. **In Claude Design it builds straight into the
 Slides artifact, from the design system itself; everywhere else it writes one
 self-contained HTML file from its copy of the design system.** Ships 25 canon
 templates, a 51-template snippet library, a per-slot capacity model, and a
-verifier that enforces the design guideline.
+verifier that enforces the design system's rules.
 
 | Path | What it holds |
 |---|---|
 | `SKILL.md` | The skill itself — the operating instructions |
-| `design-system/` | The generated copy of the design system: `tokens.json`, `bundle.css`, `fixed-slides.json`, `elements.json`, fonts, logos, icons, illustrations, photos, textures, exemplars, and `SOURCE.json` (version and a sha256 per file) |
+| `design-system/` | The generated copy of the design system: its `README.md`, the eleven `guidelines/`, every card in `cards/` (one file per group), the asset groups' notes, `tokens.json`, `bundle.css`, `fixed-slides.json`, `elements.json`, fonts, logos, icons, illustrations, photos, textures, exemplars, and `SOURCE.json` (version and a sha256 per file) |
+| `references/HTML-BUILD.md` | The skill's own: how the HTML file is built, filled and checked, with the layout laws the verifier enforces |
 | `references/CLAUDE-DESIGN.md` | How to build in Claude Design: the question card, the reading order, the install |
-| `references/CORE.md` | The always-loaded subset of the design guideline, the skill's downstream copy of the brand rules |
-| `references/sections/` | That guideline split by section, loaded on demand; the one place to edit it |
-| `build/WPP-ES-DESIGN-GUIDELINE.md` | The whole guideline in one file, generated like `CORE.md` |
 | `references/SNIPPET-INDEX.md` | All 51 kit layouts, one line each |
 | `references/capacity.json` | Per-slot min/ideal/max character counts |
 | `references/HANDOFF-CONTRACT.md` | The content → render contract |
 | `canon/` | The 25 traced templates and their catalogue |
 | `assets/snippets/variants/` | The 51 kit layouts, one per file: the design system's slide under a measured capacity block |
-| `scripts/` | Shell generator, capacity tooling, halftone generator, guideline builder, verifier, packager |
+| `scripts/` | Shell generator, capacity tooling, halftone generator, verifier, shared-block check, packager |
 
 ## Installation
 
@@ -100,7 +98,7 @@ pip install -r wpp-es-html-deck/requirements.txt
 # Generate a deck shell
 python wpp-es-html-deck/scripts/build_shell.py --out deck.html
 
-# Verify a deck against the design guideline
+# Verify a deck against the design system's rules
 python wpp-es-html-deck/scripts/verify_deck.py deck.html
 python wpp-es-html-deck/scripts/verify_deck.py deck.html --screenshots shots/
 
@@ -112,8 +110,8 @@ python3 scripts/build_shell.py --out /tmp/demo.html
 python3 scripts/derive_capacity.py --skill . --demo /tmp/demo.html --write --index
 python3 ../authoring/canon-tools/derive_canon_capacity.py --demo /tmp/demo.html --write
 
-# Regenerate CORE.md and the whole guideline from references/sections/
-python3 scripts/build_docs.py --write
+# Check that the blocks the two skills share still match (every verify runs it)
+python3 scripts/check_shared_blocks.py
 ```
 
 `verify_deck.py` exits 0 when every check passes (warnings allowed) and 1 on
@@ -132,11 +130,11 @@ The skill decides the surface before it builds. Where a Slides type is
 available it skips `build_shell.py`, `check_capacity.py` and `verify_deck.py`
 and builds from the design system itself:
 [`references/CLAUDE-DESIGN.md`](wpp-es-html-deck/references/CLAUDE-DESIGN.md)
-gives the order to read it in (the README, then the Elements cards, each with
-its inline-style recipe for Slides, then the Fixed slides cards, then the layout
-catalogue and the chosen layout's card), how to install it in the deck, and the
-few Slides rules the design system does not carry yet. It holds no brand values
-of its own.
+gives the order to read it in (the README, the guidelines, then the Elements
+cards, each with its inline-style recipe for Slides, then the Fixed slides
+cards, then the layout catalogue and the chosen layout's card), how to install
+it in the deck, and the one Slides rule the design system does not carry yet.
+It holds no brand values of its own.
 
 Two things are specific to this surface. **The plan gate is a question card**
 (`AskUserQuestion`), because a question typed as prose cannot be clicked there.
@@ -163,25 +161,26 @@ hand, and checked.**
 - [`authoring/refresh_design_system.py`](authoring/refresh_design_system.py)
   is the only writer. An agent that can read the design system saves its files
   and assets with the Artifact tool, then runs the script with `--write`. It
-  writes the tokens, the stylesheet, the fonts and asset groups, the icon family
-  files, `fixed-slides.json` (colourways, both outros, the covers, the agenda's
-  row placement and the dot presets, read from the Fixed slides cards and
-  previews), `elements.json` (the closed list of fine-print roles, from the
-  BodyCopy card), every layout's `<section>`, and the canon catalogue's text,
-  and records the version and a sha256 per file in `SOURCE.json`. `--check`
-  exits 1 when the copy has drifted, and both modes warn when the design
-  system's catalogue stops quoting a layout card.
+  writes the README, the guidelines, every card (one file per group) and the
+  asset groups' notes, which are what the model reads; the tokens, the
+  stylesheet, the fonts and asset groups, the icon family files,
+  `fixed-slides.json` (colourways, both outros, the covers, the agenda's row
+  placement and the dot presets, read from the Fixed slides and DotField cards
+  and the previews), `elements.json` (the closed list of fine-print roles, from
+  the BodyCopy card), every layout's `<section>`, and the canon catalogue's
+  text; and it records the version and a sha256 per file in `SOURCE.json`.
+  `--check` exits 1 when the copy has drifted, and both modes warn when the
+  design system's catalogue stops quoting a layout card.
 - `build_shell.py` builds every deck from the copy: `:root` from the tokens, the
   whole stylesheet from `bundle.css`, the fixed slides from `fixed-slides.json`.
 - `verify_deck.py` fails the deck when any file in `design-system/`, or any
   layout's `<section>`, no longer matches `SOURCE.json`, and takes the palette,
   the grounds and the fine-print roles from the copy.
 
-Almost everything a deck shows now comes from the copy, the logos, both outros,
-all five covers and the agenda's row placement included. What the design system
-does not hold yet stays in `build_shell.py`, marked "not in the design system
-yet": the classic divider's second and third dot colours and two content-slide
-dot fields (`field-mid`, `field-macro`).
+Everything a deck shows comes from the copy: `build_shell.py` writes no brand
+value of its own. And the model reads the brand from the copy too, so there is
+no second, hand-kept version of the rules in the skill: its own
+`references/HTML-BUILD.md` says only how the HTML file is built and checked.
 
 ## Uploading to claude.ai
 
@@ -194,8 +193,8 @@ live, not by a build step, so zipping the folder is a valid upload:
 
 | | cap | now |
 |---|---|---|
-| entries (files + directories) | 200 | **195** — 177 files + 18 directories |
-| size | 30 MB | **4.98 MB** |
+| entries (files + directories) | 200 | **184** — 166 files + 18 directories |
+| size | 30 MB | **4.84 MB** |
 
 ```bash
 python wpp-es-html-deck/scripts/package_skill.py
@@ -227,7 +226,7 @@ python3 -c "import zipfile,sys; z=zipfile.ZipFile(sys.argv[1]); f=[n for n in z.
 ### What keeps it under the cap
 
 A directory costs an entry, same as a file, which makes a directory holding one
-file the most expensive thing in a tree. Two layouts follow from that:
+file the most expensive thing in a tree. Three layouts follow from that:
 
 - **`canon/templates/<id>.html`** — one directory for 25 templates, not 25
   directories holding one file each. 50 entries down to 26.
@@ -236,6 +235,9 @@ file the most expensive thing in a tree. Two layouts follow from that:
   33 entries down to 5. The hard rule is one weight family per slide, so the agent reads
   exactly the family it already has to pick: ~8k tokens for the largest, against
   ~18k if all 32 were merged into a single file.
+- **`design-system/cards/<group>.md`** — the design system's 98 cards in ten
+  files, one per group (the elements, the fixed slides, each layout family),
+  each card under its own `#` heading. 196 entries down to 11.
 
 Everything the skill was *made from* lives in [`authoring/`](authoring/README.md)
 at the repo root — the canon sources, the tools that generate `CATALOG.md` and
@@ -254,17 +256,20 @@ refresh the copy (`authoring/refresh_design_system.py --write`) and commit. Neve
 edit `design-system/` or a layout's `<section>` in the repo: `verify_deck.py`
 fails the deck, and the next refresh would undo it.
 
-**The design guideline is the skill's downstream copy, in three forms.**
-`references/sections/` is the one place to edit it; `references/CORE.md` (the
-always-loaded subset) and `build/WPP-ES-DESIGN-GUIDELINE.md` (the whole of it)
-are generated from it by `scripts/build_docs.py --write`, and `--check` fails
-when either has drifted. When the design system changes a rule, change
-`sections/` to match. Retiring this copy in favour of one generated from the
-design system is planned separately.
+**The skill keeps no copy of the brand rules of its own.** It reads the design
+system's README, guidelines and cards from `design-system/`, and
+`references/HTML-BUILD.md` holds only the HTML mechanics: the self-contained
+file, the kit's composition recipes and checklist, the runtime, and the layout
+laws as the verifier measures them. It keeps the old guideline's section
+numbers, which the verifier's messages and the layouts' comments cite, and a
+table of where every other number went. The old downstream guideline
+(`references/sections/`, `CORE.md` and the whole guideline in `build/`) was
+retired in 4.2.0.
 
 **Two blocks are shared between the skills**, the house copy rules and the
-handoff contract, each written once per skill. `build_docs.py --check` fails
-when the two copies of either differ.
+handoff contract, each written once per skill.
+`scripts/check_shared_blocks.py`, which every verify runs, fails when the two
+copies of either differ.
 
 **Assets are proprietary.** See [`NOTICE.md`](NOTICE.md). This repository is
 private and must stay private.

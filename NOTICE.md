@@ -42,15 +42,17 @@ repository existed. This is a documentation gap, not a known infringement.
 | `photo-ridge.jpg` | — | — | ☐ |
 | `photo-team.webp` | — | — | ☐ |
 
-## Internal contacts referenced in the guideline
+## Internal contacts in the repository's history
 
-The design guideline names an internal contact for sub-brand and partner logo
-creation (§6.2). That contact detail is internal to WPP and is another reason
-this repository stays private.
+The skill's old downstream guideline named an internal contact for sub-brand
+and partner logo creation. That guideline was retired in 4.2.0 and the design
+system does not carry the contact, so no current file names it, but the
+repository's history still does: another reason this repository stays
+private.
 
 ## If this repository is ever opened up
 
 Removing `design-system/fonts/`, `design-system/logos/`,
-`design-system/illustrations/` and `design-system/photos/`, plus the internal contact in §6.2 of the guideline (which
-appears in all three copies of it), is the minimum. The skills would then need a
+`design-system/illustrations/` and `design-system/photos/`, and publishing from
+a history that no longer holds the internal contact above, is the minimum. The skills would then need a
 documented way for users to supply their own brand assets.
