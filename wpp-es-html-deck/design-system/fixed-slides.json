@@ -58,15 +58,52 @@
     "a": "#FF7800",
     "b": "#F9BD5D",
     "c": "#D94E0E"
-   }
+   },
+   "footer": "#000050",
+   "confidential": "#000050"
+  },
+  "dark": {
+   "ground": "#000050",
+   "type": "#FFFFFF",
+   "dots": {
+    "a": "#FAFAF0",
+    "b": "#FFFFFF",
+    "c": "#FF7800"
+   },
+   "footer": "#000050",
+   "confidential": "#FFFFFF"
   }
  },
  "covers": {
-  "default": "WPPOpen_Mountain-01.png",
-  "alternates": [
-   "WPPOpen_Crystal-01.png",
-   "WPPOpen_Coral-01.png"
-  ]
+  "mountain": {
+   "file": "WPPOpen_Mountain-01.png",
+   "placement": "full-bleed"
+  },
+  "crystal": {
+   "file": "WPPOpen_Crystal-01.png",
+   "placement": "right-anchored"
+  },
+  "coral": {
+   "file": "WPPOpen_Coral-01.png",
+   "placement": "right-anchored"
+  },
+  "dots": {
+   "preset": "cover-dots"
+  },
+  "playbook": {
+   "preset": "cover-playbook"
+  }
+ },
+ "agenda": {
+  "rows": {
+   "top": 266,
+   "pitch": 148
+  },
+  "dense": {
+   "chapters": 6,
+   "top": 224,
+   "pitch": 128
+  }
  },
  "dots": {
   "agenda": [
@@ -119,6 +156,38 @@
     1170,
     720,
     "c"
+   ]
+  ],
+  "cover-playbook": [
+   [
+    300,
+    1500,
+    -140,
+    "b"
+   ],
+   [
+    170,
+    1690,
+    150,
+    "b"
+   ],
+   [
+    130,
+    1600,
+    240,
+    "b"
+   ],
+   [
+    90,
+    1350,
+    90,
+    "b"
+   ],
+   [
+    200,
+    1810,
+    340,
+    "b"
    ]
   ],
   "divider": [

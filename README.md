@@ -173,12 +173,11 @@ hand, and checked.**
 - `verify_deck.py` fails the deck when any file in `design-system/`, or any
   layout's `<section>`, no longer matches `SOURCE.json`.
 
-What the design system does not hold yet stays in the skill, each marked where
-it lives: the logos (its uploads render black, so the repo's attribute-coloured
-lockups are kept and listed in `SOURCE.json`), and in `build_shell.py` the dark
-outro, the classic divider's second and third dot colours, the dots and
-playbook covers, how crystal and coral are anchored, three dot presets, and the
-agenda's row placement (the design system's AgendaSlide card has it wrong).
+Almost everything a deck shows now comes from the copy, the logos, both outros,
+all five covers and the agenda's row placement included. What the design system
+does not hold yet stays in `build_shell.py`, marked "not in the design system
+yet": the classic divider's second and third dot colours and two content-slide
+dot fields (`field-mid`, `field-macro`).
 
 ## Uploading to claude.ai
 

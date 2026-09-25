@@ -4,17 +4,17 @@
   "title": "WPP Enterprise Solutions | MAP",
   "namespace": "WppEsMap",
   "artifact": "https://claude.ai/artifact/9iQ9xpaBJj52LsfmKMVYGc",
-  "version": "1790326528-fd00",
+  "version": "1790334182-5d6d",
   "lastChange": {
-   "by": "Claude",
-   "at": "2026-09-25T14:00:00Z",
-   "via": "Claude (claude.ai)",
-   "note": "DividerSlide corrected to the playbook composition with all six colourways, from build_shell.py; \"Thank you.\" and confidential-line details fixed."
+   "by": "Carlos Lucero",
+   "at": "2026-09-25T11:02:45Z",
+   "via": "Claude Code",
+   "note": "Logos re-uploaded with their fill on each shape (the first uploads rendered black); agenda rows placed as the generator places them (266/148, dense 224/128); the dark outro and the dots and playbook covers added; the 80px leftovers corrected to the 40px content edge; the logo rule that had leaked into bundle.css removed."
   }
  },
  "files": {
   "design-system/bundle.css": {
-   "sha256": "d7b40558ce9635ac5ba578f4140cd0909f9917c33cb764558e04ea126c6e0239",
+   "sha256": "eaba626c6885f9775ec9b5e276213fb4baa644e55c8d294c8f971a52998ecad2",
    "from": "project/components/bundle.css"
   },
   "design-system/exemplars/data-forward.png": {
@@ -34,7 +34,7 @@
    "from": "asset Exemplars/statement-led.png (0841145b9a2954f1337f5ae94d88b992)"
   },
   "design-system/fixed-slides.json": {
-   "sha256": "642b5283cb21ffcd76e4252b78858b86e97dd5adf3304d1554599392f84dc145",
+   "sha256": "7629d432de2a8bb623c6d2dfd1efb13eefcc2b5b1f4b487a88c4678daf796eac",
    "from": "Fixed slides cards + layout previews"
   },
   "design-system/fonts/WPP-Bold.woff2": {
@@ -125,6 +125,14 @@
    "sha256": "97053e193aafcc18500fc8f282451d6db2ca3d35f97ecd653c9dd9b3dc7506c9",
    "from": "asset Illustrations/WPPOpen_Rocks-01_Orange.png (0e0cae84d2834d27bbd5313cc57dbdcb)"
   },
+  "design-system/logos/WPP_ES_MAP_logo_NAVY.svg": {
+   "sha256": "5cae3a2603f8a9e5d488e5878dd5bb096cfde9604595d99c2f3f14e168b7f384",
+   "from": "asset Logos/WPP_ES_MAP_logo_NAVY.svg (981458f39661dbc9ec69cb55c259d6fb)"
+  },
+  "design-system/logos/WPP_ES_MAP_logo_WHITE.svg": {
+   "sha256": "22f5e8441b70cfedb8d0608343db77b5d3e42bdfdd49fd792e4bb35ceec1c67f",
+   "from": "asset Logos/WPP_ES_MAP_logo_WHITE.svg (f9a7abe340e2af8c04177cee86f6765e)"
+  },
   "design-system/photos/photo-chess.png": {
    "sha256": "6d263fcbbe9d2d77b75a1f6836eb2b37d55bdaeca2b11a8aa63444ae54854a30",
    "from": "asset Photography/photo-chess.png (631ca3eec1c0c965fdf48a3f20dd77bc)"
@@ -186,7 +194,7 @@
    "from": "asset Textures/orbs-cream.png (56df84c8fe3ed8300532ddd4a50d4c9e)"
   },
   "design-system/tokens.json": {
-   "sha256": "a535e582aea6bc59c95db9d5fccb0369c831129d0d3f9f12b33f307baa3c3d86",
+   "sha256": "89a3737499245a6f06eb806378f5c314095eb8ee8535aa821942403f472edeea",
    "from": "project/tokens.json"
   }
  },
@@ -496,14 +504,5 @@
    "from": "project/components/SeqStepsPanels5/preview.html"
   }
  },
- "exceptions": {
-  "design-system/logos/WPP_ES_MAP_logo_NAVY.svg": {
-   "sha256": "703548d85836ef1ef84192342965db35b89bc86965efc7222e2b13610da34190",
-   "why": "The design system's logo uploads render black: their fill lived in a <style> block, which uploads strip. These are the repo's lockups, coloured by attribute; replace them with the design system's once it is re-uploaded that way."
-  },
-  "design-system/logos/WPP_ES_MAP_logo_WHITE.svg": {
-   "sha256": "b3ef63e190048208678d5de972078ddd11181b8ca5048a4196cad5b8e7e3e645",
-   "why": "The design system's logo uploads render black: their fill lived in a <style> block, which uploads strip. These are the repo's lockups, coloured by attribute; replace them with the design system's once it is re-uploaded that way."
-  }
- }
+ "exceptions": {}
 }

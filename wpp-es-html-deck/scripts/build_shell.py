@@ -127,35 +127,21 @@ MOTIONS = ("full", "subtle", "off")
 DIRECTION_MOTION = {"editorial-quiet": "subtle", "statement-led": "full",
                     "data-forward": "subtle", "high-impact": "full"}
 
-_LIGHT = FIXED["outros"]["light"]
+# The outros are the design system's (ThankYouSlide): ground, type, the three
+# dot colours of the thankyou preset, and the colours of the footer furniture.
 OUTROS = {
-    # the design system's ThankYouSlide: Cream ground, Navy type, its three
-    # dot colours; the footer furniture takes the type colour
-    "light": {"bg": _LIGHT["ground"], "text": _LIGHT["type"], "navy_section": False,
-              "foot": _LIGHT["type"], "edge": _LIGHT["type"], **_LIGHT["dots"]},
-    # Not in the design system yet (its card shows the light outro only).
-    # The big bottom-right dot is cream -> footer/pageno on it stay navy;
-    # the bottom-left confidential line sits on the navy bg -> white.
-    "dark":  {"bg": "#000050", "text": "#FFFFFF", "navy_section": True,
-              "foot": "#000050", "edge": "#FFFFFF",
-              "a": "#FAFAF0", "b": "#FFFFFF", "c": "#FF7800"},
+    name: {"bg": o["ground"], "text": o["type"], "navy_section": o["ground"] == tok("wpp-navy"),
+           "foot": o["footer"], "edge": o["confidential"], **o["dots"]}
+    for name, o in FIXED["outros"].items()
 }
 
-# Registered cover alternates (§12.1a): same locked frame (type block + navy
-# badge untouched) — only the art layer swaps. The art files are the design
-# system's (CoverSlide: the default and its registered alternates). Not in the
-# design system yet: how crystal and coral sit (right-anchored, 1440 px wide),
-# and the dots and playbook covers.
-_ART = {f.split("_")[1].split("-")[0].lower(): f
-        for f in [FIXED["covers"]["default"]] + FIXED["covers"]["alternates"]}
+# Registered covers (§12.1a): same locked frame (type block + navy badge
+# untouched) — only the art layer swaps. The covers are the design system's
+# (CoverSlide): an art file full-bleed or right-anchored, or a dot preset.
 COVERS = {
-    "mountain": {"art": "img-full",  "file": _ART["mountain"]},
-    "crystal":  {"art": "img-right", "file": _ART["crystal"]},
-    "coral":    {"art": "img-right", "file": _ART["coral"]},
-    "dots":     {"art": "css",       "preset": "cover-dots"},
-    # v4: the playbook's own cover language (p.1) — pure type on Cream with a
-    # sparse Orange 600 mid-dot drift off the top-right. Zero raster payload.
-    "playbook": {"art": "css",       "preset": "cover-playbook"},
+    name: ({"art": "img-full" if c["placement"] == "full-bleed" else "img-right", "file": c["file"]}
+           if "file" in c else {"art": "css", "preset": c["preset"]})
+    for name, c in FIXED["covers"].items()
 }
 
 # v4 divider geometry (§12.3): "playbook" = one-hue macro scatter + bottom-pinned
@@ -361,7 +347,7 @@ def title_slide(spec, white_logo_svg):
     cover = COVERS[spec["cover"]]
     if cover["art"] == "img-full":
         art = (f'    <img class="cover-art cover-art--full" '
-               f'src="{motif_uri("mountain")}" alt="">')
+               f'src="data:image/png;base64,{b64(os.path.join(ILLOS, cover["file"]))}" alt="">')
     elif cover["art"] == "img-right":
         art = (f'    <img class="cover-art cover-art--right" '
                f'src="data:image/png;base64,{b64(os.path.join(ILLOS, cover["file"]))}" alt="">')
@@ -386,9 +372,14 @@ def title_slide(spec, white_logo_svg):
   </section>"""
 
 
+# Where the agenda's rows sit, from the design system's AgendaSlide card.
+AGENDA = FIXED["agenda"]
+
+
 def agenda_slide(spec, chapters):
-    dense = len(chapters) == 6
-    top0, step = (224, 128) if dense else (266, 148)
+    dense = len(chapters) == AGENDA["dense"]["chapters"]
+    rows_at = AGENDA["dense"] if dense else AGENDA["rows"]
+    top0, step = rows_at["top"], rows_at["pitch"]
     rows = []
     for i, ch in enumerate(chapters):
         rows.append(
@@ -540,14 +531,9 @@ DOT_ORDER = ("agenda", "divider", "divider-playbook", "thankyou", "cover-dots",
              "field-right", "field-bottom", "field-tl", "field-accent", "field-navy",
              "field-micro", "field-mid", "field-macro")
 
-# Not in the design system yet: the playbook cover's drift (CoverSlide has no
-# dots or playbook cover) and the v4 register fields MID and MACRO. MICRO is
+# Not in the design system yet: the v4 register fields MID and MACRO. MICRO is
 # generated (seeded, byte-stable) by field_micro_defs().
 REPO_DOTS = {
-    "cover-playbook": [
-        [300, 1500, -140, "b"], [170, 1690, 150, "b"], [130, 1600, 240, "b"],
-        [90, 1350, 90, "b"], [200, 1810, 340, "b"],
-    ],
     "field-mid": [
         [420, 1700, -160, "a"], [340, 1330, -120, "a"], [480, 1760, 300, "a"],
         [300, 1420, 260, "a"], [360, 1520, 560, "a"], [260, 1720, 700, "a"],
@@ -578,11 +564,12 @@ def nav_js(spec):
            "divider-playbook": {"a": cw["a"], "b": cw["b"], "c": cw["c"]},
            "thankyou": {"a": ot["a"], "b": ot["b"], "c": ot["c"]}})))
     # Presets: the design system's, then (as build-time data merged over them)
-    # the playbook divider scatter and the presets it does not hold yet.
+    # the playbook divider and cover, and the fields it does not hold yet.
     v4_keys = ("divider-playbook", "cover-playbook", "field-mid", "field-macro", "field-micro")
     dots = json.dumps(_ordered({k: v for k, v in FIXED["dots"].items() if k not in v4_keys}))
     dots_v4 = json.dumps({
         "divider-playbook": FIXED["dots"]["divider-playbook"],
+        "cover-playbook": FIXED["dots"]["cover-playbook"],
         **REPO_DOTS,
         "field-micro": field_micro_defs(),
     })

@@ -159,10 +159,6 @@ system holds it.
   highlights were dropped.
 - **Drop the eyebrow when the headline runs to two lines.** Guideline 06
   says so; the Headline card does not yet.
-- **Logos.** The design system's two logo uploads render black: their fill
-  lived in a `<style>` block, and uploads strip `<style>`. Upload the lockup
-  from this skill's `design-system/logos/` instead, where the fill is on each
-  shape.
 - **Duotone photo.** The HTML deck's `.duo`, property for property:
 
   ```html

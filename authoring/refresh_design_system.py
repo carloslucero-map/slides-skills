@@ -30,13 +30,14 @@ refresh, or a generated file was edited by hand.
 What it writes, under wpp-es-html-deck/:
 
   design-system/tokens.json, bundle.css, fonts/   verbatim
-  design-system/illustrations/, photos/, textures/, exemplars/
+  design-system/logos/, illustrations/, photos/, textures/, exemplars/
                                                   verbatim, one folder per asset group
   design-system/icons/<family>.md                 the Icons group, grouped by the
                                                   weight families in guideline 07
-  design-system/fixed-slides.json                 divider colourways, the light outro,
-                                                  cover art and dot presets, read from
-                                                  the Fixed slides cards and previews
+  design-system/fixed-slides.json                 divider colourways, the two outros,
+                                                  the covers, the agenda's row placement
+                                                  and the dot presets, read from the
+                                                  Fixed slides cards and previews
   design-system/SOURCE.json                       address, version, sha256 per file
   canon/templates/<id>.html                       the layout's <section>, from its
   assets/snippets/variants/<id>.html              preview; the header above it is the
@@ -51,12 +52,9 @@ and, outside the skill, the catalogue fields of authoring/canon-src/<id>/meta.js
 each traced layout's card, then canon-tools/build_catalog.py --write, so the
 skill's canon/CATALOG.md says what the design system's cards say.
 
-Exceptions, kept from the repo and listed in SOURCE.json with the reason:
-
-  design-system/logos/  the design system's two logo uploads render black (their
-                        fill lived in a <style> block, which uploads strip), so the
-                        repo's attribute-coloured lockups stay until they are
-                        re-uploaded.
+Nothing is kept from the repo: SOURCE.json's exceptions list is empty. (Until
+version 1790334182-5d6d the logos were, because the design system's first uploads
+had lost their fill and rendered black; they were re-uploaded on 2026-09-25.)
 """
 import argparse, glob, hashlib, json, os, re, subprocess, sys
 
@@ -83,13 +81,8 @@ MANIFEST = [
      for f in ("README.md", "preview.html")]
 
 # Asset group -> cache folder. Logos are the exception, see the docstring.
-ASSET_DIRS = {"Illustrations": "illustrations", "Photography": "photos",
+ASSET_DIRS = {"Logos": "logos", "Illustrations": "illustrations", "Photography": "photos",
               "Textures": "textures", "Exemplars": "exemplars"}
-LOGOS = "logos"
-LOGO_REASON = ("The design system's logo uploads render black: their fill lived in "
-               "a <style> block, which uploads strip. These are the repo's lockups, "
-               "coloured by attribute; replace them with the design system's once it "
-               "is re-uploaded that way.")
 
 ICON_HEADER = ("# Icon suite — {fam} family ({n})\n\n"
                "ONE weight family per icon row / per slide (guideline 07). Paste the\n"
@@ -281,25 +274,92 @@ def js_object(script, name):
         raise Fail(f"could not read {name} in a preview script: {e}")
 
 
+def card_table(readme, heading, first, where):
+    """The rows of the table under '## <heading>', as {column: cell} (outer backticks off)."""
+    part = readme.split(f"## {heading}", 1)
+    if len(part) < 2:
+        raise Fail(f"{where} has no '{heading}' section")
+    rows = [r for r in part[1].split("\n## ", 1)[0].splitlines() if r.startswith("|")]
+    head = [c.strip() for c in rows[0].strip("|").split("|")] if rows else []
+    if not head or head[0] != first:
+        raise Fail(f"{where}'s {heading} table no longer starts with a {first!r} column")
+    return [dict(zip(head, (c.strip().strip("`") for c in r.strip("|").split("|")))) for r in rows[2:]]
+
+
+def outros(readme):
+    """ThankYouSlide's Outros table: ground, type, the three dot colours (macro, mid,
+    small), and the colours of the footer furniture."""
+    out = {}
+    for row in card_table(readme, "Outros", "Outro", "ThankYouSlide"):
+        dots = HEX.findall(row.get("Dots", ""))
+        vals = [row.get(k, "") for k in ("Ground", "Type", "Brand line and page number",
+                                         "Confidential line")]
+        if len(dots) != 3 or not all(HEX.fullmatch(v) for v in vals):
+            raise Fail(f"ThankYouSlide outro row is not in the form this script reads: {row}")
+        out[row["Outro"]] = {"ground": vals[0].upper(), "type": vals[1].upper(),
+                             "dots": dict(zip("abc", (d.upper() for d in dots))),
+                             "footer": vals[2].upper(), "confidential": vals[3].upper()}
+    if "light" not in out:
+        raise Fail("ThankYouSlide's Outros table has no light outro")
+    return out
+
+
+def covers(readme):
+    """CoverSlide's Covers table: each cover is an art file placed full-bleed or
+    right-anchored, or a dot preset."""
+    out = {}
+    for row in card_table(readme, "Covers", "Cover", "CoverSlide"):
+        art, place = row.get("Art", ""), row.get("Placement", "")
+        preset = re.fullmatch(r"the `([\w-]+)` preset", art)
+        if preset:
+            out[row["Cover"]] = {"preset": preset.group(1)}
+            continue
+        kind = next((k for k in ("full-bleed", "right-anchored") if place.startswith(k)), None)
+        if not (re.fullmatch(r"[\w-]+\.png", art) and kind):
+            raise Fail(f"CoverSlide cover row is not in the form this script reads: {row}")
+        out[row["Cover"]] = {"file": art, "placement": kind}
+    return out
+
+
+def agenda(readme):
+    """AgendaSlide's row placement: the first row's top and the pitch, standard and dense."""
+    place = {r["Part"]: r.get("Place", "") for r in card_table(readme, "Anatomy", "Part", "AgendaSlide")}
+    std = re.search(r"first row's top at y = (\d+)px, one row every (\d+)px", place.get("Rows", ""))
+    dense = re.search(r"agenda of (\d+) chapters; the first row's top at y = (\d+)px, one row every "
+                      r"(\d+)px", place.get("Dense variant", ""))
+    if not (std and dense):
+        raise Fail("AgendaSlide no longer places its rows in the form this script reads")
+    return {"rows": {"top": int(std.group(1)), "pitch": int(std.group(2))},
+            "dense": {"chapters": int(dense.group(1)), "top": int(dense.group(2)),
+                      "pitch": int(dense.group(3))}}
+
+
+def card_presets(readme, colours, where):
+    """Presets a card draws as a Slides recipe, "The `name` preset:" and its svg,
+    back into the previews' form: [diameter, left, top, colour key]."""
+    out = {}
+    for name, svg in re.findall(r"The `([\w-]+)` preset:\s*\n+```html\n(<svg.*?</svg>)", readme, re.S):
+        palette = colours.get(name)
+        if not palette:
+            raise Fail(f"{where}: no preview gives the colours of the {name} preset")
+        key_of = {v: k for k, v in palette.items()}
+        dots = []
+        for cx, cy, r, fill in re.findall(r'<circle cx="(-?[\d.]+)" cy="(-?[\d.]+)" r="([\d.]+)" '
+                                          r'fill="(#[0-9A-Fa-f]{6})"', svg):
+            cx, cy, r = float(cx), float(cy), float(r)
+            key = key_of.get(fill.upper())
+            if key is None or any(v != int(v) for v in (2 * r, cx - r, cy - r)):
+                raise Fail(f"{where}: a circle of the {name} preset is not in its colours or not whole px")
+            dots.append([int(2 * r), int(cx - r), int(cy - r), key])
+        out[name] = dots
+    return out
+
+
 def fixed_slides(src, previews):
     divider = read(src, "project/components/DividerSlide/README.md")
     thanks = read(src, "project/components/ThankYouSlide/README.md")
     cover = read(src, "project/components/CoverSlide/README.md")
-
-    # The light outro: its ground and type from the card's Slides recipe, its
-    # three dot colours from the preview.
-    sec = re.search(r'<section id="thank-you" style="([^"]*)"', thanks)
-    if not sec:
-        raise Fail("ThankYouSlide's Slides recipe has no <section id=\"thank-you\" style=…>")
-    style = dict(p.split(":", 1) for p in (s.strip() for s in sec.group(1).split(";")) if ":" in p)
-    ty_colours = js_object(read(src, "project/components/ThankYouSlide/preview.html"), "DOTCOLORS")
-    outro = {"ground": style["background"].strip().upper(), "type": style["color"].strip().upper(),
-             "dots": {k: v.upper() for k, v in ty_colours["thankyou"].items()}}
-
-    art = re.search(r"\| Art \| `([\w-]+\.png)`", cover)
-    alts = re.search(r"`([\w-]+\.png)` and `([\w-]+\.png)` are the registered alternates", cover)
-    if not (art and alts):
-        raise Fail("CoverSlide no longer names its art as this script expects")
+    agenda_card = read(src, "project/components/AgendaSlide/README.md")
 
     # Dot presets and their fixed colours, from every preview that carries them.
     # A preset is geometry; it must read the same in every preview that has it.
@@ -316,12 +376,18 @@ def fixed_slides(src, previews):
                 if k in into and into[k] != v:
                     raise Fail(f"{table}[{k!r}] differs between previews (seen again in {where})")
                 into[k] = v
+    # and the presets CoverSlide draws only as a recipe (cover-playbook has no preview)
+    for k, v in card_presets(cover, colours, "CoverSlide").items():
+        if k in dots and dots[k] != v:
+            raise Fail(f"CoverSlide's {k} preset differs from the previews' one")
+        dots[k] = v
     return {
         "$comment": "Generated by authoring/refresh_design_system.py from the design "
                     "system's Fixed slides cards and layout previews. Do not edit.",
         "colourways": colourways(divider),
-        "outros": {"light": outro},
-        "covers": {"default": art.group(1), "alternates": [alts.group(1), alts.group(2)]},
+        "outros": outros(thanks),
+        "covers": covers(cover),
+        "agenda": agenda(agenda_card),
         "dots": dict(sorted(dots.items())),
         "dotColours": dict(sorted(colours.items())),
     }
@@ -378,14 +444,6 @@ def plan(src, artifact, version):
         (json.dumps(fixed, indent=1, ensure_ascii=False) + "\n").encode("utf-8"),
         "Fixed slides cards + layout previews")
 
-    exceptions = {}
-    for p in sorted(glob.glob(os.path.join(SKILL, CACHE, LOGOS, "*.svg"))):
-        rel = os.path.relpath(p, SKILL)
-        exceptions[rel] = {"sha256": sha(open(p, "rb").read()), "why": LOGO_REASON}
-    if len(exceptions) != len(groups["Logos"]["order"]):
-        raise Fail(f"expected the {len(groups['Logos']['order'])} logos in {CACHE}/{LOGOS}/, "
-                   f"found {len(exceptions)}")
-
     source = {
         "$comment": "Generated by authoring/refresh_design_system.py. Every file below "
                     "is a copy of the design system; verify_deck.py fails the deck when "
@@ -395,7 +453,7 @@ def plan(src, artifact, version):
                          "version": version, "lastChange": ds.get("lastChange")},
         "files": {p: {"sha256": sha(b), "from": f} for p, (b, f) in sorted(files.items())},
         "sections": {p: {"sha256": sha(s), "from": f} for p, (s, f, _) in sorted(sections.items())},
-        "exceptions": exceptions,
+        "exceptions": {},
     }
     files[f"{CACHE}/SOURCE.json"] = (
         (json.dumps(source, indent=1, ensure_ascii=False) + "\n").encode("utf-8"), None)
@@ -448,7 +506,7 @@ def run(files, sections, write):
             open(p, "w", encoding="utf-8").write(text.replace(now, section, 1))
     cached = {os.path.relpath(p, SKILL) for p in glob.glob(os.path.join(SKILL, CACHE, "**", "*"), recursive=True)
               if os.path.isfile(p)}
-    stray = sorted(cached - set(files) - {r for r in cached if r.startswith(f"{CACHE}/{LOGOS}/")})
+    stray = sorted(cached - set(files))
     for rel in stray:
         drift.append(("not in the design system", rel))
         if write:
