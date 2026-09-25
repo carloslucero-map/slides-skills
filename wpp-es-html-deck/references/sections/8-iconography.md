@@ -4,7 +4,7 @@
 - One colour per icon: **Navy** on light backgrounds (White on Navy). Never multicolour.
 - Six pillar icons exist in the brand system: **Commerce** (overlapping circles), **Customer Experience** (person), **Content Transformation** (stacked frames), **Consulting** (key), **Engineering & Platforms / Technology & Data** (bolt), **1PD, CRM & Loyalty** (chain links).
 
-### 8.1 Icon suite (v3.3 — ships in `assets/icons/`, mined from the MAP deck)
+### 8.1 Icon suite (v3.3 — ships in `design-system/icons/<family>.md`, mined from the MAP deck)
 
 **32 brand icons ship**, normalized to `currentColor` (mono, CSS-recolourable),
 0.5–11 KB each. Paste the SVG **inline** at fill time inside an icon host:

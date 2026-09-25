@@ -176,7 +176,7 @@ file the most expensive thing in a tree. Two layouts follow from that:
 
 - **`canon/templates/<id>.html`** — one directory for 25 templates, not 25
   directories holding one file each. 50 entries down to 26.
-- **`assets/icons/<family>.md`** — the 32 icons grouped into four files by
+- **`design-system/icons/<family>.md`** — the 32 icons grouped into four files by
   §8.1's own weight families, each icon under its own `##` heading. 33 entries
   down to 5. §8.1's hard rule is one weight family per slide, so the agent reads
   exactly the family it already has to pick: ~8k tokens for the largest, against

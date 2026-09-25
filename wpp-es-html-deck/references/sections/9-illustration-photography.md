@@ -8,7 +8,7 @@
 - Composition: illustrations are anchored to an edge/corner and cropped (e.g. mountain range rising from bottom-right of covers), leaving generous clear space for type.
 - New motifs still enter the package only through the registration workflow (§12.1a).
 
-### 9.1a Illustration inventory (as shipped — `assets/illustrations/`)
+### 9.1a Illustration inventory (as shipped — `design-system/illustrations/`)
 
 Exactly **thirteen** files ship (eleven WPP Open motifs + two v4 square-grid conversions). The nine 1920px-class and v4 files have **fully transparent grounds** so the Cream field shows through. The four 964×540 EMF-sourced files — **Rocks and Ribbon, both colourways** — do not: they carry a **baked opaque cream field** around the ink. That is what the "+ cream" in their Colourway column means. They are therefore **cream-ground-only**: on Navy, on a tinted panel or over a photo they print their own background as pale wedges. Navy ink disappearing on Navy is the failure everyone expects; this is the one that gets shipped, because the slide looks populated.
 
@@ -44,7 +44,7 @@ Rules for use:
   each as a `<template data-asset="…">` ready for the fill step. (`bee` was retired in
   v3.5: 560px orphan, below the quality bar.)
 
-### 9.1b Background textures (as shipped — `assets/textures/`, v3.5)
+### 9.1b Background textures (as shipped — `design-system/textures/`, v3.5)
 
 Two full-bleed 1920×1080 dot-field textures, quantized to the brand ramp. They are
 **backdrops, not ink**: place at `z-index` 0 under a whole slide (via `data-motif` +
@@ -100,7 +100,7 @@ base64 `<img>`. Brief supplies none → pick from the §9.2a pack by metaphor
 Nothing fits → swap to the motif/panel sibling variant (splits V3,
 image-content V0). **Never generate photography, never ship a grey box.**
 
-### 9.2a Navy-duotone photo library (as shipped — `assets/photos/`, v3.5)
+### 9.2a Navy-duotone photo library (as shipped — `design-system/photos/`, v3.5)
 
 Thirteen photographs mined from the MAP brand deck itself — already navy-duotone,
 ten of them cut-outs with transparent grounds. **Internal-WPP-use-only** (stock

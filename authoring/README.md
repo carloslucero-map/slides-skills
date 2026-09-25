@@ -11,7 +11,8 @@ reads. Nothing here is read while a deck is being built.
 |---|---|
 | `canon-src/<id>/` | Per template: `meta.json` (what the catalogue is generated from), `spec.json` (what must not change), `measure.json` (geometry off the source slide), `ref.png` (the source slide itself), `preview.png` (what the template renders). 125 files in 25 directories — 150 entries, which is why they are not in the skill. |
 | `canon-tools/` | `build_catalog.py` generates the skill's `canon/CATALOG.md` and `catalog.json` from every `canon-src/<id>/meta.json`. `derive_canon_capacity.py` merges canon limits into `references/capacity.json`. `measure.py` writes a `measure.json`. `build_ref_manifest.py` joins the curated selection to bank page order. |
-| `icons-src/` | The 32 icon SVGs. The skill ships them grouped into four `assets/icons/<family>.md` files by §8.1 weight family — 33 entries down to 5. Edit here, then regenerate. |
+| `refresh_design_system.py` | Writes the skill's copy of the design system, `wpp-es-html-deck/design-system/`, and each layout's `<section>`, from files an agent read with the Artifact tool. One way only: design system to repo. `--check` fails when the copy has drifted. |
+| `icons-src/` | The 32 icon SVGs as they were before the design system took them over. Provenance only: the skill's `design-system/icons/<family>.md` are generated from the design system's Icons group. |
 | `canon-shots/` | Contact sheets from `wpp-es-html-deck/scripts/shoot_snippets.py`. The review surface: most of what is wrong with a template is visible in a PNG in seconds and invisible to every assertion in the verifier. |
 | `canon-ref/` | The source deck the canon was traced from — `renders/` at full resolution, `measure/`, and `manifest.json`. |
 
@@ -21,7 +22,7 @@ reads. Nothing here is read while a deck is being built.
 |---|---|---|
 | `canon/CATALOG.md`, `canon/catalog.json` | `canon-src/<id>/meta.json` + `spec.json` | `canon-tools/build_catalog.py --write` |
 | `canon/PREVIEWS.png` | `canon-src/<id>/preview.png` | `wpp-es-html-deck/scripts/package_skill.py` built it; rebuild with the snippet in that script |
-| `assets/icons/<family>.md` | `icons-src/*.svg` + §8.1's family lists | same |
+| `design-system/` (tokens, stylesheet, fonts, icons, the other asset groups, fixed-slide data, `SOURCE.json`) and every layout `<section>` in `canon/templates/` and `assets/snippets/` | the design system in Claude Design | `refresh_design_system.py --write` |
 | `references/capacity.json` (canon rows) | `canon/templates/<id>.html` + `canon-src/<id>/measure.json` | `canon-tools/derive_canon_capacity.py --write` |
 
 `verify_deck.py` looks for `canon-tools/` and skips its canon checks when it is

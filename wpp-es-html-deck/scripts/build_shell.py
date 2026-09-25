@@ -50,9 +50,12 @@ import argparse, base64, html, json, os, random, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SKILL = os.path.dirname(HERE)
-FONTS = os.path.join(SKILL, "assets", "fonts")
-LOGOS = os.path.join(SKILL, "assets", "logos")
-ILLOS = os.path.join(SKILL, "assets", "illustrations")
+# The brand assets are the design system's, copied into design-system/ by
+# authoring/refresh_design_system.py (SOURCE.json says from which version).
+DS = os.path.join(SKILL, "design-system")
+FONTS = os.path.join(DS, "fonts")
+LOGOS = os.path.join(DS, "logos")
+ILLOS = os.path.join(DS, "illustrations")
 
 FONT_WEIGHTS = [("Thin", 100), ("Light", 300), ("Regular", 400), ("Medium", 500), ("Bold", 700)]
 
@@ -135,7 +138,7 @@ COVERS = {
 DIVIDER_STYLES = ("playbook", "classic")
 
 # Shipped motif-mechanism art, addressable from spec.illustrations. Paths are
-# relative to assets/. Three classes share the one template/clone mechanism:
+# relative to design-system/. Three classes share the one template/clone mechanism:
 # halftone illustrations (§9.1a), full-bleed textures (§9.1b), and the
 # navy-duotone photo library (§9.2a — already duotone: place via data-motif,
 # NEVER wrap these in .duo).
@@ -212,7 +215,7 @@ MOTIF_MIME = {".png": "image/png", ".webp": "image/webp",
 def motif_uri(name):
     rel = MOTIF_FILES[name]
     mime = MOTIF_MIME[os.path.splitext(rel)[1].lower()]
-    return f"data:{mime};base64," + b64(os.path.join(SKILL, "assets", rel))
+    return f"data:{mime};base64," + b64(os.path.join(DS, rel))
 
 
 def esc(s):
@@ -445,7 +448,7 @@ def thankyou_slide(spec):
 
 # Kit v3.3 — icon suite, sparkle accents, duotone photography (mined from the
 # real MAP deck). Icons/sparks are inline SVG normalized to currentColor
-# (assets/icons/*.svg — paste at fill time, CSS recolours). .duo is the ONE
+# (design-system/icons/<family>.md — paste at fill time, CSS recolours). .duo is the ONE
 # sanctioned photo treatment outside .screenshot: navy shadows / cream
 # highlights via grayscale+screen+multiply — works on ANY user image at
 # runtime, no preprocessing, flat by construction.

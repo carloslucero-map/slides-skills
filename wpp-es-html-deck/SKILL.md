@@ -86,8 +86,10 @@ and say so at delivery.
 
 - **In Claude Design**, read the system itself, in the order
   `references/CLAUDE-DESIGN.md` gives.
-- **Everywhere else**, the scripts cannot reach Claude Design. They run on
-  the values this skill carries, which follow the design system.
+- **Everywhere else**, the scripts cannot reach Claude Design, so the skill
+  ships a generated copy in `design-system/`, stamped in
+  `design-system/SOURCE.json` with the version it was read from.
+  `verify_deck.py` fails the deck if any file in it was edited by hand.
 
 Before building, read **`references/CORE.md`** — everything needed to lay out
 ANY slide (canvas, colour, typography, dots, logo, furniture, rhythm, HTML
@@ -111,13 +113,13 @@ Loading the whole guideline when only CORE is needed costs ~14k tokens per
 deck for nothing. `sections/` is the whole guideline split, `CORE.md` a subset
 of it and `build/WPP-ES-DESIGN-GUIDELINE.md` the whole of it in one file: three
 views of one downstream copy. If anything disagrees, the design system wins,
-then the generator, then the guideline.
+then the generator (which reads `design-system/`), then the guideline.
 
 ## The non-negotiables (every deck, no exceptions)
 
 The brand rules below are the design system's, in brief. Their values
 (colours, sizes, positions) live in the system, and for the HTML path in
-the generator and `references/CORE.md`, never in this file.
+its copy in `design-system/`, never in this file.
 
 1. **One deliverable, in the surface's own form** (see "Where the deck
    goes"). In Claude Design: the Slides artifact, with assets uploaded, never
@@ -206,7 +208,7 @@ Everywhere else, present one compact artifact:
   motion: subtle — say so to swap any of these"* (resolve from the chosen or
   default direction before printing);
 - the design-direction question — **show, don't tell: attach or link the four
-  exemplar slides** (`assets/exemplars/editorial-quiet.png` ·
+  exemplar slides** (`design-system/exemplars/editorial-quiet.png` ·
   `statement-led.png` · `data-forward.png` · `high-impact.png`) so the user
   picks from pictures, not names: *"The plan is N slides in M chapters. Which
   design direction should I build? 1 Editorial quiet (default) ·
@@ -434,7 +436,7 @@ the build.** The ones hand-filling most often breaks:
 - Body copy never sits on halftone/texture art; furniture contrast is pixel-
   sampled — keep decorative fills out of the furniture corners (§15.5/15.1).
 
-Icons come from `assets/icons/`, one Markdown file per weight family —
+Icons come from `design-system/icons/`, one Markdown file per weight family —
 `line.md` (9) · `solid.md` (16) · `bold.md` (5) · `accents.md` (2) — each
 icon under its own `##` heading (§8.1 — ONE weight family per
 icon row/slide; deck default is the solid family) pasted **inline** in an
@@ -481,7 +483,7 @@ python scripts/verify_deck.py deck.html --screenshots shots/ --contact-sheet
    overlap / margin / footer-band / grid-drift checks straight from the
    rendered DOM) and **furniture contrast sampling**. Geometry FAILs block
    delivery — fix the layout, re-run, and only then judge aesthetics.
-2. **Read the direction's exemplar first** (`assets/exemplars/<direction>.png`)
+2. **Read the direction's exemplar first** (`design-system/exemplars/<direction>.png`)
    — that image is the bar every slide gets compared against.
 3. **Read `shots/contact-sheet.png` — one image, every slide.** Judge the
    whole-deck criteria there: C6 deck rhythm (does one archetype repeat? do
@@ -561,8 +563,8 @@ non-English decks: **`references/EDGE-CASES.md`**. Open only when one applies.
 
 Each other file is named where it is used. Three rules that live nowhere else:
 
-- **Never read `references/capacity.json`, `assets/exemplars/` or
-  `assets/photos/` into context.** They are script and human inputs;
+- **Never read `references/capacity.json`, `design-system/exemplars/` or
+  `design-system/photos/` into context.** They are script and human inputs;
   `capacity.json` alone is ~11,700 tokens. `check_capacity.py` reads it for you.
 - **Never open `assets/snippets/*.html` at fill time.** Those 13 files are the
   authoring source, up to 6,300 tokens each; the deck reads `variants/` only.

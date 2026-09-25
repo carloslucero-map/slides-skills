@@ -67,7 +67,7 @@ Usage
 Prints one line per check ("PASS/FAIL/WARN name — detail").
 Exit 0 when every check passes (warnings allowed), exit 1 on any failure.
 """
-import argparse, html, json, os, re, shutil, subprocess, sys, tempfile
+import argparse, glob, hashlib, html, json, os, re, shutil, subprocess, sys, tempfile
 
 # Headless Chrome is required for --screenshots and the geometry probe.
 # Resolution order: $WPP_DECK_CHROME, then the usual install paths per platform,
@@ -117,17 +117,29 @@ BANNED_CI = ("lorem ipsum",)
 
 ALLOWED_RADII = {"50%", "999px"}   # dots/circles and pills — nothing else (§13)
 
-# Closed palette (§3.1 primary, §3.2 orange ramp, §3.6 tertiary data-viz sets)
-# plus the generator's own internals (letterbox chrome). 6-digit uppercase.
-PALETTE_HEX = {
-    "000050", "FAFAF0", "FFFFFF",                                   # §3.1
-    "6A290A", "D94E0E", "FF7800", "F9BD5D", "FFF5CD",               # §3.2
-    "FFC8DC", "FFB4B4", "D2BEFF", "80C0F5", "15FFCC", "B4FF64",     # §3.6 light
-    "FFFF78",
-    "8C0050", "500000", "500050", "00423E", "005000", "A0A000",     # §3.6 dark
-    "0A1E78",
-    "0A0A1A",                                                       # stage letterbox
-}
+SKILL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DESIGN_SYSTEM = os.path.join(SKILL_DIR, "design-system")
+
+
+def _design_system_palette():
+    """Every colour token in the design system's tokens.json, 6-digit uppercase.
+
+    The closed palette is the design system's (primary, orange ramp, tertiary
+    data-viz sets). It was a literal here, a second copy of 22 values that
+    nothing kept in step with the brand. Empty when the copy is missing, which
+    check_design_system reports as a FAIL."""
+    try:
+        with open(os.path.join(DESIGN_SYSTEM, "tokens.json"), encoding="utf-8") as f:
+            tokens = json.load(f)["color"]["tokens"]
+    except (OSError, ValueError, KeyError):
+        return set()
+    return {v.lstrip("#").upper() for t in tokens for v in t["value"].values()
+            if re.fullmatch(r"#[0-9A-Fa-f]{6}", v)}
+
+
+# The design system's colours plus the generator's own letterbox chrome, which
+# is stage furniture outside every slide rather than a brand colour.
+PALETTE_HEX = _design_system_palette() | {"0A0A1A"}
 # rgb()/rgba() triples the shell itself emits (translucent navy/cream/orange
 # washes + the one sanctioned black scrim); anything else is off-palette.
 PALETTE_RGB = ({(int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16))
@@ -697,6 +709,65 @@ def check_docs():
     else:
         detail = (p.stderr or p.stdout).strip().replace("\n", " ")[:300]
         report("FAIL", "docs", f"guideline drift — {detail}")
+
+
+def check_design_system():
+    """The brand files are a copy of the design system; nobody edits them here.
+
+    design-system/SOURCE.json records the sha256 of every file the refresh
+    (authoring/refresh_design_system.py) wrote, and of every layout's <section>.
+    A file edited by hand ships a brand the design system does not have, and the
+    next refresh silently undoes it. The refresh cannot run where decks are
+    built, so the deck is where this is caught."""
+    src = os.path.join(DESIGN_SYSTEM, "SOURCE.json")
+    try:
+        with open(src, encoding="utf-8") as f:
+            rec = json.load(f)
+    except (OSError, ValueError) as e:
+        report("FAIL", "design system", f"design-system/SOURCE.json unreadable ({e}) — "
+               "the brand copy cannot be checked")
+        return
+
+    def digest(path):
+        with open(path, "rb") as f:
+            return hashlib.sha256(f.read()).hexdigest()
+
+    bad = []
+    whole = dict(rec.get("files", {}), **rec.get("exceptions", {}))
+    for rel, meta in whole.items():
+        p = os.path.join(SKILL_DIR, rel)
+        if not os.path.isfile(p):
+            bad.append(f"{rel} missing")
+        elif digest(p) != meta["sha256"]:
+            bad.append(f"{rel} edited")
+    for rel, meta in rec.get("sections", {}).items():
+        p = os.path.join(SKILL_DIR, rel)
+        found = (re.findall(r'<section\b[^>]*class="slide[^"]*"[^>]*>.*?</section>',
+                            open(p, encoding="utf-8").read(), re.S)
+                 if os.path.isfile(p) else [])
+        if len(found) != 1:
+            bad.append(f"{rel} missing its <section>")
+        elif hashlib.sha256(found[0].encode("utf-8")).hexdigest() != meta["sha256"]:
+            bad.append(f"{rel} <section> edited")
+    listed = set(whole) | {"design-system/SOURCE.json"}
+    for p in glob.glob(os.path.join(DESIGN_SYSTEM, "**", "*"), recursive=True):
+        rel = os.path.relpath(p, SKILL_DIR).replace(os.sep, "/")
+        if os.path.isfile(p) and rel not in listed:
+            bad.append(f"{rel} is not from the design system")
+    ds = rec.get("designSystem", {})
+    who = f"{ds.get('title', 'the design system')} {ds.get('version', '?')}"
+    if not PALETTE_HEX - {"0A0A1A"}:
+        bad.append("design-system/tokens.json has no readable colour tokens")
+    if bad:
+        report("FAIL", "design system",
+               f"{len(bad)} brand file(s) differ from the copy of {who}: "
+               + "; ".join(bad[:6]) + (f" (+{len(bad) - 6} more)" if len(bad) > 6 else "")
+               + " — change the design system, then refresh "
+                 "(authoring/refresh_design_system.py); never edit these files")
+    else:
+        report("PASS", "design system",
+               f"{len(whole)} files and {len(rec.get('sections', {}))} layout sections "
+               f"match the copy of {who}")
 
 
 def check_photography(slides):
@@ -1714,6 +1785,7 @@ def main():
     check_photography(slides)
     check_rhythm(slides)
     check_docs()
+    check_design_system()
     check_catalog()
     if args.screenshots:
         shots = check_screenshots(args.deck, len(slides), args.screenshots,

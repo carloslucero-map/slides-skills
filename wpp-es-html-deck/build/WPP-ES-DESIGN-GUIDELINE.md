@@ -12,12 +12,12 @@ Compiled from: the **WPP ES Brand Playbook v0.2** (`WPP Enterprise Solutions Gui
 
 | Kind | Files |
 |---|---|
-| **Fonts** (`assets/fonts/`) | 5 woff2: `WPP-Thin` (100) · `WPP-Light` (300) · `WPP-Regular` (400) · `WPP-Medium` (500) · **`WPP-Bold` (700)** |
-| **Logos** (`assets/logos/`) | `WPP_ES_MAP_logo_NAVY.svg` · `WPP_ES_MAP_logo_WHITE.svg` (the full lockup, both colourways) |
-| **Illustrations** (`assets/illustrations/`, see §9.1a for the full v4 inventory) | `WPPOpen_Mountain-01.png` 1920×1072 navy · `WPPOpen_Crystal-01.png` 1920×1072 navy · `WPPOpen_Crystal-01_Orange.png` 1920×1072 orange · `WPPOpen_Coral-01.png` 1920×1072 navy · `WPPOpen_Coral-01_Orange.png` 1920×1072 orange · `WPPOpen_Rocks-01.png` 964×540 navy+cream · `WPPOpen_Bee-01.png` 560×581 navy multi · `WPPOpen_Ribbon-01_Orange.png` 964×540 orange+cream |
+| **Fonts** (`design-system/fonts/`) | 5 woff2: `WPP-Thin` (100) · `WPP-Light` (300) · `WPP-Regular` (400) · `WPP-Medium` (500) · **`WPP-Bold` (700)** |
+| **Logos** (`design-system/logos/`) | `WPP_ES_MAP_logo_NAVY.svg` · `WPP_ES_MAP_logo_WHITE.svg` (the full lockup, both colourways) |
+| **Illustrations** (`design-system/illustrations/`, see §9.1a for the full v4 inventory) | `WPPOpen_Mountain-01.png` 1920×1072 navy · `WPPOpen_Crystal-01.png` 1920×1072 navy · `WPPOpen_Crystal-01_Orange.png` 1920×1072 orange · `WPPOpen_Coral-01.png` 1920×1072 navy · `WPPOpen_Coral-01_Orange.png` 1920×1072 orange · `WPPOpen_Rocks-01.png` 964×540 navy+cream · `WPPOpen_Bee-01.png` 560×581 navy multi · `WPPOpen_Ribbon-01_Orange.png` 964×540 orange+cream |
 | **Snippets** (`assets/snippets/*.html`, 13) | `statement-quote` · `columns` · `boxes` · `comparison` · `image-content` · `team` · `process-timeline` · `stats` · `charts` · `cards` · `splits` · `orbit` · `logo-wall` — variant 1 of each is a full-canvas §12.15 recipe |
-| **Icons** (`assets/icons/`, 27 SVG) | the §8.1 suite, mono `currentColor`, pasted inline (incl. `spark`/`spark-bold` accents) |
-| **Exemplars** (`assets/exemplars/`, 4) | one exemplar slide PNG per design direction — the visual bar for the §12.15a art-direction pass |
+| **Icons** (`design-system/icons/`, 32 icons in four weight-family files) | the §8.1 suite, mono `currentColor`, pasted inline (incl. `spark`/`spark-bold` accents) |
+| **Exemplars** (`design-system/exemplars/`, 4) | one exemplar slide PNG per design direction — the visual bar for the §12.15a art-direction pass |
 | **Scripts** (`scripts/`) | `build_shell.py` (deck-shell generator) · `verify_deck.py` (delivery checks + composition tripwire) · `halftone.py` (dot-illustration converter, §9.1c — authoring-time tool) |
 
 Anything not listed here does not ship in this package — never reference or promise it; use the fallbacks in §13.1.
@@ -359,8 +359,8 @@ Three variations exist in the wider brand system: **Primary** (single line — d
 
 | Use | Shipped file |
 |---|---|
-| On light backgrounds | `assets/logos/WPP_ES_MAP_logo_NAVY.svg` (fill `#000050`, viewBox ratio ≈ 7.42 : 1) |
-| On navy backgrounds / the cover badge | `assets/logos/WPP_ES_MAP_logo_WHITE.svg` |
+| On light backgrounds | `design-system/logos/WPP_ES_MAP_logo_NAVY.svg` (fill `#000050`, viewBox ratio ≈ 7.42 : 1) |
+| On navy backgrounds / the cover badge | `design-system/logos/WPP_ES_MAP_logo_WHITE.svg` |
 
 These are **build-time sources only** — the generator pastes the SVG in as an inline `<svg>` element. The shipped HTML must never reference them by path (§2a). Print/CMYK/Pantone logo variants do not ship in this package.
 
@@ -393,7 +393,7 @@ Every standard content slide carries:
 - One colour per icon: **Navy** on light backgrounds (White on Navy). Never multicolour.
 - Six pillar icons exist in the brand system: **Commerce** (overlapping circles), **Customer Experience** (person), **Content Transformation** (stacked frames), **Consulting** (key), **Engineering & Platforms / Technology & Data** (bolt), **1PD, CRM & Loyalty** (chain links).
 
-### 8.1 Icon suite (v3.3 — ships in `assets/icons/`, mined from the MAP deck)
+### 8.1 Icon suite (v3.3 — ships in `design-system/icons/<family>.md`, mined from the MAP deck)
 
 **32 brand icons ship**, normalized to `currentColor` (mono, CSS-recolourable),
 0.5–11 KB each. Paste the SVG **inline** at fill time inside an icon host:
@@ -451,7 +451,7 @@ styles of a glyph exist (`flow`/`workflow`), the family decides for you.
 - Composition: illustrations are anchored to an edge/corner and cropped (e.g. mountain range rising from bottom-right of covers), leaving generous clear space for type.
 - New motifs still enter the package only through the registration workflow (§12.1a).
 
-### 9.1a Illustration inventory (as shipped — `assets/illustrations/`)
+### 9.1a Illustration inventory (as shipped — `design-system/illustrations/`)
 
 Exactly **thirteen** files ship (eleven WPP Open motifs + two v4 square-grid conversions). The nine 1920px-class and v4 files have **fully transparent grounds** so the Cream field shows through. The four 964×540 EMF-sourced files — **Rocks and Ribbon, both colourways** — do not: they carry a **baked opaque cream field** around the ink. That is what the "+ cream" in their Colourway column means. They are therefore **cream-ground-only**: on Navy, on a tinted panel or over a photo they print their own background as pale wedges. Navy ink disappearing on Navy is the failure everyone expects; this is the one that gets shipped, because the slide looks populated.
 
@@ -487,7 +487,7 @@ Rules for use:
   each as a `<template data-asset="…">` ready for the fill step. (`bee` was retired in
   v3.5: 560px orphan, below the quality bar.)
 
-### 9.1b Background textures (as shipped — `assets/textures/`, v3.5)
+### 9.1b Background textures (as shipped — `design-system/textures/`, v3.5)
 
 Two full-bleed 1920×1080 dot-field textures, quantized to the brand ramp. They are
 **backdrops, not ink**: place at `z-index` 0 under a whole slide (via `data-motif` +
@@ -543,7 +543,7 @@ base64 `<img>`. Brief supplies none → pick from the §9.2a pack by metaphor
 Nothing fits → swap to the motif/panel sibling variant (splits V3,
 image-content V0). **Never generate photography, never ship a grey box.**
 
-### 9.2a Navy-duotone photo library (as shipped — `assets/photos/`, v3.5)
+### 9.2a Navy-duotone photo library (as shipped — `design-system/photos/`, v3.5)
 
 Thirteen photographs mined from the MAP brand deck itself — already navy-duotone,
 ten of them cut-outs with transparent grounds. **Internal-WPP-use-only** (stock

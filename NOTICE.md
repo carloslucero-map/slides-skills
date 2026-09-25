@@ -5,20 +5,21 @@ It is not licensed for distribution, and it must not be made public.
 
 ## Why this repository cannot be public
 
-`wpp-es-html-deck/assets/` ships brand and media assets that are not ours to
-redistribute:
+`wpp-es-html-deck/design-system/` ships brand and media assets that are not
+ours to redistribute. They are a copy of the WPP Enterprise Solutions | MAP
+design system's, written by `authoring/refresh_design_system.py`:
 
 | Asset set | Files | Status |
 |---|---|---|
-| `assets/fonts/` | 5 × WPP Sans `.woff2` (Thin, Light, Regular, Medium, Bold) | **Proprietary WPP corporate typeface.** Licensed for WPP use only. Never redistribute, never embed in anything leaving WPP. |
-| `assets/logos/` | WPP ES \| MAP lockups (Navy, White) | **Proprietary WPP trademark.** Use is governed by the brand guideline; see §6 of the design guideline. |
-| `assets/illustrations/` | WPP Open and MAP motif artwork | **Proprietary WPP artwork.** |
-| `assets/photos/` | 13 photographs | **Provenance not recorded at import.** Verify licensing before any external or client-facing use. See below. |
-| `assets/textures/`, `assets/icons/`, `assets/exemplars/` | Generated or derived from the brand guideline | Internal. |
+| `design-system/fonts/` | 5 × WPP Sans `.woff2` (Thin, Light, Regular, Medium, Bold) | **Proprietary WPP corporate typeface.** Licensed for WPP use only. Never redistribute, never embed in anything leaving WPP. |
+| `design-system/logos/` | WPP ES \| MAP lockups (Navy, White) | **Proprietary WPP trademark.** Use is governed by the brand guideline; see §6 of the design guideline. |
+| `design-system/illustrations/` | WPP Open and MAP motif artwork | **Proprietary WPP artwork.** |
+| `design-system/photos/` | 13 photographs | **Provenance not recorded at import.** Verify licensing before any external or client-facing use. See below. |
+| `design-system/textures/`, `design-system/icons/`, `design-system/exemplars/` | Generated or derived from the brand guideline | Internal. |
 
 ## Photography — action required
 
-The 13 files in `assets/photos/` were carried over without a recorded source or
+The 13 files in `design-system/photos/` were carried over without a recorded source or
 licence. Before any of them appears in a **client-facing or externally published**
 deck, confirm the licence for that specific image and record it here.
 
@@ -49,7 +50,7 @@ this repository stays private.
 
 ## If this repository is ever opened up
 
-Removing `assets/fonts/`, `assets/logos/`, `assets/illustrations/` and
-`assets/photos/`, plus the internal contact in §6.2 of the guideline (which
+Removing `design-system/fonts/`, `design-system/logos/`,
+`design-system/illustrations/` and `design-system/photos/`, plus the internal contact in §6.2 of the guideline (which
 appears in all three copies of it), is the minimum. The skills would then need a
 documented way for users to supply their own brand assets.

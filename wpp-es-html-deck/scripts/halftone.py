@@ -33,14 +33,22 @@ from PIL import Image, ImageChops, ImageDraw
 MAX_BYTES = 300 * 1024
 SUPERSAMPLE = 2
 
-FG = {
-    "navy": "#000050",
-    "orange": "#FF7800",
-    "orange-800": "#D94E0E",
-    "white": "#FFFFFF",
-    "cream": "#FAFAF0",
-}
-BG = {"none": None, "white": "#FFFFFF", "cream": "#FAFAF0"}
+# Inks and grounds by name, their values read from the design system's colour
+# tokens (design-system/tokens.json) rather than restated here.
+TOKENS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                      "design-system", "tokens.json")
+
+
+def _token_hex(names):
+    import json
+    with open(TOKENS, encoding="utf-8") as f:
+        tokens = {t["name"]: t["value"]["light"] for t in json.load(f)["color"]["tokens"]}
+    return {k: tokens[v].upper() for k, v in names.items()}
+
+
+FG = _token_hex({"navy": "wpp-navy", "orange": "orange-700", "orange-800": "orange-800",
+                 "white": "wpp-white", "cream": "wpp-cream"})
+BG = dict(none=None, **_token_hex({"white": "wpp-white", "cream": "wpp-cream"}))
 
 # Playbook p.33 printed defaults.
 SPACING = 10.0

@@ -161,7 +161,7 @@ system holds it.
   says so; the Headline card does not yet.
 - **Logos.** The design system's two logo uploads render black: their fill
   lived in a `<style>` block, and uploads strip `<style>`. Upload the lockup
-  from this skill's `assets/logos/` instead, where the fill is on each
+  from this skill's `design-system/logos/` instead, where the fill is on each
   shape.
 - **Duotone photo.** The HTML deck's `.duo`, property for property:
 

@@ -14,16 +14,17 @@ THIS FOLDER IS THE SKILL. It is kept under the cap by where things live, not by
 a build step, so `zip -rX` on it is a valid upload and so is this script's
 output. Authoring material sits in authoring/ at the repo root, outside the
 skill: the canon sources each template was traced from, the tools that generate
-CATALOG.md and catalog.json, the individual icon SVGs, the contact sheets. None
-of it is read while a deck is being built.
+CATALOG.md and catalog.json and the design-system copy, the individual icon SVGs,
+the contact sheets. None of it is read while a deck is being built.
 
 Two layouts exist because a directory costs an entry, so a directory holding one
 file is the most expensive thing in a tree:
 
     canon/templates/<id>.html      one directory, not 25
-    assets/icons/<family>.md       four files, not 32 — grouped by §8.1's own
-                                   weight families, which is the unit the agent
-                                   has to pick anyway
+    design-system/icons/<family>.md
+                                   four files, not 32 — grouped by the design
+                                   system's own weight families, which is the
+                                   unit the agent has to pick anyway
 
 DO NOT COMPRESS THIS FOLDER WITH FINDER. macOS writes a __MACOSX/._name shadow
 entry for every file carrying an extended attribute, and every file in a folder
@@ -71,7 +72,7 @@ def area(rel):
     p = rel.split("/")
     if len(p) == 1:
         return "(root)"
-    if p[0] in ("assets", "references", "canon") and len(p) > 2:
+    if p[0] in ("assets", "references", "canon", "design-system") and len(p) > 2:
         return f"{p[0]}/{p[1]}"
     return p[0]
 

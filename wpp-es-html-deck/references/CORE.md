@@ -359,8 +359,8 @@ Three variations exist in the wider brand system: **Primary** (single line — d
 
 | Use | Shipped file |
 |---|---|
-| On light backgrounds | `assets/logos/WPP_ES_MAP_logo_NAVY.svg` (fill `#000050`, viewBox ratio ≈ 7.42 : 1) |
-| On navy backgrounds / the cover badge | `assets/logos/WPP_ES_MAP_logo_WHITE.svg` |
+| On light backgrounds | `design-system/logos/WPP_ES_MAP_logo_NAVY.svg` (fill `#000050`, viewBox ratio ≈ 7.42 : 1) |
+| On navy backgrounds / the cover badge | `design-system/logos/WPP_ES_MAP_logo_WHITE.svg` |
 
 These are **build-time sources only** — the generator pastes the SVG in as an inline `<svg>` element. The shipped HTML must never reference them by path (§2a). Print/CMYK/Pantone logo variants do not ship in this package.
 
