@@ -702,29 +702,26 @@ def check_catalog():
 
 
 def check_docs():
-    """The guideline's three forms must agree. Runs build_docs.py --check.
-
-    CORE.md and the master are generated from references/sections/. When someone
-    edits a generated file directly the change survives locally and vanishes on
-    the next --write, and until then the three forms disagree with nobody the
-    wiser. That happened during the frame-constants work, inside an hour.
-    """
-    script = os.path.join(os.path.dirname(os.path.abspath(__file__)), "build_docs.py")
+    """The two blocks this skill shares with deck-content-builder (the house copy
+    rules and the handoff contract) must stay byte-identical. Runs
+    check_shared_blocks.py, which skips itself where deck-content-builder is
+    not beside the skill (an uploaded skill has no sibling)."""
+    script = os.path.join(os.path.dirname(os.path.abspath(__file__)), "check_shared_blocks.py")
     if not os.path.isfile(script):
-        report("WARN", "docs", "build_docs.py missing — guideline drift not checked")
+        report("WARN", "docs", "check_shared_blocks.py missing — shared blocks not checked")
         return
     try:
-        p = subprocess.run([sys.executable, script, "--check"],
+        p = subprocess.run([sys.executable, script],
                            capture_output=True, text=True, timeout=60)
     except (subprocess.TimeoutExpired, OSError) as e:
-        report("WARN", "docs", f"build_docs.py --check did not run ({e})")
+        report("WARN", "docs", f"check_shared_blocks.py did not run ({e})")
         return
     if p.returncode == 0:
-        report("PASS", "docs", p.stdout.strip().replace("DOCS OK — ", "", 1)
-               or "CORE.md and the master match references/sections/")
+        report("PASS", "docs", p.stdout.strip().replace("SHARED BLOCKS OK — ", "", 1)
+               or "both shared blocks match deck-content-builder")
     else:
         detail = (p.stderr or p.stdout).strip().replace("\n", " ")[:300]
-        report("FAIL", "docs", f"guideline drift — {detail}")
+        report("FAIL", "docs", f"shared block drift — {detail}")
 
 
 def check_design_system():
