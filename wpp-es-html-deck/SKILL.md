@@ -417,8 +417,9 @@ ink — never guess direction from the sign (§10.1).
 
 **Layout laws (§15) bind the fill step — the verifier measures them and FAILs
 the build.** The ones hand-filling most often breaks:
-- Text glyphs stay inside x 80–1840 and above the y 985 footer band; only
-  furniture lives in the footer band (§15.1).
+- Text glyphs stay inside x 32–1888 (the content edge, `--m-edge`, with 8 px
+  of glyph tolerance) and above the y 985 footer band; only furniture lives
+  in the footer band (§15.1).
 - Text never overlaps text; decoration never covers >30% of a text block
   (deliberate exceptions carry `data-text-safe="true"` and get eyeballed);
   rules/stems/vrules keep ≥24px from glyphs — 40px for display numerals

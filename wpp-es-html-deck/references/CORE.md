@@ -45,18 +45,18 @@ trigger applies:
 
 Layout maths that the shipped generator actually uses (all values from `scripts/build_shell.py`):
 
-- Left/right content edge: **80 px**.
-- Headline block: y = **28 px**, max-width 1760 px, one or two lines max.
-- Optional eyebrow subtitle: y = **132 px** (see §7.1).
-- Content band: y = **260 px** to **960 px** (`.content-band`: top 260, bottom inset 120).
-- Source/citation line: bottom-left, left 80 / bottom 60 px.
-- Footer furniture: brand line right 80 / bottom 34; page number right 80 / bottom 14 (see §7.3).
-- Column widths on the 1760 px content band (shipped grid gaps 80/80/56):
-  - 1 column: 1760 px · 2 columns: **840 px** each (gap 80) · 3 columns: **≈533 px** each (gap 80) · 4 columns: **398 px** each (gap 56).
+- Left/right content edge: **40 px** (`--m-edge`); **56 px** (`--m-text`) for a column of running copy.
+- Headline block: at (40, **73**) px, max-width 1840 px (the canvas less both edges), one or two lines max.
+- Optional eyebrow subtitle: y = **177 px** (see §7.1).
+- Content band: x 40–1880, y = **305 px** to **1020 px** (`.content-band`: `--band-top` 305, `--band-bottom` inset 60). The column grid (`.cols`) starts higher, at y 260.
+- Source/citation line: bottom-left, left 40 / bottom 60 px.
+- Footer furniture: brand line right 40 / bottom 34; page number right 40 / bottom 14 (see §7.3).
+- Column widths on the 1800 px column grid (`.cols`: x 40 to 1840, right inset 80; shipped gaps 80/80/56):
+  - 1 column: 1800 px · 2 columns: **860 px** each (gap 80) · 3 columns: **≈547 px** each (gap 80) · 4 columns: **408 px** each (gap 56).
 
 **Whitespace rule:** whitespace must be **shaped** and deliberate — asymmetric, counterweighted by the composition, never leftover. Never fill the canvas with text; fill it with composition (§12.15). Leftover whitespace below y = 700 is the #1 rejected-deck signature (§12.15a C2; v4 tightened the tripwire — WARN ≥ 0.83, FAIL ≥ 0.92 background fraction in the content band). Big Statement and divider slides intentionally leave 40–60 % of the canvas empty (or covered only by background dots) — that air is registered and deliberate.
 
-**Margin-consistency law (v4, enforced §15.9):** the content edge is one line, deck-wide. On every non-bleed content slide the leftmost text block starts at **x = 80** (±6 px measured) and the headline sits exactly at x = 80. The only sanctioned departures are **declared edge-bleed media** (§12.9 v4 — media anchored to canvas edges/corners, marked by the `.media--bleed-*`/`.media--corner` utilities or a panel/canvas composition that owns the full height) and the locked slides. A slide whose text edge wanders (x = 96 here, x = 120 there) reads as a different deck — the verifier WARNs on it.
+**Margin-consistency law (v4, enforced §15.9):** the content edge is one line, deck-wide. On every non-bleed content slide the leftmost text block and the headline start at the content edge, **x = 40** (`--m-edge`), or at the text edge, **x = 56** (`--m-text`), ±6 px measured. The only sanctioned departures are **declared edge-bleed media** (§12.9 v4 — media anchored to canvas edges/corners, marked by the `.media--bleed-*`/`.media--corner` utilities or a panel/canvas composition that owns the full height) and the locked slides. A slide whose text edge wanders (x = 96 here, x = 120 there) reads as a different deck — the verifier WARNs on it.
 
 ---
 
@@ -374,18 +374,18 @@ Every standard content slide carries:
 
 ### 7.1 Headline zone (top-left, full width)
 
-- Headline: WPP Light 54 px, Navy, sentence case, max two lines, at (80, 28) px, max-width 1760 px.
-- Optional **eyebrow subtitle**: WPP Medium 24 px ALL CAPS **Orange 800** at y = 132 (`.subtitle` — one of the sanctioned orange moments, §1.4). *Drop it when the headline runs to two lines.*
+- Headline: WPP Light 54 px, Navy, sentence case, max two lines, at (40, 73) px, max-width 1840 px.
+- Optional **eyebrow subtitle**: WPP Medium 24 px ALL CAPS **Orange 800** at (40, 177) (`.subtitle` — one of the sanctioned orange moments, §1.4). *Drop it when the headline runs to two lines.*
 
 ### 7.2 Source line (bottom-left)
 
-- "Source: …" WPP Light 12 px Navy at left 80 / bottom 60 px. Only when citing.
+- "Source: …" WPP Regular 12 px Navy at left 40 / bottom 60 px. Only when citing.
 
 ### 7.3 Footer strip
 
-- Bottom-left: `PRIVATE & CONFIDENTIAL` — 11 px ALL CAPS at left 80 / bottom 14. **Wired to the `confidential: true` spec key** — the generator adds it to every non-cover slide; the Spanish rendering (`PRIVADO Y CONFIDENCIAL`) comes automatically with `lang:"es"`, and any other language via the `strings` spec key.
-- Bottom-right: **`WPP Enterprise Solutions | MAP`** — WPP **Bold 700** 16 px Navy (White on dark slides), at right 80 / bottom 34.
-- Far bottom-right: page number — 11 px, at right 80 / bottom 14. The `.pageno` element ships **empty**: page numbers are computed at runtime from the live slide count (see §14.5) — never hand-number.
+- Bottom-left: `PRIVATE & CONFIDENTIAL` — 11 px ALL CAPS at left 40 / bottom 14. **Wired to the `confidential: true` spec key** — the generator adds it to every non-cover slide; the Spanish rendering (`PRIVADO Y CONFIDENCIAL`) comes automatically with `lang:"es"`, and any other language via the `strings` spec key.
+- Bottom-right: **`WPP Enterprise Solutions | MAP`** — WPP **Bold 700** 16 px Navy (White on dark slides), at right 40 / bottom 34.
+- Far bottom-right: page number — 11 px, at right 40 / bottom 14. The `.pageno` element ships **empty**: page numbers are computed at runtime from the live slide count (see §14.5) — never hand-number.
 - Covers have no footer strip (the logo badge takes its place). Dividers/outros keep the brand line + page number, with contrast handled automatically by the colourway's `foot`/`edge` roles (§11).
 
 ---
@@ -494,8 +494,8 @@ the ruler.
 
 | Zone | Reserved for | Law |
 |---|---|---|
-| x < 80 · x > 1840 | margins | No text glyph starts left of x 80 or ends past x 1840. Decorative art bleeds freely; text never does. |
-| y 28–132 | headline block | Only `.headline` (+ `.subtitle` at 132). Content never rises above y 240 except panel/canvas compositions that own the full height. |
+| x < 32 · x > 1888 | margins | No text glyph starts left of x 32 or ends past x 1888: the content edge (`--m-edge`, 40 px) with 8 px of glyph tolerance, read from the deck itself. Decorative art bleeds freely; text never does. |
+| y 73–201 | headline block | Only `.headline` (+ `.subtitle` at 177). Content never rises above y 240 except panel/canvas compositions that own the full height. |
 | y 985–1080 | footer furniture | Only `.footer-brand`, `.pageno`, `.confidential`, `.source`. No other TEXT enters this band, ever. |
 | Furniture anchor corners — bottom-left (0–420, 1000–1080) and bottom-right (1500–1920, 1000–1080) | furniture legibility | Decorative fills entering these corners must leave the furniture readable: the verifier samples the pixels under each furniture line and fails contrast < 2:1 (warns < 3:1). White/Cream shapes under Navy text pass; same-tone shapes under same-tone text are the classic failure (a cream dot under the cream `PRIVATE & CONFIDENTIAL` line on a navy slide). |
 
@@ -514,7 +514,7 @@ the ruler.
    may cross *sparse* texture only when the art-direction pass confirms
    contrast by eye; paragraphs (< 28px) never do. The §12.8 `.compare-art`
    centrepiece is sized by CSS (`width:100%` on its img — never remove it);
-   its text zones at x 80–500 / 1420–1840 exist because the art stays inside
+   its text zones at x 40–410 / 1470–1840 exist because the art stays inside
    x 478–1442.
 4. **Ghost numerals (`.num-ghost`) live in text-free zones.** Same-colour
    ghost + statement = both illegible. Differentiate by POSITION (right/below
@@ -583,7 +583,8 @@ the ruler.
 
 ### 15.6 Vertical balance
 
-Content bands centre between the headline bottom (y ≈ 132) and their anchor
+Content bands centre between the headline block's bottom (y ≈ 201 with the
+eyebrow, ≈ 122 for a one-line headline without it) and their anchor
 (takeaway top y ≈ 877, or the footer band). Top-heavy compositions with all
 mass above the fold and 40%+ empty below read as unfinished — anchor the
 bottom (takeaway / ruler / KPI band / field) or centre the mass.
@@ -616,7 +617,9 @@ each one is wired into the shell, listed here so nobody undoes it:
 ### 15.9 Placement laws (v4): the content edge and media anchoring
 
 1. **Content-edge conformance.** On every non-bleed content slide the leftmost
-   text block starts at x = 80 ± 6 and the `.headline` sits at exactly x = 80.
+   text block starts at the deck's content edge, x = 40 (`--m-edge`), or its
+   text edge, x = 56 (`--m-text`), ± 6. The verifier reads both edges from the
+   deck and WARNs when the `.headline` sits at neither.
    Slides whose text edge wanders are WARNed (§2). Panel/canvas compositions
    that own the full height, edge-bled media, and the locked slides are exempt.
 2. **Media anchoring.** Any rendered media block ≥ 200 × 200 px (`<img>`, motif

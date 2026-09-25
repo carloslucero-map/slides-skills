@@ -603,8 +603,8 @@ def base_css(spec):
   --accent:var(--orange-700);
   /* v4 semantic data colours (§3.8): favourable numbers glow, unfavourable stay ink */
   --data-pos:var(--orange-700); --data-neg:var(--wpp-navy);
-  /* v4 layout tokens (§2): 40px module, 80px content edge — deviating from these
-     is what the §15.9 content-edge probe flags */
+  /* v4 layout tokens (§2): 40px module, 40px content edge (56px for running
+     copy) — deviating from these is what the §15.9 content-edge probe flags */
   --grid:40px; --m-edge:40px; --m-text:56px; --band-top:305px; --band-bottom:60px;
   /* Per-deck sanctioned choices (spec keys) — defaults are the v1 look */
   --dv-bg:{cw['bg']}; --dv-text:{cw['text']}; --dv-sub:{cw['sub']};
