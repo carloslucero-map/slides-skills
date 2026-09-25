@@ -5,6 +5,33 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [4.1.2] — 2026-09-25
+
+The last design-system notes from the alignment audit, and the skill following
+them.
+
+### Fixed, in the design system (now version `1790335932-06d5`)
+- The Headline card gives the Slides highlight its numbers. The gap between
+  the flex row's blocks is one word space, measured in the WPP faces: 15 px at
+  54 px, 18 px at 64 px, 14 px for the 48 px capitals. Only a headline of at
+  most 60 characters (50 at 64 px, 55 in capitals) is split; a longer one, or
+  one an edit takes past its limit, stays one `<h2>` and drops the highlight.
+- The Headline card says to drop the eyebrow when the headline runs to two
+  lines, as guideline 06 already did.
+- Provenance. Guideline 11, the README and the `tokens.json` `meta` say the
+  system is edited in Claude Design, the repository copies it one way, and it
+  is never re-synced from the repository. Gone: the note that treated the
+  repository as the source, and the old repository paths in `meta`.
+- The 25 traced layouts' Origin lines point at `canon/templates/<id>.html` and
+  `authoring/canon-src/<id>/`, where those files now live.
+
+### Changed, in the skill
+- `CLAUDE-DESIGN.md` drops the highlight and eyebrow notes, which the Headline
+  card now carries. Saying which highlights were dropped moves into the
+  delivery step.
+- The design-system copy is refreshed. Only `tokens.json` (its `meta`) and
+  `SOURCE.json` change.
+
 ## [4.1.1] — 2026-09-25
 
 The design-system fixes approved after 4.1.0, and the skill following them.
