@@ -4,12 +4,12 @@
   "title": "WPP Enterprise Solutions | MAP",
   "namespace": "WppEsMap",
   "artifact": "https://claude.ai/artifact/9iQ9xpaBJj52LsfmKMVYGc",
-  "version": "1790337247-f9ce",
+  "version": "1790339500-0d7c",
   "lastChange": {
    "by": "Carlos Lucero",
-   "at": "2026-09-25T11:53:37Z",
+   "at": "2026-09-25T12:31:29Z",
    "via": "Claude Code",
-   "note": "A Photo element: the Slides recipe for the navy duotone, which photos take it, and the media anchoring rule; the Motion guideline's Slides rules (fade transitions, push between chapters, build-ins on pinned children only); BodyCopy's closed list of fine-print roles, the only text allowed between 16 and 20px; the README catalogue quotes each layout card's When to use it, and the kit cards' shared sentence moves into the README."
+   "note": "Typography guideline: the floors table follows BodyCopy's closed list of fine-print roles (only those roles sit between 16 and 20px), completing the previous change."
   }
  },
  "files": {
