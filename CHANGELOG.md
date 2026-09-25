@@ -5,7 +5,7 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
-## [4.1.0] — unreleased, on branch `design-system-claude-design`
+## [4.1.0] — 2026-09-25
 
 One entry for everything since 4.0.0, which this file had not followed. The
 last part moves the brand into the design system in Claude Design; the decks
