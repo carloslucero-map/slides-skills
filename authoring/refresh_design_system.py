@@ -46,6 +46,11 @@ What it writes, under wpp-es-html-deck/:
                                                   derive_capacity.py --split still
                                                   reproduces the variant
 
+and, outside the skill, the catalogue fields of authoring/canon-src/<id>/meta.json
+(name, use-when, family, form, arity, ground, density, media, focal ratio) from
+each traced layout's card, then canon-tools/build_catalog.py --write, so the
+skill's canon/CATALOG.md says what the design system's cards say.
+
 Exceptions, kept from the repo and listed in SOURCE.json with the reason:
 
   design-system/logos/  the design system's two logo uploads render black (their
@@ -53,11 +58,13 @@ Exceptions, kept from the repo and listed in SOURCE.json with the reason:
                         repo's attribute-coloured lockups stay until they are
                         re-uploaded.
 """
-import argparse, glob, hashlib, json, os, re, sys
+import argparse, glob, hashlib, json, os, re, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
 SKILL = os.path.join(REPO, "wpp-es-html-deck")
+AUTHORING_CANON = os.path.join(HERE, "canon-src")
+BUILD_CATALOG = os.path.join(HERE, "canon-tools", "build_catalog.py")
 CACHE = "design-system"                      # relative to SKILL
 
 TITLE = "WPP Enterprise Solutions | MAP"
@@ -154,6 +161,56 @@ def translate_icon_pointers(section, families):
             raise Fail(f"a layout points at icon {name!r}, which no weight family holds")
         return f"{CACHE}/icons/{fam}.md (## {name})"
     return re.sub(r"(?:assets|design-system)/icons/([a-z0-9-]+)\.svg", repl, section)
+
+
+def card_catalogue(readme, where):
+    """The catalogue fields a traced layout's card holds, in meta.json's terms."""
+    def para(heading):
+        m = re.search(r"^## " + heading + r"\s*\n+(.+)", readme, re.M)
+        if not m:
+            raise Fail(f"{where}: no '## {heading}' paragraph")
+        return m.group(1).strip()
+    lines = [l for l in readme.splitlines() if l.strip()]
+    shape = dict(re.findall(r"^\| (\w+) \| (.+?) \|$", readme.split("## Shape", 1)[-1], re.M))
+    fam = re.fullmatch(r"(\S+)(?: \(secondary (\S+)\))?", shape.get("Family", ""))
+    dens = re.fullmatch(r"(\w+), about (\d+) characters", shape.get("Density", ""))
+    ratio = re.search(r"\(ratio ([\d.]+)\)", shape.get("Focal", ""))
+    if not (fam and dens and ratio and {"Form", "Arity", "Ground", "Media"} <= set(shape)):
+        raise Fail(f"{where}: its Shape table is not in the form this script reads")
+    return {"name": lines[1].rstrip("."), "useWhen": para("When to use it"),
+            "family": fam.group(1), "secondaryFamily": fam.group(2),
+            "form": shape["Form"], "arity": shape["Arity"],
+            "ground": shape["Ground"].split(", "), "density": dens.group(1),
+            "densityChars": int(dens.group(2)), "mediaRole": shape["Media"],
+            "focal.ratio": float(ratio.group(1))}
+
+
+def meta_updates(src):
+    """{meta.json path: new text} for every traced card whose catalogue fields
+    differ from its authoring/canon-src/<id>/meta.json."""
+    out = {}
+    for card, target, kind in layout_cards(src):
+        if kind != "canon":
+            continue
+        cid = os.path.basename(target)[:-len(".html")]
+        path = os.path.join(AUTHORING_CANON, cid, "meta.json")
+        if not os.path.isfile(path):
+            raise Fail(f"{card} names canon template {cid!r}, which has no {path}")
+        raw = open(path, encoding="utf-8").read()
+        meta = json.loads(raw)
+        fields = card_catalogue(read(src, f"project/components/{card}/README.md"), card)
+        changed = False
+        for key, value in fields.items():
+            if key == "focal.ratio":
+                if meta.get("focal", {}).get("ratio") != value:
+                    meta.setdefault("focal", {})["ratio"] = value
+                    changed = True
+            elif meta.get(key) != value:
+                meta[key] = value
+                changed = True
+        if changed:
+            out[os.path.relpath(path, REPO)] = json.dumps(meta, indent=2, ensure_ascii=False) + "\n"
+    return out
 
 
 # ── icons ─────────────────────────────────────────────────────────────────────
@@ -410,8 +467,18 @@ def main():
     mode.add_argument("--check", action="store_true")
     args = ap.parse_args()
     try:
-        files, sections = plan(os.path.abspath(args.src), args.artifact, args.version)
+        src = os.path.abspath(args.src)
+        files, sections = plan(src, args.artifact, args.version)
         drift = run(files, sections, write=args.write)
+        metas = meta_updates(src)
+        for rel, text in sorted(metas.items()):
+            drift.append(("catalogue", rel))
+            if args.write:
+                open(os.path.join(REPO, rel), "w", encoding="utf-8").write(text)
+        if args.write and metas:
+            p = subprocess.run([sys.executable, BUILD_CATALOG, "--write"], capture_output=True, text=True)
+            if p.returncode:
+                raise Fail("build_catalog.py --write failed: " + (p.stderr or p.stdout).strip())
     except Fail as e:
         sys.exit(f"REFRESH FAILED — {e}")
     n_assets = sum(1 for p in files if p.split("/")[1] in ASSET_DIRS.values())
