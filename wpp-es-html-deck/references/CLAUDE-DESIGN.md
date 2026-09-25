@@ -33,7 +33,8 @@ classes, `<style>`, `var()`, base64 or `data:` images, the JS motion layer.
 
 **G2 changes.** The type does not render-check slides and asks you not to,
 so there is no seen-report. Deliver the link, name the two slides to look at
-first, and offer to revise any slide by number or add an alternative beside
+first, say which headline highlights were dropped (the Headline card says
+when), and offer to revise any slide by number or add an alternative beside
 it.
 
 ## Asking: the question card, never text
@@ -154,11 +155,6 @@ same layouts; you do not need them here.
 These Slides rules exist only on this page. Each leaves it once the design
 system holds it.
 
-- **The headline highlight** follows the Headline card: a flex row when the
-  headline fits on one line, otherwise dropped. Say at delivery which
-  highlights were dropped.
-- **Drop the eyebrow when the headline runs to two lines.** Guideline 06
-  says so; the Headline card does not yet.
 - **Duotone photo.** The HTML deck's `.duo`, property for property:
 
   ```html
