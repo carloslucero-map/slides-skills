@@ -5,7 +5,7 @@
 
 25 templates, each traced from a real slide in the MAP bank.
 Choose on `use when` — the rest is filtering. If a fill looks wrong, compare it
-against `PREVIEWS.png` (all 25, labelled) before changing anything.
+with its layout card in the design system before changing anything.
 
 `ok` = reviewed against its source and passed the gates, BY MACHINE — no human
 has signed these off. Eleven specs carry an `approvalNote` caveat (placeholder

@@ -2233,7 +2233,7 @@
      "min_chars": 9,
      "ideal_chars": 18,
      "max_chars": 32,
-     "font_px": 22.0,
+     "font_px": null,
      "basis": "placeholder"
     },
     "cpg-item": {
@@ -2411,7 +2411,7 @@
      "min_chars": 11,
      "ideal_chars": 28,
      "max_chars": 50,
-     "font_px": 22.0,
+     "font_px": null,
      "basis": "placeholder"
     },
     "cps-item": {
@@ -2611,7 +2611,7 @@
      "min_chars": 40,
      "ideal_chars": 40,
      "max_chars": 72,
-     "font_px": 22.0,
+     "font_px": null,
      "basis": "placeholder"
     },
     "eix-note": {
@@ -3105,7 +3105,7 @@
      "min_chars": 80,
      "ideal_chars": 196,
      "max_chars": 353,
-     "font_px": 22.0,
+     "font_px": null,
      "basis": "placeholder"
     },
     "mrc-copy": {
@@ -3383,7 +3383,7 @@
      "min_chars": 68,
      "ideal_chars": 109,
      "max_chars": 196,
-     "font_px": 22.0,
+     "font_px": null,
      "basis": "placeholder"
     },
     "nts-d": {
@@ -3481,7 +3481,7 @@
      "min_chars": 18,
      "ideal_chars": 98,
      "max_chars": 176,
-     "font_px": 22.0,
+     "font_px": null,
      "basis": "placeholder"
     },
     "qsc-chip": {

@@ -21,7 +21,6 @@ reads. Nothing here is read while a deck is being built.
 | in the skill | generated from | by |
 |---|---|---|
 | `canon/CATALOG.md`, `canon/catalog.json` | `canon-src/<id>/meta.json` + `spec.json` | `canon-tools/build_catalog.py --write` |
-| `canon/PREVIEWS.png` | `canon-src/<id>/preview.png` | `wpp-es-html-deck/scripts/package_skill.py` built it; rebuild with the snippet in that script |
 | `design-system/` (tokens, stylesheet, fonts, icons, the other asset groups, fixed-slide data, `SOURCE.json`) and every layout `<section>` in `canon/templates/` and `assets/snippets/` | the design system in Claude Design | `refresh_design_system.py --write` |
 | `references/capacity.json` (canon rows) | `canon/templates/<id>.html` + `canon-src/<id>/measure.json` | `canon-tools/derive_canon_capacity.py --write` |
 

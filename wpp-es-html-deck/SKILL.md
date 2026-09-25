@@ -311,8 +311,8 @@ CONFIDENCIAL are built in; other languages via `"strings"`).
 **Read `canon/CATALOG.md` FIRST, then fall back to the snippet kit.**
 
 `canon/` holds templates traced from the real MAP slide bank: each one measured
-off a source slide, rendered against it, and shipped with that original as
-`ref.png`. The 51 snippets in `assets/snippets/` were authored from the brand
+off a source slide and rendered against it (the original, `ref.png`, stays
+with the authoring sources). The 51 snippets in `assets/snippets/` were authored from the brand
 guideline in the abstract, not from the deck bank — which is the reason decks
 built from them have never quite looked like MAP's own slides.
 
@@ -342,8 +342,10 @@ python3 scripts/derive_capacity.py --skill . --demo build/demo.html --write --in
 A canon template carries no `<!-- capacity -->` block, but it IS capacity-checked:
 `authoring/canon-tools/derive_canon_capacity.py` merges per-slot limits into the same
 `references/capacity.json`, so `check_capacity.py` covers canon and kit slides
-alike. Its `spec.json` `invariants` say what must not be changed when you fill
-it — read those before you touch geometry.
+alike. What must not change when you fill it is recorded with its authoring
+sources, outside the skill; inside it, the template's header comment and its
+design-system card (*Why it holds together*, *Deviations*) say which choices
+are deliberate. Read them before you touch geometry.
 
 Those maxima are marked `basis: "placeholder"`: they are derived from the copy
 the template shipped with, which is evidence of what fits rather than proof of
@@ -553,9 +555,9 @@ non-English decks: **`references/EDGE-CASES.md`**. Open only when one applies.
 
 - **`canon/`** — 25 templates traced from the real slide bank:
   `templates/<id>.html` (paste this; in Claude Design the design system's
-  layout cards replace it),
-  `PREVIEWS.png` (all 25 on one labelled sheet), and `CATALOG.md` +
-  `catalog.json`, generated from sources kept outside the skill.
+  layout cards replace it), and `CATALOG.md` + `catalog.json`, generated
+  from the design system's layout cards through sources kept outside the
+  skill.
   **`canon/CATALOG.md` is the entry point for step 4.**
 - **`references/CLAUDE-DESIGN.md`** — the whole deck in Claude Design: the
   Slides artifact, the question card, and the order in which to read and

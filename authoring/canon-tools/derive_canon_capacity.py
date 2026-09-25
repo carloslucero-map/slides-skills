@@ -36,7 +36,7 @@ import argparse, json, os, re, sys
 # skill folder had to fit claude.ai's 200-entry cap. The SOURCES they read moved
 # with them; the ARTIFACTS they generate still land inside the skill.
 #   authoring/canon-src/<id>/{meta,spec,measure}.json, ref.png, preview.png
-#   wpp-es-html-deck/canon/{CATALOG.md, catalog.json, PREVIEWS.png, templates/}
+#   wpp-es-html-deck/canon/{CATALOG.md, catalog.json, templates/}
 HERE = os.path.dirname(os.path.abspath(__file__))
 AUTHORING = os.path.dirname(HERE)
 REPO = os.path.dirname(AUTHORING)

@@ -337,8 +337,8 @@ def main():
             f.write(splice(base, markup))
 
         # Canon previews are authoring output: they live beside the ref.png they
-        # are judged against, outside the skill. canon/PREVIEWS.png — the one
-        # contact sheet the skill ships — is built from them by package_skill.py.
+        # are judged against, outside the skill. The skill ships no sheet of
+        # them; each layout's card in the design system renders it.
         png = (os.path.join(SKILL, os.pardir, "authoring", "canon-src", vid,
                             "preview.png") if args.canon
                else os.path.join(args.out, vid + ".png"))
