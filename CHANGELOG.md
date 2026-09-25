@@ -5,6 +5,51 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [4.1.3] — 2026-09-25
+
+The remaining design-system items from the alignment audit, and the kit's
+authoring sources retired.
+
+### Added, in the design system (now version `1790337247-f9ce`)
+- A **Photo** element. It gives the navy duotone as a Slides recipe (a Navy
+  box, the image inside with a grayscale filter and a screen blend), says which
+  photos take it (a brief's photos do; the thirteen library photos are already
+  duotone and go in as they are), and states the anchoring rule for photos of
+  200 × 200 px or more.
+- The Motion guideline's Slides rules: fade on every slide, push between
+  chapters, build-ins on pinned children only, none with motion off.
+- BodyCopy's closed list of fine-print roles, the only text allowed between 16
+  and 20 px. Besides the fourteen roles the verifier knew, it names the four
+  the design system already set that small: the table header, the card link,
+  the timeline label and the milestone note.
+
+### Changed, in the design system
+- The README catalogue quotes each layout card's *When to use it* word for
+  word, and the sentence the 51 kit cards repeated moves into the README once.
+
+### Changed, in the skill
+- The verifier reads the fine-print roles from the copy
+  (`design-system/elements.json`, written by the refresh) instead of its own
+  list. CardsV1 and V2, ChartsV3 and ProcessTimelineV2 and V4 no longer fail
+  the type floor on text the design system allows.
+- `CLAUDE-DESIGN.md` drops its duotone and motion notes. Only the chart-label
+  note is left for the design system to take.
+- The 13 kit authoring sources (`assets/snippets/*.html`) are gone.
+  `derive_capacity.py` measures the 51 variants themselves (`--split` is
+  retired), and the notes the files carried are kept verbatim in
+  `authoring/kit-notes.md`, outside the skill. The skill is 182 entries, down
+  from 194.
+- The refresh warns when the design system's catalogue stops quoting a layout
+  card.
+
+### Known issues
+- ProcessTimelineV4, used as it is, fails two verifier checks: one of its own
+  dots covers its last timeline label, and it leaves the lower half of the
+  slide empty. The fix is a change to its preview in the design system.
+
+Decks build as before: all 1,449 spec combinations build byte-identical, and
+the demo deck's verifier transcript is unchanged.
+
 ## [4.1.2] — 2026-09-25
 
 The last design-system notes from the alignment audit, and the skill following
