@@ -13,7 +13,7 @@ Three sources, three jobs:
   create the deck, decide how a slide is written: `project/deck.json`, one
   `project/slides/<id>.html` per slide, the calls.
 - **This page** decides how the deck gets made here: the gate, the reading
-  order, the install, and the few Slides rules the design system does not
+  order, the install, and the one Slides rule the design system does not
   carry yet.
 
 This page holds no brand values. When you need a hex, a size or a position,
@@ -104,7 +104,8 @@ which the user keeps or deletes in the editor.
 4. **Read it in this order**, before writing a slide:
    1. **`project/README.md`**: the eight rules, the canvas, colour and type
       on one page each, and *Building in Claude Design Slides* (faces,
-      positions, floors, colour, dots, icons, what Slides cannot do). Where
+      positions, floors, colour, dots, icons, photos, motion, what Slides
+      cannot do). Where
       it describes the HTML pipeline (one self-contained file,
       `components/bundle.css`), that is the other surface: ignore it here.
    2. **The Elements cards** (Headline, Subhead, BodyCopy, Pill, StatCircle,
@@ -150,27 +151,11 @@ Never set the type smaller.
 `canon/` and `references/SNIPPET-INDEX.md` are the HTML path's copies of the
 same layouts; you do not need them here.
 
-## Until the design system carries them
+## Until the design system carries it
 
-These Slides rules exist only on this page. Each leaves it once the design
-system holds it.
+This Slides rule exists only on this page. It leaves once the design system
+holds it.
 
-- **Duotone photo.** The HTML deck's `.duo`, property for property:
-
-  ```html
-  <div style="position:absolute; left:1260px; top:420px; width:560px; height:420px;
-              overflow:hidden; background:#000050">
-    <img src="/_blob/<id>" alt="…" style="width:560px; height:420px; object-fit:cover;
-         filter:grayscale(1) contrast(1.08) brightness(1.04); mix-blend-mode:screen">
-  </div>
-  ```
-
-  Media 200×200 or larger anchors to a canvas edge or a corner
-  (non-negotiable 8).
-- **Motion.** `data-transition="fade"` on every section; `push` between
-  chapters is fine. The kit's choreography does not exist here, and
-  `data-build-in` works on pinned children only. With motion off, no
-  build-ins.
 - **Chart labels.** Fonts never load inside an `<svg>`, so a chart's labels
   are `<p>` elements pinned over it.
 

@@ -774,6 +774,8 @@ def check_design_system():
     who = f"{ds.get('title', 'the design system')} {ds.get('version', '?')}"
     if not PALETTE_HEX - {"0A0A1A"}:
         bad.append("design-system/tokens.json has no readable colour tokens")
+    if not FINE_PRINT_ROLES:
+        bad.append("design-system/elements.json has no fine-print roles")
     if bad:
         report("FAIL", "design system",
                f"{len(bad)} brand file(s) differ from the copy of {who}: "
@@ -1305,19 +1307,24 @@ MIN_FINE = 16.0                          # declared second level, closed list on
 MIN_TEXT = 20.0                          # everything else
 MIN_FONT, MIN_BODY_FONT = MIN_FINE, MIN_TEXT   # back-compat for existing callers
 
-# The closed list. Adding to it is a design decision that belongs in CORE §4.5,
-# not a convenience. Roles measured in the kit today, plus the canon roles the
-# second-level tier exists to serve.
-FINE_PRINT_ROLES = frozenset({
-    "col-sub", "pill", "bio", "l",                    # in the kit today
-    "ramp-l1", "ramp-l2", "ramp-l3", "ramp-l4",       # intensity-ramp leaders
-    "cell-label", "tax-leaf", "band-label",           # canon: matrix, taxonomy, stack
-    "logo-cat", "sub-item",                           # canon: logo wall, second-level
-    "fine-label",                                     # the label ABOVE a sub-item run
-})
-# These are ROLE names, deliberately generic. A template that wants the tier
+# The closed list, from the design system's BodyCopy card (design-system/
+# elements.json). Adding to it is a design decision made on that card, not a
+# convenience here. It was a literal in this file, a second copy of the brand's
+# list that nothing kept in step: the card allowed 16px table headers and 18px
+# card links while this list failed both. Empty when the copy is missing, which
+# check_design_system reports as a FAIL.
+def _fine_print_roles():
+    try:
+        with open(os.path.join(DESIGN_SYSTEM, "elements.json"), encoding="utf-8") as f:
+            return frozenset(json.load(f)["finePrint"])
+    except (OSError, ValueError, KeyError, TypeError):
+        return frozenset()
+
+
+FINE_PRINT_ROLES = _fine_print_roles()
+# The card names ROLES, deliberately generic. A template that wants the tier
 # adds the role class alongside its own — class="fine-label ssp-label" — rather
-# than getting its private class added here. Otherwise the list grows by one
+# than getting its private class onto the card. Otherwise the list grows by one
 # entry per template and stops being a closed list at all.
 MEDIA_MIN = 200.0                        # §15.9.2 media-anchoring size gate (v4)
 # Media hosts the anchoring law applies to; ancestors/classes that exempt a

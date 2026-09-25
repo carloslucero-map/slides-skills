@@ -4,18 +4,22 @@
   "title": "WPP Enterprise Solutions | MAP",
   "namespace": "WppEsMap",
   "artifact": "https://claude.ai/artifact/9iQ9xpaBJj52LsfmKMVYGc",
-  "version": "1790335932-06d5",
+  "version": "1790337247-f9ce",
   "lastChange": {
    "by": "Carlos Lucero",
-   "at": "2026-09-25T11:31:51Z",
+   "at": "2026-09-25T11:53:37Z",
    "via": "Claude Code",
-   "note": "Headline card: the Slides highlight's word-space gap (15/18/14px) and one-line length limits (60/50/55 characters), and the rule to drop the eyebrow over a two-line headline; provenance rewritten in guideline 11, the README and tokens.json meta (edited here, the repository copies it one way, never re-sync from it); the 25 traced layouts' Origin lines pointed at canon/templates/<id>.html and authoring/canon-src/<id>/."
+   "note": "A Photo element: the Slides recipe for the navy duotone, which photos take it, and the media anchoring rule; the Motion guideline's Slides rules (fade transitions, push between chapters, build-ins on pinned children only); BodyCopy's closed list of fine-print roles, the only text allowed between 16 and 20px; the README catalogue quotes each layout card's When to use it, and the kit cards' shared sentence moves into the README."
   }
  },
  "files": {
   "design-system/bundle.css": {
    "sha256": "eaba626c6885f9775ec9b5e276213fb4baa644e55c8d294c8f971a52998ecad2",
    "from": "project/components/bundle.css"
+  },
+  "design-system/elements.json": {
+   "sha256": "a436c1fa8df13c58937ab416558eaa90526297e2a37521e6b389e1fe27afae35",
+   "from": "BodyCopy card, Fine print"
   },
   "design-system/exemplars/data-forward.png": {
    "sha256": "794a310083312e11076f1d23cca9bfd309aa904e21d24bce1b067946f198f587",

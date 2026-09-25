@@ -57,7 +57,7 @@ verifier that enforces the design guideline.
 | Path | What it holds |
 |---|---|
 | `SKILL.md` | The skill itself — the operating instructions |
-| `design-system/` | The generated copy of the design system: `tokens.json`, `bundle.css`, `fixed-slides.json`, fonts, logos, icons, illustrations, photos, textures, exemplars, and `SOURCE.json` (version and a sha256 per file) |
+| `design-system/` | The generated copy of the design system: `tokens.json`, `bundle.css`, `fixed-slides.json`, `elements.json`, fonts, logos, icons, illustrations, photos, textures, exemplars, and `SOURCE.json` (version and a sha256 per file) |
 | `references/CLAUDE-DESIGN.md` | How to build in Claude Design: the question card, the reading order, the install |
 | `references/CORE.md` | The always-loaded subset of the design guideline, the skill's downstream copy of the brand rules |
 | `references/sections/` | That guideline split by section, loaded on demand; the one place to edit it |
@@ -164,14 +164,18 @@ hand, and checked.**
   is the only writer. An agent that can read the design system saves its files
   and assets with the Artifact tool, then runs the script with `--write`. It
   writes the tokens, the stylesheet, the fonts and asset groups, the icon family
-  files, `fixed-slides.json` (colourways, the light outro, cover art and dot
-  presets, read from the Fixed slides cards and previews), every layout's
-  `<section>`, and the canon catalogue's text, and records the version and a
-  sha256 per file in `SOURCE.json`. `--check` exits 1 when the copy has drifted.
+  files, `fixed-slides.json` (colourways, both outros, the covers, the agenda's
+  row placement and the dot presets, read from the Fixed slides cards and
+  previews), `elements.json` (the closed list of fine-print roles, from the
+  BodyCopy card), every layout's `<section>`, and the canon catalogue's text,
+  and records the version and a sha256 per file in `SOURCE.json`. `--check`
+  exits 1 when the copy has drifted, and both modes warn when the design
+  system's catalogue stops quoting a layout card.
 - `build_shell.py` builds every deck from the copy: `:root` from the tokens, the
   whole stylesheet from `bundle.css`, the fixed slides from `fixed-slides.json`.
 - `verify_deck.py` fails the deck when any file in `design-system/`, or any
-  layout's `<section>`, no longer matches `SOURCE.json`.
+  layout's `<section>`, no longer matches `SOURCE.json`, and takes the palette,
+  the grounds and the fine-print roles from the copy.
 
 Almost everything a deck shows now comes from the copy, the logos, both outros,
 all five covers and the agenda's row placement included. What the design system
