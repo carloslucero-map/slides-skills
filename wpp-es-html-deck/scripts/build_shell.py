@@ -66,9 +66,9 @@ def _ds_json(name):
 
 # The design system's own values, from its copy in design-system/: tokens.json
 # for :root and the fonts, fixed-slides.json for the divider colourways, the
-# light outro, the cover art and the dot presets. A value the design system
-# does not hold yet is written in this file and marked "not in the design
-# system yet"; the refresh (authoring/refresh_design_system.py) never writes one.
+# outros, the cover art, the agenda's rows and the dot presets. The copy is
+# written only by the refresh (authoring/refresh_design_system.py); no brand
+# value is written in this file.
 TOKENS = _ds_json("tokens.json")
 FIXED = _ds_json("fixed-slides.json")
 _COLOURS = {t["name"]: t["value"]["light"] for t in TOKENS["color"]["tokens"]}
@@ -96,23 +96,14 @@ DIRECTIONS = ("editorial-quiet", "statement-led", "data-forward", "high-impact")
 # Sanctioned per-deck divider colourways (§11 / §12.3). Geometry NEVER varies —
 # only the colour keys a/b/c resolved by the emitted DOTCOLORS map, plus the
 # divider background/text role vars. The design system's DividerSlide card holds
-# every colour the playbook divider uses: ground, type, sub-label, its one dot
-# hue ("a"), the footer on its big bottom-right dot, the confidential line.
-# Not in the design system yet: the classic divider's second and third dot
-# colours ("b", "c"), which only dividerStyle "classic" draws.
-CLASSIC_DOTS = {
-    "orange":     ("#F9BD5D", "#D94E0E"),
-    "orange-600": ("#FF7800", "#D94E0E"),
-    "orange-500": ("#F9BD5D", "#FF7800"),
-    "white":      ("#FFFFFF", "#FFF5CD"),
-    "navy-dots":  ("#000050", "#FF7800"),
-    "navy-full":  ("#FFFFFF", "#FF7800"),
-}
+# every colour a divider uses: ground, type, sub-label, its dot hue ("a"), the
+# footer on its big bottom-right dot, the confidential line, and the second and
+# third dot colours ("b", "c") that only dividerStyle "classic" draws.
 COLOURWAYS = {
     name: {"bg": c["ground"], "text": c["type"], "sub": c["subLabel"],
            "navy_section": c["ground"] == tok("wpp-navy"),
            "foot": c["footer"], "edge": c["confidential"],
-           "a": c["dots"], "b": CLASSIC_DOTS[name][0], "c": CLASSIC_DOTS[name][1]}
+           "a": c["dots"], "b": c["classicB"], "c": c["classicC"]}
     for name, c in FIXED["colourways"].items()
 }
 # Default colourway per direction (explicit dividerColourway always wins).
@@ -531,21 +522,6 @@ DOT_ORDER = ("agenda", "divider", "divider-playbook", "thankyou", "cover-dots",
              "field-right", "field-bottom", "field-tl", "field-accent", "field-navy",
              "field-micro", "field-mid", "field-macro")
 
-# Not in the design system yet: the v4 register fields MID and MACRO. MICRO is
-# generated (seeded, byte-stable) by field_micro_defs().
-REPO_DOTS = {
-    "field-mid": [
-        [420, 1700, -160, "a"], [340, 1330, -120, "a"], [480, 1760, 300, "a"],
-        [300, 1420, 260, "a"], [360, 1520, 560, "a"], [260, 1720, 700, "a"],
-        [300, 1060, 720, "a"], [200, 1160, 140, "a"], [420, 1620, 860, "a"],
-        [140, 1260, 480, "a"],
-    ],
-    "field-macro": [
-        [1400, -500, -780, "a"], [1750, 1050, -300, "a"], [1150, 650, 860, "a"],
-    ],
-}
-
-
 def _ordered(d):
     return {k: d[k] for k in sorted(d, key=lambda k: (DOT_ORDER.index(k) if k in DOT_ORDER
                                                       else len(DOT_ORDER), k))}
@@ -564,13 +540,15 @@ def nav_js(spec):
            "divider-playbook": {"a": cw["a"], "b": cw["b"], "c": cw["c"]},
            "thankyou": {"a": ot["a"], "b": ot["b"], "c": ot["c"]}})))
     # Presets: the design system's, then (as build-time data merged over them)
-    # the playbook divider and cover, and the fields it does not hold yet.
+    # the playbook divider and cover and the v4 register fields; MICRO is
+    # generated (seeded, byte-stable) by field_micro_defs().
     v4_keys = ("divider-playbook", "cover-playbook", "field-mid", "field-macro", "field-micro")
     dots = json.dumps(_ordered({k: v for k, v in FIXED["dots"].items() if k not in v4_keys}))
     dots_v4 = json.dumps({
         "divider-playbook": FIXED["dots"]["divider-playbook"],
         "cover-playbook": FIXED["dots"]["cover-playbook"],
-        **REPO_DOTS,
+        "field-mid": FIXED["dots"]["field-mid"],
+        "field-macro": FIXED["dots"]["field-macro"],
         "field-micro": field_micro_defs(),
     })
     return r"""

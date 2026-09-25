@@ -7,7 +7,9 @@
    "subLabel": "#D94E0E",
    "dots": "#FF7800",
    "footer": "#000050",
-   "confidential": "#000050"
+   "confidential": "#000050",
+   "classicB": "#F9BD5D",
+   "classicC": "#D94E0E"
   },
   "orange-600": {
    "ground": "#FAFAF0",
@@ -15,7 +17,9 @@
    "subLabel": "#D94E0E",
    "dots": "#F9BD5D",
    "footer": "#000050",
-   "confidential": "#000050"
+   "confidential": "#000050",
+   "classicB": "#FF7800",
+   "classicC": "#D94E0E"
   },
   "orange-500": {
    "ground": "#FAFAF0",
@@ -23,7 +27,9 @@
    "subLabel": "#D94E0E",
    "dots": "#FFF5CD",
    "footer": "#000050",
-   "confidential": "#000050"
+   "confidential": "#000050",
+   "classicB": "#F9BD5D",
+   "classicC": "#FF7800"
   },
   "white": {
    "ground": "#FAFAF0",
@@ -31,7 +37,9 @@
    "subLabel": "#D94E0E",
    "dots": "#FFFFFF",
    "footer": "#000050",
-   "confidential": "#000050"
+   "confidential": "#000050",
+   "classicB": "#FFFFFF",
+   "classicC": "#FFF5CD"
   },
   "navy-dots": {
    "ground": "#FAFAF0",
@@ -39,7 +47,9 @@
    "subLabel": "#D94E0E",
    "dots": "#000050",
    "footer": "#FFFFFF",
-   "confidential": "#000050"
+   "confidential": "#000050",
+   "classicB": "#000050",
+   "classicC": "#FF7800"
   },
   "navy-full": {
    "ground": "#000050",
@@ -47,7 +57,9 @@
    "subLabel": "#F9BD5D",
    "dots": "#FAFAF0",
    "footer": "#000050",
-   "confidential": "#FFFFFF"
+   "confidential": "#FFFFFF",
+   "classicB": "#FFFFFF",
+   "classicC": "#FF7800"
   }
  },
  "outros": {
@@ -310,6 +322,88 @@
     620,
     1000,
     "b"
+   ]
+  ],
+  "field-macro": [
+   [
+    1400,
+    -500,
+    -780,
+    "a"
+   ],
+   [
+    1750,
+    1050,
+    -300,
+    "a"
+   ],
+   [
+    1150,
+    650,
+    860,
+    "a"
+   ]
+  ],
+  "field-mid": [
+   [
+    420,
+    1700,
+    -160,
+    "a"
+   ],
+   [
+    340,
+    1330,
+    -120,
+    "a"
+   ],
+   [
+    480,
+    1760,
+    300,
+    "a"
+   ],
+   [
+    300,
+    1420,
+    260,
+    "a"
+   ],
+   [
+    360,
+    1520,
+    560,
+    "a"
+   ],
+   [
+    260,
+    1720,
+    700,
+    "a"
+   ],
+   [
+    300,
+    1060,
+    720,
+    "a"
+   ],
+   [
+    200,
+    1160,
+    140,
+    "a"
+   ],
+   [
+    420,
+    1620,
+    860,
+    "a"
+   ],
+   [
+    140,
+    1260,
+    480,
+    "a"
    ]
   ],
   "field-navy": [

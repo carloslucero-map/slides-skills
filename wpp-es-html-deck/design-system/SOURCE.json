@@ -4,17 +4,17 @@
   "title": "WPP Enterprise Solutions | MAP",
   "namespace": "WppEsMap",
   "artifact": "https://claude.ai/artifact/9iQ9xpaBJj52LsfmKMVYGc",
-  "version": "1790339500-0d7c",
+  "version": "1790341061-1a78",
   "lastChange": {
    "by": "Carlos Lucero",
-   "at": "2026-09-25T12:31:29Z",
+   "at": "2026-09-25T12:57:13Z",
    "via": "Claude Code",
-   "note": "Typography guideline: the floors table follows BodyCopy's closed list of fine-print roles (only those roles sit between 16 and 20px), completing the previous change."
+   "note": "The rules the skill's old guideline held and this system did not, approved as listed on the coverage review: print values, dark-slide frequency by direction, layout laws (guideline 03), dot and motif rules, motion details, fixed-slide limits, the classic divider's colours and the mid and macro dot fields; the eleven decisions as recommended (a flat Venn, EntTeamRow6's headline in Navy, QuantStatGrid5's highlight by weight only, the traced layouts' measured orange); and eleven corrections where this system contradicted itself or the stylesheet."
   }
  },
  "files": {
   "design-system/bundle.css": {
-   "sha256": "eaba626c6885f9775ec9b5e276213fb4baa644e55c8d294c8f971a52998ecad2",
+   "sha256": "c8aa580cfa1f22270d65cd1ff6290a701cd4c1dd4aced12e8b51fab42b4551d2",
    "from": "project/components/bundle.css"
   },
   "design-system/elements.json": {
@@ -38,7 +38,7 @@
    "from": "asset Exemplars/statement-led.png (0841145b9a2954f1337f5ae94d88b992)"
   },
   "design-system/fixed-slides.json": {
-   "sha256": "7629d432de2a8bb623c6d2dfd1efb13eefcc2b5b1f4b487a88c4678daf796eac",
+   "sha256": "9f8da8f1e9c3d926a9eb2867474da12d6bec7ad4d9844544fded896f1cde8732",
    "from": "Fixed slides cards + layout previews"
   },
   "design-system/fonts/WPP-Bold.woff2": {
@@ -70,7 +70,7 @@
    "from": "asset group Icons + guideline 07 families"
   },
   "design-system/icons/line.md": {
-   "sha256": "58e09a444fa8b1a588990afd2c2d004672c0b08da2a1c139843ca55cf80684a3",
+   "sha256": "59728f2d7c796292aab7b92c9fde149dfa2c9c863dd761078a42457050a859e2",
    "from": "asset group Icons + guideline 07 families"
   },
   "design-system/icons/solid.md": {
@@ -198,7 +198,7 @@
    "from": "asset Textures/orbs-cream.png (56df84c8fe3ed8300532ddd4a50d4c9e)"
   },
   "design-system/tokens.json": {
-   "sha256": "517fbef3577b72f9884358acf612957f372252abf1e66649db71f47a9891bd14",
+   "sha256": "46f5963c13fc78243589da1cee33d0a4f3655db0be786da189dd4fba84bee7b9",
    "from": "project/tokens.json"
   }
  },
@@ -268,7 +268,7 @@
    "from": "project/components/ComparisonV1/preview.html"
   },
   "assets/snippets/variants/comparison-v2.html": {
-   "sha256": "d948380966a9351d2f36f267a3a89630ca81b62eeaf60f036394b55b40a3c977",
+   "sha256": "bd8363037ee1d755cf7a34fede4b3fa2de7357890294a5404f22c8fe544f1381",
    "from": "project/components/ComparisonV2/preview.html"
   },
   "assets/snippets/variants/image-content-v0.html": {
@@ -424,7 +424,7 @@
    "from": "project/components/EntPartnerCredentials3/preview.html"
   },
   "canon/templates/ent-team-row-6.html": {
-   "sha256": "072f0c9a766b526c337677119b42793f1252c5ca78eed1fd3b0ca0d75754bfb7",
+   "sha256": "6cebf5b30f14f44016c35011af573e2941de9bfe847ac1169a8b19de4e3b0eb3",
    "from": "project/components/EntTeamRow6/preview.html"
   },
   "canon/templates/enum-index-2col.html": {
@@ -476,7 +476,7 @@
    "from": "project/components/QuantScoreCircles/preview.html"
   },
   "canon/templates/quant-stat-grid-5.html": {
-   "sha256": "aa1ef1404e53408ad5264aade60bbb200bd48fb0a65b95c992490c1c0fe50d94",
+   "sha256": "19766a5a44123643e955ac097bd52b604e9c9538e352140cec7936b47d31f20b",
    "from": "project/components/QuantStatGrid5/preview.html"
   },
   "canon/templates/rel-hub-rings-4.html": {
