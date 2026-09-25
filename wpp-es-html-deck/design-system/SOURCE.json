@@ -13,9 +13,57 @@
   }
  },
  "files": {
+  "design-system/README.md": {
+   "sha256": "c4a6c280e8f74bc9ff505999910df35b3a5bcb47f85209e7540e2195a8a0ec3a",
+   "from": "project/README.md"
+  },
+  "design-system/asset-notes.md": {
+   "sha256": "27180f98f6287c8506069444b6365115a02827327f63d0c6a5e58f6a4c95fa8e",
+   "from": "each asset group's README.md"
+  },
   "design-system/bundle.css": {
    "sha256": "c8aa580cfa1f22270d65cd1ff6290a701cd4c1dd4aced12e8b51fab42b4551d2",
    "from": "project/components/bundle.css"
+  },
+  "design-system/cards/elements.md": {
+   "sha256": "30a7fae37d29e90e7dad0cafc9c3658f041e825dd21a021864936046232699d0",
+   "from": "the Elements cards' README.md (18)"
+  },
+  "design-system/cards/fixed-slides.md": {
+   "sha256": "521d3dbf84b87b62d1163d142aea3561611cf2ea873c728d3fa5fdfac2f555c4",
+   "from": "the Fixed slides cards' README.md (4)"
+  },
+  "design-system/cards/layouts-comparison.md": {
+   "sha256": "571a7d8e8b882a718cda538b48a3dbfad9baf15518dc13ba5d37b6cdf1492cba",
+   "from": "the Layouts · Comparison cards' README.md (4)"
+  },
+  "design-system/cards/layouts-entities.md": {
+   "sha256": "4cdb379aa7086f49005f5ee65d8234abef2660d1e9bae1d8f826b43519327f24",
+   "from": "the Layouts · Entities cards' README.md (7)"
+  },
+  "design-system/cards/layouts-enumeration.md": {
+   "sha256": "f84cfd0b361e67680a898b5df9ca5523a871f36e0e86ba6ef733185ec9df62b1",
+   "from": "the Layouts · Enumeration cards' README.md (16)"
+  },
+  "design-system/cards/layouts-media.md": {
+   "sha256": "1f6d3f5fb2dd4787ac62776f16c1dce8fb233307f1e5d71c2929ad27eaf38cbe",
+   "from": "the Layouts · Media cards' README.md (10)"
+  },
+  "design-system/cards/layouts-narrative.md": {
+   "sha256": "2b57885af35e5ff282dd948c8e2877f1694bb45ab892df29107f0ebf689a192a",
+   "from": "the Layouts · Narrative cards' README.md (9)"
+  },
+  "design-system/cards/layouts-quantitative.md": {
+   "sha256": "21868a12464d172d23b16c7149eeccada7b547b1e18ba8fc9431a4dc26d31076",
+   "from": "the Layouts · Quantitative cards' README.md (13)"
+  },
+  "design-system/cards/layouts-relational.md": {
+   "sha256": "317a1db5629e923394c970a633d8db7e5df998c5f5239ea32a221d21330a634a",
+   "from": "the Layouts · Relational cards' README.md (8)"
+  },
+  "design-system/cards/layouts-sequence.md": {
+   "sha256": "b3a2eb0425059bbd7e930cff22305b825053654c62de386d0110daec82d17981",
+   "from": "the Layouts · Sequence cards' README.md (9)"
   },
   "design-system/elements.json": {
    "sha256": "a436c1fa8df13c58937ab416558eaa90526297e2a37521e6b389e1fe27afae35",
@@ -60,6 +108,50 @@
   "design-system/fonts/WPP-Thin.woff2": {
    "sha256": "ed1e6d9488257e1d386d19f077023058a2676043cbdb858d429edfce1615644c",
    "from": "project/fonts/WPP-Thin.woff2"
+  },
+  "design-system/guidelines/01-colour.md": {
+   "sha256": "185aba5f2dae731f5525b227fede78a418f2a19656f03627e13ba9fbcb41fccf",
+   "from": "project/guidelines/01-colour.md"
+  },
+  "design-system/guidelines/02-typography.md": {
+   "sha256": "4aa21cab3921f182770970788ef75b95d36f2a37f8f0c17fb2b008472f5a5546",
+   "from": "project/guidelines/02-typography.md"
+  },
+  "design-system/guidelines/03-grid-and-composition.md": {
+   "sha256": "b6f54b53b083522e5895de661616a9dc93447d23e2a929f5d983817af37958b9",
+   "from": "project/guidelines/03-grid-and-composition.md"
+  },
+  "design-system/guidelines/04-dot-system.md": {
+   "sha256": "10425918cd23f08f93be676306c8b5bf671e91a065cb1490a1d331d7985e09da",
+   "from": "project/guidelines/04-dot-system.md"
+  },
+  "design-system/guidelines/05-logo.md": {
+   "sha256": "93f25293c6291aeab6925d09b4cda446efa40d81ac123690d7c6418ea8055ed1",
+   "from": "project/guidelines/05-logo.md"
+  },
+  "design-system/guidelines/06-slide-furniture.md": {
+   "sha256": "fea664a6f569c90d7a9d3aef6ba04ef0041d2b5fd8429982093edd35a38a5781",
+   "from": "project/guidelines/06-slide-furniture.md"
+  },
+  "design-system/guidelines/07-iconography.md": {
+   "sha256": "32fb39e42e7d82ff5df034e31ec2165dc6a0f768fc9a266e9a1faa56d3c6075f",
+   "from": "project/guidelines/07-iconography.md"
+  },
+  "design-system/guidelines/08-illustration-and-photography.md": {
+   "sha256": "7784cc4d0360808f41b974aa5697f3efac13a035ab3f7097c129cd787ef11a88",
+   "from": "project/guidelines/08-illustration-and-photography.md"
+  },
+  "design-system/guidelines/09-data-visualisation.md": {
+   "sha256": "6618424c1f023ec7828180da75dc26dcd28c1d2f74881ad195261ada04269f5d",
+   "from": "project/guidelines/09-data-visualisation.md"
+  },
+  "design-system/guidelines/10-motion.md": {
+   "sha256": "2c351da01a20b286c77b29aa50b9cf7f3f4459fb6d98f0d2b8b71b1cb9ba6d7e",
+   "from": "project/guidelines/10-motion.md"
+  },
+  "design-system/guidelines/11-source-and-open-questions.md": {
+   "sha256": "47ecf045292c48d15c82822d9a5c824c24e62dab964dfd11590bb0601502589c",
+   "from": "project/guidelines/11-source-and-open-questions.md"
   },
   "design-system/icons/accents.md": {
    "sha256": "147a77ed992796fc9d355787b4b2c7c4a9198a67be433d8fe7d1ab0729cb0b08",
