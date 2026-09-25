@@ -5,12 +5,12 @@ build_shell.py v4 — generate a self-contained WPP Enterprise Solutions | MAP d
 Why this exists
 ---------------
 Two things are painful and error-prone to redo by hand on every deck, and both are
-non-negotiable brand rules (see references/WPP-ES-DESIGN-GUIDELINE.md):
+non-negotiable brand rules (see design-system/README.md):
 
   1. The deck must be ONE self-contained .html file — fonts, illustrations and the
-     logo all base64/SVG-inlined, never external paths (§2a).
+     logo all base64/SVG-inlined, never external paths (references/HTML-BUILD.md §2a).
   2. The title / agenda / divider / thank-you slides are LOCKED compositions and
-     must be reproduced verbatim (§12.0). Sanctioned per-deck choices (cover art,
+     must be reproduced verbatim (the Fixed slides cards). Sanctioned per-deck choices (cover art,
      divider colourway, outro, design direction) are spec keys — never hand edits
      to the locked geometry.
 
@@ -93,7 +93,7 @@ STRINGS = {
 
 DIRECTIONS = ("editorial-quiet", "statement-led", "data-forward", "high-impact")
 
-# Sanctioned per-deck divider colourways (§11 / §12.3). Geometry NEVER varies —
+# Sanctioned per-deck divider colourways (the DividerSlide card). Geometry NEVER varies —
 # only the colour keys a/b/c resolved by the emitted DOTCOLORS map, plus the
 # divider background/text role vars. The design system's DividerSlide card holds
 # every colour a divider uses: ground, type, sub-label, its dot hue ("a"), the
@@ -126,7 +126,7 @@ OUTROS = {
     for name, o in FIXED["outros"].items()
 }
 
-# Registered covers (§12.1a): same locked frame (type block + navy badge
+# Registered covers (the CoverSlide card): same locked frame (type block + navy badge
 # untouched) — only the art layer swaps. The covers are the design system's
 # (CoverSlide): an art file full-bleed or right-anchored, or a dot preset.
 COVERS = {
@@ -135,14 +135,14 @@ COVERS = {
     for name, c in FIXED["covers"].items()
 }
 
-# v4 divider geometry (§12.3): "playbook" = one-hue macro scatter + bottom-pinned
+# v4 divider geometry (the DividerSlide card): "playbook" = one-hue macro scatter + bottom-pinned
 # Thin caps title (the default); "classic" = the v3 right-anchored quartet.
 DIVIDER_STYLES = ("playbook", "classic")
 
 # Shipped motif-mechanism art, addressable from spec.illustrations. Paths are
 # relative to design-system/. Three classes share the one template/clone mechanism:
-# halftone illustrations (§9.1a), full-bleed textures (§9.1b), and the
-# navy-duotone photo library (§9.2a — already duotone: place via data-motif,
+# halftone illustrations, full-bleed textures, and the navy-duotone photo
+# library (design-system/asset-notes.md; the photos are already duotone: place via data-motif,
 # NEVER wrap these in .duo).
 MOTIF_FILES = {
     # halftone illustrations
@@ -157,7 +157,7 @@ MOTIF_FILES = {
     "rocks-orange":    "illustrations/WPPOpen_Rocks-01_Orange.png",
     "ribbon-orange":   "illustrations/WPPOpen_Ribbon-01_Orange.png",
     "ribbon-navy":     "illustrations/WPPOpen_Ribbon-01_Navy.png",
-    # v4 canonical square-grid dot conversions (scripts/halftone.py, §9.1c)
+    # v4 canonical square-grid dot conversions (scripts/halftone.py, HTML-BUILD §13.3)
     "dot-lighthouse":  "illustrations/HT_Lighthouse-01.png",
     "dot-dancers-orange": "illustrations/HT_Dancers-01_Orange.png",
     # full-bleed background textures (cream fields — backdrops, not ink)
@@ -348,7 +348,7 @@ def title_slide(spec, white_logo_svg):
     presenter = (f'\n        <span class="presenter">{esc(spec["presenter"])}</span>'
                  if spec["presenter"] else "")
     return f"""
-  <!-- ===== LOCKED TITLE SLIDE — registered cover art: {spec['cover']} (§12.1a).
+  <!-- ===== LOCKED TITLE SLIDE — registered cover art: {spec['cover']} (the CoverSlide card).
        Type block and navy badge never change; only the art layer is a sanctioned swap. ===== -->
   <section class="slide cover-mountain" data-slide-id="cover">
 {art}
@@ -401,7 +401,7 @@ def divider_slide(spec, num, title):
     <h2 class="dv-title">{esc(title)}</h2>{furniture(spec)}
   </section>"""
     return f"""
-  <!-- ===== LOCKED DIVIDER (v4 playbook composition, §12.3) — identical on every
+  <!-- ===== LOCKED DIVIDER (v4 playbook composition, the DividerSlide card) — identical on every
        section; one-hue macro scatter, title pinned bottom-left ===== -->
   <section class="slide divider{navy}" data-slide-id="divider-{num}">
     <div class="dv-dots" data-dots="divider-playbook" aria-hidden="true"></div>
@@ -417,7 +417,7 @@ def content_placeholder(spec, slide, chap_n, slide_n):
     arch = slide["archetype"]
     arch_attr = f' data-archetype="{esc(arch)}"' if arch else ""
     hint = (f"Suggested archetype: {arch} — see assets/snippets/ for the matching block."
-            if arch else "Pick the archetype that fits (guideline §12.4-§12.13), then "
+            if arch else "Pick the archetype that fits (the design system's layout catalogue), then "
             "assemble it from assets/snippets/ — don't re-derive layouts.")
     source = (f'\n    <div class="source">{esc(slide["source"])}</div>'
               if slide["source"] else "")
@@ -482,9 +482,9 @@ def base_css(spec):
   --bg:{tok('bg')}; --bg-alt:{tok('bg-alt')}; --bg-tint:{tok('bg-tint')};
   --bg-dark:{tok('bg-dark')}; --text:{tok('text')}; --text-inv:{tok('text-inv')};
   --accent:{tok('accent')};
-  /* v4 semantic data colours (§3.8): favourable numbers glow, unfavourable stay ink */
+  /* v4 semantic data colours (guideline 09): favourable numbers glow, unfavourable stay ink */
   --data-pos:{tok('data-pos')}; --data-neg:{tok('data-neg')};
-  /* v4 layout tokens (§2): {s['grid']} module, {s['m-edge']} content edge ({s['m-text']} for running
+  /* v4 layout tokens (guideline 03): {s['grid']} module, {s['m-edge']} content edge ({s['m-text']} for running
      copy) — deviating from these is what the §15.9 content-edge probe flags */
   --grid:{s['grid']}; --m-edge:{s['m-edge']}; --m-text:{s['m-text']}; --band-top:{s['band-top']}; --band-bottom:{s['band-bottom']};
   /* Per-deck sanctioned choices (spec keys) — defaults are the v1 look */
@@ -499,7 +499,7 @@ def base_css(spec):
 # --- JS ------------------------------------------------------------------------------
 
 def field_micro_defs(seed=407, n=110):
-    """v4 MICRO register (§5): deterministic organic scatter — dense at the
+    """v4 MICRO register (guideline 04): deterministic organic scatter — dense at the
     cluster heart (right-of-centre), dissolving outward, a few fused pairs.
     Generated at build time so renders are byte-stable for the verifier."""
     rng = random.Random(seed)
@@ -644,7 +644,7 @@ def nav_js(spec):
     var k=h.getAttribute('data-dots'); mkdots(h, DOTS[k]||[], DOTCOLORS[k]);
   });
 
-  // --- Motion v3.2: runtime choreography over the kit (guideline §14).
+  // --- Motion v3.2: runtime choreography over the kit (HTML-BUILD §14).
   // Elements move, colours never do. Auto-off: reduced-motion, headless
   // capture (navigator.webdriver), print. URL override: ?motion=off|subtle|full
   // ('?motion=force' keeps full even under webdriver — motion smoke-tests).

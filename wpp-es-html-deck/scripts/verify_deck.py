@@ -7,7 +7,7 @@ are correct by construction, but the fill step (archetypes, copy, images) is
 manual — this script re-checks everything that step can break:
 
   1. Self-containment — no external URLs, no non-data src/href/url() refs,
-     no @import, no file-path asset references (guideline §2a: ONE .html
+     no @import, no file-path asset references (HTML-BUILD §2a: ONE .html
      file, ever).
   2. Banned strings — stale brand names, demo placeholders, lorem ipsum,
      and the demo banner (allowed only with --demo).
@@ -18,7 +18,7 @@ manual — this script re-checks everything that step can break:
   5. Brand discipline — no gradients or shadows (box-/text-/drop-shadow)
      anywhere, border-radius only 50% (dots/circles) or 999px (pills),
      slide--white usage flagged, and every hex/rgb()/hsl() colour literal
-     checked against the closed palette (§3.1/§3.2/§3.6; WARN with slide
+     checked against the closed palette (guideline 01; WARN with slide
      numbers — inspect, then fix or justify).
   6. Sizes — whole file vs --max-size-mb; each inlined image vs ~300KB raw.
   7. Speaker notes present on at least one slide.
@@ -115,7 +115,7 @@ BANNED = ("VML MAP", "VMLMAP", "Presenter name", "REPLACE WITH REAL CONTENT")
 # ...and case-insensitive ones.
 BANNED_CI = ("lorem ipsum",)
 
-ALLOWED_RADII = {"50%", "999px"}   # dots/circles and pills — nothing else (§13)
+ALLOWED_RADII = {"50%", "999px"}   # dots/circles and pills — nothing else (HTML-BUILD §13.1)
 
 SKILL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DESIGN_SYSTEM = os.path.join(SKILL_DIR, "design-system")
@@ -148,7 +148,7 @@ PALETTE_RGB = ({(int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16))
 MAX_IMG_B64 = 420 * 1024           # ~300KB raw per inlined image
 BLANK_PNG_BYTES = 20 * 1024        # a blank 1920x1080 render compresses tiny
 
-# Composition tripwire (KIT v3, guideline §12.15) --------------------------------
+# Composition tripwire (KIT v3, HTML-BUILD §12.15) -------------------------------
 
 
 def _ground(token):
@@ -420,7 +420,7 @@ def check_brand(text):
     uses = re.findall(r'class="[^"]*slide--white[^"]*"', text)
     if uses:
         report("WARN", "brand: slide--white",
-               f"{len(uses)} slide(s) use the rare white background — see §3.3a")
+               f"{len(uses)} slide(s) use the rare white background — see guideline 01")
     else:
         report("PASS", "brand: slide--white", "not used")
 
@@ -447,7 +447,7 @@ def _off_palette(chunk):
 
 
 def check_palette(text, slides):
-    """§13: 'no colours outside this document'. Hand-built charts and pasted
+    """HTML-BUILD §13.1: the closed palette of tokens.json. Hand-built charts and pasted
     art are where off-palette hexes sneak in; base64/xmlns stripped first."""
     offenders = []
     head = text.split("<section", 1)[0]
@@ -459,10 +459,10 @@ def check_palette(text, slides):
     if offenders:
         report("WARN", "brand: palette", "; ".join(offenders[:6]) +
                (f" (+{len(offenders) - 6} more)" if len(offenders) > 6 else "") +
-               " — outside the closed palette (§3.1/§3.2/§3.6)")
+               " — outside the closed palette (guideline 01)")
     else:
         report("PASS", "brand: palette",
-               "every colour literal is in the closed palette (§3.1/§3.2/§3.6)")
+               "every colour literal is in the closed palette (guideline 01)")
 
 
 def check_sizes(path, text, max_mb):
@@ -508,7 +508,7 @@ def check_motif_templates(text):
                f"{len(used)} motif name(s), each has a <template data-asset>")
 
 
-# Native pixel widths of shipped motif-mechanism assets (§9.1a/§9.1b/§9.2a) —
+# Native pixel widths of shipped motif-mechanism assets (design-system/asset-notes.md) —
 # routing a small asset into a big host upscales and pixelates silently.
 MOTIF_NATIVE_W = {
     "mountain": 1920, "mountain-orange": 1920, "peaks-orange": 1920,
@@ -550,7 +550,7 @@ def check_motif_routing(text):
 _MOTIF_RECS = []
 
 # The ink each shipped motif is drawn in. The halftone illustrations are
-# SINGLE-COLOUR on transparency (§9.1), so ink that matches its ground renders
+# SINGLE-COLOUR on transparency (guideline 08), so ink that matches its ground renders
 # an empty slide rather than a broken one.
 MOTIF_INK = {
     "mountain": "navy", "crystal": "navy", "coral": "navy", "rocks": "navy",
@@ -562,7 +562,7 @@ MOTIF_INK = {
 }
 
 # The four 964x540 EMF-sourced files carry a BAKED OPAQUE CREAM FIELD instead of
-# clean transparency (§9.1a). Off cream they print their own background as pale
+# clean transparency (guideline 08). Off cream they print their own background as pale
 # wedges — the one failure that looks populated, so it ships.
 MOTIF_CREAM_BAKED = {"rocks", "rocks-orange", "ribbon-orange", "ribbon-navy"}
 
@@ -658,7 +658,7 @@ def _treatment(s):
 def check_catalog():
     """The canon catalogue must match the meta.json files it is generated from.
 
-    Same failure mode as the guideline: an edited meta.json that never reaches
+    Same failure mode as any generated copy: an edited meta.json that never reaches
     CATALOG.md leaves the model choosing on a description the template no longer
     matches, and nothing says so.
     """
@@ -789,7 +789,7 @@ def check_design_system():
 
 
 def check_photography(slides):
-    """§9.2 (WARN-only, coarse): a content slide embedding <img> outside the
+    """Guideline 08 (WARN-only, coarse): a content slide embedding <img> outside the
     sanctioned wrappers (.duo duotone, .screenshot keyline, data-motif clone
     hosts) is probably a full-colour photo — the one look the brand bans."""
     flagged = []
@@ -805,7 +805,7 @@ def check_photography(slides):
     if flagged:
         report("WARN", "photography",
                "raw <img> outside .duo/.screenshot/motif on " + ", ".join(flagged) +
-               " — full-colour photos are off-brand (§9.2: duotone or keyline)")
+               " — full-colour photos are off-brand (guideline 08: duotone or keyline)")
     else:
         report("PASS", "photography",
                "no raw <img> outside the sanctioned treatments")
@@ -1393,7 +1393,7 @@ def _geo_violations(rs, locked, edge=40.0, tedge=None):
             out.append(("FAIL", "type floor (§15.10): %s at %.1fpx. Between %gpx and "
                         "%gpx only the declared second-level roles are allowed (%s); "
                         "this carries none of them. Raise the size or give it the role "
-                        "it actually plays — do not shrink prose to make it fit (§4.5)."
+                        "it actually plays — do not shrink prose to make it fit (guideline 02)."
                         % (_geo_fmt(t), fs, MIN_FINE, MIN_TEXT,
                            ", ".join(sorted(FINE_PRINT_ROLES)[:5]) + ", …")))
 
@@ -1412,7 +1412,7 @@ def _geo_violations(rs, locked, edge=40.0, tedge=None):
                         % (r["sel"], gar.strip() or "auto", ai.strip() or "stretch")))
             break  # one finding per slide is enough
 
-    # ---- §10.1 semantic colour sanity (v4) — orange minus without .stat--pos ----
+    # ---- guideline 09 semantic colour sanity (v4) — orange minus without .stat--pos ----
     for t in text_leaves:
         txt = (t.get("text") or "").lstrip()
         if not txt or txt[0] not in "-−–":
@@ -1420,7 +1420,7 @@ def _geo_violations(rs, locked, edge=40.0, tedge=None):
         col = (t.get("color") or "").replace(" ", "")
         if col in ("rgb(255,120,0)", "rgb(217,78,14)") \
                 and "stat--pos" not in _geo_classes(t["sel"]):
-            out.append(("WARN", "data semantics (§10.1): negative-looking numeral "
+            out.append(("WARN", "data semantics (guideline 09): negative-looking numeral "
                         "%s is orange without a declared .stat--pos — if the "
                         "decline is a win, declare it; otherwise it takes Navy"
                         % _geo_fmt(t)))

@@ -861,7 +861,7 @@
   {
    "file": "variants/image-content-v5.html",
    "archetype": "dot-hero",
-   "label": "V5 \u00b7 DOT HERO (v4, \u00a79.1c) \u2014 the 'pixelated' website look: navy square-grid dot art",
+   "label": "V5 \u00b7 DOT HERO (v4, HTML-BUILD \u00a713.3) \u2014 the 'pixelated' website look: navy square-grid dot art",
    "slots": {
     "body": {
      "items": 1,
@@ -3582,14 +3582,6 @@
      "font_px": null,
      "basis": "placeholder"
     },
-    "qsg-accent": {
-     "items": 1,
-     "min_chars": 26,
-     "ideal_chars": 26,
-     "max_chars": 47,
-     "font_px": null,
-     "basis": "placeholder"
-    },
     "qsg-claim": {
      "items": 1,
      "min_chars": 47,
@@ -3639,8 +3631,8 @@
      "basis": "placeholder"
     }
    },
-   "slide_ideal_chars": 1055,
-   "slide_max_chars": 1424,
+   "slide_ideal_chars": 1029,
+   "slide_max_chars": 1389,
    "_source": "canon"
   },
   {

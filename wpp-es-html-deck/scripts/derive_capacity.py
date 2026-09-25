@@ -17,7 +17,7 @@ Capacity is MEASURED, never invented. Three independent sources:
   A. The layout's own example copy. Each is a calibrated §12.15 recipe that
      already passes the composition laws, so its measured length IS the ideal.
   B. Geometry. chars-per-line = container_width / (font_size * char_width_em),
-     read from the shell CSS; lines capped per class by the guideline.
+     read from the shell CSS; lines capped per class (LINE_CAP below).
   C. The master-PPT empirical distribution (optional --ppt-stats), used to
      sanity-check the ceiling against slides that shipped.
 
@@ -32,11 +32,11 @@ import argparse, json, os, re, sys
 from html.parser import HTMLParser
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Canvas + layout constants (guideline §2 / §15.1)
+# Canvas + layout constants (guideline 03 / HTML-BUILD §15.1)
 # ─────────────────────────────────────────────────────────────────────────────
 CANVAS_W, CANVAS_H = 1920, 1080
 # §15.1 text glyph bounds. These are READ FROM THE SHELL, not stated here — the
-# content edge lived in four places (build_shell's --m-edge, CORE §2,
+# content edge lived in four places (build_shell's --m-edge, the old guideline,
 # verify_deck's §15.9 check and this file) and moving it in one silently left
 # the other three behind. Widening the frame from 80 to 40 changed nothing in
 # capacity.json until this stopped being a literal.
@@ -65,8 +65,8 @@ EM_MIXED, EM_CAPS = 0.50, 0.60
 
 # Per-class line ceilings. Sources noted; these are hard stops, not guesses.
 LINE_CAP = {
-    "headline":    2,    # §4.5 "sentence-case headlines, max two lines"
-    "subtitle":    1,    # locked eyebrow at y=132
+    "headline":    2,    # the Headline card: two lines at most
+    "subtitle":    1,    # the eyebrow, one line at y=177
     "col-sub":     1,
     "body":        4,    # the columns family notes: "2-4 short lines per column"
     "takeaway":    2,
@@ -346,7 +346,7 @@ def main():
                     f'  (ideal {s["ideal_chars"]}, {fp})'
                 )
             lines.append(f'     SLIDE TOTAL      ideal {slide_total} · max {entry["slide_max_chars"]} chars')
-            lines.append("     Over max: pick a lower-density variant, do not shrink type (§4.5). -->")
+            lines.append("     Over max: pick a lower-density variant, do not shrink type. -->")
             inserts.append((t["offset"], "\n".join(lines) + "\n"))
 
         if args.write and inserts:

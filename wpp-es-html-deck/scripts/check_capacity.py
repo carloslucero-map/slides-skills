@@ -275,7 +275,7 @@ def main():
     if over:
         print(f"\n{over} slide(s) over limit. Fix by picking a lower-density "
               f"variant from references/SNIPPET-INDEX.md or cutting copy — "
-              f"never by shrinking type (§4.5).")
+              f"never by shrinking type (guideline 02).")
     elif checked:
         print("\nNo checked slide is over its limit.")
     if untagged + unknown:
