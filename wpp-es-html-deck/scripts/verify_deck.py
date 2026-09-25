@@ -149,9 +149,24 @@ MAX_IMG_B64 = 420 * 1024           # ~300KB raw per inlined image
 BLANK_PNG_BYTES = 20 * 1024        # a blank 1920x1080 render compresses tiny
 
 # Composition tripwire (KIT v3, guideline §12.15) --------------------------------
-BG_NAVY = (0x00, 0x00, 0x50)       # slide--navy   #000050
-BG_TINT = (0xFF, 0xF5, 0xCD)       # slide--tint   #FFF5CD
-BG_CREAM = (0xFA, 0xFA, 0xF0)      # default slide #FAFAF0
+
+
+def _ground(token):
+    """A ground colour as an RGB triple, from the design system's tokens. When the
+    tokens cannot be read, a value no pixel can match: check_design_system has
+    already FAILed the deck, and a second copy of the colours here is what it
+    exists to prevent."""
+    try:
+        with open(os.path.join(DESIGN_SYSTEM, "tokens.json"), encoding="utf-8") as f:
+            v = {t["name"]: t["value"]["light"] for t in json.load(f)["color"]["tokens"]}[token]
+        return tuple(int(v[i:i + 2], 16) for i in (1, 3, 5))
+    except (OSError, ValueError, KeyError, IndexError):
+        return (-1, -1, -1)
+
+
+BG_NAVY = _ground("wpp-navy")        # slide--navy
+BG_TINT = _ground("orange-500")      # slide--tint
+BG_CREAM = _ground("wpp-cream")      # default slide
 BG_TOL = 12                        # per-channel tolerance when matching background
 ZONE_TOP, ZONE_BOT, DESIGN_H = 432, 990, 1080   # dead-band zone in design pixels
 COMP_FAIL, COMP_WARN = 0.92, 0.83  # zone background fraction thresholds (v4 tightened, §12.15a C2)
