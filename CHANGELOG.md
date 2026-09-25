@@ -5,6 +5,37 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [4.1.1] — 2026-09-25
+
+The design-system fixes approved after 4.1.0, and the skill following them.
+
+### Fixed, in the design system (now version `1790334182-5d6d`)
+- The two logos, re-uploaded with their fill on each shape. The first uploads
+  had lost it with their `<style>` block and rendered black, so a cover built
+  in Claude Design carried a black logo on its navy badge.
+- AgendaSlide places its rows where the generator does: the first at y 266,
+  148 px apart (for six chapters, 224 and 128), not 300 and 140.
+- ThankYouSlide has the dark outro beside the light one. CoverSlide has the
+  dots and playbook covers, and says how crystal and coral are anchored.
+- The 80 px leftovers: the README's canvas note, the grid guideline's column
+  widths (860 / ~547 / 408 on the 1800 px grid), the furniture guideline's
+  headline width, the open question in guideline 11, the gutter token notes and
+  the stylesheet's `:root` comment.
+- `bundle.css` no longer ends with the logo rule that had leaked into it.
+
+### Changed, in the skill
+- The refresh reads the outros, the covers, the agenda's row placement and the
+  playbook cover's dots from the cards, and takes the logos like any other asset
+  group: `SOURCE.json` lists no exceptions.
+- `build_shell.py` takes all of those from the copy. Only the classic divider's
+  second and third dot colours and two content-slide dot fields are still
+  written there. The full-bleed cover uses its own art file, not always the
+  mountain.
+- `CLAUDE-DESIGN.md` drops the logo workaround.
+
+Decks build as before: across all 1,449 spec combinations the output differs
+only in the logo's markup and the removed rule, and renders pixel-identical.
+
 ## [4.1.0] — 2026-09-25
 
 One entry for everything since 4.0.0, which this file had not followed. The
