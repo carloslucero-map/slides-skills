@@ -87,7 +87,8 @@ which the user keeps or deletes in the editor.
 2. **The deck.** One is open: work on that one. None: create it from the
    Slides type, titled with the plan's cover title.
 3. **Design system: "WPP Enterprise Solutions | MAP".** Do not ask which
-   one. This skill *is* that system. Find it with `list` (type "Design
+   one. That system owns what the deck looks like; this skill only says how
+   to build with it here. Find it with `list` (type "Design
    System") by that exact title, then read its `project/README.md` and
    `project/tokens.json`. Install it in the same call that sends the slides:
    `files` entries copy it server-side, `project/ds/wpp-es-map/tokens.json`

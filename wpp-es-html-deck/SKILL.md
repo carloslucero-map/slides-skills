@@ -78,11 +78,22 @@ from.
 
 ## Step 0 — read the brand system first (once per deck)
 
+**The design system owns the brand.** "WPP Enterprise Solutions | MAP" is a
+Design System artifact in Claude Design (namespace `WppEsMap`): it decides
+what a deck looks like, and this skill decides how a deck gets made. Where
+this skill's files disagree with it, the design system is right; follow it
+and say so at delivery.
+
+- **In Claude Design**, read the system itself, in the order
+  `references/CLAUDE-DESIGN.md` gives.
+- **Everywhere else**, the scripts cannot reach Claude Design. They run on
+  the values this skill carries, which follow the design system.
+
 Before building, read **`references/CORE.md`** — everything needed to lay out
 ANY slide (canvas, colour, typography, dots, logo, furniture, rhythm, HTML
-conventions, and the §15 layout laws the verifier enforces). It is a verbatim
-subset of the master guideline, so its numbers ARE the enforced numbers.
-Don't build from memory — open it.
+conventions, and the §15 layout laws the verifier enforces). It is the
+skill's downstream copy of the brand guideline, and its §15 numbers are the
+ones the verifier enforces. Don't build from memory — open it.
 
 **Then open a `references/sections/` file only when its trigger fires:**
 
@@ -97,11 +108,16 @@ Don't build from memory — open it.
 | `sections/14-5-revising-a-delivered-deck.md` | you are revising a delivered deck |
 
 Loading the whole guideline when only CORE is needed costs ~14k tokens per
-deck for nothing. **`references/WPP-ES-DESIGN-GUIDELINE.md` remains the master**
-— `sections/` is that same file split, CORE.md a subset of it. If anything
-disagrees, the generator wins, then the master.
+deck for nothing. `sections/` is the whole guideline split, `CORE.md` a subset
+of it and `build/WPP-ES-DESIGN-GUIDELINE.md` the whole of it in one file: three
+views of one downstream copy. If anything disagrees, the design system wins,
+then the generator, then the guideline.
 
 ## The non-negotiables (every deck, no exceptions)
+
+The brand rules below are the design system's, in brief. Their values
+(colours, sizes, positions) live in the system, and for the HTML path in
+the generator and `references/CORE.md`, never in this file.
 
 1. **One deliverable, in the surface's own form** (see "Where the deck
    goes"). In Claude Design: the Slides artifact, with assets uploaded, never
@@ -110,14 +126,14 @@ disagrees, the generator wins, then the master.
    link, so a colleague double-clicks it offline and it renders fully. The
    generator handles this; if you add assets, inline them too (raster ≤300KB
    before base64).
-2. **Five locked defaults — never redesigned per deck:** Cream `#FAFAF0`
+2. **Five locked defaults — never redesigned per deck:** the Cream
    content background (never pure White, never alternating); the locked cover
    frame (2–4 word ALL-CAPS title + sentence subheader + month + presenter +
    navy logo badge — the art layer is a registered choice, the frame is not);
    the one locked agenda; one divider composition identical on every section
    (its colourway is a once-per-deck registered choice); the locked Thank-you
    close. Registered choices are sanctioned user decisions, not deviations.
-3. **Colour discipline.** Navy `#000050` carries text; Cream + White dominate;
+3. **Colour discipline.** Navy carries text; Cream + White dominate;
    the Orange ramp is an accent only. Text is Navy or White except the
    sanctioned orange moments enumerated in the guideline (§1.4).
 4. **The dot is the primary device** — circles at micro / mid / macro scale,
@@ -129,9 +145,10 @@ disagrees, the generator wins, then the master.
    below the Light headline IS the hierarchy)** / Medium (labels, and the
    single-token `.hl` title highlight) / Bold (footer brand line only).
    Sentence-case headlines, max two lines. No bold-in-body, no italics except
-   sparse quotes, no underlines. **No informational text below 16px; body
-   ≥ 20px** (§4.5 — the verifier measures it, and between 16 and 20 only the
-   declared fine-print roles are allowed).
+   sparse quotes, no underlines. **Never below the type floors**, one for
+   informational text and a higher one for body copy (§4.5; the verifier
+   measures both, and between them only the declared fine-print roles are
+   allowed).
 6. **No gradients, no shadows, no rounded cards (pills only), no accent bars.**
 7. **The name is "WPP Enterprise Solutions | MAP".** Never "VML MAP".
 8. **Media anchors to edges (§15.9).** A photo/motif block ≥200×200 bleeds to
@@ -545,9 +562,12 @@ Each other file is named where it is used. Three rules that live nowhere else:
   `capacity.json` alone is ~11,700 tokens. `check_capacity.py` reads it for you.
 - **Never open `assets/snippets/*.html` at fill time.** Those 13 files are the
   authoring source, up to 6,300 tokens each; the deck reads `variants/` only.
-- **`references/sections/` is the only place to edit the guideline.** `CORE.md`
-  and `build/WPP-ES-DESIGN-GUIDELINE.md` are generated by `scripts/build_docs.py`,
-  and `verify_deck.py` fails the deck if either has drifted.
+- **Brand changes are made in the design system, never in this skill.** The
+  guideline here follows it: when a rule changes there, change
+  `references/sections/` to match (the one place to edit the skill's copy),
+  and `scripts/build_docs.py --write` regenerates `CORE.md` and
+  `build/WPP-ES-DESIGN-GUIDELINE.md`. `verify_deck.py` fails the deck if
+  either has drifted from `sections/`.
 
 After editing a canonical snippet, regenerate the kit:
 
