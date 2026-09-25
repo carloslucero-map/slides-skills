@@ -25,3 +25,21 @@ the gate.
   stat-circle comp". Never put duplicates inside the real deck. Splice the
   winners, delete the sheet, re-verify.
 
+### In Claude Design
+
+The deck is the Slides artifact, so the revision happens there, and the same
+new-deck rule applies.
+
+- **Edit the slide files in place** (`project/slides/<id>.html`) and publish
+  them to the same artifact. Never rebuild the deck, and never produce an
+  `.html` copy beside it.
+- **Page numbers are typed, not computed.** After adding, removing or moving
+  a slide, rewrite every slide's page number as `NN / total` (the design
+  system's FooterFurniture card).
+- **No verifier, no screenshots.** The Slides type asks not to render-check
+  slides unless the user asks. Deliver the link with the one-line diff
+  summary.
+- **An alternative treatment is a second slide** right after the original,
+  id `<id>-alt`, which the user keeps or deletes in the editor. There is no
+  A/B sheet and no `deck-variants.html`, and never an image in the chat.
+

@@ -190,7 +190,7 @@ the renderer keeps your approved titles verbatim.
 
 ## Output format — the handoff contract
 
-<!-- HANDOFF-CONTRACT v3 — keep byte-identical with the block in wpp-es-html-deck/SKILL.md -->
+<!-- HANDOFF-CONTRACT v3 — keep byte-identical with the block in wpp-es-html-deck/references/HANDOFF-CONTRACT.md -->
 ````markdown
 # <Deck title (a full sentence; unconstrained)>
 **Cover:** <2–4 word ALL-CAPS short title> · <one-sentence subheader> · <Month Year> · <Presenter or blank>

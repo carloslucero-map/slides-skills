@@ -316,9 +316,10 @@ built from them have never quite looked like MAP's own slides.
 
 So the order is not a preference, it is a fidelity rule:
 
-1. **`canon/CATALOG.md`** (~950 tokens, loaded once). Choose on the `use when`
-   column — it names the problem the template solves. Then open exactly one
-   `canon/templates/<id>.html` and paste its `<section>`.
+1. **`canon/CATALOG.md`** (~1,600 tokens, loaded once). Choose on the `use
+   when` column — it names the problem the template solves. Then open exactly
+   one `canon/templates/<id>.html` and paste its `<section>`. (In Claude
+   Design never paste: rebuild it in inline styles, `references/CLAUDE-DESIGN.md`.)
 2. **`references/SNIPPET-INDEX.md`** only when no canon template fits. The
    catalogue's last line names the families the canon does not cover yet; for
    those the kit is the answer and there is nothing wrong with saying so.
