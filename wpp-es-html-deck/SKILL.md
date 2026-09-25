@@ -16,7 +16,7 @@ description: >-
   deck is built only after the answers or an explicit review waiver.
 ---
 
-# WPP Enterprise Solutions | MAP — HTML Deck Builder v4.1
+# WPP Enterprise Solutions | MAP — HTML Deck Builder v4.2
 
 You convert loose text — or an approved `deck-content-builder` content file —
 into one on-brand slide deck. The user brings the thinking, you bring the
@@ -91,29 +91,37 @@ and say so at delivery.
   `design-system/SOURCE.json` with the version it was read from.
   `verify_deck.py` fails the deck if any file in it was edited by hand.
 
-Before building, read **`references/CORE.md`** — everything needed to lay out
-ANY slide (canvas, colour, typography, dots, logo, furniture, rhythm, HTML
-conventions, and the §15 layout laws the verifier enforces). It is the
-skill's downstream copy of the brand guideline, and its §15 numbers are the
-ones the verifier enforces. Don't build from memory — open it.
+Before building, read these in full. Don't build from memory: open them.
 
-**Then open a `references/sections/` file only when its trigger fires:**
+1. **`design-system/README.md`**: the brand in brief, the fixed slides and the
+   layout catalogue.
+2. **Guidelines 01 to 04 and 06** in `design-system/guidelines/`: colour,
+   typography, grid and composition, the dot system, slide furniture.
+3. **`references/HTML-BUILD.md`**, up to *Only when it applies*: how the file
+   is built, filled and checked, with the §15 laws the verifier enforces. Its
+   section numbers are the ones the verifier's messages cite.
+
+**Then open these only when their trigger fires:**
 
 | Open | Only when |
 |---|---|
-| `sections/8-iconography.md` | the slide uses icons |
-| `sections/9-illustration-photography.md` | the slide uses a photo, motif, duotone or halftone |
-| `sections/10-data-visualisation.md` | the slide carries a chart, stat circles or bubbles |
-| `sections/12-archetypes.md` | you need an archetype's detail and the quick-map plus SNIPPET-INDEX did not settle it. **§12.14 / §12.15 / §12.15a are already in CORE** — the composition guardrails, recipes and the C1-C7 checklist load every deck, because the verifier enforces them every deck |
-| `sections/13-4-interaction-patterns-interactive-html-de.md` | the deck needs expandable cards or interaction |
-| `sections/14-motion-system-v3-2-the-deck-feels-alive-.md` | motion is full or subtle (skip when off) |
-| `sections/14-5-revising-a-delivered-deck.md` | you are revising a delivered deck |
+| `design-system/guidelines/07-iconography.md` | the slide uses icons |
+| `design-system/guidelines/08-illustration-and-photography.md` and `design-system/asset-notes.md` | the slide uses a photo, motif, texture, duotone or halftone |
+| `design-system/guidelines/09-data-visualisation.md` | the slide carries a chart, stat circles or bubbles |
+| the layout's card, in `design-system/cards/layouts-<family>.md` | you fill a layout: its card says what to supply, what it holds and what it deviates from on purpose |
+| the element's card, in `design-system/cards/elements.md` | you place or change an element by hand (a KPI row, a takeaway, a stat circle, a card link) |
+| `design-system/guidelines/10-motion.md` and `HTML-BUILD.md` §14 | motion is full or subtle (skip when off) |
+| `HTML-BUILD.md` §13.4 | the deck needs expandable cards or interaction |
+| `references/REVISING.md` | you are revising a delivered deck |
 
-Loading the whole guideline when only CORE is needed costs ~14k tokens per
-deck for nothing. `sections/` is the whole guideline split, `CORE.md` a subset
-of it and `build/WPP-ES-DESIGN-GUIDELINE.md` the whole of it in one file: three
-views of one downstream copy. If anything disagrees, the design system wins,
-then the generator (which reads `design-system/`), then the guideline.
+A card is one `# <Name>` section of its file; read that section, not the file.
+A layout's card names its template's file under *Origin*, so searching
+`design-system/cards/layouts-*.md` for `<id>.html` finds it.
+Guideline 05 (the logo) and `design-system/cards/fixed-slides.md` are the
+generator's business: it builds the logo and the four fixed slides from the
+copy. Guideline 11 says where the system comes from. If anything disagrees,
+the design system wins, then the generator (which reads `design-system/`),
+then this skill's own files.
 
 ## The non-negotiables (every deck, no exceptions)
 
@@ -137,7 +145,7 @@ its copy in `design-system/`, never in this file.
    close. Registered choices are sanctioned user decisions, not deviations.
 3. **Colour discipline.** Navy carries text; Cream + White dominate;
    the Orange ramp is an accent only. Text is Navy or White except the
-   sanctioned orange moments enumerated in the guideline (§1.4).
+   sanctioned orange moments the design system's README lists.
 4. **The dot is the primary device** — circles at micro / mid / macro scale,
    anchored to edges, bleeding off-canvas; flat fills; Navy dots never behind
    text. Charts are circle-first; **bubble area ∝ value (diameter ∝ √value)**.
@@ -148,9 +156,9 @@ its copy in `design-system/`, never in this file.
    single-token `.hl` title highlight) / Bold (footer brand line only).
    Sentence-case headlines, max two lines. No bold-in-body, no italics except
    sparse quotes, no underlines. **Never below the type floors**, one for
-   informational text and a higher one for body copy (§4.5; the verifier
-   measures both, and between them only the declared fine-print roles are
-   allowed).
+   informational text and a higher one for body copy (guideline 02; the
+   verifier measures both, and between them only the declared fine-print roles
+   are allowed).
 6. **No gradients, no shadows, no rounded cards (pills only), no accent bars.**
 7. **The name is "WPP Enterprise Solutions | MAP".** Never "VML MAP".
 8. **Media anchors to edges (§15.9).** A photo/motif block ≥200×200 bleeds to
@@ -298,10 +306,10 @@ Registered choices: `cover` mountain · crystal · coral · dots · playbook
 (pure-type cream cover, the parent-brand look);
 `dividerColourway` orange · orange-600 · orange-500 · white · navy-dots ·
 navy-full; `dividerStyle` playbook (default — one-hue macro scatter, title
-pinned bottom, §12.3) · classic (the v3 geometry);
+pinned bottom) · classic (the v3 geometry), both on the DividerSlide card;
 `outro` light · dark; `motion` full · subtle · off (defaults:
 high-impact / statement-led → full, others → subtle; the shell choreographs
-the kit automatically — no markup work, see guideline §14). Flat string chapters (v1 style) still work.
+the kit automatically — no markup work, see `HTML-BUILD.md` §14). Flat string chapters (v1 style) still work.
 Set `"microDeck": true` when the final deck has ≤4 content slides. For
 Spanish decks set `"lang": "es"` (Agenda / Gracias. / Sección N / PRIVADO Y
 CONFIDENCIAL are built in; other languages via `"strings"`).
@@ -344,8 +352,9 @@ A canon template carries no `<!-- capacity -->` block, but it IS capacity-checke
 `references/capacity.json`, so `check_capacity.py` covers canon and kit slides
 alike. What must not change when you fill it is recorded with its authoring
 sources, outside the skill; inside it, the template's header comment and its
-design-system card (*Why it holds together*, *Deviations*) say which choices
-are deliberate. Read them before you touch geometry.
+design-system card (*Why it holds together*, *Deviations*, in
+`design-system/cards/layouts-<family>.md`) say which choices are deliberate.
+Read them before you touch geometry.
 
 Those maxima are marked `basis: "placeholder"`: they are derived from the copy
 the template shipped with, which is evidence of what fits rather than proof of
@@ -358,7 +367,7 @@ counts and a slide total, derived from the shell's real type sizes and
 container widths. Match the
 content to a template that fits. `max` is a hard stop, not a target — over it,
 pick a lower-density variant or cut copy. **Never shrink type to make copy fit
-(§4.5).** `ideal` carries the editorial truth; a geometric `max` of 122 chars
+(guideline 02).** `ideal` carries the editorial truth; a geometric `max` of 122 chars
 on a `.subtitle` is physically true and editorially wrong.
 
 Replace each placeholder's `.content-band` with a **composition recipe**
@@ -371,8 +380,9 @@ Motifs go in as `<div class="motif motif--right" data-motif="coral">`
 placeholders (list the motifs in `spec.illustrations`; the shell inlines each
 payload once and clones it at load — never paste base64 into slides). Pick
 **one motif family per deck** and repeat it — never rotate motifs
-(the §12.8 `.compare-art` centrepiece is archetype furniture and is exempt —
-pick its colourway variant closest to the deck's family)
+(the comparative layout's `.compare-art` centrepiece, `comparison-v1`, is
+archetype furniture and is exempt — pick its colourway variant closest to the
+deck's family)
 slide-to-slide; the divider rule's chosen-once ethos applies to art too.
 
 | Content signal (`**Visual:**` hint) | Archetype | Snippet |
@@ -392,8 +402,8 @@ slide-to-slide; the divider rule's chosen-once ethos applies to art too.
 | Capability map / ecosystem | Ecosystem map (zones + centre hub) | `variants/process-timeline-v5.html` |
 | People | Team grid | `variants/team-v1.html` |
 | Screenshot / image | Image + text layouts / motif poster | `variants/image-content-v1.html` |
-| Photo / mood image | **Duotone hero** — `.duo` renders any photo navy-duotone at runtime (§9.2) | `variants/image-content-v4.html` |
-| Hero image, "pixelated" website look | **Dot hero** — convert with `scripts/halftone.py` (§9.1c), or the shipped `dot-lighthouse` / `dot-dancers-orange` motifs | `variants/image-content-v5.html` |
+| Photo / mood image | **Duotone hero** — `.duo` renders any photo navy-duotone at runtime (the Photo card) | `variants/image-content-v4.html` |
+| Hero image, "pixelated" website look | **Dot hero** — convert with `scripts/halftone.py` (`HTML-BUILD.md` §13.3), or the shipped `dot-lighthouse` / `dot-dancers-orange` motifs | `variants/image-content-v5.html` |
 | Clickable detail | Expandable cards | `variants/cards-v1.html` |
 | Case study / partner showcase | Image-top cards (photo + title + body ×3) | `variants/cards-v3.html` |
 | Hero message + proof / colour-block moment (`split`) | Split panels (R1 / R13) | `variants/splits-v1.html` · `v2` |
@@ -407,18 +417,20 @@ slide-to-slide; the divider rule's chosen-once ethos applies to art too.
 | Capability tiles / mixed bento | 3×2 tile grid — cells + stats + one motif crop (R12) | `variants/cards-v4.html` |
 
 **Photo slots:** brief supplies a photo → hero moment: convert to brand dot
-art with `python3 scripts/halftone.py photo.jpg --fg navy --bg none` (§9.1c);
-photographic moment: `.duo`. No photo → pick from the §9.2a pack by metaphor
-(13 pre-duotoned brand photos, via `data-motif` — never wrap pack photos in
-`.duo`, never generate photography, never leave a grey box). Full-colour
+art with `python3 scripts/halftone.py photo.jpg --fg navy --bg none`
+(`HTML-BUILD.md` §13.3); photographic moment: `.duo`. No photo → pick from the
+photo library by metaphor (13 pre-duotoned brand photos, listed in the
+Photography notes of `design-system/asset-notes.md`, placed via `data-motif` —
+never wrap library photos in `.duo`, never generate photography, never leave a
+grey box). Full-colour
 photography never ships (screenshots excepted).
 
 **v3-contract semantic markers, applied at fill:** a `**token**` inside an
 approved action title → `<span class="hl">token</span>` (strip the asterisks;
-one per title max, §4.4). A `Direction?` annotation in a ```` ```data ````
-block → `.stat--pos` on `good` (Orange 700; at most ONE per slide; weight
-≥300 below 90px) and `.stat--neg` on `bad`; unannotated numbers stay default
-ink — never guess direction from the sign (§10.1).
+one per title max, the Headline card). A `Direction?` annotation in a
+```` ```data ```` block → `.stat--pos` on `good` (Orange 700; at most ONE per
+slide; weight ≥300 below 90px) and `.stat--neg` on `bad`; unannotated numbers
+stay default ink — never guess direction from the sign (guideline 09).
 
 **Layout laws (§15) bind the fill step — the verifier measures them and FAILs
 the build.** The ones hand-filling most often breaks:
@@ -440,11 +452,11 @@ the build.** The ones hand-filling most often breaks:
 
 Icons come from `design-system/icons/`, one Markdown file per weight family —
 `line.md` (9) · `solid.md` (16) · `bold.md` (5) · `accents.md` (2) — each
-icon under its own `##` heading (§8.1 — ONE weight family per
+icon under its own `##` heading (guideline 07 — ONE weight family per
 icon row/slide; deck default is the solid family) pasted **inline** in an
 `.icon` host — verbs/capabilities get icons, parallel nouns keep dot headers;
 `spark`/`spark-bold` are air accents, max 2 per deck. Mark parallel blocks
-with `data-build` to reveal them one per keypress while presenting (§14) —
+with `data-build` to reveal them one per keypress while presenting (`HTML-BUILD.md` §14) —
 use on one or two slides, not everywhere. Speaker notes go in
 `<aside class="notes" hidden>` (the `N` key reveals them). User-supplied images: downscale to ≤1920px, re-encode, base64-inline, give
 each a short descriptive `alt`, sit them on Cream with the `.screenshot`
@@ -465,7 +477,7 @@ Read the summary line, not just the absence of errors: **`checked N · over
 limit N · locked/exempt N · UNCHECKED N`**. Slides with no `data-archetype`
 cannot be checked, and the tool says so rather than passing them — a run over
 an unfilled shell reports `NOTHING WAS CHECKED`. Fix overflow by picking a
-lower-density variant, never by shrinking type (§4.5).
+lower-density variant, never by shrinking type (guideline 02).
 
 This is text volume ONLY. It is a cheap gate before step 5, not a substitute
 for it.
@@ -568,14 +580,12 @@ Each other file is named where it is used. Two rules that live nowhere else:
 - **Never read `references/capacity.json`, `design-system/exemplars/` or
   `design-system/photos/` into context.** They are script and human inputs;
   `capacity.json` alone is ~11,700 tokens. `check_capacity.py` reads it for you.
-- **Brand changes are made in the design system, never in this skill.** The
-  guideline here follows it: when a rule changes there, change
-  `references/sections/` to match (the one place to edit the skill's copy),
-  and `scripts/build_docs.py --write` regenerates `CORE.md` and
-  `build/WPP-ES-DESIGN-GUIDELINE.md`. `verify_deck.py` fails the deck if
-  either has drifted from `sections/`, or if a block this skill shares with
-  `deck-content-builder` (the house copy rules, the handoff contract) no
-  longer matches its twin.
+- **Brand changes are made in the design system, never in this skill.**
+  `design-system/` is a generated copy of it, written only by the refresh in
+  the repository (`authoring/refresh_design_system.py`). `verify_deck.py` fails
+  the deck if a file in the copy was edited by hand, or if a block this skill
+  shares with `deck-content-builder` (the house copy rules, the handoff
+  contract) no longer matches its twin.
 
 After a refresh changes a kit layout, remeasure the kit:
 

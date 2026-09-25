@@ -12,14 +12,14 @@ When the input is a content file produced by the `deck-content-builder` skill
 | `_Deck type / Audience / Language / Confidential_` | spec `lang`, `confidential`, G0 answers |
 | `## Section N — <title>` | chapter (agenda row + divider) |
 | `### Slide N — <action title>` | slide headline — **verbatim, always**; any change must be surfaced at G1, never silent |
-| `**token**` inside an action title (≤1 per title) | `<span class="hl">token</span>` — the §4.4 Medium-weight title highlight (strip the asterisks; NEVER render literal `**`) |
+| `**token**` inside an action title (≤1 per title) | `<span class="hl">token</span>` — the Headline card's one highlight, Medium weight (strip the asterisks; NEVER render literal `**`) |
 | `**Visual:**` hint | archetype via the SKILL.md quick-map; the last four name a layout family: `relational` (a hub, rings, a stack or a taxonomy: the rel-* canon, `orbit-*`, `process-timeline-v5`), `logos` (`ent-logo-rows-6`, `ent-partner-credentials-3`, `logo-wall-*`), `chart` (`charts-v1`, `-v2`), `split` (`splits-v1` to `-v3`). In Claude Design, the design system's catalogue family of the same shape |
 | Bullets | the archetype's content (columns, boxes…) |
 | `**Callout:**` | the slide's focal element (stat circle, pill, statement line) |
 | `**Speaker notes:**` | `<aside class="notes">` |
 | `_Source:_` | the `.source` bottom-left line |
-| ```` ```data ```` block | a chart archetype (`stats.html` / `charts.html`) — numbers survive intact |
-| `Direction?` column in a ```` ```data ```` block | `good` → `.stat--pos` (Orange 700) · `bad` → `.stat--neg` (Navy) · blank/`neutral` → default ink (§10.1; max ONE `.stat--pos` per slide) |
+| ```` ```data ```` block | a chart archetype (`stats-v*` / `charts-v*`) — numbers survive intact |
+| `Direction?` column in a ```` ```data ```` block | `good` → `.stat--pos` (Orange 700) · `bad` → `.stat--neg` (Navy) · blank/`neutral` → default ink (guideline 09; max ONE `.stat--pos` per slide) |
 
 <!-- HANDOFF-CONTRACT v3 — keep byte-identical with the block in deck-content-builder/SKILL.md -->
 ````markdown

@@ -5,7 +5,7 @@
 
 - **PDF:** print CSS ships — Ctrl+P → save as PDF, one page per slide. In
   Claude Design the Slides artifact exports PDF itself.
-- **Motion:** a runtime layer only (guideline §14) — never bespoke keyframes,
+- **Motion:** a runtime layer only (`HTML-BUILD.md` §14) — never bespoke keyframes,
   never a JS/React library; auto-static under reduced-motion, print and
   headless capture, so PDFs and the verifier are unaffected.
 - **pptx:** in Claude Design the Slides artifact exports PPTX itself, so

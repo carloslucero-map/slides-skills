@@ -99,8 +99,9 @@ which the user keeps or deletes in the editor.
 3. **Find the design system "WPP Enterprise Solutions | MAP".** Do not ask
    which one. `list` with type "Design System", and match that exact title.
    Not found (another account, or a renamed system): say so in one line and
-   build from `references/CORE.md`, this skill's downstream copy of the same
-   rules, written as inline styles.
+   build from this skill's copy of it, `design-system/` (its README,
+   guidelines and cards, with the same Slides recipes), written as inline
+   styles.
 4. **Read it in this order**, before writing a slide:
    1. **`project/README.md`**: the eight rules, the canvas, colour and type
       on one page each, and *Building in Claude Design Slides* (faces,
@@ -108,12 +109,18 @@ which the user keeps or deletes in the editor.
       cannot do). Where
       it describes the HTML pipeline (one self-contained file,
       `components/bundle.css`), that is the other surface: ignore it here.
-   2. **The Elements cards** (Headline, Subhead, BodyCopy, Pill, StatCircle,
+   2. **The guidelines** (`project/guidelines/`): 01 to 04 and 06 before any
+      slide (colour, typography, grid and composition, the dot system, slide
+      furniture), then 07 to 10 when the deck has icons, imagery, charts or
+      motion. The layout laws in 03 hold here too: check them by eye. Where a
+      guideline names the HTML deck's classes or its verifier, that is the
+      other surface; 10 has its own Slides section.
+   3. **The Elements cards** (Headline, Subhead, BodyCopy, Pill, StatCircle,
       FooterFurniture and the rest). Each ends with its inline-style recipe
       for Slides. Build every piece of text and every shape from them.
-   3. **The four Fixed slides cards.** The cover, agenda, dividers and
+   4. **The four Fixed slides cards.** The cover, agenda, dividers and
       thank-you are built from their recipes, exactly.
-   4. **The Layout catalogue** in the README, then the chosen layout's card
+   5. **The Layout catalogue** in the README, then the chosen layout's card
       and preview (below).
 
    `project/tokens.json` holds every value by name, for when a card names a
