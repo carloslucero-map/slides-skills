@@ -2,19 +2,28 @@
 
 **In Claude Design, or any session whose Artifact tool offers a Slides type,
 the deck is an Artifact made from that type — never a separate `.html`
-file.** This page is how the WPP Enterprise Solutions | MAP language is
-written in that format.
+file.**
 
-The Slides type's own instructions, which you read when you open or create
-the deck, govern the mechanics: `project/deck.json`, one
-`project/slides/<id>.html` per slide, the calls. Where the two meet, the type
-decides *how* a slide is written and this page decides *what it looks like*.
+Three sources, three jobs:
+
+- **The design system "WPP Enterprise Solutions | MAP"** decides what the
+  deck looks like: every colour, face, size and position, every element,
+  fixed slide and layout.
+- **The Slides type's own instructions**, which you read when you open or
+  create the deck, decide how a slide is written: `project/deck.json`, one
+  `project/slides/<id>.html` per slide, the calls.
+- **This page** decides how the deck gets made here: the gate, the reading
+  order, the install, and the few Slides rules the design system does not
+  carry yet.
+
+This page holds no brand values. When you need a hex, a size or a position,
+it is in the design system.
 
 ## What carries over, what does not
 
 **Unchanged:** a gate before anything is built (here it is the question
-card, below), the four design directions, archetype choice, canon-first
-selection, the anti-sameness review, the house copy rules, and
+card, below), the four design directions, archetype choice, traced-first
+layout selection, the anti-sameness review, the house copy rules, and
 non-negotiables 2–8.
 
 **Does not exist here. Never run or write them:** `build_shell.py`,
@@ -82,189 +91,110 @@ which the user keeps or deletes in the editor.
 
 1. **Ask with the card** (above), then wait for the answers. The Slides
    type's own instructions say to decide once and write every slide in one
-   pass. That pass is step 5 and comes **after** the answers, never instead
+   pass. That pass is step 6 and comes **after** the answers, never instead
    of them.
 2. **The deck.** One is open: work on that one. None: create it from the
    Slides type, titled with the plan's cover title.
-3. **Design system: "WPP Enterprise Solutions | MAP".** Do not ask which
-   one. That system owns what the deck looks like; this skill only says how
-   to build with it here. Find it with `list` (type "Design
-   System") by that exact title, then read its `project/README.md` and
-   `project/tokens.json`. Install it in the same call that sends the slides:
-   `files` entries copy it server-side, `project/ds/wpp-es-map/tokens.json`
-   from its `project/tokens.json`, and one `project/ds/wpp-es-map/fonts/<File>`
-   from its `project/fonts/<File>` for each of the four faces under Type;
+3. **Find the design system "WPP Enterprise Solutions | MAP".** Do not ask
+   which one. `list` with type "Design System", and match that exact title.
+   Not found (another account, or a renamed system): say so in one line and
+   build from `references/CORE.md`, this skill's downstream copy of the same
+   rules, written as inline styles.
+4. **Read it in this order**, before writing a slide:
+   1. **`project/README.md`**: the eight rules, the canvas, colour and type
+      on one page each, and *Building in Claude Design Slides* (faces,
+      positions, floors, colour, dots, icons, what Slides cannot do). Where
+      it describes the HTML pipeline (one self-contained file,
+      `components/bundle.css`), that is the other surface: ignore it here.
+   2. **The Elements cards** (Headline, Subhead, BodyCopy, Pill, StatCircle,
+      FooterFurniture and the rest). Each ends with its inline-style recipe
+      for Slides. Build every piece of text and every shape from them.
+   3. **The four Fixed slides cards.** The cover, agenda, dividers and
+      thank-you are built from their recipes, exactly.
+   4. **The Layout catalogue** in the README, then the chosen layout's card
+      and preview (below).
+
+   `project/tokens.json` holds every value by name, for when a card names a
+   token.
+5. **Install it in the same call that sends the slides.** `files` entries
+   copy it server-side: `project/ds/wpp-es-map/tokens.json` from its
+   `project/tokens.json`, and one `project/ds/wpp-es-map/fonts/<File>` from
+   its `project/fonts/<File>` for each of the four faces the README's
+   *Faces* line names. Register each as its own face in `project/deck.json`
+   `faces`, with the README's family names, `src` the installed file.
    `project/deck.json` `designSystems` gains `{"title": "WPP Enterprise
    Solutions | MAP", "namespace": "wpp-es-map", "artifact": "<its address
    from list>", "version": "<its version id>", "copiedAt": "<now>"}`.
-   Its README describes the HTML pipeline too: where it says every deck is
-   one self-contained HTML file, or to load `components/bundle.css`, that is
-   the other surface. Ignore both here. Not found: say so and use the values
-   on this page.
-4. **Upload every asset you place**, logo, photo, illustration, motif,
-   texture, from `assets/`. Use the returned `url` verbatim. Never a `data:`
-   URI.
-5. **Write every slide in one pass** from the recipes below, then one
-   publish, then the link.
+6. **Write every slide in one pass**, then one publish, then the link.
+   - **Assets.** Copy each image you place from the design system's asset
+     groups into the deck (`from_url` the design system, `asset_ids` from
+     its `assets` listing) and use the returned `url` verbatim. Never a
+     `data:` URI. Icons are pasted inline, as the Icon card says.
+   - **Page numbers are typed**, as `NN / total` (the FooterFurniture card).
+     After adding, removing or moving a slide, retype every one.
 
 ## Choosing a layout
 
-Choose exactly as SKILL.md step 4 says: `canon/CATALOG.md` first, then
-`references/SNIPPET-INDEX.md`. See each composition on `canon/PREVIEWS.png` (read it yourself, never post it),
-then read the chosen `canon/templates/<id>.html` for its hierarchy, reading
-order and geometry. **Rewrite it in inline styles. Never paste it.** Its
-`<style>` block and classes are dropped here, and a pasted template renders
-unstyled.
+Pick from the design system's Layout catalogue by the shape of the argument:
+traced layouts, measured off real MAP slides, before kit layouts, and where
+a card's *Related* section names a pair, it says which to pick. Read the
+card for when to use it, its capacity and what the consumer supplies; take
+its positions and sizes from its preview. **Rebuild it in inline styles from
+the Elements recipes. Never paste the preview's markup**: its classes and
+`<style>` are dropped here, and pasted markup renders unstyled.
 
-## Colour
+Over a layout's capacity, pick a lower-density layout or split the slide.
+Never set the type smaller.
 
-| | hex | role |
-|---|---|---|
-| Navy | `#000050` | all type; dark grounds |
-| Cream | `#FAFAF0` | every content slide's `background` |
-| White | `#FFFFFF` | type on Navy and Orange 900; a rare ground |
-| Orange 900 | `#6A290A` | fills; always takes White type |
-| Orange 800 | `#D94E0E` | the eyebrow, the divider sub-label |
-| Orange 700 | `#FF7800` | default dot colour, agenda numerals, a favourable stat |
-| Orange 600 | `#F9BD5D` | dots and fills; never carries text |
-| Orange 500 | `#FFF5CD` | the one tint ground |
+`canon/` and `references/SNIPPET-INDEX.md` are the HTML path's copies of the
+same layouts; you do not need them here.
 
-Text is Navy or White, except the sanctioned orange moments in CORE §1.4.
+## Until the design system carries them
 
-## Type
+These Slides rules exist only on this page. Each leaves it once the design
+system holds it.
 
-**Four faces, one per weight.** The Slides format loads one font file per
-face, at most four per deck, and its own rule is that a static font file with
-one weight renders every weight at that weight. WPP ships as five static
-files, so a single `WPP` face would set Thin display, Light headlines and
-Medium labels all alike, and the hierarchy is gone. Register each weight as
-its own face in `project/deck.json` `faces`, each `src` the font installed
-with the design system (`project/ds/wpp-es-map/fonts/<File>`):
+- **The headline highlight** follows the Headline card: a flex row when the
+  headline fits on one line, otherwise dropped. Say at delivery which
+  highlights were dropped.
+- **Drop the eyebrow when the headline runs to two lines.** Guideline 06
+  says so; the Headline card does not yet.
+- **Logos.** The design system's two logo uploads render black: their fill
+  lived in a `<style>` block, and uploads strip `<style>`. Upload the lockup
+  from this skill's `assets/logos/` instead, where the fill is on each
+  shape.
+- **Duotone photo.** The HTML deck's `.duo`, property for property:
 
-| `family` | key | file | carries |
-|---|---|---|---|
-| `WPP` | `wpp` | `WPP-Regular.woff2` | body, subhead, source, page number; the design system's own family name, so its Text styles still find a WPP face |
-| `WPP Thin` | `wpp-thin` | `WPP-Thin.woff2` | statements, stat numerals, divider titles |
-| `WPP Light` | `wpp-light` | `WPP-Light.woff2` | headlines, cover title, cover subheader |
-| `WPP Medium` | `wpp-medium` | `WPP-Medium.woff2` | eyebrow, labels, pills, footer brand line |
+  ```html
+  <div style="position:absolute; left:1260px; top:420px; width:560px; height:420px;
+              overflow:hidden; background:#000050">
+    <img src="/_blob/<id>" alt="…" style="width:560px; height:420px; object-fit:cover;
+         filter:grayscale(1) contrast(1.08) brightness(1.04); mix-blend-mode:screen">
+  </div>
+  ```
 
-**The face carries the weight, never `font-weight`.** Set `font-weight:400`
-on every text element. `<h1>`–`<h3>` default to 600 here, and 600 on a
-one-weight face is a synthesized fake bold.
-
-**Bold 700 does not load.** It would be a fifth face. The footer brand line,
-the only place the brand uses Bold, is set in `WPP Medium`. Never fake Bold
-with `-webkit-text-stroke`.
-
-| role | face | size · line-height · tracking |
-|---|---|---|
-| headline | `WPP Light` | 54px · 0.9 · −0.005em, sentence case, ≤2 lines |
-| eyebrow | `WPP Medium` | 24px · 1 · 0.12em, caps, Orange 800 |
-| subhead | `WPP` | 24px · 1.15 · 0.08em, caps |
-| body | `WPP` | 26px · 1.32 (24px in columns, 22px in 4-up and boxes) |
-| label | `WPP Medium` | 18px · 1 · 0.1em, caps |
-| pill | `WPP Medium` | 16px · 1 · 0.08em, caps |
-| statement, stat numerals | `WPP Thin` | 90px and up; `tokens.json` has the scale |
-| footer brand | `WPP Medium` | 16px · 1 · 0.01em |
-
-**The floors are the brand's, not the type's:** body 20px, other
-informational text 16px, footer furniture 11px. The type recommends 24px
-everywhere; footer furniture is frozen brand furniture and stays as
-specified.
-
-**No one-word title highlight here.** The brand's `.hl` is Medium on one
-token. A `<span>` in this format takes only a colour, not a face, and `<b>`
-is a fake bold on these faces. Leave the highlight out.
-
-## The frame, on every content slide
-
-The `<section>`: `background:#FAFAF0; color:#000050; font-family:'WPP',
-sans-serif`. Pin the furniture and flow the content band.
-
-| element | position |
-|---|---|
-| headline | `position:absolute; left:40px; top:73px`, with a `width` |
-| eyebrow | `position:absolute; left:40px; top:177px` |
-| content band | a pinned `<div>` at `left:40px; top:305px; width:1840px`: a flex column spaced by its `gap` |
-| footer brand | `position:absolute; right:40px; bottom:34px` |
-| page number | `position:absolute; right:40px; bottom:14px`, 11px, `opacity:0.7` |
-| confidential | `position:absolute; left:40px; bottom:14px`, 11px, `opacity:0.7` |
-| source | `position:absolute; left:40px; bottom:60px`, 12px, `opacity:0.75` |
-
-The type's 128px margins are its default. The brand's 40px edge governs.
-
-**Drop the eyebrow when the headline runs to two lines** (§7). At 64px, the
-canon's measured bank size, a two-line headline reaches y 188 and would run
-straight through the eyebrow at 177.
-
-`margin` is a no-op in this format: space with the parent's `gap`.
-`max-width` works on a `<div>` only, so give a `<p>` a `width`.
-
-## Recipes
-
-**Dots, dot fields and bleeds: one full-canvas `<svg>`, the section's first
-child.** The type clamps a negative offset to 0, so a pinned circle cannot
-bleed off the canvas. An svg the size of the slide crops its circles at its
-own edge, and that crop is the bleed. Macro circles (Ø 60–110% of the canvas
-width) always bleed. Flat fills only, Navy dots never behind text, each svg
-52 KB or less.
-
-```html
-<svg aria-label="dot composition" width="1920" height="1080" viewBox="0 0 1920 1080"
-     style="position:absolute; left:0; top:0; width:1920px; height:1080px">
-  <circle cx="1880" cy="-60" r="520" fill="#FF7800"/>
-  <circle cx="1500" cy="1180" r="300" fill="#F9BD5D"/>
-</svg>
-```
-
-**Stat circle.** A sized `<div style="width:220px; height:220px;
-border-radius:50%; background:#FF7800; display:flex; align-items:center;
-justify-content:center">` holding a `<p>` in `WPP Thin`. Area is proportional to
-value, so diameter goes with √value. Below 90px, an orange stat steps up to
-`WPP Light`: Thin orange on Cream measures about 2.5:1.
-
-**Pill.** `<p style="background:#000050; color:#FFFFFF; border-radius:999px;
-padding:10px 26px">` in `WPP Medium` 16px caps. It is the only rounded element: no
-rounded cards, no shadows, no gradients. The subset allows all three and the
-brand forbids them.
-
-**Duotone photo.** The brand's `.duo`, property for property:
-
-```html
-<div style="position:absolute; left:1260px; top:420px; width:560px; height:420px;
-            overflow:hidden; background:#000050">
-  <img src="/_blob/<id>" alt="…" style="width:560px; height:420px; object-fit:cover;
-       filter:grayscale(1) contrast(1.08) brightness(1.04); mix-blend-mode:screen">
-</div>
-```
-
-Media 200×200 or larger anchors to a canvas edge or a corner
-(non-negotiable 8).
-
-**Icons.** Never `<x-icon>`: its set is not the WPP suite. Paste the icon's
-`<svg>` from `assets/icons/<family>.md`, one weight family per slide (§8.1),
-and **replace `fill="currentColor"` with a hex**. An svg renders as an image
-here and does not inherit the slide's colour.
-
-**Charts.** `<svg>`, circle-first, flat fills. Labels are `<p>` pinned over
-the svg, because fonts never load inside one.
-
-**Halftone and motif art.** Upload the PNG (`assets/illustrations/`, or
-`scripts/halftone.py` output) and place it as an `<img>`.
-
-## Motion
-
-`data-transition="fade"` on every section; `push` between chapters is fine.
-The kit's choreography does not exist here, and `data-build-in` works on
-pinned children only. With motion off, no build-ins.
+  Media 200×200 or larger anchors to a canvas edge or a corner
+  (non-negotiable 8).
+- **Motion.** `data-transition="fade"` on every section; `push` between
+  chapters is fine. The kit's choreography does not exist here, and
+  `data-build-in` works on pinned children only. With motion off, no
+  build-ins.
+- **Chart labels.** Fonts never load inside an `<svg>`, so a chart's labels
+  are `<p>` elements pinned over it.
 
 ## What breaks if you are not careful
 
-- **A pasted canon or kit template.** Its `<style>` is dropped. Rewrite it.
+- **Pasted markup** from a preview or a template. Its `<style>` is dropped.
+  Rebuild it.
 - **An over-full box.** The page shrinks its text, which can take it under
   the brand's floors. Split the slide instead.
 - **A pinned backdrop after the first flow child** hides the flow text. The
   dot svg goes first.
 - **A negative offset** is clamped to 0. Bleeds belong in the svg.
+- **`margin`** is a no-op: space with the parent's `gap`. `max-width` works
+  on an element inside a `<div>` (the cards set it on a `<p>`); give a pinned
+  element a `width`.
+- **An SVG coloured by a `<style>` block** renders black once uploaded.
+  Colour it by attribute.
 - **Stylistic alternates** (the single-storey "a") are not in the subset.
   Accept the default glyphs.

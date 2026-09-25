@@ -550,12 +550,14 @@ non-English decks: **`references/EDGE-CASES.md`**. Open only when one applies.
 ## Bundled resources
 
 - **`canon/`** — 25 templates traced from the real slide bank:
-  `templates/<id>.html` (paste this — in Claude Design, rewrite it inline),
+  `templates/<id>.html` (paste this; in Claude Design the design system's
+  layout cards replace it),
   `PREVIEWS.png` (all 25 on one labelled sheet), and `CATALOG.md` +
   `catalog.json`, generated from sources kept outside the skill.
   **`canon/CATALOG.md` is the entry point for step 4.**
 - **`references/CLAUDE-DESIGN.md`** — the whole deck in Claude Design: the
-  Slides artifact, the design-system install, and the brand as inline styles.
+  Slides artifact, the question card, and the order in which to read and
+  install the design system.
 
 Each other file is named where it is used. Three rules that live nowhere else:
 
