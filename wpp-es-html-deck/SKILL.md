@@ -575,7 +575,9 @@ Each other file is named where it is used. Three rules that live nowhere else:
   `references/sections/` to match (the one place to edit the skill's copy),
   and `scripts/build_docs.py --write` regenerates `CORE.md` and
   `build/WPP-ES-DESIGN-GUIDELINE.md`. `verify_deck.py` fails the deck if
-  either has drifted from `sections/`.
+  either has drifted from `sections/`, or if a block this skill shares with
+  `deck-content-builder` (the house copy rules, the handoff contract) no
+  longer matches its twin.
 
 After editing a canonical snippet, regenerate the kit:
 

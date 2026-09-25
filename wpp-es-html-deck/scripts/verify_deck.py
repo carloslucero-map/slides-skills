@@ -705,7 +705,8 @@ def check_docs():
         report("WARN", "docs", f"build_docs.py --check did not run ({e})")
         return
     if p.returncode == 0:
-        report("PASS", "docs", "CORE.md and the master match references/sections/")
+        report("PASS", "docs", p.stdout.strip().replace("DOCS OK — ", "", 1)
+               or "CORE.md and the master match references/sections/")
     else:
         detail = (p.stderr or p.stdout).strip().replace("\n", " ")[:300]
         report("FAIL", "docs", f"guideline drift — {detail}")
