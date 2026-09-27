@@ -163,7 +163,7 @@
   {
    "file": "variants/cards-v2.html",
    "archetype": "cards",
-   "label": "Variant 2 \u2014 three across (compact). \u00a715.3: cards are flex columns with the CTA",
+   "label": "Variant 2 \u2014 three across (compact): flex-column cards, the link pinned to the foot",
    "slots": {
     "body": {
      "items": 6,
@@ -753,7 +753,7 @@
   {
    "file": "variants/image-content-v1.html",
    "archetype": "image-right",
-   "label": "Variant 1 \u2014 text left, media right. v4 \u00a715.9: .img-right-media bleeds to the right",
+   "label": "Variant 1 \u2014 text left, media right, bled to the right edge",
    "slots": {
     "body": {
      "items": 1,
@@ -861,7 +861,7 @@
   {
    "file": "variants/image-content-v5.html",
    "archetype": "dot-hero",
-   "label": "V5 \u00b7 DOT HERO (v4, HTML-BUILD \u00a713.3) \u2014 the 'pixelated' website look: navy square-grid dot art",
+   "label": "V5 \u00b7 DOT HERO (v4) \u2014 the 'pixelated' website look: navy square-grid dot art",
    "slots": {
     "body": {
      "items": 1,
@@ -1115,7 +1115,7 @@
   {
    "file": "variants/process-timeline-v1.html",
    "archetype": "process",
-   "label": "V1 \u00b7 PROCESS CARDS + TAKEAWAY (5 numbered white cards). \u00a715.4: cards hug their",
+   "label": "V1 \u00b7 PROCESS CARDS + TAKEAWAY (5 numbered white cards that hug their copy)",
    "slots": {
     "body": {
      "items": 5,
@@ -1254,12 +1254,12 @@
   {
    "file": "variants/process-timeline-v4.html",
    "archetype": "timeline",
-   "label": "V4 \u00b7 COMPACT \u2014 classic node timeline (pair with a field lift so the canvas stays alive)",
+   "label": "V4 \u00b7 COMPACT \u2014 classic node timeline + takeaway (pair with a field lift so the canvas stays alive)",
    "slots": {
     "body": {
      "items": 1,
-     "min_chars": 28,
-     "ideal_chars": 64,
+     "min_chars": 26,
+     "ideal_chars": 58,
      "max_chars": 369,
      "font_px": 26.0,
      "basis": "measured"
@@ -1272,17 +1272,25 @@
      "font_px": 54.0,
      "basis": "measured"
     },
+    "takeaway": {
+     "items": 1,
+     "min_chars": 18,
+     "ideal_chars": 42,
+     "max_chars": 48,
+     "font_px": 48.0,
+     "basis": "geometry"
+    },
     "tl-label": {
      "items": 4,
      "min_chars": 4,
-     "ideal_chars": 11,
+     "ideal_chars": 10,
      "max_chars": 690,
      "font_px": 16.0,
      "basis": "measured"
     }
    },
-   "slide_ideal_chars": 126,
-   "slide_max_chars": 170
+   "slide_ideal_chars": 158,
+   "slide_max_chars": 213
   },
   {
    "file": "variants/process-timeline-v5.html",

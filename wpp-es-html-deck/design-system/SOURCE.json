@@ -4,17 +4,17 @@
   "title": "WPP Enterprise Solutions | MAP",
   "namespace": "WppEsMap",
   "artifact": "https://claude.ai/artifact/9iQ9xpaBJj52LsfmKMVYGc",
-  "version": "1790341061-1a78",
+  "version": "1790526555-cad0",
   "lastChange": {
    "by": "Carlos Lucero",
-   "at": "2026-09-25T12:57:13Z",
+   "at": "2026-09-27T16:26:17Z",
    "via": "Claude Code",
-   "note": "The rules the skill's old guideline held and this system did not, approved as listed on the coverage review: print values, dark-slide frequency by direction, layout laws (guideline 03), dot and motif rules, motion details, fixed-slide limits, the classic divider's colours and the mid and macro dot fields; the eleven decisions as recommended (a flat Venn, EntTeamRow6's headline in Navy, QuantStatGrid5's highlight by weight only, the traced layouts' measured orange); and eleven corrections where this system contradicted itself or the stylesheet."
+   "note": "The six leftovers approved on 2026-09-25: SeqPhasePanels3's phase labels in Orange 700 and SeqStepsPanels5's step labels in White, as their source slides set them; ProcessTimelineV4 rebuilt (its nodes sat at the slide's top edge, a dot covered its last label and its lower half was empty); EntTeamRow6's comment; the chart-label rule for Slides and the four deck directions in the README; and the old guideline's section numbers rewritten in this system's terms, in the stylesheet, the 76 layout previews and seven cards."
   }
  },
  "files": {
   "design-system/README.md": {
-   "sha256": "c4a6c280e8f74bc9ff505999910df35b3a5bcb47f85209e7540e2195a8a0ec3a",
+   "sha256": "62b7bdb8c9f4d168934e815390fdafe3a69caa9c7fa1c48b7607ed61df49a168",
    "from": "project/README.md"
   },
   "design-system/asset-notes.md": {
@@ -22,7 +22,7 @@
    "from": "each asset group's README.md"
   },
   "design-system/bundle.css": {
-   "sha256": "c8aa580cfa1f22270d65cd1ff6290a701cd4c1dd4aced12e8b51fab42b4551d2",
+   "sha256": "8aeb4c93ca7f15ebf56a79b46afe9f92cd9b28a951634453da323055ebaeaeff",
    "from": "project/components/bundle.css"
   },
   "design-system/cards/elements.md": {
@@ -38,31 +38,31 @@
    "from": "the Layouts · Comparison cards' README.md (4)"
   },
   "design-system/cards/layouts-entities.md": {
-   "sha256": "4cdb379aa7086f49005f5ee65d8234abef2660d1e9bae1d8f826b43519327f24",
+   "sha256": "ea5b7ed738abed1006b9560aa364a7bafd25bc6c26fb415a722ceddfc008cbc7",
    "from": "the Layouts · Entities cards' README.md (7)"
   },
   "design-system/cards/layouts-enumeration.md": {
-   "sha256": "f84cfd0b361e67680a898b5df9ca5523a871f36e0e86ba6ef733185ec9df62b1",
+   "sha256": "c2a58ca7604505fc1074d434e9e44af0cafdc023816347853b3c587efa7ad833",
    "from": "the Layouts · Enumeration cards' README.md (16)"
   },
   "design-system/cards/layouts-media.md": {
-   "sha256": "1f6d3f5fb2dd4787ac62776f16c1dce8fb233307f1e5d71c2929ad27eaf38cbe",
+   "sha256": "81022484f6896038f890d7baa38903bdcf97b9f63b102de9b57543eada1ff092",
    "from": "the Layouts · Media cards' README.md (10)"
   },
   "design-system/cards/layouts-narrative.md": {
-   "sha256": "2b57885af35e5ff282dd948c8e2877f1694bb45ab892df29107f0ebf689a192a",
+   "sha256": "961df902afbd71e60cd60dffad52e5ff995d90bcd75fcde25f4ff65197e72313",
    "from": "the Layouts · Narrative cards' README.md (9)"
   },
   "design-system/cards/layouts-quantitative.md": {
-   "sha256": "21868a12464d172d23b16c7149eeccada7b547b1e18ba8fc9431a4dc26d31076",
+   "sha256": "2dfa05391755bbfae8b16b47e03b95cad49934ab9cd64f1881c3ff5b80594d7e",
    "from": "the Layouts · Quantitative cards' README.md (13)"
   },
   "design-system/cards/layouts-relational.md": {
-   "sha256": "317a1db5629e923394c970a633d8db7e5df998c5f5239ea32a221d21330a634a",
+   "sha256": "03d2564e8bc3c54dc4279f2d499039fafee567ce9f7dd818de9cb33343b5082e",
    "from": "the Layouts · Relational cards' README.md (8)"
   },
   "design-system/cards/layouts-sequence.md": {
-   "sha256": "b3a2eb0425059bbd7e930cff22305b825053654c62de386d0110daec82d17981",
+   "sha256": "0ce0418c05fed8716a9a791f633e85e976517d0bab38408845559afcce8ac900",
    "from": "the Layouts · Sequence cards' README.md (9)"
   },
   "design-system/elements.json": {
@@ -86,7 +86,7 @@
    "from": "asset Exemplars/statement-led.png (0841145b9a2954f1337f5ae94d88b992)"
   },
   "design-system/fixed-slides.json": {
-   "sha256": "9f8da8f1e9c3d926a9eb2867474da12d6bec7ad4d9844544fded896f1cde8732",
+   "sha256": "8611c7aed20b2ad1d89584668f5a254853a5bd9e4df2a6223acf83d1cbbe1706",
    "from": "Fixed slides cards + layout previews"
   },
   "design-system/fonts/WPP-Bold.woff2": {
@@ -110,7 +110,7 @@
    "from": "project/fonts/WPP-Thin.woff2"
   },
   "design-system/guidelines/01-colour.md": {
-   "sha256": "185aba5f2dae731f5525b227fede78a418f2a19656f03627e13ba9fbcb41fccf",
+   "sha256": "ee5d97d0c6ba5dd4dd0bc45a9079bd1a793e6fd8cb60af500298092c2c77af5b",
    "from": "project/guidelines/01-colour.md"
   },
   "design-system/guidelines/02-typography.md": {
@@ -324,7 +324,7 @@
    "from": "project/components/CardsV4/preview.html"
   },
   "assets/snippets/variants/charts-v1.html": {
-   "sha256": "6bd1859c3c379b2da51c766c0a187eb3abe34f1a87c37c2e286a6a5f2d64ae02",
+   "sha256": "67744270244711cf61bf98550aa1597dad9ebe5d7a52edf352f050a9dd4b6e88",
    "from": "project/components/ChartsV1/preview.html"
   },
   "assets/snippets/variants/charts-v2.html": {
@@ -336,7 +336,7 @@
    "from": "project/components/ChartsV3/preview.html"
   },
   "assets/snippets/variants/columns-v1.html": {
-   "sha256": "76a5ef78966c1ad656b12d54f073f3954a4c50147ce24d69f112183f999ac00e",
+   "sha256": "d0a34c31fff47bd26c42f746e8661915db40039453a0868e44bf24a9b8990a28",
    "from": "project/components/ColumnsV1/preview.html"
   },
   "assets/snippets/variants/columns-v2.html": {
@@ -356,7 +356,7 @@
    "from": "project/components/ColumnsV5/preview.html"
   },
   "assets/snippets/variants/comparison-v1.html": {
-   "sha256": "952aa409a3f9abb747bec1f6d901a5829dccf99b88af3ec612028b825b6a7769",
+   "sha256": "6eef5ad27b063258bca62e24ed2dec6439f98107813163917b36ab477c71d7d3",
    "from": "project/components/ComparisonV1/preview.html"
   },
   "assets/snippets/variants/comparison-v2.html": {
@@ -420,7 +420,7 @@
    "from": "project/components/ProcessTimelineV3/preview.html"
   },
   "assets/snippets/variants/process-timeline-v4.html": {
-   "sha256": "9dd5ffcbce974c9d569b28af29429a2eb53141d2bcdc8efa1b8a12c40a9a8bdc",
+   "sha256": "bd0ddb3ff29af8071cb5b6541b76816fce2efa8269705cd5f41c29aece74bfba",
    "from": "project/components/ProcessTimelineV4/preview.html"
   },
   "assets/snippets/variants/process-timeline-v5.html": {
@@ -432,7 +432,7 @@
    "from": "project/components/ProcessTimelineV6/preview.html"
   },
   "assets/snippets/variants/splits-v1.html": {
-   "sha256": "b34281142ea445858f99f8c5362d35cc7aebeee152f5fd710c2d59515fd5c37c",
+   "sha256": "a0f233a1b4c9803ea1b186c719f2e13030000b6ecfedaf12ab64ea9fbb000423",
    "from": "project/components/SplitsV1/preview.html"
   },
   "assets/snippets/variants/splits-v2.html": {
@@ -464,7 +464,7 @@
    "from": "project/components/StatementQuoteV3/preview.html"
   },
   "assets/snippets/variants/stats-v1.html": {
-   "sha256": "6672afee550adc73a4b98e1dae9646944912b519aeec342fa17099d0f0879760",
+   "sha256": "6b6c668b7bc0e2be96045a78f7b56114b68618b01bf121bbae53a3d948524983",
    "from": "project/components/StatsV1/preview.html"
   },
   "assets/snippets/variants/stats-v2.html": {
@@ -504,11 +504,11 @@
    "from": "project/components/CompPriorityGrid/preview.html"
   },
   "canon/templates/comp-priority-scatter.html": {
-   "sha256": "35d0c7f5a0d6312ac0cc06df0e7584f5c672d243952342a287394478b7bcb983",
+   "sha256": "461228971fce8688b60ebe66bcfaa33a29625471e773921c7bb652db83d2d4a9",
    "from": "project/components/CompPriorityScatter/preview.html"
   },
   "canon/templates/ent-logo-rows-6.html": {
-   "sha256": "74e31d91df63d6bcf5d358bdabfd1dbb7d3104affcc255a8117b23a1786f2a41",
+   "sha256": "d9a02c8d3a2d1b420356e064fdefe1981a964652018bf9f66d2733c503b69f56",
    "from": "project/components/EntLogoRows6/preview.html"
   },
   "canon/templates/ent-partner-credentials-3.html": {
@@ -516,7 +516,7 @@
    "from": "project/components/EntPartnerCredentials3/preview.html"
   },
   "canon/templates/ent-team-row-6.html": {
-   "sha256": "6cebf5b30f14f44016c35011af573e2941de9bfe847ac1169a8b19de4e3b0eb3",
+   "sha256": "6fec62292143a534618f376f63222e2e90528c2dd7fd46df92cd9062e9879a44",
    "from": "project/components/EntTeamRow6/preview.html"
   },
   "canon/templates/enum-index-2col.html": {
@@ -532,7 +532,7 @@
    "from": "project/components/EnumNumbered4/preview.html"
   },
   "canon/templates/enum-stage-bento-4.html": {
-   "sha256": "fb880ea9c493b9c6a18d9c5b692a227d15e48a9bd344d33a791c60b05a1dc174",
+   "sha256": "21fbb40c101bca9699187084deb677f538c77f67144a01e6fb90e10b7551bc9d",
    "from": "project/components/EnumStageBento4/preview.html"
   },
   "canon/templates/enum-tier-columns-3.html": {
@@ -544,7 +544,7 @@
    "from": "project/components/MediaAnnotatedCallouts4/preview.html"
   },
   "canon/templates/media-bleed-steps-4.html": {
-   "sha256": "c8a60a5e9dd46a08bbdc689134c1ae0f217853dd46d3bae9319b83250ea23981",
+   "sha256": "2008d48c5470a1268e881393a6cbeb5c712558e95669ca5f860a8a709b6341a7",
    "from": "project/components/MediaBleedSteps4/preview.html"
   },
   "canon/templates/media-rail-cases-3.html": {
@@ -552,15 +552,15 @@
    "from": "project/components/MediaRailCases3/preview.html"
   },
   "canon/templates/narrative-panel-model.html": {
-   "sha256": "e21750b6fcc6f9bfc1b689c5a35d5253c9bce3589e90ffdafcc5dac81ad90266",
+   "sha256": "eccd3ecbecdd269bbf3ddc3d663099bf9c02c6aeb0b9ce52ce694151a609e065",
    "from": "project/components/NarrativePanelModel/preview.html"
   },
   "canon/templates/narrative-statement-field.html": {
-   "sha256": "107b8c9052e2299c4eebb0d4901fc219ed32b8827fa451b8425c9bad714d79e6",
+   "sha256": "dd61e22abf996482f1a3a82c85d1cad7ff74ba72788e301a0573c7583ae57cdb",
    "from": "project/components/NarrativeStatementField/preview.html"
   },
   "canon/templates/narrative-tension-spectrum.html": {
-   "sha256": "9be56ed6d29651ddedec7cc27ef1e3482abf1ada62b60ef82048215f8f9e1ac7",
+   "sha256": "e464736e2705384e4e6cb883096e73c524c0787a7c033bb8138fcda8b75deb01",
    "from": "project/components/NarrativeTensionSpectrum/preview.html"
   },
   "canon/templates/quant-score-circles.html": {
@@ -580,7 +580,7 @@
    "from": "project/components/RelLayeredStack/preview.html"
   },
   "canon/templates/rel-stage-split.html": {
-   "sha256": "547baaf0cf827f164da09ca780e2001332e9be1ab8912f0548342f8f60422224",
+   "sha256": "3e73b80ac57924f220e200c30f87c1d34f710680c7e3adcafb441cb7222c0fd8",
    "from": "project/components/RelStageSplit/preview.html"
   },
   "canon/templates/rel-taxonomy-bands.html": {
@@ -592,11 +592,11 @@
    "from": "project/components/SeqPhaseColumns4/preview.html"
   },
   "canon/templates/seq-phase-panels-3.html": {
-   "sha256": "56bfd98ed542dcf671ce73d4b8d74979c0df3fd8b51bb6a0e8bff5de99300fe7",
+   "sha256": "035c34efe06478c90657f2941c8040497e2ff45a529d6b97942e7135e4386cb5",
    "from": "project/components/SeqPhasePanels3/preview.html"
   },
   "canon/templates/seq-steps-panels-5.html": {
-   "sha256": "bb8b7a1a00f8f4e3c8344697fbf59b92a374578fd63d1b1b15db761420d66cf8",
+   "sha256": "5256ee659be7046db2b2797070975269885db2637c2d79e949006bdb681b1518",
    "from": "project/components/SeqStepsPanels5/preview.html"
   }
  },

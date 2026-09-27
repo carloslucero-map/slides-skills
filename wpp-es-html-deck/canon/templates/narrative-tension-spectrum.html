@@ -97,10 +97,10 @@
 
   .nts-media{position:absolute;left:830px;right:0;top:0;bottom:0;overflow:hidden;}
   .nts-media img{width:100%;height:100%;object-fit:cover;display:block;}
-  /* The scrim is what buys the white type its §3.5 headroom over a photograph
+  /* The scrim is what buys the white type its contrast headroom (guideline 01) over a photograph
      whose brightness the deck cannot predict. Both the photo and the scrim carry
      data-text-safe, the shell's own declaration for "text sits over this ground
-     on purpose" — §15.2 would otherwise read a full-bleed image as decoration
+     on purpose" — the overlap law would otherwise read a full-bleed image as decoration
      obscuring text, which is exactly what it is for and exactly not what this is. */
   .nts-scrim{position:absolute;left:830px;right:0;top:0;bottom:0;
              background:var(--bg-dark);opacity:.72;}
@@ -142,7 +142,7 @@
   /* The furniture sits over the dark half, so it inverts. The first selector
      here was `.nts-right .footer-brand`, which matches nothing — the footer is
      a SIBLING of .nts-right, not a child, so it stayed navy on a photograph and
-     failed §15.5 in the corner where nobody looks. */
+     failed the contrast floor in the corner where nobody looks. */
   [data-template="narrative-tension-spectrum"] .footer-brand,
   [data-template="narrative-tension-spectrum"] .pageno{color:var(--text-inv);}
   </style>

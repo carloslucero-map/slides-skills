@@ -33,7 +33,7 @@ Used "for distinction and variation as needed" — accents, dots, data viz. Neve
 
 The playbook's roles, verbatim: **Backgrounds = White, Cream, Orange 500 only. Text = Navy, White only.
 Accents = Navy plus the full orange ramp.** Two consequences it states outright: **Orange 600 never carries
-text**, and only Navy and White ever set type. MAP decks add Navy as a *punctuation* background — dark
+text** (it is never the ground under type), and only Navy and White ever set type. MAP decks add Navy as a *punctuation* background — dark
 moments, dividers, outros — and that is the one sanctioned extension.
 
 ## Do not mix warm and cold whites

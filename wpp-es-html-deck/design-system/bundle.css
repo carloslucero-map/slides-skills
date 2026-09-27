@@ -6,10 +6,10 @@
   --bg:var(--wpp-cream); --bg-alt:var(--wpp-white); --bg-tint:var(--orange-500);
   --bg-dark:var(--wpp-navy); --text:var(--wpp-navy); --text-inv:var(--wpp-white);
   --accent:var(--orange-700);
-  /* v4 semantic data colours (§3.8): favourable numbers glow, unfavourable stay ink */
+  /* v4 semantic data colours (guideline 09): favourable numbers glow, unfavourable stay ink */
   --data-pos:var(--orange-700); --data-neg:var(--wpp-navy);
-  /* v4 layout tokens (§2): 40px module, 40px content edge (56px for running
-     copy) — deviating from these is what the §15.9 content-edge probe flags */
+  /* v4 layout tokens (guideline 03): 40px module, 40px content edge (56px for running
+     copy) — deviating from these is what the verifier's content-edge check flags */
   --grid:40px; --m-edge:40px; --m-text:56px; --band-top:305px; --band-bottom:60px;
   /* Per-deck sanctioned choices (spec keys) — defaults are the v1 look */
   --dv-bg:#FAFAF0; --dv-text:#000050; --dv-sub:#D94E0E;
@@ -22,7 +22,7 @@ html,body{height:100%;background:#0a0a1a;}
 #stage{position:fixed;inset:0;overflow:hidden;background:#0a0a1a;}
 #frame{position:absolute;top:0;left:0;width:1920px;height:1080px;transform-origin:top left;}
 
-/* Base slide — Cream is the one consistent content background (§3.3a) */
+/* Base slide — Cream is the one consistent content background (guideline 01) */
 .slide{
   position:absolute;top:0;left:0;width:1920px;height:1080px;overflow:hidden;
   background:var(--bg);color:var(--text);
@@ -33,7 +33,7 @@ body:not(.js) #frame .slide:first-of-type{display:block;}
 body.js .slide.is-active{display:block;}
 .slide--navy{background:var(--bg-dark);color:var(--text-inv);}
 .slide--tint{background:var(--bg-tint);}
-.slide--white{background:var(--bg-alt);}   /* rare only — see §3.3a */
+.slide--white{background:var(--bg-alt);}   /* rare only — see guideline 01 */
 
 /* GROUND BAND — a partial-height ground change, measured off the source deck
    rather than invented. Slide 86 turns White from y=580 on an otherwise Cream
@@ -42,12 +42,12 @@ body.js .slide.is-active{display:block;}
    .slide--white could not express this: it repaints the whole slide.
    --ground-y is the split (default 580px, the measured value). Content sits
    above the band because the band is a ::before at z-index 0.
-   Not a licence to invent grounds: §3.3a still governs which two may meet. */
+   Not a licence to invent grounds: guideline 01 still governs which two may meet. */
 .slide--ground{--ground-y:580px;}
 .slide--ground::before{content:"";position:absolute;left:0;right:0;top:var(--ground-y);bottom:0;background:var(--bg-alt);z-index:0;}
 .slide--ground > *{position:relative;z-index:1;}
 
-/* Standard content furniture (§7). v4 typography contract (§4.2): headlines
+/* Standard content furniture (guideline 06). v4 typography contract (guideline 02): headlines
    Light 300, running text Regular 400 — weight, not just size, carries the
    hierarchy. Footer furniture is Regular per the playbook ("footers"). */
 .slide > .headline{position:absolute;left:var(--m-edge);top:73px;font-weight:300;font-size:54px;line-height:.9;letter-spacing:-.005em;max-width:calc(1920px - 2*var(--m-edge));}
@@ -55,14 +55,14 @@ body.js .slide.is-active{display:block;}
                                       The kit's 54px descends from the old x1.5 factor. Canon
                                       templates use this; the 54px default stays until the whole
                                       scale is re-decided with an eye on it. */
-.headline--caps{font-size:48px;line-height:.94;letter-spacing:.01em;text-transform:uppercase;} /* Light-caps "strong emphasis" title (§4.3); ≤1 in 4 content slides */
-.hl{font-weight:500;} /* v4 title highlight (§4.4): ONE key token per title, weight only */
+.headline--caps{font-size:48px;line-height:.94;letter-spacing:.01em;text-transform:uppercase;} /* Light-caps "strong emphasis" title (guideline 02); ≤1 in 4 content slides */
+.hl{font-weight:500;} /* v4 title highlight (the Headline card): ONE key token per title, weight only */
 .slide > .subtitle{position:absolute;left:var(--m-edge);top:177px;font-weight:500;font-size:24px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-800);}
 .slide > .content-band{position:absolute;left:var(--m-edge);top:var(--band-top);right:var(--m-edge);bottom:var(--band-bottom);}
-.subhead{font-weight:400;font-size:24px;line-height:1.15;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;max-width:1200px;} /* v4 Regular-caps sub-headline tier (§4.3): supports the headline / leads the body */
+.subhead{font-weight:400;font-size:24px;line-height:1.15;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;max-width:1200px;} /* v4 Regular-caps sub-headline tier (guideline 02): supports the headline / leads the body */
 .body{font-weight:400;font-size:26px;line-height:1.32;max-width:1200px;}
-.stat--pos{color:var(--data-pos);} /* §3.8/§10.1 — favourable direction; ≥300 weight below 90px */
-.stat--neg{color:var(--data-neg);} /* §3.8/§10.1 — unfavourable direction, declared in markup */
+.stat--pos{color:var(--data-pos);} /* guideline 09 — favourable direction; ≥300 weight below 90px */
+.stat--neg{color:var(--data-neg);} /* guideline 09 — unfavourable direction, declared in markup */
 .footer-brand{position:absolute;right:var(--m-edge);bottom:34px;font-weight:700;font-size:16px;letter-spacing:.01em;color:var(--text);}
 .slide--navy .footer-brand{color:var(--text-inv);}
 .pageno{position:absolute;right:var(--m-edge);bottom:14px;font-weight:400;font-size:11px;opacity:.7;letter-spacing:.08em;text-transform:uppercase;}
@@ -96,7 +96,7 @@ body.js .slide.is-active{display:block;}
 .slide.agenda--dense .toc-row .t{font-size:42px;}
 
 /* ---- LOCKED DIVIDER (colourway via role vars; geometry immutable) ----
-   v4 default = the playbook composition (§12.3): one-hue macro scatter +
+   v4 default = the playbook composition (the DividerSlide card): one-hue macro scatter +
    bottom-pinned Thin caps title (sub-label stacked above it in .dv-block).
    dividerStyle:"classic" keeps the v3 geometry (absolute dv-sub/dv-title). */
 .slide.divider{background:var(--dv-bg);color:var(--dv-text);}
@@ -119,7 +119,7 @@ body.js .slide.is-active{display:block;}
 .slide.thank-you .footer-brand,.slide.thank-you .pageno{color:var(--ty-foot);}
 .slide.thank-you .confidential{color:var(--ty-edge);}
 
-/* ===== ARCHETYPE KIT (§12.4-§12.13) — assemble content slides from assets/snippets/ ===== */
+/* ===== ARCHETYPE KIT — assemble content slides from the layouts ===== */
 .lift{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
 .cols{position:absolute;left:var(--m-edge);top:260px;right:80px;display:grid;gap:80px;align-items:start;}
 .cols-2{grid-template-columns:repeat(2,1fr);}
@@ -140,8 +140,8 @@ body.js .slide.is-active{display:block;}
 .big-quote{position:absolute;left:120px;top:170px;max-width:1620px;font-weight:100;font-size:120px;line-height:1.04;letter-spacing:-.01em;}
 .quote-attr{position:absolute;left:120px;bottom:190px;font-weight:500;font-size:30px;letter-spacing:.1em;text-transform:uppercase;}
 .compare-art{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:964px;pointer-events:none;}
-.compare-art img{width:100%;height:auto;display:block;}  /* §15.2 — an unconstrained clone renders at native size and paints over the headline */
-/* §15.2 — the 964px centrepiece spans x478-1442; 370px text zones keep ≥24px
+.compare-art img{width:100%;height:auto;display:block;}  /* the overlap law (guideline 03): an unconstrained clone renders at native size and paints over the headline */
+/* the overlap law (guideline 03): the 964px centrepiece spans x478-1442; 370px text zones keep ≥24px
    clearance from the art's hard crop edges on both sides. */
 .compare-left{position:absolute;left:var(--m-edge);top:420px;width:370px;font-weight:400;font-size:24px;line-height:1.35;}
 .compare-right{position:absolute;right:80px;top:420px;width:370px;font-weight:400;font-size:24px;line-height:1.35;}
@@ -155,7 +155,7 @@ body.js .slide.is-active{display:block;}
 .kpi .l{font-weight:500;font-size:18px;letter-spacing:.1em;text-transform:uppercase;margin-top:12px;}
 .orbit{position:absolute;border-radius:50%;border:1px dotted var(--wpp-navy);}
 .proc{position:absolute;left:var(--m-edge);right:80px;top:300px;display:grid;grid-template-columns:repeat(5,1fr);gap:40px;}
-.proc .n{font-weight:100;font-size:64px;line-height:1;color:var(--orange-800);}  /* orange-800: thin numerals need ≥3:1 on white/cream (§15.5) */
+.proc .n{font-weight:100;font-size:64px;line-height:1;color:var(--orange-800);}  /* orange-800: thin numerals need ≥3:1 on white/cream (guideline 01) */
 .proc .step-l{font-weight:500;font-size:16px;letter-spacing:.1em;text-transform:uppercase;margin:16px 0 12px;}
 .proc .body{font-size:20px;}
 .timeline{position:absolute;left:var(--m-edge);right:80px;top:540px;height:1px;background:var(--wpp-navy);}
@@ -174,14 +174,14 @@ body.js .slide.is-active{display:block;}
 .person .rl{font-weight:400;font-size:20px;margin-top:4px;}
 .person .bio{font-weight:400;font-size:16px;line-height:1.35;margin-top:12px;}
 .img-right-text{position:absolute;left:var(--m-edge);top:260px;width:640px;}
-/* v4 §15.9: media anchors to edges — .img-right-media now bleeds to the right
+/* v4 anchoring (the Photo card): media anchors to edges — .img-right-media now bleeds to the right
    canvas edge (x880-1920); the margin opens for the image, the inner edge holds
    the grid. Floating mid-canvas media rectangles are a verifier FAIL. */
 .img-right-media{position:absolute;right:0;top:240px;bottom:140px;width:1040px;overflow:hidden;}
 .img-right-media img{width:100%;height:100%;object-fit:cover;}
 .img-half-media{position:absolute;right:0;top:0;bottom:0;width:960px;}
 .img-half-media img{width:100%;height:100%;object-fit:cover;}
-/* v4 media anchoring utilities (§12.9/§15.9): every media block bleeds or corners. */
+/* v4 media anchoring utilities (the Photo card): every media block bleeds or corners. */
 .media{position:absolute;overflow:hidden;z-index:0;}
 .media img{width:100%;height:100%;object-fit:cover;display:block;}
 .media--bleed-r{left:880px;right:0;top:240px;bottom:140px;}
@@ -194,7 +194,7 @@ body.js .slide.is-active{display:block;}
 .datatable{border-collapse:collapse;font-weight:400;font-size:22px;}
 .datatable th{font-weight:500;font-size:16px;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:0 48px 14px 0;border-bottom:1px solid var(--wpp-navy);}
 .datatable td{padding:14px 48px 14px 0;border-bottom:1px solid var(--wpp-navy);}
-/* House expandable card (§13.4): flat at rest, Orange 600 outline on hover,
+/* House expandable card (the CardLink card): flat at rest, Orange 600 outline on hover,
    CTA flips Navy->Orange 700 and the arrow nudges 4px right. */
 .card{background:var(--wpp-white);padding:36px;cursor:pointer;}
 .card:hover{outline:2px solid var(--orange-600);}
@@ -207,7 +207,7 @@ body.js .slide.is-active{display:block;}
 .card.is-open .card-detail{display:block;}
 
 
-/* ===== KIT v3 — COMPOSITION SYSTEM (guideline §12.15) — append-only ===== */
+/* ===== KIT v3 — COMPOSITION SYSTEM — append-only ===== */
 /* Panels / splits (R1, R13). Headline caps: right panel >=768px -> headline max-width 1040px inline. */
 .panel{position:absolute;top:0;bottom:0;right:0;z-index:0;}
 .panel--left{left:0;right:auto;}
@@ -231,7 +231,7 @@ body.js .slide.is-active{display:block;}
 .hero-num--orange{color:var(--orange-700);}
 .hero-row{position:absolute;left:var(--m-edge);right:80px;top:280px;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:64px;}
 .hero-row .n{font-weight:100;font-size:144px;line-height:1;}
-/* §15.7 — count-up must not reflow layout: equal 1fr tracks above + tabular
+/* count-up must not reflow layout: equal 1fr tracks above + tabular
    figures here keep every digit tick the same width. */
 .hero-num,.hero-row .n,.kpi .v,.stat-circle .v,.proc .n,[data-count]{font-variant-numeric:tabular-nums lining-nums;}
 .hero-row .l{font-weight:500;font-size:18px;letter-spacing:.1em;text-transform:uppercase;margin-top:16px;}
@@ -257,7 +257,7 @@ body.js .slide.is-active{display:block;}
 .cols--compact .body{font-size:22px;}
 .tbx-row--fill{top:260px;bottom:200px;}
 .tbx-row--fill .tbx{display:flex;flex-direction:column;gap:18px;}
-.proc--cards{top:260px;bottom:380px;gap:32px;}  /* §15.4 — cards hug content; pair with a .takeaway to anchor the freed bottom band */
+.proc--cards{top:260px;bottom:380px;gap:32px;}  /* cards hug content; pair with a .takeaway to anchor the freed bottom band */
 .proc--cards>div{background:var(--bg-alt);padding:36px 32px;}
 .kpi-row--low{top:auto;bottom:150px;}
 .team-grid--wide{grid-template-columns:repeat(3,1fr);bottom:160px;}
@@ -265,7 +265,7 @@ body.js .slide.is-active{display:block;}
 /* Full-height scaffolding (kills the dead lower band structurally) */
 .canvas{position:absolute;left:var(--m-edge);right:80px;top:240px;bottom:120px;}
 .canvas-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:1fr;gap:24px;height:100%;}
-/* v4 card-grid modifier (§12.14/§13.4): expandable cards expand INDIVIDUALLY —
+/* v4 card-grid modifier (the CardLink card): expandable cards expand INDIVIDUALLY —
    auto rows + start alignment, and the opened detail is an OVERLAY dropping
    over whatever sits below (flat white panel, no reflow): no sibling ever
    moves or stretches. The bento's default 1fr rows would stretch the whole
@@ -296,7 +296,7 @@ body.js .slide.is-active{display:block;}
 .gantt{position:absolute;left:var(--m-edge);right:80px;top:240px;bottom:200px;}
 .bar{position:absolute;height:6px;}
 .lane-dot{position:absolute;width:16px;height:16px;border-radius:50%;background:var(--wpp-navy);}
-.flag{position:absolute;width:206px;height:46px;background:var(--wpp-navy);color:var(--wpp-white);font-weight:500;font-size:16px;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;} /* 16px = the §4.5/§15.10 fine-print floor */
+.flag{position:absolute;width:206px;height:46px;background:var(--wpp-navy);color:var(--wpp-white);font-weight:500;font-size:16px;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;} /* 16px = the fine-print floor (the BodyCopy card) */
 /* High-impact extras */
 .big-statement--poster{font-size:220px;line-height:.8;}
 .layer-1{z-index:1;}
@@ -416,11 +416,11 @@ body:not([data-motion=off]) [data-build]{transition:opacity .5s ease,
 @keyframes m-kenburns{from{scale:1;translate:0 0;}to{scale:1.07;translate:-14px -8px;}}
 @keyframes m-twinkle{from{rotate:-10deg;scale:.94;}to{rotate:10deg;scale:1.06;}}
 /* Hover life — the deck answers the mouse like a web page. Movement only,
-   never colour (§14); real pointers only; off = off.
+   never colour (guideline 10); real pointers only; off = off.
    Hover offsets live on `transform`, NEVER on `translate`: the entrance
    keyframes animate `translate`, and a hover transition contesting the same
    property completes invisibly under the running animation, then snaps
-   ("teleports") the moment the animation releases the property (§15.7).
+   ("teleports") the moment the animation releases the property.
    None of these hover targets carries a base transform, so transform is free. */
 @media (hover:hover){
   body:not([data-motion=off]) .tbx,

@@ -1,24 +1,31 @@
 <!-- GENERATED. The slide is the design system's, copied by authoring/refresh_design_system.py; the capacity block above it is written by scripts/derive_capacity.py. Edit neither by hand. -->
-<!-- capacity: timeline — V4 · COMPACT — classic node timeline (pair with a field lift so the canvas stays alive)
-     .body                28–369  chars  (ideal 64, 26px)
+<!-- capacity: timeline — V4 · COMPACT — classic node timeline + takeaway (pair with a field lift so the canvas stays alive)
+     .body                26–369  chars  (ideal 58, 26px)
      .headline             8–136  chars  (ideal 18, 54px)
-     .tl-label      ×4     4–690  chars  (ideal 11, 16px)
-     SLIDE TOTAL      ideal 126 · max 170 chars
+     .takeaway            18–48   chars  (ideal 42, 48px)
+     .tl-label      ×4     4–690  chars  (ideal 10, 16px)
+     SLIDE TOTAL      ideal 158 · max 213 chars
      Over max: pick a lower-density variant, do not shrink type. -->
-<section class="slide" data-slide-id="cX-sY" data-archetype="timeline">
+<section class="slide" data-slide-id="cX-sY" data-archetype="timeline" data-composition="intentional-air">
   <div class="lift" data-dots="field-right" aria-hidden="true"></div>
   <h2 class="headline">Four dated moments</h2>
   <div class="content-band"><p class="body" style="max-width:900px;">One or two lead lines fit
-  above the y=540 line; keep them short.</p></div>
-  <div class="timeline"></div>
-  <div class="tl-node" style="left:calc(10% - 8px);"></div>
-  <div class="tl-label" style="left:10%;top:568px;">Jan · Kickoff</div>
-  <div class="tl-node" style="left:calc(40% - 8px);"></div>
-  <div class="tl-label" style="left:40%;top:568px;">Apr · Pilot</div>
-  <div class="tl-node tl-node--accent" style="left:calc(65% - 8px);"></div>
-  <div class="tl-label" style="left:65%;top:568px;">Jul · Today</div>
-  <div class="tl-node" style="left:calc(90% - 8px);"></div>
-  <div class="tl-label" style="left:90%;top:568px;">Dec · Scale</div>
+  above the line; keep them short.</p></div>
+  <!-- The nodes and labels sit INSIDE the line, which places them: a node
+       centred on it, a label 28px below. Their percentages are of its width.
+       The line runs through the middle of the band and the takeaway anchors the
+       bottom, so the air around them is shaped, as on the other timelines. -->
+  <div class="timeline" style="top:600px;">
+    <div class="tl-node" style="left:calc(10% - 8px);"></div>
+    <div class="tl-label" style="left:10%;">Q1 · Kickoff</div>
+    <div class="tl-node" style="left:calc(36.667% - 8px);"></div>
+    <div class="tl-label" style="left:36.667%;">Q2 · Pilot</div>
+    <div class="tl-node tl-node--accent" style="left:calc(63.333% - 8px);"></div>
+    <div class="tl-label" style="left:63.333%;">Q3 · Today</div>
+    <div class="tl-node" style="left:calc(90% - 8px);"></div>
+    <div class="tl-label" style="left:90%;">Q4 · Scale</div>
+  </div>
+  <div class="takeaway">One line on what the four dates add up to.</div>
   <div class="footer-brand">WPP Enterprise Solutions | MAP</div>
   <div class="pageno"></div>
 </section>

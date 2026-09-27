@@ -32,7 +32,7 @@ Deliberately low. No single logo is the point; the grid of them is. A hero logo 
 
 | What | Source | Here | Why |
 |---|---|---|---|
-| logo art | real partner wordmarks | text placeholders | Logos are supplied per deck and inlined at fill time (§2a). Shipping a fixed set in the template would date it and bloat every deck that used it. |
+| logo art | real partner wordmarks | text placeholders | Logos are supplied per deck and embedded at fill time. Shipping a fixed set in the template would date it and bloat every deck that used it. |
 | background density | 0.93 | 0.95 | Same cause: 27 real logos are dense art, 27 text wordmarks are not. Re-measure on a filled deck before treating this as a composition defect. |
 
 ## What the consumer supplies

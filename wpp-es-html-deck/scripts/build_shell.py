@@ -66,9 +66,11 @@ def _ds_json(name):
 
 # The design system's own values, from its copy in design-system/: tokens.json
 # for :root and the fonts, fixed-slides.json for the divider colourways, the
-# outros, the cover art, the agenda's rows and the dot presets. The copy is
-# written only by the refresh (authoring/refresh_design_system.py); no brand
-# value is written in this file.
+# outros, the cover art, the agenda's rows, the dot presets and each
+# direction's defaults. The copy is written only by the refresh
+# (authoring/refresh_design_system.py). This file holds no colour, size,
+# position, dot or default of its own; the fixed slides' words in each
+# language (STRINGS below), which the cards give in prose, are the exception.
 TOKENS = _ds_json("tokens.json")
 FIXED = _ds_json("fixed-slides.json")
 _COLOURS = {t["name"]: t["value"]["light"] for t in TOKENS["color"]["tokens"]}
@@ -91,7 +93,9 @@ STRINGS = {
            "notes_ph": "Notas del presentador para esta diapositiva."},
 }
 
-DIRECTIONS = ("editorial-quiet", "statement-led", "data-forward", "high-impact")
+# The four deck directions, and each one's default divider colourway and motion:
+# the design system's README, "Four deck directions".
+DIRECTIONS = tuple(FIXED["directions"])
 
 # Sanctioned per-deck divider colourways (the DividerSlide card). Geometry NEVER varies —
 # only the colour keys a/b/c resolved by the emitted DOTCOLORS map, plus the
@@ -107,16 +111,14 @@ COLOURWAYS = {
     for name, c in FIXED["colourways"].items()
 }
 # Default colourway per direction (explicit dividerColourway always wins).
-DIRECTION_COLOURWAY = {"editorial-quiet": "orange", "statement-led": "navy-dots",
-                       "data-forward": "orange", "high-impact": "navy-full"}
+DIRECTION_COLOURWAY = {d: v["dividerColourway"] for d, v in FIXED["directions"].items()}
 
 # Motion system (v3.2): a runtime choreography layer over the kit — elements
 # move, colours never do (transform/opacity only; flat fills stay flat).
 # Auto-off for prefers-reduced-motion, print, and headless capture
 # (navigator.webdriver), so the verifier and PDFs always see the static deck.
 MOTIONS = ("full", "subtle", "off")
-DIRECTION_MOTION = {"editorial-quiet": "subtle", "statement-led": "full",
-                    "data-forward": "subtle", "high-impact": "full"}
+DIRECTION_MOTION = {d: v["motion"] for d, v in FIXED["directions"].items()}
 
 # The outros are the design system's (ThankYouSlide): ground, type, the three
 # dot colours of the thankyou preset, and the colours of the footer furniture.

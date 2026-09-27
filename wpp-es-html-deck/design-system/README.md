@@ -30,7 +30,7 @@ Whitespace must be *shaped*: asymmetric, counterweighted by the composition, nev
 | Type | `text` / `text-inv` | Navy and White set all type. |
 | Accents | `accent` and the orange ramp | Dots, shapes, chart fills. |
 
-**Orange 600 never carries text.** Body copy only ever sits on White, Cream or Orange 500. Orange 900 and Navy always take White type.
+**Orange 600 is never a ground for text.** Body copy only ever sits on White, Cream or Orange 500. Orange 900 and Navy always take White type.
 
 The sanctioned orange text moments, in full: the cover month line (`orange-700`), agenda numerals (`orange-700`), the divider sub-label (`orange-800`, or `orange-600` on the navy-full colourway), the content eyebrow (`orange-800`), data-viz accents such as process step numerals (`orange-800`), the favourable stat `data-pos`, a ghost numeral (`orange-500` on Cream), and, in the traced layouts only, the eyebrows, labels and numerals they were measured with (`orange-700`). That is the whole list.
 
@@ -56,6 +56,24 @@ The components come in three kinds, and they do different jobs.
 
 **Layouts** (the *Layouts · …* groups) are 76 whole-slide compositions, marked as showcase pages: 25 traced from real bank slides with measured geometry, and 51 from the deck kit. They are patterns to rebuild, not markup to paste. Pick one by the shape of the argument, not its look, from the catalogue below: layouts of the same archetype differ by density, not decoration. Its *When to use it* is quoted from its card. Read the card for composition and capacity, then rebuild the layout from the elements. Over a layout's maximum, pick a lower-density layout or split the slide; never shrink the type. Where a traced and a kit layout cover similar ground both stay, and each card's *Related* section says which to pick.
 
+## Four deck directions
+
+Every deck is built in one of four directions, chosen once before anything is built. The direction changes a deck's voice, never its effort: all four compose the full canvas, and a bare band of text on Cream is a defect in each of them. Editorial quiet is the default, and each direction's exemplar, in the *Exemplars* group, is the bar its slides are judged against.
+
+| | Editorial quiet | Statement-led | Data-forward | High-impact |
+|---|---|---|---|---|
+| Dark and tint moments | No dark slides; tint panels are fine | At most one slide in six dark | None, or one on the hero number | Up to one in three, evenly spread; a colour-block split counts half |
+| Big Statements | At most one, beside a motif (`StatementQuoteV1`) | One opens each chapter (`StatementQuoteV1`, or the poster `ImageContentV0`) | The opening and the close only | At poster scale, up to 220px (`StatementQuoteV3`), and a full-bleed motif poster per chapter (`ImageContentV0`) |
+| Motifs on content slides | At most two, navy, right-anchored or along the bottom | On the slides next to a statement | As a backdrop behind stat compositions | On any slide, full-bleed or in a panel |
+| Dot fields | Tone-on-tone presets on slides that are not dense; `field-micro` as quiet energy | `field-accent` or `field-micro` on statements, `field-right` elsewhere | `field-bottom` on slides without a chart | Any preset, including `field-navy` (never behind text), `field-mid` and `field-macro` |
+| Numbers | Thin callouts in the copy; split halves (`SplitsV1`) | One hero number per chapter | Numeral quartets, hubs and stat mosaics (`StatsV1`, `StatsV2`, `ChartsV1`), hero numerals at display size | Numerals as art: ghost numerals, numerals on panels |
+| Density | Spacious | Mixed | Compact: swimlanes, milestone rulers, phase boards (`ProcessTimelineV3`, `ProcessTimelineV2`, `ProcessTimelineV6`) | Mixed, with sanctioned collage layering |
+| Divider colourway | `orange` | `navy-dots` | `orange` | `navy-full` |
+| Motion | `subtle` | `full` | `subtle` | `full` |
+| Outro | light | light | light | light; dark suggested |
+
+The last three rows are defaults: a deck may register another colourway, motion level or outro. How often a deck goes dark is detailed in *Colour*, and motion in *Motion*.
+
 ## Building in Claude Design Slides
 
 A slide in Slides takes inline styles only (no classes, no stylesheet, no scripts, no `var()`), so `components/bundle.css` does not apply there. Where this system and Slides' own defaults differ, this system wins.
@@ -65,6 +83,7 @@ A slide in Slides takes inline styles only (no classes, no stylesheet, no script
 - **Floors.** This system's floors hold: 20px body, 16px for the BodyCopy card's fine print, 11px furniture only. Slides' 24px suggestion does not apply.
 - **Colour.** Write the hex values from the tokens: `#000050` Navy, `#FAFAF0` Cream, `#FF7800` Orange 700, and so on.
 - **Dots.** Draw a dot field as one full-bleed `<svg>` listed first on the slide, so cropped circles clip at the canvas edge (Slides clamps negative offsets). Single dots and stat circles are `div`s with `border-radius:50%`.
+- **Charts.** Fonts never load inside an `<svg>`, so draw a chart's bars or circles in the svg and set its labels as `<p>` elements pinned over it.
 - **Icons.** Paste the brand icon's SVG inline and replace `currentColor` with the hex ink; as an `<img>` it renders black. Never use Slides' own `x-icon` set.
 - **Photos.** Set every photo from the Photo card, which says which photos take the navy duotone and how.
 - **Motion.** Slides' own transitions and build-ins only, as the Motion guideline sets them for Slides; the HTML deck's choreography does not exist here.
@@ -120,7 +139,7 @@ Every deck: `CoverSlide` first, `AgendaSlide` when there are chapters, a `Divide
 | `ProcessTimelineV1` | A process of short steps that lands on a takeaway. | 432 ideal, 583 max |
 | `ProcessTimelineV2` | Dated milestones along a line. | 226 ideal, 305 max |
 | `ProcessTimelineV3` | Parallel workstreams over time. | 125 ideal, 168 max |
-| `ProcessTimelineV4` | A simple timeline of a few points. | 126 ideal, 170 max |
+| `ProcessTimelineV4` | A simple timeline of a few points. | 158 ideal, 213 max |
 | `ProcessTimelineV6` | Phases with detailed steps on one board. | 670 ideal, 904 max |
 
 **Quantitative.** Numbers that make the point.

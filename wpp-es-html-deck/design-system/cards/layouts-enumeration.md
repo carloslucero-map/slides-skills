@@ -417,7 +417,7 @@ The copy, inside the capacity below. Build the slide from the Elements cards (He
 ## Capacity
 
 ```
-cards — Variant 2 — three across (compact). §15.3: cards are flex columns with the CTA
+cards — Variant 2 — three across (compact): flex-column cards, the link pinned to the foot
      .body          ×6    31–80   chars  (ideal 70, 26px)
      .card-cta      ×3     4–613  chars  (ideal 6, 18px)
      .col-sub       ×3     4–47   chars  (ideal 11, 24px)

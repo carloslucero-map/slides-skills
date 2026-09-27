@@ -70,7 +70,7 @@ Measured on the hero rail's label, but the real focal device is AREA — the dom
 
 | What | Source | Here | Why |
 |---|---|---|---|
-| capability group icons | line icons from outside the §8 suite | dropped | Icons are a per-deck choice and the groups read without them. |
+| capability group icons | line icons from outside the icon suite | dropped | Icons are a per-deck choice and the groups read without them. |
 
 ## What the consumer supplies
 

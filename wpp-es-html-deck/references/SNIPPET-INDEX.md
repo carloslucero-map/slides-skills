@@ -16,7 +16,7 @@ by `scripts/derive_capacity.py`.
 | boxes | `variants/boxes-v2.html` | 214 | COMPACT — related items joined by dots |
 | boxes | `variants/boxes-v3.html` | 162 | COMPACT — sequence joined by arrows |
 | cards | `variants/cards-v1.html` | 645 | 2×2 full-height card bento (.canvas-grid--cards: one card expand |
-| cards | `variants/cards-v2.html` | 497 | three across . §15.3: cards are flex columns with the CTA |
+| cards | `variants/cards-v2.html` | 497 | three across : flex-column cards, the link pinned to the foot |
 | cards | `variants/cards-v3.html` | 379 | IMAGE-TOP CARDS — 3 cards with photo/image above + title + body  |
 | cards | `variants/cards-v4.html` | 429 | R12 TILE GRID 3×2 — 560×319 flat tiles mixing .cell / .cell--nav |
 | chart | `variants/charts-v1.html` | 184 | R2 STAT MOSAIC BENTO |
@@ -30,7 +30,7 @@ by `scripts/derive_capacity.py`.
 | compare | `variants/comparison-v1.html` | 287 | comparative archetype (.compare-art + .compare-left / .compare-r |
 | compare | `variants/comparison-v2.html` | 223 | VENN DIAGRAM — 2-3 overlapping circles with labels inside and at |
 | image-poster | `variants/image-content-v0.html` | 17 | R11 MOTIF POSTER |
-| image-right | `variants/image-content-v1.html` | 119 | text left, media right. v4 §15.9: .img-right-media bleeds to the |
+| image-right | `variants/image-content-v1.html` | 119 | text left, media right, bled to the right edge |
 | image-half | `variants/image-content-v2.html` | 112 | full-bleed-right media ; clamp the headline |
 | screenshot | `variants/image-content-v3.html` | 100 | user screenshot with the sanctioned .screenshot treatment |
 | image-duo | `variants/image-content-v4.html` | 26 | DUOTONE HERO SPLIT — the proven composition: photo one half, |
@@ -40,10 +40,10 @@ by `scripts/derive_capacity.py`.
 | orbit | `variants/orbit-v1.html` | 130 | HUB CLASSIC — 3 rings, 4 labelled nodes, headline left |
 | orbit | `variants/orbit-v2.html` | 310 | RADIAL SPOKES — context column left, ring right: filled navy hub |
 | orbit | `variants/orbit-v3.html` | 358 | FLOATING BUBBLES — 3-4 overlapping text circles |
-| process | `variants/process-timeline-v1.html` | 432 | PROCESS CARDS + TAKEAWAY . §15.4: cards hug their |
+| process | `variants/process-timeline-v1.html` | 432 | PROCESS CARDS + TAKEAWAY |
 | timeline | `variants/process-timeline-v2.html` | 226 | R7 MILESTONE RULER . |
 | timeline | `variants/process-timeline-v3.html` | 125 | R6 GANTT SWIMLANES (flat 6px bars in the orange ramp, two segmen |
-| timeline | `variants/process-timeline-v4.html` | 126 | COMPACT — classic node timeline |
+| timeline | `variants/process-timeline-v4.html` | 158 | COMPACT — classic node timeline + takeaway |
 | ecosystem | `variants/process-timeline-v5.html` | 458 | ECOSYSTEM MAP — nodes distributed across zones with connecting l |
 | process | `variants/process-timeline-v6.html` | 670 | R8 PHASE BOARD — centre tint panel as the board, step headers on |
 | split-rail | `variants/splits-v1.html` | 309 | R1 SPLIT RAIL DASHBOARD : lead + low KPI row, tint rail with 4 s |
