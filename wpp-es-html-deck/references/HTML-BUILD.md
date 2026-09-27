@@ -242,7 +242,7 @@ depart from it on purpose, and their cards say where.
   treatment; decks of 8+ content slides use ≥ 2 density variants and ≥ 3
   recipes.
 - **C7 — Colour quota.** The slide respects its direction's quota of dark and
-  tint moments (the direction table in `SKILL.md`; guideline 01).
+  tint moments (`README.md`, *Four deck directions*; guideline 01).
 
 `verify_deck.py` enforces C2 numerically as a tripwire; the pass itself is done
 BY LOOKING at each slide's screenshot.
@@ -378,7 +378,7 @@ card's *In the HTML deck* section lists the same classes.
 | Headline, eyebrow, highlight | `.headline`, `.headline--lg`, `.headline--caps`; `.subtitle`; one `<span class="hl">` per title | Headline card |
 | Running text and labels | `.body`, `.subhead`, `.col-sub`; text between 16 and 20 px carries a fine-print role from `design-system/elements.json` | BodyCopy, Subhead and ColumnLabel cards |
 | Numbers with a direction | `.stat--pos` (favourable), `.stat--neg` (unfavourable); weight 300 or more below 90 px, one `.stat--pos` per slide | guideline 09, KpiRow card |
-| Dot fields | `data-dots="<preset>"`: `lift-corner`, `lift-orange-soft`, `lift-navy-corner`, `field-right`, `field-bottom`, `field-tl`, `field-accent`, `field-navy`, `field-micro`, `field-mid`, `field-macro` | guideline 04, DotField card; which preset per direction: `SKILL.md` |
+| Dot fields | `data-dots="<preset>"`: `lift-corner`, `lift-orange-soft`, `lift-navy-corner`, `field-right`, `field-bottom`, `field-tl`, `field-accent`, `field-navy`, `field-micro`, `field-mid`, `field-macro` | guideline 04, DotField card; which preset per direction: `README.md`, *Four deck directions* |
 | Motifs, textures, library photos | list the keys in `spec.illustrations`; the shell inlines each once as a `<template data-asset>`; place with `<div class="motif motif--right" data-motif="coral">`, utilities `--right`, `--bottom`, `--backdrop`, `--panel`, `--bleed` (§12.14) | guideline 08, `design-system/asset-notes.md` |
 | A brief's photo | `<div class="duo" style="…geometry…"><img src="data:…" alt="…"></div>`; a library photo is never wrapped in `.duo` | Photo card |
 | A brief's photo as dot art | `scripts/halftone.py`, below | guideline 08 |
@@ -717,9 +717,10 @@ the design system's guideline 10 first, then to `build_shell.py`.
 # Where the other section numbers went
 
 The old guideline's brand sections now live in the design system, and on this
-path in its copy under `design-system/`. Comments in the layouts (including the
-design system's own previews) still cite some of the old numbers; this is where
-each one went.
+path in its copy under `design-system/`. Neither the design system nor this
+skill cites them any more, but older notes in the repository (the authoring
+sources, the plans, the kit's retired notes) still do; this is where each one
+went.
 
 | Old § | Now |
 |---|---|
@@ -733,7 +734,7 @@ each one went.
 | §8 Iconography | guideline 07, the Icon card and the Icons notes |
 | §9 Illustration & photography | guideline 08; §9.1a, §9.1b and §9.2a the Illustrations, Textures and Photography notes in `asset-notes.md`; §9.1c the halftone converter, §13.3 here; §9.2 the Photo card |
 | §10 Data visualisation | guideline 09, the StatCircle and KpiRow cards |
-| §11 Backgrounds by moment | `README.md`, *Colour, in one page*; guideline 01 (dark slides by direction, the per-deck colourways); guideline 04 (dots by slide density); the DividerSlide and ThankYouSlide cards |
+| §11 Backgrounds by moment | `README.md`, *Colour, in one page* and *Four deck directions*; guideline 01 (dark slides by direction, the per-deck colourways); guideline 04 (dots by slide density); the DividerSlide and ThankYouSlide cards |
 | §12 (§12.0–§12.13) Slide archetype library | the fixed slides: `README.md`, *Components*, and the cards in `cards/fixed-slides.md` (§12.1a CoverSlide, §12.2 AgendaSlide, §12.3 DividerSlide, §12.13 ThankYouSlide); §12.4–§12.12, guideline 03 *Archetypes* and the layout cards in `cards/layouts-*.md` |
-| §12.16 Sanctioned flexibilities | the direction table in `SKILL.md`; guidelines 03, 04 and 08 |
+| §12.16 Sanctioned flexibilities | `README.md`, *Four deck directions*; guidelines 03, 04 and 08 |
 | §14.5 Revising a delivered deck | `references/REVISING.md` |

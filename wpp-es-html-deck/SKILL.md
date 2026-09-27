@@ -167,19 +167,13 @@ its copy in `design-system/`, never in this file.
 
 ## Design directions (the one design question you ask)
 
-**Every direction requires full-canvas composition (§12.15) — the difference
-between them is voice, never effort.** A bare text band on cream is a defect
-in all four.
-
-| Axis | **1 · Editorial quiet** (default) | **2 · Statement-led** | **3 · Data-forward** | **4 · High-impact** |
-|---|---|---|---|---|
-| Dark / tint moments | 0 dark; tint panels ok | ≤1-in-6 dark | 0–1, on the hero number | up to 1-in-3, evenly spread; colour-block splits count half |
-| Big Statements | ≤1, motif-side (R10) | opens each chapter (R10/R11) | open + close only | poster scale 200–260px; R11 full-bleed per chapter sanctioned |
-| Motifs on content slides | ≤2, navy, `--right/--bottom` | statement-adjacent slides | `--backdrop` behind stat hubs | any slide, incl. `--bleed` and `--panel` |
-| Dot fields | `field-*` tone-on-tone on non-dense slides; `field-micro` as quiet energy | `field-accent`/`field-micro` on statements, `field-right` elsewhere | `field-bottom` on non-chart slides | any preset incl. `field-navy` (text-safe), `field-mid`, `field-macro` |
-| Numbers | inline Thin callouts, R1 halves | one hero stat per chapter (`.hero-num--s`) | R3 quartets, R4 hubs, R2 mosaics; `.hero-num` 240–320px | numerals as art (`.num-ghost`, panel numerals) |
-| Density | spacious | mixed | compact-leaning; R6/R7/R8 | mixed + sanctioned collage layering |
-| Divider default | `orange` | `navy-dots` | `orange` | `navy-full` (dark outro suggested) |
+The four directions, and what each one changes (dark and tint moments, Big
+Statements, motifs, dot fields, numbers, density, and the default divider
+colourway, motion and outro), are the design system's:
+**`design-system/README.md`, *Four deck directions*.** Read that table before
+you plan; the generator takes each direction's defaults from it. Every
+direction composes the full canvas (§12.15): the difference between them is
+voice, never effort, and a bare text band on Cream is a defect in all four.
 
 A gate reply that picks no direction → Editorial quiet. **"You choose" means
 pick by content signal** — numbers-heavy input → Data-forward, message- or
@@ -307,8 +301,8 @@ Registered choices: `cover` mountain · crystal · coral · dots · playbook
 `dividerColourway` orange · orange-600 · orange-500 · white · navy-dots ·
 navy-full; `dividerStyle` playbook (default — one-hue macro scatter, title
 pinned bottom) · classic (the v3 geometry), both on the DividerSlide card;
-`outro` light · dark; `motion` full · subtle · off (defaults:
-high-impact / statement-led → full, others → subtle; the shell choreographs
+`outro` light · dark; `motion` full · subtle · off (each direction's default
+colourway, motion and outro: the README's *Four deck directions*; the shell choreographs
 the kit automatically — no markup work, see `HTML-BUILD.md` §14). Flat string chapters (v1 style) still work.
 Set `"microDeck": true` when the final deck has ≤4 content slides. For
 Spanish decks set `"lang": "es"` (Agenda / Gracias. / Sección N / PRIVADO Y

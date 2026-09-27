@@ -132,9 +132,8 @@ and builds from the design system itself:
 [`references/CLAUDE-DESIGN.md`](wpp-es-html-deck/references/CLAUDE-DESIGN.md)
 gives the order to read it in (the README, the guidelines, then the Elements
 cards, each with its inline-style recipe for Slides, then the Fixed slides
-cards, then the layout catalogue and the chosen layout's card), how to install
-it in the deck, and the one Slides rule the design system does not carry yet.
-It holds no brand values of its own.
+cards, then the layout catalogue and the chosen layout's card) and how to
+install it in the deck. It holds no brand values of its own.
 
 Two things are specific to this surface. **The plan gate is a question card**
 (`AskUserQuestion`), because a question typed as prose cannot be clicked there.
@@ -165,8 +164,9 @@ hand, and checked.**
   asset groups' notes, which are what the model reads; the tokens, the
   stylesheet, the fonts and asset groups, the icon family files,
   `fixed-slides.json` (colourways, both outros, the covers, the agenda's row
-  placement and the dot presets, read from the Fixed slides and DotField cards
-  and the previews), `elements.json` (the closed list of fine-print roles, from
+  placement, the dot presets and each direction's default colourway and
+  motion, read from the Fixed slides and DotField cards, the previews and the
+  README), `elements.json` (the closed list of fine-print roles, from
   the BodyCopy card), every layout's `<section>`, and the canon catalogue's
   text; and it records the version and a sha256 per file in `SOURCE.json`.
   `--check` exits 1 when the copy has drifted, and both modes warn when the
@@ -177,9 +177,11 @@ hand, and checked.**
   layout's `<section>`, no longer matches `SOURCE.json`, and takes the palette,
   the grounds and the fine-print roles from the copy.
 
-Everything a deck shows comes from the copy: `build_shell.py` writes no brand
-value of its own. And the model reads the brand from the copy too, so there is
-no second, hand-kept version of the rules in the skill: its own
+Everything a deck shows comes from the copy: `build_shell.py` holds no colour,
+size, position, dot or per-direction default of its own, only the fixed
+slides' words in each language (Agenda, Thank you., Section N, the
+confidential line). And the model reads the brand from the copy too, so there
+is no second, hand-kept version of the rules in the skill: its own
 `references/HTML-BUILD.md` says only how the HTML file is built and checked.
 
 ## Uploading to claude.ai

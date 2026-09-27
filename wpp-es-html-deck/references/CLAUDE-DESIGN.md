@@ -13,8 +13,7 @@ Three sources, three jobs:
   create the deck, decide how a slide is written: `project/deck.json`, one
   `project/slides/<id>.html` per slide, the calls.
 - **This page** decides how the deck gets made here: the gate, the reading
-  order, the install, and the one Slides rule the design system does not
-  carry yet.
+  order and the install.
 
 This page holds no brand values. When you need a hex, a size or a position,
 it is in the design system.
@@ -157,14 +156,6 @@ Never set the type smaller.
 
 `canon/` and `references/SNIPPET-INDEX.md` are the HTML path's copies of the
 same layouts; you do not need them here.
-
-## Until the design system carries it
-
-This Slides rule exists only on this page. It leaves once the design system
-holds it.
-
-- **Chart labels.** Fonts never load inside an `<svg>`, so a chart's labels
-  are `<p>` elements pinned over it.
 
 ## What breaks if you are not careful
 
