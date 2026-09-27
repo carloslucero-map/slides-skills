@@ -5,6 +5,48 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [4.2.1] — 2026-09-27
+
+The six leftovers 4.2.0 listed, fixed in the design system, and the skill
+following them.
+
+### Fixed, in the design system (now version `1790526555-cad0`)
+- Two traced layouts set labels in Orange 600, which is on no list of orange
+  text. Both now follow their source slides: SeqPhasePanels3's phase labels
+  are Orange 700 (the traced layouts' measured orange), SeqStepsPanels5's
+  "Activities" and "Deliverables" labels are White. The rule's wording is
+  clearer too: Orange 600 is never a ground for text.
+- ProcessTimelineV4, rebuilt. Its nodes sat outside the line, so they rendered
+  at the slide's top edge; a dot of its field covered the last label; and its
+  lower half was empty. The nodes and labels now sit inside the line, the line
+  runs through the middle of the band, a takeaway anchors the bottom, and the
+  example dates are four even quarters. Like the other two timelines it
+  declares its air. It passes the verifier; its copy grows to 158 characters,
+  213 at most (was 126 and 170).
+- EntTeamRow6's preview no longer calls its headline orange.
+- The README carries the chart-label rule for Slides (a chart's labels are
+  `<p>` elements pinned over its svg) and a new *Four deck directions* table:
+  what each direction changes, with its default divider colourway, motion and
+  outro. Its poster statements run to 220 px, as the type scale says; the
+  skill's table had said 260.
+- No old guideline section number is left in the design system: 137 citations
+  in the stylesheet, the 76 layout previews and seven cards now name the
+  guideline or card that holds the rule.
+
+### Changed, in the skill
+- `build_shell.py` takes the four directions and each one's default colourway
+  and motion from the copy (the refresh reads the README's table into
+  `fixed-slides.json`). 4.2.0 said the generator wrote no brand value; it
+  still held those defaults. What it writes itself now is only the fixed
+  slides' words in each language.
+- `SKILL.md` points at the design system's directions table instead of keeping
+  its own, and `CLAUDE-DESIGN.md` drops its last Slides note.
+- Five kit capacity labels lose their section numbers, in step with their
+  cards.
+
+Decks build as before: across the 1,449 spec combinations the output differs
+from 4.2.0 only in the stylesheet's comments.
+
 ## [4.2.0] — 2026-09-25
 
 The skill stops keeping a copy of the brand of its own. It reads the design
