@@ -39,9 +39,12 @@ and it is never re-synced from here.
 
 ## The skills
 
-In the organisation they are published as **deck-builder** and
-**slides-builder**, and the two skills call each other by those names. Each
-SKILL.md's `name` stays its folder's name, which an upload requires.
+In the organisation they ship together as one plugin, **map-decks** (shown as
+MAP Decks), where they are named **deck-builder** and **slides-builder**, and
+the two skills call each other by those names. Here each SKILL.md's `name`
+stays its folder's name; `authoring/build_plugin.py` gives them their
+organisation names when it builds the plugin (see
+[Uploading to claude.ai](#uploading-to-claudeai)).
 
 ### `deck-content-builder`
 Writes the **text content** of a deck — action titles, bullets, callouts,
@@ -189,6 +192,32 @@ is no second, hand-kept version of the rules in the skill: its own
 `references/HTML-BUILD.md` says only how the HTML file is built and checked.
 
 ## Uploading to claude.ai
+
+### The organisation installs one plugin, map-decks
+
+Build it from the latest commit:
+
+```bash
+python3 authoring/build_plugin.py --out ~/Downloads
+# writes ~/Downloads/map-decks-<version>.zip
+```
+
+It holds both skills under the names people use, `skills/slides-builder/` and
+`skills/deck-builder/`, beside `.claude-plugin/plugin.json` and a short
+README. It is built from a commit (`git archive`), never the working copy, and
+takes its version from the newest release in this CHANGELOG. It checks
+claude.ai's plugin limits, **5,000 files and 200 MB** (now 169 files, 4.9 MB),
+and runs `claude plugin validate` when the Claude Code CLI is installed.
+
+An Owner uploads it in **Organization settings > Plugins & skills**: **Add >
+Upload a plugin** the first time, then **Upload new version** from the
+plugin's menu for each release. **Default access** decides who gets it:
+**Installed by default** or **Required** puts it in front of everyone. Every
+upload stays in the plugin's **Version history**, and **Revert to this
+version** rolls back. To try a build before the organisation sees it, upload it
+to your own account from **Customize > Plugins > Add > Upload plugin**.
+
+### One skill on its own
 
 claude.ai caps an uploaded skill at **200 entries and 30 MB**. The error reads
 *"Zip contains too many files (maximum 200)"*, but it counts **files AND

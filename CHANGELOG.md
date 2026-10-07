@@ -5,6 +5,24 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [4.3.0] — 2026-10-07
+
+### Added
+- **map-decks**, one plugin holding both skills, for the organisation to
+  install in place of two separate skills. Inside it they carry the names
+  people use, slides-builder and deck-builder, so nothing has to be renamed at
+  upload, and the two always ship at the same version. An Owner uploads it once
+  in Organization settings > Plugins & skills and can set it to Installed by
+  default or Required, so everyone has it without turning anything on.
+- `authoring/build_plugin.py` builds it: `map-decks-<version>.zip`, from a
+  commit, checked against claude.ai's plugin limits (5,000 files, 200 MB; it is
+  169 files, 4.9 MB) and by `claude plugin validate`.
+
+The skills themselves are unchanged. Anthropic's plugin pages list chat, Cowork
+and Claude Code and do not mention Claude Design, so try the plugin on your own
+account in a chat and in a Claude Design deck before the organisation gets it,
+and remove the two separate skills only after that.
+
 ## [4.2.3] — 2026-10-07
 
 ### Changed, in the design system (now version `1791378973-10da`)
