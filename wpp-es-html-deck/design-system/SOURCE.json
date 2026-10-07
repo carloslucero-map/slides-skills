@@ -4,17 +4,17 @@
   "title": "WPP Enterprise Solutions | MAP",
   "namespace": "WppEsMap",
   "artifact": "https://claude.ai/artifact/9iQ9xpaBJj52LsfmKMVYGc",
-  "version": "1790526555-cad0",
+  "version": "1791378973-10da",
   "lastChange": {
    "by": "Carlos Lucero",
-   "at": "2026-09-27T16:26:17Z",
+   "at": "2026-10-07T13:15:52Z",
    "via": "Claude Code",
-   "note": "The six leftovers approved on 2026-09-25: SeqPhasePanels3's phase labels in Orange 700 and SeqStepsPanels5's step labels in White, as their source slides set them; ProcessTimelineV4 rebuilt (its nodes sat at the slide's top edge, a dot covered its last label and its lower half was empty); EntTeamRow6's comment; the chart-label rule for Slides and the four deck directions in the README; and the old guideline's section numbers rewritten in this system's terms, in the stylesheet, the 76 layout previews and seven cards."
+   "note": "The README's rule 8 names the HTML skill by its published name, slides-builder, the name people see in Claude; its repository folder stays wpp-es-html-deck."
   }
  },
  "files": {
   "design-system/README.md": {
-   "sha256": "62b7bdb8c9f4d168934e815390fdafe3a69caa9c7fa1c48b7607ed61df49a168",
+   "sha256": "6b3419679eeb6c34e67485e2d6012f111e590491eb59211a54d5a9d109a01651",
    "from": "project/README.md"
   },
   "design-system/asset-notes.md": {

@@ -5,6 +5,17 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [4.2.3] — 2026-10-07
+
+### Changed, in the design system (now version `1791378973-10da`)
+- The README's rule 8 names the HTML skill **slides-builder**, its name in
+  the organisation, where it said `wpp-es-html-deck`. Guideline 11 still says
+  `wpp-es-html-deck` where it means the repository folder, which is right.
+
+The skill's copy of the design system is refreshed to that version: its
+README and `SOURCE.json` are the only files that changed. Decks build exactly
+as before.
+
 ## [4.2.2] — 2026-10-07
 
 ### Fixed

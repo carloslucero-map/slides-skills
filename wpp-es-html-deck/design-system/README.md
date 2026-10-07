@@ -9,7 +9,7 @@ The visual language of the WPP Enterprise Solutions | MAP presentation system: N
 5. **Charts are circles.** Flat fills from the primary and secondary palettes, sized by area.
 6. **One warm background, used consistently.** `wpp-cream` on every content slide. Mixing Cream and pure White across a deck is the single most common consistency error in this system.
 7. **The name is "WPP Enterprise Solutions | MAP".** Never "VML MAP", never "VMLMAP".
-8. **A deck lives where it is presented.** In Claude Design, build a deck inside the Slides artifact with this system installed, never as a separate HTML file, following *Building in Claude Design Slides* below. Elsewhere, the `wpp-es-html-deck` skill writes one self-contained HTML file with fonts, logos, icons and imagery embedded.
+8. **A deck lives where it is presented.** In Claude Design, build a deck inside the Slides artifact with this system installed, never as a separate HTML file, following *Building in Claude Design Slides* below. Elsewhere, the `slides-builder` skill writes one self-contained HTML file with fonts, logos, icons and imagery embedded.
 
 ## The canvas
 
