@@ -46,7 +46,7 @@ dots. That air is registered and deliberate — it is not the same thing as a sl
 ## Layout laws
 
 These hold on every content slide, whatever builds it. The HTML deck's verifier measures most of them; in
-Claude Design Slides, check them by eye.
+Claude Slides, check them by eye.
 
 - **Text stays inside the content edge**, left and right. Art may bleed off the canvas; text never does.
 - **The headline band is the headline's.** From y 73 to 201 sit only the headline and its eyebrow. Content

@@ -4,21 +4,21 @@
   "title": "WPP Enterprise Solutions | MAP",
   "namespace": "WppEsMap",
   "artifact": "https://claude.ai/artifact/9iQ9xpaBJj52LsfmKMVYGc",
-  "version": "1791378973-10da",
+  "version": "1791385252-da14",
   "lastChange": {
    "by": "Carlos Lucero",
-   "at": "2026-10-07T13:15:52Z",
+   "at": "2026-10-07T15:00:06Z",
    "via": "Claude Code",
-   "note": "The README's rule 8 names the HTML skill by its published name, slides-builder, the name people see in Claude; its repository folder stays wpp-es-html-deck."
+   "note": "Claude Slides first, wherever Claude can make a Claude Slides deck (a chat, Claude Design or Claude Code): rule 8 says so, and HTML only where Claude Slides is not available, from the slides-builder skill in the MAP Decks plugin. 'Claude Design Slides' is now 'Claude Slides', the product's name, in every card, guideline and the README."
   }
  },
  "files": {
   "design-system/README.md": {
-   "sha256": "6b3419679eeb6c34e67485e2d6012f111e590491eb59211a54d5a9d109a01651",
+   "sha256": "a65f4b10d32e7c9478e971161f0a415148b8b4573144a46e409bbced1397769d",
    "from": "project/README.md"
   },
   "design-system/asset-notes.md": {
-   "sha256": "27180f98f6287c8506069444b6365115a02827327f63d0c6a5e58f6a4c95fa8e",
+   "sha256": "fd96dfe02f86628a51edec4b85b383a010d0909cf38ccb4f9925803eb930a37f",
    "from": "each asset group's README.md"
   },
   "design-system/bundle.css": {
@@ -26,43 +26,43 @@
    "from": "project/components/bundle.css"
   },
   "design-system/cards/elements.md": {
-   "sha256": "30a7fae37d29e90e7dad0cafc9c3658f041e825dd21a021864936046232699d0",
+   "sha256": "ae387e12c720cb9c39ce6d12ce7ba27cf081bdc1cc0258c766ad1d8498be59fb",
    "from": "the Elements cards' README.md (18)"
   },
   "design-system/cards/fixed-slides.md": {
-   "sha256": "521d3dbf84b87b62d1163d142aea3561611cf2ea873c728d3fa5fdfac2f555c4",
+   "sha256": "6dab989083a3ea4c073ee8e51e0e0db228e50c19ddac001a4a35289bfbccd2ec",
    "from": "the Fixed slides cards' README.md (4)"
   },
   "design-system/cards/layouts-comparison.md": {
-   "sha256": "571a7d8e8b882a718cda538b48a3dbfad9baf15518dc13ba5d37b6cdf1492cba",
+   "sha256": "83d907ee97e86687c955b44bf30f1e5f5ca0c86498b9e974e0962bb25b134c12",
    "from": "the Layouts · Comparison cards' README.md (4)"
   },
   "design-system/cards/layouts-entities.md": {
-   "sha256": "ea5b7ed738abed1006b9560aa364a7bafd25bc6c26fb415a722ceddfc008cbc7",
+   "sha256": "e8f8946ad8a8438f5346d7c0ac3244cf00ce47ab8f39456a2680d8476e7237da",
    "from": "the Layouts · Entities cards' README.md (7)"
   },
   "design-system/cards/layouts-enumeration.md": {
-   "sha256": "c2a58ca7604505fc1074d434e9e44af0cafdc023816347853b3c587efa7ad833",
+   "sha256": "9c93846b188e16f2557fbee7e768f911cba89aaf68ef916f49c9c52026f49ecc",
    "from": "the Layouts · Enumeration cards' README.md (16)"
   },
   "design-system/cards/layouts-media.md": {
-   "sha256": "81022484f6896038f890d7baa38903bdcf97b9f63b102de9b57543eada1ff092",
+   "sha256": "39722b3ada5dda9ef2560f09d7b62730ad1ff85ffc4d4a4d32a1d7e28b4109a6",
    "from": "the Layouts · Media cards' README.md (10)"
   },
   "design-system/cards/layouts-narrative.md": {
-   "sha256": "961df902afbd71e60cd60dffad52e5ff995d90bcd75fcde25f4ff65197e72313",
+   "sha256": "395583ea6da3906de95fedc659315345eef72886574710e1a82facc892f09fc0",
    "from": "the Layouts · Narrative cards' README.md (9)"
   },
   "design-system/cards/layouts-quantitative.md": {
-   "sha256": "2dfa05391755bbfae8b16b47e03b95cad49934ab9cd64f1881c3ff5b80594d7e",
+   "sha256": "535ca9a308c2a0234abb89542decb25a478590e70b6a769f169711330ce92953",
    "from": "the Layouts · Quantitative cards' README.md (13)"
   },
   "design-system/cards/layouts-relational.md": {
-   "sha256": "03d2564e8bc3c54dc4279f2d499039fafee567ce9f7dd818de9cb33343b5082e",
+   "sha256": "b6296457c059855e8d233619bc0bcb8d3bb32ee05091f8a41f119fae02c1ef9c",
    "from": "the Layouts · Relational cards' README.md (8)"
   },
   "design-system/cards/layouts-sequence.md": {
-   "sha256": "0ce0418c05fed8716a9a791f633e85e976517d0bab38408845559afcce8ac900",
+   "sha256": "2811e8557bb5ba2cbb6f6519b7bae115eb73b31f93665d860997ed8396ca6a03",
    "from": "the Layouts · Sequence cards' README.md (9)"
   },
   "design-system/elements.json": {
@@ -118,7 +118,7 @@
    "from": "project/guidelines/02-typography.md"
   },
   "design-system/guidelines/03-grid-and-composition.md": {
-   "sha256": "b6f54b53b083522e5895de661616a9dc93447d23e2a929f5d983817af37958b9",
+   "sha256": "d211daa295200d5a7a360e74ec7444baae4339aff71a2af131d5585671279160",
    "from": "project/guidelines/03-grid-and-composition.md"
   },
   "design-system/guidelines/04-dot-system.md": {
@@ -138,7 +138,7 @@
    "from": "project/guidelines/07-iconography.md"
   },
   "design-system/guidelines/08-illustration-and-photography.md": {
-   "sha256": "7784cc4d0360808f41b974aa5697f3efac13a035ab3f7097c129cd787ef11a88",
+   "sha256": "67c31c538190da2843b990cc8abee54400dd92cb732fab611f9afe12b8056c75",
    "from": "project/guidelines/08-illustration-and-photography.md"
   },
   "design-system/guidelines/09-data-visualisation.md": {
@@ -146,7 +146,7 @@
    "from": "project/guidelines/09-data-visualisation.md"
   },
   "design-system/guidelines/10-motion.md": {
-   "sha256": "2c351da01a20b286c77b29aa50b9cf7f3f4459fb6d98f0d2b8b71b1cb9ba6d7e",
+   "sha256": "fcce1e22d2c0a56909ded5f9ea9443801f8b35b3f11a5f1d61d2376ec93ad4fe",
    "from": "project/guidelines/10-motion.md"
   },
   "design-system/guidelines/11-source-and-open-questions.md": {
@@ -290,7 +290,7 @@
    "from": "asset Textures/orbs-cream.png (56df84c8fe3ed8300532ddd4a50d4c9e)"
   },
   "design-system/tokens.json": {
-   "sha256": "46f5963c13fc78243589da1cee33d0a4f3655db0be786da189dd4fba84bee7b9",
+   "sha256": "25a85a3b6c5483d6295c076ff38c3b92bffb6688d583253398f9083c5f8455d3",
    "from": "project/tokens.json"
   }
  },

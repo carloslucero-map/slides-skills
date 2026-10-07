@@ -53,7 +53,7 @@ elements, so hooking the leaves gives forty beats where the design wants five.
 
 The preview cards in this system render the static state — the motion layer is not loaded here.
 
-## In Claude Design Slides
+## In Claude Slides
 
 The runtime layer above does not exist in Slides, and neither do its hooks. A deck there moves with the Slides
 type's own transitions and build-ins:

@@ -5,6 +5,41 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [4.4.0] — 2026-10-07
+
+Claude Slides first, wherever it is available. The skills used to say "in
+Claude Design" where they meant "wherever Claude can make a Claude Slides
+deck", and the rule that picks the deliverable listed Claude Code as an
+HTML-only surface. A chat with Claude Slides on, Claude Design and Claude Code
+all get a Claude Slides deck now; the self-contained HTML file is only for where
+Claude Slides is not available.
+
+### Changed
+- slides-builder decides between the **Claude Slides path** (the default:
+  any session whose Artifact tool offers a Slides type, checked with
+  `quickstart` when unsure) and the **HTML path** (only where there is none).
+  The description, the gates, delivery, revising and the edge cases say so.
+- `references/CLAUDE-DESIGN.md` is now **`references/SLIDES.md`**. Asking
+  uses the question card where the session has `AskUserQuestion`; where it
+  does not, the same questions go in one short message, still with no slide
+  table.
+- deck-builder keeps its approved content in the conversation and asks with
+  the card on the same terms, wherever Claude Slides is available.
+- The plugin's description and README say Claude Slides first, HTML otherwise.
+
+### Changed, in the design system (now version `1791385252-da14`)
+- Rule 8 of the README: wherever Claude can make a Claude Slides deck (a
+  chat, Claude Design or Claude Code), the deck is built in Claude Slides;
+  only where Claude Slides is not available does the slides-builder skill in
+  the MAP Decks plugin write one self-contained HTML file. It used to send
+  everything outside Claude Design to HTML.
+- "Claude Design Slides" is now "Claude Slides", the product's name, in 105
+  places: every card's recipe heading, the README's *Building in Claude
+  Slides*, guidelines 03, 08 and 10, the logo notes and one token note.
+
+The skill's copy is refreshed to that version; no layout, fixed slide or
+value changed, and decks build exactly as before.
+
 ## [4.3.0] — 2026-10-07
 
 ### Added

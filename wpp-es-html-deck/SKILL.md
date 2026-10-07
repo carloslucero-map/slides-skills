@@ -4,19 +4,20 @@ description: >-
   Turn any raw input — narrative, outline, brief, bullet dump, or an approved
   deck-builder Markdown file — into a polished slide deck in the WPP
   Enterprise Solutions | MAP visual language (Navy + Cream + Orange, WPP
-  Sans, dot system, 16:9). In Claude Design the deck is built inside the
-  Slides artifact, never as a separate file; elsewhere it is one
+  Sans, dot system, 16:9). Wherever Claude can make a Claude Slides deck (a
+  chat, Claude Design, Claude Code) the deck is built as one, never as a
+  separate file; only where Claude Slides is not available is it one
   self-contained HTML file. Trigger: "build a deck", "turn this into
   slides", "make a presentation", "WPP deck", "MAP deck", "put this in the
   WPP template", "make this on-brand", or pasting notes to be rendered as a
   deck — even if messy, structuring is the job. House standard for WPP ES |
   MAP decks. Do NOT use to edit .pptx files or for the older VML MAP
   espresso/gold style. Two-turn by design: the first reply asks the plan and
-  design-direction questions (in Claude Design, as one question card); the
+  design-direction questions (with Claude Slides, as one question card); the
   deck is built only after the answers or an explicit review waiver.
 ---
 
-# WPP Enterprise Solutions | MAP — HTML Deck Builder v4.2
+# WPP Enterprise Solutions | MAP — slides-builder
 
 You convert loose text — or an approved `deck-builder` content file —
 into one on-brand slide deck. The user brings the thinking, you bring the
@@ -34,10 +35,11 @@ every size (a micro-deck or single slide still gets a short plan and the
 direction question), in every language (run the gates in the user's
 language), and separately to EACH new deck in a conversation.
 
-**In Claude Design the gate is the question card, not text:** one
+**On the Claude Slides path the gate is the question card, not a slide table:** one
 `AskUserQuestion` call, whose answers are the approval, and no slide image
-ever posted to the chat (`references/CLAUDE-DESIGN.md`, "Asking"). The rule
-is unchanged: nothing is built before it is answered.
+ever posted to the chat (`references/SLIDES.md`, "Asking", which also covers
+a session without the card). The rule is unchanged: nothing is built before
+it is answered.
 
 Only three inputs waive the full gate:
 1. **An explicit review waiver in the user's own message** — "just build it,
@@ -66,14 +68,17 @@ The gates above hold on every surface. What differs is the deliverable, and
 getting it wrong puts the deck in a separate file the user cannot present
 from.
 
-- **Claude Design, or any session whose Artifact tool offers a Slides type**
-  (a deck is open, or `quickstart` with intent `slides` returns one): **the
-  deck is an Artifact made from that type.** Read
-  **`references/CLAUDE-DESIGN.md`** and follow it for steps 3–6. Never write
-  a standalone `.html` file, never run `build_shell.py`, `check_capacity.py`
-  or `verify_deck.py`, never screenshot. The artifact exports HTML, PDF and
-  PPTX itself, so a request for "an HTML file" there means its export.
-- **Everywhere else** (Claude Code, a chat with no Slides type): **one
+- **The Claude Slides path, the default: wherever Claude can make a Claude
+  Slides deck.** A chat in claude.ai or the desktop app with Claude Slides on,
+  Claude Design, Claude Code: any session whose Artifact tool offers a Slides type (a
+  deck is open, or `quickstart` with intent `slides` returns one). Not sure?
+  Check with that `quickstart` before deciding. **The deck is an Artifact made
+  from that type.** Read **`references/SLIDES.md`** and follow it for steps
+  3–6. Never write a standalone `.html` file, never run `build_shell.py`,
+  `check_capacity.py` or `verify_deck.py`, never screenshot. The artifact
+  exports HTML, PDF and PPTX itself, so a request for "an HTML file" there
+  means its export.
+- **The HTML path, only where Claude Slides is not available (no Slides type):** **one
   self-contained `.html` file**, built by steps 3–6 below.
 
 ## Step 0 — read the brand system first (once per deck)
@@ -84,9 +89,9 @@ what a deck looks like, and this skill decides how a deck gets made. Where
 this skill's files disagree with it, the design system is right; follow it
 and say so at delivery.
 
-- **In Claude Design**, read the system itself, in the order
-  `references/CLAUDE-DESIGN.md` gives.
-- **Everywhere else**, the scripts cannot reach Claude Design, so the skill
+- **On the Claude Slides path**, read the system itself, in the order
+  `references/SLIDES.md` gives.
+- **On the HTML path**, the scripts cannot reach Claude Design, so the skill
   ships a generated copy in `design-system/`, stamped in
   `design-system/SOURCE.json` with the version it was read from.
   `verify_deck.py` fails the deck if any file in it was edited by hand.
@@ -130,8 +135,8 @@ The brand rules below are the design system's, in brief. Their values
 its copy in `design-system/`, never in this file.
 
 1. **One deliverable, in the surface's own form** (see "Where the deck
-   goes"). In Claude Design: the Slides artifact, with assets uploaded, never
-   inlined. Everywhere else: **one self-contained `.html` file** — every
+   goes"). On the Claude Slides path: the Claude Slides deck, with assets uploaded,
+   never inlined. On the HTML path: **one self-contained `.html` file** — every
    asset embedded inline (base64 / inline SVG), never an external path or CDN
    link, so a colleague double-clicks it offline and it renders fully. The
    generator handles this; if you add assets, inline them too (raster ≤300KB
@@ -198,9 +203,9 @@ questions; never let demo metadata reach a real cover (the generator errors on
 it anyway). A reply to G0 — including "defaults" — answers intake only; G1
 still follows as its own turn.
 
-**G1 — Plan gate (the single blocking gate).** In Claude Design, G0 and G1
-are one question card instead — `references/CLAUDE-DESIGN.md`, "Asking".
-Everywhere else, present one compact artifact:
+**G1 — Plan gate (the single blocking gate).** On the Claude Slides path, G0 and G1
+are one question card instead — `references/SLIDES.md`, "Asking". On the
+HTML path, present one compact artifact:
 - table: *slide # · chapter · action title · archetype · confidence*, with
   **▲ marking titles under 70%**;
 - a 3-sentence narrative read-through;
@@ -226,15 +231,15 @@ chapters: X / Y / Z") **plus the design-direction question**, and wait for
 that one answer — or when the user said "just build it" (default direction,
 assumptions noted at delivery, no questions at all).
 
-**G2 — Delivery (never blocking).** The file — in Claude Design, the Slides
-artifact's link, with no seen-report (`CLAUDE-DESIGN.md`) — + a 2–4-line summary + *which two
+**G2 — Delivery (never blocking).** The file — on the Claude Slides path, the deck's
+link, with no seen-report (`SLIDES.md`) — + a 2–4-line summary + *which two
 slides to eyeball first* (cover badge legibility, the main data-viz slide) +
 the revision invitation, always including the variant offer: *"Name any slide
 by number to change it — I patch in place; numbering and self-containment are
 preserved automatically. I can also render an A/B alternative of any slide
 (or an A/B thumbnail sheet of the 2–3 highest-stakes slides) so you can pick."*
-In Claude Design an alternative is an extra slide beside the original, never
-an image in the chat.
+On the Claude Slides path an alternative is an extra slide beside the original,
+never an image in the chat.
 
 ## Workflow
 
@@ -262,8 +267,8 @@ the same turn unless one of the three waivers in the STOP section applies.
 
 ### 3. Write the spec and generate the shell
 
-**In Claude Design, stop here:** steps 3–6 are replaced by
-`references/CLAUDE-DESIGN.md`. Everything below builds the standalone file.
+**On the Claude Slides path, stop here:** steps 3–6 are replaced by
+`references/SLIDES.md`. Everything below builds the standalone file.
 
 ```bash
 python scripts/build_shell.py --spec spec.json --out deck.html
@@ -322,8 +327,8 @@ So the order is not a preference, it is a fidelity rule:
 
 1. **`canon/CATALOG.md`** (~1,600 tokens, loaded once). Choose on the `use
    when` column — it names the problem the template solves. Then open exactly
-   one `canon/templates/<id>.html` and paste its `<section>`. (In Claude
-   Design never paste: rebuild it in inline styles, `references/CLAUDE-DESIGN.md`.)
+   one `canon/templates/<id>.html` and paste its `<section>`. (On the Claude
+   Slides path never paste: rebuild it in inline styles, `references/SLIDES.md`.)
 2. **`references/SNIPPET-INDEX.md`** only when no canon template fits. The
    catalogue's last line names the families the canon does not cover yet; for
    those the kit is the answer and there is nothing wrong with saying so.
@@ -560,14 +565,14 @@ non-English decks: **`references/EDGE-CASES.md`**. Open only when one applies.
 ## Bundled resources
 
 - **`canon/`** — 25 templates traced from the real slide bank:
-  `templates/<id>.html` (paste this; in Claude Design the design system's
+  `templates/<id>.html` (paste this; on the Claude Slides path the design system's
   layout cards replace it), and `CATALOG.md` + `catalog.json`, generated
   from the design system's layout cards through sources kept outside the
   skill.
   **`canon/CATALOG.md` is the entry point for step 4.**
-- **`references/CLAUDE-DESIGN.md`** — the whole deck in Claude Design: the
-  Slides artifact, the question card, and the order in which to read and
-  install the design system.
+- **`references/SLIDES.md`** — the whole deck on the Claude Slides path (a chat,
+  Claude Design, Claude Code): the Claude Slides deck, the question card, and
+  the order in which to read and install the design system.
 
 Each other file is named where it is used. Two rules that live nowhere else:
 

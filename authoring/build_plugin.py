@@ -37,7 +37,8 @@ MANIFEST = {
     "name": PLUGIN,
     "displayName": "MAP Decks",
     "description": "WPP Enterprise Solutions | MAP decks. deck-builder writes the content; "
-                   "slides-builder builds the on-brand deck, in Claude Design Slides or as one "
+                   "slides-builder builds the on-brand deck as a Claude Slides deck wherever Slides "
+                   "is available (a chat, Claude Design, Claude Code), otherwise as one "
                    "self-contained HTML file.",
     "author": {"name": "Carlos Lucero"},
 }
@@ -48,9 +49,11 @@ WPP Enterprise Solutions | MAP decks, made with Claude. Version {version}.
 
 - **deck-builder** writes the words. It shows you the slide titles first and
   writes the full slide-by-slide text once you approve them.
-- **slides-builder** builds the deck in the MAP look: inside Claude Design's
-  Slides, or anywhere else as one self-contained HTML file. It shows you a plan
-  and asks you to pick a style before it builds.
+- **slides-builder** builds the deck in the MAP look. Wherever Claude Slides
+  is available (a chat, Claude Design, Claude Code) you get a Claude Slides deck you can
+  edit, share and export to PowerPoint or PDF; where it isn't, one
+  self-contained HTML file. It asks you a few questions and a style before it
+  builds.
 
 Ask in plain words, for example "Make a MAP deck from these notes", or "Use
 deck-builder to write the content for a sales deck from these notes".

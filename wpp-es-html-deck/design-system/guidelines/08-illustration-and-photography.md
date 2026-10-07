@@ -55,7 +55,7 @@ hero treatment; the duotone is the photographic one. Pick one per moment, never 
 their own keyline treatment.
 
 For the duotone, wrap the image in `.duo`: the kit renders it as navy shadows and white highlights at runtime
-(grayscale plus screen blend against the navy host — isolated, print-safe, no preprocessing). In Claude Design Slides the Photo card sets the same duotone in inline styles. Text never sits
+(grayscale plus screen blend against the navy host — isolated, print-safe, no preprocessing). In Claude Slides the Photo card sets the same duotone in inline styles. Text never sits
 on the duotone; it owns the other half. Keep each image under 300 KB and always give it a short descriptive
 `alt`.
 

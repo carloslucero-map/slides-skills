@@ -14,7 +14,7 @@ Suits statement-led decks.
 
 ## What the consumer supplies
 
-The copy, inside the capacity below. Build the slide from the Elements cards (Headline, Subhead, BodyCopy, Pill, DotBullet and the rest), each of which ends with its recipe for Claude Design Slides, and take this layout's own positions and sizes from the preview. A measurement no Elements card gives is in `components/bundle.css`, under the class the preview uses. Over the maximum, pick a lower-density layout or split the slide; never set the type smaller.
+The copy, inside the capacity below. Build the slide from the Elements cards (Headline, Subhead, BodyCopy, Pill, DotBullet and the rest), each of which ends with its recipe for Claude Slides, and take this layout's own positions and sizes from the preview. A measurement no Elements card gives is in `components/bundle.css`, under the class the preview uses. Over the maximum, pick a lower-density layout or split the slide; never set the type smaller.
 
 ## Capacity
 
@@ -39,7 +39,7 @@ A high-impact poster line, used rarely.
 
 ## What the consumer supplies
 
-The copy, inside the capacity below. Build the slide from the Elements cards (Headline, Subhead, BodyCopy, Pill, DotBullet and the rest), each of which ends with its recipe for Claude Design Slides, and take this layout's own positions and sizes from the preview. A measurement no Elements card gives is in `components/bundle.css`, under the class the preview uses. Over the maximum, pick a lower-density layout or split the slide; never set the type smaller.
+The copy, inside the capacity below. Build the slide from the Elements cards (Headline, Subhead, BodyCopy, Pill, DotBullet and the rest), each of which ends with its recipe for Claude Slides, and take this layout's own positions and sizes from the preview. A measurement no Elements card gives is in `components/bundle.css`, under the class the preview uses. Over the maximum, pick a lower-density layout or split the slide; never set the type smaller.
 
 ## Capacity
 
@@ -82,7 +82,7 @@ Against the deck's normal headline, since this slide has none of its own. The st
 
 ## What the consumer supplies
 
-Copy only. The geometry is measured off a real slide, so when you rebuild it in Claude Design Slides keep the positions and sizes in the preview exactly: change the words, not the grid. Build the text and shapes from the Elements cards, each of which ends with its Slides recipe.
+Copy only. The geometry is measured off a real slide, so when you rebuild it in Claude Slides keep the positions and sizes in the preview exactly: change the words, not the grid. Build the text and shapes from the Elements cards, each of which ends with its Slides recipe.
 
 ## Origin
 
@@ -125,7 +125,7 @@ Flat. Nothing on this slide out-shouts the argument, because the argument is the
 
 ## What the consumer supplies
 
-Copy only. The geometry is measured off a real slide, so when you rebuild it in Claude Design Slides keep the positions and sizes in the preview exactly: change the words, not the grid. Build the text and shapes from the Elements cards, each of which ends with its Slides recipe.
+Copy only. The geometry is measured off a real slide, so when you rebuild it in Claude Slides keep the positions and sizes in the preview exactly: change the words, not the grid. Build the text and shapes from the Elements cards, each of which ends with its Slides recipe.
 
 ## Origin
 
@@ -168,7 +168,7 @@ The quote and the headline are near-peers on purpose: one is the research, the o
 
 ## What the consumer supplies
 
-Copy only. The geometry is measured off a real slide, so when you rebuild it in Claude Design Slides keep the positions and sizes in the preview exactly: change the words, not the grid. Build the text and shapes from the Elements cards, each of which ends with its Slides recipe.
+Copy only. The geometry is measured off a real slide, so when you rebuild it in Claude Slides keep the positions and sizes in the preview exactly: change the words, not the grid. Build the text and shapes from the Elements cards, each of which ends with its Slides recipe.
 
 ## Origin
 
@@ -184,7 +184,7 @@ A client or leader quote.
 
 ## What the consumer supplies
 
-The copy, inside the capacity below. Build the slide from the Elements cards (Headline, Subhead, BodyCopy, Pill, DotBullet and the rest), each of which ends with its recipe for Claude Design Slides, and take this layout's own positions and sizes from the preview. A measurement no Elements card gives is in `components/bundle.css`, under the class the preview uses. Over the maximum, pick a lower-density layout or split the slide; never set the type smaller.
+The copy, inside the capacity below. Build the slide from the Elements cards (Headline, Subhead, BodyCopy, Pill, DotBullet and the rest), each of which ends with its recipe for Claude Slides, and take this layout's own positions and sizes from the preview. A measurement no Elements card gives is in `components/bundle.css`, under the class the preview uses. Over the maximum, pick a lower-density layout or split the slide; never set the type smaller.
 
 ## Capacity
 
@@ -214,7 +214,7 @@ Suits statement-led decks.
 
 ## What the consumer supplies
 
-The copy, inside the capacity below. Build the slide from the Elements cards (Headline, Subhead, BodyCopy, Pill, DotBullet and the rest), each of which ends with its recipe for Claude Design Slides, and take this layout's own positions and sizes from the preview. A measurement no Elements card gives is in `components/bundle.css`, under the class the preview uses. Over the maximum, pick a lower-density layout or split the slide; never set the type smaller.
+The copy, inside the capacity below. Build the slide from the Elements cards (Headline, Subhead, BodyCopy, Pill, DotBullet and the rest), each of which ends with its recipe for Claude Slides, and take this layout's own positions and sizes from the preview. A measurement no Elements card gives is in `components/bundle.css`, under the class the preview uses. Over the maximum, pick a lower-density layout or split the slide; never set the type smaller.
 
 ## Capacity
 
@@ -251,7 +251,7 @@ Suits high-impact and statement-led decks.
 
 ## What the consumer supplies
 
-The copy, inside the capacity below. Build the slide from the Elements cards (Headline, Subhead, BodyCopy, Pill, DotBullet and the rest), each of which ends with its recipe for Claude Design Slides, and take this layout's own positions and sizes from the preview. A measurement no Elements card gives is in `components/bundle.css`, under the class the preview uses. Over the maximum, pick a lower-density layout or split the slide; never set the type smaller.
+The copy, inside the capacity below. Build the slide from the Elements cards (Headline, Subhead, BodyCopy, Pill, DotBullet and the rest), each of which ends with its recipe for Claude Slides, and take this layout's own positions and sizes from the preview. A measurement no Elements card gives is in `components/bundle.css`, under the class the preview uses. Over the maximum, pick a lower-density layout or split the slide; never set the type smaller.
 
 ## Capacity
 
@@ -283,7 +283,7 @@ Suits statement-led and high-impact decks.
 
 ## What the consumer supplies
 
-The copy, inside the capacity below. Build the slide from the Elements cards (Headline, Subhead, BodyCopy, Pill, DotBullet and the rest), each of which ends with its recipe for Claude Design Slides, and take this layout's own positions and sizes from the preview. A measurement no Elements card gives is in `components/bundle.css`, under the class the preview uses. Over the maximum, pick a lower-density layout or split the slide; never set the type smaller.
+The copy, inside the capacity below. Build the slide from the Elements cards (Headline, Subhead, BodyCopy, Pill, DotBullet and the rest), each of which ends with its recipe for Claude Slides, and take this layout's own positions and sizes from the preview. A measurement no Elements card gives is in `components/bundle.css`, under the class the preview uses. Over the maximum, pick a lower-density layout or split the slide; never set the type smaller.
 
 ## Capacity
 

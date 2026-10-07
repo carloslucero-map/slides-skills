@@ -1,8 +1,11 @@
-# Claude Design — the deck lives in the Slides artifact
+# The Claude Slides path — the deck is built in Claude Slides
 
-**In Claude Design, or any session whose Artifact tool offers a Slides type,
-the deck is an Artifact made from that type — never a separate `.html`
-file.**
+**Wherever Claude can make a Claude Slides deck, the deck is an Artifact made
+from the Slides type — never a separate `.html` file.** That is any session
+whose Artifact tool offers a Slides type: a chat in claude.ai or the desktop
+app with Claude Slides on, Claude Design, Claude Code. A deck is open, or
+`quickstart` with intent `slides` returns the type. This is the default; the
+standalone HTML file is only for where Claude Slides is not available.
 
 Three sources, three jobs:
 
@@ -36,12 +39,13 @@ first, say which headline highlights were dropped (the Headline card says
 when), and offer to revise any slide by number or add an alternative beside
 it.
 
-## Asking: the question card, never text
+## Asking: the question card, never a slide table
 
-Claude Design shows questions as a card in the chat box, and that card is the
-**`AskUserQuestion` tool**. A question typed as prose — a slide table ending
-in "reply 1/2/3/4" — arrives as an ordinary message nobody can click. So here
-G0 and G1 are **one `AskUserQuestion` call**, before anything is written:
+Where the session has the **`AskUserQuestion` tool** (Claude Design and Claude
+Code do), questions show as a card in the chat box. A question typed as prose
+there — a slide table ending in "reply 1/2/3/4" — arrives as an ordinary
+message nobody can click. So G0 and G1 are **one `AskUserQuestion` call**,
+before anything is written:
 
 - **At most four questions**, the call tagged
   `"metadata": {"source": "artifact-questions"}`.
@@ -73,6 +77,11 @@ Restate the answers as a one-line assumption, then build. Ask a second round
 only if the user asks for more or an answer opens a question you could not
 have asked before, and never re-ask.
 
+**No `AskUserQuestion` tool in this session?** Ask the same questions in one
+short message instead: the two lines of prose, then each question numbered
+with its options lettered and your recommended option first, and end the
+turn. Still no slide table: the deck is the plan.
+
 **The waivers still hold.** An explicit "just build it", or nobody there to
 answer: no card, the recommended direction, assumptions in one line. An
 approved `deck-builder` file: the card holds only the direction.
@@ -82,7 +91,7 @@ approved `deck-builder` file: the card holds only the direction.
 **The draft is the deck in the editor.** Never post a slide, an exemplar, a
 preview, a screenshot, a contact sheet or an A/B sheet as an image in the
 chat: not to choose a direction, not to show progress, not to offer an
-alternative. The four exemplar PNGs stay unopened on this surface; each
+alternative. The four exemplar PNGs stay unopened on the Claude Slides path; each
 direction's description in the card carries the difference instead. An
 alternative for a slide is a second slide right after it, id `<id>-alt`,
 which the user keeps or deletes in the editor.
@@ -103,17 +112,17 @@ which the user keeps or deletes in the editor.
    styles.
 4. **Read it in this order**, before writing a slide:
    1. **`project/README.md`**: the eight rules, the canvas, colour and type
-      on one page each, and *Building in Claude Design Slides* (faces,
+      on one page each, and *Building in Claude Slides* (faces,
       positions, floors, colour, dots, icons, photos, motion, what Slides
       cannot do). Where
       it describes the HTML pipeline (one self-contained file,
-      `components/bundle.css`), that is the other surface: ignore it here.
+      `components/bundle.css`), that is the HTML path: ignore it here.
    2. **The guidelines** (`project/guidelines/`): 01 to 04 and 06 before any
       slide (colour, typography, grid and composition, the dot system, slide
       furniture), then 07 to 10 when the deck has icons, imagery, charts or
       motion. The layout laws in 03 hold here too: check them by eye. Where a
       guideline names the HTML deck's classes or its verifier, that is the
-      other surface; 10 has its own Slides section.
+      HTML path; 10 has its own Slides section.
    3. **The Elements cards** (Headline, Subhead, BodyCopy, Pill, StatCircle,
       FooterFurniture and the rest). Each ends with its inline-style recipe
       for Slides. Build every piece of text and every shape from them.

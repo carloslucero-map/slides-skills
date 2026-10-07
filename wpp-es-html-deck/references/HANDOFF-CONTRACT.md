@@ -13,7 +13,7 @@ When the input is a content file produced by the `deck-builder` skill
 | `## Section N — <title>` | chapter (agenda row + divider) |
 | `### Slide N — <action title>` | slide headline — **verbatim, always**; any change must be surfaced at G1, never silent |
 | `**token**` inside an action title (≤1 per title) | `<span class="hl">token</span>` — the Headline card's one highlight, Medium weight (strip the asterisks; NEVER render literal `**`) |
-| `**Visual:**` hint | archetype via the SKILL.md quick-map; the last four name a layout family: `relational` (a hub, rings, a stack or a taxonomy: the rel-* canon, `orbit-*`, `process-timeline-v5`), `logos` (`ent-logo-rows-6`, `ent-partner-credentials-3`, `logo-wall-*`), `chart` (`charts-v1`, `-v2`), `split` (`splits-v1` to `-v3`). In Claude Design, the design system's catalogue family of the same shape |
+| `**Visual:**` hint | archetype via the SKILL.md quick-map; the last four name a layout family: `relational` (a hub, rings, a stack or a taxonomy: the rel-* canon, `orbit-*`, `process-timeline-v5`), `logos` (`ent-logo-rows-6`, `ent-partner-credentials-3`, `logo-wall-*`), `chart` (`charts-v1`, `-v2`), `split` (`splits-v1` to `-v3`). On the Claude Slides path, the design system's catalogue family of the same shape |
 | Bullets | the archetype's content (columns, boxes…) |
 | `**Callout:**` | the slide's focal element (stat circle, pill, statement line) |
 | `**Speaker notes:**` | `<aside class="notes">` |

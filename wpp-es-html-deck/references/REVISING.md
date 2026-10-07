@@ -25,9 +25,9 @@ the gate.
   stat-circle comp". Never put duplicates inside the real deck. Splice the
   winners, delete the sheet, re-verify.
 
-### In Claude Design
+### On the Claude Slides path
 
-The deck is the Slides artifact, so the revision happens there, and the same
+The deck is the Claude Slides deck, so the revision happens there, and the same
 new-deck rule applies.
 
 - **Edit the slide files in place** (`project/slides/<id>.html`) and publish

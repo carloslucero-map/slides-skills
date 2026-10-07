@@ -23,7 +23,7 @@ uploads of these files black. So they keep their colour as images, here and in a
 ## In a deck
 
 The logo appears small and bottom-right: either as the Bold 16px text footer line, or on a cover inside the
-solid Navy badge flush to the bottom-right corner. In Claude Design Slides, copy the file into the deck and
+solid Navy badge flush to the bottom-right corner. In Claude Slides, copy the file into the deck and
 place it as an `<img>`. The HTML generator inlines the SVG as an `<svg>` element instead: a self-contained
 deck never references a logo by path.
 

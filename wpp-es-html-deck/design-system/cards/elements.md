@@ -18,7 +18,7 @@ The line under the headline is Medium ALL CAPS at 24px, +0.12em, in `orange-800`
 
 The headline text, two lines at most (a third line is a content problem, not a type problem), and optionally the eyebrow, which only a one-line headline carries.
 
-## In Claude Design Slides
+## In Claude Slides
 
 ```html
 <h2 style="position:absolute; left:40px; top:73px; width:1840px; font-family:'WPP Light', sans-serif; font-weight:400; font-size:54px; line-height:0.9; letter-spacing:-0.005em; color:#000050">Three moves that change the work</h2>
@@ -52,7 +52,7 @@ This tier exists so that emphasis inside running text never needs bold. Every te
 
 One line, occasionally two. It sits above the body copy inside the content band, 20px above it.
 
-## In Claude Design Slides
+## In Claude Slides
 
 ```html
 <div style="position:absolute; left:40px; right:40px; top:305px; bottom:60px; display:flex; flex-direction:column; gap:20px">
@@ -109,7 +109,7 @@ In the HTML deck an element takes its role's class beside its own, as in `class=
 
 There is no italic in the package, and bold emphasis inside body copy is banned outright. Emphasis inside running text is the Regular-caps Subhead tier or a Medium ALL-CAPS label, never a bold run.
 
-## In Claude Design Slides
+## In Claude Slides
 
 ```html
 <p style="max-width:1200px; font-family:'WPP', sans-serif; font-weight:400; font-size:26px; line-height:1.32; color:#000050">Body copy in the content band.</p>
@@ -131,7 +131,7 @@ Labels are Navy, never orange. Inside box layouts the label steps down to 20px. 
 
 A label of one to three words (the layouts' capacity puts most at 4–47 characters) and the column's copy.
 
-## In Claude Design Slides
+## In Claude Slides
 
 ```html
 <div style="display:flex; flex-direction:column; gap:22px">
@@ -159,7 +159,7 @@ Rounding is reserved for pills. Cards, boxes, panels and tiles are square: flat 
 
 A short label: column headers, tags, category chips. 16px is the informational floor, so the label never goes smaller.
 
-## In Claude Design Slides
+## In Claude Slides
 
 ```html
 <p style="align-self:flex-start; background:#000050; color:#FFFFFF; border-radius:999px; padding:10px 26px; font-family:'WPP Medium', sans-serif; font-weight:400; font-size:16px; letter-spacing:0.08em; text-transform:uppercase">Strategy</p>
@@ -184,7 +184,7 @@ The minor shape vocabulary, all of it flat Navy.
 
 There are no accent bars, no decorative rules and no underlines anywhere in the system. If no icon from the 32-icon suite fits a point, fall back to the dot bullet: it is always safe.
 
-## In Claude Design Slides
+## In Claude Slides
 
 A dot bullet beside 26px body copy; the 9px pad centres the dot on the first line, and the gap is illustrative:
 
@@ -218,7 +218,7 @@ The brackets are 23px wide, drawn in a 1px Navy line (Cream on a navy slide), an
 
 One sentence that says what the slide means, not a summary of it. Keep it to one line where possible, two at most.
 
-## In Claude Design Slides
+## In Claude Slides
 
 ```html
 <div style="position:absolute; left:160px; right:160px; bottom:120px; display:flex; flex-direction:row; align-items:stretch">
@@ -244,7 +244,7 @@ The keyline on the fourth card in the preview only shows its edge; it is not par
 
 The system is flat by rule: no gradients, no drop shadows, no decorative rules, no accent bars. The drama comes from scale contrast (huge thin type against macro dots), not from ornament. The shipped stylesheet contains no `box-shadow` at all, which is the fastest way to check whether a deck has drifted off-brand.
 
-## In Claude Design Slides
+## In Claude Slides
 
 ```html
 <div style="background:#FFFFFF; padding:36px; display:flex; flex-direction:column; gap:12px">
@@ -269,7 +269,7 @@ In the HTML deck the card is clickable: the link turns Orange 700 on hover and o
 
 A short action ("More", "See the plan") and, in the HTML deck, the detail the card opens.
 
-## In Claude Design Slides
+## In Claude Slides
 
 ```html
 <div style="background:#FFFFFF; padding:36px; display:flex; flex-direction:column; justify-content:space-between; gap:22px">
@@ -303,7 +303,7 @@ The warm intensity ramp steps Orange 500 → 600 → 700 → 800/900 alongside t
 
 Numeral in Thin or Light at 90–150px Navy, the sign at full numeral size, and `%` set small and superscripted at roughly 25–30% of the numeral height. Label in Medium ALL CAPS 18px below.
 
-## In Claude Design Slides
+## In Claude Slides
 
 ```html
 <div style="width:300px; height:300px; border-radius:50%; background:#000050; color:#FFFFFF; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px">
@@ -334,7 +334,7 @@ When a number's direction is meaningful, give the room the cue. A favourable num
 
 Orange 700 thin numerals on Cream measure about 2.5:1. A favourable numeral therefore goes up to Light (never Thin) below 90px, or sits on White. At 90px and up, Thin is fine as wayfinding-scale type. The middle numeral in the preview is set in Light for exactly this reason.
 
-## In Claude Design Slides
+## In Claude Slides
 
 ```html
 <div style="position:absolute; left:40px; right:80px; top:340px; display:grid; grid-template-columns:repeat(3, 1fr); gap:80px">
@@ -365,7 +365,7 @@ No fills, no zebra striping, no vertical rules, no borders around the table. The
 
 The data. Keep cells short: table cells are informational text under the 16px floor, so a table that needs smaller type needs fewer columns instead.
 
-## In Claude Design Slides
+## In Claude Slides
 
 ```html
 <table style="font-family:'WPP', sans-serif; font-size:22px; color:#000050">
@@ -390,7 +390,7 @@ Partner logos are supplied per deck; the system ships none. Partner co-branding 
 
 The category labels and each partner's logo file, uploaded into the deck.
 
-## In Claude Design Slides
+## In Claude Slides
 
 ```html
 <div style="display:flex; flex-direction:row; align-items:center; gap:40px; padding:16px 0px; border-bottom:1px solid rgba(0,0,80,0.1)">
@@ -413,7 +413,7 @@ The sanctioned way to show a screenshot: the image at its own proportions with a
 
 The screenshot, uploaded into the deck, and a caption or callouts from the layout that hosts it.
 
-## In Claude Design Slides
+## In Claude Slides
 
 ```html
 <img src="/_blob/<id>" alt="[What the screenshot shows]" style="width:960px; height:600px; object-fit:contain; border:1px solid #000050">
@@ -444,7 +444,7 @@ A full-bleed duotone photo is a poster moment for high-impact decks only; otherw
 
 The photo, copied into the deck, and a short alt text that says what it shows.
 
-## In Claude Design Slides
+## In Claude Slides
 
 A photo the brief supplies, filling the right half of the slide:
 
@@ -474,7 +474,7 @@ Icon-led columns replace dot headers **when the point is a verb or a capability*
 
 `spark` and `spark-bold` are accents, not bullets: two per deck at most, in statement-adjacent air only.
 
-## In Claude Design Slides
+## In Claude Slides
 
 Paste the icon's SVG from the Icons group inline, give it an `aria-label`, size it to 44 × 44px (64 × 64px for the large host), and set its ink by replacing every `currentColor` with a hex value: `#000050` by default, `#FAFAF0` on navy slides and panels, `#FF7800` for the one orange moment. As an `<img>` the file's `currentColor` has nothing to inherit and renders black. Every icon file is well under Slides' 52 KB limit for inline SVG. Never use Slides' own `x-icon` set: it is a generic library.
 
@@ -509,7 +509,7 @@ Three registers:
 
 The micro field in the preview is generated from a fixed seed so the card is stable.
 
-## In Claude Design Slides
+## In Claude Slides
 
 Draw the whole field as one `<svg>` pinned full-bleed and listed first on the slide, so later content paints over it and cropped circles clip at the canvas edge. Separate pinned circles cannot do this, because Slides clamps negative offsets to 0.
 
@@ -580,7 +580,7 @@ The lockup reads **`WPP Enterprise Solutions | MAP`**, the organisation's full n
 
 11px is for furniture only, and closed. No new text ever ships at that size; the informational floor for everything else is 16px.
 
-## In Claude Design Slides
+## In Claude Slides
 
 ```html
 <p style="position:absolute; right:40px; bottom:34px; width:800px; text-align:right; font-family:'WPP Medium', sans-serif; font-weight:400; font-size:16px; letter-spacing:0.01em; color:#000050">WPP Enterprise Solutions | MAP</p>

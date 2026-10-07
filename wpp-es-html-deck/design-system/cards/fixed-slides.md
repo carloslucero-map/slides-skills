@@ -37,7 +37,7 @@ Right-anchored art is 1440px wide, vertically centred, and hangs 140px off the r
 
 A short title, two to four words in capitals; a subheader of one sentence; the month and year; and the presenter.
 
-## In Claude Design Slides
+## In Claude Slides
 
 For `mountain`, `crystal` or `coral`, copy the cover's art and `WPP_ES_MAP_logo_WHITE.svg` from this system into the deck first.
 
@@ -117,7 +117,7 @@ The agenda is one of two compositions allowed a multi-colour dot scatter; the cl
 
 The chapter names, three to five for the standard variant (six take the dense one), and the headline if it isn't "Agenda". Six chapters is the most: split a longer deck. Keep each name within about 45 characters, or its row runs under the dots.
 
-## In Claude Design Slides
+## In Claude Slides
 
 ```html
 <section id="agenda" style="background:#FAFAF0; color:#000050; font-family:'WPP', sans-serif">
@@ -184,7 +184,7 @@ On `navy-dots` the brand line and page number turn White because they sit on the
 
 The chapter number and a short chapter title, two lines at most. The sub-label is `Section 1`, `Section 2` and so on (`Sección N` in Spanish decks).
 
-## In Claude Design Slides
+## In Claude Slides
 
 The `orange` colourway; for another, swap the colours from the table.
 
@@ -243,7 +243,7 @@ The three dot colours are the macro, mid and small dot, in that order. On the da
 
 The contact lines, optional: name, role and email, or the team's shared address. Without them the slide closes on the words alone. Spanish decks close on “Gracias.”
 
-## In Claude Design Slides
+## In Claude Slides
 
 The light outro:
 

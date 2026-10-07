@@ -9,7 +9,7 @@ The visual language of the WPP Enterprise Solutions | MAP presentation system: N
 5. **Charts are circles.** Flat fills from the primary and secondary palettes, sized by area.
 6. **One warm background, used consistently.** `wpp-cream` on every content slide. Mixing Cream and pure White across a deck is the single most common consistency error in this system.
 7. **The name is "WPP Enterprise Solutions | MAP".** Never "VML MAP", never "VMLMAP".
-8. **A deck lives where it is presented.** In Claude Design, build a deck inside the Slides artifact with this system installed, never as a separate HTML file, following *Building in Claude Design Slides* below. Elsewhere, the `slides-builder` skill writes one self-contained HTML file with fonts, logos, icons and imagery embedded.
+8. **A deck lives where it is presented.** Wherever Claude can make a Claude Slides deck (a chat, Claude Design or Claude Code), build the deck in Claude Slides with this system installed, never as a separate HTML file, following *Building in Claude Slides* below. Only where Claude Slides is not available does the `slides-builder` skill in the MAP Decks plugin write one self-contained HTML file with fonts, logos, icons and imagery embedded.
 
 ## The canvas
 
@@ -50,7 +50,7 @@ Floors: **20px** for body copy and any other running text, **16px** for the fine
 
 The components come in three kinds, and they do different jobs.
 
-**Elements** (the *Elements* group) are the true components: `Headline`, `Subhead`, `BodyCopy`, `ColumnLabel`, `Pill`, `DotBullet`, `Takeaway`, `CardBox`, `CardLink`, `StatCircle`, `KpiRow`, `DataTable`, `LogoRow`, `ScreenshotFrame`, `Photo`, `Icon`, `DotField` and `FooterFurniture`. They hold the rules that must be identical on every slide, and each card ends with an exact inline-style recipe for Claude Design Slides. Build every slide from them.
+**Elements** (the *Elements* group) are the true components: `Headline`, `Subhead`, `BodyCopy`, `ColumnLabel`, `Pill`, `DotBullet`, `Takeaway`, `CardBox`, `CardLink`, `StatCircle`, `KpiRow`, `DataTable`, `LogoRow`, `ScreenshotFrame`, `Photo`, `Icon`, `DotField` and `FooterFurniture`. They hold the rules that must be identical on every slide, and each card ends with an exact inline-style recipe for Claude Slides. Build every slide from them.
 
 **Fixed slides** (the *Fixed slides* group) are the four slides that look the same in every deck: `CoverSlide`, `AgendaSlide`, `DividerSlide` and `ThankYouSlide`. Every deck opens on the cover and closes on the thank-you slide; the agenda follows the cover when the deck has chapters, and a divider opens each chapter. A deck with a single chapter has no agenda and no dividers. Build them exactly from their cards, never from a layout.
 
@@ -74,7 +74,7 @@ Every deck is built in one of four directions, chosen once before anything is bu
 
 The last three rows are defaults: a deck may register another colourway, motion level or outro. How often a deck goes dark is detailed in *Colour*, and motion in *Motion*.
 
-## Building in Claude Design Slides
+## Building in Claude Slides
 
 A slide in Slides takes inline styles only (no classes, no stylesheet, no scripts, no `var()`), so `components/bundle.css` does not apply there. Where this system and Slides' own defaults differ, this system wins.
 

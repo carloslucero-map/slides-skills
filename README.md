@@ -14,9 +14,9 @@ raw notes / brief
 └─────────────────────┘                   └─────────────────────┘
       │                                             │
       ▼                                             ▼
- slide-by-slide Markdown            in Claude Design: the Slides artifact
- (also pastes into PowerPoint       elsewhere: one self-contained .html
-  or Google Slides)                 (16:9, keyboard-navigable, no external assets)
+ slide-by-slide Markdown            a Claude Slides deck wherever it is on
+ (also pastes into PowerPoint       (chat, Claude Design, Claude Code); else
+  or Google Slides)                 one self-contained .html (16:9, offline)
 ```
 
 Either skill can be used on its own. The handoff format between them is
@@ -55,8 +55,9 @@ Single file, no dependencies: [`deck-content-builder/SKILL.md`](deck-content-bui
 
 ### `wpp-es-html-deck`
 Renders a deck in the WPP ES | MAP visual language — Navy + Cream + Orange,
-WPP Sans, the dot system, 16:9. **In Claude Design it builds straight into the
-Slides artifact, from the design system itself; everywhere else it writes one
+WPP Sans, the dot system, 16:9. **Wherever Claude can make a Claude Slides deck
+(a chat, Claude Design, Claude Code) it builds straight into one, from the
+design system itself; only where Claude Slides is not available does it write one
 self-contained HTML file from its copy of the design system.** Ships 25 canon
 templates, a 51-template snippet library, a per-slot capacity model, and a
 verifier that enforces the design system's rules.
@@ -66,7 +67,7 @@ verifier that enforces the design system's rules.
 | `SKILL.md` | The skill itself — the operating instructions |
 | `design-system/` | The generated copy of the design system: its `README.md`, the eleven `guidelines/`, every card in `cards/` (one file per group), the asset groups' notes, `tokens.json`, `bundle.css`, `fixed-slides.json`, `elements.json`, fonts, logos, icons, illustrations, photos, textures, exemplars, and `SOURCE.json` (version and a sha256 per file) |
 | `references/HTML-BUILD.md` | The skill's own: how the HTML file is built, filled and checked, with the layout laws the verifier enforces |
-| `references/CLAUDE-DESIGN.md` | How to build in Claude Design: the question card, the reading order, the install |
+| `references/SLIDES.md` | How to build in a Claude Slides deck, wherever one is available: the question card, the reading order, the install |
 | `references/SNIPPET-INDEX.md` | All 51 kit layouts, one line each |
 | `references/capacity.json` | Per-slot min/ideal/max character counts |
 | `references/HANDOFF-CONTRACT.md` | The content → render contract |
@@ -124,26 +125,29 @@ python3 scripts/check_shared_blocks.py
 `verify_deck.py` exits 0 when every check passes (warnings allowed) and 1 on
 any failure, so it drops into CI as-is.
 
-## In Claude Design
+## In a Claude Slides deck (a chat, Claude Design, Claude Code)
 
-Claude Design's slides are an Artifact **type**: a deck is created from it and
+Slides is an Artifact **type**, available in a chat, in Claude Design and in
+Claude Code: a deck is created from it and
 written as `project/deck.json` plus one `project/slides/<id>.html` per slide, in
 a closed inline-style subset — no classes, no `<style>`, no `var()`, images
 uploaded rather than embedded. A self-contained HTML file is the opposite of
-that, which is why decks used to land beside the Slides artifact instead of in
+that, which is why decks used to land beside the Claude Slides deck instead of in
 it.
 
 The skill decides the surface before it builds. Where a Slides type is
 available it skips `build_shell.py`, `check_capacity.py` and `verify_deck.py`
 and builds from the design system itself:
-[`references/CLAUDE-DESIGN.md`](wpp-es-html-deck/references/CLAUDE-DESIGN.md)
+[`references/SLIDES.md`](wpp-es-html-deck/references/SLIDES.md)
 gives the order to read it in (the README, the guidelines, then the Elements
 cards, each with its inline-style recipe for Slides, then the Fixed slides
 cards, then the layout catalogue and the chosen layout's card) and how to
 install it in the deck. It holds no brand values of its own.
 
-Two things are specific to this surface. **The plan gate is a question card**
-(`AskUserQuestion`), because a question typed as prose cannot be clicked there.
+Two things are specific to this path. **The plan gate is a question card**
+(`AskUserQuestion`) wherever the session has one, because a question typed as
+prose cannot be clicked there; without it, the same questions go in one short
+message.
 **No slide is ever posted as an image**: the draft is the deck in the editor.
 `deck-content-builder` keeps its approved content in the conversation rather
 than saving a stray `.md`.

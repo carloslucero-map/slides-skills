@@ -37,7 +37,7 @@ Deliberately low. No single logo is the point; the grid of them is. A hero logo 
 
 ## What the consumer supplies
 
-Copy only. The geometry is measured off a real slide, so when you rebuild it in Claude Design Slides keep the positions and sizes in the preview exactly: change the words, not the grid. Build the text and shapes from the Elements cards, each of which ends with its Slides recipe.
+Copy only. The geometry is measured off a real slide, so when you rebuild it in Claude Slides keep the positions and sizes in the preview exactly: change the words, not the grid. Build the text and shapes from the Elements cards, each of which ends with its Slides recipe.
 
 ## Origin
 
@@ -76,7 +76,7 @@ Low on purpose. Twelve claims sharing a canvas cannot each be a display moment; 
 
 ## What the consumer supplies
 
-Copy only. The geometry is measured off a real slide, so when you rebuild it in Claude Design Slides keep the positions and sizes in the preview exactly: change the words, not the grid. Build the text and shapes from the Elements cards, each of which ends with its Slides recipe.
+Copy only. The geometry is measured off a real slide, so when you rebuild it in Claude Slides keep the positions and sizes in the preview exactly: change the words, not the grid. Build the text and shapes from the Elements cards, each of which ends with its Slides recipe.
 
 ## Origin
 
@@ -114,7 +114,7 @@ Diameter against headline size. The faces are the slide; the headline only frame
 
 ## What the consumer supplies
 
-Copy only. The geometry is measured off a real slide, so when you rebuild it in Claude Design Slides keep the positions and sizes in the preview exactly: change the words, not the grid. Build the text and shapes from the Elements cards, each of which ends with its Slides recipe.
+Copy only. The geometry is measured off a real slide, so when you rebuild it in Claude Slides keep the positions and sizes in the preview exactly: change the words, not the grid. Build the text and shapes from the Elements cards, each of which ends with its Slides recipe.
 
 ## Origin
 
@@ -134,7 +134,7 @@ EntLogoRows6 (traced) lays the same roster out as a categorised table across the
 
 ## What the consumer supplies
 
-The copy, inside the capacity below. Build the slide from the Elements cards (Headline, Subhead, BodyCopy, Pill, DotBullet and the rest), each of which ends with its recipe for Claude Design Slides, and take this layout's own positions and sizes from the preview. A measurement no Elements card gives is in `components/bundle.css`, under the class the preview uses. Over the maximum, pick a lower-density layout or split the slide; never set the type smaller.
+The copy, inside the capacity below. Build the slide from the Elements cards (Headline, Subhead, BodyCopy, Pill, DotBullet and the rest), each of which ends with its recipe for Claude Slides, and take this layout's own positions and sizes from the preview. A measurement no Elements card gives is in `components/bundle.css`, under the class the preview uses. Over the maximum, pick a lower-density layout or split the slide; never set the type smaller.
 
 ## Capacity
 
@@ -162,7 +162,7 @@ A headline count backed by a logo wall.
 
 ## What the consumer supplies
 
-The copy, inside the capacity below. Build the slide from the Elements cards (Headline, Subhead, BodyCopy, Pill, DotBullet and the rest), each of which ends with its recipe for Claude Design Slides, and take this layout's own positions and sizes from the preview. A measurement no Elements card gives is in `components/bundle.css`, under the class the preview uses. Over the maximum, pick a lower-density layout or split the slide; never set the type smaller.
+The copy, inside the capacity below. Build the slide from the Elements cards (Headline, Subhead, BodyCopy, Pill, DotBullet and the rest), each of which ends with its recipe for Claude Slides, and take this layout's own positions and sizes from the preview. A measurement no Elements card gives is in `components/bundle.css`, under the class the preview uses. Over the maximum, pick a lower-density layout or split the slide; never set the type smaller.
 
 ## Capacity
 
@@ -190,7 +190,7 @@ Three people with full bios.
 
 ## What the consumer supplies
 
-The copy, inside the capacity below. Build the slide from the Elements cards (Headline, Subhead, BodyCopy, Pill, DotBullet and the rest), each of which ends with its recipe for Claude Design Slides, and take this layout's own positions and sizes from the preview. A measurement no Elements card gives is in `components/bundle.css`, under the class the preview uses. Over the maximum, pick a lower-density layout or split the slide; never set the type smaller.
+The copy, inside the capacity below. Build the slide from the Elements cards (Headline, Subhead, BodyCopy, Pill, DotBullet and the rest), each of which ends with its recipe for Claude Slides, and take this layout's own positions and sizes from the preview. A measurement no Elements card gives is in `components/bundle.css`, under the class the preview uses. Over the maximum, pick a lower-density layout or split the slide; never set the type smaller.
 
 ## Capacity
 
@@ -218,7 +218,7 @@ Four people with short bios.
 
 ## What the consumer supplies
 
-The copy, inside the capacity below. Build the slide from the Elements cards (Headline, Subhead, BodyCopy, Pill, DotBullet and the rest), each of which ends with its recipe for Claude Design Slides, and take this layout's own positions and sizes from the preview. A measurement no Elements card gives is in `components/bundle.css`, under the class the preview uses. Over the maximum, pick a lower-density layout or split the slide; never set the type smaller.
+The copy, inside the capacity below. Build the slide from the Elements cards (Headline, Subhead, BodyCopy, Pill, DotBullet and the rest), each of which ends with its recipe for Claude Slides, and take this layout's own positions and sizes from the preview. A measurement no Elements card gives is in `components/bundle.css`, under the class the preview uses. Over the maximum, pick a lower-density layout or split the slide; never set the type smaller.
 
 ## Capacity
 

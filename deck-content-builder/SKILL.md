@@ -30,7 +30,7 @@ gate (step 6), never written slide content.** The only things allowed to
 precede it are the single batched intake question or the massive-context SCR
 extract — never bullets, callouts, or notes ("a taste of slide 1" counts as
 content). Show the titles table with confidence scores, ask the enumerated
-question (in Claude Design, as the question card: step 6), then **end your
+question (as the question card where the session has one: step 6), then **end your
 turn and wait**. This applies at every size (a
 1–2-slide request gets a short ghost deck) and even when the user supplies
 their own titles or outline: their titles go into the table verbatim, any
@@ -58,12 +58,13 @@ user never gets to steer the storyline while steering is still cheap.
 - Do **NOT** design layouts, themes, colours, or visuals. You write words —
   the optional `**Visual:**` line is an intent hint for the renderer, not a
   design.
-- **In Claude Design** (a Slides deck is open, or the Artifact tool offers a
-  Slides type), a saved `.md` is a stray file beside the deck. Keep the
+- **Where Claude can make a Claude Slides deck** (a Claude Slides deck is open, or the
+  Artifact tool offers a Slides type: a chat with Claude Slides on, Claude Design,
+  Claude Code), a saved `.md` is a stray file beside the deck. Keep the
   approved content in the conversation, in the handoff format, and save the
   file only if the user asks for it. When they want the deck, invoke
   `slides-builder` with that approved content; it builds it into the
-  Slides artifact. Never create the Slides artifact yourself.
+  Slides artifact. Never create the Claude Slides deck yourself.
 - **Do not render slides yourself. If the user wants the rendered WPP deck,
   save the approved Markdown, then invoke `slides-builder` with the file.**
   For a `.pptx`: never build it yourself; only after the gate passes and the
@@ -140,8 +141,9 @@ Then ask, with enumerated replies: *"Ready to write the slide content?
 (1) 'write' to proceed as-is, (2) slide numbers + changes ('3: sharpen the
 number'), (3) 'alt storyline', (4) 'shorter'/'longer'."*
 
-**In Claude Design, ask with the question card, not text.** A question typed
-as prose there is an ordinary message nobody can click. Keep the ghost deck
+**Where the session has the `AskUserQuestion` tool (Claude Design and Claude
+Code do), ask with the question card, not text.** A question typed as prose
+there is an ordinary message nobody can click. Keep the ghost deck
 table in the chat — it is the content under review — and put the gate in ONE
 `AskUserQuestion` call tagged `"metadata": {"source": "artifact-questions"}`:
 first *"Write the slide content from this ghost deck?"* with the options
@@ -173,7 +175,8 @@ v3) — direction follows meaning, not sign.
 ### 8. Final review, then save
 Vertical-logic check: does every bullet prove its title? Fix before
 presenting. Save ONE `.md` file (e.g. `deck-content.md`) in the handoff
-format below and report the path — in Claude Design, only if the user asks
+format below and report the path — where Claude can make a Claude Slides deck,
+only if the user asks
 (see the output contract). Do not produce any other file type. If the
 user wants the rendered deck, invoke `slides-builder` with the saved file —
 the renderer keeps your approved titles verbatim.

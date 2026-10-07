@@ -3,13 +3,13 @@
 
 ## Fences & broader cases
 
-- **PDF:** print CSS ships — Ctrl+P → save as PDF, one page per slide. In
-  Claude Design the Slides artifact exports PDF itself.
+- **PDF:** print CSS ships — Ctrl+P → save as PDF, one page per slide. On
+  the Claude Slides path the Claude Slides deck exports PDF itself.
 - **Motion:** a runtime layer only (`HTML-BUILD.md` §14) — never bespoke keyframes,
   never a JS/React library; auto-static under reduced-motion, print and
   headless capture, so PDFs and the verifier are unaffected.
-- **pptx:** in Claude Design the Slides artifact exports PPTX itself, so
-  that is the answer there. Everywhere else it is out of scope: hand the
+- **pptx:** on the Claude Slides path the Claude Slides deck exports PPTX itself, so
+  that is the answer there. On the HTML path it is out of scope: hand the
   *Markdown content* to a pptx skill; never screenshot-paste slides.
 - **16:9 only.** Offer the 16:9 deck; never stretch the locked slides.
 - **30+ slides:** keep every raster ≤300KB; more than 6 chapters → split the

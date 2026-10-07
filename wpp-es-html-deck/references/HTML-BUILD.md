@@ -21,11 +21,12 @@ subtle, and the table at the end when a comment cites an old number.
 
 ## 2a. Self-contained file rule (non-negotiable)
 
-**Scope: the standalone HTML file.** In Claude Design the deck is an Artifact
-made from the Slides type, and the opposite holds there: images and fonts are
+**Scope: the standalone HTML file.** On the Claude Slides path (wherever Claude can
+make a Claude Slides deck) the deck is an Artifact made from the Slides type,
+and the opposite holds there: images and fonts are
 *uploaded* and referenced by the URL the upload returns (a `data:` URI is
-refused), so this section does not apply. `references/CLAUDE-DESIGN.md` governs
-that surface.
+refused), so this section does not apply. `references/SLIDES.md` governs
+that path.
 
 **Every deck ships as a single, standalone `.html` file that opens correctly by
 double-clicking it in any browser, with no other files present, no folder

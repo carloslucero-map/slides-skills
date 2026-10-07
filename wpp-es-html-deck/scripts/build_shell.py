@@ -195,7 +195,7 @@ def b64(path):
 def font_face_css():
     """One @font-face block per weight, base64 data-URI src — fully self-contained.
     The faces are the design system's WPP family (tokens.json type.fonts); its
-    single-weight families (WPP Thin, Light, Medium) are for Claude Design Slides."""
+    single-weight families (WPP Thin, Light, Medium) are for the Claude Slides path."""
     out = []
     for face in TOKENS["type"]["fonts"]:
         if face["family"] != "WPP":
