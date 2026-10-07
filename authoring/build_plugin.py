@@ -37,8 +37,8 @@ MANIFEST = {
     "name": PLUGIN,
     "displayName": "MAP Decks",
     "description": "WPP Enterprise Solutions | MAP decks. deck-builder writes the content; "
-                   "slides-builder builds the on-brand deck as a Claude Slides deck wherever Slides "
-                   "is available (a chat, Claude Design, Claude Code), otherwise as one "
+                   "slides-builder builds the on-brand deck as a Claude Slides deck wherever Claude "
+                   "Slides is available (a chat, Claude Design, Claude Code), otherwise as one "
                    "self-contained HTML file.",
     "author": {"name": "Carlos Lucero"},
 }
