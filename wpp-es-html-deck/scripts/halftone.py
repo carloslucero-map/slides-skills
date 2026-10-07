@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Brand dot-halftone generator for the wpp-es-html-deck skill (v4).
+"""Brand dot-halftone generator for the slides-builder skill (v4).
 
 Mirrors the canonical generator defaults printed in WPP ES Brand Playbook
 v0.2 p.33: Min 2.0 / Max 8.0 / Square grid / Spacing 10.0 / Contrast 1.00 /

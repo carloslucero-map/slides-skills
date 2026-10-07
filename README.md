@@ -39,6 +39,10 @@ and it is never re-synced from here.
 
 ## The skills
 
+In the organisation they are published as **deck-builder** and
+**slides-builder**, and the two skills call each other by those names. Each
+SKILL.md's `name` stays its folder's name, which an upload requires.
+
 ### `deck-content-builder`
 Writes the **text content** of a deck — action titles, bullets, callouts,
 speaker notes — using consultant-grade methods (Pyramid Principle, SCR).

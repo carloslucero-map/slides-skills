@@ -1,9 +1,9 @@
 <!-- Split out of SKILL.md to keep the always-loaded file small.
      Loaded on demand; see the stub in SKILL.md for the trigger. -->
 
-## Input mode: deck-content-builder Markdown
+## Input mode: deck-builder Markdown
 
-When the input is a content file produced by the `deck-content-builder` skill
+When the input is a content file produced by the `deck-builder` skill
 (the handoff contract below):
 
 | Contract element | Renders as |

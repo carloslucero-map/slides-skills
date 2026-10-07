@@ -2,7 +2,7 @@
 name: wpp-es-html-deck
 description: >-
   Turn any raw input — narrative, outline, brief, bullet dump, or an approved
-  deck-content-builder Markdown file — into a polished slide deck in the WPP
+  deck-builder Markdown file — into a polished slide deck in the WPP
   Enterprise Solutions | MAP visual language (Navy + Cream + Orange, WPP
   Sans, dot system, 16:9). In Claude Design the deck is built inside the
   Slides artifact, never as a separate file; elsewhere it is one
@@ -18,7 +18,7 @@ description: >-
 
 # WPP Enterprise Solutions | MAP — HTML Deck Builder v4.2
 
-You convert loose text — or an approved `deck-content-builder` content file —
+You convert loose text — or an approved `deck-builder` content file —
 into one on-brand slide deck. The user brings the thinking, you bring the
 structure and the brand. Version history is in `CHANGELOG.md`; everything
 this file states is current.
@@ -45,7 +45,7 @@ Only three inputs waive the full gate:
    waive *review*. A deck request, however imperative ("build a deck", "arma
    un deck", "renderiza esto", "ASAP"), is the normal trigger, NOT a waiver.
    → Build with defaults, list your assumptions at delivery, ask nothing.
-2. **An approved `deck-content-builder` Markdown file** — approved means the
+2. **An approved `deck-builder` Markdown file** — approved means the
    user says so, or it passed that skill's gate in this conversation; a
    contract-shaped file alone is just input (full G1 applies). → One-line
    notice + the design-direction question, then **end your turn** and wait
@@ -220,7 +220,7 @@ Everywhere else, present one compact artifact:
   changes ('5: make this a comparison'), (3) 'alt storyline', (4)
   'shorter'/'longer'."*
 
-**Skip G1 when** the input is an already-approved deck-content-builder file —
+**Skip G1 when** the input is an already-approved deck-builder file —
 collapse to a one-line notice ("Using your approved titles verbatim;
 chapters: X / Y / Z") **plus the design-direction question**, and wait for
 that one answer — or when the user said "just build it" (default direction,
@@ -243,7 +243,7 @@ an image in the chat.
 Find the **spine**; group into **1–6 chapters** (3–6 for standard decks; a
 single chapter renders as a micro-deck — cover + content + thank-you). One
 idea per slide, sentence-case action headline, archetype from the quick-map.
-On raw input, action titles meet the deck-content-builder bar: a full
+On raw input, action titles meet the deck-builder bar: a full
 sentence that lands a so-what, ≤15 words, active voice, specific numbers —
 never a label ("Background", "Next steps"). Decide the cover.
 
@@ -524,9 +524,9 @@ The G2 message includes **one line per content slide**: *seen → issue →
 fix* (or "passed first look"). This makes skipping the look visible — if you
 cannot write the line, you did not look.
 
-## Input mode: deck-content-builder Markdown
+## Input mode: deck-builder Markdown
 
-When the input is a content file from the `deck-content-builder` skill,
+When the input is a content file from the `deck-builder` skill,
 read **`references/HANDOFF-CONTRACT.md`** — it holds the contract, the
 element-to-render mapping, and the `spec` fields it fills. Skip it entirely
 for raw input.
@@ -578,7 +578,7 @@ Each other file is named where it is used. Two rules that live nowhere else:
   `design-system/` is a generated copy of it, written only by the refresh in
   the repository (`authoring/refresh_design_system.py`). `verify_deck.py` fails
   the deck if a file in the copy was edited by hand, or if a block this skill
-  shares with `deck-content-builder` (the house copy rules, the handoff
+  shares with `deck-builder` (the house copy rules, the handoff
   contract) no longer matches its twin.
 
 After a refresh changes a kit layout, remeasure the kit:

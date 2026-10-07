@@ -5,7 +5,7 @@ description: >-
   context, using consultant-grade methods (Pyramid Principle, SCR framework).
   Produces slide-by-slide content — action titles, bullets, callouts, speaker
   notes — as a single Markdown file. Its output is the standard input for the
-  wpp-es-html-deck skill, and pastes cleanly into PowerPoint or Google Slides.
+  slides-builder skill, and pastes cleanly into PowerPoint or Google Slides.
   Does NOT render slides or design layouts — it writes the words. Trigger:
   "write the content for a deck about X", "draft the slides text", "turn
   these notes into deck content", or any request for words/copy/storyline of
@@ -21,7 +21,7 @@ user provides. You determine the titles, the structure, and the storyline —
 the user reviews at one gate, then you finish and save one Markdown file.
 (v4.1 ships HANDOFF-CONTRACT v3: the optional title-highlight marker, the
 stat-direction column and four more visual hints — all flow straight to the
-wpp-es-html-deck renderer.)
+slides-builder renderer.)
 
 ## STOP — checkpoint discipline (this rule outranks everything below)
 
@@ -62,10 +62,10 @@ user never gets to steer the storyline while steering is still cheap.
   Slides type), a saved `.md` is a stray file beside the deck. Keep the
   approved content in the conversation, in the handoff format, and save the
   file only if the user asks for it. When they want the deck, invoke
-  `wpp-es-html-deck` with that approved content; it builds it into the
+  `slides-builder` with that approved content; it builds it into the
   Slides artifact. Never create the Slides artifact yourself.
 - **Do not render slides yourself. If the user wants the rendered WPP deck,
-  save the approved Markdown, then invoke `wpp-es-html-deck` with the file.**
+  save the approved Markdown, then invoke `slides-builder` with the file.**
   For a `.pptx`: never build it yourself; only after the gate passes and the
   `.md` is saved, hand the file to a pptx skill. Never invoke any renderer
   before the step-6 gate has been answered — "make me the deck" does not
@@ -175,7 +175,7 @@ Vertical-logic check: does every bullet prove its title? Fix before
 presenting. Save ONE `.md` file (e.g. `deck-content.md`) in the handoff
 format below and report the path — in Claude Design, only if the user asks
 (see the output contract). Do not produce any other file type. If the
-user wants the rendered deck, invoke `wpp-es-html-deck` with the saved file —
+user wants the rendered deck, invoke `slides-builder` with the saved file —
 the renderer keeps your approved titles verbatim.
 
 ## Follow-up requests

@@ -75,7 +75,7 @@ have asked before, and never re-ask.
 
 **The waivers still hold.** An explicit "just build it", or nobody there to
 answer: no card, the recommended direction, assumptions in one line. An
-approved `deck-content-builder` file: the card holds only the direction.
+approved `deck-builder` file: the card holds only the direction.
 
 ## No slide images in the chat
 

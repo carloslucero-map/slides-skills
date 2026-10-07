@@ -345,7 +345,7 @@ addEventListener('resize', fit); fit();
    `illustrations`) produce the cover, agenda, dividers and thank-you slide, and
    one placeholder per planned content slide. A single-chapter micro-deck omits
    the agenda and the dividers automatically.
-2. **When the input is a deck-content-builder Markdown file, follow the
+2. **When the input is a deck-builder Markdown file, follow the
    input-mode mapping in `references/HANDOFF-CONTRACT.md`: approved titles are
    carried verbatim.**
 3. Fill each placeholder from a canon template or a kit variant (`SKILL.md`,

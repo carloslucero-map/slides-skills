@@ -5,6 +5,20 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [4.2.2] — 2026-10-07
+
+### Fixed
+- The two skills call each other by the names they have in the
+  organisation, **slides-builder** and **deck-builder**. deck-builder used to
+  tell Claude to hand its content to `wpp-es-html-deck`, a skill nobody in the
+  organisation has under that name, so the hand-off after "now make the
+  slides" depended on Claude guessing.
+
+The `name` in each SKILL.md stays the folder's name (`wpp-es-html-deck`,
+`deck-content-builder`): a skill's name has to match the folder it is uploaded
+in, so a folder downloaded from GitHub still uploads as before. Decks build
+exactly as before.
+
 ## [4.2.1] — 2026-09-27
 
 The six leftovers 4.2.0 listed, fixed in the design system, and the skill
