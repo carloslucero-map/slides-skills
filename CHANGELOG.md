@@ -5,6 +5,15 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+Work in progress, not a release: picking a client's design system. Added so
+far: `references/DESIGN-SYSTEMS.md` (how the system is picked, what the skill
+needs from it, how to fill what it lacks, the prompt that makes a client's
+system deck-ready) and the Claude Slides path reading from it. Still to do:
+`SKILL.md` (the description, the default-not-only rule, WPP's
+non-negotiables and directions scoped to WPP decks), the READMEs and the
+plugin text. Do not build a plugin from these commits; 4.6.0 is the latest
+release.
+
 ## [4.6.0] — 2026-10-08
 
 Motion that works with any design system, ready for client systems.

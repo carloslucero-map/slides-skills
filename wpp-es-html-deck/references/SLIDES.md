@@ -11,9 +11,10 @@ deck goes*).
 
 Three sources, three jobs:
 
-- **The design system "WPP Enterprise Solutions | MAP"** decides what the
-  deck looks like: every colour, face, size and position, every element,
-  fixed slide and layout.
+- **The design system in use** decides what the deck looks like: every
+  colour, face, size and position, every element, fixed slide and layout. It
+  is "WPP Enterprise Solutions | MAP" unless step 3 picks another, such as a
+  client's (`references/DESIGN-SYSTEMS.md`).
 - **The Slides type's own instructions**, which you read when you open or
   create the deck, decide how a slide is written: `project/deck.json`, one
   `project/slides/<id>.html` per slide, the calls.
@@ -26,9 +27,11 @@ it is in the design system.
 ## What carries over, what does not
 
 **Unchanged:** a gate before anything is built (here it is the question
-card, below), the four design directions, archetype choice, traced-first
+card, below), the design directions, archetype choice, traced-first
 layout selection, the anti-sameness review, the house copy rules, and
-non-negotiables 2–8.
+non-negotiables 2–8. In a deck in another design system, that system's own
+rules, directions and layouts take the place of WPP's
+(`references/DESIGN-SYSTEMS.md`).
 
 **Does not exist here. Never run or write them:** `build_shell.py`,
 `check_capacity.py`, `verify_deck.py`, screenshots, the contact sheet; a
@@ -41,7 +44,9 @@ system sets them, and `references/MOTION.md` where it sets none (step 6).
 so there is no seen-report. Deliver the link, name the two slides to look at
 first, say which headline highlights were dropped (the Headline card says
 when), and offer to revise any slide by number or add an alternative beside
-it.
+it. A deck in another design system also names the system it used and, one
+line each, any part that system lacked and how it was filled
+(`references/DESIGN-SYSTEMS.md`).
 
 ## Asking: the question card, never a slide table
 
@@ -53,9 +58,14 @@ before anything is written:
 
 - **At most four questions**, the call tagged
   `"metadata": {"source": "artifact-questions"}`.
+- **The brand, only when step 3 cannot tell** (two systems fit the name the
+  user gave, or the brand they named has no system): one option per system,
+  plus WPP Enterprise Solutions | MAP, `multiSelect: false`.
 - **The design direction, always** (unless the user already named one), with
   `multiSelect: false` and your content-signal pick first, marked
-  "(Recommended)":
+  "(Recommended)". These are WPP ES | MAP's; another design system's own
+  directions, if it has any, in its own words, and no direction question if
+  it has none:
 
   | label | description |
   |---|---|
@@ -127,13 +137,16 @@ which the user keeps or deletes in the editor.
    approved plan.
 2. **The deck.** One is open: work on that one. None: create it from the
    Slides type, titled with the plan's cover title.
-3. **Find the design system "WPP Enterprise Solutions | MAP".** Do not ask
-   which one. `list` with type "Design System", and match that exact title.
-   Not found (another account, or a renamed system): say so in one line and
-   build from this skill's copy of it, `design-system/` (its README,
-   guidelines and cards, with the same Slides recipes), written as inline
-   styles.
-4. **Read it in this order**, before writing a slide:
+3. **Pick the design system** as `references/DESIGN-SYSTEMS.md` says: the
+   open deck's own, else the one the user names, else the account's marked
+   default, else "WPP Enterprise Solutions | MAP" (`list` with type "Design
+   System", exact title; not found: say so in one line and build from this
+   skill's copy of it, `design-system/`, its README, guidelines and cards with
+   the same Slides recipes, written as inline styles). Do not ask which one
+   when the request already says.
+4. **Read it before writing a slide.** Another design system: in the order
+   `references/DESIGN-SYSTEMS.md` gives, and where it lacks a part, that
+   page's table says what to do. WPP ES | MAP, in this order:
    1. **`project/README.md`**: the eight rules, the canvas, colour and type
       on one page each, and *Building in Claude Slides* (faces,
       positions, floors, colour, dots, icons, photos, motion, what Slides
@@ -158,19 +171,20 @@ which the user keeps or deletes in the editor.
    `project/tokens.json` holds every value by name, for when a card names a
    token.
 5. **Install it in the same call that sends the slides.** `files` entries
-   copy it server-side: `project/ds/wpp-es-map/tokens.json` from its
-   `project/tokens.json`, and one `project/ds/wpp-es-map/fonts/<File>` from
-   its `project/fonts/<File>` for each of the four faces the README's
-   *Faces* line names. Register each as its own face in `project/deck.json`
-   `faces`, with the README's family names, `src` the installed file.
-   `project/deck.json` `designSystems` gains `{"title": "WPP Enterprise
-   Solutions | MAP", "namespace": "wpp-es-map", "artifact": "<its address
-   from list>", "version": "<its version id>", "copiedAt": "<now>"}`.
+   copy it server-side: `project/ds/<folder>/tokens.json` from its
+   `project/tokens.json`, and one `project/ds/<folder>/fonts/<File>` from its
+   `project/fonts/<File>` for each face its README names (four at most; WPP
+   ES | MAP's are the four on its *Faces* line). `<folder>` is the system's
+   namespace, lower cased (`wpp-es-map` for WPP ES | MAP). Register each face
+   as its own entry in `project/deck.json` `faces`, with the README's family
+   names, `src` the installed file. `project/deck.json` `designSystems` gains
+   `{"title": "<its title>", "namespace": "<folder>", "artifact": "<its
+   address from list>", "version": "<its version id>", "copiedAt": "<now>"}`.
 6. **Write every slide in one pass**, then one publish, then the link.
    - **Assets.** Copy each image you place from the design system's asset
      groups into the deck (`from_url` the design system, `asset_ids` from
      its `assets` listing) and use the returned `url` verbatim. Never a
-     `data:` URI. Icons are pasted inline, as the Icon card says.
+     `data:` URI. Icons are pasted inline, as the system's Icon card says.
    - **Page numbers are typed**, as `NN / total` (the FooterFurniture card).
      After adding, removing or moving a slide, retype every one.
    - **Motion.** Every slide takes its transition and builds from the
@@ -186,8 +200,9 @@ which the user keeps or deletes in the editor.
 
 ## Choosing a layout
 
-Pick from the design system's Layout catalogue by the shape of the argument:
-traced layouts, measured off real MAP slides, before kit layouts, and where
+Pick from the design system's Layout catalogue by the shape of the argument
+(a system with none: `references/DESIGN-SYSTEMS.md`). In WPP ES | MAP,
+traced layouts, measured off real MAP slides, come before kit layouts, and where
 a card's *Related* section names a pair, it says which to pick. Read the
 card for when to use it, its capacity and what the consumer supplies; take
 its positions and sizes from its preview. **Rebuild it in inline styles from
@@ -207,7 +222,7 @@ same layouts; you do not need them here.
 - **An over-full box.** The page shrinks its text, which can take it under
   the brand's floors. Split the slide instead.
 - **A pinned backdrop after the first flow child** hides the flow text. The
-  dot svg goes first.
+  background art (in WPP ES | MAP, the dot svg) goes first.
 - **A negative offset** is clamped to 0. Bleeds belong in the svg.
 - **A build on a flow child** (or anything inside a `div`) is dropped, and so
   is a magic-move `id`. Pin what moves directly on the slide.
