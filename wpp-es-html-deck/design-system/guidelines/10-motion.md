@@ -56,8 +56,49 @@ The preview cards in this system render the static state — the motion layer is
 ## In Claude Slides
 
 The runtime layer above does not exist in Slides, and neither do its hooks. A deck there moves with the Slides
-type's own transitions and build-ins:
+type's own transitions and builds, which play only when the deck is presented; everywhere else every slide shows
+finished. The vocabulary below is closed: no other effect, no build-out, and no animation inside an `<x-embed>`
+(the brand faces do not load there, and the exports flatten it).
 
-- every slide takes `data-transition="fade"`, and `push` is fine between chapters;
-- a build-in (`data-build-in`) works only on a slide's pinned children, the ones set `position:absolute`;
-- with motion off, no build-ins.
+**Transitions** go on the `<section>` and say how that slide leaves it (`data-transition`):
+
+- `fade` on every slide;
+- `push` on the last slide of a chapter, so the deck turns the page into the divider (full motion only);
+- `magic` on a slide whose dot carries into the next one (*Magic move*, below).
+
+**Builds** (`data-build-in="<effect> <step> auto"`) work only on a slide's pinned children: elements set
+`position:absolute` directly in the `<section>`. Inside a `div` a build is dropped, so units that flow inside one
+band build together, as the band. Builds that share a step number play together, and `auto` plays a step without
+a click. Auto steps chain: the first plays 0.6s after the slide arrives and each next one about 0.5s later, so an
+entrance takes three steps at most. The hooks map onto them:
+
+| Hook | In Slides | Step |
+|---|---|---|
+| `m-lead`, the statement, lede or panel the slide opens with | `rise`; a panel anchored to an edge comes in from it, `left` or `right` | 1 |
+| `m-art`, a motif or media host | `fade`; a ghost numeral `right` | 1 |
+| `m-unit`, the repeated block | `rise`, every unit in the one step | 2 |
+| `m-mark`, a pinned dot, stat circle or numeral | `pop`, the one effect with a spring overshoot | 3 |
+| `m-bar`, a pinned rule or bar | `left`, so it reads as drawn | 3 |
+
+The headline, the footer furniture and a full-bleed dot field take no build: they arrive with the slide, so a
+slide never opens empty. On the cover, the dividers and the thank-you slide only the type block builds,
+`rise 1 auto`; the art, the dots and the logo badge are there from the start.
+
+| Motion | Transitions | Builds | Magic move | Click reveals |
+|---|---|---|---|---|
+| `off` | `fade` | none | none | none |
+| `subtle` | `fade` | steps 1 and 2, `rise` and `fade` only | none | on one or two slides |
+| `full` | `fade`, and `push` into each divider | steps 1 to 3, every effect above | at most two per deck | on one or two slides |
+
+**Click reveals** are the HTML deck's fragments. On one or two slides of a deck, three to five parallel units, each
+pinned on its own, take a step each without `auto` (`rise 2`, `rise 3`, …) and appear on the presenter's click;
+the slide's lead can still rise on its own first (`rise 1 auto`).
+
+**Magic move** is the dot travelling. A circle pinned on one slide (a `div` with `border-radius:50%`, or a stat
+circle) carries the same `id` as a circle pinned on the next, and the first slide takes `data-transition="magic"`:
+the dot moves and grows from one to the other. Use it where the second slide zooms into the first, such as a stat
+circle that becomes the next slide's hero. Both circles keep one colour, because colours never move.
+
+What the HTML deck does and Slides cannot is never imitated here: no counting numerals, no word-by-word type, no
+breathing dots or floating art, no progress line, no hover. A deck that needs them is the animated HTML deck
+(README, rule 8), built when someone asks for it or picks it when it is offered.

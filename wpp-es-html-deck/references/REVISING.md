@@ -36,6 +36,10 @@ new-deck rule applies.
 - **Page numbers are typed, not computed.** After adding, removing or moving
   a slide, rewrite every slide's page number as `NN / total` (the design
   system's FooterFurniture card).
+- **Motion travels with the slide.** A new or changed slide takes its
+  transition and builds from guideline 10 at the deck's motion level. Moving
+  a slide can break a magic-move pair or a chapter's `push`: re-check the
+  slides on either side.
 - **No verifier, no screenshots.** The Slides type asks not to render-check
   slides unless the user asks. Deliver the link with the one-line diff
   summary.

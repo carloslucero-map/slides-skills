@@ -39,7 +39,7 @@ MANIFEST = {
     "description": "WPP Enterprise Solutions | MAP decks. deck-builder writes the content; "
                    "slides-builder builds the on-brand deck as a Claude Slides deck wherever Claude "
                    "Slides is available (a chat, Claude Design, Claude Code), otherwise as one "
-                   "self-contained HTML file.",
+                   "self-contained HTML file, which is also the animated version of a special deck.",
     "author": {"name": "Carlos Lucero"},
 }
 
@@ -51,9 +51,11 @@ WPP Enterprise Solutions | MAP decks, made with Claude. Version {version}.
   writes the full slide-by-slide text once you approve them.
 - **slides-builder** builds the deck in the MAP look. Wherever Claude Slides
   is available (a chat, Claude Design, Claude Code) you get a Claude Slides deck you can
-  edit, share and export to PowerPoint or PDF; where it isn't, one
-  self-contained HTML file. It asks you a few questions and a style before it
-  builds.
+  edit, share and export to PowerPoint or PDF, with its builds and
+  transitions; where it isn't, one self-contained HTML file. For a special
+  deck (a pitch, a keynote, a launch) it also offers the animated version: one
+  HTML file with counting numbers and living dots, presented from a browser.
+  It asks you a few questions and a style before it builds.
 
 Ask in plain words, for example "Make a MAP deck from these notes", or "Use
 deck-builder to write the content for a sales deck from these notes".

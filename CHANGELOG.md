@@ -5,6 +5,46 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [4.5.0] — 2026-10-08
+
+Animation, both ways. A Claude Slides deck now moves the way the brand moves,
+with the type's own transitions and builds, set per motion level. And a special
+deck can be the animated HTML deck instead, the one with counting numbers and
+living dots, which Claude Slides cannot do.
+
+### Added
+- **The animated HTML deck.** For a special deck (a pitch, a keynote, a
+  launch, an event or award moment, a talk on a stage) or a user who asks for
+  animation, slides-builder's question card adds a format question: the
+  Claude Slides deck or the animated HTML deck. A user who names the animated
+  version gets it without the question. It is the HTML path at
+  `"motion": "full"`, and its delivery says how to present it from a browser
+  and that it is not a Claude Slides deck.
+
+### Changed
+- slides-builder sets motion on every Claude Slides deck from guideline 10:
+  the reading order always includes its *In Claude Slides* section (unless
+  motion is off), step 6 applies it per slide, and the pitfalls name the one
+  that bites: a build or a magic-move `id` on a flow child is dropped.
+  Revising re-checks a moved slide's magic-move pair and chapter `push`.
+- The skill's description, the plugin's description and its README mention
+  the animated version.
+
+### Changed, in the design system (now version `1791469888-562f`)
+- Guideline 10, *In Claude Slides*, is rewritten from three bullets into the
+  whole of Slides motion: transitions (`fade` everywhere, `push` into each
+  divider at full motion, `magic` for a travelling dot), builds mapped from
+  the five motion hooks (`m-lead` rise, `m-art` fade, `m-unit` rise,
+  `m-mark` pop, `m-bar` from the left) in at most three auto steps, a table of
+  what `off`, `subtle` and `full` use, click reveals as the fragments'
+  equivalent, magic move at most twice a deck, and what is never imitated.
+- Rule 8 of the README: the animated HTML deck is also built when someone asks
+  for it or picks it. The *Building in Claude Slides* motion line names builds
+  and magic move.
+
+The skill's copy is refreshed to that version; no layout, fixed slide or value
+changed, and HTML decks build exactly as before.
+
 ## [4.4.0] — 2026-10-07
 
 Claude Slides first, wherever it is available. The skills used to say "in

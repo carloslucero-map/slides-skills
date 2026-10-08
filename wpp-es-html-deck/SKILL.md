@@ -1,20 +1,20 @@
 ---
 name: wpp-es-html-deck
 description: >-
-  Turn any raw input — narrative, outline, brief, bullet dump, or an approved
+  Turn any raw input — notes, outline, brief, bullet dump or an approved
   deck-builder Markdown file — into a polished slide deck in the WPP
   Enterprise Solutions | MAP visual language (Navy + Cream + Orange, WPP
   Sans, dot system, 16:9). Wherever Claude can make a Claude Slides deck (a
-  chat, Claude Design, Claude Code) the deck is built as one, never as a
-  separate file; only where Claude Slides is not available is it one
-  self-contained HTML file. Trigger: "build a deck", "turn this into
-  slides", "make a presentation", "WPP deck", "MAP deck", "put this in the
+  chat, Claude Design, Claude Code) the deck is built as one; it is one
+  self-contained HTML file only where Claude Slides is not available, or as
+  the animated version of a special deck (pitch, keynote, launch) when asked
+  for or picked. Trigger: "build a deck", "turn this into slides", "make a
+  presentation", "WPP deck", "MAP deck", "animated deck", "put this in the
   WPP template", "make this on-brand", or pasting notes to be rendered as a
-  deck — even if messy, structuring is the job. House standard for WPP ES |
-  MAP decks. Do NOT use to edit .pptx files or for the older VML MAP
-  espresso/gold style. Two-turn by design: the first reply asks the plan and
-  design-direction questions (with Claude Slides, as one question card); the
-  deck is built only after the answers or an explicit review waiver.
+  deck, however messy. Do NOT use to edit .pptx files or for the older VML
+  MAP espresso/gold style. Two-turn by design: the first reply asks the plan
+  and design-direction questions (with Claude Slides, as one question card);
+  the deck is built only after the answers or an explicit review waiver.
 ---
 
 # WPP Enterprise Solutions | MAP — slides-builder
@@ -77,9 +77,21 @@ from.
   3–6. Never write a standalone `.html` file, never run `build_shell.py`,
   `check_capacity.py` or `verify_deck.py`, never screenshot. The artifact
   exports HTML, PDF and PPTX itself, so a request for "an HTML file" there
-  means its export.
-- **The HTML path, only where Claude Slides is not available (no Slides type):** **one
-  self-contained `.html` file**, built by steps 3–6 below.
+  means its export. The one exception is the animated HTML deck, below.
+- **The HTML path, only where Claude Slides is not available (no Slides type)
+  or for the animated HTML deck:** **one self-contained `.html` file**, built
+  by steps 3–6 below.
+- **The animated HTML deck, only when it is asked for or picked.** It is the
+  HTML path at full motion: numbers count up, titles rise word by word, dots
+  breathe and art floats, which Claude Slides cannot do (guideline 10). For a
+  special deck (a pitch, a keynote, a launch, an event or award moment, a
+  talk on a stage) or a user who asks for animation, the question card offers
+  it beside the Claude Slides deck (`references/SLIDES.md`, *Asking*); a user
+  who names it ("the animated version", "animated HTML") gets it without that
+  question. Its cost is said in the card and again at delivery: it is one
+  file presented from a browser, not a Claude Slides deck to edit, share and
+  export to PowerPoint. The gate is the surface's own (the card where the
+  session has one, its answers the approval), then steps 3–6 below.
 
 ## Step 0 — read the brand system first (once per deck)
 
@@ -239,7 +251,11 @@ by number to change it — I patch in place; numbering and self-containment are
 preserved automatically. I can also render an A/B alternative of any slide
 (or an A/B thumbnail sheet of the 2–3 highest-stakes slides) so you can pick."*
 On the Claude Slides path an alternative is an extra slide beside the original,
-never an image in the chat.
+never an image in the chat. The animated HTML deck's delivery adds how to
+present it (open the file in Chrome or Edge; F for full screen, → or Space to
+advance, N for notes, 1–9 to jump to a chapter) and says once that it is not a
+Claude Slides deck: changes come back here, and a Claude Slides version of the
+same deck can be built beside it.
 
 ## Workflow
 
@@ -308,7 +324,9 @@ navy-full; `dividerStyle` playbook (default — one-hue macro scatter, title
 pinned bottom) · classic (the v3 geometry), both on the DividerSlide card;
 `outro` light · dark; `motion` full · subtle · off (each direction's default
 colourway, motion and outro: the README's *Four deck directions*; the shell choreographs
-the kit automatically — no markup work, see `HTML-BUILD.md` §14). Flat string chapters (v1 style) still work.
+the kit automatically — no markup work, see `HTML-BUILD.md` §14). The animated HTML
+deck sets `"motion": "full"` whatever the direction, unless the user asked for
+`subtle`. Flat string chapters (v1 style) still work.
 Set `"microDeck": true` when the final deck has ≤4 content slides. For
 Spanish decks set `"lang": "es"` (Agenda / Gracias. / Sección N / PRIVADO Y
 CONFIDENCIAL are built in; other languages via `"strings"`).

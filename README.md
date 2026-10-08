@@ -57,8 +57,9 @@ Single file, no dependencies: [`deck-content-builder/SKILL.md`](deck-content-bui
 Renders a deck in the WPP ES | MAP visual language — Navy + Cream + Orange,
 WPP Sans, the dot system, 16:9. **Wherever Claude can make a Claude Slides deck
 (a chat, Claude Design, Claude Code) it builds straight into one, from the
-design system itself; only where Claude Slides is not available does it write one
-self-contained HTML file from its copy of the design system.** Ships 25 canon
+design system itself; only where Claude Slides is not available, or for the
+animated version of a special deck, does it write one self-contained HTML file
+from its copy of the design system.** Ships 25 canon
 templates, a 51-template snippet library, a per-slot capacity model, and a
 verifier that enforces the design system's rules.
 
@@ -159,6 +160,28 @@ tier — Thin display, Light headline, Regular body, Medium label — comes out 
 same. The design system registers four faces instead (`WPP` for Regular,
 `WPP Thin`, `WPP Light`, `WPP Medium`) with `font-weight:400` everywhere; Bold,
 a fifth face, does not load, and the footer brand line moves to Medium.
+
+**Motion is Slides' own.** A Claude Slides deck moves with the type's
+transitions (`fade`, `push`, `magic`) and builds (`rise`, `fade`, `pop`,
+`left`, `right`), which play when the deck is presented. Guideline 10 of the
+design system, *In Claude Slides*, maps the HTML deck's five motion hooks onto
+them and says what each motion level uses: which step each kind of element
+builds in, `push` into the dividers and up to two magic-move dots at full
+motion, and click reveals on one or two slides. A build works only on an
+element pinned directly on the slide, so whatever moves is pinned.
+
+## The animated HTML deck
+
+Counting numbers, titles that rise word by word, breathing dots, floating art
+and the progress line are the HTML deck's runtime (`HTML-BUILD.md` §14), and
+Claude Slides cannot do them. So for a special deck (a pitch, a keynote, a
+launch, an event or award moment, a talk on a stage) or a user who asks for
+animation, the question card adds one question: the Claude Slides deck or the
+animated HTML deck. A user who names the animated version gets it without the
+question. It is the HTML path at full motion, built and verified like any HTML
+deck, and delivered with how to present it from a browser. The cost is said
+twice, in the card and at delivery: it is one file, not a Claude Slides deck to
+edit, share and export to PowerPoint.
 
 ## The design system's copy
 

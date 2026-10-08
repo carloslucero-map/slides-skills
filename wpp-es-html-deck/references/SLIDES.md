@@ -5,7 +5,9 @@ from the Slides type — never a separate `.html` file.** That is any session
 whose Artifact tool offers a Slides type: a chat in claude.ai or the desktop
 app with Claude Slides on, Claude Design, Claude Code. A deck is open, or
 `quickstart` with intent `slides` returns the type. This is the default; the
-standalone HTML file is only for where Claude Slides is not available.
+standalone HTML file is only for where Claude Slides is not available, and for
+the animated HTML deck when it is asked for or picked (`SKILL.md`, *Where the
+deck goes*).
 
 Three sources, three jobs:
 
@@ -32,6 +34,8 @@ non-negotiables 2–8.
 `check_capacity.py`, `verify_deck.py`, screenshots, the contact sheet; a
 standalone `.html` file (the artifact exports HTML, PDF and PPTX itself); CSS
 classes, `<style>`, `var()`, base64 or `data:` images, the JS motion layer.
+A deck here moves with Slides' own transitions and builds, as guideline 10
+sets them (step 6).
 
 **G2 changes.** The type does not render-check slides and asks you not to,
 so there is no seen-report. Deliver the link, name the two slides to look at
@@ -60,6 +64,19 @@ before anything is written:
   | Data-forward | Numbers lead: stat circles, charts |
   | High-impact | Poster scale, up to 1 in 3 dark |
 
+- **The format, for a special deck only**: a pitch, a keynote, a launch, an
+  event or award moment, a talk on a stage, or a user who asks for
+  animation. `multiSelect: false`, with the Claude Slides deck first and
+  marked "(Recommended)" unless the user asked for animation or the deck is
+  presented on a stage, when the animated deck goes first instead:
+
+  | label | description |
+  |---|---|
+  | Claude Slides deck | Editable here, exports to PowerPoint |
+  | Animated HTML deck | Counting numbers, living dots; one browser file |
+
+  Any other deck gets no format question, and a user who names the animated
+  version gets it without one.
 - **Then what their material leaves open**, most decisive first and in its
   own terms: which thread leads, what the room should do afterwards, whose
   voice the slides carry. Two to four concrete options each, a few words per
@@ -84,7 +101,8 @@ turn. Still no slide table: the deck is the plan.
 
 **The waivers still hold.** An explicit "just build it", or nobody there to
 answer: no card, the recommended direction, assumptions in one line. An
-approved `deck-builder` file: the card holds only the direction.
+approved `deck-builder` file: the card holds only the direction, and the
+format for a special deck.
 
 ## No slide images in the chat
 
@@ -101,7 +119,9 @@ which the user keeps or deletes in the editor.
 1. **Ask with the card** (above), then wait for the answers. The Slides
    type's own instructions say to decide once and write every slide in one
    pass. That pass is step 6 and comes **after** the answers, never instead
-   of them.
+   of them. If the answer is the animated HTML deck, this page ends here:
+   build it by `SKILL.md` steps 3–6, the card's answers standing as the
+   approved plan.
 2. **The deck.** One is open: work on that one. None: create it from the
    Slides type, titled with the plan's cover title.
 3. **Find the design system "WPP Enterprise Solutions | MAP".** Do not ask
@@ -119,10 +139,10 @@ which the user keeps or deletes in the editor.
       `components/bundle.css`), that is the HTML path: ignore it here.
    2. **The guidelines** (`project/guidelines/`): 01 to 04 and 06 before any
       slide (colour, typography, grid and composition, the dot system, slide
-      furniture), then 07 to 10 when the deck has icons, imagery, charts or
-      motion. The layout laws in 03 hold here too: check them by eye. Where a
-      guideline names the HTML deck's classes or its verifier, that is the
-      HTML path; 10 has its own Slides section.
+      furniture), then 07 to 09 when the deck has icons, imagery or charts,
+      and the *In Claude Slides* section of 10 unless motion is off. The
+      layout laws in 03 hold here too: check them by eye. Where a guideline
+      names the HTML deck's classes or its verifier, that is the HTML path.
    3. **The Elements cards** (Headline, Subhead, BodyCopy, Pill, StatCircle,
       FooterFurniture and the rest). Each ends with its inline-style recipe
       for Slides. Build every piece of text and every shape from them.
@@ -149,6 +169,13 @@ which the user keeps or deletes in the editor.
      `data:` URI. Icons are pasted inline, as the Icon card says.
    - **Page numbers are typed**, as `NN / total` (the FooterFurniture card).
      After adding, removing or moving a slide, retype every one.
+   - **Motion.** Every slide takes its transition and builds from guideline
+     10, *In Claude Slides*, at the deck's motion level: the direction's
+     default (the README's *Four deck directions*) unless the user chose
+     another. Decide it per slide as you write it: what builds is pinned
+     directly on the slide, the headline and the furniture never build, and
+     at full motion name the one or two magic-move pairs before writing the
+     slides that hold them.
 
 ## Choosing a layout
 
@@ -175,6 +202,8 @@ same layouts; you do not need them here.
 - **A pinned backdrop after the first flow child** hides the flow text. The
   dot svg goes first.
 - **A negative offset** is clamped to 0. Bleeds belong in the svg.
+- **A build on a flow child** (or anything inside a `div`) is dropped, and so
+  is a magic-move `id`. Pin what moves directly on the slide.
 - **`margin`** is a no-op: space with the parent's `gap`. `max-width` works
   on an element inside a `<div>` (the cards set it on a `<p>`); give a pinned
   element a `width`.
