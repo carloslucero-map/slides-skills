@@ -5,6 +5,22 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [4.5.1] — 2026-10-08
+
+The gaps a full-motion test deck found in the Claude Slides motion rules,
+closed in the design system.
+
+### Changed, in the design system (now version `1791471488-d8bd`)
+- Guideline 10, *In Claude Slides*: the takeaway rises after everything else
+  (step 3; with the units at subtle motion; its own click on a click-reveal
+  slide); the agenda's chapter rows rise under a headline that stays put; the
+  headline's eyebrow never builds, like the headline.
+- Stat circles rise with the units, as they do in the HTML deck, instead of
+  popping; only small dots, timeline nodes and numerals pop, so the spring
+  stays an accent.
+
+The skill's copy is refreshed to that version; nothing else changed.
+
 ## [4.5.0] — 2026-10-08
 
 Animation, both ways. A Claude Slides deck now moves the way the brand moves,

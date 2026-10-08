@@ -4,12 +4,12 @@
   "title": "WPP Enterprise Solutions | MAP",
   "namespace": "WppEsMap",
   "artifact": "https://claude.ai/artifact/9iQ9xpaBJj52LsfmKMVYGc",
-  "version": "1791469888-562f",
+  "version": "1791471488-d8bd",
   "lastChange": {
    "by": "Carlos Lucero",
-   "at": "2026-10-08T14:30:56Z",
+   "at": "2026-10-08T14:58:02Z",
    "via": "Claude Code",
-   "note": "Motion in Claude Slides: guideline 10 sets the transitions, builds, magic move and click reveals per motion level, mapped from the HTML deck's five motion hooks. Rule 8: the animated HTML deck is also built when someone asks for it or picks it when offered."
+   "note": "Motion in Claude Slides, the gaps a test deck found: the takeaway rises last (its own click on a click-reveal slide), the agenda's rows rise under a headline that stays put, the eyebrow never builds, and stat circles rise with the units as in the HTML deck, so only small marks pop."
   }
  },
  "files": {
@@ -146,7 +146,7 @@
    "from": "project/guidelines/09-data-visualisation.md"
   },
   "design-system/guidelines/10-motion.md": {
-   "sha256": "9c0ce11a327d14006475a69914c3ff52775f6f05bc9324b7e7c006d0873329e3",
+   "sha256": "5bb6330ddc5c90de91974a682a7a7873068e4c50a3c9c73eeefcfba33da6d6ba",
    "from": "project/guidelines/10-motion.md"
   },
   "design-system/guidelines/11-source-and-open-questions.md": {

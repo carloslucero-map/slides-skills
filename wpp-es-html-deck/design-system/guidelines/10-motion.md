@@ -76,13 +76,19 @@ entrance takes three steps at most. The hooks map onto them:
 |---|---|---|
 | `m-lead`, the statement, lede or panel the slide opens with | `rise`; a panel anchored to an edge comes in from it, `left` or `right` | 1 |
 | `m-art`, a motif or media host | `fade`; a ghost numeral `right` | 1 |
-| `m-unit`, the repeated block | `rise`, every unit in the one step | 2 |
-| `m-mark`, a pinned dot, stat circle or numeral | `pop`, the one effect with a spring overshoot | 3 |
+| `m-unit`, the repeated block: a column, card, step, person or stat circle | `rise`, every unit in the one step | 2 |
+| `m-mark`, a small pinned dot, a timeline node or a numeral | `pop`, the one effect with a spring overshoot | 3 |
 | `m-bar`, a pinned rule or bar | `left`, so it reads as drawn | 3 |
+| The takeaway | `rise`, after everything else | 3 |
 
-The headline, the footer furniture and a full-bleed dot field take no build: they arrive with the slide, so a
-slide never opens empty. On the cover, the dividers and the thank-you slide only the type block builds,
-`rise 1 auto`; the art, the dots and the logo badge are there from the start.
+Stat circles rise with the units, as they do in the HTML deck; only small marks pop, so the spring stays an
+accent. The takeaway rises with the units at subtle motion, which stops at step 2, and on a click-reveal slide it
+takes its own click, after the last unit.
+
+The headline and its eyebrow, the footer furniture and a full-bleed dot field take no build: they arrive with
+the slide, so a slide never opens empty. On the cover, the dividers and the thank-you slide only the type block
+builds, `rise 1 auto`; on the agenda, the block of chapter rows, `rise 1 auto`, under a headline that stays put.
+The art, the dots and the logo badge are there from the start.
 
 | Motion | Transitions | Builds | Magic move | Click reveals |
 |---|---|---|---|---|
