@@ -91,7 +91,11 @@ from.
   question. Its cost is said in the card and again at delivery: it is one
   file presented from a browser, not a Claude Slides deck to edit, share and
   export to PowerPoint. The gate is the surface's own (the card where the
-  session has one, its answers the approval), then steps 3–6 below.
+  session has one, its answers the approval), then steps 3–6 below. It
+  exists only in WPP Enterprise Solutions | MAP, because the HTML path builds
+  from this skill's copy of that system: a deck in any other design system is
+  a Claude Slides deck, its motion from that system's rules and
+  `references/MOTION.md`.
 
 ## Step 0 — read the brand system first (once per deck)
 

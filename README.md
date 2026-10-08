@@ -69,6 +69,7 @@ verifier that enforces the design system's rules.
 | `design-system/` | The generated copy of the design system: its `README.md`, the eleven `guidelines/`, every card in `cards/` (one file per group), the asset groups' notes, `tokens.json`, `bundle.css`, `fixed-slides.json`, `elements.json`, fonts, logos, icons, illustrations, photos, textures, exemplars, and `SOURCE.json` (version and a sha256 per file) |
 | `references/HTML-BUILD.md` | The skill's own: how the HTML file is built, filled and checked, with the layout laws the verifier enforces |
 | `references/SLIDES.md` | How to build in a Claude Slides deck, wherever one is available: the question card, the reading order, the install |
+| `references/MOTION.md` | Motion in Claude Slides for any design system: what Slides can do, the roles, and the quiet default for whatever a design system leaves unsaid |
 | `references/SNIPPET-INDEX.md` | All 51 kit layouts, one line each |
 | `references/capacity.json` | Per-slot min/ideal/max character counts |
 | `references/HANDOFF-CONTRACT.md` | The content → render contract |
@@ -161,14 +162,19 @@ same. The design system registers four faces instead (`WPP` for Regular,
 `WPP Thin`, `WPP Light`, `WPP Medium`) with `font-weight:400` everywhere; Bold,
 a fifth face, does not load, and the footer brand line moves to Medium.
 
-**Motion is Slides' own.** A Claude Slides deck moves with the type's
-transitions (`fade`, `push`, `magic`) and builds (`rise`, `fade`, `pop`,
-`left`, `right`), which play when the deck is presented. Guideline 10 of the
-design system, *In Claude Slides*, maps the HTML deck's five motion hooks onto
-them and says what each motion level uses: which step each kind of element
-builds in, `push` into the dividers and up to two magic-move dots at full
-motion, and click reveals on one or two slides. A build works only on an
-element pinned directly on the slide, so whatever moves is pinned.
+**Motion is Slides' own, and the design system's.** A Claude Slides deck
+moves with the type's transitions (`fade`, `push`, `magic`) and builds
+(`rise`, `fade`, `pop`, `left`, `right`), which play when the deck is
+presented. The design system in use decides how they are used: WPP ES | MAP
+does it in guideline 10, *In Claude Slides*, which maps the HTML deck's five
+motion hooks onto them per motion level. The skill keeps only the part that
+holds for any design system, in
+[`references/MOTION.md`](wpp-es-html-deck/references/MOTION.md): what Slides
+can do, the roles every slide's elements play, and a quiet default for
+whatever a system leaves unsaid, so a client's design system with no motion
+rules still gets a deck that moves well, and one with its own rules gets
+those. A build works only on an element pinned directly on the slide, so
+whatever moves is pinned.
 
 ## The animated HTML deck
 
@@ -179,7 +185,9 @@ launch, an event or award moment, a talk on a stage) or a user who asks for
 animation, the question card adds one question: the Claude Slides deck or the
 animated HTML deck. A user who names the animated version gets it without the
 question. It is the HTML path at full motion, built and verified like any HTML
-deck, and delivered with how to present it from a browser. The cost is said
+deck, and delivered with how to present it from a browser. It exists only
+in WPP ES | MAP, the one design system the skill carries a copy of; a deck in
+any other system is a Claude Slides deck. The cost is said
 twice, in the card and at delivery: it is one file, not a Claude Slides deck to
 edit, share and export to PowerPoint.
 
@@ -233,7 +241,7 @@ It holds both skills under the names people use, `skills/slides-builder/` and
 `skills/deck-builder/`, beside `.claude-plugin/plugin.json` and a short
 README. It is built from a commit (`git archive`), never the working copy, and
 takes its version from the newest release in this CHANGELOG. It checks
-claude.ai's plugin limits, **5,000 files and 200 MB** (now 169 files, 4.9 MB),
+claude.ai's plugin limits, **5,000 files and 200 MB** (now 170 files, 4.9 MB),
 and runs `claude plugin validate` when the Claude Code CLI is installed.
 
 An Owner uploads it in **Organization settings > Plugins & skills**: **Add >
@@ -255,7 +263,7 @@ live, not by a build step, so zipping the folder is a valid upload:
 
 | | cap | now |
 |---|---|---|
-| entries (files + directories) | 200 | **184** — 166 files + 18 directories |
+| entries (files + directories) | 200 | **185** — 167 files + 18 directories |
 | size | 30 MB | **4.84 MB** |
 
 ```bash

@@ -34,8 +34,8 @@ non-negotiables 2–8.
 `check_capacity.py`, `verify_deck.py`, screenshots, the contact sheet; a
 standalone `.html` file (the artifact exports HTML, PDF and PPTX itself); CSS
 classes, `<style>`, `var()`, base64 or `data:` images, the JS motion layer.
-A deck here moves with Slides' own transitions and builds, as guideline 10
-sets them (step 6).
+A deck here moves with Slides' own transitions and builds, as the design
+system sets them, and `references/MOTION.md` where it sets none (step 6).
 
 **G2 changes.** The type does not render-check slides and asks you not to,
 so there is no seen-report. Deliver the link, name the two slides to look at
@@ -64,8 +64,9 @@ before anything is written:
   | Data-forward | Numbers lead: stat circles, charts |
   | High-impact | Poster scale, up to 1 in 3 dark |
 
-- **The format, for a special deck only**: a pitch, a keynote, a launch, an
-  event or award moment, a talk on a stage, or a user who asks for
+- **The format, for a special deck in WPP Enterprise Solutions | MAP only**
+  (the one design system with an animated HTML deck): a pitch, a keynote, a
+  launch, an event or award moment, a talk on a stage, or a user who asks for
   animation. `multiSelect: false`, with the Claude Slides deck first and
   marked "(Recommended)" unless the user asked for animation or the deck is
   presented on a stage, when the animated deck goes first instead:
@@ -76,7 +77,9 @@ before anything is written:
   | Animated HTML deck | Counting numbers, living dots; one browser file |
 
   Any other deck gets no format question, and a user who names the animated
-  version gets it without one.
+  version gets it without one. A deck in any other design system has no
+  animated HTML version: say so in one line if one is asked for, and build the
+  Claude Slides deck at full motion.
 - **Then what their material leaves open**, most decisive first and in its
   own terms: which thread leads, what the room should do afterwards, whose
   voice the slides carry. Two to four concrete options each, a few words per
@@ -140,7 +143,8 @@ which the user keeps or deletes in the editor.
    2. **The guidelines** (`project/guidelines/`): 01 to 04 and 06 before any
       slide (colour, typography, grid and composition, the dot system, slide
       furniture), then 07 to 09 when the deck has icons, imagery or charts,
-      and the *In Claude Slides* section of 10 unless motion is off. The
+      and the *In Claude Slides* section of 10, its motion, unless motion is
+      off. The
       layout laws in 03 hold here too: check them by eye. Where a guideline
       names the HTML deck's classes or its verifier, that is the HTML path.
    3. **The Elements cards** (Headline, Subhead, BodyCopy, Pill, StatCircle,
@@ -169,13 +173,16 @@ which the user keeps or deletes in the editor.
      `data:` URI. Icons are pasted inline, as the Icon card says.
    - **Page numbers are typed**, as `NN / total` (the FooterFurniture card).
      After adding, removing or moving a slide, retype every one.
-   - **Motion.** Every slide takes its transition and builds from guideline
-     10, *In Claude Slides*, at the deck's motion level: the direction's
-     default (the README's *Four deck directions*) unless the user chose
-     another. Decide it per slide as you write it: what builds is pinned
-     directly on the slide, the headline and the furniture never build, and
-     at full motion name the one or two magic-move pairs before writing the
-     slides that hold them.
+   - **Motion.** Every slide takes its transition and builds from the
+     design system's motion rules for Claude Slides (in WPP ES | MAP,
+     guideline 10, *In Claude Slides*), at the motion level the system sets
+     for the deck's direction, unless the user chose another. Whatever the
+     system leaves unsaid, and all of it for a system that sets no motion,
+     comes from **`references/MOTION.md`**: what Slides can do, the roles and
+     the quiet default. Decide it per slide as you write it: what builds is
+     pinned directly on the slide, the headline and the furniture never
+     build, and at full motion name the one or two magic-move pairs before
+     writing the slides that hold them.
 
 ## Choosing a layout
 

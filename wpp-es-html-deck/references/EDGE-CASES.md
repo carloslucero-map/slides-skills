@@ -6,9 +6,11 @@
 - **PDF:** print CSS ships — Ctrl+P → save as PDF, one page per slide. On
   the Claude Slides path the Claude Slides deck exports PDF itself.
 - **Motion:** on the Claude Slides path, Slides' own transitions and builds
-  as guideline 10 sets them (`references/SLIDES.md`, step 6). Counting
+  as the design system sets them, and `references/MOTION.md` where it sets
+  none, for any design system (`references/SLIDES.md`, step 6). Counting
   numbers, word-by-word titles and living dots belong to the animated HTML
-  deck, built only when it is asked for or picked. On the HTML path, a
+  deck, built only when it is asked for or picked, and only in WPP ES | MAP,
+  the one system the skill carries a copy of. On the HTML path, a
   runtime layer only (`HTML-BUILD.md` §14) — never bespoke keyframes,
   never a JS/React library; auto-static under reduced-motion, print and
   headless capture, so PDFs and the verifier are unaffected.

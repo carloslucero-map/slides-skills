@@ -5,6 +5,27 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [4.6.0] — 2026-10-08
+
+Motion that works with any design system, ready for client systems.
+
+### Added
+- `references/MOTION.md`: motion in Claude Slides for any design system. What
+  Slides can do (transitions, builds, steps, magic move, what is pinned, what
+  never exists), the roles every slide's elements play (lead, art, units,
+  marks, bars, takeaway, and what never builds), and a quiet default per
+  motion level for whatever a design system leaves unsaid. It holds no brand
+  values; the design system's own rules always win.
+
+### Changed
+- The Claude Slides path takes motion from the design system in use (in WPP
+  ES | MAP, guideline 10) and fills its gaps from `MOTION.md`, instead of
+  naming WPP's guideline and directions. Revising and the edge cases say the
+  same.
+- The animated HTML deck is WPP ES | MAP only, since the HTML path builds from
+  the skill's copy of that system: the format question is asked only for a
+  WPP deck, and a deck in another design system is a Claude Slides deck.
+
 ## [4.5.1] — 2026-10-08
 
 The gaps a full-motion test deck found in the Claude Slides motion rules,
