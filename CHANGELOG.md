@@ -5,6 +5,16 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [4.7.1] — 2026-10-08
+
+### Fixed
+- claude.ai refused 4.7.0: slides-builder's description held `<client>` as
+  a placeholder ("a deck in <client>'s brand"), which it reads as an XML tag.
+  The examples now name a brand, Acme.
+- `build_plugin.py` now fails the build when a skill's description holds an
+  XML-like tag or runs past 1,024 characters, the two limits claude.ai checks
+  at upload and `claude plugin validate` does not.
+
 ## [4.7.0] — 2026-10-08
 
 Client brands. slides-builder builds a deck in any design system in Claude

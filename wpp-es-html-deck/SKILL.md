@@ -9,8 +9,8 @@ description: >-
   Slides deck; it is one self-contained HTML file only where Claude Slides
   is not, or as the animated version of a special WPP deck when asked for or
   picked. Trigger: "build a deck", "turn this into slides", "make a
-  presentation", "WPP deck", "MAP deck", "a deck in <client>'s brand", "use
-  the <client> design system", "animated deck", "make this on-brand", or
+  presentation", "WPP deck", "MAP deck", "a deck in Acme's brand", "use
+  the Acme design system", "animated deck", "make this on-brand", or
   notes pasted to become a deck. Do NOT use to edit .pptx files or for the
   older VML MAP espresso/gold style. Two-turn by design: the first reply
   asks the plan and design questions (with Claude Slides, one question

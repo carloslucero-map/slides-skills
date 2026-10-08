@@ -110,6 +110,17 @@ def main():
                           files[path][0].decode("utf-8"))
         if n != 1:
             fail(f"{src}/SKILL.md does not start with `name: {src}`")
+        # claude.ai refuses the upload otherwise: no XML-like tags, 1,024 characters at most.
+        m = re.search(r"\A---\n(.*?)\n---", text, re.S)
+        d = re.search(r"^description:(.*?)(?=^\w[\w-]*:|\Z)", m.group(1) if m else "", re.S | re.M)
+        desc = " ".join(re.sub(r"^\s*>-?", "", d.group(1).strip()).split()) if d else ""
+        if not desc:
+            fail(f"{src}/SKILL.md has no description")
+        if re.search(r"<[A-Za-z/!?]", desc):
+            fail(f"{src}/SKILL.md description contains an XML-like tag: "
+                 f"{re.search(r'<[^>]*>?', desc).group(0)!r}")
+        if len(desc) > 1024:
+            fail(f"{src}/SKILL.md description is {len(desc)} characters, the cap is 1024")
         files[path] = (text.encode("utf-8"), files[path][1])
 
     manifest = {"name": MANIFEST["name"], "displayName": MANIFEST["displayName"], "version": version,
