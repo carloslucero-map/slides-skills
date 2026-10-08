@@ -41,8 +41,8 @@ README whole, first. Then, in this order, whatever it names for building slides:
 5. its fixed slides: cover, agenda, section divider, closing slide;
 6. its layout catalogue, then the chosen layout's card.
 
-Install it as `SLIDES.md` step 5 says, with its own title, its namespace lower
-cased as the folder, and the faces its README names (four at most).
+Install it as `SLIDES.md` step 5 says, with its own title, a lower-case folder
+name made from its namespace, and the faces its README names (four at most).
 
 ## What a system needs to be deck-ready
 

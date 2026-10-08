@@ -65,7 +65,7 @@ user never gets to steer the storyline while steering is still cheap.
   file only if the user asks for it. When they want the deck, invoke
   `slides-builder` with that approved content; it builds it into the
   Slides artifact. Never create the Claude Slides deck yourself.
-- **Do not render slides yourself. If the user wants the rendered WPP deck,
+- **Do not render slides yourself. If the user wants the rendered deck,
   save the approved Markdown, then invoke `slides-builder` with the file.**
   For a `.pptx`: never build it yourself; only after the gate passes and the
   `.md` is saved, hand the file to a pptx skill. Never invoke any renderer

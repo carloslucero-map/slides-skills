@@ -174,8 +174,10 @@ which the user keeps or deletes in the editor.
    copy it server-side: `project/ds/<folder>/tokens.json` from its
    `project/tokens.json`, and one `project/ds/<folder>/fonts/<File>` from its
    `project/fonts/<File>` for each face its README names (four at most; WPP
-   ES | MAP's are the four on its *Faces* line). `<folder>` is the system's
-   namespace, lower cased (`wpp-es-map` for WPP ES | MAP). Register each face
+   ES | MAP's are the four on its *Faces* line). `<folder>` is a lower-case
+   name made from the system's namespace by the Slides type's rule
+   (`deck-files.md`); WPP ES | MAP's is `wpp-es-map`, and a deck that already
+   records a system keeps that record's folder. Register each face
    as its own entry in `project/deck.json` `faces`, with the README's family
    names, `src` the installed file. `project/deck.json` `designSystems` gains
    `{"title": "<its title>", "namespace": "<folder>", "artifact": "<its

@@ -36,7 +36,8 @@ MAX_FILES, MAX_MB = 5000, 200   # claude.ai, per plugin
 MANIFEST = {
     "name": PLUGIN,
     "displayName": "MAP Decks",
-    "description": "WPP Enterprise Solutions | MAP decks. deck-builder writes the content; "
+    "description": "WPP Enterprise Solutions | MAP decks, and decks in a client's brand from that "
+                   "client's design system. deck-builder writes the content; "
                    "slides-builder builds the on-brand deck as a Claude Slides deck wherever Claude "
                    "Slides is available (a chat, Claude Design, Claude Code), otherwise as one "
                    "self-contained HTML file, which is also the animated version of a special deck.",
@@ -56,6 +57,10 @@ WPP Enterprise Solutions | MAP decks, made with Claude. Version {version}.
   deck (a pitch, a keynote, a launch) it also offers the animated version: one
   HTML file with counting numbers and living dots, presented from a browser.
   It asks you a few questions and a style before it builds.
+- **Client brands.** Name the brand ("make a deck in Acme's brand") and
+  slides-builder builds it from that client's design system in Claude Design:
+  its colours, fonts, logo, slides and animation, nothing borrowed from WPP.
+  With no brand named, the deck is WPP Enterprise Solutions | MAP.
 
 Ask in plain words, for example "Make a MAP deck from these notes", or "Use
 deck-builder to write the content for a sales deck from these notes".

@@ -1,20 +1,21 @@
 ---
 name: wpp-es-html-deck
 description: >-
-  Turn any raw input — notes, outline, brief, bullet dump or an approved
-  deck-builder Markdown file — into a polished slide deck in the WPP
-  Enterprise Solutions | MAP visual language (Navy + Cream + Orange, WPP
-  Sans, dot system, 16:9). Wherever Claude can make a Claude Slides deck (a
-  chat, Claude Design, Claude Code) the deck is built as one; it is one
-  self-contained HTML file only where Claude Slides is not available, or as
-  the animated version of a special deck (pitch, keynote, launch) when asked
-  for or picked. Trigger: "build a deck", "turn this into slides", "make a
-  presentation", "WPP deck", "MAP deck", "animated deck", "put this in the
-  WPP template", "make this on-brand", or pasting notes to be rendered as a
-  deck, however messy. Do NOT use to edit .pptx files or for the older VML
-  MAP espresso/gold style. Two-turn by design: the first reply asks the plan
-  and design-direction questions (with Claude Slides, as one question card);
-  the deck is built only after the answers or an explicit review waiver.
+  Turn any raw input (notes, a brief or an approved deck-builder file) into
+  a polished 16:9 slide deck in the WPP Enterprise Solutions | MAP look
+  (Navy, Cream, Orange, WPP Sans, the dot system) or in a client's brand,
+  from that client's design system in Claude Design. Wherever Claude Slides
+  is available (a chat, Claude Design, Claude Code) the deck is a Claude
+  Slides deck; it is one self-contained HTML file only where Claude Slides
+  is not, or as the animated version of a special WPP deck when asked for or
+  picked. Trigger: "build a deck", "turn this into slides", "make a
+  presentation", "WPP deck", "MAP deck", "a deck in <client>'s brand", "use
+  the <client> design system", "animated deck", "make this on-brand", or
+  notes pasted to become a deck. Do NOT use to edit .pptx files or for the
+  older VML MAP espresso/gold style. Two-turn by design: the first reply
+  asks the plan and design questions (with Claude Slides, one question
+  card); the deck is built only after the answers or an explicit review
+  waiver.
 ---
 
 # WPP Enterprise Solutions | MAP — slides-builder
@@ -80,7 +81,9 @@ from.
   means its export. The one exception is the animated HTML deck, below.
 - **The HTML path, only where Claude Slides is not available (no Slides type)
   or for the animated HTML deck:** **one self-contained `.html` file**, built
-  by steps 3–6 below.
+  by steps 3–6 below, and only in WPP ES | MAP. A deck in another design
+  system with no Claude Slides available: say so, and offer the WPP look or a
+  surface where Claude Slides is.
 - **The animated HTML deck, only when it is asked for or picked.** It is the
   HTML path at full motion: numbers count up, titles rise word by word, dots
   breathe and art floats, which Claude Slides cannot do (guideline 10). For a
@@ -104,6 +107,15 @@ Design System artifact in Claude Design (namespace `WppEsMap`): it decides
 what a deck looks like, and this skill decides how a deck gets made. Where
 this skill's files disagree with it, the design system is right; follow it
 and say so at delivery.
+
+**WPP ES | MAP is the default, not the only one.** A deck can be built in any
+other Design System artifact instead, typically a client's: the user names
+the brand, or the open deck already uses that system.
+**`references/DESIGN-SYSTEMS.md`** says how the system is picked, what the
+skill needs from it and how to fill what it lacks. That system then owns the
+brand exactly as WPP's does, and everything in this file that names WPP's
+colours, type, dots, logo, fixed slides, directions, layouts or files applies
+to WPP decks only. Another system's deck is always a Claude Slides deck.
 
 - **On the Claude Slides path**, read the system itself, in the order
   `references/SLIDES.md` gives.
@@ -148,7 +160,11 @@ then this skill's own files.
 
 The brand rules below are the design system's, in brief. Their values
 (colours, sizes, positions) live in the system, and for the HTML path in
-its copy in `design-system/`, never in this file.
+its copy in `design-system/`, never in this file. Rule 1 holds in every
+design system; rules 2 to 8 are WPP ES | MAP's. A deck in another system
+follows that system's own rules in their place, and two of WPP's hold
+everywhere: never set type below the system's floors, and never shrink type
+to make copy fit.
 
 1. **One deliverable, in the surface's own form** (see "Where the deck
    goes"). On the Claude Slides path: the Claude Slides deck, with assets uploaded,
@@ -195,6 +211,9 @@ colourway, motion and outro), are the design system's:
 you plan; the generator takes each direction's defaults from it. Every
 direction composes the full canvas (§12.15): the difference between them is
 voice, never effort, and a bare text band on Cream is a defect in all four.
+
+A deck in another design system takes that system's own directions, if it
+has any, the same way; with none, there is no direction question.
 
 A gate reply that picks no direction → Editorial quiet. **"You choose" means
 pick by content signal** — numbers-heavy input → Data-forward, message- or
@@ -569,7 +588,9 @@ for raw input.
 <!-- /HOUSE-COPY-RULES -->
 
 (v1 of this skill endorsed em-dashes; v2 flips to the content skill's rule so
-approved copy survives rendering untouched.)
+approved copy survives rendering untouched.) In a deck in another design
+system, the brand line is that system's own, verbatim, and its spelling rule
+wins where it has one.
 
 ## Revising a delivered deck
 

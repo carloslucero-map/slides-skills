@@ -30,6 +30,10 @@ artifact in Claude Design (namespace `WppEsMap`): colour, type, the dot system,
 the elements, the four fixed slides and the 76 layouts. It is edited there, and
 only there.
 
+It is the default, not the only one: a deck can be built in a client's design
+system instead, another Design System artifact in Claude Design, which then owns
+that deck's look the same way (see [Client design systems](#client-design-systems)).
+
 The skills hold the process: the gates, the plan, the content method, the copy
 rules, the generator and the verifier. `wpp-es-html-deck` carries a **generated
 copy** of the design system in `design-system/`, because its scripts cannot
@@ -69,6 +73,7 @@ verifier that enforces the design system's rules.
 | `design-system/` | The generated copy of the design system: its `README.md`, the eleven `guidelines/`, every card in `cards/` (one file per group), the asset groups' notes, `tokens.json`, `bundle.css`, `fixed-slides.json`, `elements.json`, fonts, logos, icons, illustrations, photos, textures, exemplars, and `SOURCE.json` (version and a sha256 per file) |
 | `references/HTML-BUILD.md` | The skill's own: how the HTML file is built, filled and checked, with the layout laws the verifier enforces |
 | `references/SLIDES.md` | How to build in a Claude Slides deck, wherever one is available: the question card, the reading order, the install |
+| `references/DESIGN-SYSTEMS.md` | Any design system besides WPP ES \| MAP: how one is picked, what the skill needs from it, how to fill what it lacks, what stays WPP-only, and the prompt that makes a client's system deck-ready |
 | `references/MOTION.md` | Motion in Claude Slides for any design system: what Slides can do, the roles, and the quiet default for whatever a design system leaves unsaid |
 | `references/SNIPPET-INDEX.md` | All 51 kit layouts, one line each |
 | `references/capacity.json` | Per-slot min/ideal/max character counts |
@@ -191,6 +196,29 @@ any other system is a Claude Slides deck. The cost is said
 twice, in the card and at delivery: it is one file, not a Claude Slides deck to
 edit, share and export to PowerPoint.
 
+## Client design systems
+
+WPP ES | MAP is the default design system, and any other Design System
+artifact in Claude Design can take its place, typically a client's.
+[`references/DESIGN-SYSTEMS.md`](wpp-es-html-deck/references/DESIGN-SYSTEMS.md)
+holds the rules:
+
+- **Which system:** the open deck's own (a revision stays on its brand), else
+  the one the user names ("a deck in Acme's brand"), else the account's
+  marked default, else WPP ES | MAP. When the name fits two systems, or a
+  brand has none, the question card asks.
+- **What the skill needs from it:** a README, colour tokens by role, at most
+  four font faces, a logo; ideally also a section for Claude Slides, element
+  recipes, the four fixed slides, a layout catalogue and motion rules. Where
+  a part is missing the skill fills it from the system's own colours, type and
+  logo, never from WPP's, and says so at delivery.
+- **What stays WPP-only:** WPP's non-negotiables 2 to 8, its four directions,
+  the canon and kit, the HTML path and the animated HTML deck. A client's deck
+  is always a Claude Slides deck, following that client's own rules.
+- **Making a client's system deck-ready:** the prompt at the end of that page,
+  pasted into the system in Claude Design, adds what decks need (including
+  its motion rules for Claude Slides) and lists what is missing.
+
 ## The design system's copy
 
 The HTML path's scripts run in Claude Code, in a claude.ai sandbox or from an
@@ -241,7 +269,7 @@ It holds both skills under the names people use, `skills/slides-builder/` and
 `skills/deck-builder/`, beside `.claude-plugin/plugin.json` and a short
 README. It is built from a commit (`git archive`), never the working copy, and
 takes its version from the newest release in this CHANGELOG. It checks
-claude.ai's plugin limits, **5,000 files and 200 MB** (now 170 files, 4.9 MB),
+claude.ai's plugin limits, **5,000 files and 200 MB** (now 171 files, 4.9 MB),
 and runs `claude plugin validate` when the Claude Code CLI is installed.
 
 An Owner uploads it in **Organization settings > Plugins & skills**: **Add >
@@ -263,7 +291,7 @@ live, not by a build step, so zipping the folder is a valid upload:
 
 | | cap | now |
 |---|---|---|
-| entries (files + directories) | 200 | **185** — 167 files + 18 directories |
+| entries (files + directories) | 200 | **186** — 168 files + 18 directories |
 | size | 30 MB | **4.84 MB** |
 
 ```bash

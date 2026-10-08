@@ -5,14 +5,32 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
-Work in progress, not a release: picking a client's design system. Added so
-far: `references/DESIGN-SYSTEMS.md` (how the system is picked, what the skill
-needs from it, how to fill what it lacks, the prompt that makes a client's
-system deck-ready) and the Claude Slides path reading from it. Still to do:
-`SKILL.md` (the description, the default-not-only rule, WPP's
-non-negotiables and directions scoped to WPP decks), the READMEs and the
-plugin text. Do not build a plugin from these commits; 4.6.0 is the latest
-release.
+## [4.7.0] — 2026-10-08
+
+Client brands. slides-builder builds a deck in any design system in Claude
+Design, typically a client's, not only in WPP Enterprise Solutions | MAP.
+
+### Added
+- `references/DESIGN-SYSTEMS.md`: how the design system is picked (the open
+  deck's own, the one the user names, the account's marked default, else WPP
+  ES | MAP; the card asks only when that cannot tell), how a system that is
+  not WPP's is read, what a system needs to be deck-ready and what to do where
+  it falls short, what stays WPP-only, and the prompt that makes a client's
+  system deck-ready (motion rules included).
+
+### Changed
+- The Claude Slides path picks, reads and installs the design system in use
+  (its own title, namespace and faces) instead of always WPP ES | MAP; the
+  direction question comes from that system's own directions, or is dropped
+  when it has none; delivery names the system and any part it lacked.
+- `SKILL.md`: WPP ES | MAP is the default, not the only system; WPP's
+  non-negotiables 2 to 8, its four directions and its files apply to WPP decks
+  only (never shrinking type and the system's type floors hold everywhere);
+  in another system the brand line is that system's own; the HTML path and the
+  animated HTML deck stay WPP-only. The description names client brands.
+- deck-builder no longer calls the rendered deck "the WPP deck".
+- The plugin's description and README, and the repository README, explain
+  client design systems.
 
 ## [4.6.0] — 2026-10-08
 
