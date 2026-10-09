@@ -63,8 +63,8 @@ WPP Enterprise Solutions | MAP decks, made with Claude. Version {version}.
 - **Client brands.** Name the client ("make a deck in Acme's brand") and
   slides-builder builds it from that client's design system in Claude Design:
   its colours, fonts, logo, slides and animation, nothing borrowed from WPP.
-  With no brand named, the deck is WPP Enterprise Solutions | MAP. Only WPP
-  ES | MAP and MAP's clients' systems are used.
+  With no brand named, it asks which: WPP Enterprise Solutions | MAP or one of
+  MAP's clients. Only WPP ES | MAP and MAP's clients' systems are used.
 
 Ask in plain words, for example "Make a MAP deck from these notes", or "Use
 script-builder to write the script for a sales deck from these notes".
