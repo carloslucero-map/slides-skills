@@ -5,6 +5,177 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- The WPP ES | MAP design system (version 1791546632-9810) describes the
+  animated HTML version as it now works: made beside the Claude Slides deck
+  from that deck's own slides (README rule 8 and the Motion bullet of
+  *Building in Claude Slides*), with a new Motion section, *In the animated
+  HTML version*, that allows all five extras. The skill's copy is refreshed
+  to it.
+
+## [5.0.0] — 2026-10-09
+
+Script first, the four directions and the animated file in every brand, and
+only MAP's own design systems.
+
+### Changed (breaking)
+- **deck-builder is now script-builder** in the plugin: the skill writes the
+  deck's script. `map-decks:deck-builder` no longer exists; call
+  `map-decks:script-builder`. The repository folder keeps its name,
+  `deck-content-builder/`.
+
+### Added
+- **Script first, the recommended route.** On any input that is not an
+  approved script, slides-builder's first question is how to start: *Script
+  first* (recommended: script-builder writes the titles and text for
+  approval, then the slides are built from it with the card's other answers
+  standing) or *Slides now*. Both skills' descriptions, the plugin's
+  description and README say so; script-builder ends by offering the slides,
+  and goes straight on to them when the run came from that question.
+- **The animated HTML file, in every design system.** The card asks for every
+  deck: *Claude Slides only* or *Slides + animated HTML*. The file is made
+  from the finished Claude Slides deck by the new `scripts/animate_slides.py`:
+  the deck's own slides, every picture and font embedded, its transitions and
+  builds played in the browser (magic move as a real morph), plus extras
+  Claude Slides cannot do: units arriving one after another and figures
+  counting up everywhere, and rules drawing on, titles rising word by word and
+  drifting art where the brand's motion allows more than rise and fade.
+  `references/SLIDES.md`, *The animated file*, says how to gather the files,
+  pick the extras and deliver it. Tested on the WPP ES | MAP, Shell and
+  Coca-Cola test decks.
+- **The four directions in any design system.** Editorial quiet,
+  Statement-led, Data-forward and High-impact are asked for every deck; in a
+  client's system each picks among that system's own grounds, layouts and
+  type (`references/DESIGN-SYSTEMS.md`, *The four directions in any design
+  system*). Motion level by direction where a system sets none.
+
+### Changed
+- **Only WPP ES | MAP and MAP's clients' design systems** are used, offered or
+  named in a question (`DESIGN-SYSTEMS.md`, *Which systems count*): never
+  another WPP or MAP system (such as a MAP Agentic Ecosystem), nor one titled
+  only "Design System". The Slides type's own "which design system" question
+  is replaced by the skill's picking order.
+- The animated deck is no longer a WPP-only alternative to the Claude Slides
+  deck: it is a file made beside it. Where Claude Slides is not available, the
+  WPP HTML path still builds the deck, at full motion when animation is asked
+  for.
+- The deck-ready prompt for client systems adds a Statement and a big-number
+  layout, and a section on what the brand allows in the animated HTML version.
+
+## [4.7.1] — 2026-10-08
+
+### Fixed
+- claude.ai refused 4.7.0: slides-builder's description held `<client>` as
+  a placeholder ("a deck in <client>'s brand"), which it reads as an XML tag.
+  The examples now name a brand, Acme.
+- `build_plugin.py` now fails the build when a skill's description holds an
+  XML-like tag or runs past 1,024 characters, the two limits claude.ai checks
+  at upload and `claude plugin validate` does not.
+
+## [4.7.0] — 2026-10-08
+
+Client brands. slides-builder builds a deck in any design system in Claude
+Design, typically a client's, not only in WPP Enterprise Solutions | MAP.
+
+### Added
+- `references/DESIGN-SYSTEMS.md`: how the design system is picked (the open
+  deck's own, the one the user names, the account's marked default, else WPP
+  ES | MAP; the card asks only when that cannot tell), how a system that is
+  not WPP's is read, what a system needs to be deck-ready and what to do where
+  it falls short, what stays WPP-only, and the prompt that makes a client's
+  system deck-ready (motion rules included).
+
+### Changed
+- The Claude Slides path picks, reads and installs the design system in use
+  (its own title, namespace and faces) instead of always WPP ES | MAP; the
+  direction question comes from that system's own directions, or is dropped
+  when it has none; delivery names the system and any part it lacked.
+- `SKILL.md`: WPP ES | MAP is the default, not the only system; WPP's
+  non-negotiables 2 to 8, its four directions and its files apply to WPP decks
+  only (never shrinking type and the system's type floors hold everywhere);
+  in another system the brand line is that system's own; the HTML path and the
+  animated HTML deck stay WPP-only. The description names client brands.
+- deck-builder no longer calls the rendered deck "the WPP deck".
+- The plugin's description and README, and the repository README, explain
+  client design systems.
+
+## [4.6.0] — 2026-10-08
+
+Motion that works with any design system, ready for client systems.
+
+### Added
+- `references/MOTION.md`: motion in Claude Slides for any design system. What
+  Slides can do (transitions, builds, steps, magic move, what is pinned, what
+  never exists), the roles every slide's elements play (lead, art, units,
+  marks, bars, takeaway, and what never builds), and a quiet default per
+  motion level for whatever a design system leaves unsaid. It holds no brand
+  values; the design system's own rules always win.
+
+### Changed
+- The Claude Slides path takes motion from the design system in use (in WPP
+  ES | MAP, guideline 10) and fills its gaps from `MOTION.md`, instead of
+  naming WPP's guideline and directions. Revising and the edge cases say the
+  same.
+- The animated HTML deck is WPP ES | MAP only, since the HTML path builds from
+  the skill's copy of that system: the format question is asked only for a
+  WPP deck, and a deck in another design system is a Claude Slides deck.
+
+## [4.5.1] — 2026-10-08
+
+The gaps a full-motion test deck found in the Claude Slides motion rules,
+closed in the design system.
+
+### Changed, in the design system (now version `1791471488-d8bd`)
+- Guideline 10, *In Claude Slides*: the takeaway rises after everything else
+  (step 3; with the units at subtle motion; its own click on a click-reveal
+  slide); the agenda's chapter rows rise under a headline that stays put; the
+  headline's eyebrow never builds, like the headline.
+- Stat circles rise with the units, as they do in the HTML deck, instead of
+  popping; only small dots, timeline nodes and numerals pop, so the spring
+  stays an accent.
+
+The skill's copy is refreshed to that version; nothing else changed.
+
+## [4.5.0] — 2026-10-08
+
+Animation, both ways. A Claude Slides deck now moves the way the brand moves,
+with the type's own transitions and builds, set per motion level. And a special
+deck can be the animated HTML deck instead, the one with counting numbers and
+living dots, which Claude Slides cannot do.
+
+### Added
+- **The animated HTML deck.** For a special deck (a pitch, a keynote, a
+  launch, an event or award moment, a talk on a stage) or a user who asks for
+  animation, slides-builder's question card adds a format question: the
+  Claude Slides deck or the animated HTML deck. A user who names the animated
+  version gets it without the question. It is the HTML path at
+  `"motion": "full"`, and its delivery says how to present it from a browser
+  and that it is not a Claude Slides deck.
+
+### Changed
+- slides-builder sets motion on every Claude Slides deck from guideline 10:
+  the reading order always includes its *In Claude Slides* section (unless
+  motion is off), step 6 applies it per slide, and the pitfalls name the one
+  that bites: a build or a magic-move `id` on a flow child is dropped.
+  Revising re-checks a moved slide's magic-move pair and chapter `push`.
+- The skill's description, the plugin's description and its README mention
+  the animated version.
+
+### Changed, in the design system (now version `1791469888-562f`)
+- Guideline 10, *In Claude Slides*, is rewritten from three bullets into the
+  whole of Slides motion: transitions (`fade` everywhere, `push` into each
+  divider at full motion, `magic` for a travelling dot), builds mapped from
+  the five motion hooks (`m-lead` rise, `m-art` fade, `m-unit` rise,
+  `m-mark` pop, `m-bar` from the left) in at most three auto steps, a table of
+  what `off`, `subtle` and `full` use, click reveals as the fragments'
+  equivalent, magic move at most twice a deck, and what is never imitated.
+- Rule 8 of the README: the animated HTML deck is also built when someone asks
+  for it or picks it. The *Building in Claude Slides* motion line names builds
+  and magic move.
+
+The skill's copy is refreshed to that version; no layout, fixed slide or value
+changed, and HTML decks build exactly as before.
+
 ## [4.4.0] — 2026-10-07
 
 Claude Slides first, wherever it is available. The skills used to say "in

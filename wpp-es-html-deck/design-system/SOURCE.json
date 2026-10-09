@@ -4,17 +4,17 @@
   "title": "WPP Enterprise Solutions | MAP",
   "namespace": "WppEsMap",
   "artifact": "https://claude.ai/artifact/9iQ9xpaBJj52LsfmKMVYGc",
-  "version": "1791385252-da14",
+  "version": "1791546632-9810",
   "lastChange": {
    "by": "Carlos Lucero",
-   "at": "2026-10-07T15:00:06Z",
+   "at": "2026-10-09T11:50:13Z",
    "via": "Claude Code",
-   "note": "Claude Slides first, wherever Claude can make a Claude Slides deck (a chat, Claude Design or Claude Code): rule 8 says so, and HTML only where Claude Slides is not available, from the slides-builder skill in the MAP Decks plugin. 'Claude Design Slides' is now 'Claude Slides', the product's name, in every card, guideline and the README."
+   "note": "The animated HTML version is made beside the Claude Slides deck from that deck's own slides (rule 8, the Motion bullet in Building in Claude Slides), and Motion gains a section, In the animated HTML version, listing the extras this system allows: all five."
   }
  },
  "files": {
   "design-system/README.md": {
-   "sha256": "a65f4b10d32e7c9478e971161f0a415148b8b4573144a46e409bbced1397769d",
+   "sha256": "697e401d723190f9bf518fdefbbe4b8e2b13b7d054f37ac04f7cd1acd1f2a332",
    "from": "project/README.md"
   },
   "design-system/asset-notes.md": {
@@ -146,7 +146,7 @@
    "from": "project/guidelines/09-data-visualisation.md"
   },
   "design-system/guidelines/10-motion.md": {
-   "sha256": "fcce1e22d2c0a56909ded5f9ea9443801f8b35b3f11a5f1d61d2376ec93ad4fe",
+   "sha256": "2e133870ee2362481439f1686f8cea43044622ce7c2f0a3e34516471ac712e3a",
    "from": "project/guidelines/10-motion.md"
   },
   "design-system/guidelines/11-source-and-open-questions.md": {

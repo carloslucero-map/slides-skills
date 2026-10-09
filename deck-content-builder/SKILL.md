@@ -1,27 +1,33 @@
 ---
 name: deck-content-builder
 description: >-
-  Write the TEXT CONTENT for a presentation (Markdown file only) from raw
-  context, using consultant-grade methods (Pyramid Principle, SCR framework).
-  Produces slide-by-slide content — action titles, bullets, callouts, speaker
-  notes — as a single Markdown file. Its output is the standard input for the
-  slides-builder skill, and pastes cleanly into PowerPoint or Google Slides.
-  Does NOT render slides or design layouts — it writes the words. Trigger:
-  "write the content for a deck about X", "draft the slides text", "turn
-  these notes into deck content", or any request for words/copy/storyline of
-  a deck, pitch, sales deck, discovery deck, or MT deck. First reply is
-  always a titles-only ghost deck for approval; full text is written only
-  after that gate.
+  The first step of a MAP deck, and the recommended one: write the deck's
+  SCRIPT, its text content, from raw context with consultant-grade methods
+  (Pyramid Principle, SCR framework): storyline, action titles, bullets,
+  callouts and speaker notes, slide by slide, as one Markdown script.
+  slides-builder then builds the slides from the approved script, which
+  gives the best decks: script first, then slides. The script also pastes
+  cleanly into PowerPoint or Google Slides. Does NOT render slides or design
+  layouts; it writes the words. Trigger: "write the script for a deck about
+  X", "write the content for a deck", "draft the slides text", "turn these
+  notes into deck content", "script first", or any request for the words,
+  copy or storyline of a deck, pitch, sales deck, discovery deck or MT deck;
+  also when slides-builder's start question is answered with Script first.
+  First reply is always a titles-only ghost deck for approval; full text is
+  written only after that gate.
 ---
 
-# Deck Content Builder v4.1
+# script-builder v5 — the deck's script
 
-You write complete, consultant-grade deck content from whatever context the
-user provides. You determine the titles, the structure, and the storyline —
-the user reviews at one gate, then you finish and save one Markdown file.
-(v4.1 ships HANDOFF-CONTRACT v3: the optional title-highlight marker, the
-stat-direction column and four more visual hints — all flow straight to the
-slides-builder renderer.)
+You write the deck's script: complete, consultant-grade content from whatever
+context the user provides. You determine the titles, the structure, and the
+storyline — the user reviews at one gate, then you finish the script.
+**Script first, then slides is the recommended route for every MAP deck:**
+once the script is approved, `slides-builder` builds the slides from it and
+keeps every title verbatim, so the storyline is settled while changing it is
+still cheap. (The script follows HANDOFF-CONTRACT v3: the optional
+title-highlight marker, the stat-direction column and the visual hints all
+flow straight to slides-builder.)
 
 ## STOP — checkpoint discipline (this rule outranks everything below)
 
@@ -61,11 +67,15 @@ user never gets to steer the storyline while steering is still cheap.
 - **Where Claude can make a Claude Slides deck** (a Claude Slides deck is open, or the
   Artifact tool offers a Slides type: a chat with Claude Slides on, Claude Design,
   Claude Code), a saved `.md` is a stray file beside the deck. Keep the
-  approved content in the conversation, in the handoff format, and save the
+  approved script in the conversation, in the handoff format, and save the
   file only if the user asks for it. When they want the deck, invoke
-  `slides-builder` with that approved content; it builds it into the
+  `slides-builder` with that approved script; it builds it into the
   Slides artifact. Never create the Claude Slides deck yourself.
-- **Do not render slides yourself. If the user wants the rendered WPP deck,
+- **When this run started from slides-builder's start question** (the user
+  answered *Script first* in its card), the direction, format and brand are
+  already answered: once the script is approved and written, go straight on
+  to `slides-builder` with it in the same turn, asking nothing more.
+- **Do not render slides yourself. If the user wants the rendered deck,
   save the approved Markdown, then invoke `slides-builder` with the file.**
   For a `.pptx`: never build it yourself; only after the gate passes and the
   `.md` is saved, hand the file to a pptx skill. Never invoke any renderer
@@ -174,12 +184,15 @@ v3) — direction follows meaning, not sign.
 
 ### 8. Final review, then save
 Vertical-logic check: does every bullet prove its title? Fix before
-presenting. Save ONE `.md` file (e.g. `deck-content.md`) in the handoff
+presenting. Save ONE `.md` file (e.g. `deck-script.md`) in the handoff
 format below and report the path — where Claude can make a Claude Slides deck,
 only if the user asks
 (see the output contract). Do not produce any other file type. If the
 user wants the rendered deck, invoke `slides-builder` with the saved file —
-the renderer keeps your approved titles verbatim.
+the renderer keeps your approved titles verbatim. Close with the next step in
+one line: *"Next: say 'Now build the slides' and slides-builder builds this
+script into the deck."* (not needed when the run came from slides-builder's
+start question: build straight away, as the output contract says).
 
 ## Follow-up requests
 

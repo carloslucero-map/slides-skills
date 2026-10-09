@@ -9,7 +9,7 @@ The visual language of the WPP Enterprise Solutions | MAP presentation system: N
 5. **Charts are circles.** Flat fills from the primary and secondary palettes, sized by area.
 6. **One warm background, used consistently.** `wpp-cream` on every content slide. Mixing Cream and pure White across a deck is the single most common consistency error in this system.
 7. **The name is "WPP Enterprise Solutions | MAP".** Never "VML MAP", never "VMLMAP".
-8. **A deck lives where it is presented.** Wherever Claude can make a Claude Slides deck (a chat, Claude Design or Claude Code), build the deck in Claude Slides with this system installed, never as a separate HTML file, following *Building in Claude Slides* below. Only where Claude Slides is not available does the `slides-builder` skill in the MAP Decks plugin write one self-contained HTML file with fonts, logos, icons and imagery embedded.
+8. **A deck lives where it is presented.** Wherever Claude can make a Claude Slides deck (a chat, Claude Design or Claude Code), build the deck in Claude Slides with this system installed, following *Building in Claude Slides* below. When someone asks for the animated version, the `slides-builder` skill in the MAP Decks plugin makes it beside that deck: one self-contained HTML file made from the Claude Slides deck's own slides, with the extras Slides cannot do (counting numerals, word-by-word type, living dots: *Motion*, *In the animated HTML version*). Only where Claude Slides is not available does `slides-builder` build the deck itself as one self-contained HTML file with fonts, logos, icons and imagery embedded.
 
 ## The canvas
 
@@ -86,7 +86,7 @@ A slide in Slides takes inline styles only (no classes, no stylesheet, no script
 - **Charts.** Fonts never load inside an `<svg>`, so draw a chart's bars or circles in the svg and set its labels as `<p>` elements pinned over it.
 - **Icons.** Paste the brand icon's SVG inline and replace `currentColor` with the hex ink; as an `<img>` it renders black. Never use Slides' own `x-icon` set.
 - **Photos.** Set every photo from the Photo card, which says which photos take the navy duotone and how.
-- **Motion.** Slides' own transitions and build-ins only, as the Motion guideline sets them for Slides; the HTML deck's choreography does not exist here.
+- **Motion.** Slides' own transitions, builds and magic move only, as the Motion guideline sets them for each motion level; the HTML deck's choreography does not exist here, and the animated HTML version adds it beside the deck (*Motion*, *In the animated HTML version*).
 - **What Slides cannot do.** Stylistic alternates, so the single-storey "a" is lost; a change of typeface inside a line, so the headline highlight needs its own text block or is dropped, never faked with `<b>`; and more than one typeface per table.
 
 ## Layout catalogue

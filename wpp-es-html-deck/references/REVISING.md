@@ -36,10 +36,18 @@ new-deck rule applies.
 - **Page numbers are typed, not computed.** After adding, removing or moving
   a slide, rewrite every slide's page number as `NN / total` (the design
   system's FooterFurniture card).
+- **Motion travels with the slide.** A new or changed slide takes its
+  transition and builds from the design system's motion rules at the deck's
+  motion level (`references/MOTION.md` where the system sets none). Moving
+  a slide can break a magic-move pair or a chapter's `push`: re-check the
+  slides on either side.
 - **No verifier, no screenshots.** The Slides type asks not to render-check
   slides unless the user asks. Deliver the link with the one-line diff
   summary.
 - **An alternative treatment is a second slide** right after the original,
   id `<id>-alt`, which the user keeps or deletes in the editor. There is no
   A/B sheet and no `deck-variants.html`, and never an image in the chat.
+- **The animated HTML file follows the deck.** When the deck has one, make it
+  again after the revision (`references/SLIDES.md`, *The animated file*) and
+  deliver the new file with the link; never edit the file by hand.
 
