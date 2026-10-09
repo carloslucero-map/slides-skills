@@ -4,17 +4,17 @@
   "title": "WPP Enterprise Solutions | MAP",
   "namespace": "WppEsMap",
   "artifact": "https://claude.ai/artifact/9iQ9xpaBJj52LsfmKMVYGc",
-  "version": "1791471488-d8bd",
+  "version": "1791546632-9810",
   "lastChange": {
    "by": "Carlos Lucero",
-   "at": "2026-10-08T14:58:02Z",
+   "at": "2026-10-09T11:50:13Z",
    "via": "Claude Code",
-   "note": "Motion in Claude Slides, the gaps a test deck found: the takeaway rises last (its own click on a click-reveal slide), the agenda's rows rise under a headline that stays put, the eyebrow never builds, and stat circles rise with the units as in the HTML deck, so only small marks pop."
+   "note": "The animated HTML version is made beside the Claude Slides deck from that deck's own slides (rule 8, the Motion bullet in Building in Claude Slides), and Motion gains a section, In the animated HTML version, listing the extras this system allows: all five."
   }
  },
  "files": {
   "design-system/README.md": {
-   "sha256": "360744f90563798b27e6db59f174ac8bdf3edd35fbddf55e625d43169d466b61",
+   "sha256": "697e401d723190f9bf518fdefbbe4b8e2b13b7d054f37ac04f7cd1acd1f2a332",
    "from": "project/README.md"
   },
   "design-system/asset-notes.md": {
@@ -146,7 +146,7 @@
    "from": "project/guidelines/09-data-visualisation.md"
   },
   "design-system/guidelines/10-motion.md": {
-   "sha256": "5bb6330ddc5c90de91974a682a7a7873068e4c50a3c9c73eeefcfba33da6d6ba",
+   "sha256": "2e133870ee2362481439f1686f8cea43044622ce7c2f0a3e34516471ac712e3a",
    "from": "project/guidelines/10-motion.md"
   },
   "design-system/guidelines/11-source-and-open-questions.md": {

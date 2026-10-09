@@ -5,6 +5,14 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- The WPP ES | MAP design system (version 1791546632-9810) describes the
+  animated HTML version as it now works: made beside the Claude Slides deck
+  from that deck's own slides (README rule 8 and the Motion bullet of
+  *Building in Claude Slides*), with a new Motion section, *In the animated
+  HTML version*, that allows all five extras. The skill's copy is refreshed
+  to it.
+
 ## [5.0.0] — 2026-10-09
 
 Script first, the four directions and the animated file in every brand, and

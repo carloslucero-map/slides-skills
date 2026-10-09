@@ -105,6 +105,23 @@ circle) carries the same `id` as a circle pinned on the next, and the first slid
 the dot moves and grows from one to the other. Use it where the second slide zooms into the first, such as a stat
 circle that becomes the next slide's hero. Both circles keep one colour, because colours never move.
 
-What the HTML deck does and Slides cannot is never imitated here: no counting numerals, no word-by-word type, no
-breathing dots or floating art, no progress line, no hover. A deck that needs them is the animated HTML deck
-(README, rule 8), built when someone asks for it or picks it when it is offered.
+What the HTML deck does and Slides cannot is never imitated in a Slides deck: no counting numerals, no word-by-word
+type, no breathing dots or floating art, no progress line, no hover. They belong to the animated HTML version, below.
+
+## In the animated HTML version
+
+When someone asks for it, the `slides-builder` skill makes the animated version beside the Claude Slides deck (README,
+rule 8): one self-contained HTML file made from that deck's own slides, presented from a browser. It plays the deck's
+transitions and builds as above, magic move as a real morph, and adds what Slides cannot do. This system allows every
+extra:
+
+| Extra | What it does | Allowed |
+|---|---|---|
+| `stagger` | Units that share a build step arrive one after another, about 90ms apart | yes |
+| `count` | Display figures count up from zero as they appear | yes |
+| `draw` | Rules and bars that build draw themselves on | yes |
+| `words` | Titles that rise in rise word by word | yes |
+| `drift` | Large dot fields and art move slowly while the slide shows; full-bleed pictures take a slow Ken Burns | yes |
+
+The doctrine still holds: colours never move, and nothing ambient touches text. With reduced motion, in print, or
+with `?motion=off`, the file shows every slide finished.
