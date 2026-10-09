@@ -47,4 +47,7 @@ new-deck rule applies.
 - **An alternative treatment is a second slide** right after the original,
   id `<id>-alt`, which the user keeps or deletes in the editor. There is no
   A/B sheet and no `deck-variants.html`, and never an image in the chat.
+- **The animated HTML file follows the deck.** When the deck has one, make it
+  again after the revision (`references/SLIDES.md`, *The animated file*) and
+  deliver the new file with the link; never edit the file by hand.
 

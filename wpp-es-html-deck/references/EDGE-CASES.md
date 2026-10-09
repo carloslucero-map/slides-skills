@@ -8,12 +8,13 @@
 - **Motion:** on the Claude Slides path, Slides' own transitions and builds
   as the design system sets them, and `references/MOTION.md` where it sets
   none, for any design system (`references/SLIDES.md`, step 6). Counting
-  numbers, word-by-word titles and living dots belong to the animated HTML
-  deck, built only when it is asked for or picked, and only in WPP ES | MAP,
-  the one system the skill carries a copy of. On the HTML path, a
-  runtime layer only (`HTML-BUILD.md` §14) — never bespoke keyframes,
-  never a JS/React library; auto-static under reduced-motion, print and
-  headless capture, so PDFs and the verifier are unaffected.
+  numbers, word-by-word titles and drifting art belong to the animated HTML
+  file, made from the finished Claude Slides deck when the card's format
+  answer asks for it, in any design system (`references/SLIDES.md`, *The
+  animated file*). On the HTML path, a runtime layer only (`HTML-BUILD.md`
+  §14) — never bespoke keyframes, never a JS/React library; auto-static under
+  reduced-motion, print and headless capture, so PDFs and the verifier are
+  unaffected.
 - **pptx:** on the Claude Slides path the Claude Slides deck exports PPTX itself, so
   that is the answer there. On the HTML path it is out of scope: hand the
   *Markdown content* to a pptx skill; never screenshot-paste slides.

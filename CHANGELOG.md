@@ -5,6 +5,55 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [5.0.0] — 2026-10-09
+
+Script first, the four directions and the animated file in every brand, and
+only MAP's own design systems.
+
+### Changed (breaking)
+- **deck-builder is now script-builder** in the plugin: the skill writes the
+  deck's script. `map-decks:deck-builder` no longer exists; call
+  `map-decks:script-builder`. The repository folder keeps its name,
+  `deck-content-builder/`.
+
+### Added
+- **Script first, the recommended route.** On any input that is not an
+  approved script, slides-builder's first question is how to start: *Script
+  first* (recommended: script-builder writes the titles and text for
+  approval, then the slides are built from it with the card's other answers
+  standing) or *Slides now*. Both skills' descriptions, the plugin's
+  description and README say so; script-builder ends by offering the slides,
+  and goes straight on to them when the run came from that question.
+- **The animated HTML file, in every design system.** The card asks for every
+  deck: *Claude Slides only* or *Slides + animated HTML*. The file is made
+  from the finished Claude Slides deck by the new `scripts/animate_slides.py`:
+  the deck's own slides, every picture and font embedded, its transitions and
+  builds played in the browser (magic move as a real morph), plus extras
+  Claude Slides cannot do: units arriving one after another and figures
+  counting up everywhere, and rules drawing on, titles rising word by word and
+  drifting art where the brand's motion allows more than rise and fade.
+  `references/SLIDES.md`, *The animated file*, says how to gather the files,
+  pick the extras and deliver it. Tested on the WPP ES | MAP, Shell and
+  Coca-Cola test decks.
+- **The four directions in any design system.** Editorial quiet,
+  Statement-led, Data-forward and High-impact are asked for every deck; in a
+  client's system each picks among that system's own grounds, layouts and
+  type (`references/DESIGN-SYSTEMS.md`, *The four directions in any design
+  system*). Motion level by direction where a system sets none.
+
+### Changed
+- **Only WPP ES | MAP and MAP's clients' design systems** are used, offered or
+  named in a question (`DESIGN-SYSTEMS.md`, *Which systems count*): never
+  another WPP or MAP system (such as a MAP Agentic Ecosystem), nor one titled
+  only "Design System". The Slides type's own "which design system" question
+  is replaced by the skill's picking order.
+- The animated deck is no longer a WPP-only alternative to the Claude Slides
+  deck: it is a file made beside it. Where Claude Slides is not available, the
+  WPP HTML path still builds the deck, at full motion when animation is asked
+  for.
+- The deck-ready prompt for client systems adds a Statement and a big-number
+  layout, and a section on what the brand allows in the animated HTML version.
+
 ## [4.7.1] — 2026-10-08
 
 ### Fixed

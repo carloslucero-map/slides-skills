@@ -1,13 +1,14 @@
 # The Claude Slides path — the deck is built in Claude Slides
 
 **Wherever Claude can make a Claude Slides deck, the deck is an Artifact made
-from the Slides type — never a separate `.html` file.** That is any session
-whose Artifact tool offers a Slides type: a chat in claude.ai or the desktop
-app with Claude Slides on, Claude Design, Claude Code. A deck is open, or
-`quickstart` with intent `slides` returns the type. This is the default; the
-standalone HTML file is only for where Claude Slides is not available, and for
-the animated HTML deck when it is asked for or picked (`SKILL.md`, *Where the
-deck goes*).
+from the Slides type.** That is any session whose Artifact tool offers a
+Slides type: a chat in claude.ai or the desktop app with Claude Slides on,
+Claude Design, Claude Code. A deck is open, or `quickstart` with intent
+`slides` returns the type. This is the default; the HTML path's standalone
+file is only for where Claude Slides is not available (`SKILL.md`, *Where the
+deck goes*). The animated HTML file is something else: an extra file made from
+the finished Claude Slides deck when the card's answer asks for it (*The
+animated file*, below).
 
 Three sources, three jobs:
 
@@ -35,8 +36,9 @@ rules, directions and layouts take the place of WPP's
 
 **Does not exist here. Never run or write them:** `build_shell.py`,
 `check_capacity.py`, `verify_deck.py`, screenshots, the contact sheet; a
-standalone `.html` file (the artifact exports HTML, PDF and PPTX itself); CSS
-classes, `<style>`, `var()`, base64 or `data:` images, the JS motion layer.
+hand-written `.html` file (the artifact exports HTML, PDF and PPTX itself, and
+the animated file is made only by `scripts/animate_slides.py`); CSS classes,
+`<style>`, `var()`, base64 or `data:` images in a slide.
 A deck here moves with Slides' own transitions and builds, as the design
 system sets them, and `references/MOTION.md` where it sets none (step 6).
 
@@ -57,15 +59,28 @@ message nobody can click. So G0 and G1 are **one `AskUserQuestion` call**,
 before anything is written:
 
 - **At most four questions**, the call tagged
-  `"metadata": {"source": "artifact-questions"}`.
-- **The brand, only when step 3 cannot tell** (two systems fit the name the
-  user gave, or the brand they named has no system): one option per system,
-  plus WPP Enterprise Solutions | MAP, `multiSelect: false`.
-- **The design direction, always** (unless the user already named one), with
-  `multiSelect: false` and your content-signal pick first, marked
-  "(Recommended)". These are WPP ES | MAP's; another design system's own
-  directions, if it has any, in its own words, and no direction question if
-  it has none:
+  `"metadata": {"source": "artifact-questions"}`, in this order:
+- **How to start, when the input is not an approved script** (notes, a brief,
+  a document): `multiSelect: false`, the script first and marked
+  "(Recommended)". Writing the script first is the plugin's recommended route
+  and gives the better deck: the storyline and every title are approved
+  before a slide exists.
+
+  | label | description |
+  |---|---|
+  | Script first (Recommended) | script-builder writes titles and text for your OK, then the slides |
+  | Slides now | Build the slides straight from these notes |
+
+- **The brand, only when step 3 cannot tell** (two client systems fit the
+  name the user gave, or the client they named has no system): one option per
+  client system, plus WPP Enterprise Solutions | MAP, `multiSelect: false`.
+  Only the systems `references/DESIGN-SYSTEMS.md` counts are ever options.
+- **The design direction, always** (unless the user already named one), the
+  same four in every design system (`references/DESIGN-SYSTEMS.md`, *The four
+  directions in any design system*), with `multiSelect: false` and your
+  content-signal pick first, marked "(Recommended)". The descriptions below
+  are WPP ES | MAP's; in a client's system, say the same thing in its terms
+  ("its light ground, no dark slides", "up to 1 in 3 on its dark ground"):
 
   | label | description |
   |---|---|
@@ -74,27 +89,25 @@ before anything is written:
   | Data-forward | Numbers lead: stat circles, charts |
   | High-impact | Poster scale, up to 1 in 3 dark |
 
-- **The format, for a special deck in WPP Enterprise Solutions | MAP only**
-  (the one design system with an animated HTML deck): a pitch, a keynote, a
-  launch, an event or award moment, a talk on a stage, or a user who asks for
-  animation. `multiSelect: false`, with the Claude Slides deck first and
-  marked "(Recommended)" unless the user asked for animation or the deck is
-  presented on a stage, when the animated deck goes first instead:
+- **The format, always, in every design system** (unless the user already
+  said): `multiSelect: false`. The Claude Slides deck is made either way; the
+  question is whether the animated HTML file comes with it. Claude Slides only
+  goes first, marked "(Recommended)", unless the deck is a special one (a
+  pitch, a keynote, a launch, an event or award moment, a talk on a stage) or
+  the user asked for animation, when the second option goes first and takes
+  the mark:
 
   | label | description |
   |---|---|
-  | Claude Slides deck | Editable here, exports to PowerPoint |
-  | Animated HTML deck | Counting numbers, living dots; one browser file |
+  | Claude Slides only | Edit, share, present, export to PowerPoint |
+  | Slides + animated HTML | Also one browser file with extra animation |
 
-  Any other deck gets no format question, and a user who names the animated
-  version gets it without one. A deck in any other design system has no
-  animated HTML version: say so in one line if one is asked for, and build the
-  Claude Slides deck at full motion.
-- **Then what their material leaves open**, most decisive first and in its
-  own terms: which thread leads, what the room should do afterwards, whose
-  voice the slides carry. Two to four concrete options each, a few words per
-  label and description, `multiSelect: true` unless the options exclude each
-  other.
+- **Then what their material leaves open**, only while there is room for a
+  fourth question, most decisive first and in its own terms: which thread
+  leads, what the room should do afterwards, whose voice the slides carry.
+  Two to four concrete options each, a few words per label and description,
+  `multiSelect: true` unless the options exclude each other. With the script
+  first, leave these to script-builder's own gate.
 - **Never ask** what the brief already answers, a question only free text can
   answer (a presenter's name, a figure: use the default or a placeholder,
   `[Presenter]`, `[€__]`), or with an "Other" or "you choose" option. The card
@@ -113,9 +126,10 @@ with its options lettered and your recommended option first, and end the
 turn. Still no slide table: the deck is the plan.
 
 **The waivers still hold.** An explicit "just build it", or nobody there to
-answer: no card, the recommended direction, assumptions in one line. An
-approved `deck-builder` file: the card holds only the direction, and the
-format for a special deck.
+answer: no card, slides now, the recommended direction, Claude Slides only
+(unless the user asked for animation), assumptions in one line. An approved
+script from `script-builder`: no start question; the card holds the
+direction and the format (and the brand, when step 3 cannot tell).
 
 ## No slide images in the chat
 
@@ -132,18 +146,21 @@ which the user keeps or deletes in the editor.
 1. **Ask with the card** (above), then wait for the answers. The Slides
    type's own instructions say to decide once and write every slide in one
    pass. That pass is step 6 and comes **after** the answers, never instead
-   of them. If the answer is the animated HTML deck, this page ends here:
-   build it by `SKILL.md` steps 3–6, the card's answers standing as the
-   approved plan.
+   of them. **Script first:** run `script-builder` now, on the same notes,
+   from its own first step (its titles-only gate, then the full text once the
+   user approves). When the script is approved, come back here at step 2
+   without a second card: the direction, format and brand answers stand, and
+   the approved script is the plan, its titles kept verbatim.
 2. **The deck.** One is open: work on that one. None: create it from the
    Slides type, titled with the plan's cover title.
 3. **Pick the design system** as `references/DESIGN-SYSTEMS.md` says: the
-   open deck's own, else the one the user names, else the account's marked
-   default, else "WPP Enterprise Solutions | MAP" (`list` with type "Design
-   System", exact title; not found: say so in one line and build from this
-   skill's copy of it, `design-system/`, its README, guidelines and cards with
-   the same Slides recipes, written as inline styles). Do not ask which one
-   when the request already says.
+   open deck's own, else the client the user names, else the account's marked
+   default when it counts, else "WPP Enterprise Solutions | MAP" (`list` with
+   type "Design System", exact title; not found: say so in one line and build
+   from this skill's copy of it, `design-system/`, its README, guidelines and
+   cards with the same Slides recipes, written as inline styles). Never offer
+   the account's other design systems, and never ask which one when the
+   request already says.
 4. **Read it before writing a slide.** Another design system: in the order
    `references/DESIGN-SYSTEMS.md` gives, and where it lacks a part, that
    page's table says what to do. WPP ES | MAP, in this order:
@@ -199,6 +216,54 @@ which the user keeps or deletes in the editor.
      pinned directly on the slide, the headline and the furniture never
      build, and at full motion name the one or two magic-move pairs before
      writing the slides that hold them.
+   - **The direction** decides which of the system's parts each slide
+     reaches for (`references/DESIGN-SYSTEMS.md`, *The four directions in any
+     design system*; in WPP ES | MAP, its README's table).
+7. **The animated file, when the format answer asked for it:** after the
+   deck's link is out, make it as *The animated file* says, and deliver it
+   beside the link.
+
+## The animated file
+
+One self-contained HTML file a presenter opens in a browser: the deck's own
+slides, pixel for pixel, with its transitions and builds played in the browser
+plus the extra motion Claude Slides cannot do. It is made from the finished
+Claude Slides deck, in any design system, by one script; the Claude Slides deck
+stays the deck to edit, share and export.
+
+1. **The deck's files.** The slide files and `project/deck.json` you wrote are
+   under `<root>`. An open deck you did not write in this session: `read` its
+   `project/deck.json` and every slide file first.
+2. **Its pictures and fonts.** Every `/_blob/<id>` the slides name: `read`
+   the deck with that id as `path`, one call each (all in one message). Every
+   installed font in `faces` (`project/ds/<folder>/fonts/…`): one `read` with
+   those paths as `paths`. The reads save the files in one folder; note it.
+3. **Pick the extras** from the design system's motion rules:
+   - `stagger` (units that share a step arrive one after another) and
+     `count` (large figures count up as they appear): every system.
+   - `draw` (rules and bars draw themselves on) and `words` (titles rise word
+     by word): only where the system's motion uses more than rise and fade
+     (WPP ES | MAP: yes).
+   - `drift` (full-bleed pictures and large decorative art move slowly): only
+     where the system has ambient motion (WPP ES | MAP: its living dots).
+   A system with a section for the animated HTML version: exactly the extras
+   it allows. A system that rules motion out: `--extras none`. A line in a
+   system's Claude Slides rules saying an effect is "never imitated" or "does
+   not exist" (counting figures, word-by-word type) is about Claude Slides,
+   not the brand, and does not rule the extra out here.
+4. **Run it:**
+   `python3 scripts/animate_slides.py --deck <root> --files <the folder the
+   reads saved to> --out "<Deck title> (animated).html" --extras <list>`,
+   writing the file where the session puts files for the user (a chat's
+   outputs folder, the working directory). It embeds every picture and font
+   and fails, listing them, when one is missing: read those and run again. A
+   session that cannot run Python: say so in one line and deliver the Claude
+   Slides deck alone.
+5. **Deliver it beside the deck's link:** the file, how to present it (open
+   it in Chrome or Edge; F for full screen, → or Space or a click to advance,
+   ← back, N for the notes, 1–9 for a chapter), the extras it uses, and one
+   line that changes are made in the Claude Slides deck, after which the file
+   is made again. Never render, screenshot or open it to check it.
 
 ## Choosing a layout
 

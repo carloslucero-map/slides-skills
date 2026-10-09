@@ -32,7 +32,9 @@ never overrides it. It holds no brand values: no colour, face or shape.
 - **Never:** a build-out, an effect outside the list, or animation inside an
   `<x-embed>` (the deck's faces do not load there, and the exports flatten it).
   Counting numbers, word-by-word type, ambient motion and hover do not exist in
-  Claude Slides and are never imitated.
+  Claude Slides and are never imitated in a slide. The animated HTML file adds
+  them where the design system allows (`references/SLIDES.md`, *The animated
+  file*).
 
 ## The roles
 
@@ -61,8 +63,11 @@ and the logo are there from the start.
 ## The default, where the design system sets none
 
 **The motion level** is the one the design system sets for the deck (by its
-direction or style, where it has them). A system that sets none: `subtle`. The
-user's words win: "more animation" means `full`, "no animation" means `off`.
+direction or style, where it has them; a system with one level for every deck
+keeps it whatever the direction). A system that sets none: `full` for the
+Statement-led and High-impact directions, `subtle` for Editorial quiet and
+Data-forward. The user's words win: "more animation" means `full`, "no
+animation" means `off`.
 
 | Motion | Transitions | Builds | Magic move | Click reveals |
 |---|---|---|---|---|

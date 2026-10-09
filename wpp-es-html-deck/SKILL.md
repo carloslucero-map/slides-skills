@@ -1,28 +1,31 @@
 ---
 name: wpp-es-html-deck
 description: >-
-  Turn any raw input (notes, a brief or an approved deck-builder file) into
-  a polished 16:9 slide deck in the WPP Enterprise Solutions | MAP look
-  (Navy, Cream, Orange, WPP Sans, the dot system) or in a client's brand,
-  from that client's design system in Claude Design. Wherever Claude Slides
-  is available (a chat, Claude Design, Claude Code) the deck is a Claude
-  Slides deck; it is one self-contained HTML file only where Claude Slides
-  is not, or as the animated version of a special WPP deck when asked for or
-  picked. Trigger: "build a deck", "turn this into slides", "make a
-  presentation", "WPP deck", "MAP deck", "a deck in Acme's brand", "use
-  the Acme design system", "animated deck", "make this on-brand", or
-  notes pasted to become a deck. Do NOT use to edit .pptx files or for the
-  older VML MAP espresso/gold style. Two-turn by design: the first reply
-  asks the plan and design questions (with Claude Slides, one question
+  Build the slides: turn notes, a brief or, best of all, an approved script
+  from script-builder into a polished 16:9 deck in the WPP Enterprise
+  Solutions | MAP look (Navy, Cream, Orange, WPP Sans, the dot system) or in
+  a MAP client's brand, from its design system in Claude Design. Wherever
+  Claude Slides is available (a chat, Claude Design, Claude Code) the deck is
+  a Claude Slides deck, plus an animated HTML file in any brand when asked;
+  elsewhere one self-contained HTML file. Recommended route: script-builder
+  writes the script first; on raw notes the first question offers that.
+  Trigger: "build a deck", "turn this into slides", "make a presentation",
+  "MAP deck", "a deck in Acme's brand", "animated deck", "make this
+  on-brand", or notes pasted to become a deck. Do NOT use to edit .pptx
+  files or for the older VML MAP espresso/gold style. Two-turn by design:
+  the first reply asks the questions (with Claude Slides, one question
   card); the deck is built only after the answers or an explicit review
   waiver.
 ---
 
 # WPP Enterprise Solutions | MAP — slides-builder
 
-You convert loose text — or an approved `deck-builder` content file —
+You convert an approved script from `script-builder` — or loose text —
 into one on-brand slide deck. The user brings the thinking, you bring the
-structure and the brand. Version history is in `CHANGELOG.md`; everything
+structure and the brand. **The recommended route is script first:**
+`script-builder` writes the storyline, titles and text for the user's
+approval, then this skill builds the slides from that script. On raw input
+the first question offers it (*Script first*, below). Version history is in `CHANGELOG.md`; everything
 this file states is current.
 
 ## STOP — checkpoint discipline (this rule outranks everything below)
@@ -48,11 +51,12 @@ Only three inputs waive the full gate:
    waive *review*. A deck request, however imperative ("build a deck", "arma
    un deck", "renderiza esto", "ASAP"), is the normal trigger, NOT a waiver.
    → Build with defaults, list your assumptions at delivery, ask nothing.
-2. **An approved `deck-builder` Markdown file** — approved means the
+2. **An approved script from `script-builder`** — approved means the
    user says so, or it passed that skill's gate in this conversation; a
    contract-shaped file alone is just input (full G1 applies). → One-line
-   notice + the design-direction question, then **end your turn** and wait
-   for that one answer.
+   notice + the design-direction and format questions, then **end your
+   turn** and wait for those answers (none, when the script-first route
+   already asked them).
 3. **A user-supplied complete `spec.json`** — it encodes every registered
    choice, so it IS the approved plan; build from it. If it omits
    direction / cover / colourway, ask the direction question first.
@@ -62,6 +66,24 @@ plan-approved — raw or polished — is this skill's #1 failure mode: it
 silently produces the all-defaults deck (the old v1 look), asks the user
 nothing, and offers no variants. About to generate with no approved plan for
 THIS deck? Stop and present G1 instead.
+
+## Script first — the recommended start
+
+A deck built from an approved script is better than one built straight from
+notes: the storyline and every title are agreed before a slide exists, and
+the slides keep them verbatim. So **on any input that is not an approved
+script** (notes, a brief, a document, a pasted outline), the first question
+of the gate is how to start, with *Script first* marked "(Recommended)" and
+*Slides now* beside it (`references/SLIDES.md`, *Asking*; on the HTML path, as
+the first line of G1).
+
+- **Script first:** run `script-builder` on the same input, from its own
+  first step: its titles-only gate, then the full text once the user approves.
+  When the script is approved, build the slides without asking again: the
+  direction, format and brand answers given with the start question stand.
+- **Slides now:** build from the input as it is (the plan gate as below).
+- **No start question** when the input is already an approved script, or
+  under an explicit review waiver ("just build it": slides now).
 
 ## Where the deck goes — decide once, before building
 
@@ -78,27 +100,25 @@ from.
   3–6. Never write a standalone `.html` file, never run `build_shell.py`,
   `check_capacity.py` or `verify_deck.py`, never screenshot. The artifact
   exports HTML, PDF and PPTX itself, so a request for "an HTML file" there
-  means its export. The one exception is the animated HTML deck, below.
-- **The HTML path, only where Claude Slides is not available (no Slides type)
-  or for the animated HTML deck:** **one self-contained `.html` file**, built
-  by steps 3–6 below, and only in WPP ES | MAP. A deck in another design
-  system with no Claude Slides available: say so, and offer the WPP look or a
-  surface where Claude Slides is.
-- **The animated HTML deck, only when it is asked for or picked.** It is the
-  HTML path at full motion: numbers count up, titles rise word by word, dots
-  breathe and art floats, which Claude Slides cannot do (guideline 10). For a
-  special deck (a pitch, a keynote, a launch, an event or award moment, a
-  talk on a stage) or a user who asks for animation, the question card offers
-  it beside the Claude Slides deck (`references/SLIDES.md`, *Asking*); a user
-  who names it ("the animated version", "animated HTML") gets it without that
-  question. Its cost is said in the card and again at delivery: it is one
-  file presented from a browser, not a Claude Slides deck to edit, share and
-  export to PowerPoint. The gate is the surface's own (the card where the
-  session has one, its answers the approval), then steps 3–6 below. It
-  exists only in WPP Enterprise Solutions | MAP, because the HTML path builds
-  from this skill's copy of that system: a deck in any other design system is
-  a Claude Slides deck, its motion from that system's rules and
-  `references/MOTION.md`.
+  means its export, or the animated file below.
+- **The animated HTML file, beside the Claude Slides deck, in any design
+  system, when the card's format answer asks for it.** The card asks it for
+  every deck: *Claude Slides only* or *Slides + animated HTML*
+  (`references/SLIDES.md`, *Asking*); a user who names it ("the animated
+  version", "animated HTML") gets it without that question. It is one
+  self-contained file presented from a browser: the deck's own slides with
+  their transitions and builds, plus what Claude Slides cannot do (units
+  arriving one after another, figures counting up, and where the brand
+  allows, rules drawing on, titles rising word by word, art drifting). It is
+  made from the finished Claude Slides deck by `scripts/animate_slides.py`
+  (`references/SLIDES.md`, *The animated file*), never written by hand, and
+  the Claude Slides deck stays the one to edit, share and export.
+- **The HTML path, only where Claude Slides is not available (no Slides
+  type):** **one self-contained `.html` file**, built by steps 3–6 below, and
+  only in WPP ES | MAP. A user there who asks for animation gets it at
+  `"motion": "full"`. A deck in a client's design system with no Claude Slides
+  available: say so, and offer the WPP look or a surface where Claude Slides
+  is.
 
 ## Step 0 — read the brand system first (once per deck)
 
@@ -115,7 +135,10 @@ the brand, or the open deck already uses that system.
 skill needs from it and how to fill what it lacks. That system then owns the
 brand exactly as WPP's does, and everything in this file that names WPP's
 colours, type, dots, logo, fixed slides, directions, layouts or files applies
-to WPP decks only. Another system's deck is always a Claude Slides deck.
+to WPP decks only. Another system's deck is always a Claude Slides deck
+(with its animated file when asked for). Only WPP ES | MAP and MAP's clients'
+systems are ever used or offered: never another WPP or MAP system, nor one
+with no clear brand (`references/DESIGN-SYSTEMS.md`, *Which systems count*).
 
 - **On the Claude Slides path**, read the system itself, in the order
   `references/SLIDES.md` gives.
@@ -212,8 +235,10 @@ you plan; the generator takes each direction's defaults from it. Every
 direction composes the full canvas (§12.15): the difference between them is
 voice, never effort, and a bare text band on Cream is a defect in all four.
 
-A deck in another design system takes that system's own directions, if it
-has any, the same way; with none, there is no direction question.
+**The four directions hold in every design system.** In a client's system
+they choose among that system's own grounds, layouts and type, never adding
+anything it lacks: `references/DESIGN-SYSTEMS.md`, *The four directions in any
+design system*. The question is asked for every deck, in every system.
 
 A gate reply that picks no direction → Editorial quiet. **"You choose" means
 pick by content signal** — numbers-heavy input → Data-forward, message- or
@@ -241,6 +266,9 @@ still follows as its own turn.
 **G1 — Plan gate (the single blocking gate).** On the Claude Slides path, G0 and G1
 are one question card instead — `references/SLIDES.md`, "Asking". On the
 HTML path, present one compact artifact:
+- on raw input, first, the start offer: *"Recommended: script-builder writes
+  the script first (titles and text for your OK), then I build the slides.
+  Reply 'script first', or approve the plan below to build the slides now."*;
 - table: *slide # · chapter · action title · archetype · confidence*, with
   **▲ marking titles under 70%**;
 - a 3-sentence narrative read-through;
@@ -260,11 +288,14 @@ HTML path, present one compact artifact:
   changes ('5: make this a comparison'), (3) 'alt storyline', (4)
   'shorter'/'longer'."*
 
-**Skip G1 when** the input is an already-approved deck-builder file —
-collapse to a one-line notice ("Using your approved titles verbatim;
-chapters: X / Y / Z") **plus the design-direction question**, and wait for
-that one answer — or when the user said "just build it" (default direction,
-assumptions noted at delivery, no questions at all).
+**Skip G1 when** the input is an already-approved script from
+script-builder — collapse to a one-line notice ("Using your approved titles
+verbatim; chapters: X / Y / Z") **plus the design-direction question** (and
+the format question on the Claude Slides path), and wait for those answers —
+or when the user said "just build it" (default direction, assumptions noted
+at delivery, no questions at all). On raw input, G1 opens with the start
+question (*Script first*, above); its answer *Script first* hands over to
+script-builder before any plan table.
 
 **G2 — Delivery (never blocking).** The file — on the Claude Slides path, the deck's
 link, with no seen-report (`SLIDES.md`) — + a 2–4-line summary + *which two
@@ -274,11 +305,12 @@ by number to change it — I patch in place; numbering and self-containment are
 preserved automatically. I can also render an A/B alternative of any slide
 (or an A/B thumbnail sheet of the 2–3 highest-stakes slides) so you can pick."*
 On the Claude Slides path an alternative is an extra slide beside the original,
-never an image in the chat. The animated HTML deck's delivery adds how to
-present it (open the file in Chrome or Edge; F for full screen, → or Space to
-advance, N for notes, 1–9 to jump to a chapter) and says once that it is not a
-Claude Slides deck: changes come back here, and a Claude Slides version of the
-same deck can be built beside it.
+never an image in the chat. When the animated HTML file was asked for, the
+delivery adds it beside the link with how to present it (open the file in
+Chrome or Edge; F for full screen, → or Space or a click to advance, ← back,
+N for notes, 1–9 to jump to a chapter), names the extras it uses, and says
+once that changes are made in the Claude Slides deck, after which the file is
+made again.
 
 ## Workflow
 
@@ -287,7 +319,7 @@ same deck can be built beside it.
 Find the **spine**; group into **1–6 chapters** (3–6 for standard decks; a
 single chapter renders as a micro-deck — cover + content + thank-you). One
 idea per slide, sentence-case action headline, archetype from the quick-map.
-On raw input, action titles meet the deck-builder bar: a full
+On raw input, action titles meet the script-builder bar: a full
 sentence that lands a so-what, ≤15 words, active voice, specific numbers —
 never a label ("Background", "Next steps"). Decide the cover.
 
@@ -347,9 +379,9 @@ navy-full; `dividerStyle` playbook (default — one-hue macro scatter, title
 pinned bottom) · classic (the v3 geometry), both on the DividerSlide card;
 `outro` light · dark; `motion` full · subtle · off (each direction's default
 colourway, motion and outro: the README's *Four deck directions*; the shell choreographs
-the kit automatically — no markup work, see `HTML-BUILD.md` §14). The animated HTML
-deck sets `"motion": "full"` whatever the direction, unless the user asked for
-`subtle`. Flat string chapters (v1 style) still work.
+the kit automatically — no markup work, see `HTML-BUILD.md` §14). A user on the
+HTML path who asks for animation gets `"motion": "full"` whatever the direction,
+unless they asked for `subtle`. Flat string chapters (v1 style) still work.
 Set `"microDeck": true` when the final deck has ≤4 content slides. For
 Spanish decks set `"lang": "es"` (Agenda / Gracias. / Sección N / PRIVADO Y
 CONFIDENCIAL are built in; other languages via `"strings"`).
@@ -570,12 +602,12 @@ The G2 message includes **one line per content slide**: *seen → issue →
 fix* (or "passed first look"). This makes skipping the look visible — if you
 cannot write the line, you did not look.
 
-## Input mode: deck-builder Markdown
+## Input mode: a script from script-builder
 
-When the input is a content file from the `deck-builder` skill,
-read **`references/HANDOFF-CONTRACT.md`** — it holds the contract, the
-element-to-render mapping, and the `spec` fields it fills. Skip it entirely
-for raw input.
+When the input is a script from the `script-builder` skill (in the
+conversation or a saved `.md`), read **`references/HANDOFF-CONTRACT.md`** —
+it holds the contract, the element-to-render mapping, and the `spec` fields
+it fills. Skip it entirely for raw input.
 
 ## House copy rules
 
@@ -614,8 +646,10 @@ non-English decks: **`references/EDGE-CASES.md`**. Open only when one applies.
   skill.
   **`canon/CATALOG.md` is the entry point for step 4.**
 - **`references/SLIDES.md`** — the whole deck on the Claude Slides path (a chat,
-  Claude Design, Claude Code): the Claude Slides deck, the question card, and
-  the order in which to read and install the design system.
+  Claude Design, Claude Code): the Claude Slides deck, the question card, the
+  order in which to read and install the design system, and the animated file.
+- **`scripts/animate_slides.py`** — the animated HTML file, made from a
+  finished Claude Slides deck in any design system.
 
 Each other file is named where it is used. Two rules that live nowhere else:
 
@@ -626,7 +660,7 @@ Each other file is named where it is used. Two rules that live nowhere else:
   `design-system/` is a generated copy of it, written only by the refresh in
   the repository (`authoring/refresh_design_system.py`). `verify_deck.py` fails
   the deck if a file in the copy was edited by hand, or if a block this skill
-  shares with `deck-builder` (the house copy rules, the handoff
+  shares with `script-builder` (the house copy rules, the handoff
   contract) no longer matches its twin.
 
 After a refresh changes a kit layout, remeasure the kit:

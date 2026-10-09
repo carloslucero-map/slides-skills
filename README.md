@@ -2,7 +2,8 @@
 
 Two Claude [Agent Skills](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview)
 that together turn raw context into a finished, on-brand presentation. They are
-designed as a chain: one writes the words, the other renders them.
+designed as a chain, and the recommended route is script first: one writes the
+script, the other builds the slides from it.
 
 ```
 raw notes / brief
@@ -10,7 +11,8 @@ raw notes / brief
       ▼
 ┌─────────────────────┐   approved .md    ┌─────────────────────┐
 │ deck-content-builder│ ────────────────► │  wpp-es-html-deck   │
-│  writes the content │  HANDOFF-CONTRACT │  renders the deck   │
+│  (script-builder)   │  HANDOFF-CONTRACT │  (slides-builder)   │
+│  writes the script  │                   │  renders the deck   │
 └─────────────────────┘                   └─────────────────────┘
       │                                             │
       ▼                                             ▼
@@ -30,9 +32,10 @@ artifact in Claude Design (namespace `WppEsMap`): colour, type, the dot system,
 the elements, the four fixed slides and the 76 layouts. It is edited there, and
 only there.
 
-It is the default, not the only one: a deck can be built in a client's design
-system instead, another Design System artifact in Claude Design, which then owns
-that deck's look the same way (see [Client design systems](#client-design-systems)).
+It is the default, not the only one: a deck can be built in a MAP client's
+design system instead, another Design System artifact in Claude Design, which
+then owns that deck's look the same way (see [Client design systems](#client-design-systems)).
+No other system is used or offered.
 
 The skills hold the process: the gates, the plan, the content method, the copy
 rules, the generator and the verifier. `wpp-es-html-deck` carries a **generated
@@ -44,26 +47,29 @@ and it is never re-synced from here.
 ## The skills
 
 In the organisation they ship together as one plugin, **map-decks** (shown as
-MAP Decks), where they are named **deck-builder** and **slides-builder**, and
-the two skills call each other by those names. Here each SKILL.md's `name`
+MAP Decks), where they are named **script-builder** and **slides-builder**,
+and the two skills call each other by those names. slides-builder's first
+question on raw notes recommends starting with script-builder. Here each SKILL.md's `name`
 stays its folder's name; `authoring/build_plugin.py` gives them their
 organisation names when it builds the plugin (see
 [Uploading to claude.ai](#uploading-to-claudeai)).
 
-### `deck-content-builder`
-Writes the **text content** of a deck — action titles, bullets, callouts,
-speaker notes — using consultant-grade methods (Pyramid Principle, SCR).
-Output is a single Markdown file. It does not design or render anything.
+### `deck-content-builder` (script-builder)
+Writes the deck's **script**, its text content — action titles, bullets,
+callouts, speaker notes — using consultant-grade methods (Pyramid Principle,
+SCR). The recommended first step of every deck. Output is a single Markdown
+script. It does not design or render anything.
 
 Single file, no dependencies: [`deck-content-builder/SKILL.md`](deck-content-builder/SKILL.md).
 
-### `wpp-es-html-deck`
+### `wpp-es-html-deck` (slides-builder)
 Renders a deck in the WPP ES | MAP visual language — Navy + Cream + Orange,
-WPP Sans, the dot system, 16:9. **Wherever Claude can make a Claude Slides deck
-(a chat, Claude Design, Claude Code) it builds straight into one, from the
-design system itself; only where Claude Slides is not available, or for the
-animated version of a special deck, does it write one self-contained HTML file
-from its copy of the design system.** Ships 25 canon
+WPP Sans, the dot system, 16:9 — or in a MAP client's design system. **Wherever
+Claude can make a Claude Slides deck (a chat, Claude Design, Claude Code) it
+builds straight into one, from the design system itself, and on request makes
+an animated HTML file from it, in any design system; only where Claude Slides
+is not available does it write one self-contained HTML file from its copy of
+the design system.** Ships 25 canon
 templates, a 51-template snippet library, a per-slot capacity model, and a
 verifier that enforces the design system's rules.
 
@@ -72,8 +78,9 @@ verifier that enforces the design system's rules.
 | `SKILL.md` | The skill itself — the operating instructions |
 | `design-system/` | The generated copy of the design system: its `README.md`, the eleven `guidelines/`, every card in `cards/` (one file per group), the asset groups' notes, `tokens.json`, `bundle.css`, `fixed-slides.json`, `elements.json`, fonts, logos, icons, illustrations, photos, textures, exemplars, and `SOURCE.json` (version and a sha256 per file) |
 | `references/HTML-BUILD.md` | The skill's own: how the HTML file is built, filled and checked, with the layout laws the verifier enforces |
-| `references/SLIDES.md` | How to build in a Claude Slides deck, wherever one is available: the question card, the reading order, the install |
-| `references/DESIGN-SYSTEMS.md` | Any design system besides WPP ES \| MAP: how one is picked, what the skill needs from it, how to fill what it lacks, what stays WPP-only, and the prompt that makes a client's system deck-ready |
+| `references/SLIDES.md` | How to build in a Claude Slides deck, wherever one is available: the question card, the reading order, the install, the animated file |
+| `references/DESIGN-SYSTEMS.md` | MAP's clients' design systems beside WPP ES \| MAP: which systems count, how one is picked, the four directions in any system, what the skill needs from it, how to fill what it lacks, what stays WPP-only, and the prompt that makes a client's system deck-ready |
+| `scripts/animate_slides.py` | The animated HTML file: one self-contained file made from a finished Claude Slides deck, in any design system, with its transitions and builds plus the extras Slides cannot do |
 | `references/MOTION.md` | Motion in Claude Slides for any design system: what Slides can do, the roles, and the quiet default for whatever a design system leaves unsaid |
 | `references/SNIPPET-INDEX.md` | All 51 kit layouts, one line each |
 | `references/capacity.json` | Per-slot min/ideal/max character counts |
@@ -181,40 +188,44 @@ rules still gets a deck that moves well, and one with its own rules gets
 those. A build works only on an element pinned directly on the slide, so
 whatever moves is pinned.
 
-## The animated HTML deck
+## The animated HTML file
 
-Counting numbers, titles that rise word by word, breathing dots, floating art
-and the progress line are the HTML deck's runtime (`HTML-BUILD.md` §14), and
-Claude Slides cannot do them. So for a special deck (a pitch, a keynote, a
-launch, an event or award moment, a talk on a stage) or a user who asks for
-animation, the question card adds one question: the Claude Slides deck or the
-animated HTML deck. A user who names the animated version gets it without the
-question. It is the HTML path at full motion, built and verified like any HTML
-deck, and delivered with how to present it from a browser. It exists only
-in WPP ES | MAP, the one design system the skill carries a copy of; a deck in
-any other system is a Claude Slides deck. The cost is said
-twice, in the card and at delivery: it is one file, not a Claude Slides deck to
-edit, share and export to PowerPoint.
+Every deck's question card asks whether the Claude Slides deck should come with
+an animated HTML file, in every design system. The file is made from the
+finished Claude Slides deck by
+[`scripts/animate_slides.py`](wpp-es-html-deck/scripts/animate_slides.py): the
+deck's own slides, pixel for pixel, with their transitions and builds played in
+the browser (magic move as a real morph), plus extras Claude Slides cannot do:
+units arriving one after another, figures counting up, and where the brand's
+motion rules allow more than rise and fade, rules drawing on, titles rising
+word by word and art drifting. Every picture and font is embedded, so the file
+works offline. The Claude Slides deck stays the deck to edit, share and export;
+after a change, the file is made again. (Where Claude Slides is not available,
+the WPP HTML path's own runtime, `HTML-BUILD.md` §14, does the motion.)
 
 ## Client design systems
 
-WPP ES | MAP is the default design system, and any other Design System
-artifact in Claude Design can take its place, typically a client's.
+WPP ES | MAP is the default design system, and a MAP client's Design System
+artifact in Claude Design can take its place. No other system is used or
+offered (not MAP's own product or team systems, nor untitled ones).
 [`references/DESIGN-SYSTEMS.md`](wpp-es-html-deck/references/DESIGN-SYSTEMS.md)
 holds the rules:
 
 - **Which system:** the open deck's own (a revision stays on its brand), else
-  the one the user names ("a deck in Acme's brand"), else the account's
-  marked default, else WPP ES | MAP. When the name fits two systems, or a
-  brand has none, the question card asks.
+  the client the user names ("a deck in Acme's brand"), else the account's
+  marked default when it is WPP's or a client's, else WPP ES | MAP. When the
+  name fits two client systems, or a client has none, the question card asks.
+- **The four directions** (Editorial quiet, Statement-led, Data-forward,
+  High-impact) are asked for every deck: in a client's system each one picks
+  among that system's own grounds, layouts and type.
 - **What the skill needs from it:** a README, colour tokens by role, at most
   four font faces, a logo; ideally also a section for Claude Slides, element
   recipes, the four fixed slides, a layout catalogue and motion rules. Where
   a part is missing the skill fills it from the system's own colours, type and
   logo, never from WPP's, and says so at delivery.
-- **What stays WPP-only:** WPP's non-negotiables 2 to 8, its four directions,
-  the canon and kit, the HTML path and the animated HTML deck. A client's deck
-  is always a Claude Slides deck, following that client's own rules.
+- **What stays WPP-only:** WPP's non-negotiables 2 to 8, the canon and kit,
+  and the HTML path. A client's deck is always a Claude Slides deck (with its
+  animated file when asked for), following that client's own rules.
 - **Making a client's system deck-ready:** the prompt at the end of that page,
   pasted into the system in Claude Design, adds what decks need (including
   its motion rules for Claude Slides) and lists what is missing.
@@ -266,10 +277,10 @@ python3 authoring/build_plugin.py --out ~/Downloads
 ```
 
 It holds both skills under the names people use, `skills/slides-builder/` and
-`skills/deck-builder/`, beside `.claude-plugin/plugin.json` and a short
+`skills/script-builder/`, beside `.claude-plugin/plugin.json` and a short
 README. It is built from a commit (`git archive`), never the working copy, and
 takes its version from the newest release in this CHANGELOG. It checks
-claude.ai's plugin limits, **5,000 files and 200 MB** (now 171 files, 4.9 MB),
+claude.ai's plugin limits, **5,000 files and 200 MB** (now 172 files, 4.9 MB),
 and runs `claude plugin validate` when the Claude Code CLI is installed.
 
 An Owner uploads it in **Organization settings > Plugins & skills**: **Add >
@@ -291,7 +302,7 @@ live, not by a build step, so zipping the folder is a valid upload:
 
 | | cap | now |
 |---|---|---|
-| entries (files + directories) | 200 | **186** — 168 files + 18 directories |
+| entries (files + directories) | 200 | **187** — 169 files + 18 directories |
 | size | 30 MB | **4.84 MB** |
 
 ```bash

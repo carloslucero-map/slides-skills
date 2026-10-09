@@ -11,7 +11,7 @@ people know them by:
     .claude-plugin/plugin.json    name, displayName, version, description, author
     README.md
     skills/slides-builder/        wpp-es-html-deck/, its `name:` set to slides-builder
-    skills/deck-builder/          deck-content-builder/, its `name:` set to deck-builder
+    skills/script-builder/        deck-content-builder/, its `name:` set to script-builder
 
 A skill's folder has to match its `name`, and this repository keeps its own
 folder names (the design system's cards and refresh_design_system.py point at
@@ -30,17 +30,17 @@ import argparse, io, json, os, re, shutil, subprocess, sys, tarfile, tempfile, t
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PLUGIN = "map-decks"
-SKILLS = {"wpp-es-html-deck": "slides-builder", "deck-content-builder": "deck-builder"}
+SKILLS = {"wpp-es-html-deck": "slides-builder", "deck-content-builder": "script-builder"}
 MAX_FILES, MAX_MB = 5000, 200   # claude.ai, per plugin
 
 MANIFEST = {
     "name": PLUGIN,
     "displayName": "MAP Decks",
-    "description": "WPP Enterprise Solutions | MAP decks, and decks in a client's brand from that "
-                   "client's design system. deck-builder writes the content; "
-                   "slides-builder builds the on-brand deck as a Claude Slides deck wherever Claude "
-                   "Slides is available (a chat, Claude Design, Claude Code), otherwise as one "
-                   "self-contained HTML file, which is also the animated version of a special deck.",
+    "description": "WPP Enterprise Solutions | MAP decks, and decks in a MAP client's brand from that "
+                   "client's design system. Start with script-builder, which writes the deck's script "
+                   "for your approval; slides-builder then builds it as an on-brand Claude Slides deck "
+                   "wherever Claude Slides is available (a chat, Claude Design, Claude Code), with an "
+                   "animated HTML file beside it when asked for, otherwise as one self-contained HTML file.",
     "author": {"name": "Carlos Lucero"},
 }
 
@@ -48,22 +48,26 @@ README = """# MAP Decks
 
 WPP Enterprise Solutions | MAP decks, made with Claude. Version {version}.
 
-- **deck-builder** writes the words. It shows you the slide titles first and
-  writes the full slide-by-slide text once you approve them.
-- **slides-builder** builds the deck in the MAP look. Wherever Claude Slides
-  is available (a chat, Claude Design, Claude Code) you get a Claude Slides deck you can
-  edit, share and export to PowerPoint or PDF, with its builds and
-  transitions; where it isn't, one self-contained HTML file. For a special
-  deck (a pitch, a keynote, a launch) it also offers the animated version: one
-  HTML file with counting numbers and living dots, presented from a browser.
-  It asks you a few questions and a style before it builds.
-- **Client brands.** Name the brand ("make a deck in Acme's brand") and
+1. **script-builder** writes the script: the storyline, slide titles and text.
+   It shows you the titles first and writes the full text once you approve
+   them. This is the recommended first step: the slides keep your approved
+   words exactly.
+2. **slides-builder** builds the slides from the script (or straight from
+   notes). Wherever Claude Slides is available (a chat, Claude Design, Claude
+   Code) you get a Claude Slides deck you can edit, share and export to
+   PowerPoint or PDF, with its builds and transitions; where it isn't, one
+   self-contained HTML file. Its questions: script first or slides now, the
+   style (Editorial quiet, Statement-led, Data-forward, High-impact), and
+   whether you also want an animated HTML file with extra animation.
+
+- **Client brands.** Name the client ("make a deck in Acme's brand") and
   slides-builder builds it from that client's design system in Claude Design:
   its colours, fonts, logo, slides and animation, nothing borrowed from WPP.
-  With no brand named, the deck is WPP Enterprise Solutions | MAP.
+  With no brand named, the deck is WPP Enterprise Solutions | MAP. Only WPP
+  ES | MAP and MAP's clients' systems are used.
 
 Ask in plain words, for example "Make a MAP deck from these notes", or "Use
-deck-builder to write the content for a sales deck from these notes".
+script-builder to write the script for a sales deck from these notes".
 
 The fonts, logos and illustrations are proprietary to WPP and not for
 redistribution. The photographs have no recorded source or licence: confirm the
