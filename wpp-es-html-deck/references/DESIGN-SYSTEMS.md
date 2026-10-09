@@ -30,25 +30,32 @@ its options are only the two kinds above.
 
 ## Picking the design system
 
-Use the first that applies, and never ask when this already answers it:
+**Never pick silently.** Use the first that applies:
 
 1. **The open deck has one:** its `project/deck.json` `designSystems` record.
-   A revision stays on its deck's brand.
-2. **The user names a client** ("in Acme's brand", "use the Acme design
-   system", "for Acme"): `list` with type "Design System" and take the client
-   system whose title names that brand. Two that fit: ask in the card, one
-   option each. A client named with no matching system: say so in one line and
-   ask in the card whether to build it in WPP ES | MAP instead or to stop while
-   its system is made.
-3. **The account marks a default design system** (the `list` marks it) and it
-   counts (above): use it.
-4. **Otherwise WPP Enterprise Solutions | MAP**, matched by its exact title. Not
-   in the listing (another account, a renamed system): build from this skill's
-   copy of it, `design-system/`, and say so in one line.
+   A revision stays on its deck's brand. No question.
+2. **The request names the brand.** A client ("in Acme's brand", "use the
+   Acme design system", "for Acme"): `list` with type "Design System" and take
+   the client system whose title names that brand; two that fit, ask in the
+   card, one option each; a client named with no matching system, say so in
+   one line and ask in the card whether to build it in WPP ES | MAP instead or
+   to stop while its system is made. WPP ("a MAP deck", "a WPP deck", "in
+   our brand"): WPP Enterprise Solutions | MAP. No question.
+3. **Otherwise, ask in the card** which design system to use: `list` with
+   type "Design System", then one option per system that counts (above), WPP
+   Enterprise Solutions | MAP first and marked "(Recommended)" (or the
+   account's marked default, when it counts), then the client systems in the
+   listing's order, at most four options in all; the card's own "Other" takes
+   any client left out. A generic request ("make a deck about our Q3
+   results") is this case: it names no brand, so the card asks.
+4. **No card possible** (an explicit "just build it", or nobody there to
+   answer): the account's marked default when it counts, else WPP ES | MAP,
+   and say which in one line.
 
-A request with no brand in it is a WPP ES | MAP deck: no brand question. The
-card never asks for a brand the request already gives. A deck is in one design
-system; never mix two.
+WPP Enterprise Solutions | MAP is found by its exact title. Not in the listing
+(another account, a renamed system): build from this skill's copy of it,
+`design-system/`, and say so in one line. A deck is in one design system;
+never mix two.
 
 ## Reading a client's system
 

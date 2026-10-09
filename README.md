@@ -212,9 +212,10 @@ offered (not MAP's own product or team systems, nor untitled ones).
 holds the rules:
 
 - **Which system:** the open deck's own (a revision stays on its brand), else
-  the client the user names ("a deck in Acme's brand"), else the account's
-  marked default when it is WPP's or a client's, else WPP ES | MAP. When the
-  name fits two client systems, or a client has none, the question card asks.
+  the brand the user names ("a deck in Acme's brand", "a MAP deck"); with no
+  brand named, the question card asks, WPP ES | MAP first, then each client
+  system. It also asks when the name fits two client systems, or a client has
+  none.
 - **The four directions** (Editorial quiet, Statement-led, Data-forward,
   High-impact) are asked for every deck: in a client's system each one picks
   among that system's own grounds, layouts and type.

@@ -71,16 +71,31 @@ before anything is written:
   | Script first (Recommended) | script-builder writes titles and text for your OK, then the slides |
   | Slides now | Build the slides straight from these notes |
 
-- **The brand, only when step 3 cannot tell** (two client systems fit the
-  name the user gave, or the client they named has no system): one option per
-  client system, plus WPP Enterprise Solutions | MAP, `multiSelect: false`.
-  Only the systems `references/DESIGN-SYSTEMS.md` counts are ever options.
+- **The design system, whenever the request does not name the brand** and
+  the open deck has none (`references/DESIGN-SYSTEMS.md`, *Picking the design
+  system*): `multiSelect: false`, WPP Enterprise Solutions | MAP first and
+  marked "(Recommended)", then each client system that counts, by its title,
+  at most four options; the card's "Other" takes any other client. Also asked
+  when the name the user gave fits two client systems, or a client they named
+  has none. Only the systems `references/DESIGN-SYSTEMS.md` counts are ever
+  options: never another WPP or MAP system, never one titled only "Design
+  System". For an account that holds Shell's and Coca-Cola's systems:
+
+  | label | description |
+  |---|---|
+  | WPP ES \| MAP (Recommended) | Navy, cream, orange, the dot system |
+  | Shell | Shell's design system |
+  | Coca-Cola (TCCC) | Coca-Cola's Open X 1PD Coke.ID system |
+
 - **The design direction, always** (unless the user already named one), the
   same four in every design system (`references/DESIGN-SYSTEMS.md`, *The four
   directions in any design system*), with `multiSelect: false` and your
   content-signal pick first, marked "(Recommended)". The descriptions below
   are WPP ES | MAP's; in a client's system, say the same thing in its terms
-  ("its light ground, no dark slides", "up to 1 in 3 on its dark ground"):
+  ("its light ground, no dark slides", "up to 1 in 3 on its dark ground"),
+  and while the design system is still a question in the same card, in
+  neutral terms ("Spacious, light grounds, no dark slides", "Poster scale,
+  up to 1 in 3 on a dark ground"):
 
   | label | description |
   |---|---|
@@ -126,10 +141,12 @@ with its options lettered and your recommended option first, and end the
 turn. Still no slide table: the deck is the plan.
 
 **The waivers still hold.** An explicit "just build it", or nobody there to
-answer: no card, slides now, the recommended direction, Claude Slides only
-(unless the user asked for animation), assumptions in one line. An approved
-script from `script-builder`: no start question; the card holds the
-direction and the format (and the brand, when step 3 cannot tell).
+answer: no card, slides now, the design system by `DESIGN-SYSTEMS.md` step 4,
+the recommended direction, Claude Slides only (unless the user asked for
+animation), assumptions in one line. An approved script from
+`script-builder`: no start question; the card holds the design system (unless
+the request or the script's cover names the brand), the direction and the
+format.
 
 ## No slide images in the chat
 
@@ -153,14 +170,13 @@ which the user keeps or deletes in the editor.
    the approved script is the plan, its titles kept verbatim.
 2. **The deck.** One is open: work on that one. None: create it from the
    Slides type, titled with the plan's cover title.
-3. **Pick the design system** as `references/DESIGN-SYSTEMS.md` says: the
-   open deck's own, else the client the user names, else the account's marked
-   default when it counts, else "WPP Enterprise Solutions | MAP" (`list` with
-   type "Design System", exact title; not found: say so in one line and build
-   from this skill's copy of it, `design-system/`, its README, guidelines and
-   cards with the same Slides recipes, written as inline styles). Never offer
-   the account's other design systems, and never ask which one when the
-   request already says.
+3. **The design system** is the open deck's own, the brand the request
+   names, or the card's answer (`references/DESIGN-SYSTEMS.md`, *Picking the
+   design system*; `list` with type "Design System" to find it; WPP ES | MAP
+   not found: say so in one line and build from this skill's copy of it,
+   `design-system/`, its README, guidelines and cards with the same Slides
+   recipes, written as inline styles). Never offer the account's other design
+   systems, and never ask which one when the request already says.
 4. **Read it before writing a slide.** Another design system: in the order
    `references/DESIGN-SYSTEMS.md` gives, and where it lacks a part, that
    page's table says what to do. WPP ES | MAP, in this order:

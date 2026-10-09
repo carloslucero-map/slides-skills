@@ -5,7 +5,17 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [5.1.0] — 2026-10-09
+
 ### Changed
+- **The card asks which design system whenever the request names no brand**:
+  WPP ES | MAP first and recommended, then each client system (only those
+  `DESIGN-SYSTEMS.md` counts; the card's "Other" takes any client left out).
+  A generic request no longer goes to WPP ES | MAP silently. A request that
+  names the brand ("a MAP deck", "in Acme's brand"), or a deck that already
+  has one, is not asked; "just build it" takes the account's default or WPP
+  ES | MAP and says which. While the design system is still a question, the
+  direction options are described in neutral terms.
 - The WPP ES | MAP design system (version 1791546632-9810) describes the
   animated HTML version as it now works: made beside the Claude Slides deck
   from that deck's own slides (README rule 8 and the Motion bullet of

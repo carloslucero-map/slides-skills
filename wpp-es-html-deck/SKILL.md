@@ -130,7 +130,8 @@ and say so at delivery.
 
 **WPP ES | MAP is the default, not the only one.** A deck can be built in any
 other Design System artifact instead, typically a client's: the user names
-the brand, or the open deck already uses that system.
+the brand, the open deck already uses that system, or the card's design-system
+question picks it (asked whenever the request names no brand).
 **`references/DESIGN-SYSTEMS.md`** says how the system is picked, what the
 skill needs from it and how to fill what it lacks. That system then owns the
 brand exactly as WPP's does, and everything in this file that names WPP's
